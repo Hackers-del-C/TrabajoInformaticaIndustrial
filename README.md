@@ -1,4 +1,4 @@
-# TrabajoInformaticaIndustrial
+# Trabajo Informatica Industrial
 Trabajo para la asignatura de Informática Industrial
 Juego clásico de consolas, en las que un personaje controlado por el jugador, se desplaza en un
 escenario con vista lateral, ver https://es.wikipedia.org/wiki/Videojuego_de_plataformas. Su
