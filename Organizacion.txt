@@ -1,1 +1,54 @@
-ORGANIZACION 
+MUNDOS
+
+China
+Italia
+Españita
+EEUU
+
+ESCENARIOS
+
+Supermercado
+Sala  Pirandello
+Hospital
+Casa
+Calle
+
+PERSONAJES
+
+Chino
+Enfermero
+Médico
+Trump
+
+
+VIDAS
+
+Macarillas
+Traje espacial
+Guantes
+Gafas
+
+ARMAS
+
+Flus flus
+Dispensador Pastis
+Respiradores
+Bisturi
+Lejia
+Lanzallamas
+Cama (como ariete)
+
+BONUS
+
+
+
+ENEMIGOS
+
+Chino contagiado tosiendo
+Virus pequeño
+Virus grande
+Uno con tentaculos
+Carencias
+
+
+
