@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\CombateElVirus",
+    "\\CombateElVirus\\tmp"
   ],
+  "SelectedNode": "\\CombateElVirus\\Pang.sln",
   "PreviewInSolutionExplorer": false
 }
