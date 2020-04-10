@@ -79,7 +79,7 @@ void Mundo::Inicializa()
 
 	disparo.posicion.x = -5.0f;
 	disparo.posicion.y = 0.0f;
-	disparo.origen.y = 0.1f;
+	disparo.origen.y = 0.4f;
 	disparo.origen.x = disparo.posicion.x;
 
 	/* Se podria poner asi, si se hace en la funcion Tecla para que cuando se pulse el disparo salga desde esa posicion
