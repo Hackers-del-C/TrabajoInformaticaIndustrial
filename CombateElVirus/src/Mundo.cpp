@@ -117,7 +117,7 @@ void Mundo::teclaEspecial(unsigned char key)
 		sprite->setPos(-7.0f, -3.0f);
 		break;
 	case GLUT_KEY_RIGHT:
-		//ternerito->setVel(5.0f, 0.0f);
+		//ternerito->setVel(5.0f, 0.0f); //subnormal
 		break;
 	}
 }
