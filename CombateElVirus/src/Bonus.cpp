@@ -15,8 +15,10 @@ void Bonus::Dibuja()
 
 void Bonus::Mueve(float t)
 {
-    posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
-    velocidad = velocidad + aceleracion * t;
+    posicion.x = posicion.x + velocidad.x * t + 0.5f * aceleracion.x * t * t;
+    posicion.y = posicion.y + velocidad.y * t + 0.5f * aceleracion.y * t * t;
+    velocidad.x = velocidad.x + aceleracion.x * t;
+    velocidad.y = velocidad.y + aceleracion.y * t;
 }
 
 Bonus::Bonus() {
@@ -24,16 +26,3 @@ Bonus::Bonus() {
     aceleracion.y = -9.8;
     aceleracion.x = 0;
 }
-
-Bonus::~Bonus() {
-
-
-}
-
-void Bonus::SetPos(float ix, float iy) {
-
-   posicion.x = ix;
-   posicion.y = iy;
-
-}
-

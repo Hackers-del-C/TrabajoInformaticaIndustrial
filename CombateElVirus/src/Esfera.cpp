@@ -13,8 +13,10 @@ void Esfera::Dibuja()
 
 void Esfera::Mueve(float t)
 {
-	posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
-	velocidad = velocidad + aceleracion * t;
+	posicion.x = posicion.x + velocidad.x * t + 0.5f * aceleracion.x * t * t;
+	posicion.y = posicion.y + velocidad.y * t + 0.5f * aceleracion.y * t * t;
+	velocidad.x = velocidad.x + aceleracion.x * t;
+	velocidad.y = velocidad.y + aceleracion.y * t;
 }
 
 float Esfera::GetRadio() {
@@ -42,18 +44,10 @@ void Esfera::SetPos(float ix, float iy) {
 
 }
 
-void Esfera::SetVel(float vx, float vy) {
-
-	velocidad.x = vx;
-	velocidad.y = vy;
-
-}
-
 
 Esfera::Esfera()
 {
 	rojo = verde = azul = 255; //blanco
 	radio = 1.0f;
 	aceleracion.y = -9.8f;
-	
 }

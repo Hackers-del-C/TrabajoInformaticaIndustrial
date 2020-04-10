@@ -27,11 +27,9 @@ AUTHOR: Miguel Hernando
 
 #pragma once
 #include <windows.h>
-
-#include <cmath>
-
 #include <GL/gl.h>              /* Header File For The OpenGL Library */
 #include <GL/glu.h>
+#include <cmath>
 
 
 #ifndef USE_ETSIDI

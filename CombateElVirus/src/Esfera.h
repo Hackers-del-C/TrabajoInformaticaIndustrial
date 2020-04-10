@@ -3,9 +3,6 @@
 #include "Vector2D.h"
 class Esfera
 {
-
-    friend class Interaccion;
-
 private:
     
    // virtual ~Esfera();
@@ -25,6 +22,5 @@ public:
     Esfera();
     void SetColor(unsigned char r, unsigned char v, unsigned char a);
     void SetPos(float ix, float iy);
-    void SetVel(float vx, float vy);
 };
 

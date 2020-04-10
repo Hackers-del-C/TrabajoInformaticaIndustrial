@@ -1,7 +1,6 @@
 #include "Mundo.h"
 #include "glut.h"
 
-
 Mundo mundo;
 
 //los callback, funciones que seran llamadas automaticamente por la glut
@@ -10,8 +9,6 @@ Mundo mundo;
 void OnDraw(void); //esta funcion sera llamada para dibujar
 void OnTimer(int value); //esta funcion sera llamada cuando transcurra una temporizacion
 void OnKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecla	
-void OnSpecialKeyboardDown(int key, int x, int y);
-
 
 int main(int argc,char* argv[])
 {
@@ -33,9 +30,7 @@ int main(int argc,char* argv[])
 	//Registrar los callbacks
 	glutDisplayFunc(OnDraw);
 	glutTimerFunc(25,OnTimer,0);//le decimos que dentro de 25ms llame 1 vez a la funcion OnTimer()
-	glutSpecialFunc(OnSpecialKeyboardDown);
 	glutKeyboardFunc(OnKeyboardDown);
-	
 
 	mundo.Inicializa();
 		
@@ -55,13 +50,9 @@ void OnDraw(void)
 	glLoadIdentity();
 	
 	mundo.Dibuja();
-	
+
 	//no borrar esta linea ni poner nada despues
 	glutSwapBuffers();
-}
-void OnSpecialKeyboardDown(int key, int x, int y)
-{
-	mundo.teclaEspecial(key);
 }
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
@@ -75,9 +66,8 @@ void OnTimer(int value)
 {
 //poner aqui el código de animacion
 	mundo.Mueve();
-	
+
 	//no borrar estas lineas
 	glutTimerFunc(25,OnTimer,0);
 	glutPostRedisplay();
 }
-
