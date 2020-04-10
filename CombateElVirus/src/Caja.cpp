@@ -11,14 +11,14 @@ void Caja::Dibuja()
 
 Caja::Caja(){
 
-        suelo.SetColor(0, 100, 0);
+        suelo.SetColor(0, 0,100);
         suelo.SetPos(-10.0f, 0, 10.0f, 0);
-        techo.SetColor(0, 100, 0);
+        techo.SetColor(0, 0, 100);
         techo.SetPos(-10.0f, 15.0f, 10.0f, 15.0f);
 
-        pared_dcha.SetColor(0, 150, 0);
+        pared_dcha.SetColor(0,0, 150);
         pared_dcha.SetPos(-10.0f, 0, -10.0f, 15.0f);
-        pared_izq.SetColor(0, 150, 0);
+        pared_izq.SetColor(0, 0, 150);
         pared_izq.SetPos(10.0f, 0, 10.0f, 15.0f);
     
 }

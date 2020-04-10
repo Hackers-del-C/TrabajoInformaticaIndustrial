@@ -37,12 +37,6 @@ void Mundo::Dibuja()
 	glTranslated(3, 3, 0);
 	sprite->setSize(5, 5);
 	sprite->draw();
-	
-	
-	
-
-
-	
 
 
 	//aqui es donde hay que poner el codigo de dibujo
