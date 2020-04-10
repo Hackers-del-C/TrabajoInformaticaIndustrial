@@ -73,7 +73,7 @@ void Mundo::Inicializa()
 	z_ojo = 30;
 	esfera.SetPos(2, 4);
 	esfera.SetRadio(1.5f);
-	esfera.SetColor(0, 0, 255);
+	esfera.SetColor(0, 255, 0);
 	bonus.posicion.x = 5.0f;
 	bonus.posicion.y = 5.0f;
 
