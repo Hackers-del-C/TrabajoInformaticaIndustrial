@@ -10,29 +10,20 @@ void Caja::Dibuja()
 }
 
 Caja::Caja(){
-    pared_dcha.SetColor(0, 110, 0);
-    pared_izq.SetColor(0, 110, 0);
-    techo.SetColor(0, 60, 0);
-    suelo.SetColor(0, 60, 0);
 
-    pared_dcha.limite1.x = 10;
-    pared_dcha.limite1.y = 0;
-    pared_dcha.limite2.x = 10;
-    pared_dcha.limite2.y = 15;
+        suelo.SetColor(0, 0,100);
+        suelo.SetPos(-10.0f, 0, 10.0f, 0);
+        techo.SetColor(0, 0, 100);
+        techo.SetPos(-10.0f, 15.0f, 10.0f, 15.0f);
 
-    pared_izq.limite1.x = -10;
-    pared_izq.limite1.y = 0;
-    pared_izq.limite2.x = -10;
-    pared_izq.limite2.y = 15;
-
-    techo.limite1.x = -10;
-    techo.limite1.y = 15;
-    techo.limite2.x = +10;
-    techo.limite2.y = 15;
-
-    suelo.limite1.x = -10;
-    suelo.limite1.y = 0;
-    suelo.limite2.x = +10;
-    suelo.limite2.y = 0;
-   
+        pared_dcha.SetColor(0,0, 150);
+        pared_dcha.SetPos(-10.0f, 0, -10.0f, 15.0f);
+        pared_izq.SetColor(0, 0, 150);
+        pared_izq.SetPos(10.0f, 0, 10.0f, 15.0f);
+    
 }
+
+Caja::~Caja() {
+
+}
+
