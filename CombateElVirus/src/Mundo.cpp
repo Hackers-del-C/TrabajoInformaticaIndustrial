@@ -1,7 +1,9 @@
+#pragma once
 #include "Mundo.h"
+#include "Interaccion.h"
 #include "Esfera.h"
-#include <math.h>
 #include "ETSIDI.h"
+#include <math.h>
 #include "glut.h"
 
 
@@ -24,22 +26,23 @@ void Mundo::Dibuja()
 	caja.Dibuja();
 	hombre.Dibuja();
 	disparo.Dibuja();
-	plataforma.Dibuja();
+	//plataforma.Dibuja();
 	bonus.Dibuja();
-
-	glEnable(GL_TEXTURE_2D);
-	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/banana.png").id);
-	glDisable(GL_LIGHTING);
-	glBegin(GL_POLYGON);
-	glColor3f(1, 1, 1);
+	esfera2.Dibuja();
+	glTranslated(0, 0, -10);
+	explosion->draw();
+	glTranslated(5,5, 0);
+	ternerito->setSize(14, 14);
+	ternerito->draw();
+	glTranslated(3, 3, 0);
+	sprite->setSize(5, 5);
+	sprite->draw();
 	
-	glTexCoord2d(0, 1); glVertex3f(-10, 0, -0.1);
-	glTexCoord2d(1, 1); glVertex3f(+10, 0, -0.1);
-	glTexCoord2d(1, 0); glVertex3f(10, 15, -0.1);
-	glTexCoord2d(0, 0); glVertex3f(-10, 15, -0.1);
-	glEnd();
-	glEnable(GL_LIGHTING);
-	glDisable(GL_TEXTURE_2D);
+	
+	
+
+
+	
 
 
 	//aqui es donde hay que poner el codigo de dibujo
@@ -63,41 +66,64 @@ void Mundo::Mueve()
 	esfera.Mueve(0.025f);
 	bonus.Mueve(0.025f);
 	disparo.Mueve(0.025f);
-
+	esfera2.Mueve(0.025f);
+	Interaccion::rebote(hombre, caja);
+	Interaccion::rebote(esfera, caja);
+	Interaccion::rebote(esfera, plataforma);
+	Interaccion::rebote(esfera2, caja);
+	Interaccion::rebote(esfera2, plataforma);
+	explosion->loop();
 }
 
 void Mundo::Inicializa()
 {
+	
 	x_ojo = 0;
 	y_ojo = 7.5;
 	z_ojo = 30;
-	esfera.SetPos(2, 4);
-	esfera.SetRadio(1.5f);
 	esfera.SetColor(0, 0, 255);
-	bonus.posicion.x = 5.0f;
-	bonus.posicion.y = 5.0f;
+	esfera.SetRadio(1.5f);
+	esfera.SetPos(2, 4);
+	esfera.SetVel(5, 15);
+	esfera2.SetRadio(2);
+	esfera2.SetPos(-2, 4);
+	esfera2.SetVel(-5, 15);
+	bonus.SetPos(5.0f, 5.0f);
+	disparo.SetPos(-5.0f, 0.0f);
+	disparo.SetOri(-5.0f, 0.0f);
+	plataforma.SetColor(255, 0, 0);
+	plataforma.SetPos(-5.0f, 9.0f, 5.0f, 9.0f);
+	explosion = new SpriteSequence("imagenes/explosion_43FR.png", 10, 4, 25, true, -2, 2, 5, 5);
+	sprite = new Sprite("imagenes/sanse.png", 0.05, 0.05, 10, 10);
+	ternerito = new Sprite("imagenes/ternero.png", 0.05, 0.05, 10, 10);
+	
 
-	disparo.posicion.x = -5.0f;
-	disparo.posicion.y = 0.0f;
-	disparo.origen.y = 0.5f;
-	disparo.origen.x = disparo.posicion.x;
+	/*
+	disparo.origen.y = 0.0f;
+	disparo.origen.x = -5.0f;
 
-	/* Se podria poner asi, si se hace en la funcion Tecla para que cuando se pulse el disparo salga desde esa posicion
+	 Se podria poner asi, si se hace en la funcion Tecla para que cuando se pulse el disparo salga desde esa posicion
 	disparo.origen.y = disparo.posicion.y;
 	disparo.origen.x = disparo.posicion.x;
 	*/
 
-	plataforma.SetColor(255, 0, 0);
-
-	plataforma.limite1.x = -5.0f;
-	plataforma.limite2.x = 5.0f;
-	plataforma.limite1.y = 9.0f;
-	plataforma.limite2.y = 9.0f;
 }
 
 void Mundo::Tecla(unsigned char key)
 {
 
 
+}
 
+void Mundo::teclaEspecial(unsigned char key)
+{
+	switch (key)
+	{
+	case GLUT_KEY_LEFT:
+		sprite->setPos(-7.0f, -3.0f);
+		break;
+	case GLUT_KEY_RIGHT:
+		//ternerito->setVel(5.0f, 0.0f);
+		break;
+	}
 }
