@@ -21,6 +21,7 @@ public:
 	void Mueve();
 	void Dibuja();
 	void teclaEspecial(unsigned char key);
+	void Setojo(float ox, float oy, float oz);
 
 private:
 	float x_ojo;

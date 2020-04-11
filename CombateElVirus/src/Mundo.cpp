@@ -7,7 +7,7 @@
 #include "glut.h"
 
 
-
+/*
 void Mundo::RotarOjo()
 {
 	float dist=sqrt(x_ojo*x_ojo+z_ojo*z_ojo);
@@ -15,13 +15,13 @@ void Mundo::RotarOjo()
 	ang+=0.05f;
 	x_ojo=dist*cos(ang);
 	z_ojo=dist*sin(ang);
-}
+}*/
 void Mundo::Dibuja()
 {
 	
 	gluLookAt(x_ojo, y_ojo, z_ojo,
-		0.0, y_ojo, 0.0, //NOTESE QUE HEMOS CAMBIADO ESTO
-		0.0, 1.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
+		x_ojo, y_ojo, 0.0, //NOTESE QUE HEMOS CAMBIADO ESTO
+		0.0, 2.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
 	esfera.Dibuja();
 	caja.Dibuja();
 	hombre.Dibuja();
@@ -38,9 +38,37 @@ void Mundo::Dibuja()
 	sprite->setSize(5, 5);
 	sprite->draw();
 	
-	
+	glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo1.png").id);
+	glDisable(GL_LIGHTING);
+	glBegin(GL_POLYGON);
+
+	glColor3f(1, 1, 1);
+	glTexCoord2d(0, 1);		glVertex3f(-30, -20, -0.1);
+	glTexCoord2d(1, 1);		glVertex3f(10, -20, -0.1);
+	glTexCoord2d(1, 0);		glVertex3f(10, 20, -0.1);
+	glTexCoord2d(0, 0);		glVertex3f(-30, 20, -0.1);
+	glEnd();
+
+	glEnable(GL_LIGHTING);
+	glDisable(GL_TEXTURE_2D);
+
 	
 
+	glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo2.png").id);
+	glDisable(GL_LIGHTING);
+	glBegin(GL_POLYGON);
+
+	glColor3f(1, 1, 1);
+	glTexCoord2d(0, 1);		glVertex3f(10, -20, -0.1);
+	glTexCoord2d(1, 1);		glVertex3f(40, -20, -0.1);
+	glTexCoord2d(1, 0);		glVertex3f(40, 20, -0.1);
+	glTexCoord2d(0, 0);		glVertex3f(10, 20, -0.1);
+	glEnd();
+
+	glEnable(GL_LIGHTING);
+	glDisable(GL_TEXTURE_2D);
 
 	
 
@@ -59,6 +87,12 @@ void Mundo::Dibuja()
 	glEnable(GL_LIGHTING);
 	*/
 }
+void Mundo::Setojo(float ox, float oy, float oz) {
+
+	x_ojo = ox;
+	y_ojo = oy;
+	z_ojo = oz;
+}
 
 void Mundo::Mueve()
 {
@@ -73,14 +107,15 @@ void Mundo::Mueve()
 	Interaccion::rebote(esfera2, caja);
 	Interaccion::rebote(esfera2, plataforma);
 	explosion->loop();
+	Setojo(hombre.posicion.x, 5, 30);
 }
 
 void Mundo::Inicializa()
 {
 	
-	x_ojo = 0;
-	y_ojo = 7.5;
-	z_ojo = 30;
+	x_ojo = 10;
+	y_ojo = 6;
+	z_ojo = 0;
 	esfera.SetColor(0, 0, 255);
 	esfera.SetRadio(1.5f);
 	esfera.SetPos(2, 4);
@@ -94,7 +129,7 @@ void Mundo::Inicializa()
 	plataforma.SetColor(255, 0, 0);
 	plataforma.SetPos(-5.0f, 9.0f, 5.0f, 9.0f);
 	explosion = new SpriteSequence("imagenes/explosion_43FR.png", 10, 4, 25, true, -2, 2, 5, 5);
-	sprite = new Sprite("imagenes/sanse.png", 0.05, 0.05, 10, 10);
+	sprite = new Sprite("imagenes/banana.png", 0.05, 0.05, 10, 10);
 	ternerito = new Sprite("imagenes/ternero.png", 0.05, 0.05, 10, 10);
 	
 
@@ -120,10 +155,10 @@ void Mundo::teclaEspecial(unsigned char key)
 	switch (key)
 	{
 	case GLUT_KEY_LEFT:
-		sprite->setPos(-7.0f, -3.0f);
+		hombre.SetVel(-6, 0);
 		break;
 	case GLUT_KEY_RIGHT:
-		//ternerito->setVel(5.0f, 0.0f);
+		hombre.SetVel(+6, 0);
 		break;
 	}
 }

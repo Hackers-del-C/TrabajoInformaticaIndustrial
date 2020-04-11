@@ -11,8 +11,6 @@ public:
     void Dibuja();
     void Mueve(float t);
     void SetVel(float vx, float vy);
-
-private:
     float altura;
     Vector2D posicion;
     Vector2D velocidad;
