@@ -94,6 +94,7 @@
     <ClCompile Include="src\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="lib\ETSIDI.h" />
     <ClInclude Include="src\Bonus.h" />
     <ClInclude Include="src\Caja.h" />
     <ClInclude Include="src\Disparo.h" />
