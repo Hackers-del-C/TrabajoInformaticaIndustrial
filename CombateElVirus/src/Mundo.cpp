@@ -5,7 +5,7 @@
 #include "ETSIDI.h"
 #include <math.h>
 #include "glut.h"
-
+// #include "Abascal.h"
 
 /*
 void Mundo::RotarOjo()
@@ -31,12 +31,25 @@ void Mundo::Dibuja()
 	esfera2.Dibuja();
 	glTranslated(0, 0, -10);
 	explosion->draw();
-	glTranslated(5,5, 0);
+	glTranslated(-10, -5, 0);
+	virus->draw();
+	
+	glTranslated(15,10, 0);
 	ternerito->setSize(14, 14);
 	ternerito->draw();
 	glTranslated(3, 3, 0);
 	sprite->setSize(5, 5);
 	sprite->draw();
+	glTranslated(20, -10, 0);
+	trump->draw();
+	glTranslated(5, 0, 0);
+	trump->draw();
+	glTranslated(5, 0, 0);
+	trump->draw();
+	glTranslated(5, 0, 0);
+	trump->draw();
+	glTranslated(-35, +10, 0);
+
 	
 	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo1.png").id);
@@ -107,6 +120,8 @@ void Mundo::Mueve()
 	Interaccion::rebote(esfera2, caja);
 	Interaccion::rebote(esfera2, plataforma);
 	explosion->loop();
+	trump->loop();
+	virus->loop();
 	Setojo(hombre.posicion.x, 5, 30);
 }
 
@@ -132,6 +147,8 @@ void Mundo::Inicializa()
 	sprite = new Sprite("imagenes/banana.png", 0.05, 0.05, 10, 10);
 	ternerito = new Sprite("imagenes/ternero.png", 0.05, 0.05, 10, 10);
 	
+	virus = new SpriteSequence("imagenes/virus1.png", 6, 4, 25, true, -2, 2, 5, 5);
+	trump = new SpriteSequence("imagenes/trump.png", 6, 4, 25, true, -2, 2, 5, 5);
 
 	/*
 	disparo.origen.y = 0.0f;
