@@ -38,5 +38,6 @@ private:
 	Sprite* ternerito;
 	SpriteSequence* virus;
 	SpriteSequence* trump;
-
+	//SpriteSequence* pato;
+	SpriteSequence* ninja;
 };

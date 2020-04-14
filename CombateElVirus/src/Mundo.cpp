@@ -33,9 +33,8 @@ void Mundo::Dibuja()
 	explosion->draw();
 	glTranslated(-10, -5, 0);
 	virus->draw();
-	
-	glTranslated(15,10, 0);
-	ternerito->setSize(14, 14);
+	glTranslated(15, 10, 0);
+	ternerito->setSize(5, 5);
 	ternerito->draw();
 	glTranslated(3, 3, 0);
 	sprite->setSize(5, 5);
@@ -50,6 +49,10 @@ void Mundo::Dibuja()
 	trump->draw();
 	glTranslated(-35, +10, 0);
 
+	//pato->draw();
+	glTranslated(10, -10, 0);
+	ninja->draw();
+	glTranslated(-10, 10, 0);
 	
 	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo1.png").id);
@@ -122,12 +125,20 @@ void Mundo::Mueve()
 	explosion->loop();
 	trump->loop();
 	virus->loop();
+	ninja->loop();
+	//pato->loop();
 	Setojo(hombre.posicion.x, 5, 30);
 }
 
 void Mundo::Inicializa()
 {
-	
+	////// MUSICAAA/////
+
+	//ETSIDI::playMusica("mis_sonidos/i_need_a_hero.mp3",true);
+	//ETSIDI::playMusica("mis_sonidos/dont_stop_me_now.mp3", true);
+	ETSIDI::playMusica("mis_sonidos/all_shook_up.mp3", true);
+
+	//
 	x_ojo = 10;
 	y_ojo = 6;
 	z_ojo = 0;
@@ -143,12 +154,19 @@ void Mundo::Inicializa()
 	disparo.SetOri(-5.0f, 0.0f);
 	plataforma.SetColor(255, 0, 0);
 	plataforma.SetPos(-5.0f, 9.0f, 5.0f, 9.0f);
+
 	explosion = new SpriteSequence("imagenes/explosion_43FR.png", 10, 4, 25, true, -2, 2, 5, 5);
 	sprite = new Sprite("imagenes/banana.png", 0.05, 0.05, 10, 10);
 	ternerito = new Sprite("imagenes/ternero.png", 0.05, 0.05, 10, 10);
 	
 	virus = new SpriteSequence("imagenes/virus1.png", 6, 4, 25, true, -2, 2, 5, 5);
 	trump = new SpriteSequence("imagenes/trump.png", 6, 4, 25, true, -2, 2, 5, 5);
+
+	//pato = new SpriteSequence("imagenes/pato.png", 2, 2, 25, true, -2, 2, 5, 5);
+	ninja = new SpriteSequence("imagenes/ninja.png", 5, 11, 200, true, 0, 0,3,3);
+
+	//ninja->setState(2, 2);
+
 
 	/*
 	disparo.origen.y = 0.0f;
@@ -163,8 +181,16 @@ void Mundo::Inicializa()
 
 void Mundo::Tecla(unsigned char key)
 {
-
-
+	
+	if (key == 'a') {
+		ETSIDI::play("mis_sonidos/alicates.wav");
+		}
+	if (key == 'b') {
+		ETSIDI::play("mis_sonidos/imbatman.wav");
+	}
+	if (key == 'v') {
+		ETSIDI::play("mis_sonidos/disparo.wav");
+	}
 }
 
 void Mundo::teclaEspecial(unsigned char key)
