@@ -7,8 +7,10 @@ using ETSIDI::play;
 class Background {
 
 private:
-
+	
 public:
+	int Escenario;
+	void SetEscenario(float x);
 	void Dibuja();
 	void Inicializa();
 	SpriteSequence* explosion;

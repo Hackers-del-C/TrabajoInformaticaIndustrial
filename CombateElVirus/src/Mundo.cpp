@@ -26,11 +26,11 @@ void Mundo::Dibuja()
 	caja.Dibuja();
 	hombre.Dibuja();
 	disparo.Dibuja();
-	//plataforma.Dibuja();
+	plataforma.Dibuja();
 	bonus.Dibuja();
 	esfera2.Dibuja();
 	background.Dibuja();
-
+	background.SetEscenario(hombre.posicion.x);
 	//aqui es donde hay que poner el codigo de dibujo
 	/*
 	glDisable(GL_LIGHTING);
@@ -89,9 +89,9 @@ void Mundo::Inicializa()
 	disparo.SetPos(-5.0f, 0.0f);
 	disparo.SetOri(-5.0f, 0.0f);
 	plataforma.SetColor(255, 0, 0);
-	plataforma.SetPos(-5.0f, 9.0f, 5.0f, 9.0f);
+	plataforma.SetPos(70.0f, 9.0f, 80.0f, 9.0f);
 	background.Inicializa();
-
+	
 	/*
 	disparo.origen.y = 0.0f;
 	disparo.origen.x = -5.0f;

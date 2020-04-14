@@ -1,7 +1,47 @@
 #include "Background.h"
 #include "glut.h"
 #include "ETSIDI.h"
+
+void Background::SetEscenario(float x) {
+	if (x < 60) {
+		Escenario = 1;
+	}
+	else if (60 <= x < 90) {
+		Escenario = 2;
+	}
+	switch (Escenario) {
+
+	case 1:
+		
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo1.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+
+		glTexCoord2d(0, 1);		glVertex3f(x - 30, -30, -0.1);//ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
+		glTexCoord2d(1, 1);		glVertex3f(x + 32, -30, -0.1);
+		glTexCoord2d(1, 0);		glVertex3f(x + 32, 20, -0.1);
+		glTexCoord2d(0, 0);		glVertex3f(x - 30, 20, -0.1);
+		glEnd();
+		break;
+	case 2:
+		
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo2.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+
+		glTexCoord2d(0, 1);		glVertex3f(x - 30, -30, -0.1);//ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
+		glTexCoord2d(1, 1);		glVertex3f(x + 32, -30, -0.1);
+		glTexCoord2d(1, 0);		glVertex3f(x + 32, 20, -0.1);
+		glTexCoord2d(0, 0);		glVertex3f(x - 30, 20, -0.1);
+		glEnd();
+		break;
+	}
+
+}
 void Background::Dibuja() {
+
 
 	glTranslated(0, 0, -10);
 	explosion->draw();
@@ -28,17 +68,24 @@ void Background::Dibuja() {
 
 	glTranslated(5, 0, 0);
 	trump->draw();
+	
+	glTranslated(5, 0, 0);
+	trump->draw();
 
-	glTranslated(-35, +10, 0);
+	glTranslated(5, 0, 0);
+	trump->draw();
+	glTranslatef(-35, +10, 0);
 	banderachina->draw();
 
 	//pato->draw();
 
 	glTranslated(10, -10, 0);
 	ninja->draw();
-
 	glTranslated(-10, 10, 0);
-
+	
+	
+	/*
+	//IMAGEN 1//
 	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo1.png").id);
 	glDisable(GL_LIGHTING);
@@ -51,6 +98,8 @@ void Background::Dibuja() {
 	glTexCoord2d(0, 0);		glVertex3f(-30, 20, -0.1);
 	glEnd();
 
+	//IMAGEN 2//
+	
 	glEnable(GL_LIGHTING);
 	glDisable(GL_TEXTURE_2D);
 
@@ -63,7 +112,7 @@ void Background::Dibuja() {
 
 	glColor3f(1, 1, 1);
 	glTexCoord2d(0, 1);		glVertex3f(30, -20, -0.1); //ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
-	
+
 	glTexCoord2d(1, 1);		glVertex3f(90, -20, -0.1);
 	glTexCoord2d(1, 0);		glVertex3f(90, 20, -0.1);
 	glTexCoord2d(0, 0);		glVertex3f(30, 20, -0.1);
@@ -71,10 +120,11 @@ void Background::Dibuja() {
 
 	glEnable(GL_LIGHTING);
 	glDisable(GL_TEXTURE_2D);
-
-
+	
+	
+	*/
 	//TEXTO //
-	glTranslatef(-18, 8, 0);
+	glTranslatef(-20, 8, 0);
 	setTextColor(1, 1, 1); //FUNCIONA IGUAL QUE GLUT PERO EN VEZ DE 0-255 DE 0-1
 	print("NIVEL 1", "fuentes/Bitwise.ttf", 36);
 	setTextColor(1, 1, 1);//Tiene capacidad para un nº mas pero no se pa que sirve
@@ -133,4 +183,5 @@ void Background::Tecla(unsigned char key) {
 	if (key == 'v') {
 		ETSIDI::play("mis_sonidos/disparo.wav");
 	}
+	
 }
