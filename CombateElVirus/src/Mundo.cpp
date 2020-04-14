@@ -143,8 +143,8 @@ void Mundo::Inicializa()
 
 	//ETSIDI::playMusica("mis_sonidos/i_need_a_hero.mp3",true);
 	//ETSIDI::playMusica("mis_sonidos/dont_stop_me_now.mp3", true);
-	ETSIDI::playMusica("mis_sonidos/all_shook_up.mp3", true);
-
+	//ETSIDI::playMusica("mis_sonidos/all_shook_up.mp3", true);
+	ETSIDI::playMusica("mis_sonidos/Chocolatero.mp3", true);
 	//
 	x_ojo = 10;
 	y_ojo = 6;
