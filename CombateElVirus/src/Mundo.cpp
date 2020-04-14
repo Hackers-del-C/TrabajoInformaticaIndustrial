@@ -169,13 +169,18 @@ void Mundo::Tecla(unsigned char key)
 
 void Mundo::teclaEspecial(unsigned char key)
 {
+
 	switch (key)
 	{
 	case GLUT_KEY_LEFT:
 		hombre.SetVel(-6, 0);
+	
 		break;
 	case GLUT_KEY_RIGHT:
 		hombre.SetVel(+6, 0);
+	
 		break;
+		
 	}
+	
 }

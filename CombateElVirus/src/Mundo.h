@@ -10,8 +10,8 @@
 
 using namespace ETSIDI;
 using ETSIDI::getTexture;
-
-
+using ETSIDI::playMusica;
+using ETSIDI::play;
 class Mundo
 {
 public: 
