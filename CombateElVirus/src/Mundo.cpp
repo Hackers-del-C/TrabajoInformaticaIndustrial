@@ -87,14 +87,14 @@ void Mundo::Dibuja()
 	glDisable(GL_TEXTURE_2D);
 
 	
-	//TEXTO 
+	//TEXTO //
 	glTranslatef(-18, 8, 0);
 	setTextColor(1, 1, 1); //FUNCIONA IGUAL QUE GLUT PERO EN VEZ DE 0-255 DE 0-1
 	print("NIVEL 1", "fuentes/Bitwise.ttf", 36);
 	setTextColor(1, 1, 1);//Tiene capacidad para un nº mas pero no se pa que sirve
 	glTranslated(1, -2, 0); //Como se mueve respecto al texto anterior
 	print("CHINA", "fuentes/Bitwise.ttf", 40);
-	
+	///////////////////////////////////////////////
 
 	//aqui es donde hay que poner el codigo de dibujo
 	/*
@@ -144,9 +144,11 @@ void Mundo::Inicializa()
 	//ETSIDI::playMusica("mis_sonidos/i_need_a_hero.mp3",true);
 	//ETSIDI::playMusica("mis_sonidos/dont_stop_me_now.mp3", true);
 	//ETSIDI::playMusica("mis_sonidos/all_shook_up.mp3", true);
-	//ETSIDI::playMusica("mis_sonidos/España.mp3", true);
-	//
+	//ETSIDI::playMusica("mis_sonidos/España.mp3", true); // ESTE SERIA EL DE ESPAÑA VALE?
+
 	ETSIDI::playMusica("mis_sonidos/China.mp3", true);
+
+	//
 	x_ojo = 10;
 	y_ojo = 6;
 	z_ojo = 0;
