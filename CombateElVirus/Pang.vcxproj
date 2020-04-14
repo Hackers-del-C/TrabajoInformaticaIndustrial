@@ -82,6 +82,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Background.cpp" />
     <ClCompile Include="src\Caja.cpp" />
     <ClCompile Include="src\Disparo.cpp" />
     <ClCompile Include="src\Esfera.cpp" />
@@ -95,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\ETSIDI.h" />
+    <ClInclude Include="src\Background.h" />
     <ClInclude Include="src\Bonus.h" />
     <ClInclude Include="src\Caja.h" />
     <ClInclude Include="src\Disparo.h" />
