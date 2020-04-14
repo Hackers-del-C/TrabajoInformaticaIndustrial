@@ -48,7 +48,7 @@ void Mundo::Dibuja()
 	glTranslated(5, 0, 0);
 	trump->draw();
 	glTranslated(-35, +10, 0);
-
+	banderachina->draw();
 	//pato->draw();
 	glTranslated(10, -10, 0);
 	ninja->draw();
@@ -87,7 +87,14 @@ void Mundo::Dibuja()
 	glDisable(GL_TEXTURE_2D);
 
 	
-
+	//TEXTO 
+	glTranslatef(-18, 8, 0);
+	setTextColor(1, 1, 1); //FUNCIONA IGUAL QUE GLUT PERO EN VEZ DE 0-255 DE 0-1
+	print("NIVEL 1", "fuentes/Bitwise.ttf", 36);
+	setTextColor(1, 1, 1);//Tiene capacidad para un nº mas pero no se pa que sirve
+	glTranslated(1, -2, 0); //Como se mueve respecto al texto anterior
+	print("CHINA", "fuentes/Bitwise.ttf", 40);
+	
 
 	//aqui es donde hay que poner el codigo de dibujo
 	/*
@@ -155,6 +162,14 @@ void Mundo::Inicializa()
 	plataforma.SetColor(255, 0, 0);
 	plataforma.SetPos(-5.0f, 9.0f, 5.0f, 9.0f);
 
+	/*EXPLICACIÓN NUMEROS DE ESTA FUNCION DEL DEMONIO(CREO):
+	1ºy 2º porción de la imagen que muestras???
+	3º-> ni puta
+	4º x
+	5º y
+	6º ancho
+	7º alto
+	*/
 	explosion = new SpriteSequence("imagenes/explosion_43FR.png", 10, 4, 25, true, -2, 2, 5, 5);
 	sprite = new Sprite("imagenes/banana.png", 0.05, 0.05, 10, 10);
 	ternerito = new Sprite("imagenes/ternero.png", 0.05, 0.05, 10, 10);
@@ -165,6 +180,7 @@ void Mundo::Inicializa()
 	//pato = new SpriteSequence("imagenes/pato.png", 2, 2, 25, true, -2, 2, 5, 5);
 	ninja = new SpriteSequence("imagenes/ninja.png", 5, 11, 200, true, 0, 0,3,3);
 
+	banderachina = new SpriteSequence("imagenes/banderachina.png", 1, 1, 200, true, -4, 8, 8,5);
 	//ninja->setState(2, 2);
 
 

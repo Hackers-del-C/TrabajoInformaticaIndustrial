@@ -40,4 +40,5 @@ private:
 	SpriteSequence* trump;
 	//SpriteSequence* pato;
 	SpriteSequence* ninja;
+	SpriteSequence* banderachina;
 };
