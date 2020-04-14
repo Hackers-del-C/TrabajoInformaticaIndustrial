@@ -5,6 +5,7 @@
 #include "Esfera.h"
 #include "Bonus.h"
 #include "Disparo.h" 
+#include "ListaDisparos.h"
 #include "ETSIDI.h"
 #include "Background.h"
 
@@ -30,4 +31,5 @@ private:
 	Bonus bonus;
 	Pared plataforma;
 	Background background;
+	ListaDisparos disparos;
 };

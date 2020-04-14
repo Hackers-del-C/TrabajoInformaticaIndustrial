@@ -174,14 +174,15 @@ void Background::Mueve(float t) {
 }
 void Background::Tecla(unsigned char key) {
 
-	if (key == 'a') {
-		ETSIDI::play("mis_sonidos/alicates.wav");
-	}
 	if (key == 'b') {
 		ETSIDI::play("mis_sonidos/imbatman.wav");
+		
+	}
+	if (key == 'a' || key == 's' || key == 'w' || key == 'd') {
+		ETSIDI::play("mis_sonidos/disparo.wav");
 	}
 	if (key == 'v') {
-		ETSIDI::play("mis_sonidos/disparo.wav");
+		ETSIDI::play("mis_sonidos/alicates.wav");
 	}
 	
 }

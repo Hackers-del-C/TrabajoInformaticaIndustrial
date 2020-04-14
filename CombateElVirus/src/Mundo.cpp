@@ -2,6 +2,7 @@
 #include "Mundo.h"
 #include "Interaccion.h"
 #include "Esfera.h"
+#include "ListaDisparos.h"
 #include <math.h>
 #include "glut.h"
 
@@ -25,12 +26,15 @@ void Mundo::Dibuja()
 	esfera.Dibuja();
 	caja.Dibuja();
 	hombre.Dibuja();
-	disparo.Dibuja();
+	//disparo.Dibuja();
 	plataforma.Dibuja();
 	bonus.Dibuja();
 	esfera2.Dibuja();
 	background.Dibuja();
 	background.SetEscenario(hombre.posicion.x);
+
+	disparos.Dibuja();
+
 	//aqui es donde hay que poner el codigo de dibujo
 	/*
 	glDisable(GL_LIGHTING);
@@ -57,10 +61,10 @@ void Mundo::Mueve()
 	hombre.Mueve(0.025f);
 	esfera.Mueve(0.025f);
 	bonus.Mueve(0.025f);
-	disparo.Mueve(0.025f);
+	//disparo.Mueve(0.025f);
 	esfera2.Mueve(0.025f);
 	background.Mueve(0.025f);
-
+	disparos.Mueve(0.025f);
 
 	Interaccion::rebote(hombre, caja);
 	Interaccion::rebote(esfera, caja);
@@ -86,8 +90,8 @@ void Mundo::Inicializa()
 	esfera2.SetPos(-2, 4);
 	esfera2.SetVel(-5, 15);
 	bonus.SetPos(5.0f, 5.0f);
-	disparo.SetPos(-5.0f, 0.0f);
-	disparo.SetOri(-5.0f, 0.0f);
+	//disparo.SetPos(-5.0f, 0.0f);
+	//disparo.SetOri(-5.0f, 0.0f);
 	plataforma.SetColor(255, 0, 0);
 	plataforma.SetPos(70.0f, 9.0f, 80.0f, 9.0f);
 	background.Inicializa();
@@ -106,10 +110,27 @@ void Mundo::Inicializa()
 void Mundo::Tecla(unsigned char key)
 {
 	background.Tecla(key);
+	switch (key) {
+	case 'w':
+		disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, 2.0f));
+		break;
+
+	case 's':
+		disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, -2.0f));
+		break;
+
+	case 'a':
+		disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 2.0f, 0.0f));
+		break;
+
+	case 'd':
+		disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, -2.0f, 0.0f));
+		break;
+
+	}
 }
 
-void Mundo::teclaEspecial(unsigned char key)
-{
+void Mundo::teclaEspecial(unsigned char key){
 
 	switch (key)
 	{
