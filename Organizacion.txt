@@ -1,17 +1,28 @@
-MUNDOS
+MUNDOS y ESCENARIOS 
 
 China
+-Laboratorio
+-Supermercado
+-Universidad
+-Hospital
+
 Italia
+-Aeropuerto
+-Centro comercial
+-Discoteca
+-Hospital
+
 Españita
+-Crucero
+-Centro médico
+-Discoteca (sala pirandello)
+-Hospital
+
 EEUU
-
-ESCENARIOS
-
-Supermercado
-Sala  Pirandello
-Hospital
-Casa
-Calle
+-Aeropuerto
+-Calle
+-Gobierno
+-Hospital
 
 PERSONAJES
 
