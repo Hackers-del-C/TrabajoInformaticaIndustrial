@@ -2,7 +2,7 @@
 #include "glut.h"
 #include "ETSIDI.h"
 
-void Background::SetEscenario(float x) {
+/*void Background::SetEscenario(float x) {
 	if (x < 60) {
 		Escenario = 1;
 	}
@@ -39,7 +39,7 @@ void Background::SetEscenario(float x) {
 		break;
 	}
 
-}
+}*/
 void Background::Dibuja() {
 
 
@@ -84,7 +84,7 @@ void Background::Dibuja() {
 	glTranslated(-10, 10, 0);
 	
 	
-	/*
+
 	//IMAGEN 1//
 	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo1.png").id);
@@ -122,7 +122,7 @@ void Background::Dibuja() {
 	glDisable(GL_TEXTURE_2D);
 	
 	
-	*/
+	
 	//TEXTO //
 	glTranslatef(-20, 8, 0);
 	setTextColor(1, 1, 1); //FUNCIONA IGUAL QUE GLUT PERO EN VEZ DE 0-255 DE 0-1
