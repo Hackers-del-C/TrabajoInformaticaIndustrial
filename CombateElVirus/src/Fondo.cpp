@@ -156,24 +156,22 @@ void Fondo::Escenario(int nivel) {
 }
 
 
-void Fondo::Musica(int nivel) { //NO VA
-	if (nivel == 1) {
+void Fondo::Musica(int nivel) { //NO VA :c
+	switch (nivel) {
+	case 1:
 		ETSIDI::playMusica("mis_sonidos/China.mp3", true);
-	}
-	if (nivel == 2) {
+		break;
+	case 2:
 		//ETSIDI::playMusica("mis_sonidos/Italia.mp3", true);
-
-	}
-	if (nivel == 3) {
+	case 3:
 		ETSIDI::playMusica("mis_sonidos/España.mp3", true);
-
 	}
+	
 }
 void Fondo::Titulo(int nivel) {
 			// TEXTO //
 	switch (nivel) {
-	case 1:
-		
+	case 1:		
 		setTextColor(1, 1, 1); //FUNCIONA IGUAL QUE GLUT PERO EN VEZ DE 0-255 DE 0-1
 		print("NIVEL 1", "fuentes/Bitwise.ttf", 36);
 		setTextColor(1, 1, 1);//Tiene capacidad para un nº mas pero no se pa que sirve
@@ -181,16 +179,16 @@ void Fondo::Titulo(int nivel) {
 		print("CHINA", "fuentes/Bitwise.ttf", 40);
 		///////////////////////////////////////////////
 		break;
-	case 2:
-		
+
+	case 2:		
 		setTextColor(1, 1, 1); //FUNCIONA IGUAL QUE GLUT PERO EN VEZ DE 0-255 DE 0-1
 		print("NIVEL 2", "fuentes/Bitwise.ttf", 36);
 		setTextColor(1, 1, 1);//Tiene capacidad para un nº mas pero no se pa que sirve
 		glTranslated(1, -2, 0); //Como se mueve respecto al texto anterior
 		print("ITALIA", "fuentes/Bitwise.ttf", 40);
 		break;
-	case 3:
-		
+
+	case 3:		
 		setTextColor(1, 1, 1); //FUNCIONA IGUAL QUE GLUT PERO EN VEZ DE 0-255 DE 0-1
 		print("NIVEL 3", "fuentes/Bitwise.ttf", 36);
 		setTextColor(1, 1, 1);//Tiene capacidad para un nº mas pero no se pa que sirve
