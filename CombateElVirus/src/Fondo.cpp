@@ -1,8 +1,10 @@
 #include "Fondo.h"
 #include "ETSIDI.h"
 #include "glut.h"
-void Fondo::Escenario(float nivel) {
-	if (nivel == 1) {
+void Fondo::Escenario(int nivel) {
+
+	switch (nivel) {
+	case 1:
 		//FONDO 1//: LABORATORIO
 		glEnable(GL_TEXTURE_2D);
 		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo1.png").id);
@@ -71,9 +73,8 @@ void Fondo::Escenario(float nivel) {
 		glTranslated(1, -2, 0); //Como se mueve respecto al texto anterior
 		print("CHINA", "fuentes/Bitwise.ttf", 40);
 		///////////////////////////////////////////////
-	}
-
-	if (nivel == 2) { //ITALIA
+		break;
+	case 2:
 		//FONDO 1	//: AEROPUERTO
 
 		glEnable(GL_TEXTURE_2D);
@@ -107,12 +108,12 @@ void Fondo::Escenario(float nivel) {
 
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
-
-		
-	}
-
-	if (nivel == 3) { //ESPAÑA
-		//FONDO 1//: Puerto
+		//FONDO 2//: CENTRO COMERCIAL
+		//FONDO 3//: PARQUE
+		//FONDO 4//: HOSPITAL
+		break;
+	case 3:
+		//FONDO 1//: PUERTO
 
 		glEnable(GL_TEXTURE_2D);
 		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/PuertoEspaña.png").id);
@@ -146,12 +147,17 @@ void Fondo::Escenario(float nivel) {
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
 
+		//FONDO 2//: PLAYA
+		//FONDO 3//: DISCOTECA
+		//FONDO 4//: HOSPITAL
+		break;
 
 	}
+	
 }
 
 
-void Fondo::Musica(float nivel) { //NO VA
+void Fondo::Musica(int nivel) { //NO VA
 	if (nivel == 1) {
 		ETSIDI::playMusica("mis_sonidos/China.mp3", true);
 	}
@@ -164,35 +170,34 @@ void Fondo::Musica(float nivel) { //NO VA
 
 	}
 }
-void Fondo::Titulo(float nivel) {
+void Fondo::Titulo(int nivel) {
 			// TEXTO //
-	if (nivel == 1) {
-		glTranslatef(-25, 8, 0);
+	switch (nivel) {
+	case 1:
 		setTextColor(1, 1, 1); //FUNCIONA IGUAL QUE GLUT PERO EN VEZ DE 0-255 DE 0-1
 		print("NIVEL 1", "fuentes/Bitwise.ttf", 36);
 		setTextColor(1, 1, 1);//Tiene capacidad para un nº mas pero no se pa que sirve
 		glTranslated(1, -2, 0); //Como se mueve respecto al texto anterior
 		print("CHINA", "fuentes/Bitwise.ttf", 40);
 		///////////////////////////////////////////////
-	}
-if (nivel == 2) {
-		// TEXTO //
+		break;
+	case 2:
 		glTranslatef(-25, 8, 0);
 		setTextColor(1, 1, 1); //FUNCIONA IGUAL QUE GLUT PERO EN VEZ DE 0-255 DE 0-1
 		print("NIVEL 2", "fuentes/Bitwise.ttf", 36);
 		setTextColor(1, 1, 1);//Tiene capacidad para un nº mas pero no se pa que sirve
 		glTranslated(1, -2, 0); //Como se mueve respecto al texto anterior
 		print("ITALIA", "fuentes/Bitwise.ttf", 40);
-		///////////////////////////////////////////////
+		break;
+	case 3:
+		glTranslatef(-25, 8, 0);
+		setTextColor(1, 1, 1); //FUNCIONA IGUAL QUE GLUT PERO EN VEZ DE 0-255 DE 0-1
+		print("NIVEL 3", "fuentes/Bitwise.ttf", 36);
+		setTextColor(1, 1, 1);//Tiene capacidad para un nº mas pero no se pa que sirve
+		glTranslated(1, -2, 0); //Como se mueve respecto al texto anterior
+		print("ESPANIA", "fuentes/Bitwise.ttf", 40);
+		break;
 	}
-if (nivel == 3) {
-	// TEXTO //
-	glTranslatef(-25, 8, 0);
-	setTextColor(1, 1, 1); //FUNCIONA IGUAL QUE GLUT PERO EN VEZ DE 0-255 DE 0-1
-	print("NIVEL 3", "fuentes/Bitwise.ttf", 36);
-	setTextColor(1, 1, 1);//Tiene capacidad para un nº mas pero no se pa que sirve
-	glTranslated(1, -2, 0); //Como se mueve respecto al texto anterior
-	print("ESPANIA", "fuentes/Bitwise.ttf", 40);
-	///////////////////////////////////////////////
-}
+	
+
 }

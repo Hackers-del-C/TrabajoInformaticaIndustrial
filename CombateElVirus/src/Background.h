@@ -9,10 +9,9 @@ class Background {
 
 private:
 	Fondo nivel;
-	int level=3;
-public:
-	int Escenario;
-	
+	int level=2; // va en public, no? weno xd
+
+public:	
 	void Dibuja();
 	void Inicializa();
 	SpriteSequence* explosion;
