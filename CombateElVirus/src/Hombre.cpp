@@ -11,7 +11,7 @@ void Hombre::Dibuja()
 
     glPushMatrix();
     glTranslatef(posicion.x, posicion.y, 0);
-    glColor3f(1.0f, 0.0f, 0.0f);
+    glColor3f(100, 10.0, 0.0);
     glutSolidSphere(altura, 20, 20);
     glPopMatrix();
 

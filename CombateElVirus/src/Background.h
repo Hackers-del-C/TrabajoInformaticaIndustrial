@@ -1,5 +1,6 @@
 #pragma once
 #include "ETSIDI.h"
+#include "Fondo.h"
 using namespace ETSIDI;
 using ETSIDI::getTexture;
 using ETSIDI::playMusica;
@@ -7,7 +8,7 @@ using ETSIDI::play;
 class Background {
 
 private:
-	
+	Fondo nivel1;
 public:
 	int Escenario;
 	void SetEscenario(float x);
