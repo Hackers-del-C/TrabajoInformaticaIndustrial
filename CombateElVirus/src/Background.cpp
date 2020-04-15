@@ -37,25 +37,29 @@ void Background::Dibuja() {
 
 	glTranslated(5, 0, 0);
 	trump->draw();
-	glTranslatef(-35, +10, 0);
-	banderachina->draw();
-
+	switch (level) {
+	case 1:
+		glTranslatef(-35, +10, 0);
+		banderachina->draw();
+		break;
+	case 2:
+		glTranslatef(-35, +10, 0);
+		banderaitaliana->draw();
+		break;
+	case 3:
+		glTranslatef(-35, +10, 0);
+		banderaespañola->draw();
+		break;
+	}
 	//pato->draw();
 
 	glTranslated(10, -10, 0);
 	ninja->draw();
 	glTranslated(-10, 10, 0);
 	
-	nivel1.Escenario(1);
-	
-	//TEXTO //
-	glTranslatef(-20, 8, 0);
-	setTextColor(1, 1, 1); //FUNCIONA IGUAL QUE GLUT PERO EN VEZ DE 0-255 DE 0-1
-	print("NIVEL 1", "fuentes/Bitwise.ttf", 36);
-	setTextColor(1, 1, 1);//Tiene capacidad para un nº mas pero no se pa que sirve
-	glTranslated(1, -2, 0); //Como se mueve respecto al texto anterior
-	print("CHINA", "fuentes/Bitwise.ttf", 40);
-	///////////////////////////////////////////////
+	nivel.Escenario(level);
+
+	nivel.Titulo(level);
 }
 void Background::Inicializa() {
 
@@ -66,8 +70,8 @@ void Background::Inicializa() {
 	//ETSIDI::playMusica("mis_sonidos/all_shook_up.mp3", true);
 	//ETSIDI::playMusica("mis_sonidos/España.mp3", true); // ESTE SERIA EL DE ESPAÑA VALE?
 
+	//nivel.Musica(1);
 	ETSIDI::playMusica("mis_sonidos/China.mp3", true);
-
 	//
 	/*EXPLICACIÓN NUMEROS DE ESTA FUNCION DEL DEMONIO(CREO):
 	1ºy 2º porción de la imagen que muestras???
@@ -88,6 +92,8 @@ void Background::Inicializa() {
 	ninja = new SpriteSequence("imagenes/ninja.png", 5, 11, 200, true, 0, 0, 3, 3);
 
 	banderachina = new SpriteSequence("imagenes/banderachina.png", 1, 1, 200, true, -4, 8, 8, 5);
+	banderaitaliana= new SpriteSequence("imagenes/banderaitaliana.png", 1, 1, 200, true, -4, 8, 8, 5);
+	banderaespañola = new SpriteSequence("imagenes/banderaespañola.png", 1, 1, 200, true, -4, 8, 8, 5);
 	//ninja->setState(2, 2);
 
 }

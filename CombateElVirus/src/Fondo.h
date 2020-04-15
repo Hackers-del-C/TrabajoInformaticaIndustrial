@@ -10,6 +10,6 @@ private:
 
 public:
 	void Escenario(float nivel);
-	
-	void Musica(float nivel);
+	void Titulo(float nivel);
+	void Musica(float nivel);//No funciona
 };

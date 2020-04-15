@@ -8,7 +8,8 @@ using ETSIDI::play;
 class Background {
 
 private:
-	Fondo nivel1;
+	Fondo nivel;
+	int level=3;
 public:
 	int Escenario;
 	
@@ -22,6 +23,8 @@ public:
 	//SpriteSequence* pato;
 	SpriteSequence* ninja;
 	SpriteSequence* banderachina;
+	SpriteSequence* banderaitaliana;
+	SpriteSequence* banderaespañola;
 	void Mueve(float t);
 	void Tecla(unsigned char key);
 };
