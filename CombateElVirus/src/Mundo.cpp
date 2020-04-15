@@ -131,18 +131,24 @@ void Mundo::Tecla(unsigned char key)
 }
 
 void Mundo::teclaEspecial(unsigned char key){
+	if (hombre.posicion.x < 190) {
+		switch (key)
+		{
+		case GLUT_KEY_LEFT:
+			hombre.SetVel(-6, 0);
 
-	switch (key)
-	{
-	case GLUT_KEY_LEFT:
-		hombre.SetVel(-6, 0);
-	
-		break;
-	case GLUT_KEY_RIGHT:
-		hombre.SetVel(+6, 0);
-	
-		break;
-		
+			break;
+		case GLUT_KEY_RIGHT:
+			hombre.SetVel(+6, 0);
+
+			break;
+
+		}
+	if (hombre.posicion.x>=190) { //el plan era como parar el muñeco en 190 pero no va
+		hombre.SetVel(0, 0);
 	}
+	}
+	
+	
 	
 }
