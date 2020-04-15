@@ -11,7 +11,7 @@ private:
 	Fondo nivel1;
 public:
 	int Escenario;
-	void SetEscenario(float x);
+	
 	void Dibuja();
 	void Inicializa();
 	SpriteSequence* explosion;

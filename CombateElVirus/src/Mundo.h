@@ -32,4 +32,5 @@ private:
 	Pared plataforma;
 	Background background;
 	ListaDisparos disparos;
+
 };

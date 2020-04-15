@@ -31,7 +31,7 @@ void Mundo::Dibuja()
 	bonus.Dibuja();
 	esfera2.Dibuja();
 	background.Dibuja();
-//	background.SetEscenario(hombre.posicion.x);
+	
 
 	disparos.Dibuja();
 

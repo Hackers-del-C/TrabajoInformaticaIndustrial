@@ -2,44 +2,7 @@
 #include "glut.h"
 #include "ETSIDI.h"
 
-/*void Background::SetEscenario(float x) {
-	if (x < 60) {
-		Escenario = 1;
-	}
-	else if (60 <= x < 90) {
-		Escenario = 2;
-	}
-	switch (Escenario) {
 
-	case 1:
-		
-		glEnable(GL_TEXTURE_2D);
-		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo1.png").id);
-		glDisable(GL_LIGHTING);
-		glBegin(GL_POLYGON);
-
-		glTexCoord2d(0, 1);		glVertex3f(x - 30, -30, -0.1);//ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
-		glTexCoord2d(1, 1);		glVertex3f(x + 32, -30, -0.1);
-		glTexCoord2d(1, 0);		glVertex3f(x + 32, 20, -0.1);
-		glTexCoord2d(0, 0);		glVertex3f(x - 30, 20, -0.1);
-		glEnd();
-		break;
-	case 2:
-		
-		glEnable(GL_TEXTURE_2D);
-		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo2.png").id);
-		glDisable(GL_LIGHTING);
-		glBegin(GL_POLYGON);
-
-		glTexCoord2d(0, 1);		glVertex3f(x - 30, -30, -0.1);//ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
-		glTexCoord2d(1, 1);		glVertex3f(x + 32, -30, -0.1);
-		glTexCoord2d(1, 0);		glVertex3f(x + 32, 20, -0.1);
-		glTexCoord2d(0, 0);		glVertex3f(x - 30, 20, -0.1);
-		glEnd();
-		break;
-	}
-
-}*/
 void Background::Dibuja() {
 
 
@@ -83,12 +46,7 @@ void Background::Dibuja() {
 	ninja->draw();
 	glTranslated(-10, 10, 0);
 	
-	nivel1.Dibuja(1);
-
-	
-
-	
-	
+	nivel1.Escenario(1);
 	
 	//TEXTO //
 	glTranslatef(-20, 8, 0);
