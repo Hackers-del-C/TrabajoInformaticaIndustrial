@@ -65,14 +65,8 @@ void Background::Inicializa() {
 
 	////// MUSICAAA/////
 
-	//ETSIDI::playMusica("mis_sonidos/i_need_a_hero.mp3",true);
-	//ETSIDI::playMusica("mis_sonidos/dont_stop_me_now.mp3", true);
-	//ETSIDI::playMusica("mis_sonidos/all_shook_up.mp3", true);
-	//ETSIDI::playMusica("mis_sonidos/España.mp3", true); // ESTE SERIA EL DE ESPAÑA VALE?
-
 	nivel.Musica(level); //SOLO VA CON EL NIVEL 1
-	//ETSIDI::playMusica("mis_sonidos/China.mp3", true);
-	//
+	
 	/*EXPLICACIÓN NUMEROS DE ESTA FUNCION DEL DEMONIO(CREO):
 	1ºy 2º porción de la imagen que muestras???
 	3º-> ni puta

@@ -159,12 +159,14 @@ void Fondo::Escenario(int nivel) {
 void Fondo::Musica(int nivel) { //NO VA :c
 	switch (nivel) {
 	case 1:
-		ETSIDI::playMusica("mis_sonidos/China.mp3", true);
+		ETSIDI::play("mis_sonidos/China.wav");
 		break;
 	case 2:
-		//ETSIDI::playMusica("mis_sonidos/Italia.mp3", true);
+		ETSIDI::play("mis_sonidos/Italia.wav");
+		break;
 	case 3:
-		ETSIDI::playMusica("mis_sonidos/España.mp3", true);
+		ETSIDI::play("mis_sonidos/Espania.wav");
+		break;
 	}
 	
 }
