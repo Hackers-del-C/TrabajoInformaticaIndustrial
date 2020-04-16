@@ -33,6 +33,8 @@ void Hombre::Mueve(float t)
     velocidad = velocidad + aceleracion * t;
     trump->loop();
     trumpder->loop();
+    trumpizq->loop();
+    
    
 }
 
