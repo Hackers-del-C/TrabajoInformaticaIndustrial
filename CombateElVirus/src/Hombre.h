@@ -1,6 +1,6 @@
 #pragma once
 #include "Vector2D.h"
-
+#include "ETSIDI.h"
 
 class Hombre
 {
@@ -12,8 +12,11 @@ public:
     void Mueve(float t);
     void SetVel(float vx, float vy);
     float altura;
-    Vector2D posicion;
-    Vector2D velocidad;
-    Vector2D aceleracion;
+    void Inicializa();
+    int dir; //direccion del muñeco
+   ETSIDI::Vector2D posicion, velocidad, aceleracion;
+   ETSIDI::SpriteSequence* trump;
+   ETSIDI::SpriteSequence* trumpder;
+   ETSIDI::SpriteSequence* trumpizq;
 
 };
