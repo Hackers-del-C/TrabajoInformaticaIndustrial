@@ -95,6 +95,7 @@ void Mundo::Inicializa()
 	plataforma.SetColor(255, 0, 0);
 	plataforma.SetPos(70.0f, 9.0f, 80.0f, 9.0f);
 	background.Inicializa();
+	hombre.Inicializa();
 	
 	/*
 	disparo.origen.y = 0.0f;
@@ -136,12 +137,15 @@ void Mundo::teclaEspecial(unsigned char key){
 		{
 		case GLUT_KEY_LEFT:
 			hombre.SetVel(-6, 0);
+			hombre.dir = 2;
 
 			break;
 		case GLUT_KEY_RIGHT:
 			hombre.SetVel(+6, 0);
-
+			hombre.dir = 1;
+			
 			break;
+
 
 		}
 	if (hombre.posicion.x>=190) { //el plan era como parar el muñeco en 190 pero no va
