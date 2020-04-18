@@ -11,6 +11,7 @@ void Bonus::Dibuja()
         rand() / (float)RAND_MAX);//color aleatorio
     glutSolidCube(lado);
     glPopMatrix();
+    glTranslatef(-posicion.x, -posicion.y, 0);
 }
 
 void Bonus::Mueve(float t)

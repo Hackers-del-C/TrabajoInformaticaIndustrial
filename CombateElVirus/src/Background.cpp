@@ -46,6 +46,7 @@ void Background::Dibuja() {
 	nivel.Escenario(level);
 
 	nivel.Titulo(level);
+
 }
 void Background::Inicializa() {
 

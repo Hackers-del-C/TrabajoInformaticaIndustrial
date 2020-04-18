@@ -21,15 +21,16 @@ void Mundo::Dibuja()
 	
 	gluLookAt(x_ojo, y_ojo, z_ojo,
 		x_ojo, y_ojo, 0.0, //NOTESE QUE HEMOS CAMBIADO ESTO
-		0.0, 2.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
+		0.0, 5.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
 
-	esfera.Dibuja();
+	background.Dibuja();
+	//esfera.Dibuja();
 	caja.Dibuja();
 	hombre.Dibuja();
 	//disparo.Dibuja();
 	plataforma.Dibuja();
-	bonus.Dibuja();
-	esfera2.Dibuja();
+	//bonus.Dibuja();
+	//esfera2.Dibuja();
 	background.Dibuja();
 	
 
@@ -61,7 +62,8 @@ void Mundo::Mueve()
 	hombre.Mueve(0.025f);
 	esfera.Mueve(0.025f);
 	bonus.Mueve(0.025f);
-	//disparo.Mueve(0.025f);
+	//disparo.Mueve(0.025f); 
+
 	esfera2.Mueve(0.025f);
 	background.Mueve(0.025f);
 	disparos.Mueve(0.025f);
@@ -73,14 +75,12 @@ void Mundo::Mueve()
 	Interaccion::rebote(esfera2, plataforma);
 	
 	
-	Setojo(hombre.posicion.x, 5, 30);
+	Setojo(hombre.posicion.x, 10, 53);
 }
 
 void Mundo::Inicializa()
 {	
-	x_ojo = 10;
-	y_ojo = 6;
-	z_ojo = 0;
+	
 
 	esfera.SetColor(0, 0, 255);
 	esfera.SetRadio(1.5f);

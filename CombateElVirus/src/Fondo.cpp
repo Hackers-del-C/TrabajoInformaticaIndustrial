@@ -52,11 +52,10 @@ void Fondo::Escenario(int nivel) {
 		glBegin(GL_POLYGON);
 
 		glColor3f(1, 1, 1);
-		glTexCoord2d(0, 1);		glVertex3f(30, -20, -0.1); //ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
-
-		glTexCoord2d(1, 1);		glVertex3f(90, -20, -0.1);
-		glTexCoord2d(1, 0);		glVertex3f(90, 20, -0.1);
-		glTexCoord2d(0, 0);		glVertex3f(30, 20, -0.1);
+		glTexCoord2d(0, 1);		glVertex3f(40, -10, -0.1); //ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
+		glTexCoord2d(1, 1);		glVertex3f(90, -10, -0.1);
+		glTexCoord2d(1, 0);		glVertex3f(90, 30, -0.1);
+		glTexCoord2d(0, 0);		glVertex3f(40, 30, -0.1);
 		glEnd();
 
 		glEnable(GL_LIGHTING);
@@ -69,11 +68,10 @@ void Fondo::Escenario(int nivel) {
 		glBegin(GL_POLYGON);
 
 		glColor3f(1, 1, 1);
-		glTexCoord2d(0, 1);		glVertex3f(90, -18, -0.1); //ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
-
-		glTexCoord2d(1, 1);		glVertex3f(160, -18, -0.1);
-		glTexCoord2d(1, 0);		glVertex3f(160, 22, -0.1);
-		glTexCoord2d(0, 0);		glVertex3f(90, 22, -0.1);
+		glTexCoord2d(0, 1);		glVertex3f(90, -10, -0.1); //ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
+		glTexCoord2d(1, 1);		glVertex3f(160, -10, -0.1);
+		glTexCoord2d(1, 0);		glVertex3f(160, 30, -0.1);
+		glTexCoord2d(0, 0);		glVertex3f(90, 30, -0.1);
 		glEnd();
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
@@ -85,11 +83,10 @@ void Fondo::Escenario(int nivel) {
 		glBegin(GL_POLYGON);
 
 		glColor3f(1, 1, 1);
-		glTexCoord2d(0, 1);		glVertex3f(160, -18, -0.1); //ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
-
-		glTexCoord2d(1, 1);		glVertex3f(220, -18, -0.1);
-		glTexCoord2d(1, 0);		glVertex3f(220, 14, -0.1);
-		glTexCoord2d(0, 0);		glVertex3f(160, 14, -0.1);
+		glTexCoord2d(0, 1);		glVertex3f(160, -10, -0.1); //ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
+		glTexCoord2d(1, 1);		glVertex3f(220, -10, -0.1);
+		glTexCoord2d(1, 0);		glVertex3f(220, 30, -0.1);
+		glTexCoord2d(0, 0);		glVertex3f(160, 30, -0.1);
 		glEnd();
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
@@ -119,11 +116,10 @@ void Fondo::Escenario(int nivel) {
 		glBegin(GL_POLYGON);
 
 		glColor3f(1, 1, 1);
-		glTexCoord2d(0, 1);		glVertex3f(-20, -18, -0.1); //ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
-
-		glTexCoord2d(1, 1);		glVertex3f(50, -18, -0.1);
-		glTexCoord2d(1, 0);		glVertex3f(50, 22, -0.1);
-		glTexCoord2d(0, 0);		glVertex3f(-20, 22, -0.1);
+		glTexCoord2d(0, 1);		glVertex3f(-20, -10, -0.1); //ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
+		glTexCoord2d(1, 1);		glVertex3f(50, -10, -0.1);
+		glTexCoord2d(1, 0);		glVertex3f(50, 30, -0.1);
+		glTexCoord2d(0, 0);		glVertex3f(-20, 30, -0.1);
 		glEnd();
 
 		glEnable(GL_LIGHTING);
@@ -135,11 +131,10 @@ void Fondo::Escenario(int nivel) {
 		glBegin(GL_POLYGON);
 
 		glColor3f(1, 1, 1);
-		glTexCoord2d(0, 1);		glVertex3f(-40, -18, -0.1); //ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
-
-		glTexCoord2d(1, 1);		glVertex3f(20, -18, -0.1);
-		glTexCoord2d(1, 0);		glVertex3f(20, 22, -0.1);
-		glTexCoord2d(0, 0);		glVertex3f(-40, 22, -0.1);
+		glTexCoord2d(0, 1);		glVertex3f(50, -10, -0.1); //ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
+		glTexCoord2d(1, 1);		glVertex3f(120, -10, -0.1);
+		glTexCoord2d(1, 0);		glVertex3f(120, 30, -0.1);
+		glTexCoord2d(0, 0);		glVertex3f(50, 30, -0.1);
 		glEnd();
 
 		glEnable(GL_LIGHTING);
@@ -175,9 +170,9 @@ void Fondo::Escenario(int nivel) {
 		glBegin(GL_POLYGON);
 
 		glColor3f(1, 1, 1);
-		glTexCoord2d(0, 1);		glVertex3f(-20, -8 ,-0.1); //ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
+		glTexCoord2d(0, 1);		glVertex3f(-20, -10 ,-0.1); //ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
 
-		glTexCoord2d(1, 1);		glVertex3f(60, -8, -0.1);
+		glTexCoord2d(1, 1);		glVertex3f(60, -10, -0.1);
 		glTexCoord2d(1, 0);		glVertex3f(60,30, -0.1);
 		glTexCoord2d(0, 0);		glVertex3f(-20, 30, -0.1);
 		glEnd();
@@ -191,11 +186,10 @@ void Fondo::Escenario(int nivel) {
 		glBegin(GL_POLYGON);
 
 		glColor3f(1, 1, 1);
-		glTexCoord2d(0, 1);		glVertex3f(160, -18, -0.1); //ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
-
-		glTexCoord2d(1, 1);		glVertex3f(230, -18, -0.1);
-		glTexCoord2d(1, 0);		glVertex3f(230, 22, -0.1);
-		glTexCoord2d(0, 0);		glVertex3f(160, 22, -0.1);
+		glTexCoord2d(0, 1);		glVertex3f(60, -10, -0.1); //ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
+		glTexCoord2d(1, 1);		glVertex3f(130, -10, -0.1);
+		glTexCoord2d(1, 0);		glVertex3f(130, 30, -0.1);
+		glTexCoord2d(0, 0);		glVertex3f(60, 30, -0.1);
 		glEnd();
 
 		glEnable(GL_LIGHTING);
