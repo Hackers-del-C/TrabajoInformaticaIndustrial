@@ -5,7 +5,7 @@
 
 void Background::Dibuja() {
 
-
+/*
 	glTranslated(0, 0, -10);
 	explosion->draw();
 
@@ -37,25 +37,11 @@ void Background::Dibuja() {
 
 	glTranslated(5, 0, 0);
 	trump->draw();
-	switch (level) {
-	case 1:
-		glTranslatef(-35, +10, 0);
-		banderachina->draw();
-		break;
-	case 2:
-		glTranslatef(-35, +10, 0);
-		banderaitaliana->draw();
-		break;
-	case 3:
-		glTranslatef(-35, +10, 0);
-		banderaespañola->draw();
-		break;
-	}
-	//pato->draw();
+
 
 	glTranslated(10, -10, 0);
 	ninja->draw();
-	glTranslated(-10, 10, 0);
+	*/
 	
 	nivel.Escenario(level);
 
@@ -85,9 +71,7 @@ void Background::Inicializa() {
 	//pato = new SpriteSequence("imagenes/pato.png", 2, 2, 25, true, -2, 2, 5, 5);
 	ninja = new SpriteSequence("imagenes/ninja.png", 5, 11, 200, true, 0, 0, 3, 3);
 
-	banderachina = new SpriteSequence("imagenes/banderachina.png", 1, 1, 200, true, -4, 8, 8, 5);
-	banderaitaliana= new SpriteSequence("imagenes/banderaitaliana.png", 1, 1, 200, true, -4, 8, 8, 5);
-	banderaespañola = new SpriteSequence("imagenes/banderaespañola.png", 1, 1, 200, true, -4, 8, 8, 5);
+
 	//ninja->setState(2, 2);
 
 }

@@ -21,9 +21,7 @@ public:
 	SpriteSequence* trump;
 	//SpriteSequence* pato;
 	SpriteSequence* ninja;
-	SpriteSequence* banderachina;
-	SpriteSequence* banderaitaliana;
-	SpriteSequence* banderaespañola;
+
 	void Mueve(float t);
 	void Tecla(unsigned char key);
 };

@@ -49,7 +49,9 @@ Hombre::Hombre() {
     aceleracion.y = 0;
     altura = 1.5f;
     posicion.y = -3;
+    posicion.x = 0;
     dir = 0;
+
 }
 
 Hombre::~Hombre() {

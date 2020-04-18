@@ -36,10 +36,7 @@ int main(int argc,char* argv[])
 	glutSpecialFunc(OnSpecialKeyboardDown);
 	glutKeyboardFunc(OnKeyboardDown);
 	
-
 	mundo.Inicializa();
-
-	
 
 	//pasarle el control a GLUT,que llamara a los callbacks
 	glutMainLoop();	
