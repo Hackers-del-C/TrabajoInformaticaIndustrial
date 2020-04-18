@@ -48,7 +48,7 @@ void Hombre::Inicializa()
 Hombre::Hombre() {
     aceleracion.y = 0;
     altura = 1.5f;
-    posicion.y = -3;
+    posicion.y = -5;
     posicion.x = 0;
     dir = 0;
 

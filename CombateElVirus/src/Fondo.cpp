@@ -21,10 +21,10 @@ void Fondo::Escenario(int nivel) {
 		glBegin(GL_POLYGON);
 
 		glColor3f(1, 1, 1);
-		glTexCoord2d(0, 1);		glVertex3f(1, 8, -0.1);//ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
-		glTexCoord2d(1, 1);		glVertex3f(6, 8, -0.1);
-		glTexCoord2d(1, 0);		glVertex3f(6, 11, -0.1);
-		glTexCoord2d(0, 0);		glVertex3f(1, 11, -0.1);
+		glTexCoord2d(0, 1);		glVertex3f(25, 22, -0.1);//ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
+		glTexCoord2d(1, 1);		glVertex3f(33, 22, -0.1);
+		glTexCoord2d(1, 0);		glVertex3f(33, 27, -0.1);
+		glTexCoord2d(0, 0);		glVertex3f(25, 27, -0.1);
 		glEnd();
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
@@ -101,10 +101,10 @@ void Fondo::Escenario(int nivel) {
 		glBegin(GL_POLYGON);
 
 		glColor3f(1, 1, 1);
-		glTexCoord2d(0, 1);		glVertex3f(1, 8, -0.1);//ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
-		glTexCoord2d(1, 1);		glVertex3f(6, 8, -0.1);
-		glTexCoord2d(1, 0);		glVertex3f(6, 11, -0.1);
-		glTexCoord2d(0, 0);		glVertex3f(1, 11, -0.1);
+		glTexCoord2d(0, 1);		glVertex3f(25, 22, -0.1);//ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
+		glTexCoord2d(1, 1);		glVertex3f(33, 22, -0.1);
+		glTexCoord2d(1, 0);		glVertex3f(33, 27, -0.1);
+		glTexCoord2d(0, 0);		glVertex3f(25, 27, -0.1);
 		glEnd();
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
@@ -153,10 +153,10 @@ void Fondo::Escenario(int nivel) {
 		glBegin(GL_POLYGON);
 
 		glColor3f(1, 1, 1);
-		glTexCoord2d(0, 1);		glVertex3f(1, 8.5, -0.1);//ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
-		glTexCoord2d(1, 1);		glVertex3f(6, 8.5, -0.1);
-		glTexCoord2d(1, 0);		glVertex3f(6, 11.5, -0.1);
-		glTexCoord2d(0, 0);		glVertex3f(1, 11.5, -0.1);
+		glTexCoord2d(0, 1);		glVertex3f(25, 22, -0.1);//ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
+		glTexCoord2d(1, 1);		glVertex3f(33, 22, -0.1);
+		glTexCoord2d(1, 0);		glVertex3f(33, 27, -0.1);
+		glTexCoord2d(0, 0);		glVertex3f(25, 27, -0.1);
 		glEnd();
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
@@ -224,34 +224,31 @@ void Fondo::Titulo(int nivel) {
 			// TEXTO //
 	switch (nivel) {
 	case 1:		
-		glTranslatef(-8, 9, 0);
+		glTranslatef(12, 25, 0);
 		setTextColor(1, 1, 1); //FUNCIONA IGUAL QUE GLUT PERO EN VEZ DE 0-255 DE 0-1
 		print("NIVEL 1", "fuentes/Bitwise.ttf", 36);
-		setTextColor(1, 1, 1);//Tiene capacidad para un nº mas pero no se pa que sirve
-		glTranslated(2, -2, 0); //Como se mueve respecto al texto anterior
+		glTranslated(3, -3, 0); //Como se mueve respecto al texto anterior
 		print("CHINA", "fuentes/Bitwise.ttf", 40);
-		glTranslatef(8, -9, 0);
+		glTranslatef(-15, -22, 0);
 		///////////////////////////////////////////////
 		break;
 
 	case 2:		
-		glTranslatef(-8, 9, 0);
+		glTranslatef(12, 25, 0);
 		setTextColor(1, 1, 1); //FUNCIONA IGUAL QUE GLUT PERO EN VEZ DE 0-255 DE 0-1
 		print("NIVEL 2", "fuentes/Bitwise.ttf", 36);
-		setTextColor(1, 1, 1);//Tiene capacidad para un nº mas pero no se pa que sirve
-		glTranslated(2, -2, 0); //Como se mueve respecto al texto anterior
+		glTranslated(3, -3, 0);
 		print("ITALIA", "fuentes/Bitwise.ttf", 40);
-		glTranslatef(8, -9, 0);
+		glTranslatef(-15, -22, 0);
 		break;
 
 	case 3:		
-		glTranslatef(-8, 9, 0);
+		glTranslatef(12, 25, 0);
 		setTextColor(1, 1, 1); //FUNCIONA IGUAL QUE GLUT PERO EN VEZ DE 0-255 DE 0-1
 		print("NIVEL 3", "fuentes/Bitwise.ttf", 36);
-		setTextColor(1, 1, 1);//Tiene capacidad para un nº mas pero no se pa que sirve
-		glTranslated(2, -2, 0);//Como se mueve respecto al texto anterior
+		glTranslated(3, -3, 0);//Como se mueve respecto al texto anterior
 		print("ESPANIA", "fuentes/Bitwise.ttf", 40);
-		glTranslatef(8, -9, 0);
+		glTranslatef(-15, -22, 0);
 		break;
 	}
 	
