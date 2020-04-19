@@ -1,17 +1,12 @@
 #include "Pared.h"
 #include "glut.h"
 
+
+//LA CLASE PARED CREA UNA LINEA SIMPLE CON DOS PUNTOS
+
 void Pared::Dibuja()
 {
-    glDisable(GL_LIGHTING);
-    glColor3ub(rojo, verde, azul);
-    glBegin(GL_POLYGON);
-    glVertex3d(limite1.x, limite1.y, 10);
-    glVertex3d(limite2.x, limite2.y, 10);
-    glVertex3d(limite2.x, limite2.y, -10);
-    glVertex3d(limite1.x, limite1.y, -10);
-    glEnd();
-    glEnable(GL_LIGHTING);
+ 
 }
 
 Pared::Pared() {
@@ -51,7 +46,7 @@ float Pared::distancia(Vector2D punto, Vector2D* direccion)
     return distancia;
 }
 
-void Pared::SetPos(float x1, float y1, float x2, float y2)
+void Pared::SetPos(float x1, float y1, float x2, float y2) 
 {
     limite1.x = x1;
     limite1.y = y1;

@@ -9,7 +9,7 @@ class Background {
 
 private:
 	Fondo nivel;
-	int level =0; // va en public, no? weno xd
+	int level =3; // va en public, no? weno xd
 
 public:	
 	void Dibuja();
