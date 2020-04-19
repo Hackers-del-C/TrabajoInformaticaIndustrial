@@ -209,7 +209,7 @@ void Fondo::Escenario(int nivel) {
 void Fondo::Musica(int nivel) { //NO VA :c
 	switch (nivel) {
 	case 1:
-		ETSIDI::play("mis_sonidos/China.wav");
+		//ETSIDI::play("mis_sonidos/China.wav");
 		break;
 	case 2:
 		ETSIDI::play("mis_sonidos/Italia.wav");

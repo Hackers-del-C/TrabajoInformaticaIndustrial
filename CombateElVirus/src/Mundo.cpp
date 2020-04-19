@@ -113,19 +113,19 @@ void Mundo::Tecla(unsigned char key)
 	background.Tecla(key);
 	switch (key) {
 	case 'w':
-		disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, 2.0f));
+		disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, 22.0f));
 		break;
 
 	case 's':
-		disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, -2.0f));
+		disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, -22.0f));
 		break;
 
 	case 'a':
-		disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 2.0f, 0.0f));
+		disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, -22.0f, 0.0f));
 		break;
 
 	case 'd':
-		disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, -2.0f, 0.0f));
+		disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 22.0f, 0.0f));
 		break;
 
 	}
