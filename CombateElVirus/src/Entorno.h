@@ -5,13 +5,13 @@ using namespace ETSIDI;
 using ETSIDI::getTexture;
 using ETSIDI::playMusica;
 using ETSIDI::play;
-class Background {
+class Entorno {
 
 private:
 	Fondo nivel;
-	int level =1; // va en public, no? weno xd
+	int level = 1; // va en public, no? weno xd
 
-public:	
+public:
 	void Dibuja();
 	void Inicializa();
 	SpriteSequence* explosion;

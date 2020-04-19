@@ -1,59 +1,58 @@
-#include "Background.h"
+#include "Entorno.h"
 #include "glut.h"
 #include "ETSIDI.h"
 
+void Entorno::Dibuja() {
 
-void Background::Dibuja() {
+	/*
+		glTranslated(0, 0, -10);
+		explosion->draw();
 
-/*
-	glTranslated(0, 0, -10);
-	explosion->draw();
+		glTranslated(-10, -5, 0);
+		virus->draw();
 
-	glTranslated(-10, -5, 0);
-	virus->draw();
+		glTranslated(15, 10, 0);
+		ternerito->setSize(5, 5);
+		ternerito->draw();
 
-	glTranslated(15, 10, 0);
-	ternerito->setSize(5, 5);
-	ternerito->draw();
+		glTranslated(3, 3, 0);
+		sprite->setSize(5, 5);
+		sprite->draw();
 
-	glTranslated(3, 3, 0);
-	sprite->setSize(5, 5);
-	sprite->draw();
+		glTranslated(20, -10, 0);
+		trump->draw();
 
-	glTranslated(20, -10, 0);
-	trump->draw();
+		glTranslated(5, 0, 0);
+		trump->draw();
 
-	glTranslated(5, 0, 0);
-	trump->draw();
+		glTranslated(5, 0, 0);
+		trump->draw();
 
-	glTranslated(5, 0, 0);
-	trump->draw();
+		glTranslated(5, 0, 0);
+		trump->draw();
 
-	glTranslated(5, 0, 0);
-	trump->draw();
-	
-	glTranslated(5, 0, 0);
-	trump->draw();
+		glTranslated(5, 0, 0);
+		trump->draw();
 
-	glTranslated(5, 0, 0);
-	trump->draw();
+		glTranslated(5, 0, 0);
+		trump->draw();
 
 
-	glTranslated(10, -10, 0);
-	ninja->draw();
-	*/
-	
+		glTranslated(10, -10, 0);
+		ninja->draw();
+		*/
+
 	nivel.Escenario(level);
 
 	nivel.Titulo(level);
 
 }
-void Background::Inicializa() {
+void Entorno::Inicializa() {
 
 	////// MUSICAAA/////
 
 	nivel.Musica(level); //SOLO VA CON EL NIVEL 1
-	
+
 	/*EXPLICACIÓN NUMEROS DE ESTA FUNCION DEL DEMONIO(CREO):
 	1ºy 2º porción de la imagen que muestras???
 	3º-> ni puta
@@ -76,17 +75,17 @@ void Background::Inicializa() {
 	//ninja->setState(2, 2);
 
 }
-void Background::Mueve(float t) {
+void Entorno::Mueve(float t) {
 	explosion->loop();
 	trump->loop();
 	virus->loop();
 	ninja->loop();
 }
-void Background::Tecla(unsigned char key) {
+void Entorno::Tecla(unsigned char key) {
 
 	if (key == 'b') {
 		ETSIDI::play("mis_sonidos/imbatman.wav");
-		
+
 	}
 	if (key == 'a' || key == 's' || key == 'w' || key == 'd') {
 		ETSIDI::play("mis_sonidos/disparo.wav");
@@ -94,6 +93,6 @@ void Background::Tecla(unsigned char key) {
 	if (key == 'v') {
 		ETSIDI::play("mis_sonidos/alicates.wav");
 	}
-	
-	
+
+
 }

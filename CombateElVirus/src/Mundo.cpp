@@ -3,7 +3,6 @@
 #include "Interaccion.h"
 #include "Esfera.h"
 #include "ListaDisparos.h"
-#include "Background.h"
 #include <math.h>
 #include "glut.h"
 
@@ -24,15 +23,15 @@ void Mundo::Dibuja()
 		x_ojo, y_ojo, 0.0, //NOTESE QUE HEMOS CAMBIADO ESTO
 		0.0, 5.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
 
-	background.Dibuja();
+	entorno.Dibuja();
 	//esfera.Dibuja();
 	caja.Dibuja();
-	hombre.Dibuja(background.level);
+	hombre.Dibuja(entorno.level);
 	//disparo.Dibuja();
 	plataforma.Dibuja();
 	//bonus.Dibuja();
 	//esfera2.Dibuja();
-	background.Dibuja();
+	entorno.Dibuja();
 	
 
 	disparos.Dibuja();
@@ -66,7 +65,7 @@ void Mundo::Mueve()
 	//disparo.Mueve(0.025f); 
 
 	esfera2.Mueve(0.025f);
-	background.Mueve(0.025f);
+	entorno.Mueve(0.025f);
 	disparos.Mueve(0.025f);
 
 	Interaccion::reboteinterior(hombre, caja);
@@ -96,7 +95,7 @@ void Mundo::Inicializa()
 	//disparo.SetOri(-5.0f, 0.0f);
 	plataforma.SetColor(255, 0, 0);
 	plataforma.SetPos(70.0f, 9.0f, 80.0f, 9.0f);
-	background.Inicializa();
+	entorno.Inicializa();
 	hombre.Inicializa();
 
 	caja.SetCaja(-20, 220, -5, 30); //Son los bordes del juego que el jugador no puede pasar
@@ -116,7 +115,7 @@ void Mundo::Inicializa()
 
 void Mundo::Tecla(unsigned char key)
 {
-	background.Tecla(key);
+	entorno.Tecla(key);
 	switch (key) {
 	case 'w':
 		disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, 22.0f));

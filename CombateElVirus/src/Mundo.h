@@ -7,23 +7,24 @@
 #include "Disparo.h" 
 #include "ListaDisparos.h"
 #include "ETSIDI.h"
-#include "Background.h"
+#include "Entorno.h"
 
 class Mundo
 {
 public: 
+	//generales
 	void Tecla(unsigned char key);
 	void Inicializa();
-	void RotarOjo();
 	void Mueve();
 	void Dibuja();
 	void teclaEspecial(unsigned char key);
+	//ojo:
+	void RotarOjo();
 	void Setojo(float ox, float oy, float oz);
 
 private:
-	float x_ojo;
-	float y_ojo;
-	float z_ojo;
+
+	
 	Disparo disparo;
 	Esfera esfera, esfera2;
 	Hombre hombre;
@@ -31,7 +32,11 @@ private:
 	
 	Bonus bonus;
 	Pared plataforma;
-	Background background;
+	Entorno entorno;
 	ListaDisparos disparos;
+	//ojo
+	float x_ojo;
+	float y_ojo;
+	float z_ojo;
 
 };
