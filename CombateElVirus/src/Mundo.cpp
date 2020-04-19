@@ -69,7 +69,8 @@ void Mundo::Mueve()
 	background.Mueve(0.025f);
 	disparos.Mueve(0.025f);
 
-	Interaccion::rebote(hombre, caja);
+	Interaccion::reboteinterior(hombre, caja);
+	Interaccion::reboteexterior(hombre, plataforma1);
 	Interaccion::rebote(esfera, caja);
 	Interaccion::rebote(esfera, plataforma);
 	Interaccion::rebote(esfera2, caja);
@@ -97,7 +98,10 @@ void Mundo::Inicializa()
 	plataforma.SetPos(70.0f, 9.0f, 80.0f, 9.0f);
 	background.Inicializa();
 	hombre.Inicializa();
+
 	caja.SetCaja(-20, 220, -5, 30); //Son los bordes del juego que el jugador no puede pasar
+	plataforma1.SetCaja(30, 60, 5, 10);//Los brdes de una plataforma
+
 	
 	/*
 	disparo.origen.y = 0.0f;
@@ -134,25 +138,23 @@ void Mundo::Tecla(unsigned char key)
 }
 
 void Mundo::teclaEspecial(unsigned char key){
-	if (hombre.posicion.x < 190) {
+	if (hombre.posicion.x < 190) { //QUITAR ESTE IF CUANDO SE PUEDA
 		switch (key)
 		{
 		case GLUT_KEY_LEFT:
-			hombre.SetVel(-6, 0);
+			hombre.SetVel(-6, hombre.velocidad.y);   //HAY QUE PONER QUE CUANDO ESTE EN EL AIRE NO VAYA HACIA LA DERECHA
 			hombre.dir = 2;
 
 			break;
 		case GLUT_KEY_RIGHT:
-			hombre.SetVel(+6, 0);
+			hombre.SetVel(+6, hombre.velocidad.y);
 			hombre.dir = 1;
 			
 			break;
 		case GLUT_KEY_UP:
-			//if (hombre.velocidad.y == 0) {
-				//hombre.SetVel(0, 10);  ---- hasta que no haya limites mejor comentado
-			//}
-			
-
+			if(1){ //HAY QUE PONER QUE NO SALTE DOS VECES PERO NO ME VA BIEN
+			hombre.Salta();
+			}
 			break;
 
 		}

@@ -7,7 +7,8 @@
 class Interaccion
 {
 public:
-    static void rebote(Hombre & h, Caja c);
+    static void reboteinterior(Hombre & h, Caja c);
+    static void reboteexterior(Hombre& h, Caja c);
     static bool rebote(Esfera& e, Pared p);
     static bool rebote(Esfera& e, Caja c);
     Interaccion();

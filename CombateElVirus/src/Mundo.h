@@ -27,7 +27,8 @@ private:
 	Disparo disparo;
 	Esfera esfera, esfera2;
 	Hombre hombre;
-	Caja caja;
+	Caja caja, plataforma1;
+	
 	Bonus bonus;
 	Pared plataforma;
 	Background background;

@@ -63,9 +63,7 @@ void Hombre::Dibuja(int nivel)
 void Hombre::Mueve(float t)
 {
  
-        posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
-    
-    
+    posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
     velocidad = velocidad + aceleracion * t;
 
     //ESTO LO PONDRIA CON UN SWICH Y AHORRAMOS MEMORIA
@@ -101,7 +99,7 @@ void Hombre::Inicializa()
 }
 
 Hombre::Hombre() {
-    aceleracion.y = -9.8f;
+    aceleracion.y = -15.0f;
     //aceleracion.y = 0.0f;
     altura = 1.5f;
     posicion.y = -5;
@@ -118,4 +116,9 @@ void Hombre::SetVel(float vx, float vy)
 {
     velocidad.x = vx;
     velocidad.y = vy;
+}
+
+void Hombre::Salta()
+{
+    velocidad.y = 15;
 }

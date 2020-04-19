@@ -25,7 +25,6 @@ void Caja::SetCaja(float x1, float x2, float y1, float y2) {
 
 
 
-
 Caja::~Caja() {
 
 }

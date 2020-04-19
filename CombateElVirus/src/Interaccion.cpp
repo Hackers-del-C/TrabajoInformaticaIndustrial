@@ -1,17 +1,32 @@
 #include "Interaccion.h"
 
 
-void Interaccion::rebote(Hombre& h, Caja c)
+void Interaccion::reboteinterior(Hombre& h, Caja c)
 {
-    float xmax1 = c.suelo.limite2.x;
-    float xmin1 = c.suelo.limite1.x;
-    if (h.posicion.x > xmax1)h.posicion.x = xmax1;
-    if (h.posicion.x < xmin1)h.posicion.x = xmin1;
+    float xmax = c.suelo.limite2.x;
+    float xmin = c.suelo.limite1.x;
+    if (h.posicion.x > xmax)h.posicion.x = xmax;
+    if (h.posicion.x < xmin)h.posicion.x = xmin;
 
-    float xmax2 = c.suelo.limite2.y;
-    float xmin2 = c.suelo.limite1.y;
-    if (h.posicion.y > xmax2)h.posicion.y = xmax2;
-    if (h.posicion.y < xmin2)h.posicion.y = xmin2;
+    float ymax = c.techo.limite1.y;
+    float ymin = c.suelo.limite1.y;
+    if (h.posicion.y > ymax)h.posicion.y = ymax;
+    if (h.posicion.y < ymin)h.posicion.y = ymin;
+}
+
+void Interaccion::reboteexterior(Hombre& h, Caja c)
+{
+    float xmax = c.suelo.limite2.x;
+    float xmin = c.suelo.limite1.x;
+    float ymax = c.techo.limite1.y;
+    float ymin = c.suelo.limite1.y;
+
+
+    if (h.posicion.x > xmin && h.posicion.x < xmax && h.posicion.y>ymin && h.posicion.y<ymax)h.posicion.x = xmin;
+   if (h.posicion.x < xmax && h.posicion.x > xmin && h.posicion.y < ymax && h.posicion.y > ymin)h.posicion.x = xmax;
+    if (h.posicion.x > xmin && h.posicion.x < xmax && h.posicion.y > ymin)h.posicion.y = ymin;
+    if (h.posicion.x > xmin && h.posicion.x < xmax && h.posicion.y < ymax)h.posicion.y = ymax;
+   
 }
 
 bool Interaccion::rebote(Esfera& e, Pared p)

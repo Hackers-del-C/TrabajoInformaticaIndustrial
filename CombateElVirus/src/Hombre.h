@@ -13,6 +13,7 @@ public:
     void SetVel(float vx, float vy);
     float altura;
     void Inicializa();
+    void Salta();
     int dir; //direccion del muñeco
    ETSIDI::Vector2D posicion, velocidad, aceleracion;
    ETSIDI::SpriteSequence* trump;
