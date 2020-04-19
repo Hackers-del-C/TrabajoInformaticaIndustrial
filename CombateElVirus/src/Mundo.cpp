@@ -146,8 +146,10 @@ void Mundo::teclaEspecial(unsigned char key){
 			
 			break;
 		case GLUT_KEY_UP:
-			hombre.SetVel(0,10);
-			hombre.dir = 1;
+			//if (hombre.velocidad.y == 0) {
+				hombre.SetVel(0, 10);
+			//}
+			
 
 			break;
 
