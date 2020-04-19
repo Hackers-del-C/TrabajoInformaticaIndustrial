@@ -6,19 +6,40 @@ using namespace ETSIDI;
 using ETSIDI::getTexture;
 
 
-void Hombre::Dibuja()
+void Hombre::Dibuja(int nivel)
 {
 
    // glPushMatrix();
     glTranslatef(posicion.x, posicion.y, 0);
-    if (dir == 0) {
+    //////// level 1:
+    if (dir == 0 && nivel == 1) {
+        goku->draw();
+    }
+    if (dir == 1 && nivel == 1) {
+        gokuder->draw();
+    }
+    if (dir == 2 && nivel == 1) {
+        gokuizq->draw();
+    }
+    ///////// level 2
+    if (dir == 0 && nivel == 2) {
         trump->draw();
     }
-    if (dir == 1) {
+    if (dir == 1 && nivel == 2) {
         trumpder->draw();
     }
-    if (dir == 2) {
+    if (dir == 2 && nivel == 2) {
         trumpizq->draw();
+    }
+    //////// level3
+    if (dir == 0 && nivel == 3) {
+        muñeco->draw();
+    }
+    if (dir == 1 && nivel == 3) {
+        muñecoder->draw();
+    }
+    if (dir == 2 && nivel == 3) {
+        muñecoizq->draw();
     }
     glTranslatef(-posicion.x, -posicion.y, 0);
    // glColor3f(100, 10.0, 0.0);
@@ -37,19 +58,37 @@ void Hombre::Mueve(float t)
     trump->loop();
     trumpder->loop();
     trumpizq->loop();
-    
-   
+
+    goku->loop();
+    gokuder->loop();
+    gokuizq->loop();
+
+    muñeco->loop();
+    muñecoder->loop();
+    muñecoizq->loop();
 }
 
 void Hombre::Inicializa()
 {
+
+    /////level1
+    goku = new SpriteSequence("imagenes/goku.png", 1, 3, 25, true, -2, 2, 5, 5);
+    gokuder = new SpriteSequence("imagenes/gokuder.png", 1, 3, 25, true, -2, 2, 5, 5);
+    gokuizq = new SpriteSequence("imagenes/gokuizq.png", 1, 3, 25, true, -2, 2, 5, 5);
+    ////level 2
     trump = new SpriteSequence("imagenes/trump.png", 6, 4, 25, true, -2, 2, 5, 5);
     trumpder = new SpriteSequence("imagenes/trumpder.png", 6, 1, 25, true, -2, 2, 5, 5);
     trumpizq = new SpriteSequence("imagenes/trumpizq.png", 6, 1, 25, true, -2, 2, 5, 5);
+    
+    ////level3
+    muñeco = new SpriteSequence("imagenes/muñeco.png", 6, 1, 25, true, -2, 2, 5, 5);
+    muñecoder = new SpriteSequence("imagenes/muñecoder.png", 6, 1, 25, true, -2, 2, 5, 5);
+    muñecoizq = new SpriteSequence("imagenes/muñecoizq.png", 6, 1, 25, true, -2, 2, 5, 5);
 }
 
 Hombre::Hombre() {
-    aceleracion.y = -9.8f;
+    ///aceleracion.y = -9.8f;  --- para cuando ya haya limites mientras =0
+    aceleracion.y = 0.0f;
     altura = 1.5f;
     posicion.y = -5;
     posicion.x = 0;

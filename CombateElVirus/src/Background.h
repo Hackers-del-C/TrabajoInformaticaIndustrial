@@ -24,4 +24,5 @@ public:
 
 	void Mueve(float t);
 	void Tecla(unsigned char key);
+	friend class Mundo;
 };

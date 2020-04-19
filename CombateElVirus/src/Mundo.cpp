@@ -3,6 +3,7 @@
 #include "Interaccion.h"
 #include "Esfera.h"
 #include "ListaDisparos.h"
+#include "Background.h"
 #include <math.h>
 #include "glut.h"
 
@@ -26,7 +27,7 @@ void Mundo::Dibuja()
 	background.Dibuja();
 	//esfera.Dibuja();
 	caja.Dibuja();
-	hombre.Dibuja();
+	hombre.Dibuja(background.level);
 	//disparo.Dibuja();
 	plataforma.Dibuja();
 	//bonus.Dibuja();
@@ -147,7 +148,7 @@ void Mundo::teclaEspecial(unsigned char key){
 			break;
 		case GLUT_KEY_UP:
 			//if (hombre.velocidad.y == 0) {
-				hombre.SetVel(0, 10);
+				//hombre.SetVel(0, 10);  ---- hasta que no haya limites mejor comentado
 			//}
 			
 

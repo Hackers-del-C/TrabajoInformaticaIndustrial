@@ -8,7 +8,7 @@ class Hombre
 public:
     Hombre();
     virtual ~Hombre();
-    void Dibuja();
+    void Dibuja(int nivel);
     void Mueve(float t);
     void SetVel(float vx, float vy);
     float altura;
@@ -19,4 +19,11 @@ public:
    ETSIDI::SpriteSequence* trumpder;
    ETSIDI::SpriteSequence* trumpizq;
 
+   ETSIDI::SpriteSequence* goku;
+   ETSIDI::SpriteSequence* gokuder;
+   ETSIDI::SpriteSequence* gokuizq;
+
+   ETSIDI::SpriteSequence* muñeco;
+   ETSIDI::SpriteSequence* muñecoder;
+   ETSIDI::SpriteSequence* muñecoizq;
 };
