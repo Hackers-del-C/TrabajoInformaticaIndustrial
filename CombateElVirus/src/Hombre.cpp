@@ -29,7 +29,10 @@ void Hombre::Dibuja()
 
 void Hombre::Mueve(float t)
 {
-    posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
+ 
+        posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
+    
+    
     velocidad = velocidad + aceleracion * t;
     trump->loop();
     trumpder->loop();
@@ -46,7 +49,7 @@ void Hombre::Inicializa()
 }
 
 Hombre::Hombre() {
-    aceleracion.y = 0;
+    aceleracion.y = -9.8f;
     altura = 1.5f;
     posicion.y = -5;
     posicion.x = 0;

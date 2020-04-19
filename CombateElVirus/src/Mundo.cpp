@@ -145,7 +145,11 @@ void Mundo::teclaEspecial(unsigned char key){
 			hombre.dir = 1;
 			
 			break;
+		case GLUT_KEY_UP:
+			hombre.SetVel(0,10);
+			hombre.dir = 1;
 
+			break;
 
 		}
 	if (hombre.posicion.x>=190) { //el plan era como parar el muñeco en 190 pero no va
