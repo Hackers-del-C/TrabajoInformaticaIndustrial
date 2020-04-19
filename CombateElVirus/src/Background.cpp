@@ -95,4 +95,5 @@ void Background::Tecla(unsigned char key) {
 		ETSIDI::play("mis_sonidos/alicates.wav");
 	}
 	
+	
 }

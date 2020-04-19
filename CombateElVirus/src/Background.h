@@ -9,7 +9,7 @@ class Background {
 
 private:
 	Fondo nivel;
-	int level = 1; // va en public, no? weno xd
+	int level =0; // va en public, no? weno xd
 
 public:	
 	void Dibuja();
@@ -25,4 +25,5 @@ public:
 	void Mueve(float t);
 	void Tecla(unsigned char key);
 	friend class Mundo;
+	void SetLevel(int nivel) { level = nivel; }
 };

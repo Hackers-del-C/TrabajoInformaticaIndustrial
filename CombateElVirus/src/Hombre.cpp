@@ -8,40 +8,52 @@ using ETSIDI::getTexture;
 
 void Hombre::Dibuja(int nivel)
 {
-
-   // glPushMatrix();
     glTranslatef(posicion.x, posicion.y, 0);
-    //////// level 1:
-    if (dir == 0 && nivel == 1) {
-        goku->draw();
-    }
-    if (dir == 1 && nivel == 1) {
-        gokuder->draw();
-    }
-    if (dir == 2 && nivel == 1) {
-        gokuizq->draw();
-    }
-    ///////// level 2
-    if (dir == 0 && nivel == 2) {
-        trump->draw();
-    }
-    if (dir == 1 && nivel == 2) {
-        trumpder->draw();
-    }
-    if (dir == 2 && nivel == 2) {
-        trumpizq->draw();
-    }
-    //////// level3
-    if (dir == 0 && nivel == 3) {
-        muñeco->draw();
-    }
-    if (dir == 1 && nivel == 3) {
-        muñecoder->draw();
-    }
-    if (dir == 2 && nivel == 3) {
-        muñecoizq->draw();
+
+    switch (nivel) {
+    case 1:
+        if (dir == 0 ) {
+            goku->draw();
+        }
+        if (dir == 1 ) {
+            gokuder->draw();
+        }
+        if (dir == 2 ) {
+            gokuizq->draw();
+        }
+        break;
+    case 2:
+        if (dir == 0 ) {
+            trump->draw();
+        }
+        if (dir == 1 ) {
+            trumpder->draw();
+        }
+        if (dir == 2 ) {
+            trumpizq->draw();
+        }
+        break;
+    case 3:
+        if (dir == 0 ) {
+            muñeco->draw();
+        }
+        if (dir == 1 ) {
+            muñecoder->draw();
+        }
+        if (dir == 2 ) {
+            muñecoizq->draw();
+        }
+           break;
+
     }
     glTranslatef(-posicion.x, -posicion.y, 0);
+   // glPushMatrix();
+   
+    
+    
+   
+   
+ 
    // glColor3f(100, 10.0, 0.0);
    // glutSolidSphere(altura, 20, 20);
    // glPopMatrix();

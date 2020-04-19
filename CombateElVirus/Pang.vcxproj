@@ -90,6 +90,7 @@
     <ClCompile Include="src\Hombre.cpp" />
     <ClCompile Include="src\Interaccion.cpp" />
     <ClCompile Include="src\ListaDisparos.cpp" />
+    <ClCompile Include="src\Menu.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\Pang.cpp" />
     <ClCompile Include="src\Pared.cpp" />
@@ -107,6 +108,7 @@
     <ClInclude Include="src\Hombre.h" />
     <ClInclude Include="src\Interaccion.h" />
     <ClInclude Include="src\ListaDisparos.h" />
+    <ClInclude Include="src\Menu.h" />
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\Pared.h" />
     <ClInclude Include="src\Vector2D.h" />

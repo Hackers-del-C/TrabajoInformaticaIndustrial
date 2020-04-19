@@ -12,6 +12,10 @@ void Fondo::Escenario(int nivel) {
 	
 	*/
 	switch (nivel) {
+	case 0:
+		menu.Dibuja();
+		break;
+
 	case 1:
 
 		//BANDERA//
