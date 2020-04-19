@@ -12,8 +12,6 @@ private:
 
 public:
 	Menu menu;
-	void Escenario(int nivel);
-	void Titulo(int nivel);
-	void Musica(int nivel);//No funciona
+	void Dibuja(int nivel);
 
 };

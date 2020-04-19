@@ -13,87 +13,159 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Archivos de código fuente\MUNDO">
+      <UniqueIdentifier>{1a177c3b-028f-44d7-8457-83e46225d3fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de código fuente\MUNDO\Entorno">
+      <UniqueIdentifier>{f7ac91b2-5512-4e63-bc68-9661db5b175b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de código fuente\MUNDO\Menu">
+      <UniqueIdentifier>{9fe19b05-c133-4dbf-92fa-36f2aa12fd21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de código fuente\MUNDO\Personajes">
+      <UniqueIdentifier>{eec19631-333c-4ca6-8a4c-2e89dcc94926}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de código fuente\MUNDO\Limites">
+      <UniqueIdentifier>{1379778f-6920-4586-8a4b-36e42f43d87b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de código fuente\MUNDO\Interacciones">
+      <UniqueIdentifier>{c974ffd7-515c-405a-ad9e-c429a5fdac71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de código fuente\MUNDO\Entorno\Musica">
+      <UniqueIdentifier>{ad6da23c-1a43-459d-b092-9330d2571f25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de código fuente\MUNDO\Entorno\Fondo">
+      <UniqueIdentifier>{618f2647-dc28-4586-a6aa-ee2fe8c420c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de código fuente\MUNDO\Disparos/Bonus">
+      <UniqueIdentifier>{8c5386cf-9f76-4260-be90-5f6ca525a48f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\MUNDO">
+      <UniqueIdentifier>{f24ef72a-bdd0-417b-8de3-e27bdafc3095}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\MUNDO\Entorno">
+      <UniqueIdentifier>{b9fb7169-0af8-4d84-95f4-5697f050769a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\MUNDO\Limites">
+      <UniqueIdentifier>{d133b879-8b37-4306-ba96-409d6e62b5bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\MUNDO\Interacciones">
+      <UniqueIdentifier>{b79c9847-d887-485e-89e4-ebf972f3c552}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\MUNDO\Disparos/Bonus">
+      <UniqueIdentifier>{65872bb9-7105-4273-af45-6468a099c841}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\MUNDO\Personajes">
+      <UniqueIdentifier>{dcb2a713-b7f5-4fdc-9714-9c7cd2baa3fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\MUNDO\Menu">
+      <UniqueIdentifier>{850fce29-aa31-4934-b505-4e2544a9edd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\MUNDO\Entorno\Musica">
+      <UniqueIdentifier>{0bdebd7b-5523-4aea-8751-b9175302df27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\MUNDO\Entorno\Fondo">
+      <UniqueIdentifier>{4b50b415-4ab9-469e-bf10-f94c9d732067}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de código fuente\MUNDO\Entorno\Titulo">
+      <UniqueIdentifier>{d5fdd3ff-d1b9-4780-844b-bc4b1e2b257a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\MUNDO\Entorno\Titulo">
+      <UniqueIdentifier>{d9dd28b4-ddaa-4851-af71-bd50aa9fb18b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Mundo.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
     <ClCompile Include="src\Pang.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="src\Pared.cpp">
-      <Filter>Archivos de código fuente</Filter>
+    <ClCompile Include="src\Interaccion.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Interacciones</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Fondo.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Entorno\Fondo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entorno.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Entorno</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Menu.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mundo.cpp">
+      <Filter>Archivos de código fuente\MUNDO</Filter>
     </ClCompile>
     <ClCompile Include="src\Caja.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Hombre.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Disparo.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Bonus.cpp">
-      <Filter>Archivos de código fuente</Filter>
+      <Filter>Archivos de código fuente\MUNDO\Limites</Filter>
     </ClCompile>
     <ClCompile Include="src\Vector2D.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="src\Interaccion.cpp">
-      <Filter>Archivos de código fuente</Filter>
+    <ClCompile Include="src\Pared.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Limites</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hombre.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Personajes</Filter>
     </ClCompile>
     <ClCompile Include="src\ListaDisparos.cpp">
-      <Filter>Archivos de código fuente</Filter>
+      <Filter>Archivos de código fuente\MUNDO\Disparos/Bonus</Filter>
     </ClCompile>
-    <ClCompile Include="src\Fondo.cpp">
-      <Filter>Archivos de código fuente</Filter>
+    <ClCompile Include="src\Disparo.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Disparos/Bonus</Filter>
     </ClCompile>
-    <ClCompile Include="src\Menu.cpp">
-      <Filter>Archivos de código fuente</Filter>
+    <ClCompile Include="src\Bonus.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Disparos/Bonus</Filter>
     </ClCompile>
-    <ClCompile Include="src\Entorno.cpp">
-      <Filter>Archivos de código fuente</Filter>
+    <ClCompile Include="src\Titulo.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Entorno\Titulo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Musica.h">
+      <Filter>Archivos de encabezado\MUNDO\Entorno\Musica</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Musica.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Entorno\Musica</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Mundo.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Caja.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Disparo.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Hombre.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Pared.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Bonus.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="src\Vector2D.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Interaccion.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="lib\ETSIDI.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="src\ListaDisparos.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="src\Fondo.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Menu.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\MUNDO\Entorno\Fondo</Filter>
     </ClInclude>
     <ClInclude Include="src\Entorno.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\MUNDO\Entorno</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Interaccion.h">
+      <Filter>Archivos de encabezado\MUNDO\Interacciones</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Bonus.h">
+      <Filter>Archivos de encabezado\MUNDO\Disparos/Bonus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ListaDisparos.h">
+      <Filter>Archivos de encabezado\MUNDO\Disparos/Bonus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Disparo.h">
+      <Filter>Archivos de encabezado\MUNDO\Disparos/Bonus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Menu.h">
+      <Filter>Archivos de encabezado\MUNDO\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mundo.h">
+      <Filter>Archivos de encabezado\MUNDO</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pared.h">
+      <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Caja.h">
+      <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hombre.h">
+      <Filter>Archivos de encabezado\MUNDO\Personajes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Titulo.h">
+      <Filter>Archivos de encabezado\MUNDO\Entorno\Titulo</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

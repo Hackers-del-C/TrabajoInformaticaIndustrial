@@ -91,9 +91,12 @@
     <ClCompile Include="src\ListaDisparos.cpp" />
     <ClCompile Include="src\Menu.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
+    <ClCompile Include="src\Musica.cpp" />
+    <ClCompile Include="src\Musica.h" />
     <ClCompile Include="src\Pang.cpp" />
     <ClCompile Include="src\Pared.cpp" />
     <ClCompile Include="src\Bonus.cpp" />
+    <ClCompile Include="src\Titulo.cpp" />
     <ClCompile Include="src\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -109,6 +112,7 @@
     <ClInclude Include="src\Menu.h" />
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\Pared.h" />
+    <ClInclude Include="src\Titulo.h" />
     <ClInclude Include="src\Vector2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
