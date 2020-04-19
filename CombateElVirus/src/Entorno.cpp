@@ -2,9 +2,9 @@
 
 #include "glut.h"
 #include "ETSIDI.h"
-void Entorno::Inicializa() {
+void Entorno::Inicializa(int nivel) {
 
-	musica.Suena(level);
+	musica.Suena(nivel);
 
 	/*EXPLICACIÓN NUMEROS DE ESTA FUNCION DEL DEMONIO(CREO):
 	1ºy 2º porción de la imagen que muestras???
@@ -29,11 +29,11 @@ void Entorno::Inicializa() {
 	*/
 }
 
-void Entorno::Dibuja() {
+void Entorno::Dibuja(int nivel) {
 
-	titulo.Nombre(level);
-	titulo.Bandera(level);
-	fondo.Dibuja(level);
+	titulo.Nombre(nivel);
+	titulo.Bandera(nivel);
+	fondo.Dibuja(nivel);
 	/*
 		glTranslated(0, 0, -10);
 		explosion->draw();

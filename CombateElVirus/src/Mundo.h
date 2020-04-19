@@ -11,6 +11,8 @@
 class Mundo
 {
 public: 
+	int level = 1; 
+
 	//generales
 	void Tecla(unsigned char key);
 	void Inicializa();
@@ -20,6 +22,7 @@ public:
 	//ojo:
 	void RotarOjo();
 	void Setojo(float ox, float oy, float oz);
+	void SetLevel(int nivel) { level = nivel; }
 
 private:
 

@@ -6,13 +6,16 @@
 #include "glut.h"
 
 void Mundo::Inicializa()
-{	
+{
+	entorno.Inicializa(level);
+
+
 	bonus.SetPos(5.0f, 5.0f);
 	//disparo.SetPos(-5.0f, 0.0f);
 	//disparo.SetOri(-5.0f, 0.0f);
 	plataforma.SetColor(255, 0, 0);
 	plataforma.SetPos(70.0f, 9.0f, 80.0f, 9.0f);
-	entorno.Inicializa();
+	
 	hombre.Inicializa();
 
 	caja.SetCaja(-20, 220, -5, 30); //Son los bordes del juego que el jugador no puede pasar
@@ -36,10 +39,10 @@ void Mundo::Dibuja()
 		x_ojo, y_ojo, 0.0, //NOTESE QUE HEMOS CAMBIADO ESTO
 		0.0, 5.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
 
-	entorno.Dibuja();
+	entorno.Dibuja(level);
 
 	caja.Dibuja();
-	hombre.Dibuja(entorno.level);
+	hombre.Dibuja(level);
 	//disparo.Dibuja();
 	plataforma.Dibuja();
 	//bonus.Dibuja();

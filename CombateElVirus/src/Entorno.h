@@ -11,9 +11,10 @@ using ETSIDI::playMusica;
 using ETSIDI::play;
 class Entorno {
 public:
-	int level = 3; // va en public, no? weno xd
-	void Dibuja();
-	void Inicializa();
+	
+	
+	void Inicializa(int nivel);
+	void Dibuja(int nivel);
 	SpriteSequence* explosion;
 	Sprite* sprite;
 	Sprite* ternerito;
@@ -25,7 +26,7 @@ public:
 	void Mueve(float t);
 	void Tecla(unsigned char key);
 	friend class Mundo;
-	void SetLevel(int nivel) { level = nivel; }
+	
 private:
 	Fondo fondo;
 	Titulo titulo;
