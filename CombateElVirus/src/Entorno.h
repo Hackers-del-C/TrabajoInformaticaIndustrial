@@ -10,14 +10,8 @@ using ETSIDI::getTexture;
 using ETSIDI::playMusica;
 using ETSIDI::play;
 class Entorno {
-
-private:
-	Fondo fondo;
-	Titulo titulo;
-	Musica musica;
-	int level = 1; // va en public, no? weno xd
-
 public:
+	int level = 3; // va en public, no? weno xd
 	void Dibuja();
 	void Inicializa();
 	SpriteSequence* explosion;
@@ -32,4 +26,10 @@ public:
 	void Tecla(unsigned char key);
 	friend class Mundo;
 	void SetLevel(int nivel) { level = nivel; }
+private:
+	Fondo fondo;
+	Titulo titulo;
+	Musica musica;
+
+	
 };

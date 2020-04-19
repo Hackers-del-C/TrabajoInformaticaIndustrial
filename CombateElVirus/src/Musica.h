@@ -5,7 +5,7 @@ using ETSIDI::play;
 
 class Musica {
 public:
-//	 Musica();
+	
 	void Suena(int nivel);
 private:
 

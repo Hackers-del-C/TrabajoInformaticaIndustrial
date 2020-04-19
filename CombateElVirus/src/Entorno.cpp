@@ -13,7 +13,7 @@ void Entorno::Inicializa() {
 	5º y
 	6º ancho
 	7º alto
-	*/
+	
 	explosion = new SpriteSequence("imagenes/explosion_43FR.png", 10, 4, 25, true, -2, 2, 5, 5);
 	sprite = new Sprite("imagenes/banana.png", 0.05, 0.05, 10, 10);
 	ternerito = new Sprite("imagenes/ternero.png", 0.05, 0.05, 10, 10);
@@ -26,7 +26,7 @@ void Entorno::Inicializa() {
 
 
 	//ninja->setState(2, 2);
-
+	*/
 }
 
 void Entorno::Dibuja() {
@@ -70,9 +70,7 @@ void Entorno::Dibuja() {
 
 		glTranslated(10, -10, 0);
 		ninja->draw();
-		*/
-
-	
+		*/	
 
 }
 
