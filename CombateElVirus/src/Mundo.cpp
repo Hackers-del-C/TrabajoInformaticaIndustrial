@@ -97,6 +97,7 @@ void Mundo::Inicializa()
 	plataforma.SetPos(70.0f, 9.0f, 80.0f, 9.0f);
 	background.Inicializa();
 	hombre.Inicializa();
+	caja.SetCaja(-20, 220, -5, 30); //Son los bordes del juego que el jugador no puede pasar
 	
 	/*
 	disparo.origen.y = 0.0f;

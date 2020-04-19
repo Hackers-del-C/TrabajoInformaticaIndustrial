@@ -3,10 +3,15 @@
 
 void Interaccion::rebote(Hombre& h, Caja c)
 {
-    float xmax = c.suelo.limite2.x;
-    float xmin = c.suelo.limite1.x;
-    if (h.posicion.x > xmax)h.posicion.x = xmax;
-    if (h.posicion.x < xmin)h.posicion.x = xmin;
+    float xmax1 = c.suelo.limite2.x;
+    float xmin1 = c.suelo.limite1.x;
+    if (h.posicion.x > xmax1)h.posicion.x = xmax1;
+    if (h.posicion.x < xmin1)h.posicion.x = xmin1;
+
+    float xmax2 = c.suelo.limite2.y;
+    float xmin2 = c.suelo.limite1.y;
+    if (h.posicion.y > xmax2)h.posicion.y = xmax2;
+    if (h.posicion.y < xmin2)h.posicion.y = xmin2;
 }
 
 bool Interaccion::rebote(Esfera& e, Pared p)

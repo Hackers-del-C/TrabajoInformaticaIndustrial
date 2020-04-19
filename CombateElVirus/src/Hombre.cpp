@@ -101,8 +101,8 @@ void Hombre::Inicializa()
 }
 
 Hombre::Hombre() {
-    ///aceleracion.y = -9.8f;  --- para cuando ya haya limites mientras =0
-    aceleracion.y = 0.0f;
+    aceleracion.y = -9.8f;
+    //aceleracion.y = 0.0f;
     altura = 1.5f;
     posicion.y = -5;
     posicion.x = 0;
