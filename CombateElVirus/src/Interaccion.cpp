@@ -1,6 +1,13 @@
 #include "Interaccion.h"
 
 
+Interaccion::Interaccion() {
+
+}
+Interaccion::~Interaccion() {
+
+
+}
 void Interaccion::reboteinterior(Hombre& h, Caja c)
 {
     float xmax = c.suelo.limite2.x;
@@ -28,7 +35,7 @@ void Interaccion::reboteexterior(Hombre& h, Caja c)
     if (h.posicion.x > xmin && h.posicion.x < xmax && h.posicion.y < ymax)h.posicion.y = ymax;
    
 }
-
+/*
 bool Interaccion::rebote(Esfera& e, Pared p)
 {
     Vector2D dir;
@@ -47,13 +54,6 @@ bool Interaccion::rebote(Esfera& e, Caja c) //CUTREEEEEEEEEEEEEEEEEEEEEEEEE
 {
     return false;
 }
+*/
 
 
-
-Interaccion::Interaccion() {
-
-}
-Interaccion::~Interaccion() {
-
-
-}

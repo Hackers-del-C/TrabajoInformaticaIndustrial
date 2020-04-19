@@ -85,7 +85,6 @@
     <ClCompile Include="src\Caja.cpp" />
     <ClCompile Include="src\Disparo.cpp" />
     <ClCompile Include="src\Entorno.cpp" />
-    <ClCompile Include="src\Esfera.cpp" />
     <ClCompile Include="src\Fondo.cpp" />
     <ClCompile Include="src\Hombre.cpp" />
     <ClCompile Include="src\Interaccion.cpp" />
@@ -103,7 +102,6 @@
     <ClInclude Include="src\Caja.h" />
     <ClInclude Include="src\Disparo.h" />
     <ClInclude Include="src\Entorno.h" />
-    <ClInclude Include="src\Esfera.h" />
     <ClInclude Include="src\Fondo.h" />
     <ClInclude Include="src\Hombre.h" />
     <ClInclude Include="src\Interaccion.h" />

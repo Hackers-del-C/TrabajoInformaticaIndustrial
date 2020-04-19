@@ -1,95 +1,12 @@
 #pragma once
 #include "Mundo.h"
 #include "Interaccion.h"
-#include "Esfera.h"
 #include "ListaDisparos.h"
 #include <math.h>
 #include "glut.h"
 
-
-/*
-void Mundo::RotarOjo()
-{
-	float dist=sqrt(x_ojo*x_ojo+z_ojo*z_ojo);
-	float ang=atan2(z_ojo,x_ojo);
-	ang+=0.05f;
-	x_ojo=dist*cos(ang);
-	z_ojo=dist*sin(ang);
-}*/
-void Mundo::Dibuja()
-{
-	
-	gluLookAt(x_ojo, y_ojo, z_ojo,
-		x_ojo, y_ojo, 0.0, //NOTESE QUE HEMOS CAMBIADO ESTO
-		0.0, 5.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
-
-	entorno.Dibuja();
-	//esfera.Dibuja();
-	caja.Dibuja();
-	hombre.Dibuja(entorno.level);
-	//disparo.Dibuja();
-	plataforma.Dibuja();
-	//bonus.Dibuja();
-	//esfera2.Dibuja();
-	entorno.Dibuja();
-	
-
-	disparos.Dibuja();
-
-	//aqui es donde hay que poner el codigo de dibujo
-	/*
-	glDisable(GL_LIGHTING);
-	glBegin(GL_POLYGON);
-		glColor3ub(255,0,0);
-		glVertex3f(-5.0f,0,-5.0f);
-		glVertex3f(-5.0f,0,5.0f);
-		glColor3ub(255,255,0);
-		glVertex3f(5.0f,0,5.0f);	
-		glVertex3f(5.0f,0,-5.0f);
-	glEnd();
-	glEnable(GL_LIGHTING);
-	*/
-}
-void Mundo::Setojo(float ox, float oy, float oz) {
-
-	x_ojo = ox;
-	y_ojo = oy;
-	z_ojo = oz;
-}
-
-void Mundo::Mueve()
-{
-	hombre.Mueve(0.025f);
-	esfera.Mueve(0.025f);
-	bonus.Mueve(0.025f);
-	//disparo.Mueve(0.025f); 
-
-	esfera2.Mueve(0.025f);
-	entorno.Mueve(0.025f);
-	disparos.Mueve(0.025f);
-
-	Interaccion::reboteinterior(hombre, caja);
-	Interaccion::reboteexterior(hombre, plataforma1);
-	Interaccion::rebote(esfera, caja);
-	Interaccion::rebote(esfera, plataforma);
-	Interaccion::rebote(esfera2, caja);
-	Interaccion::rebote(esfera2, plataforma);
-	
-	
-	Setojo(hombre.posicion.x, 10, 53);
-}
-
 void Mundo::Inicializa()
 {	
-	
-
-	esfera.SetColor(0, 0, 255);
-	esfera.SetRadio(1.5f);
-	esfera.SetPos(2, 4);
-	esfera.SetVel(5, 15);
-	esfera2.SetRadio(2);
-	esfera2.SetPos(-2, 4);
-	esfera2.SetVel(-5, 15);
 	bonus.SetPos(5.0f, 5.0f);
 	//disparo.SetPos(-5.0f, 0.0f);
 	//disparo.SetOri(-5.0f, 0.0f);
@@ -101,7 +18,7 @@ void Mundo::Inicializa()
 	caja.SetCaja(-20, 220, -5, 30); //Son los bordes del juego que el jugador no puede pasar
 	plataforma1.SetCaja(30, 60, 5, 10);//Los brdes de una plataforma
 
-	
+
 	/*
 	disparo.origen.y = 0.0f;
 	disparo.origen.x = -5.0f;
@@ -112,6 +29,62 @@ void Mundo::Inicializa()
 	*/
 
 }
+void Mundo::Dibuja()
+{
+
+	gluLookAt(x_ojo, y_ojo, z_ojo,
+		x_ojo, y_ojo, 0.0, //NOTESE QUE HEMOS CAMBIADO ESTO
+		0.0, 5.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
+
+	entorno.Dibuja();
+
+	caja.Dibuja();
+	hombre.Dibuja(entorno.level);
+	//disparo.Dibuja();
+	plataforma.Dibuja();
+	//bonus.Dibuja();
+	disparos.Dibuja();
+
+	//aqui es donde hay que poner el codigo de dibujo
+	/*
+	glDisable(GL_LIGHTING);
+	glBegin(GL_POLYGON);
+		glColor3ub(255,0,0);
+		glVertex3f(-5.0f,0,-5.0f);
+		glVertex3f(-5.0f,0,5.0f);
+		glColor3ub(255,255,0);
+		glVertex3f(5.0f,0,5.0f);
+		glVertex3f(5.0f,0,-5.0f);
+	glEnd();
+	glEnable(GL_LIGHTING);
+	*/
+}
+
+
+void Mundo::Mueve()
+{
+
+	entorno.Mueve(0.025f);
+
+
+	hombre.Mueve(0.025f);
+	bonus.Mueve(0.025f);
+	//disparo.Mueve(0.025f); 	
+	disparos.Mueve(0.025f);
+	 //INTERACCIONES
+	
+	Interaccion::reboteinterior(hombre, caja);
+	Interaccion::reboteexterior(hombre, plataforma1);
+	//Interaccion::rebote(esfera, caja);
+	//Interaccion::rebote(esfera, plataforma);
+	//Interaccion::rebote(esfera2, caja);
+	//Interaccion::rebote(esfera2, plataforma);
+	
+	
+	Setojo(hombre.posicion.x, 10, 53);
+}
+
+
 
 void Mundo::Tecla(unsigned char key)
 {
@@ -165,3 +138,21 @@ void Mundo::teclaEspecial(unsigned char key){
 	
 	
 }
+/*
+//OJO
+void Mundo::RotarOjo()
+{
+	float dist=sqrt(x_ojo*x_ojo+z_ojo*z_ojo);
+	float ang=atan2(z_ojo,x_ojo);
+	ang+=0.05f;
+	x_ojo=dist*cos(ang);
+	z_ojo=dist*sin(ang);
+}*/
+
+void Mundo::Setojo(float ox, float oy, float oz) {
+
+	x_ojo = ox;
+	y_ojo = oy;
+	z_ojo = oz;
+}
+

@@ -1,8 +1,7 @@
 #pragma once
-#include "Esfera.h"
+
 #include "Caja.h"
 #include "Hombre.h"
-#include "Esfera.h"
 #include "Bonus.h"
 #include "Disparo.h" 
 #include "ListaDisparos.h"
@@ -26,7 +25,6 @@ private:
 
 	
 	Disparo disparo;
-	Esfera esfera, esfera2;
 	Hombre hombre;
 	Caja caja, plataforma1;
 	
