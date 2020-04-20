@@ -75,9 +75,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Pang.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
     <ClCompile Include="src\Interaccion.cpp">
       <Filter>Archivos de código fuente\MUNDO\Interacciones</Filter>
     </ClCompile>
@@ -122,6 +119,9 @@
     </ClCompile>
     <ClCompile Include="src\Limites.cpp">
       <Filter>Archivos de código fuente\MUNDO\Limites</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CombateElVirus.cpp">
+      <Filter>Archivos de código fuente</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
