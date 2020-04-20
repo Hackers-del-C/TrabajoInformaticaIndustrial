@@ -73,11 +73,11 @@
     <Filter Include="Archivos de encabezado\MUNDO\Entorno\Titulo">
       <UniqueIdentifier>{d9dd28b4-ddaa-4851-af71-bd50aa9fb18b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\MUNDO\Limites\Pared">
+      <UniqueIdentifier>{8b01655b-4033-4367-932d-cb03ccaa0623}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Pang.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
     <ClCompile Include="src\Interaccion.cpp">
       <Filter>Archivos de código fuente\MUNDO\Interacciones</Filter>
     </ClCompile>
@@ -123,6 +123,9 @@
     <ClCompile Include="src\Limites.cpp">
       <Filter>Archivos de código fuente\MUNDO\Limites</Filter>
     </ClCompile>
+    <ClCompile Include="src\CombateElVirus.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Vector2D.h">
@@ -161,11 +164,11 @@
     <ClInclude Include="src\Titulo.h">
       <Filter>Archivos de encabezado\MUNDO\Entorno\Titulo</Filter>
     </ClInclude>
-    <ClInclude Include="src\Pared.h">
-      <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
-    </ClInclude>
     <ClInclude Include="src\Limites.h">
       <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pared.h">
+      <Filter>Archivos de encabezado\MUNDO\Limites\Pared</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
