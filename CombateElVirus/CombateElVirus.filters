@@ -73,6 +73,9 @@
     <Filter Include="Archivos de encabezado\MUNDO\Entorno\Titulo">
       <UniqueIdentifier>{d9dd28b4-ddaa-4851-af71-bd50aa9fb18b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\MUNDO\Limites\Pared">
+      <UniqueIdentifier>{8b01655b-4033-4367-932d-cb03ccaa0623}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Interaccion.cpp">
@@ -161,11 +164,11 @@
     <ClInclude Include="src\Titulo.h">
       <Filter>Archivos de encabezado\MUNDO\Entorno\Titulo</Filter>
     </ClInclude>
-    <ClInclude Include="src\Pared.h">
-      <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
-    </ClInclude>
     <ClInclude Include="src\Limites.h">
       <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pared.h">
+      <Filter>Archivos de encabezado\MUNDO\Limites\Pared</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
