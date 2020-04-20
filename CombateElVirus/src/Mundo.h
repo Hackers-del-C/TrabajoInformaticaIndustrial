@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Caja.h"
+#include "Limites.h"
 #include "Hombre.h"
 #include "Bonus.h"
 #include "Disparo.h" 
@@ -29,7 +29,7 @@ private:
 	
 	Disparo disparo;
 	Hombre hombre;
-	Caja caja, plataforma1;
+	Limites limites, plataforma1;
 	
 	Bonus bonus;
 	Pared plataforma;

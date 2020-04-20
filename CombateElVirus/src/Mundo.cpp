@@ -18,8 +18,8 @@ void Mundo::Inicializa()
 	
 	hombre.Inicializa();
 
-	caja.SetCaja(-20, 220, -5, 30); //Son los bordes del juego que el jugador no puede pasar
-	plataforma1.SetCaja(30, 60, 5, 10);//Los brdes de una plataforma
+	limites.SetLimites(-20, 220, -5, 30); //Son los bordes del juego que el jugador no puede pasar
+	plataforma1.SetLimites(30, 60, 5, 10);//Los brdes de una plataforma
 
 
 	/*
@@ -40,8 +40,8 @@ void Mundo::Dibuja()
 		0.0, 5.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
 
 	entorno.Dibuja(level);
+	limites.Dibuja();
 
-	caja.Dibuja();
 	hombre.Dibuja(level);
 	//disparo.Dibuja();
 	plataforma.Dibuja();
@@ -76,7 +76,7 @@ void Mundo::Mueve()
 	disparos.Mueve(0.025f);
 	 //INTERACCIONES
 	
-	Interaccion::reboteinterior(hombre, caja);
+	Interaccion::reboteinterior(hombre, limites);
 	Interaccion::reboteexterior(hombre, plataforma1);
 	//Interaccion::rebote(esfera, caja);
 	//Interaccion::rebote(esfera, plataforma);

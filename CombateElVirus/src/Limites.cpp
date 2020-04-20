@@ -1,16 +1,20 @@
-#include "Caja.h"
+#include "Limites.h"
 #include "glut.h"
 
-void Caja::Dibuja()
+Limites::~Limites() {
+
+}
+Limites::Limites() {
+
+
+}
+
+void Limites::Dibuja()
 { 
+
 }
 
-Caja::Caja(){
-
-    
-}
-
-void Caja::SetCaja(float x1, float x2, float y1, float y2) {
+void Limites::SetLimites(float x1, float x2, float y1, float y2) {
 
 
     suelo.SetPos(x1, y1, x2, y1);
@@ -25,7 +29,4 @@ void Caja::SetCaja(float x1, float x2, float y1, float y2) {
 
 
 
-Caja::~Caja() {
-
-}
 

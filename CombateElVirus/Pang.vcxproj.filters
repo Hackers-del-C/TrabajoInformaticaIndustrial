@@ -93,9 +93,6 @@
     <ClCompile Include="src\Mundo.cpp">
       <Filter>Archivos de código fuente\MUNDO</Filter>
     </ClCompile>
-    <ClCompile Include="src\Caja.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Limites</Filter>
-    </ClCompile>
     <ClCompile Include="src\Vector2D.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
@@ -122,6 +119,9 @@
     </ClCompile>
     <ClCompile Include="src\Musica.cpp">
       <Filter>Archivos de código fuente\MUNDO\Entorno\Musica</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Limites.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Limites</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -155,17 +155,17 @@
     <ClInclude Include="src\Mundo.h">
       <Filter>Archivos de encabezado\MUNDO</Filter>
     </ClInclude>
-    <ClInclude Include="src\Pared.h">
-      <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Caja.h">
-      <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
-    </ClInclude>
     <ClInclude Include="src\Hombre.h">
       <Filter>Archivos de encabezado\MUNDO\Personajes</Filter>
     </ClInclude>
     <ClInclude Include="src\Titulo.h">
       <Filter>Archivos de encabezado\MUNDO\Entorno\Titulo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pared.h">
+      <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Limites.h">
+      <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

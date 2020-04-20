@@ -3,9 +3,7 @@
 #include "glut.h"
 #include "ETSIDI.h"
 void Entorno::Inicializa(int nivel) {
-
-	musica.Suena(nivel);
-
+	musica.SoundOn(nivel);
 	/*EXPLICACIÓN NUMEROS DE ESTA FUNCION DEL DEMONIO(CREO):
 	1ºy 2º porción de la imagen que muestras???
 	3º-> ni puta

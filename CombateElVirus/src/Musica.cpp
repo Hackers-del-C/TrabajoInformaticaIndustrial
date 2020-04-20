@@ -1,7 +1,6 @@
 #include "Musica.h"
 #include "ETSIDI.h"
-
-void Musica::Suena(int nivel) {
+void Musica::SoundOn(int nivel) {
 	switch (nivel) {
 	case 1:
 		ETSIDI::play("mis_sonidos/China.wav");
@@ -13,5 +12,5 @@ void Musica::Suena(int nivel) {
 		ETSIDI::play("mis_sonidos/Espania.wav");
 		break;
 	}
-
 }
+

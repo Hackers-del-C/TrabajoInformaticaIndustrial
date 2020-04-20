@@ -15,17 +15,17 @@ public:
 	
 	void Inicializa(int nivel);
 	void Dibuja(int nivel);
-	SpriteSequence* explosion;
+	/*SpriteSequence* explosion;
 	Sprite* sprite;
 	Sprite* ternerito;
 	SpriteSequence* virus;
 	SpriteSequence* trump;
 	//SpriteSequence* pato;
 	SpriteSequence* ninja;
-
+	*/
 	void Mueve(float t);
 	void Tecla(unsigned char key);
-	friend class Mundo;
+	//friend class Mundo;
 	
 private:
 	Fondo fondo;

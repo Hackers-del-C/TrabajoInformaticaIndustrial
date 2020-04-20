@@ -8,7 +8,7 @@ Interaccion::~Interaccion() {
 
 
 }
-void Interaccion::reboteinterior(Hombre& h, Caja c)
+void Interaccion::reboteinterior(Hombre& h, Limites c)
 {
     float xmax = c.suelo.limite2.x;
     float xmin = c.suelo.limite1.x;
@@ -21,7 +21,7 @@ void Interaccion::reboteinterior(Hombre& h, Caja c)
     if (h.posicion.y < ymin)h.posicion.y = ymin;
 }
 
-void Interaccion::reboteexterior(Hombre& h, Caja c)
+void Interaccion::reboteexterior(Hombre& h,Limites c)
 {
     float xmax = c.suelo.limite2.x;
     float xmin = c.suelo.limite1.x;

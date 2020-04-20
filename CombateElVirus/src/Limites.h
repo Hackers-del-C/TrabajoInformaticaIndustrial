@@ -2,15 +2,15 @@
 #pragma once
 #include "Pared.h" //el include no es necesario que ponga “dominio”
  //porque ya estamos en dicha carpeta.
-class Caja
+class Limites
 {
     friend class Interaccion;
 
 public:
-    Caja();
-   virtual ~Caja();
+    Limites();
+   virtual ~Limites();
    void Dibuja();
-   void SetCaja(float x1, float x2, float y1, float y2);
+   void SetLimites(float x1, float x2, float y1, float y2);
   
 
 private:
