@@ -46,6 +46,10 @@ float Pared::distancia(Vector2D punto, Vector2D* direccion)
     return distancia;
 }
 
+void Pared::SetPos(Vector2D limite1, Vector2D limite2) {
+    this->limite1 = limite1;
+    this->limite2 = limite2;
+}
 void Pared::SetPos(float x1, float y1, float x2, float y2) 
 {
     limite1.x = x1;

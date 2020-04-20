@@ -1,5 +1,5 @@
 #include "Interaccion.h"
-
+#include "glut.h"
 
 Interaccion::Interaccion() {
 
@@ -19,6 +19,26 @@ void Interaccion::reboteinterior(Hombre& h, Limites c)
     float ymin = c.suelo.limite1.y;
     if (h.posicion.y > ymax)h.posicion.y = ymax;
     if (h.posicion.y < ymin)h.posicion.y = ymin;
+    /*
+    float xmax = c.suelo.limite2.x;
+    float xmin = c.suelo.limite1.x;
+    float ymax = c.techo.limite1.y;
+    float ymin = c.suelo.limite1.y;
+    int enplataforma=0;
+    int key=NULL;
+    float distancia1 = sqrt((h.posicion.x - xmin) * (h.posicion.x - xmin) + (h.posicion.y - ymin) * (h.posicion.y - ymin));
+    float distancia2 = sqrt((h.posicion.x - xmax) * (h.posicion.x - xmax) + (h.posicion.y - ymax) * (h.posicion.y - ymax));
+
+    if (distancia1 < 0.1 || (h.posicion.y - ymax) == 0) {
+        enplataforma = 1;
+    }
+
+    if (key == GLUT_KEY_UP) {
+        enplataforma = 0;
+    }
+    if (enplataforma == 1) {
+        h.posicion.y = ymax;
+    }*/
 }
 
 void Interaccion::reboteexterior(Hombre& h,Limites c)
@@ -28,11 +48,11 @@ void Interaccion::reboteexterior(Hombre& h,Limites c)
     float ymax = c.techo.limite1.y;
     float ymin = c.suelo.limite1.y;
 
-
+    /*/
     if (h.posicion.x > xmin && h.posicion.x < xmax && h.posicion.y>ymin && h.posicion.y<ymax)h.posicion.x = xmin;
    if (h.posicion.x < xmax && h.posicion.x > xmin && h.posicion.y < ymax && h.posicion.y > ymin)h.posicion.x = xmax;
     if (h.posicion.x > xmin && h.posicion.x < xmax && h.posicion.y > ymin)h.posicion.y = ymin;
-    if (h.posicion.x > xmin && h.posicion.x < xmax && h.posicion.y < ymax)h.posicion.y = ymax;
+    if (h.posicion.x > xmin && h.posicion.x < xmax && h.posicion.y < ymax)h.posicion.y = ymax;*/
    
 }
 /*

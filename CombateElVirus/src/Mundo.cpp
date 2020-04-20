@@ -113,11 +113,15 @@ void Mundo::Tecla(unsigned char key)
 }
 
 void Mundo::teclaEspecial(unsigned char key){
+	int salto = 0;
 	if (hombre.posicion.x < 190) { //QUITAR ESTE IF CUANDO SE PUEDA
 		switch (key)
 		{
 		case GLUT_KEY_LEFT:
-			hombre.SetVel(-6, hombre.velocidad.y);   //HAY QUE PONER QUE CUANDO ESTE EN EL AIRE NO VAYA HACIA LA DERECHA
+			
+			hombre.SetVel(-6, hombre.velocidad.y);
+			//HAY QUE PONER QUE CUANDO ESTE EN EL AIRE NO VAYA HACIA LA DERECHA
+			
 			hombre.dir = 2;
 
 			break;
@@ -127,8 +131,13 @@ void Mundo::teclaEspecial(unsigned char key){
 			
 			break;
 		case GLUT_KEY_UP:
-			if(1){ //HAY QUE PONER QUE NO SALTE DOS VECES PERO NO ME VA BIEN
-			hombre.Salta();
+			salto = 1;
+			if (salto == 1) {
+				if (1) { //HAY QUE PONER QUE NO SALTE DOS VECES PERO NO ME VA BIEN
+					//hombre.Salta();
+					hombre.SetVel(hombre.velocidad.x, 15.0f);
+				}
+				salto = 0;
 			}
 			break;
 

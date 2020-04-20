@@ -10,6 +10,7 @@
 
 class Mundo
 {
+
 public: 
 	int level = 1; 
 
