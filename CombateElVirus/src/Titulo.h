@@ -1,4 +1,5 @@
 #pragma once
+#include "Menu.h"
 #include "ETSIDI.h"
 using namespace ETSIDI;
 using ETSIDI::getTexture;
@@ -8,5 +9,5 @@ public:
     void Nombre(int nivel);
     void Bandera(int nivel);
 private:
-
+    Menu menu;
 };

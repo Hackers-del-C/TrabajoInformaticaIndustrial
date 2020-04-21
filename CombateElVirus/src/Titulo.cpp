@@ -5,6 +5,9 @@
 void Titulo::Nombre(int nivel) {
 	// TEXTO //
 	switch (nivel) {
+	case 0:
+		menu.Texto();
+		break;
 	case 1:
 		glTranslatef(12, 25, 0);
 		setTextColor(1, 1, 1); //FUNCIONA IGUAL QUE GLUT PERO EN VEZ DE 0-255 DE 0-1

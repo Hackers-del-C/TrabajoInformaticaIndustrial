@@ -13,7 +13,7 @@ class Mundo
 {
 
 public: 
-	int level = 1; 
+	int level = 0; 
 
 	//generales
 	void Tecla(unsigned char key);
