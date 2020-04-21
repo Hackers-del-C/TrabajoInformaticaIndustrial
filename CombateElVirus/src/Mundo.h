@@ -16,6 +16,7 @@ public:
 	int level;
 
 	//generales
+	Mundo();
 	void Tecla(unsigned char key);
 	void Inicializa();
 	void Mueve();

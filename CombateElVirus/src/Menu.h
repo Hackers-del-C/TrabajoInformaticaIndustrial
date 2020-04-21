@@ -5,10 +5,10 @@ using ETSIDI::getTexture;
 class Menu {
 public:
 
-	int level;
+	int level=0;
 
 
-	Menu() :level(0) {};
+	//Menu() :level(0) {};
 
 	void Dibuja();
 	void Tecla(unsigned char key);

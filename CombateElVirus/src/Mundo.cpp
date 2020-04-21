@@ -4,11 +4,16 @@
 #include "ListaDisparos.h"
 #include <math.h>
 #include "glut.h"
-
+Mundo::Mundo(){
+	level = 0;
+}
 void Mundo::Inicializa()
 {
+	if (level == 0) {
+		level=menu.GetLevel();
+	}
 	entorno.Inicializa(level);
-	level=menu.GetLevel();
+	
 
 	bonus.SetPos(5.0f, 5.0f);
 	//disparo.SetPos(-5.0f, 0.0f);
@@ -97,7 +102,9 @@ void Mundo::Mueve()
 
 void Mundo::Tecla(unsigned char key)
 {
-	menu.Tecla(key);
+	if (level == 0) {
+		menu.Tecla(key);
+	}
 	entorno.Tecla(key);
 	if (level != 0) {//para que no dispare mientras estemos en el nivel 0 
 		switch (key) {
