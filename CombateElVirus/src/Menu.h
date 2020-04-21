@@ -5,7 +5,7 @@ using ETSIDI::getTexture;
 class Menu {
 public:
 
-	int level=0;
+	int level=1;
 
 
 	//Menu() :level(0) {};

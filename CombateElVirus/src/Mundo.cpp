@@ -23,7 +23,7 @@ void Mundo::Inicializa()
 	
 	hombre.Inicializa();
 
-	limites.SetLimites(-20, 220, -5, 30); //Son los bordes del juego que el jugador no puede pasar
+	limites.SetLimites(-20, 500, -5, 30); //Son los bordes del juego que el jugador no puede pasar
 	plataforma1.SetLimites(30, 60, 5, 10);//Los brdes de una plataforma
 	lanzamisiles1.Inicializa();
 	misilder.Inicializader();
