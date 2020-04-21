@@ -8,7 +8,7 @@
 void Mundo::Inicializa()
 {
 	entorno.Inicializa(level);
-
+	level=menu.GetLevel();
 
 	bonus.SetPos(5.0f, 5.0f);
 	//disparo.SetPos(-5.0f, 0.0f);
@@ -97,67 +97,70 @@ void Mundo::Mueve()
 
 void Mundo::Tecla(unsigned char key)
 {
+	menu.Tecla(key);
 	entorno.Tecla(key);
-	switch (key) {
-	
-	case 'w':
-		disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, 22.0f));
-		break;
+	if (level != 0) {//para que no dispare mientras estemos en el nivel 0 
+		switch (key) {
 
-	case 's':
-		disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, -22.0f));
-		break;
+		case 'w':
+			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, 22.0f));
+			break;
 
-	case 'a':
-		disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, -22.0f, 0.0f));
-		break;
+		case 's':
+			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, -22.0f));
+			break;
 
-	case 'd':
-		disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 22.0f, 0.0f));
-		break;
+		case 'a':
+			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, -22.0f, 0.0f));
+			break;
 
+		case 'd':
+			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 22.0f, 0.0f));
+			break;
+
+		}
 	}
 }
 
 void Mundo::teclaEspecial(unsigned char key){
 	//distancia = 0;
 
-	 //QUITAR ESTE IF CUANDO SE PUEDA
-	switch (key)
-	{
-	case GLUT_KEY_LEFT:
+	 if(level!=0){//para que no se mueva cuando esta en el menu
+		 switch (key)
+		 {
+		 case GLUT_KEY_LEFT:
 
-		hombre.SetVel(-6, hombre.velocidad.y);
-		//HAY QUE PONER QUE CUANDO ESTE EN EL AIRE NO VAYA HACIA LA DERECHA
+			 hombre.SetVel(-6, hombre.velocidad.y);
+			 //HAY QUE PONER QUE CUANDO ESTE EN EL AIRE NO VAYA HACIA LA DERECHA
 
-		hombre.dir = 2;
+			 hombre.dir = 2;
 
-		break;
-	case GLUT_KEY_RIGHT:
-		hombre.SetVel(+6, hombre.velocidad.y);
-		hombre.dir = 1;
+			 break;
+		 case GLUT_KEY_RIGHT:
+			 hombre.SetVel(+6, hombre.velocidad.y);
+			 hombre.dir = 1;
 
-		break;
-	case GLUT_KEY_UP:
-		
-		if (salto >= 1 && salto < 3 && hombre.posicion.y == -5) {
-			salto += 1;
-			hombre.SetVel(hombre.velocidad.x, 15.0f);
-			/*distancia += 1;
-			if (distancia > 2) {
-				salto = 0;
-				
-				break;
-			}*/
+			 break;
+		 case GLUT_KEY_UP:
 
-		}
-		else if (salto == 3 && hombre.posicion.y == -5) {
-		
-			hombre.SetVel(hombre.velocidad.x, 20.0f);
-			salto = 1;
-		}
-		break;
+			 if (salto >= 1 && salto < 3 && hombre.posicion.y == -5) {
+				 salto += 1;
+				 hombre.SetVel(hombre.velocidad.x, 15.0f);
+				 /*distancia += 1;
+				 if (distancia > 2) {
+					 salto = 0;
 
+					 break;
+				 }*/
+
+			 }
+			 else if (salto == 3 && hombre.posicion.y == -5) {
+
+				 hombre.SetVel(hombre.velocidad.x, 20.0f);
+				 salto = 1;
+			 }
+			 break;
+		 }
 
 	}
 	

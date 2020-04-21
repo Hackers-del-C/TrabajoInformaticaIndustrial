@@ -13,7 +13,7 @@ class Mundo
 {
 
 public: 
-	int level = 0; 
+	int level;
 
 	//generales
 	void Tecla(unsigned char key);
@@ -35,6 +35,7 @@ private:
 	Disparo disparo;
 	Hombre hombre;
 	Limites limites, plataforma1;
+	Menu menu;
 	
 	Bonus bonus;
 	Pared plataforma;
