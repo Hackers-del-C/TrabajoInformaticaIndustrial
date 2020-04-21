@@ -27,8 +27,11 @@ public:
 	void SetLevel(int nivel) { level = nivel; }
 
 private:
+	// constantes para el salto
 
-	
+	int distancia=0;
+	int salto = 1;
+	//
 	Disparo disparo;
 	Hombre hombre;
 	Limites limites, plataforma1;

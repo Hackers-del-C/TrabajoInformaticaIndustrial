@@ -120,38 +120,45 @@ void Mundo::Tecla(unsigned char key)
 }
 
 void Mundo::teclaEspecial(unsigned char key){
-	int salto = 0;
-	if (hombre.posicion.x < 190) { //QUITAR ESTE IF CUANDO SE PUEDA
-		switch (key)
-		{
-		case GLUT_KEY_LEFT:
-			
-			hombre.SetVel(-6, hombre.velocidad.y);
-			//HAY QUE PONER QUE CUANDO ESTE EN EL AIRE NO VAYA HACIA LA DERECHA
-			
-			hombre.dir = 2;
+	//distancia = 0;
 
-			break;
-		case GLUT_KEY_RIGHT:
-			hombre.SetVel(+6, hombre.velocidad.y);
-			hombre.dir = 1;
-			
-			break;
-		case GLUT_KEY_UP:
-			salto = 1;
-			if (salto == 1) {
-				if (1) { //HAY QUE PONER QUE NO SALTE DOS VECES PERO NO ME VA BIEN
-					//hombre.Salta();
-					hombre.SetVel(hombre.velocidad.x, 15.0f);
-				}
+	 //QUITAR ESTE IF CUANDO SE PUEDA
+	switch (key)
+	{
+	case GLUT_KEY_LEFT:
+
+		hombre.SetVel(-6, hombre.velocidad.y);
+		//HAY QUE PONER QUE CUANDO ESTE EN EL AIRE NO VAYA HACIA LA DERECHA
+
+		hombre.dir = 2;
+
+		break;
+	case GLUT_KEY_RIGHT:
+		hombre.SetVel(+6, hombre.velocidad.y);
+		hombre.dir = 1;
+
+		break;
+	case GLUT_KEY_UP:
+		
+		if (salto >= 1 && salto < 3 && hombre.posicion.y == -5) {
+			salto += 1;
+			hombre.SetVel(hombre.velocidad.x, 15.0f);
+			/*distancia += 1;
+			if (distancia > 2) {
 				salto = 0;
-			}
-			break;
+				
+				break;
+			}*/
 
 		}
-	if (hombre.posicion.x>=190) { //el plan era como parar el muñeco en 190 pero no va
-		hombre.SetVel(0, 0);
-	}
+		else if (salto == 3 && hombre.posicion.y == -5) {
+		
+			hombre.SetVel(hombre.velocidad.x, 20.0f);
+			salto = 1;
+		}
+		break;
+
+
 	}
 	
 	
