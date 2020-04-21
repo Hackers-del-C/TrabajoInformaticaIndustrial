@@ -28,9 +28,9 @@ public:
 private:
 	// constantes para el salto
 
-	int i=1;
-	
-	
+	int distancia=0;
+	int salto = 1;
+	//
 	Disparo disparo;
 	Hombre hombre;
 	Limites limites, plataforma1;

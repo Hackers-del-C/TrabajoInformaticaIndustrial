@@ -113,51 +113,46 @@ void Mundo::Tecla(unsigned char key)
 }
 
 void Mundo::teclaEspecial(unsigned char key){
-	int salto = 0;
+	//distancia = 0;
 
 	 //QUITAR ESTE IF CUANDO SE PUEDA
-		switch (key)
-		{
-		case GLUT_KEY_LEFT:
-			
-			hombre.SetVel(-6, hombre.velocidad.y);
-			//HAY QUE PONER QUE CUANDO ESTE EN EL AIRE NO VAYA HACIA LA DERECHA
-			
-			hombre.dir = 2;
+	switch (key)
+	{
+	case GLUT_KEY_LEFT:
 
-			break;
-		case GLUT_KEY_RIGHT:
-			hombre.SetVel(+6, hombre.velocidad.y);
-			hombre.dir = 1;
-			
-			break;
-		case GLUT_KEY_UP:
-			salto = 1;
-			
-			if (salto == 1) {
-				if( salto== 1&& hombre.posicion.y == -5) { //no creo que sea la mejor forma, supongo que habrá que hacerlo con interaccion but
-					//hombre.Salta();	
-					if (i < 3) {
-						i += 1;
-						hombre.SetVel(hombre.velocidad.x, 15.0f);
-						
-					}
-					else {
-						i = 0;
-						hombre.SetVel(hombre.velocidad.x, 20.0f);
-					}
-					
+		hombre.SetVel(-6, hombre.velocidad.y);
+		//HAY QUE PONER QUE CUANDO ESTE EN EL AIRE NO VAYA HACIA LA DERECHA
 
-				}
+		hombre.dir = 2;
 
-				
+		break;
+	case GLUT_KEY_RIGHT:
+		hombre.SetVel(+6, hombre.velocidad.y);
+		hombre.dir = 1;
+
+		break;
+	case GLUT_KEY_UP:
+		
+		if (salto >= 1 && salto < 3 && hombre.posicion.y == -5) {
+			salto += 1;
+			hombre.SetVel(hombre.velocidad.x, 15.0f);
+			/*distancia += 1;
+			if (distancia > 2) {
 				salto = 0;
-			}
-			break;
+				
+				break;
+			}*/
 
 		}
+		else if (salto == 3 && hombre.posicion.y == -5) {
+		
+			hombre.SetVel(hombre.velocidad.x, 20.0f);
+			salto = 1;
+		}
+		break;
 
-	
+
+	}
 	
 	
 	
