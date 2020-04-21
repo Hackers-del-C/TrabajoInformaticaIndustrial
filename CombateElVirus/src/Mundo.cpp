@@ -20,8 +20,9 @@ void Mundo::Inicializa()
 
 	limites.SetLimites(-20, 220, -5, 30); //Son los bordes del juego que el jugador no puede pasar
 	plataforma1.SetLimites(30, 60, 5, 10);//Los brdes de una plataforma
-
-
+	lanzamisiles1.Inicializa();
+	misilder.Inicializader();
+	misilizq.Inicializaizq();
 	/*
 	disparo.origen.y = 0.0f;
 	disparo.origen.x = -5.0f;
@@ -47,7 +48,9 @@ void Mundo::Dibuja()
 	plataforma.Dibuja();
 	//bonus.Dibuja();
 	disparos.Dibuja();
-
+	lanzamisiles1.Dibuja();
+	misilder.Dibujader();
+	misilizq.Dibujaizq();
 	//aqui es donde hay que poner el codigo de dibujo
 	/*
 	glDisable(GL_LIGHTING);
@@ -75,7 +78,10 @@ void Mundo::Mueve()
 	//disparo.Mueve(0.025f); 	
 	disparos.Mueve(0.025f);
 	 //INTERACCIONES
-	
+	misilder.Mueveder(0.025f);
+	misilizq.Mueveizq(0.025f);
+	misilder.SetVel(5.0f);
+	misilizq.SetVel(-5.0f);
 	Interaccion::reboteinterior(hombre, limites);
 	Interaccion::reboteexterior(hombre, plataforma1);
 	//Interaccion::rebote(esfera, caja);
@@ -93,6 +99,7 @@ void Mundo::Tecla(unsigned char key)
 {
 	entorno.Tecla(key);
 	switch (key) {
+	
 	case 'w':
 		disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, 22.0f));
 		break;

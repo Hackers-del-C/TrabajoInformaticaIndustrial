@@ -7,7 +7,8 @@
 #include "ListaDisparos.h"
 #include "ETSIDI.h"
 #include "Entorno.h"
-
+#include "Lanzamisiles.h"
+#include "Misil.h"
 class Mundo
 {
 
@@ -36,6 +37,10 @@ private:
 	Pared plataforma;
 	Entorno entorno;
 	ListaDisparos disparos;
+	Lanzamisiles lanzamisiles1;
+	Misil misilder;
+	Misil misilizq;
+
 	//ojo
 	float x_ojo;
 	float y_ojo;

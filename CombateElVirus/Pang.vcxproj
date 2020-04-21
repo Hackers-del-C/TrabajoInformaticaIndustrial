@@ -83,6 +83,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Lanzamisiles.cpp" />
     <ClCompile Include="src\Limites.cpp" />
     <ClCompile Include="src\Disparo.cpp" />
     <ClCompile Include="src\Entorno.cpp" />
@@ -90,7 +91,10 @@
     <ClCompile Include="src\Hombre.cpp" />
     <ClCompile Include="src\Interaccion.cpp" />
     <ClCompile Include="src\ListaDisparos.cpp" />
+    <ClCompile Include="src\Listalanzamisiles.cpp" />
+    <ClCompile Include="src\Listamisiles.cpp" />
     <ClCompile Include="src\Menu.cpp" />
+    <ClCompile Include="src\Misil.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\Musica.cpp" />
     <ClCompile Include="src\Musica.h" />
@@ -103,6 +107,7 @@
   <ItemGroup>
     <ClInclude Include="lib\ETSIDI.h" />
     <ClInclude Include="src\Bonus.h" />
+    <ClInclude Include="src\Lanzamisiles.h" />
     <ClInclude Include="src\Limites.h" />
     <ClInclude Include="src\Disparo.h" />
     <ClInclude Include="src\Entorno.h" />
@@ -110,7 +115,10 @@
     <ClInclude Include="src\Hombre.h" />
     <ClInclude Include="src\Interaccion.h" />
     <ClInclude Include="src\ListaDisparos.h" />
+    <ClInclude Include="src\Listalanzamisiles.h" />
+    <ClInclude Include="src\Listamisiles.h" />
     <ClInclude Include="src\Menu.h" />
+    <ClInclude Include="src\Misil.h" />
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\Pared.h" />
     <ClInclude Include="src\Titulo.h" />
