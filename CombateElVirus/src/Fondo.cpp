@@ -16,7 +16,6 @@ void Fondo::Dibuja(int nivel) {
 		menu.Dibuja();
 		break;
 
-	
 	case 1:
 		//plataforma1//
 		glEnable(GL_TEXTURE_2D);
