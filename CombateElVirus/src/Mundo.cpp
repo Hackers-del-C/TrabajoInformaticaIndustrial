@@ -114,7 +114,8 @@ void Mundo::Tecla(unsigned char key)
 
 void Mundo::teclaEspecial(unsigned char key){
 	int salto = 0;
-	if (hombre.posicion.x < 190) { //QUITAR ESTE IF CUANDO SE PUEDA
+
+	 //QUITAR ESTE IF CUANDO SE PUEDA
 		switch (key)
 		{
 		case GLUT_KEY_LEFT:
@@ -132,20 +133,31 @@ void Mundo::teclaEspecial(unsigned char key){
 			break;
 		case GLUT_KEY_UP:
 			salto = 1;
+			
 			if (salto == 1) {
-				if (1) { //HAY QUE PONER QUE NO SALTE DOS VECES PERO NO ME VA BIEN
-					//hombre.Salta();
-					hombre.SetVel(hombre.velocidad.x, 15.0f);
+				if( salto== 1&& hombre.posicion.y == -5) { //no creo que sea la mejor forma, supongo que habrá que hacerlo con interaccion but
+					//hombre.Salta();	
+					if (i < 3) {
+						i += 1;
+						hombre.SetVel(hombre.velocidad.x, 15.0f);
+						
+					}
+					else {
+						i = 0;
+						hombre.SetVel(hombre.velocidad.x, 20.0f);
+					}
+					
+
 				}
+
+				
 				salto = 0;
 			}
 			break;
 
 		}
-	if (hombre.posicion.x>=190) { //el plan era como parar el muñeco en 190 pero no va
-		hombre.SetVel(0, 0);
-	}
-	}
+
+	
 	
 	
 	
