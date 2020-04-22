@@ -9,19 +9,20 @@ Personajes:: ~Personajes() {
 
 }
 void Personajes::Inicializa() {
+//	hombre.Inicializa();
+	virus.Inicializa();
 	
-	jugador.Salta();
 }
-void Personajes::Dibuja(int level) {
-	jugador.Dibuja(level);
+void Personajes::Dibuja(int nivel) {
+//	hombre.Dibuja(nivel);
+	virus.Dibuja(nivel);
 }
-void Personajes::Mueve(int level) {
-	jugador.Mueve(level);
+void Personajes::Mueve(float t ) {
+	virus.Mueve(t);
 }
 void Personajes::Tecla(unsigned char key) {
 
 }
 void Personajes::TeclaEspecial(unsigned char key) {
-	
 
 	}

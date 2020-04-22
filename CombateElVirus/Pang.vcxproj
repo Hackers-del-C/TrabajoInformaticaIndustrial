@@ -101,8 +101,10 @@
     <ClCompile Include="src\CombateElVirus.cpp" />
     <ClCompile Include="src\Pared.cpp" />
     <ClCompile Include="src\Bonus.cpp" />
+    <ClCompile Include="src\Personajes.cpp" />
     <ClCompile Include="src\Titulo.cpp" />
     <ClCompile Include="src\Vector2D.cpp" />
+    <ClCompile Include="src\Virus.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\ETSIDI.h" />
@@ -121,8 +123,10 @@
     <ClInclude Include="src\Misil.h" />
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\Pared.h" />
+    <ClInclude Include="src\Personajes.h" />
     <ClInclude Include="src\Titulo.h" />
     <ClInclude Include="src\Vector2D.h" />
+    <ClInclude Include="src\Virus.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

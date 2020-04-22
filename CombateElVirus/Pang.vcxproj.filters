@@ -61,6 +61,12 @@
     <ClCompile Include="src\Misil.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
     </ClCompile>
+    <ClCompile Include="src\Virus.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Personajes.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Personajes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\ETSIDI.h">
@@ -116,6 +122,12 @@
     </ClInclude>
     <ClInclude Include="src\Misil.h">
       <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Virus.h">
+      <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Personajes.h">
+      <Filter>Archivos de encabezado\MUNDO\Personajes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

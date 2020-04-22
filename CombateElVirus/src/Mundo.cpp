@@ -13,7 +13,7 @@ void Mundo::Inicializa()
 		level=menu.GetLevel();
 	}
 	entorno.Inicializa(level);
-	
+	personajes.Inicializa();
 
 	bonus.SetPos(5.0f, 5.0f);
 	//disparo.SetPos(-5.0f, 0.0f);
@@ -47,7 +47,7 @@ void Mundo::Dibuja()
 
 	entorno.Dibuja(level);
 	limites.Dibuja();
-
+	personajes.Dibuja(level);
 	hombre.Dibuja(level);
 	//disparo.Dibuja();
 	plataforma.Dibuja();
@@ -76,7 +76,7 @@ void Mundo::Mueve()
 {
 
 	entorno.Mueve(0.025f);
-
+	personajes.Mueve(0.025f);
 
 	hombre.Mueve(0.025f);
 	bonus.Mueve(0.025f);

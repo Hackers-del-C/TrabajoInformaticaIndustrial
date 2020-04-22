@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Limites.h"
+#include "Personajes.h"
 #include "Hombre.h"
 #include "Bonus.h"
 #include "Disparo.h" 
@@ -34,6 +35,7 @@ private:
 	int salto = 1;
 	//
 	Disparo disparo;
+	Personajes personajes;
 	Hombre hombre;
 	Limites limites, plataforma1;
 	Menu menu;
