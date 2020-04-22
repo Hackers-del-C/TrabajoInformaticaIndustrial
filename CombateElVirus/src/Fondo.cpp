@@ -208,7 +208,23 @@ void Fondo::Dibuja(int nivel) {
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
 		//FONDO 3//: PARQUE
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Parque.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 1);		glVertex3f(250, -9, -0.1); //ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
+		glTexCoord2d(1, 1);		glVertex3f(350, -9, -0.1);
+		glTexCoord2d(1, 0);		glVertex3f(350, 60, -0.1);
+		glTexCoord2d(0, 0);		glVertex3f(250, 60, -0.1);
+		glEnd();
+
+
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
 		//FONDO 4//: HOSPITAL
+
 		
 		break;
 	case 3:
