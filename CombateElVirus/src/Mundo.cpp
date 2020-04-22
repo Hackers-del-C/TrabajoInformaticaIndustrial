@@ -63,19 +63,6 @@ void Mundo::Dibuja()
 	virus.Dibuja(level);
 	
 	
-	//aqui es donde hay que poner el codigo de dibujo
-	/*
-	glDisable(GL_LIGHTING);
-	glBegin(GL_POLYGON);
-		glColor3ub(255,0,0);
-		glVertex3f(-5.0f,0,-5.0f);
-		glVertex3f(-5.0f,0,5.0f);
-		glColor3ub(255,255,0);
-		glVertex3f(5.0f,0,5.0f);
-		glVertex3f(5.0f,0,-5.0f);
-	glEnd();
-	glEnable(GL_LIGHTING);
-	*/
 }
 
 
@@ -104,10 +91,10 @@ void Mundo::Mueve()
 	Setojo(hombre.posicion.x, 10, 53);
 
 	if (virus.posicion.x+5 < hombre.posicion.x) {
-		virus.velocidad.x = 8;
+		virus.velocidad.x = 5;
 	}
 	if (virus.posicion.x+5 > hombre.posicion.x) {
-		virus.velocidad.x = -8;
+		virus.velocidad.x = -5;
 	}
 	
 }

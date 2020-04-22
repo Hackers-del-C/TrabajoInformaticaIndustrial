@@ -47,17 +47,7 @@ void Hombre::Dibuja(int nivel)
 
     }
     glTranslatef(-posicion.x, -posicion.y, 0);
-   // glPushMatrix();
-   
-    
-    
-   
-   
- 
-   // glColor3f(100, 10.0, 0.0);
-   // glutSolidSphere(altura, 20, 20);
-   // glPopMatrix();
-  
+
 }
 
 void Hombre::Mueve(float t)
