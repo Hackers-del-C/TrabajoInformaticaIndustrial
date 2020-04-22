@@ -9,7 +9,9 @@
 #include "ETSIDI.h"
 #include "Entorno.h"
 #include "Lanzamisiles.h"
-#include "Misil.h"
+#include "Virus.h"
+
+//#include "Misil.h"
 class Mundo
 {
 
@@ -39,14 +41,14 @@ private:
 	Hombre hombre;
 	Limites limites, plataforma1;
 	Menu menu;
-	
+	Virus virus;
 	Bonus bonus;
 	Pared plataforma;
 	Entorno entorno;
 	ListaDisparos disparos;
 	Lanzamisiles lanzamisiles1;
 	
-	Misil misilizq;
+	//Misil misilizq;
 
 	//ojo
 	float x_ojo;

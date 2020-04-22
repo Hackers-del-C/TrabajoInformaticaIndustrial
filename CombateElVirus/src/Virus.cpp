@@ -1,9 +1,19 @@
 #include "Virus.h"
 #include "ETSIDI.h"
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
 #include "glut.h"
+
 using namespace ETSIDI;
+using namespace std;
 using ETSIDI::getTexture;
 Virus::Virus() {
+
+    posicion.x = 15;
+    posicion.y = -7.5;
+    
 
 }
 Virus::~Virus() {
@@ -11,32 +21,48 @@ Virus::~Virus() {
 }
 void Virus::Dibuja(int nivel)
 {
-   /* glTranslatef(5, -5, 0);
+    glTranslatef(posicion.x, posicion.y, 0);
 
-    switch (nivel) {
-    case 1:
-        
-        virusamarillo->draw();
-        break;
- 
-    case 2:
-        virusazul->draw();
-        break;
-    case 3:
-        virusrojo->draw();
-        break;
-    }
-    glTranslatef(-5, 5, 0);*/
+    sprite->draw();
+
+    glTranslatef(-posicion.x, -posicion.y, 0);
 
 }
-void Virus::Inicializa() {
-   /*virusamarillo = new SpriteSequence("imagenes/Virusamarillo.png", 1, 1, 1, true, 4, 10, 10, 10);
-   virusazul = new SpriteSequence("imagenes/Virusazul.png", 1, 3, 25, true, -2, 2, 5, 5);
-   virusrojo = new SpriteSequence("imagenes/Virusrojo.png", 1, 3, 25, true, -2, 2, 5, 5);
-   */
+void Virus::Inicializa(char nombre[20]) {
+
+    //DEBERIAMOS CREAR UN PUNTERO QUE UNA UN FLUJO A LA IMAGEN, QUE SE LE PASE EL NOMBRE DEL VIRUS Y NOS CREE LA IMAGEN DIRECTAMENTE
+    //EL CODIGO QUE HAY ABAJO ES ELEGANTE
+    /*
+    std::ostringstream cadena;
+    //char perro[10];
+    string img;
+
+    cadena << "imagenes/" << img << ".png" << endl;
+
+    char* pString = new char[cadena.str().length() + 1];
+
+    std::copy(cadena.str().c_str(), cadena.str().c_str() + cadena.str().length() + 1, pString);
+    */
+
+    sprite = new SpriteSequence(nombre, 8, 1, 25, true, 4, 4, 3, 3);
+
 }
+
+void Virus::SetVel(float vx, float vy)
+{
+    velocidad.x = vx;
+    velocidad.y = vy;
+}
+
 void Virus::Mueve(float t) {
-   /* virusamarillo->loop();
-    virusazul->loop();
-    virusamarillo->loop();*/
+
+    posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
+    velocidad = velocidad + aceleracion * t;
+    
+    sprite->loop();
+
+    
+
 }
+
+

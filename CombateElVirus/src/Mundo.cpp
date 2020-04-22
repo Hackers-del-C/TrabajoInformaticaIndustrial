@@ -23,12 +23,14 @@ void Mundo::Inicializa()
 	plataforma.SetPos(70.0f, 9.0f, 80.0f, 9.0f);
 	
 	hombre.Inicializa();
+	virus.Inicializa("imagenes/virusseta.png");
 
 	limites.SetLimites(-20, 500, -5, 30); //Son los bordes del juego que el jugador no puede pasar
 	plataforma1.SetLimites(30, 60, 5, 10);//Los brdes de una plataforma
 	lanzamisiles1.Inicializa();
+	
 
-	misilizq.Inicializa();
+	//misilizq.Inicializa();
 	/*
 	disparo.origen.y = 0.0f;
 	disparo.origen.x = -5.0f;
@@ -49,13 +51,16 @@ void Mundo::Dibuja()
 	entorno.Dibuja(level);
 	limites.Dibuja();
 	personajes.Dibuja(level);
-	hombre.Dibuja(level);
+	
 	//disparo.Dibuja();
-	plataforma.Dibuja();
+	//plataforma.Dibuja();
 	//bonus.Dibuja();
 	disparos.Dibuja();
 	lanzamisiles1.Dibuja();
-	misilizq.Dibuja();
+	//misilizq.Dibuja();
+
+	hombre.Dibuja(level);
+	virus.Dibuja(level);
 	
 	
 	//aqui es donde hay que poner el codigo de dibujo
@@ -79,14 +84,14 @@ void Mundo::Mueve()
 
 	entorno.Mueve(0.025f);
 	personajes.Mueve(0.025f);
-
+	virus.Mueve(0.025f);
 	hombre.Mueve(0.025f);
 	bonus.Mueve(0.025f);
 	//disparo.Mueve(0.025f); 	
 	disparos.Mueve(0.025f);
 	 //INTERACCIONES
 	
-	misilizq.Mueve(0.025f);
+	//misilizq.Mueve(0.025f);
 	
 	Interaccion::reboteinterior(hombre, limites);
 	Interaccion::reboteexterior(hombre, plataforma1);
@@ -97,6 +102,14 @@ void Mundo::Mueve()
 	
 	
 	Setojo(hombre.posicion.x, 10, 53);
+
+	if (virus.posicion.x+5 < hombre.posicion.x) {
+		virus.velocidad.x = 8;
+	}
+	if (virus.posicion.x+5 > hombre.posicion.x) {
+		virus.velocidad.x = -8;
+	}
+	
 }
 
 
