@@ -17,7 +17,7 @@ void Fondo::Dibuja(int nivel) {
 		break;
 
 	case 1:
-		//plataforma1//
+//plataforma1//
 		glEnable(GL_TEXTURE_2D);
 		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/banderachina.png").id);
 		glDisable(GL_LIGHTING);
@@ -32,7 +32,7 @@ void Fondo::Dibuja(int nivel) {
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
 
-		//PRENIVEL
+//PRENIVEL
 
 		glEnable(GL_TEXTURE_2D);
 		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/prenivel.png").id);
@@ -47,7 +47,8 @@ void Fondo::Dibuja(int nivel) {
 		glEnd();
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
-		//FONDO 1//: LABORATORIO
+		
+//FONDO 1//: LABORATORIO
 		glEnable(GL_TEXTURE_2D);
 		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/laboratorio.png").id);
 		glDisable(GL_LIGHTING);
@@ -76,7 +77,7 @@ void Fondo::Dibuja(int nivel) {
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
 		*/
-		//FONDO 2//: SUPERMERCADO
+//FONDO 2//: SUPERMERCADO
 
 		glEnable(GL_TEXTURE_2D);
 		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/supermercado.png").id);
@@ -108,8 +109,22 @@ void Fondo::Dibuja(int nivel) {
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
 		*/
-		//FONDO 3//: UNIVERSIDAD
 
+//FONDO 3//: UNIVERSIDAD
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/Universidad.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 1);		glVertex3f(266, -10, -0.1); //ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
+		glTexCoord2d(1, 1);		glVertex3f(366, -10, -0.1);
+		glTexCoord2d(1, 0);		glVertex3f(366, 33, -0.1);
+		glTexCoord2d(0, 0);		glVertex3f(266, 33, -0.1);
+		glEnd();
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
+		/*
 		glEnable(GL_TEXTURE_2D);
 		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/fondo2.png").id);
 		glDisable(GL_LIGHTING);
@@ -123,7 +138,9 @@ void Fondo::Dibuja(int nivel) {
 		glEnd();
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
-		//FONDO 4//:HOSPITAL
+		*/
+
+//FONDO 4//:HOSPITAL
 
 		glEnable(GL_TEXTURE_2D);
 		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/HospitalChina.png").id);
@@ -131,10 +148,10 @@ void Fondo::Dibuja(int nivel) {
 		glBegin(GL_POLYGON);
 
 		glColor3f(1, 1, 1);
-		glTexCoord2d(0, 1);		glVertex3f(160, -10, -0.1); //ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
-		glTexCoord2d(1, 1);		glVertex3f(220, -10, -0.1);
-		glTexCoord2d(1, 0);		glVertex3f(220, 30, -0.1);
-		glTexCoord2d(0, 0);		glVertex3f(160, 30, -0.1);
+		glTexCoord2d(0, 1);		glVertex3f(366, -10, -0.1); //ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
+		glTexCoord2d(1, 1);		glVertex3f(426, -10, -0.1);
+		glTexCoord2d(1, 0);		glVertex3f(426, 30, -0.1);
+		glTexCoord2d(0, 0);		glVertex3f(366, 30, -0.1);
 		glEnd();
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
@@ -142,7 +159,21 @@ void Fondo::Dibuja(int nivel) {
 		break;
 	case 2:
 
-		
+//PRENIVEL
+
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/prenivel.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 1);		glVertex3f(-30, -10, -0.1);//ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
+		glTexCoord2d(1, 1);		glVertex3f(26, -10, -0.1);
+		glTexCoord2d(1, 0);		glVertex3f(26, 30, -0.1);
+		glTexCoord2d(0, 0);		glVertex3f(-30, 30, -0.1);
+		glEnd();
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
 		//FONDO 1	//: AEROPUERTO
 
 		glEnable(GL_TEXTURE_2D);
@@ -151,30 +182,31 @@ void Fondo::Dibuja(int nivel) {
 		glBegin(GL_POLYGON);
 
 		glColor3f(1, 1, 1);
-		glTexCoord2d(0, 1);		glVertex3f(-20, -10, -0.1); //ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
-		glTexCoord2d(1, 1);		glVertex3f(50, -10, -0.1);
-		glTexCoord2d(1, 0);		glVertex3f(50, 30, -0.1);
-		glTexCoord2d(0, 0);		glVertex3f(-20, 30, -0.1);
+		glTexCoord2d(0, 1);		glVertex3f(26, -10, -0.1); //ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
+		glTexCoord2d(1, 1);		glVertex3f(126, -10, -0.1);
+		glTexCoord2d(1, 0);		glVertex3f(126, 45, -0.1);
+		glTexCoord2d(0, 0);		glVertex3f(26, 45, -0.1);
 		glEnd();
 
-		glEnable(GL_LIGHTING);
-		glDisable(GL_TEXTURE_2D);
-
-		glEnable(GL_TEXTURE_2D);
-		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/aeropuerto.png").id);
-		glDisable(GL_LIGHTING);
-		glBegin(GL_POLYGON);
-
-		glColor3f(1, 1, 1);
-		glTexCoord2d(0, 1);		glVertex3f(50, -10, -0.1); //ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
-		glTexCoord2d(1, 1);		glVertex3f(120, -10, -0.1);
-		glTexCoord2d(1, 0);		glVertex3f(120, 30, -0.1);
-		glTexCoord2d(0, 0);		glVertex3f(50, 30, -0.1);
-		glEnd();
 
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
 		//FONDO 2//: CENTRO COMERCIAL
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/CentroComercial.png").id);
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+
+		glColor3f(1, 1, 1);
+		glTexCoord2d(0, 1);		glVertex3f(126, -9, -0.1); //ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
+		glTexCoord2d(1, 1);		glVertex3f(250, -9, -0.1);
+		glTexCoord2d(1, 0);		glVertex3f(250, 60, -0.1);
+		glTexCoord2d(0, 0);		glVertex3f(126, 60, -0.1);
+		glEnd();
+
+
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
 		//FONDO 3//: PARQUE
 		//FONDO 4//: HOSPITAL
 		
