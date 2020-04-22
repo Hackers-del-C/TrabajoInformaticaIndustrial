@@ -5,32 +5,40 @@
 /*Misil::Misil() {
 
 }*/
-void Misil::Inicializader() {
+Misil::Misil(float x, float y, float vx, float vy) {
+	posicion.x = x;
+	posicion.y = x;
+	velocidad.x = vx;
+	velocidad.y = vy;
+}
+
+
+/*void Misil::Inicializader() {
 	//lanzamisiles1 = new Sprite("imagenes/lanzamisiles.png", 30, -4, 4, 4);
 
 	misilder = new Sprite("imagenes/misilder.png", 31, 0, 2, 2);
 	
-}
-void Misil::Inicializaizq() {
+}*/
+void Misil::Inicializa() {
 	//lanzamisiles1 = new Sprite("imagenes/lanzamisiles.png", 30, -4, 4, 4);
 
 	misilizq = new Sprite("imagenes/misilizq.png", 29, 0, 2, 2);
 }
-void Misil::Dibujader() {
+/*void Misil::Dibujader() {
 	misilder->draw();
 
-}
-void Misil::Dibujaizq() {
+}*/
+void Misil::Dibuja() {
 
 	misilizq->draw();
 }
-void Misil::Mueveder(float t) {
+/*void Misil::Mueveder(float t) {
 	posicion = posicion + velocidad * t;
 
 	misilder->loop();
 
-}
-void Misil::Mueveizq(float t) {
+}*/
+void Misil::Mueve(float t) {
 	posicion = posicion + velocidad * t;
 
 

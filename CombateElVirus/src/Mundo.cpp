@@ -4,6 +4,7 @@
 #include "ListaDisparos.h"
 #include <math.h>
 #include "glut.h"
+
 Mundo::Mundo(){
 	level = 0;
 }
@@ -26,8 +27,8 @@ void Mundo::Inicializa()
 	limites.SetLimites(-20, 500, -5, 30); //Son los bordes del juego que el jugador no puede pasar
 	plataforma1.SetLimites(30, 60, 5, 10);//Los brdes de una plataforma
 	lanzamisiles1.Inicializa();
-	misilder.Inicializader();
-	misilizq.Inicializaizq();
+
+	misilizq.Inicializa();
 	/*
 	disparo.origen.y = 0.0f;
 	disparo.origen.x = -5.0f;
@@ -54,8 +55,9 @@ void Mundo::Dibuja()
 	//bonus.Dibuja();
 	disparos.Dibuja();
 	lanzamisiles1.Dibuja();
-	misilder.Dibujader();
-	misilizq.Dibujaizq();
+	misilizq.Dibuja();
+	
+	
 	//aqui es donde hay que poner el codigo de dibujo
 	/*
 	glDisable(GL_LIGHTING);
@@ -83,10 +85,9 @@ void Mundo::Mueve()
 	//disparo.Mueve(0.025f); 	
 	disparos.Mueve(0.025f);
 	 //INTERACCIONES
-	misilder.Mueveder(0.025f);
-	misilizq.Mueveizq(0.025f);
-	misilder.SetVel(5.0f);
-	misilizq.SetVel(-5.0f);
+	
+	misilizq.Mueve(0.025f);
+	
 	Interaccion::reboteinterior(hombre, limites);
 	Interaccion::reboteexterior(hombre, plataforma1);
 	//Interaccion::rebote(esfera, caja);

@@ -7,15 +7,16 @@ class Misil {
 public:
 	ETSIDI::Vector2D posicion;
 	ETSIDI::Vector2D velocidad;
+	Misil();
+	Misil(float x,float y,float vx,float vy);
+	//~Misil();*/
+	//void Inicializader();
 
-	/*Misil();
-	~Misil();*/
-	void Inicializader();
-	void Inicializaizq();
-	void Dibujader();
-	void Dibujaizq();
-	void Mueveder(float t);
-	void Mueveizq(float t);
+	void Inicializa();
+	//void Dibujader();
+	void Dibuja();
+	//void Mueveder(float t);
+	void Mueve(float t);
 	void SetVel(float v);
 	Sprite* misilder;
 

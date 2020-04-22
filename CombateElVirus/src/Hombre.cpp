@@ -67,7 +67,7 @@ void Hombre::Mueve(float t)
     velocidad = velocidad + aceleracion * t;
 
     //ESTO LO PONDRIA CON UN SWICH Y AHORRAMOS MEMORIA
-    trump->loop();
+    trump->loop();  
     trumpder->loop();
     trumpizq->loop();
 
@@ -99,7 +99,7 @@ void Hombre::Inicializa()
 }
 
 Hombre::Hombre() {
-    aceleracion.y = -15.0f;
+    aceleracion.y = -20.0f;
     //aceleracion.y = 0.0f;
     altura = 1.5f;
     posicion.y = -5;

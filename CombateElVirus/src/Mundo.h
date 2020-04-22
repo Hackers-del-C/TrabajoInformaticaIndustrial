@@ -45,7 +45,7 @@ private:
 	Entorno entorno;
 	ListaDisparos disparos;
 	Lanzamisiles lanzamisiles1;
-	Misil misilder;
+	
 	Misil misilizq;
 
 	//ojo
