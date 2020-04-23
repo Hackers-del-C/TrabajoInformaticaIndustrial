@@ -13,7 +13,7 @@ public:
 	void DestruirContenido(int ind);
 	void Mueve(float t);
 	void Dibuja();
-
+	void Inicializa();
 private:
 
 	std::vector<Misil*>lista;

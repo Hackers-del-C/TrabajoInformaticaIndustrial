@@ -29,6 +29,7 @@ void Mundo::Inicializa()
 	plataforma1.SetLimites(30, 60, 5, 10);//Los brdes de una plataforma
 	lanzamisiles1.Inicializa();
 	
+	//misiles.Inicializa();
 
 	//misilizq.Inicializa();
 	/*
@@ -117,17 +118,18 @@ void Mundo::Tecla(unsigned char key)
 		case 'w':
 			misiles.Agregar(new Misil("imagenes/misilizq.png",29.0f, -3.0f, -5.0f, 0.0f)); //// x y vx vy
 			break;
-
+			//"imagenes/misilizq.png"
 		case 's':
-			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, -22.0f)); /// radio, x , y, vx, vy
+			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y+2, 0.0f, -22.0f)); /// radio, x , y, vx, vy
+		
 			break;
 
 		case 'a':
-			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, -22.0f, 0.0f));
+			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y+2, -22.0f, 0.0f));
 			break;
 
 		case 'd':
-			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 22.0f, 0.0f));
+			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y+2, 22.0f, 0.0f));
 			break;
 
 		}

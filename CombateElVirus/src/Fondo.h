@@ -13,5 +13,5 @@ private:
 public:
 	Menu menu;
 	void Dibuja(int nivel);
-
+	Sprite* templo;
 };
