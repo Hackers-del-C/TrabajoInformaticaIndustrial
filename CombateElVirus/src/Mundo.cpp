@@ -39,7 +39,8 @@ void Mundo::Inicializa()
 	disparo.origen.y = disparo.posicion.y;
 	disparo.origen.x = disparo.posicion.x;
 	*/
-
+	
+	
 }
 void Mundo::Dibuja()
 {
@@ -56,7 +57,9 @@ void Mundo::Dibuja()
 	//plataforma.Dibuja();
 	//bonus.Dibuja();
 	disparos.Dibuja();
+	misiles.Dibuja();
 	lanzamisiles1.Dibuja();
+
 	//misilizq.Dibuja();
 
 	hombre.Dibuja(level);
@@ -76,6 +79,7 @@ void Mundo::Mueve()
 	bonus.Mueve(0.025f);
 	//disparo.Mueve(0.025f); 	
 	disparos.Mueve(0.025f);
+	misiles.Mueve(0.025f);
 	 //INTERACCIONES
 	
 	//misilizq.Mueve(0.025f);
@@ -111,11 +115,11 @@ void Mundo::Tecla(unsigned char key)
 		switch (key) {
 
 		case 'w':
-			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, 22.0f));
+			misiles.Agregar(new Misil("imagenes/misilizq.png",29.0f, -3.0f, -5.0f, 0.0f)); //// x y vx vy
 			break;
 
 		case 's':
-			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, -22.0f));
+			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, -22.0f)); /// radio, x , y, vx, vy
 			break;
 
 		case 'a':

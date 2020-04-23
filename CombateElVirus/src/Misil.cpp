@@ -5,7 +5,11 @@
 /*Misil::Misil() {
 
 }*/
-Misil::Misil(float x, float y, float vx, float vy) {
+Misil::Misil(char nombre [20], float x, float y, float vx, float vy) {
+
+
+
+	misil = new Sprite(nombre, x, y, 2, 2);
 	posicion.x = x;
 	posicion.y = x;
 	velocidad.x = vx;
@@ -30,7 +34,7 @@ void Misil::Inicializa() {
 }*/
 void Misil::Dibuja() {
 
-	misilizq->draw();
+	misil->draw();
 }
 /*void Misil::Mueveder(float t) {
 	posicion = posicion + velocidad * t;
@@ -42,7 +46,7 @@ void Misil::Mueve(float t) {
 	posicion = posicion + velocidad * t;
 
 
-	misilizq->loop();
+	misil->loop();
 }
 void Misil::SetVel(float v) {
 	velocidad.x = v;
