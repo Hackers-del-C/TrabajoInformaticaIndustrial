@@ -60,7 +60,7 @@ void Misil::Dibuja() {
 void Misil::Mueve(float t) {
 
 	posicion = posicion + velocidad * t;
-	posicion.x = posicion.x + velocidad.x * t;
+	
 
 	misil->loop();
 }

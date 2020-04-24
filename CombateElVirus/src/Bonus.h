@@ -1,5 +1,5 @@
 #pragma once
-#include "Vector2D.h"
+#include "ETSIDI.h"
 class Bonus
 {
 public:
@@ -11,8 +11,8 @@ public:
     void SetPos(float ix, float iy);
 
 private:
-
-    Vector2D posicion;
-    Vector2D velocidad;
-    Vector2D aceleracion;
+    
+    ETSIDI::Vector2D posicion;
+    ETSIDI::Vector2D velocidad;
+    ETSIDI::Vector2D aceleracion;
 };

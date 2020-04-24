@@ -14,7 +14,7 @@ public:
 	void Mueve(float t);
 	void Dibuja();
 	void Inicializa();
-private:
+
 
 	std::vector<Misil*>lista;
 	//Disparo* lista[NUM_MAX_DISPAROS];

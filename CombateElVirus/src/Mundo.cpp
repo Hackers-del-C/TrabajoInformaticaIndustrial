@@ -28,8 +28,14 @@ void Mundo::Inicializa()
 	limites.SetLimites(-20, 500, -5, 30); //Son los bordes del juego que el jugador no puede pasar
 	plataforma1.SetLimites(30, 60, 5, 10);//Los brdes de una plataforma
 	lanzamisiles1.Inicializa();
-	
 
+	vidas.Inicializa(hombre);
+
+	/*vida1.Inicializa(hombre,15,20);
+	vida2.Inicializa(hombre,19, 20);
+	vida3.Inicializa(hombre,23,20);
+	vida4.Inicializa(hombre,27, 20);
+	vida5.Inicializa(hombre,30, 20);*/
 	//misiles.Inicializa();
 
 	//misilizq.Inicializa();
@@ -71,6 +77,10 @@ void Mundo::Dibuja()
 	if (naleatorio < 10) {
 		misiles.Agregar(new Misil("imagenes/misilizq.png", 15, -3.0f, -5.0f, 0.0f));
 	}
+
+	//hombre.SetVidas(4);
+	vidas.Dibuja(hombre.vidas);
+	//vidas.Dibuja(mascarillas);
 }
 
 
@@ -85,6 +95,9 @@ void Mundo::Mueve()
 	//disparo.Mueve(0.025f); 	
 	disparos.Mueve(0.025f);
 	misiles.Mueve(0.025f);
+
+	vidas.Mueve(0.025f,hombre);
+
 	 //INTERACCIONES
 	
 	//misilizq.Mueve(0.025f);
@@ -121,10 +134,10 @@ void Mundo::Tecla(unsigned char key)
 
 		case 'w':
 			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y + 2, 0.0f, 22.0f));
-			//disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y + 2, 0.0f, 22.0f));
-			 //// x y vx vy
+			
+
 			break;
-			//"imagenes/misilizq.png"
+			
 		case 's':
 			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y+2, 0.0f, -22.0f)); /// radio, x , y, vx, vy
 		

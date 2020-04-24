@@ -6,6 +6,8 @@ class Hombre
 {
     friend class Interaccion;
 public:
+    int vidas;
+   
     Hombre();
     virtual ~Hombre();
     void Dibuja(int nivel);
@@ -14,6 +16,7 @@ public:
     float altura;
     void Inicializa();
     void Salta();
+    void SetVidas(int v) { vidas = v; }
     int dir; //direccion del muñeco
    ETSIDI::Vector2D posicion, velocidad, aceleracion;
    ETSIDI::SpriteSequence* trump;
@@ -27,4 +30,5 @@ public:
    ETSIDI::SpriteSequence* muñeco;
    ETSIDI::SpriteSequence* muñecoder;
    ETSIDI::SpriteSequence* muñecoizq;
+
 };

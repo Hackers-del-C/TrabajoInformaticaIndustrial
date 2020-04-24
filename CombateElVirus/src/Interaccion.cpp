@@ -55,6 +55,17 @@ void Interaccion::reboteexterior(Hombre& h,Limites c)
     if (h.posicion.x > xmin && h.posicion.x < xmax && h.posicion.y < ymax)h.posicion.y = ymax;*/
    
 }
+
+ bool Interaccion::colision(ListaMisil& misiles, Hombre h){
+     for (int i = 0; i < misiles.lista.size(); i++) {
+         if (misiles.lista[i]->posicion.x == h.posicion.x) {
+             h.vidas--;
+             return TRUE;
+         }
+     }
+     return false;
+ }
+
 /*
 bool Interaccion::rebote(Esfera& e, Pared p)
 {

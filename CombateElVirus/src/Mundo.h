@@ -11,7 +11,7 @@
 #include "Lanzamisiles.h"
 #include "Virus.h"
 #include "Listamisiles.h"
-
+#include "Vidas.h"
 
 //#include "Misil.h"
 class Mundo
@@ -19,7 +19,7 @@ class Mundo
 
 public: 
 	int level;
-
+	int mascarillas = 5;
 	//generales
 	Mundo();
 	void Tecla(unsigned char key);
@@ -32,6 +32,8 @@ public:
 	void Setojo(float ox, float oy, float oz);
 	void SetLevel(int nivel) { level = nivel; }
 
+
+	
 private:
 	// constantes para el salto
 
@@ -50,7 +52,8 @@ private:
 	ListaDisparos disparos;
 	Lanzamisiles lanzamisiles1;
 	ListaMisil misiles;
-
+	
+	Vidas vidas;
 	//Misil misilizq;
 
 	//ojo

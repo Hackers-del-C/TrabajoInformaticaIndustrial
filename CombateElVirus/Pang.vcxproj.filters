@@ -67,6 +67,9 @@
     <ClCompile Include="src\Personajes.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes</Filter>
     </ClCompile>
+    <ClCompile Include="src\Vidas.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Entorno\Vidas</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\ETSIDI.h">
@@ -128,6 +131,9 @@
     </ClInclude>
     <ClInclude Include="src\Personajes.h">
       <Filter>Archivos de encabezado\MUNDO\Personajes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vidas.h">
+      <Filter>Archivos de encabezado\MUNDO\Entorno\Vidas</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -211,6 +217,12 @@
     </Filter>
     <Filter Include="Archivos de encabezado\MUNDO\Personajes\Enemigos">
       <UniqueIdentifier>{c6161637-8d45-4ece-8f2e-9f6cd9522196}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\MUNDO\Entorno\Vidas">
+      <UniqueIdentifier>{d33ac490-077d-4c4d-bb2f-5f58ef759637}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de código fuente\MUNDO\Entorno\Vidas">
+      <UniqueIdentifier>{e7c5f438-4151-4828-abe3-1a982b548c2f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

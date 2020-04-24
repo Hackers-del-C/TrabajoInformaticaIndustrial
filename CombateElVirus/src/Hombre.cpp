@@ -47,7 +47,9 @@ void Hombre::Dibuja(int nivel)
 
     }
     glTranslatef(-posicion.x, -posicion.y, 0);
-
+    
+  
+  
 }
 
 void Hombre::Mueve(float t)
@@ -68,10 +70,15 @@ void Hombre::Mueve(float t)
     muñeco->loop();
     muñecoder->loop();
     muñecoizq->loop();
+
 }
 
 void Hombre::Inicializa()
 {
+  
+
+
+   
 
     /////level1
     goku = new SpriteSequence("imagenes/goku.png", 1, 3, 25, true, -2, 2, 5, 5);
@@ -95,7 +102,7 @@ Hombre::Hombre() {
     posicion.y = -5;
     posicion.x = 0;
     dir = 0;
-
+    vidas=5;
 }
 
 Hombre::~Hombre() {

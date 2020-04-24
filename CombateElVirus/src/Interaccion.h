@@ -1,8 +1,13 @@
 #pragma once
+#
 #include "Hombre.h"
 #include "Limites.h"
 #include "Pared.h"
-
+#include "ListaDisparos.h"
+#include "Listalanzamisiles.h"
+#include "Listalanzamisiles.h"
+#include "Listamisiles.h"
+#include "Mundo.h"
 class Interaccion
 {
 public:
@@ -12,4 +17,7 @@ public:
    // static bool rebote(Esfera& e, Caja c);
     Interaccion();
     virtual ~Interaccion();
+
+
+    static bool colision(ListaMisil& misiles, Hombre h);
 };
