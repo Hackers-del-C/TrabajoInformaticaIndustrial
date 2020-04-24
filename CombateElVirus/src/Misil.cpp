@@ -7,7 +7,7 @@
 /*Misil::Misil() {
 
 }*/
-Misil::Misil(char  nombre [20], float x, float y, float vx, float vy) :velocidad(-5.0f, 0.0f) {
+Misil::Misil(char  nombre [20], float x, float y, float vx, float vy)  {
 
 	/*
 	stringstream sstr;
@@ -44,8 +44,11 @@ void Misil::Inicializa() {
 }*/
 void Misil::Dibuja() {
 
-	glutSolidSphere(1, 20, 20);
+	glTranslatef(posicion.x,0, 0);
 	misil->draw();
+
+	glTranslatef(-posicion.x, 0, 0);
+	
 
 }
 /*void Misil::Mueveder(float t) {

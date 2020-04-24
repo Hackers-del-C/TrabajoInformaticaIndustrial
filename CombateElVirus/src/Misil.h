@@ -21,7 +21,7 @@ public:
 	//void Mueveder(float t);
 	void Mueve(float t);
 	void SetVel(float v);
-	Sprite* misilder;
+
 	Sprite* misil;
-	Sprite* misilizq;
+
 };
