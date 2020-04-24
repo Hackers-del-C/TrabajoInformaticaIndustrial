@@ -23,7 +23,7 @@ void Mundo::Inicializa()
 	plataforma.SetPos(70.0f, 9.0f, 80.0f, 9.0f);
 	
 	hombre.Inicializa();
-	virus.Inicializa("imagenes/virusseta.png");
+	virus.Inicializa("imagenes/trump");
 
 	limites.SetLimites(-20, 500, -5, 30); //Son los bordes del juego que el jugador no puede pasar
 	plataforma1.SetLimites(30, 60, 5, 10);//Los brdes de una plataforma
@@ -91,10 +91,10 @@ void Mundo::Mueve()
 	Setojo(hombre.posicion.x, 10, 53);
 
 	if (virus.posicion.x+5 < hombre.posicion.x) {
-		virus.velocidad.x = 5;
+		virus.velocidad.x = 3;
 	}
 	if (virus.posicion.x+5 > hombre.posicion.x) {
-		virus.velocidad.x = -5;
+		virus.velocidad.x = -3;
 	}
 	
 }
