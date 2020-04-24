@@ -116,6 +116,8 @@ void Mundo::Tecla(unsigned char key)
 		switch (key) {
 
 		case 'w':
+
+			//disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y + 2, 0.0f, 22.0f));
 			misiles.Agregar(new Misil("imagenes/misilizq.png",29.0f, -3.0f, -5.0f, 0.0f)); //// x y vx vy
 			break;
 			//"imagenes/misilizq.png"

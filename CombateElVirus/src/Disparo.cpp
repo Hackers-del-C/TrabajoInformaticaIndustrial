@@ -1,4 +1,5 @@
 #include "Disparo.h"
+
 #include "glut.h"
 
 void Disparo::Dibuja()
@@ -10,6 +11,7 @@ void Disparo::Dibuja()
     glTranslatef(-posicion.x, -posicion.y, 0);
     glDisable(GL_LIGHTING);
 
+ 
     /*
     glBegin(GL_POLYGON);
     glVertex3d(posicion.x, posicion.y, 0);
@@ -24,6 +26,7 @@ void Disparo::Mueve(float t)
 {
     posicion = posicion + velocidad * t;
     
+
 
 }
 

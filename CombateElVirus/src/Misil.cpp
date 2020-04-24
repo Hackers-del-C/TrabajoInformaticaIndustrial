@@ -7,7 +7,7 @@
 /*Misil::Misil() {
 
 }*/
-Misil::Misil(char nombre [20], float x, float y, float vx, float vy) {
+Misil::Misil(char  nombre [20], float x, float y, float vx, float vy) :velocidad(-5.0f, 0.0f) {
 
 	/*
 	stringstream sstr;
@@ -36,7 +36,7 @@ Misil::Misil(char nombre [20], float x, float y, float vx, float vy) {
 void Misil::Inicializa() {
 	//lanzamisiles1 = new Sprite("imagenes/lanzamisiles.png", 30, -4, 4, 4);
 
-	misilizq = new Sprite("imagenes/misilizq.png", 29, 0, 2, 2);
+	misil = new Sprite("imagenes/misilizq.png", 29, -3.0, 2, 2);
 }
 /*void Misil::Dibujader() {
 	misilder->draw();
