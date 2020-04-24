@@ -29,6 +29,7 @@ void Mundo::Inicializa()
 	plataforma1.SetLimites(30, 60, 5, 10);//Los brdes de una plataforma
 	lanzamisiles1.Inicializa();
 	
+
 	//misiles.Inicializa();
 
 	//misilizq.Inicializa();
@@ -40,7 +41,6 @@ void Mundo::Inicializa()
 	disparo.origen.y = disparo.posicion.y;
 	disparo.origen.x = disparo.posicion.x;
 	*/
-	
 	
 }
 void Mundo::Dibuja()
@@ -58,6 +58,7 @@ void Mundo::Dibuja()
 	//plataforma.Dibuja();
 	//bonus.Dibuja();
 	disparos.Dibuja();
+
 	misiles.Dibuja();
 	lanzamisiles1.Dibuja();
 
@@ -66,7 +67,10 @@ void Mundo::Dibuja()
 	hombre.Dibuja(level);
 	virus.Dibuja(level);
 	
+	int naleatorio = lanzaDado(1000);
+	if (naleatorio < 10) {
 	
+	}
 }
 
 
@@ -116,9 +120,9 @@ void Mundo::Tecla(unsigned char key)
 		switch (key) {
 
 		case 'w':
-
+			misiles.Agregar(new Misil("imagenes/misilizq.png", lanzaDado(30, -10), -3.0f, -5.0f, 0.0f));
 			//disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y + 2, 0.0f, 22.0f));
-			misiles.Agregar(new Misil("imagenes/misilizq.png",29.0f, -3.0f, -5.0f, 0.0f)); //// x y vx vy
+			 //// x y vx vy
 			break;
 			//"imagenes/misilizq.png"
 		case 's':

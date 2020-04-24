@@ -43,8 +43,10 @@ void Misil::Inicializa() {
 
 }*/
 void Misil::Dibuja() {
-	
+
+	glutSolidSphere(1, 20, 20);
 	misil->draw();
+
 }
 /*void Misil::Mueveder(float t) {
 	posicion = posicion + velocidad * t;
@@ -53,8 +55,9 @@ void Misil::Dibuja() {
 
 }*/
 void Misil::Mueve(float t) {
-	posicion = posicion + velocidad * t;
 
+	posicion = posicion + velocidad * t;
+	posicion.x = posicion.x + velocidad.x * t;
 
 	misil->loop();
 }
