@@ -11,7 +11,7 @@ Personajes:: ~Personajes() {
 void Personajes::Inicializa() {
 //	hombre.Inicializa();
 
-	virus.Inicializa("imagenes/trump");
+	virus.Inicializa("trump");
 	
 	
 }

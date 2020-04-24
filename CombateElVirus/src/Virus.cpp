@@ -53,9 +53,9 @@ void Virus::Inicializa(string nombre) {
     std::copy(cadena.str().c_str(), cadena.str().c_str() + cadena.str().length() + 1, pString);
     */
    
-    string nombreder = nombre + "der.png";
-    string nombreizq = nombre + "izq.png";
-    nombre = nombre + ".png";
+    string nombreder = "imagenes/" +nombre + "der.png";
+    string nombreizq ="imagenes/"+ nombre + "izq.png";
+    nombre = "imagenes/"+ nombre + ".png";
 
     char* a = strcpy(new char[nombre.length() + 1], nombre.c_str());
     char* b = strcpy(new char[nombreder.length() + 1], nombreder.c_str());
