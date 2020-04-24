@@ -1,11 +1,25 @@
 #include"Misil.h"
-
+#include <iostream>
+#include <string>
+#include <sstream>
 #include"glut.h"
 
 /*Misil::Misil() {
 
 }*/
-Misil::Misil(float x, float y, float vx, float vy) {
+Misil::Misil(char nombre [20], float x, float y, float vx, float vy) {
+
+	/*
+	stringstream sstr;
+	string cadena = "imagenes/";
+	sstr << cadena << nombre << ".png";
+	cadena = sstr.str();
+	char nombreimagen[20];
+	for (int i = 0; i != '\0'; i++) {
+		nombreimagen[i] = cadena[i];
+
+	}*/
+	misil = new Sprite(nombre, x, y, 2, 2);
 	posicion.x = x;
 	posicion.y = x;
 	velocidad.x = vx;
@@ -29,8 +43,8 @@ void Misil::Inicializa() {
 
 }*/
 void Misil::Dibuja() {
-
-	misilizq->draw();
+	
+	misil->draw();
 }
 /*void Misil::Mueveder(float t) {
 	posicion = posicion + velocidad * t;
@@ -42,7 +56,7 @@ void Misil::Mueve(float t) {
 	posicion = posicion + velocidad * t;
 
 
-	misilizq->loop();
+	misil->loop();
 }
 void Misil::SetVel(float v) {
 	velocidad.x = v;

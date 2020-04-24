@@ -23,9 +23,14 @@ void ListaMisil::DestruirContenido(int ind) {
 void ListaMisil::Mueve(float t) {
 	for (int i = 0; i < lista.size(); i++) {
 		lista[i]->Mueve(t);
+		
 	}
 }
 void ListaMisil::Dibuja() {
 	for (int i = 0; i < lista.size(); i++)
 		lista[i]->Dibuja();
+}
+void ListaMisil::Inicializa() {
+	for (int i = 0; i < lista.size(); i++)
+		lista[i]->Inicializa();
 }

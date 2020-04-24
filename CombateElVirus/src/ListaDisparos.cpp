@@ -10,8 +10,10 @@ ListaDisparos::~ListaDisparos() {
 }
 
 bool ListaDisparos::Agregar(Disparo* d) {
-	lista.push_back(d);
-	return true;
+	if (lista.size() < NUM_MAX_DISPAROS) {  // solo tiene 20
+		lista.push_back(d);
+		return true;
+	}
 }
 void ListaDisparos::DestruirContenido(int ind) {
 	if ((ind < 0) || (ind >= lista.size())) {

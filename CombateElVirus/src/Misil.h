@@ -8,7 +8,7 @@ public:
 	ETSIDI::Vector2D posicion;
 	ETSIDI::Vector2D velocidad;
 	Misil();
-	Misil(float x,float y,float vx,float vy);
+	Misil(char nombre[20], float x,float y,float vx,float vy);
 	//~Misil();*/
 	//void Inicializader();
 
@@ -19,6 +19,6 @@ public:
 	void Mueve(float t);
 	void SetVel(float v);
 	Sprite* misilder;
-
+	Sprite* misil;
 	Sprite* misilizq;
 };

@@ -10,6 +10,8 @@
 #include "Entorno.h"
 #include "Lanzamisiles.h"
 #include "Virus.h"
+#include "Listamisiles.h"
+
 
 //#include "Misil.h"
 class Mundo
@@ -47,7 +49,8 @@ private:
 	Entorno entorno;
 	ListaDisparos disparos;
 	Lanzamisiles lanzamisiles1;
-	
+	ListaMisil misiles;
+
 	//Misil misilizq;
 
 	//ojo

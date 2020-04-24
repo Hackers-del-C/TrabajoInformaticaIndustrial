@@ -3,7 +3,7 @@
 
 void Disparo::Dibuja()
 {
-    glColor3ub(255, 255, 255);
+    glColor3ub(0,0, 0);
     glPushMatrix();
     glTranslatef(posicion.x, posicion.y, 0);
     glutSolidSphere(radio, 20, 20);
