@@ -59,7 +59,9 @@ void Interaccion::reboteexterior(Hombre& h,Limites c)
  bool Interaccion::colision(ListaMisil& misiles, Hombre h){
      for (int i = 0; i < misiles.lista.size(); i++) {
          if (misiles.lista[i]->posicion.x == h.posicion.x) {
+             misiles.DestruirContenido(i);
              if (h.vidas >= 1) {
+
                  h.vidas--;
                  return TRUE;
              }
