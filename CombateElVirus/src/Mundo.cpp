@@ -162,7 +162,7 @@ void Mundo::Tecla(unsigned char key)
 
 			break;
 		case 'y':
-			if (hombre.vidas >0) {
+			if (hombre.vidas > 0) {
 				hombre.vidas--; /// radio, x , y, vx, vy
 			}
 			break;

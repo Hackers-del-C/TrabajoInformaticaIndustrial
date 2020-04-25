@@ -60,11 +60,11 @@ void Interaccion::reboteexterior(Hombre& h,Limites c)
      for (int i = 0; i < misiles.lista.size(); i++) {
          if (misiles.lista[i]->posicion.x == h.posicion.x) { //// MODO TEST -- HAY QUE USAR MODULO DIFERENCIA POSICION
              misiles.DestruirContenido(i);
-             if (h.vidas >= 1) {
+             //if (h.vidas >= 1) {
 
                  h.vidas--;
                  return TRUE;
-             }
+            // }
              
          }
      }
