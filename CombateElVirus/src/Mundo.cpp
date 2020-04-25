@@ -109,7 +109,9 @@ void Mundo::Mueve()
 	//Interaccion::rebote(esfera2, caja);
 	//Interaccion::rebote(esfera2, plataforma);
 	
-	
+
+	Interaccion::colision(misiles, hombre); /// no funciona
+
 	Setojo(hombre.posicion.x, 10, 53);
 
 	if (virus.posicion.x+5 < hombre.posicion.x) {
