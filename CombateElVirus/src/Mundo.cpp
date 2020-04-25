@@ -151,6 +151,20 @@ void Mundo::Tecla(unsigned char key)
 			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y+2, 22.0f, 0.0f));
 			break;
 
+
+			///////// TESTS DE VIDAS
+		case 't':
+			if (hombre.vidas < 5) {
+				hombre.vidas++; /// radio, x , y, vx, vy
+			}
+
+			break;
+		case 'y':
+			if (hombre.vidas >0) {
+				hombre.vidas--; /// radio, x , y, vx, vy
+			}
+			break;
+		
 		}
 	}
 }
