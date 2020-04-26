@@ -2,7 +2,10 @@
 #include "ListaPlatafomas.h"
 #include "glut.h"
 
+ListaPlataformas::ListaPlataformas() {
 
+
+}
 ListaPlataformas::~ListaPlataformas() {
 
 }
@@ -20,7 +23,7 @@ void ListaPlataformas::DestruirContenido(int ind) {
 	delete lista[ind];
 	lista.erase(lista.begin() + ind);
 }
-void ListaPlataformas::Dibuja(float x1, float y1, float x2, float y2) {
+void ListaPlataformas::Dibuja() {
 	for (int i = 0; i < lista.size(); i++)
-		lista[i]->Dibuja(x1,y1,x2,y2);
+		lista[i]->Dibuja();
 }

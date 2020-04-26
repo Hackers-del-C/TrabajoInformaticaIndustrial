@@ -82,7 +82,10 @@ void Mundo::Dibuja()
 	vidas.Dibuja(hombre.vidas);
 	//vidas.Dibuja(mascarillas);
 
-
+	plataformas.Dibuja();
+	//disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y + 2, 0.0f, 22.0f));
+	plataformas.Agregar(new Plataformas(10, 5, 20, 5.5));
+	plataformas.Agregar(new Plataformas(25, 8, 35, 8.5));
 	
 }
 

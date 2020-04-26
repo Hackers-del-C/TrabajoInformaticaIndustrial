@@ -16,7 +16,7 @@ Plataformas::Plataformas(float x1, float y1, float x2, float y2) {
     limite2.y = y2;
 }
 
-void Plataformas::Dibuja(float x1, float y1, float x2, float y2) {
+void Plataformas::Dibuja() {
     glDisable(GL_LIGHTING);
     glColor3ub(0, 0, 0);
     glBegin(GL_POLYGON);

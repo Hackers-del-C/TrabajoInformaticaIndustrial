@@ -5,7 +5,7 @@ public:
 	Plataformas();
 	Plataformas(float x1, float y1, float x2, float y2);
 	//~Plataformas();
-	void Dibuja(float x1, float y1, float x2, float y2);
+	void Dibuja();
 	void SetPos(ETSIDI::Vector2D l1,ETSIDI::Vector2D l2) {
 		limite1 = l1;
 		limite2 = l2;

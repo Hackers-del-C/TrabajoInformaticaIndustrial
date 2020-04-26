@@ -5,13 +5,13 @@
 class ListaPlataformas{
 
 public:
-	ListaPlataformas::ListaPlataformas();
+	ListaPlataformas();
 	
 	~ListaPlataformas();
 
 	bool Agregar(Plataformas* p);
 	void DestruirContenido(int ind);
-	void Dibuja(float x1, float y1, float x2, float y2);
+	void Dibuja();
 
 private:
 	std::vector<Plataformas*>lista;

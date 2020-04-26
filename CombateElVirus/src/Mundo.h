@@ -57,7 +57,7 @@ private:
 	ListaMisil misiles;
 	
 	Vidas vidas;
-	Plataformas plataformas;
+	ListaPlataformas plataformas;
 	//Misil misilizq;
 
 	//ojo
