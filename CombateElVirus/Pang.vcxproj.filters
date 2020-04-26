@@ -70,6 +70,12 @@
     <ClCompile Include="src\Vidas.cpp">
       <Filter>Archivos de código fuente\MUNDO\Entorno\Vidas</Filter>
     </ClCompile>
+    <ClCompile Include="src\Plataformas.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Limites</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ListaPlataformas.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Limites</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\ETSIDI.h">
@@ -134,6 +140,12 @@
     </ClInclude>
     <ClInclude Include="src\Vidas.h">
       <Filter>Archivos de encabezado\MUNDO\Entorno\Vidas</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Plataformas.h">
+      <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ListaPlatafomas.h">
+      <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

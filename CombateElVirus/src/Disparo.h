@@ -2,7 +2,7 @@
 #pragma once
 
 #include "Vector2D.h"
-
+#include "ETSIDI.h"
 
 class Disparo
 {
@@ -20,9 +20,9 @@ public:
 
 
 private:
-    Vector2D posicion;
-    Vector2D velocidad;
-    Vector2D aceleracion;
-    Vector2D origen;
+    ETSIDI::Vector2D posicion;
+    ETSIDI::Vector2D velocidad;
+    ETSIDI::Vector2D aceleracion;
+    ETSIDI::Vector2D origen;
     
 };

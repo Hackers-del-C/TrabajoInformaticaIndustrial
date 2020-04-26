@@ -81,6 +81,9 @@ void Mundo::Dibuja()
 	//hombre.SetVidas(4);
 	vidas.Dibuja(hombre.vidas);
 	//vidas.Dibuja(mascarillas);
+
+
+	
 }
 
 

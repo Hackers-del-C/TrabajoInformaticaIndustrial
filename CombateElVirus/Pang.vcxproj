@@ -93,6 +93,7 @@
     <ClCompile Include="src\ListaDisparos.cpp" />
     <ClCompile Include="src\Listalanzamisiles.cpp" />
     <ClCompile Include="src\Listamisiles.cpp" />
+    <ClCompile Include="src\ListaPlataformas.cpp" />
     <ClCompile Include="src\Menu.cpp" />
     <ClCompile Include="src\Misil.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
@@ -102,6 +103,7 @@
     <ClCompile Include="src\Pared.cpp" />
     <ClCompile Include="src\Bonus.cpp" />
     <ClCompile Include="src\Personajes.cpp" />
+    <ClCompile Include="src\Plataformas.cpp" />
     <ClCompile Include="src\Titulo.cpp" />
     <ClCompile Include="src\Vector2D.cpp" />
     <ClCompile Include="src\Vidas.cpp" />
@@ -120,11 +122,13 @@
     <ClInclude Include="src\ListaDisparos.h" />
     <ClInclude Include="src\Listalanzamisiles.h" />
     <ClInclude Include="src\Listamisiles.h" />
+    <ClInclude Include="src\ListaPlatafomas.h" />
     <ClInclude Include="src\Menu.h" />
     <ClInclude Include="src\Misil.h" />
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\Pared.h" />
     <ClInclude Include="src\Personajes.h" />
+    <ClInclude Include="src\Plataformas.h" />
     <ClInclude Include="src\Titulo.h" />
     <ClInclude Include="src\Vector2D.h" />
     <ClInclude Include="src\Vidas.h" />

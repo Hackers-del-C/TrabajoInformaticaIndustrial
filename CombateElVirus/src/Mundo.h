@@ -12,6 +12,9 @@
 #include "Virus.h"
 #include "Listamisiles.h"
 #include "Vidas.h"
+#include "ListaPlatafomas.h"
+#include "Plataformas.h"
+
 
 //#include "Misil.h"
 class Mundo
@@ -54,6 +57,7 @@ private:
 	ListaMisil misiles;
 	
 	Vidas vidas;
+	Plataformas plataformas;
 	//Misil misilizq;
 
 	//ojo
