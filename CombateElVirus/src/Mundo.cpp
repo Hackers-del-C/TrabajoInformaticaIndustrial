@@ -197,7 +197,13 @@ void Mundo::teclaEspecial(unsigned char key){
 
 			 break;
 		 case GLUT_KEY_UP:
+			 if (Interaccion::colision(hombre, limites)) {
+				 hombre.SetVel(hombre.velocidad.x, 15.0f);
 
+			 }
+
+			 ///////////////////////////////*
+			 /*
 			 if (salto >= 1 && salto < 3 && hombre.posicion.y == -5) {
 				 salto += 1;
 				 hombre.SetVel(hombre.velocidad.x, 15.0f);
@@ -207,13 +213,16 @@ void Mundo::teclaEspecial(unsigned char key){
 
 					 break;
 				 }*/
-
+			 /*
 			 }
 			 else if (salto == 3 && hombre.posicion.y == -5) {
 
 				 hombre.SetVel(hombre.velocidad.x, 20.0f);
 				 salto = 1;
 			 }
+
+			 */
+			 ///////////7
 			 break;
 		 }
 

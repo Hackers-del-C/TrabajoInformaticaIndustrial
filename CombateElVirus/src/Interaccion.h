@@ -18,6 +18,6 @@ public:
     Interaccion();
     virtual ~Interaccion();
 
-
+    static bool colision(Hombre h, Limites l);
     static bool colision(ListaMisil& misiles, Hombre h);
 };

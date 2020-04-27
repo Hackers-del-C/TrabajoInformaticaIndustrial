@@ -70,7 +70,16 @@ void Interaccion::reboteexterior(Hombre& h,Limites c)
      }
      return false;
  }
+  bool Interaccion::colision(Hombre h, Limites l) {
+      ETSIDI::Vector2D dir;
+      float dif = h.GetPos().y- l.suelo.GetSuelo() ;
+      if (dif <= 0.0f) {
 
+
+          return true;
+      }
+      return false;
+ }
 /*
 bool Interaccion::rebote(Esfera& e, Pared p)
 {

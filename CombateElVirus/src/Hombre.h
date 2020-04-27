@@ -18,6 +18,12 @@ public:
     void Salta();
     void SetVidas(int v) { vidas = v; }
     int dir; //direccion del muñeco
+
+    ETSIDI::Vector2D GetPos() { return posicion; }
+    void SetAceleracion(float ax, float ay) {
+        aceleracion.x = ax;
+        aceleracion.y = ay;
+    }
    ETSIDI::Vector2D posicion, velocidad, aceleracion;
    ETSIDI::SpriteSequence* trump;
    ETSIDI::SpriteSequence* trumpder;

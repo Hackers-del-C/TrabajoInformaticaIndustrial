@@ -26,12 +26,12 @@ void Pared::SetColor(unsigned char r, unsigned char v, unsigned char a) {
 
 }
 
-float Pared::distancia(Vector2D punto, Vector2D* direccion)
+float Pared::distancia(ETSIDI::Vector2D punto, ETSIDI::Vector2D* direccion)
 {
-    Vector2D u = (punto - limite1);
-    Vector2D v = (limite2 - limite1).Unitario();
-    float longitud = (limite1 - limite2).modulo();
-    Vector2D dir;
+    ETSIDI::Vector2D u = (punto - limite1);
+    ETSIDI::Vector2D v = (limite2 - limite1).unit();
+    float longitud = (limite1 - limite2).module();
+    ETSIDI::Vector2D dir;
     float valor = u * v;
     float distancia = 0;
     if (valor < 0)
@@ -40,15 +40,16 @@ float Pared::distancia(Vector2D punto, Vector2D* direccion)
         dir = (punto - limite2);
     else
         dir = u - v * valor;
-    distancia = dir.modulo();
+    distancia = dir.module();
     if (direccion != 0) //si nos dan un vector…
-        *direccion = dir.Unitario();
+        *direccion = dir.unit();
     return distancia;
 }
 
-void Pared::SetPos(Vector2D limite1, Vector2D limite2) {
-    this->limite1 = limite1;
-    this->limite2 = limite2;
+void Pared::SetPos(ETSIDI::Vector2D l1, ETSIDI::Vector2D l2) {
+    limite1 = l1;
+
+    limite2 = l2;
 }
 void Pared::SetPos(float x1, float y1, float x2, float y2) 
 {
