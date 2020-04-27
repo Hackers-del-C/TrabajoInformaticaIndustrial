@@ -5,15 +5,16 @@
 void Disparo::Dibuja()
 {
     glColor3ub(0,0, 0);
-    glPushMatrix();
+
+   /* glPushMatrix();*/
     glTranslatef(posicion.x, posicion.y, 0);
     glutSolidSphere(radio, 20, 20);
     glTranslatef(-posicion.x, -posicion.y, 0);
     glDisable(GL_LIGHTING);
 
  
-    /*
-    glBegin(GL_POLYGON);
+    
+    /*glBegin(GL_POLYGON);
     glVertex3d(posicion.x, posicion.y, 0);
     glVertex3d(posicion.x, posicion.y, 0);
     glVertex3d(posicion.x + 0.05, posicion.y, 0);
