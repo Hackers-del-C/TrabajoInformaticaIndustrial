@@ -25,7 +25,7 @@ void Personajes::Dibuja(int nivel,Hombre h) {
 	amigo.Mensajes();
 }
 void Personajes::Mueve(float t ) {
-	virus.Mueve(t);
+	virus.Mueve(t, hombre);
 	amigo.Mueve(t);
 	if (virus.posicion.x < hombre.posicion.x) {
 		virus.velocidad.x = 5;

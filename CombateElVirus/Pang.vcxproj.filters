@@ -79,6 +79,9 @@
     <ClCompile Include="src\Amigo.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes</Filter>
     </ClCompile>
+    <ClCompile Include="src\ListaVirus.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\ETSIDI.h">
@@ -152,6 +155,9 @@
     </ClInclude>
     <ClInclude Include="src\Amigo.h">
       <Filter>Archivos de encabezado\MUNDO\Personajes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ListaVirus.h">
+      <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

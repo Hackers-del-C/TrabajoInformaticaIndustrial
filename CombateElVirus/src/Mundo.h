@@ -14,6 +14,7 @@
 #include "Vidas.h"
 #include "ListaPlatafomas.h"
 #include "Plataformas.h"
+#include "ListaVirus.h"
 
 
 //#include "Misil.h"
@@ -58,6 +59,7 @@ private:
 	Vidas vidas;
 	ListaPlataformas plataformas;
 	//Misil misilizq;
+	ListaVirus listavirus;
 
 	//ojo
 	float x_ojo;

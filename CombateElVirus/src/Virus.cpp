@@ -13,9 +13,9 @@ Virus::Virus() {
 
     posicion.x = 15;
     posicion.y = -7.5;
-    
-
+ 
 }
+
 Virus::~Virus() {
 
 }
@@ -87,10 +87,18 @@ void Virus::SetVel(float vx, float vy)
     velocidad.y = vy;
 }
 
-void Virus::Mueve(float t) {
+void Virus::Mueve(float t, Hombre h) {
 
     posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
     velocidad = velocidad + aceleracion * t;
+
+    if (posicion.x + 5 < h.posicion.x) {
+        velocidad.x = 3;
+    }
+    if (posicion.x + 5 > h.posicion.x) {
+        velocidad.x = -3;
+    }
+
     if (izqder == 1) {
         sprite->loop();
         spriteder->loop();

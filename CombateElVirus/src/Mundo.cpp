@@ -39,14 +39,15 @@ void Mundo::Inicializa()
 	//misiles.Inicializa();
 
 	//misilizq.Inicializa();
-	/*
-	disparo.origen.y = 0.0f;
-	disparo.origen.x = -5.0f;
-
-	 Se podria poner asi, si se hace en la funcion Tecla para que cuando se pulse el disparo salga desde esa posicion
-	disparo.origen.y = disparo.posicion.y;
-	disparo.origen.x = disparo.posicion.x;
-	*/
+	Virus* e1 = new Virus();
+	e1->Inicializa("trump", 6, 1, 4, 4, 3, 3, 1, 0);
+	listavirus.agregar(e1); 
+	for (int i = 0; i < 45; i++)
+	{
+		Virus* aux = new Virus();
+		aux->Inicializa("trump", 6, 1, 4+2*i, 4, 3, 3, 1, 0);
+		listavirus.agregar(aux);
+	}
 	
 }
 void Mundo::Dibuja()
@@ -86,6 +87,9 @@ void Mundo::Dibuja()
 	//disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y + 2, 0.0f, 22.0f));
 	plataformas.Agregar(new Plataformas(10, 1, 20, 1.5));
 	plataformas.Agregar(new Plataformas(25, 3, 35, 2.5));
+
+	listavirus.dibuja();
+
 	
 }
 
@@ -95,7 +99,7 @@ void Mundo::Mueve()
 
 	entorno.Mueve(0.025f);
 	personajes.Mueve(0.025f);
-	virus.Mueve(0.025f);
+	virus.Mueve(0.025f, hombre);
 	hombre.Mueve(0.025f);
 	bonus.Mueve(0.025f);
 	//disparo.Mueve(0.025f); 	
@@ -120,18 +124,18 @@ void Mundo::Mueve()
 
 	Setojo(hombre.posicion.x, 10, 53);
 
-	if (virus.posicion.x+5 < hombre.posicion.x) {
-		virus.velocidad.x = 3;
-	}
-	if (virus.posicion.x+5 > hombre.posicion.x) {
-		virus.velocidad.x = -3;
-	}
+
+	//Necesitamos algo mas elegante
+
+	
 	
 	Misil* aux = misiles.colision(hombre);
 	if (aux != 0) {
 		hombre.SetVidas(hombre.GetVidas() - 1);
 		misiles.Eliminar(aux);
 	}
+
+	listavirus.mueve(0.025f, hombre);
 }
 
 

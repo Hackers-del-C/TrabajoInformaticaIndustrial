@@ -95,6 +95,7 @@
     <ClCompile Include="src\Listalanzamisiles.cpp" />
     <ClCompile Include="src\Listamisiles.cpp" />
     <ClCompile Include="src\ListaPlataformas.cpp" />
+    <ClCompile Include="src\ListaVirus.cpp" />
     <ClCompile Include="src\Menu.cpp" />
     <ClCompile Include="src\Misil.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
@@ -125,6 +126,7 @@
     <ClInclude Include="src\Listalanzamisiles.h" />
     <ClInclude Include="src\Listamisiles.h" />
     <ClInclude Include="src\ListaPlatafomas.h" />
+    <ClInclude Include="src\ListaVirus.h" />
     <ClInclude Include="src\Menu.h" />
     <ClInclude Include="src\Misil.h" />
     <ClInclude Include="src\Mundo.h" />
