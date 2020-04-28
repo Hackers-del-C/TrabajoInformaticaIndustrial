@@ -84,8 +84,8 @@ void Mundo::Dibuja()
 
 	plataformas.Dibuja();
 	//disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y + 2, 0.0f, 22.0f));
-	plataformas.Agregar(new Plataformas(10, 5, 20, 5.5));
-	plataformas.Agregar(new Plataformas(25, 8, 35, 8.5));
+	plataformas.Agregar(new Plataformas(10, 1, 20, 1.5));
+	plataformas.Agregar(new Plataformas(25, 3, 35, 2.5));
 	
 }
 
@@ -179,6 +179,13 @@ void Mundo::Tecla(unsigned char key)
 				hombre.SetVidas(hombre.GetVidas() - 1);
 			}
 			break;
+			///test
+		case ' ':
+			int i = 0;
+			misiles.DestruirContenido(i);
+			i++;
+			break;
+
 		
 		}
 	}
@@ -205,7 +212,7 @@ void Mundo::teclaEspecial(unsigned char key){
 			 break;
 		 case GLUT_KEY_UP:
 			 if (Interaccion::colision(hombre, limites)) {
-				 hombre.SetVel(hombre.velocidad.x, 15.0f);
+				 hombre.SetVel(hombre.velocidad.x, 18.0f);
 
 			 }
 
