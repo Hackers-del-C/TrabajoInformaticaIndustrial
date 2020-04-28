@@ -1,13 +1,13 @@
 #pragma once
 
 #include "ETSIDI.h"
-
+#include "Hombre.h"
 class Amigo {
 public:
 	ETSIDI::SpriteSequence* companionder;
 	ETSIDI::SpriteSequence* companionizq;
 	ETSIDI::SpriteSequence* companion;
-	void Dibuja(float posx, float posy, int dir);
+	void Dibuja(Hombre h);
 	void Inicializa();
 	void SetVel(float vx); //, float vy
 	void Mueve(float t);
@@ -16,5 +16,6 @@ public:
 		//aceleracion.y = ay;
 	}
 private:
+	int izqder;
 	ETSIDI::Vector2D posicion, velocidad,aceleracion;
 };

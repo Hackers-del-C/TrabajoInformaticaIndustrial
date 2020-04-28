@@ -7,27 +7,31 @@ class Hombre
 {
     friend class Interaccion;
     int vidas;
+    int dir;
 public:
-    
+
 
     Hombre();
     virtual ~Hombre();
     void Dibuja(int nivel);
     void Mueve(float t);
     void SetVel(float vx, float vy);
+    ETSIDI::Vector2D GetVel() { return velocidad; }
+
     float altura;
     void Inicializa();
     void Salta();
     void SetVidas(int v) { vidas = v; }
-    int dir; //direccion del muñeco
- 
+    //direccion del muñeco
+    void SetDir(int d) { dir = d; }
+    int GetDir(){return dir;}
     int GetVidas(){ return vidas; }
     ETSIDI::Vector2D GetPos() { return posicion; }
     void SetAceleracion(float ax, float ay) {
         aceleracion.x = ax;
         aceleracion.y = ay;
     }
-
+    ETSIDI::Vector2D GetAceleracion() { return aceleracion; }
 
    
 

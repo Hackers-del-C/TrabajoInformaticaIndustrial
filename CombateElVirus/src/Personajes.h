@@ -7,8 +7,8 @@ class Personajes {
 public:
 	Personajes();
 	virtual ~Personajes();
-	void Inicializa(float ax, float vx);
-	void Dibuja(int nivel,float posx,float posy, int dir);
+	void Inicializa(Hombre h);
+	void Dibuja(int nivel,Hombre h);
 	void Mueve(float t);
 	void Tecla(unsigned char key);
 	void TeclaEspecial(unsigned char key);

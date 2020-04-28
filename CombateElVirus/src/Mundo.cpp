@@ -14,7 +14,7 @@ void Mundo::Inicializa()
 		level=menu.GetLevel();
 	}
 	entorno.Inicializa(level);
-	personajes.Inicializa(hombre.aceleracion.x,hombre.velocidad.x);
+	personajes.Inicializa(hombre);
 
 	bonus.SetPos(5.0f, 5.0f);
 	//disparo.SetPos(-5.0f, 0.0f);
@@ -58,7 +58,7 @@ void Mundo::Dibuja()
 
 	entorno.Dibuja(level);
 	limites.Dibuja();
-	personajes.Dibuja(level,hombre.posicion.x,hombre.posicion.y,hombre.dir);
+	personajes.Dibuja(level,hombre);
 	
 	//disparo.Dibuja();
 	//plataforma.Dibuja();
@@ -202,12 +202,12 @@ void Mundo::teclaEspecial(unsigned char key){
 			 hombre.SetVel(-6, hombre.velocidad.y);
 			 //HAY QUE PONER QUE CUANDO ESTE EN EL AIRE NO VAYA HACIA LA DERECHA
 
-			 hombre.dir = 2;
+			 hombre.SetDir(2 );
 
 			 break;
 		 case GLUT_KEY_RIGHT:
 			 hombre.SetVel(+6, hombre.velocidad.y);
-			 hombre.dir = 1;
+			 hombre.SetDir(1);
 
 			 break;
 		 case GLUT_KEY_UP:

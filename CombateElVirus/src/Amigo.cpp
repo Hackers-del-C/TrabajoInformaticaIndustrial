@@ -7,35 +7,65 @@ using namespace ETSIDI;
 using ETSIDI::getTexture;
 void Amigo::Inicializa() {
     //compañero
-    companionder = new SpriteSequence("imagenes/companionder.png", 2, 1, 25, true, -2, 2, 5, 5);
-    companionizq = new SpriteSequence("imagenes/companionizq.png", 2, 1, 25, true, -2, 2, 5, 5);
-    companion = new SpriteSequence("imagenes/companion.png", 2, 1, 25, true, -2, 2, 5, 5);
+    companionder = new SpriteSequence("imagenes/companionder.png", 2, 1, 25, true, -2, 2, 2, 2);
+    companionizq = new SpriteSequence("imagenes/companionizq.png", 2, 1, 25, true, -2, 2, 2, 2);
+    companion = new SpriteSequence("imagenes/companion.png", 2, 1, 25, true, -2, 2, 2, 2);
+    izqder = 0;
 }
-void Amigo::Dibuja(float posx, float posy, int dir) {
+void Amigo::Dibuja(Hombre h) {
    
     posicion.y = -5;//si queremos que salte pues habria que poner posy. Realmente sobra
     glTranslatef(posicion.x, posicion.y, 0);
-    switch (dir) {
+    switch (h.GetDir()) {
     case 0:
-        posicion.x = posx - 7;
+        posicion.x =  - 7;
         companion->draw();
         break;
-    case 1:
+    case 1: //// hombre yendo a la derecha
        /* while (posx - posicion.x < 7) {
             companion->draw();
             SetVel(0);
             
         }*/
-        posicion.x = posx - 7;
-        companionder->draw();
+        switch (izqder) {
+        case 0:  // muñeco a la izquierda del hombre
+            
+                posicion.x = h.GetPos().x - 7;
+                companionder->draw();
+          
+                break;
+        case 1:  //muñeco a la derecha
+
+            companion->draw();
+            if (h.GetPos().x - posicion.x >= 7) {
+                izqder = 0;
+            }
+            break;
+        }
+     //   posicion.x = h.GetPos().x - 7;
+     //   companionder->draw();
         break;
-    case 2:
+    case 2:  ///hombre yendo a la izquierda
         /*while (posicion.x - posx < 4) {
     
             companion->draw();
         }*/
-        posicion.x = posx + 7;
-        companionizq->draw();
+        switch (izqder) {
+        case 0:  // muñeco a la izquierda del hombre
+            companion->draw();
+            if (posicion.x-h.GetPos().x >= 7) {
+                izqder = 1;
+            }
+            break;
+        case 1:  //muñeco a la derecha
+            posicion.x = h.GetPos().x + 7;
+            companionizq->draw();
+
+            
+            break;
+        }
+     //   posicion.x = h.GetPos().x + 7;
+      //  companionizq->draw();
         break;
     }
         glTranslatef(-posicion.x, -posicion.y, 0);
