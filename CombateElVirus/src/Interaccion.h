@@ -18,11 +18,14 @@ public:
     static void reboteexterior(Hombre& h, Limites c);
     static bool colision(Hombre h, Limites l);
     static bool colision(Hombre h, Plataformas p);
-    static bool colision(ListaMisil& misiles, Hombre h);
+
+    //static bool colision(ListaMisil& misiles, Hombre h);
 
 
 
 
     static bool colision(Misil misil, Hombre h);
-   
+
+    static bool Colision(Hombre h, Plataformas p);
+    
 };

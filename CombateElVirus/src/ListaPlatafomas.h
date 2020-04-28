@@ -14,6 +14,8 @@ public:
 	void DestruirContenido(int ind);
 	void Dibuja();
 
+
+
 private:
 	std::vector<Plataformas*>lista;
 	//Disparo* lista[NUM_MAX_DISPAROS];

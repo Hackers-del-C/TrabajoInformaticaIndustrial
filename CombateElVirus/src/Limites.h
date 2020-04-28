@@ -14,7 +14,7 @@ public:
    ETSIDI::Vector2D posicion1, posicion2;
 
    void SetLimites(float x1, float x2, float y1, float y2);
-   void SetLimites(Vector2D posicion1, Vector2D posicion2);
+   void SetLimites(ETSIDI::Vector2D posicion1, ETSIDI::Vector2D posicion2);
 
 private:
     Pared suelo;

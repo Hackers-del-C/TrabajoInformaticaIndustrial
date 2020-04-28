@@ -28,3 +28,22 @@ void Plataformas::Dibuja() {
     glEnable(GL_LIGHTING);
 }
 
+float Plataformas::distancia(ETSIDI::Vector2D punto, ETSIDI::Vector2D* direccion)
+{
+    ETSIDI::Vector2D u = (punto - limite1);
+    ETSIDI::Vector2D v = (limite2 - limite1).unit();
+    float longitud = (limite1 - limite2).module();
+    ETSIDI::Vector2D dir;
+    float valor = u * v;
+    float distancia = 0;
+    if (valor < 0)
+        dir = u;
+    else if (valor > longitud)
+        dir = (punto - limite2);
+    else
+        dir = u - v * valor;
+    distancia = dir.module();
+    if (direccion != 0) //si nos dan un vector…
+        *direccion = dir.unit();
+    return distancia;
+}

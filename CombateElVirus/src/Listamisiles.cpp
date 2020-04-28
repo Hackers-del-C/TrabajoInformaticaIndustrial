@@ -1,5 +1,5 @@
 #include "Listamisiles.h"
-
+#include "Interaccion.h"
 #include "glut.h"
 
 ListaMisil::ListaMisil() {
@@ -34,4 +34,14 @@ void ListaMisil::Dibuja() {
 void ListaMisil::Inicializa() {
 	for (int i = 0; i < lista.size(); i++)
 		lista[i]->Inicializa();
+}
+
+Misil* ListaMisil::colision(Hombre& h) {
+	for (int i = 0; i < lista.size(); i++)
+	{
+		if (Interaccion::colision(*(lista[i]), h)) { // final pagina 14 error -- pondria rebote
+			return lista[i];
+		}
+	}
+	return 0;
 }

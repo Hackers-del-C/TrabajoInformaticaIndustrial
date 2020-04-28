@@ -1,5 +1,6 @@
 
 #include "ListaPlatafomas.h"
+#include "Interaccion.h"
 #include "glut.h"
 
 ListaPlataformas::ListaPlataformas() {
@@ -27,3 +28,4 @@ void ListaPlataformas::Dibuja() {
 	for (int i = 0; i < lista.size(); i++)
 		lista[i]->Dibuja();
 }
+
