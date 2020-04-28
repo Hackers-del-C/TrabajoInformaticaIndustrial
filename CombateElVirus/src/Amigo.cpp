@@ -22,11 +22,6 @@ void Amigo::Dibuja(Hombre h) {
         companion->draw();
         break;
     case 1: //// hombre yendo a la derecha
-       /* while (posx - posicion.x < 7) {
-            companion->draw();
-            SetVel(0);
-            
-        }*/
         switch (izqder) {
         case 0:  // muñeco a la izquierda del hombre
             
@@ -46,10 +41,7 @@ void Amigo::Dibuja(Hombre h) {
      //   companionder->draw();
         break;
     case 2:  ///hombre yendo a la izquierda
-        /*while (posicion.x - posx < 4) {
-    
-            companion->draw();
-        }*/
+       
         switch (izqder) {
         case 0:  // muñeco a la izquierda del hombre
             companion->draw();
