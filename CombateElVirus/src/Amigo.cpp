@@ -3,8 +3,8 @@
 #include <iostream>
 #include "Vector2D.h"
 #include "Amigo.h"
-using namespace ETSIDI;
-using ETSIDI::getTexture;
+
+
 void Amigo::Inicializa() {
     //compañero
     companionder = new SpriteSequence("imagenes/companionder.png", 2, 1, 25, true, -2, 2, 2, 2);
@@ -74,4 +74,22 @@ void Amigo::Mueve(float t) {
     companionder->loop();
     companionizq->loop();
     companion->loop();
+}
+void Amigo::Mensajes() {
+    
+    if (-30<posicion.x <5) {
+        glTranslatef(posicion.x-3, -1, 0);
+        setTextColor(0, 0.1, 0.2); //FUNCIONA IGUAL QUE GLUT PERO EN VEZ DE 0-255 DE 0-1
+        print("Holaaaa!", "fuentes/Bitwise.ttf", 8);
+        glTranslatef(-posicion.x+3,1, 0);
+   }
+    else if (5<= posicion.x < 26) {
+        glTranslatef(posicion.x-7, 0, 0);
+        setTextColor(0, 0.1, 0.2); //FUNCIONA IGUAL QUE GLUT PERO EN VEZ DE 0-255 DE 0-1
+        print("Soy Pedro,", "fuentes/Bitwise.ttf", 8);
+        glTranslated(0, -1, 0);
+        print(" tu compañero de aventuras", "fuentes/Bitwise.ttf", 8);
+       
+        glTranslatef(-posicion.x+7,1, 0);
+    }
 }

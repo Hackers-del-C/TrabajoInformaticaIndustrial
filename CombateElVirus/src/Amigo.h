@@ -2,6 +2,8 @@
 
 #include "ETSIDI.h"
 #include "Hombre.h"
+using namespace ETSIDI;
+using ETSIDI::getTexture;
 class Amigo {
 public:
 	ETSIDI::SpriteSequence* companionder;
@@ -15,6 +17,7 @@ public:
 		aceleracion.x = ax;
 		//aceleracion.y = ay;
 	}
+	void Mensajes();
 private:
 	int izqder;
 	ETSIDI::Vector2D posicion, velocidad,aceleracion;
