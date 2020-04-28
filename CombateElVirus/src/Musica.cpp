@@ -7,7 +7,7 @@ void Musica::SoundOn(int nivel) {
 		ETSIDI::play("mis_sonidos/Menu.wav");
 		break;
 	case 1:
-		ETSIDI::play("mis_sonidos/China.wav");
+	//	ETSIDI::play("mis_sonidos/China.wav");
 		break;
 	case 2:
 		ETSIDI::play("mis_sonidos/Italia.wav");

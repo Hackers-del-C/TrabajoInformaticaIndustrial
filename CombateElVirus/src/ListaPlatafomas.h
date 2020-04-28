@@ -15,11 +15,12 @@ public:
 	bool Agregar(Plataformas* p);
 	void DestruirContenido(int ind);
 	void Dibuja();
+	int GetNumero() { return lista.size(); }
 
-
-	//bool Colision(Hombre& h);
+	// bool Colision(Hombre h);
 
 private:
+	
 	std::vector<Plataformas*>lista;
 	//Disparo* lista[NUM_MAX_DISPAROS];
 	//int numero;
