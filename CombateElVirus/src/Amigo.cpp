@@ -13,18 +13,20 @@ void Amigo::Inicializa() {
 }
 void Amigo::Dibuja(float posx, float posy, int dir) {
    
-    posicion.y = posy;
+    posicion.y = -5;//si queremos que salte pues habria que poner posy. Realmente sobra
     glTranslatef(posicion.x, posicion.y, 0);
     switch (dir) {
     case 0:
-        posicion.x = posx - 5;
+        posicion.x = posx - 7;
         companion->draw();
         break;
     case 1:
-        /*while (posx - posicion.x < 4) {
+       /* while (posx - posicion.x < 7) {
             companion->draw();
+            SetVel(0);
+            
         }*/
-        posicion.x = posx - 5;
+        posicion.x = posx - 7;
         companionder->draw();
         break;
     case 2:
@@ -32,7 +34,7 @@ void Amigo::Dibuja(float posx, float posy, int dir) {
     
             companion->draw();
         }*/
-        posicion.x = posx + 4;
+        posicion.x = posx + 7;
         companionizq->draw();
         break;
     }
