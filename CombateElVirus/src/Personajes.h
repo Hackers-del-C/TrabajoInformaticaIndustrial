@@ -2,6 +2,7 @@
 #include "ETSIDI.h"
 #include "Virus.h"
 #include "Hombre.h"
+#include "Amigo.h"
 class Personajes {
 public:
 	Personajes();
@@ -14,4 +15,5 @@ public:
 private:
 	Virus virus; 
 	Hombre hombre;
+	Amigo amigo;
 };

@@ -5,7 +5,19 @@
 using namespace ETSIDI;
 using ETSIDI::getTexture;
 
+Hombre::Hombre() {
+    aceleracion.y = -20.0f;
+    //aceleracion.y = 0.0f;
+    altura = 1.5f;
+    posicion.y = -5;
+    posicion.x = 0;
+    dir = 0;
+    vidas = 3;
+}
 
+Hombre::~Hombre() {
+
+}
 void Hombre::Dibuja(int nivel)
 {
     glTranslatef(posicion.x, posicion.y, 0);
@@ -71,14 +83,11 @@ void Hombre::Mueve(float t)
     muñecoder->loop();
     muñecoizq->loop();
 
-}
-
-void Hombre::Inicializa()
-{
   
 
+}
 
-   
+void Hombre::Inicializa(){  
 
     /////level1
     goku = new SpriteSequence("imagenes/goku.png", 1, 3, 25, true, -2, 2, 5, 5);
@@ -93,21 +102,10 @@ void Hombre::Inicializa()
     muñeco = new SpriteSequence("imagenes/muñeco.png", 6, 1, 25, true, -2, 2, 5, 5);
     muñecoder = new SpriteSequence("imagenes/muñecoder.png", 6, 1, 25, true, -2, 2, 5, 5);
     muñecoizq = new SpriteSequence("imagenes/muñecoizq.png", 6, 1, 25, true, -2, 2, 5, 5);
+   
 }
 
-Hombre::Hombre() {
-    aceleracion.y = -20.0f;
-    //aceleracion.y = 0.0f;
-    altura = 1.5f;
-    posicion.y = -5;
-    posicion.x = 0;
-    dir = 0;
-    vidas=3;
-}
 
-Hombre::~Hombre() {
-
-}
 
 void Hombre::SetVel(float vx, float vy)
 {

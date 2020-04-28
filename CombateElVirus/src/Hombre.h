@@ -37,4 +37,6 @@ public:
    ETSIDI::SpriteSequence* muñecoder;
    ETSIDI::SpriteSequence* muñecoizq;
 
+  
+
 };

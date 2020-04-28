@@ -11,13 +11,11 @@
 class Interaccion
 {
 public:
-    static void reboteinterior(Hombre & h, Limites c);
-    static void reboteexterior(Hombre& h, Limites c);
-    //static bool rebote(Esfera& e, Pared p);
-   // static bool rebote(Esfera& e, Caja c);
     Interaccion();
     virtual ~Interaccion();
-
+    static void reboteinterior(Hombre & h, Limites c);
+    static void reboteexterior(Hombre& h, Limites c);
     static bool colision(Hombre h, Limites l);
+    static bool colision(Hombre h, Plataformas p);
     static bool colision(ListaMisil& misiles, Hombre h);
 };

@@ -76,6 +76,9 @@
     <ClCompile Include="src\ListaPlataformas.cpp">
       <Filter>Archivos de código fuente\MUNDO\Limites</Filter>
     </ClCompile>
+    <ClCompile Include="src\Amigo.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Personajes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\ETSIDI.h">
@@ -146,6 +149,9 @@
     </ClInclude>
     <ClInclude Include="src\ListaPlatafomas.h">
       <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Amigo.h">
+      <Filter>Archivos de encabezado\MUNDO\Personajes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
