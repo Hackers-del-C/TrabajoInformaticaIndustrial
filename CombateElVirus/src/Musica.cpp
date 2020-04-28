@@ -16,9 +16,5 @@ void Musica::SoundOn(int nivel) {
 		ETSIDI::play("mis_sonidos/Espania.wav");
 		break;
 	}
+
 }
-
-
-
-
-

@@ -7,6 +7,7 @@
 #include "Listalanzamisiles.h"
 #include "Listalanzamisiles.h"
 #include "Listamisiles.h"
+#include "Misil.h"
 #include "Mundo.h"
 class Interaccion
 {
@@ -18,4 +19,10 @@ public:
     static bool colision(Hombre h, Limites l);
     static bool colision(Hombre h, Plataformas p);
     static bool colision(ListaMisil& misiles, Hombre h);
+
+
+
+
+    static bool colision(Misil misil, Hombre h);
+   
 };

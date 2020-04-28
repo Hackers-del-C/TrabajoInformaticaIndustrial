@@ -1,5 +1,6 @@
 #pragma once
 #include "Plataformas.h"
+//#include "Interaccion.h"
 #include <vector>
 #define NUM_MAX_PLATAFORMAS 100
 class ListaPlataformas{

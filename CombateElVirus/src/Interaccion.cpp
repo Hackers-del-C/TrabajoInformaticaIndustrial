@@ -81,5 +81,10 @@ void Interaccion::reboteexterior(Hombre& h,Limites c)
       return false;
  }
 
-
-
+  bool Interaccion::colision(Misil misil, Hombre h) {
+      float distancia = (misil.posicion - h.posicion).module();
+      if (distancia == 0.0) {
+          return true;
+      }
+      return false;
+  }
