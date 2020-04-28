@@ -42,10 +42,16 @@ void Mundo::Inicializa()
 	Virus* e1 = new Virus();
 	e1->Inicializa("trump", 6, 1, 4, 4, 3, 3, 1, 0);
 	listavirus.agregar(e1); 
-	for (int i = 0; i < 45; i++)
+	for (int i = 0; i < 5; i++)
 	{
 		Virus* aux = new Virus();
 		aux->Inicializa("trump", 6, 1, 4+2*i, 4, 3, 3, 1, 0);
+		listavirus.agregar(aux);
+	}
+	for (int i = 0; i < 5; i++)
+	{
+		Virus* aux = new Virus();
+		aux->Inicializa("virusseta", 8, 1, -10 + 2.5 * i, 4, 2, 2, 0, 0);
 		listavirus.agregar(aux);
 	}
 	

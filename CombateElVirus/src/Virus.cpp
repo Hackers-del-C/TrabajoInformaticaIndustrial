@@ -98,9 +98,9 @@ void Virus::Mueve(float t, Hombre h) {
     if (posicion.x + 5 > h.posicion.x) {
         velocidad.x = -3;
     }
+    sprite->loop();
 
     if (izqder == 1) {
-        sprite->loop();
         spriteder->loop();
         spriteizq->loop();
     }
