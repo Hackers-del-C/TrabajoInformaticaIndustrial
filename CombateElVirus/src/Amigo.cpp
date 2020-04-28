@@ -92,4 +92,18 @@ void Amigo::Mensajes() {
        
         glTranslatef(-posicion.x+7,1, 0);
     }
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/bocadillo.png").id);
+    glDisable(GL_LIGHTING);
+    glBegin(GL_POLYGON);
+
+    glTexCoord2d(0, 1);		glVertex3f(posicion.x-2, posicion.y+2, -0.1);//ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
+    glTexCoord2d(1, 1);		glVertex3f(posicion.x+2, posicion.y+2, -0.1);
+    glTexCoord2d(1, 0);		glVertex3f(posicion.x-2,posicion.y+4, -0.1);
+    glTexCoord2d(0, 0);		glVertex3f(posicion.x+2, posicion.y+4, -0.1);
+    glEnd();
+
+    glEnable(GL_LIGHTING);
+    glDisable(GL_TEXTURE_2D);
+    
 }
