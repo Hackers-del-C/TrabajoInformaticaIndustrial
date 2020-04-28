@@ -23,7 +23,7 @@ void Mundo::Inicializa()
 	plataforma.SetPos(70.0f, 9.0f, 80.0f, 9.0f);
 	
 	hombre.Inicializa();
-	virus.Inicializa("trump");
+	virus.Inicializa("trump",6,1,4,4,3,3,1,0);
 
 	limites.SetLimites(-20, 500, -5, 30); //Son los bordes del juego que el jugador no puede pasar
 	plataforma1.SetLimites(30, 60, 5, 10);//Los brdes de una plataforma

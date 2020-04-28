@@ -11,7 +11,7 @@ Personajes:: ~Personajes() {
 void Personajes::Inicializa(Hombre h) {
 //	hombre.Inicializa();
 
-	virus.Inicializa("trump");
+	virus.Inicializa("trump", 6, 1, 4, 4, 3, 3, 1, 0);
 	amigo.Inicializa();
 
 	amigo.SetAceleracion(h.GetAceleracion().x);

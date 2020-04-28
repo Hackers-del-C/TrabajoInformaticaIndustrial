@@ -15,7 +15,7 @@ public:
     virtual ~Virus();
     void Dibuja(int nivel);
     void Mueve(float t);
-    void Inicializa(string nombre);
+    void Inicializa(string nombre, int m, int n, float x, float y, float w, float h, int izqder, int salto);
     void SetVel(float x, float y);
 
     ETSIDI::Vector2D posicion, velocidad, aceleracion;
@@ -24,4 +24,7 @@ public:
     ETSIDI::SpriteSequence* spriteder;
     ETSIDI::SpriteSequence* spriteizq;
     // ETSIDI::SpriteSequence* virusrojo;
+private:
+
+    int salto, izqder;
 };
