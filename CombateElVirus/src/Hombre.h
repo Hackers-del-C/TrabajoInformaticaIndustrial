@@ -1,7 +1,7 @@
 #pragma once
 #include "Vector2D.h"
 #include "ETSIDI.h"
-
+//#include "Interaccion.h"
 class Hombre
 {
     friend class Interaccion;

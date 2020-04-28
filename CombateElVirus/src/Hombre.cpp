@@ -2,6 +2,8 @@
 #include "ETSIDI.h"
 #include "glut.h"
 #include <iostream>
+#include "Interaccion.h"
+
 using namespace ETSIDI;
 using ETSIDI::getTexture;
 
