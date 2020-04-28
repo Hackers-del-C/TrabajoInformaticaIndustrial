@@ -10,6 +10,9 @@ public:
 		limite1 = l1;
 		limite2 = l2;
 	}
+
+	float distancia(ETSIDI::Vector2D punto, ETSIDI::Vector2D* direccion);
+
 private:
 	ETSIDI::Vector2D limite1, limite2;
 };

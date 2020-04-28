@@ -3,6 +3,7 @@
 #include <vector>
 #define NUM_MAX_misiles 200
 #include "Misil.h"
+#include "Hombre.h"
 class ListaMisil {
 
 public:
@@ -15,7 +16,9 @@ public:
 	void Dibuja();
 	void Inicializa();
 
-
+	void Eliminar(Misil* m);
+	
+	Misil* colision(Hombre& h);
 	std::vector<Misil*>lista;
 	//Disparo* lista[NUM_MAX_DISPAROS];
 	//int numero;

@@ -79,13 +79,13 @@ void Mundo::Dibuja()
 	}
 
 	//hombre.SetVidas(4);
-	vidas.Dibuja(hombre.vidas);
+	vidas.Dibuja(hombre.GetVidas());
 	//vidas.Dibuja(mascarillas);
 
 	plataformas.Dibuja();
 	//disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y + 2, 0.0f, 22.0f));
-	plataformas.Agregar(new Plataformas(10, 5, 20, 5.5));
-	plataformas.Agregar(new Plataformas(25, 8, 35, 8.5));
+	plataformas.Agregar(new Plataformas(10, 1, 20, 1.5));
+	plataformas.Agregar(new Plataformas(25, 3, 35, 2.5));
 	
 }
 
@@ -116,7 +116,7 @@ void Mundo::Mueve()
 	//Interaccion::rebote(esfera2, plataforma);
 	
 
-	Interaccion::colision(misiles, hombre); /// no funciona
+	//Interaccion::colision(misiles, hombre); /// no funciona
 
 	Setojo(hombre.posicion.x, 10, 53);
 
@@ -127,6 +127,11 @@ void Mundo::Mueve()
 		virus.velocidad.x = -3;
 	}
 	
+	Misil* aux = misiles.colision(hombre);
+	if (aux != 0) {
+		hombre.SetVidas(hombre.GetVidas() - 1);
+		misiles.Eliminar(aux);
+	}
 }
 
 
@@ -162,16 +167,25 @@ void Mundo::Tecla(unsigned char key)
 
 			///////// TESTS DE VIDAS
 		case 't':
-			if (hombre.vidas < 5) {
-				hombre.vidas++; /// radio, x , y, vx, vy
+			if (hombre.GetVidas()< 5) {
+				 /// radio, x , y, vx, vy
+				hombre.SetVidas(hombre.GetVidas() +1);
 			}
 
 			break;
 		case 'y':
-			if (hombre.vidas > 0) {
-				hombre.vidas--; /// radio, x , y, vx, vy
+			if (hombre.GetVidas()> 0) {
+				//hombre.vidas--; /// radio, x , y, vx, vy
+				hombre.SetVidas(hombre.GetVidas() - 1);
 			}
 			break;
+			///test
+		case ' ':
+			int i = 0;
+			misiles.DestruirContenido(i);
+			i++;
+			break;
+
 		
 		}
 	}
@@ -198,7 +212,7 @@ void Mundo::teclaEspecial(unsigned char key){
 			 break;
 		 case GLUT_KEY_UP:
 			 if (Interaccion::colision(hombre, limites)) {
-				 hombre.SetVel(hombre.velocidad.x, 15.0f);
+				 hombre.SetVel(hombre.velocidad.x, 18.0f);
 
 			 }
 

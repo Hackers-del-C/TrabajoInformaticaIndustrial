@@ -56,7 +56,7 @@ void Interaccion::reboteexterior(Hombre& h,Limites c)
    
 }
 
- bool Interaccion::colision(ListaMisil& misiles, Hombre h){
+ /*bool Interaccion::colision(ListaMisil& misiles, Hombre h){
      for (int i = 0; i < misiles.lista.size(); i++) {
          if (misiles.lista[i]->posicion.x == h.posicion.x) { //// MODO TEST -- HAY QUE USAR MODULO DIFERENCIA POSICION
              misiles.DestruirContenido(i);
@@ -69,7 +69,7 @@ void Interaccion::reboteexterior(Hombre& h,Limites c)
          }
      }
      return false;
- }
+ }*/
   bool Interaccion::colision(Hombre h, Limites l) {
       ETSIDI::Vector2D dir;
       float dif = h.GetPos().y- l.suelo.GetSuelo() ;
@@ -83,7 +83,17 @@ void Interaccion::reboteexterior(Hombre& h,Limites c)
 
   bool Interaccion::colision(Misil misil, Hombre h) {
       float distancia = (misil.posicion - h.posicion).module();
-      if (distancia == 0.0) {
+      if (distancia <= 10.0) {
+          return true;
+      }
+      return false;
+  }
+  bool Interaccion::Colision(Hombre h, Plataformas p) {
+      ETSIDI::Vector2D  dir;
+      float dif = p.distancia(h.GetPos(), &dir);
+      if (dif <= 0.0f) {
+
+
           return true;
       }
       return false;
