@@ -28,4 +28,14 @@ void ListaPlataformas::Dibuja() {
 	for (int i = 0; i < lista.size(); i++)
 		lista[i]->Dibuja();
 }
+/*
+bool ListaPlataformas::Colision(Hombre& h) {
+	for (int i = 0; i < lista.size(); i++) {
 
+		if (Interaccion::Colision(h, *(lista[i]))) { // final pagina 14 error -- pondria rebote
+			return true;
+		}
+	}
+	return 0;
+}
+	*/	
