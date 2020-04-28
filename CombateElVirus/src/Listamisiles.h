@@ -16,6 +16,8 @@ public:
 	void Dibuja();
 	void Inicializa();
 
+	void Eliminar(Misil* m);
+	
 	Misil* colision(Hombre& h);
 	std::vector<Misil*>lista;
 	//Disparo* lista[NUM_MAX_DISPAROS];

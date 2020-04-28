@@ -20,6 +20,15 @@ void ListaMisil::DestruirContenido(int ind) {
 	delete lista[ind];
 	lista.erase(lista.begin() + ind);
 }
+void ListaMisil::Eliminar(Misil* m)
+{
+	for (int i = 0; i < lista.size(); i++)
+		if (lista[i] == m)
+		{
+			DestruirContenido(i);
+			return;
+		}
+}
 void ListaMisil::Mueve(float t) {
 	for (int i = 0; i < lista.size(); i++) {
 
@@ -39,7 +48,7 @@ void ListaMisil::Inicializa() {
 Misil* ListaMisil::colision(Hombre& h) {
 	for (int i = 0; i < lista.size(); i++)
 	{
-		if (Interaccion::colision(*(lista[i]), h)) { // final pagina 14 error -- pondria rebote
+		if (Interaccion::colision(*(lista[i]), h)) { 
 			return lista[i];
 		}
 	}

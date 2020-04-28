@@ -130,6 +130,7 @@ void Mundo::Mueve()
 	Misil* aux = misiles.colision(hombre);
 	if (aux != 0) {
 		hombre.SetVidas(hombre.GetVidas() - 1);
+		misiles.Eliminar(aux);
 	}
 }
 
