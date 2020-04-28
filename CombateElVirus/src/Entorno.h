@@ -31,6 +31,7 @@ private:
 	Fondo fondo;
 	Titulo titulo;
 	Musica musica;
+	Menu menu;
 
 	
 };

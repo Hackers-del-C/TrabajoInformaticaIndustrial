@@ -6,7 +6,7 @@
 #include "glut.h"
 
 Mundo::Mundo(){
-	level = 0;
+	level = 1;
 }
 void Mundo::Inicializa()
 {

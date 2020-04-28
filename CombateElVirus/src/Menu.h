@@ -10,7 +10,7 @@ public:
 
 	//Menu() :level(0) {};
 
-	void Dibuja();
+	//void Dibuja();
 	void Tecla(unsigned char key);
 	void Texto();
 

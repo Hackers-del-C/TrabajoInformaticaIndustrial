@@ -39,7 +39,6 @@ public:
 	
 private:
 	// constantes para el salto
-
 	int distancia=0;
 	int salto = 1;
 	//

@@ -31,7 +31,21 @@ void Entorno::Dibuja(int nivel) {
 
 	titulo.Nombre(nivel);
 	titulo.Bandera(nivel);
-	fondo.Dibuja(nivel);
+	switch (nivel) {
+	case 0:
+		fondo.Dibuja("menu", -26, 26, 10, 30);
+		break;
+	case 1:
+		fondo.Dibuja("prenivel", -30, 26, -10, 30);
+		fondo.Dibuja("laboratorio", 26, 156, -18, 45); 
+		break;
+	case 2:
+		fondo.Dibuja("prenivel", -30, 26, -10, 30);
+		break;
+	case 3:
+		fondo.Dibuja("prenivel", -30, 26, -10, 30);
+		break;
+	}
 	/*
 		glTranslated(0, 0, -10);
 		explosion->draw();

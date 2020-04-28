@@ -18,7 +18,7 @@ Plataformas::Plataformas(float x1, float y1, float x2, float y2) {
 
 void Plataformas::Dibuja() {
     glDisable(GL_LIGHTING);
-    glColor3ub(0, 0, 0);
+    glColor3ub(1, 0, 1);
     glBegin(GL_POLYGON);
     glVertex3d(limite1.x, limite1.y, 0);
     glVertex3d(limite1.x, limite2.y, 0);
