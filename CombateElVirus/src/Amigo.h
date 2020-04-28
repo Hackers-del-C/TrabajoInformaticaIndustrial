@@ -6,6 +6,7 @@ class Amigo {
 public:
 	ETSIDI::SpriteSequence* companionder;
 	ETSIDI::SpriteSequence* companionizq;
+	ETSIDI::SpriteSequence* companion;
 	void Dibuja(float posx, float posy, int dir);
 	void Inicializa();
 	void SetVel(float vx); //, float vy

@@ -8,19 +8,19 @@ Personajes::Personajes() {
 Personajes:: ~Personajes() {
 
 }
-void Personajes::Inicializa() {
+void Personajes::Inicializa(float ax, float vx) {
 //	hombre.Inicializa();
 
 	virus.Inicializa("trump");
 	amigo.Inicializa();
-	amigo.SetAceleracion(hombre.aceleracion.x);
-	amigo.SetVel(hombre.velocidad.x);
+	amigo.SetAceleracion(ax);
+	amigo.SetVel(vx);
 }
-void Personajes::Dibuja(int nivel) {
+void Personajes::Dibuja(int nivel,float posx,float posy, int dir) {
 	//hombre.Dibuja(nivel);
 	virus.Dibuja(nivel);
 	
-	amigo.Dibuja(hombre.posicion.x,hombre.posicion.y,hombre.dir);
+	amigo.Dibuja(posx,posy,dir);
 }
 void Personajes::Mueve(float t ) {
 	virus.Mueve(t);

@@ -14,7 +14,7 @@ void Mundo::Inicializa()
 		level=menu.GetLevel();
 	}
 	entorno.Inicializa(level);
-	personajes.Inicializa();
+	personajes.Inicializa(hombre.aceleracion.x,hombre.velocidad.x);
 
 	bonus.SetPos(5.0f, 5.0f);
 	//disparo.SetPos(-5.0f, 0.0f);
@@ -58,7 +58,7 @@ void Mundo::Dibuja()
 
 	entorno.Dibuja(level);
 	limites.Dibuja();
-	personajes.Dibuja(level);
+	personajes.Dibuja(level,hombre.posicion.x,hombre.posicion.y,hombre.dir);
 	
 	//disparo.Dibuja();
 	//plataforma.Dibuja();
