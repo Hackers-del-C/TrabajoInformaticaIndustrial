@@ -6,10 +6,10 @@
 #include <sstream>
 #include <string>
 
-	//Similar a la función creada para los sprites de los virus
-
+	
 
 void Fondo::Dibuja(string nombre, float limx1, float limx2, float limy1, float limy2) {
+	//Similar a la función creada para los sprites de los virus
 	nombre = "imagenes/" + nombre + ".png";
 
 	char* name = strcpy(new char[nombre.length() + 1], nombre.c_str());
@@ -20,7 +20,7 @@ void Fondo::Dibuja(string nombre, float limx1, float limx2, float limy1, float l
 	glBegin(GL_POLYGON);
 
 	glColor3f(1, 1, 1);
-	glTexCoord2d(0, 1);		glVertex3f(limx1, limy1, -0.1);//ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
+	glTexCoord2d(0, 1);		glVertex3f(limx1, limy1, -0.1);
 	glTexCoord2d(1, 1);		glVertex3f(limx2, limy1, -0.1);
 	glTexCoord2d(1, 0);		glVertex3f(limx2, limy2, -0.1);
 	glTexCoord2d(0, 0);		glVertex3f(limx1, limy2, -0.1);
