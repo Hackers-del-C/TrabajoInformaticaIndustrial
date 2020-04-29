@@ -23,7 +23,7 @@ public:
 	
 private:
 	int numero;
-	Plataformas* listarelleno[NUM_MAX_PLATAFORMAS];
+	Plataformas* lista[NUM_MAX_PLATAFORMAS];
 	
 	//std::vector<Plataformas*>lista;
 	

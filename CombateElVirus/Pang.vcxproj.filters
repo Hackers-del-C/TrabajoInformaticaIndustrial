@@ -91,6 +91,9 @@
     <ClCompile Include="src\ListaBordesSube.cpp">
       <Filter>Archivos de código fuente\MUNDO\Limites</Filter>
     </ClCompile>
+    <ClCompile Include="src\Zapatos.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Personajes\Jugador</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\ETSIDI.h">
@@ -176,6 +179,9 @@
     </ClInclude>
     <ClInclude Include="src\ListaBordesSube.h">
       <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Zapatos.h">
+      <Filter>Archivos de encabezado\MUNDO\Personajes\Jugador</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

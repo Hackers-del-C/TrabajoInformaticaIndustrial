@@ -16,7 +16,7 @@
 #include "Plataformas.h"
 #include "ListaVirus.h"
 #include "ListaBordesSube.h"
-
+#include "Zapatos.h"
 //#include "Misil.h"
 class Mundo
 {
@@ -61,7 +61,7 @@ private:
 	ListaBordesSube bordessube;
 	//Misil misilizq;
 	ListaVirus listavirus;
-
+	Zapatos zapatos;
 	//ojo
 	float x_ojo;
 	float y_ojo;

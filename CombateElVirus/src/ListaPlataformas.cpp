@@ -7,7 +7,7 @@
 ListaPlataformas::ListaPlataformas() {
 	numero = 0;
 	for (int i = 0; i < NUM_MAX_PLATAFORMAS; i++)
-		listarelleno[i] = 0;
+		lista[i] = 0;
 
 }
 ListaPlataformas::~ListaPlataformas() {
@@ -21,11 +21,11 @@ bool ListaPlataformas::Agregar(Plataformas* p) {
 	}*/
 	if (numero < NUM_MAX_PLATAFORMAS) {
 		for (int i = 0; i < numero; i++) {
-			if (listarelleno[i] == p) {
+			if (lista[i] == p) {
 				return false;
 			}
 		}
-		listarelleno[numero] = p;
+		lista[numero] = p;
 		//bordessube.Agregar(new BordesSube(listarelleno[numero].limite1.x));
 		numero++; // algo para que no se guarden dos sobre lamisma memoria
 		return true;
@@ -40,15 +40,15 @@ void ListaPlataformas::Eliminar(int index) {
 	if ((index < 0) || (index >= numero)) {
 		return;
 	}
-	delete listarelleno[index];
+	delete lista[index];
 	numero--;
 	for (int i = index; i < numero; i++)
-		listarelleno[i] = listarelleno[i + 1];
+		lista[i] = lista[i + 1];
 }
 void ListaPlataformas::Eliminar(Plataformas* p)
 {
 	for (int i = 0; i < numero; i++)
-		if (listarelleno[i] == p)
+		if (lista[i] == p)
 		{
 			Eliminar(i);
 			return;
@@ -61,7 +61,7 @@ void ListaPlataformas::DestruirContenido(int ind) {
 	delete lista[ind];
 	lista.erase(lista.begin() + ind);*/
 	for (int i = 0; i < numero; i++) {
-		delete listarelleno[i];
+		delete lista[i];
 
 	}
 	numero = 0;
@@ -70,7 +70,7 @@ void ListaPlataformas::Dibuja() {
 	/*for (int i = 0; i < lista.size(); i++)
 		lista[i]->Dibuja();*/
 	for (int i = 0; i < numero; i++) {
-		listarelleno[i]->Dibuja();
+		lista[i]->Dibuja();
 	}
 }
 

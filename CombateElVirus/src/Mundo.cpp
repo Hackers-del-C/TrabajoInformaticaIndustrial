@@ -54,7 +54,7 @@ void Mundo::Inicializa()
 		aux->Inicializa("virusseta", 8, 1, -10 + 2.5 * i, 4, 2, 2, 0, 0);
 		listavirus.agregar(aux);
 	}
-	
+	//zapatos.Inicializa(hombre);
 }
 void Mundo::Dibuja()
 {
@@ -94,14 +94,14 @@ void Mundo::Dibuja()
 	//disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y + 2, 0.0f, 22.0f));
 	
 	plataformas.Agregar(new Plataformas(10, 1, 20, 1.5));
-	bordessube.Agregar(new BordesSube(10, 1, 20, 1.5));
+	//bordessube.Agregar(new BordesSube(10, 1, 20, 1.5));
 
 	plataformas.Agregar(new Plataformas(25, 3, 35, 3.5));
-	bordessube.Agregar(new BordesSube(25, 3, 35, 3.5));
+	//bordessube.Agregar(new BordesSube(25, 3, 35, 3.5));
 
 	listavirus.dibuja();
 
-	
+	zapatos.Dibuja(hombre);
 }
 
 
@@ -147,6 +147,7 @@ void Mundo::Mueve()
 	}
 
 	listavirus.mueve(0.025f, hombre);
+	//zapatos.Mueve(0.025f, hombre);
 }
 
 
