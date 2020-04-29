@@ -82,6 +82,15 @@
     <ClCompile Include="src\ListaVirus.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
     </ClCompile>
+    <ClCompile Include="src\BordesChoca.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Limites</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BordesSube.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Limites</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ListaBordesSube.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Limites</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\ETSIDI.h">
@@ -158,6 +167,15 @@
     </ClInclude>
     <ClInclude Include="src\ListaVirus.h">
       <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BordesSube.h">
+      <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BordesChoca.h">
+      <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ListaBordesSube.h">
+      <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

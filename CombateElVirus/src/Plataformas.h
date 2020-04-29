@@ -1,5 +1,6 @@
 #pragma once
 #include "ETSIDI.h"
+#include "BordesSube.h"
 class Plataformas {
 public:
 	Plataformas();

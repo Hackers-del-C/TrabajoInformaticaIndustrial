@@ -84,6 +84,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Amigo.cpp" />
+    <ClCompile Include="src\BordesChoca.cpp" />
+    <ClCompile Include="src\BordesSube.cpp" />
     <ClCompile Include="src\Lanzamisiles.cpp" />
     <ClCompile Include="src\Limites.cpp" />
     <ClCompile Include="src\Disparo.cpp" />
@@ -91,6 +93,7 @@
     <ClCompile Include="src\Fondo.cpp" />
     <ClCompile Include="src\Hombre.cpp" />
     <ClCompile Include="src\Interaccion.cpp" />
+    <ClCompile Include="src\ListaBordesSube.cpp" />
     <ClCompile Include="src\ListaDisparos.cpp" />
     <ClCompile Include="src\Listalanzamisiles.cpp" />
     <ClCompile Include="src\Listamisiles.cpp" />
@@ -115,6 +118,8 @@
     <ClInclude Include="lib\ETSIDI.h" />
     <ClInclude Include="src\Amigo.h" />
     <ClInclude Include="src\Bonus.h" />
+    <ClInclude Include="src\BordesChoca.h" />
+    <ClInclude Include="src\BordesSube.h" />
     <ClInclude Include="src\Lanzamisiles.h" />
     <ClInclude Include="src\Limites.h" />
     <ClInclude Include="src\Disparo.h" />
@@ -122,6 +127,7 @@
     <ClInclude Include="src\Fondo.h" />
     <ClInclude Include="src\Hombre.h" />
     <ClInclude Include="src\Interaccion.h" />
+    <ClInclude Include="src\ListaBordesSube.h" />
     <ClInclude Include="src\ListaDisparos.h" />
     <ClInclude Include="src\Listalanzamisiles.h" />
     <ClInclude Include="src\Listamisiles.h" />
