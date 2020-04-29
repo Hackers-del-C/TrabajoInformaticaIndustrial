@@ -1,4 +1,5 @@
 #include "Interaccion.h"
+#include "math.h"
 #include "glut.h"
 
 Interaccion::Interaccion() {
@@ -91,7 +92,7 @@ void Interaccion::reboteexterior(Hombre& h,Limites c)
   bool Interaccion::Colision(Hombre h, Plataformas p) {
       ETSIDI::Vector2D  dir;
       float dif = p.distancia(h.GetPos(), &dir);
-      if (dif <= 0.0f) {
+      if (dif <=0.0f) {
 
 
           return true;
@@ -100,8 +101,8 @@ void Interaccion::reboteexterior(Hombre& h,Limites c)
   }
   bool Interaccion::Colision(Plataformas p, Zapatos z) {
       ETSIDI::Vector2D  dir;
-      float dif = p.distancia(z.GetPos(), &dir);
-      if (dif <= 0.0f) {
+      float dif = p.distancia(z.GetPos(), &dir)-z.GetRadio();
+      if (dif <= 0.75f) {
           
           return true;
       }

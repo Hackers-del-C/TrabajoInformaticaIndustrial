@@ -14,10 +14,10 @@ Zapatos::~Zapatos(){}
 void Zapatos::Dibuja(Hombre& h) {
     glColor3ub(255, 255,255);
     posicion.x = h.GetPos().x - 1.6;
-    posicion.y = h.GetPos().y +0.2;
-    glTranslatef(posicion.x, posicion.y, 0);
-    glutSolidSphere(radio, 20, 20);
-    glTranslatef(-posicion.x, -posicion.y, 0);
+    posicion.y = h.GetPos().y +1;
+    glTranslatef(posicion.x, posicion.y, 2);
+    glutWireSphere(radio, 20, 20);
+    glTranslatef(-posicion.x, -posicion.y, -2);
 }
 /*
 void Zapatos::Mueve(float t, Hombre& h) {

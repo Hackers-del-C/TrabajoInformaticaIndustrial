@@ -41,7 +41,7 @@ public:
 private:
 	// constantes para el salto
 	int distancia=0;
-	int salto = 1;
+	int salto =0;
 	//
 	Disparo disparo;
 	Personajes personajes;

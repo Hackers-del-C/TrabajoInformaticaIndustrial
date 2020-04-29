@@ -1,4 +1,7 @@
 #pragma once
+#include <Windows.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include "Mundo.h"
 #include "Interaccion.h"
 #include "ListaDisparos.h"
@@ -8,6 +11,7 @@
 Mundo::Mundo(){
 	level = 1;
 }
+
 void Mundo::Inicializa()
 {
 	if (level == 0) {
@@ -93,10 +97,10 @@ void Mundo::Dibuja()
 	bordessube.Dibuja();
 	//disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y + 2, 0.0f, 22.0f));
 	
-	plataformas.Agregar(new Plataformas(10, 1, 20, 1.5));
+	plataformas.Agregar(new Plataformas(10, 1, 20, 1.25));
 	//bordessube.Agregar(new BordesSube(10, 1, 20, 1.5));
 
-	plataformas.Agregar(new Plataformas(25, 3, 35, 3.5));
+	plataformas.Agregar(new Plataformas(25, 3, 35, 3.25));
 	//bordessube.Agregar(new BordesSube(25, 3, 35, 3.5));
 
 	listavirus.dibuja();
@@ -148,18 +152,53 @@ void Mundo::Mueve()
 
 	listavirus.mueve(0.025f, hombre);
 	//zapatos.Mueve(0.025f, hombre);
-	Plataformas* aux1 = plataformas.Colision(zapatos);
-	if (aux1!=0) {
-		//plataformas.Agregar(new Plataformas(10, 3, 15, 3.5));
-		hombre.SetVel(hombre.GetVel().x, 0.0);
-		hombre.SetAceleracion(0.0, 0.0);
-	}
+
+
+
+
+
+
+	//////interacciones con plataforma
 	Plataformas* aux2 = plataformas.Colision(hombre);
+	//if (aux2 != 0) {
+//		//plataformas.Agregar(new Plataformas(10, 3, 15, 3.5));
+//		hombre.SetVel(hombre.GetVel().x, 0.0);
+//	//hombre.SetAceleracion(0.0, -20.0);
+//
+//}
+
+
+	////////	TEMPORIZADOR	//////
+
+	Plataformas* aux1 = plataformas.Colision(zapatos);
+
 	if (aux1 != 0) {
-		//plataformas.Agregar(new Plataformas(10, 3, 15, 3.5));
-		hombre.SetVel(hombre.GetVel().x, 0.0);
-		//hombre.SetAceleracion(0.0, 0.0);
+		if (salto == 0){
+			//plataformas.Agregar(new Plataformas(10, 3, 15, 3.5));
+			hombre.SetVel(hombre.GetVel().x, 0.0);
+			hombre.SetAceleracion(0.0, 0.0);
+
+		}
+		
 	}
+	else if (aux1 == 0) {
+		
+		hombre.SetAceleracion(0.0, -20.0);
+		
+	}
+	
+	switch (salto) {
+	case 1:
+		if (Interaccion::colision(hombre, limites) == 1 || aux1 != 0) {
+			hombre.SetVel(hombre.GetVel().x, 18.0f);
+			//zapatos.SetPos(zapatos.GetPos().x, zapatos.GetPos().y+0.5);
+			
+			salto = 0;
+		}
+		
+		break;
+	}
+
 }
 
 
@@ -219,60 +258,59 @@ void Mundo::Tecla(unsigned char key)
 	}
 }
 
-void Mundo::teclaEspecial(unsigned char key){
+void Mundo::teclaEspecial(unsigned char key) {
 	//distancia = 0;
 
-	 if(level!=0){//para que no se mueva cuando esta en el menu
-		 switch (key)
-		 {
-		 case GLUT_KEY_LEFT:
+	if (level != 0) {//para que no se mueva cuando esta en el menu
+		switch (key)
+		{
+		case GLUT_KEY_LEFT:
 
-			 hombre.SetVel(-6, hombre.velocidad.y);
-			 //HAY QUE PONER QUE CUANDO ESTE EN EL AIRE NO VAYA HACIA LA DERECHA
+			hombre.SetVel(-6, hombre.velocidad.y);
+			//HAY QUE PONER QUE CUANDO ESTE EN EL AIRE NO VAYA HACIA LA DERECHA
 
-			 hombre.SetDir(2 );
+			hombre.SetDir(2);
 
-			 break;
-		 case GLUT_KEY_RIGHT:
-			 hombre.SetVel(+6, hombre.velocidad.y);
-			 hombre.SetDir(1);
+			break;
+		case GLUT_KEY_RIGHT:
+			hombre.SetVel(+6, hombre.velocidad.y);
+			hombre.SetDir(1);
 
-			 break;
-		 case GLUT_KEY_UP:
-			 if (Interaccion::colision(hombre, limites)) {
-				 hombre.SetVel(hombre.velocidad.x, 18.0f);
+			break;
+		case GLUT_KEY_UP:
+			salto = 1;
 
-			 }
 
-			 ///////////////////////////////*
-			 /*
-			 if (salto >= 1 && salto < 3 && hombre.posicion.y == -5) {
-				 salto += 1;
-				 hombre.SetVel(hombre.velocidad.x, 15.0f);
-				 /*distancia += 1;
-				 if (distancia > 2) {
-					 salto = 0;
+				///////////////////////////////*
+				/*
+				if (salto >= 1 && salto < 3 && hombre.posicion.y == -5) {
+					salto += 1;
+					hombre.SetVel(hombre.velocidad.x, 15.0f);
+					/*distancia += 1;
+					if (distancia > 2) {
+						salto = 0;
 
-					 break;
-				 }*/
-			 /*
-			 }
-			 else if (salto == 3 && hombre.posicion.y == -5) {
+						break;
+					}*/
+					/*
+					}
+					else if (salto == 3 && hombre.posicion.y == -5) {
 
-				 hombre.SetVel(hombre.velocidad.x, 20.0f);
-				 salto = 1;
-			 }
+						hombre.SetVel(hombre.velocidad.x, 20.0f);
+						salto = 1;
+					}
 
-			 */
-			 ///////////7
-			 break;
-		 }
+					*/
+					///////////7
+				break;
+			}
 
-	}
-	
-	
-	
+		}
+
+
+
 }
+
 /*
 //OJO
 void Mundo::RotarOjo()

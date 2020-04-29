@@ -2,7 +2,7 @@
 #include "Hombre.h"
 #include"ETSIDI.h"
 class Zapatos {
-	float radio=0.09;
+	float radio=0.25;
 	ETSIDI::Vector2D posicion;
 public:
 	Zapatos();
@@ -12,6 +12,10 @@ public:
 	}
 	void Inicializa(Hombre& h);
 	void Dibuja(Hombre& h);
-	
+	float GetRadio() { return radio; }
+	void SetPos(float x, float y) {
+		posicion.x = x;
+		posicion.y = y;
+	}
 	//void Mueve(float t, Hombre &h);
 };

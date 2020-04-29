@@ -17,6 +17,7 @@ Plataformas::Plataformas(float x1, float y1, float x2, float y2) {
 }
 
 void Plataformas::Dibuja() {
+
     glDisable(GL_LIGHTING);
     glColor3ub(1, 0, 1);
     glBegin(GL_POLYGON);
@@ -26,6 +27,32 @@ void Plataformas::Dibuja() {
     glVertex3d(limite2.x, limite1.y, 0);
     glEnd();
     glEnable(GL_LIGHTING);
+
+
+
+    /*glDisable(GL_LIGHTING);
+    glColor3ub(1, 0, 1);
+    glBegin(GL_POLYGON);
+    glVertex3d(limite1.x, 2, 10);
+    glVertex3d(limite1.x, 2, -10);
+    glVertex3d(limite2.x, 2,-10);
+    glVertex3d(limite2.x, 2, 10);
+    glEnd();
+    glEnable(GL_LIGHTING);*/
+
+
+    //glDisable(GL_LIGHTING);
+    //glColor3ub(1, 0, 1);
+    //glBegin(GL_POLYGON);
+    //glVertex3d(limite1.x, 5, limite1.y);
+    //glVertex3d(limite1.x, 5, limite2.y);
+    //glVertex3d(limite2.x, 5, limite2.y);
+    //glVertex3d(limite2.x, 5, limite1.y);
+    //glEnd();
+    //glEnable(GL_LIGHTING);
+
+
+
     /*
     glDisable(GL_LIGHTING);
     glColor3ub(1, 0, 1);
