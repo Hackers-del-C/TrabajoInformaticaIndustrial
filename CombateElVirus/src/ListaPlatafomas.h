@@ -20,7 +20,7 @@ public:
 	int GetNumero() { return numero; }
 	void Eliminar(int index);
 	void Eliminar(Plataformas* p);
-	// bool Colision(Hombre h);
+	Plataformas* Colision(Hombre h);
 	
 	Plataformas* Colision(Zapatos z);
 private:

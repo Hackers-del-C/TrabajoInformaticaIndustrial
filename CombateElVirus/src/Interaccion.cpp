@@ -83,7 +83,7 @@ void Interaccion::reboteexterior(Hombre& h,Limites c)
 
   bool Interaccion::colision(Misil misil, Hombre h) {
       float distancia = (misil.posicion - h.posicion).module();
-      if (distancia <= 10.0) {
+      if (distancia <= 0.0) {
           return true;
       }
       return false;
@@ -102,6 +102,7 @@ void Interaccion::reboteexterior(Hombre& h,Limites c)
       ETSIDI::Vector2D  dir;
       float dif = p.distancia(z.GetPos(), &dir);
       if (dif <= 0.0f) {
+          
           return true;
       }
       return false;
