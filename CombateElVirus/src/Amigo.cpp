@@ -25,8 +25,12 @@ void Amigo::Dibuja(Hombre h) {
         switch (izqder) {
         case 0:  // muñeco a la izquierda del hombre
             
+            companionder->draw();
+            if (h.GetPos().x - posicion.x >= 7) {
                 posicion.x = h.GetPos().x - 7;
-                companionder->draw();
+            }
+               
+              
           
                 break;
         case 1:  //muñeco a la derecha
@@ -50,8 +54,12 @@ void Amigo::Dibuja(Hombre h) {
             }
             break;
         case 1:  //muñeco a la derecha
-            posicion.x = h.GetPos().x + 7;
             companionizq->draw();
+            if (posicion.x-h.GetPos().x  >= 7) {
+                posicion.x = h.GetPos().x + 7;
+            }
+            //posicion.x = h.GetPos().x + 7;
+           
 
             
             break;
