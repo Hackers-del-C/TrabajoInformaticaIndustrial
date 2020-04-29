@@ -96,8 +96,8 @@ void Mundo::Dibuja()
 	plataformas.Agregar(new Plataformas(10, 1, 20, 1.5));
 	bordessube.Agregar(new BordesSube(10, 1, 20, 1.5));
 
-	plataformas.Agregar(new Plataformas(25, 3, 35, 2.5));
-	
+	plataformas.Agregar(new Plataformas(25, 3, 35, 3.5));
+	bordessube.Agregar(new BordesSube(25, 3, 35, 3.5));
 
 	listavirus.dibuja();
 
