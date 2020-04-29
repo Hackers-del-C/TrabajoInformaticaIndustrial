@@ -1,8 +1,9 @@
 #pragma once
 #include "Plataformas.h"
 //#include "Interaccion.h"
-#include "Hombre.h"
+//#include "Hombre.h"
 #include "ListaBordesSube.h"
+#include "Zapatos.h"
 //#include <vector>
 #define NUM_MAX_PLATAFORMAS 100
 
@@ -21,6 +22,7 @@ public:
 	void Eliminar(Plataformas* p);
 	// bool Colision(Hombre h);
 	
+	Plataformas* Colision(Zapatos z);
 private:
 	int numero;
 	Plataformas* lista[NUM_MAX_PLATAFORMAS];

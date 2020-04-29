@@ -148,6 +148,12 @@ void Mundo::Mueve()
 
 	listavirus.mueve(0.025f, hombre);
 	//zapatos.Mueve(0.025f, hombre);
+	Plataformas* aux1 = plataformas.Colision(zapatos);
+	if (aux!=0) {
+		plataformas.Agregar(new Plataformas(10, 3, 15, 3.5));
+		hombre.SetVel(hombre.GetVel().x, 0.0);
+		hombre.SetAceleracion(0.0, 0.0);
+	}
 }
 
 

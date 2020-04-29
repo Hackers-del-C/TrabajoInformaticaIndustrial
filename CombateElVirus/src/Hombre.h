@@ -1,7 +1,7 @@
 #pragma once
 #include "Vector2D.h"
 #include "ETSIDI.h"
-#include "ListaPlatafomas.h"
+//#include "ListaPlatafomas.h"
 //#include "Interaccion.h"
 class Hombre
 {

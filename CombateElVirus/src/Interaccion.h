@@ -9,6 +9,7 @@
 #include "Listamisiles.h"
 #include "Misil.h"
 #include "Mundo.h"
+#include "Zapatos.h"
 class Interaccion
 {
 public:
@@ -27,5 +28,5 @@ public:
     static bool colision(Misil misil, Hombre h);
 
     static bool Colision(Hombre h, Plataformas p);
-    
+    static bool  Colision(Plataformas p, Zapatos z);
 };

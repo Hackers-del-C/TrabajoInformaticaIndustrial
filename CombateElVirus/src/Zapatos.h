@@ -7,6 +7,9 @@ class Zapatos {
 public:
 	Zapatos();
 	~Zapatos();
+	ETSIDI::Vector2D GetPos() {
+		return posicion;
+	}
 	void Inicializa(Hombre& h);
 	void Dibuja(Hombre& h);
 	

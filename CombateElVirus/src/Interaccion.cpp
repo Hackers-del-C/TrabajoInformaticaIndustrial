@@ -98,3 +98,11 @@ void Interaccion::reboteexterior(Hombre& h,Limites c)
       }
       return false;
   }
+  bool Interaccion::Colision(Plataformas p, Zapatos z) {
+      ETSIDI::Vector2D  dir;
+      float dif = p.distancia(z.GetPos(), &dir);
+      if (dif <= 0.0f) {
+          return true;
+      }
+      return false;
+  }
