@@ -15,12 +15,12 @@ BordesSube::BordesSube(ETSIDI::Vector2D l1, ETSIDI::Vector2D l2) {
 }
 void BordesSube::Dibuja() {
     glDisable(GL_LIGHTING);
-    glColor3ub(1, 0, 1);
+    glColor3ub(150, 150, 150);
     glBegin(GL_POLYGON);
-    glVertex3d(limite1.x, limite2.y-0.01, 0);
-    glVertex3d(limite1.x, limite2.y+0.01, 0);
-    glVertex3d(limite2.x, limite2.y+0.01, 0);
-    glVertex3d(limite2.x, limite2.y-0.01, 0);
+    glVertex3d(limite1.x, limite2.y-0.5, 0);
+    glVertex3d(limite1.x, limite2.y+0.5, 0);
+    glVertex3d(limite2.x, limite2.y+0.5, 0);
+    glVertex3d(limite2.x, limite2.y-0.5, 0);
     glEnd();
     glEnable(GL_LIGHTING);
 }

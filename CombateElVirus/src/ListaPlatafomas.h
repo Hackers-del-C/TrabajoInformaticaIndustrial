@@ -2,7 +2,7 @@
 #include "Plataformas.h"
 //#include "Interaccion.h"
 #include "Hombre.h"
-
+#include "ListaBordesSube.h"
 //#include <vector>
 #define NUM_MAX_PLATAFORMAS 100
 

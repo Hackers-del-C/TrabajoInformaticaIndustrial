@@ -90,9 +90,14 @@ void Mundo::Dibuja()
 	//vidas.Dibuja(mascarillas);
 
 	plataformas.Dibuja();
+	bordessube.Dibuja();
 	//disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y + 2, 0.0f, 22.0f));
+	
 	plataformas.Agregar(new Plataformas(10, 1, 20, 1.5));
+	bordessube.Agregar(new BordesSube(10, 1, 20, 1.5));
+
 	plataformas.Agregar(new Plataformas(25, 3, 35, 2.5));
+	
 
 	listavirus.dibuja();
 
