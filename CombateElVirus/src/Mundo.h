@@ -22,7 +22,7 @@ class Mundo
 {
 
 public: 
-	int level;
+	int level=0;
 	int mascarillas = 5;
 	//generales
 	Mundo();
