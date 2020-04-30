@@ -9,10 +9,40 @@
 using namespace ETSIDI;
 using namespace std;
 using ETSIDI::getTexture;
-Virus::Virus() {
+
+Virus::Virus(){
 
     posicion.x = 15;
     posicion.y = -7.5;
+
+}
+
+Virus::Virus(string nombre, int m, int n, float x, float y, float w, float h, int izqder1, int salto1) {
+
+    posicion.x = 15;
+    posicion.y = -7.5;
+    izqder = izqder1; //Si el muñeco puede ir a la izquierda y a la derecha
+    salto = salto1;//Si el muñeco puede saltar/atacar
+
+    string nombreder = "imagenes/" + nombre + "der.png";
+    string nombreizq = "imagenes/" + nombre + "izq.png";
+    nombre = "imagenes/" + nombre + ".png";
+
+    char* a = strcpy(new char[nombre.length() + 1], nombre.c_str());
+    char* b = strcpy(new char[nombreder.length() + 1], nombreder.c_str());
+    char* c = strcpy(new char[nombreizq.length() + 1], nombreizq.c_str());
+    // char* b = strcpy(new char[nombrecompletoder.str().length() + 1], nombrecompletoder.str().c_str());
+    // char* c = strcpy(new char[nombrecompletoizq.str().length() + 1], nombrecompletoizq.str().c_str());
+
+    sprite = new SpriteSequence(a, m, n, 25, true, x, y, w, h);
+
+    if (izqder == 1) {
+        spriteder = new SpriteSequence(b, m, n, 25, true, x, y, w, h);
+        spriteizq = new SpriteSequence(c, m, n, 25, true, x, y, w, h);
+    }
+    if (salto == 1) {
+
+    }
  
 }
 
