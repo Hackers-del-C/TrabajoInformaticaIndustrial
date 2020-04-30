@@ -1,8 +1,7 @@
 #pragma once
 #include "ETSIDI.h"
-
 #include "Musica.h"
-#include "Fondo.h"
+#include "Imagen.h"
 #include "Titulo.h"
 
 using namespace ETSIDI;
@@ -28,7 +27,7 @@ public:
 	//friend class Mundo;
 	
 private:
-	Fondo fondo;
+	Imagen fondo;
 	Titulo titulo;
 	Musica musica;
 	Menu menu;

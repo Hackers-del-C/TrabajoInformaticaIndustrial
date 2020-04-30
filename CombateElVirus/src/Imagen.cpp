@@ -1,4 +1,4 @@
-﻿#include "Fondo.h"
+﻿#include "Imagen.h"
 #include "ETSIDI.h"
 #include "glut.h"
 #include <iostream>
@@ -8,7 +8,7 @@
 
 	
 
-void Fondo::Dibuja(string nombre, float limx1, float limx2, float limy1, float limy2) {
+void Imagen::Dibuja(string nombre, float limx1, float limx2, float limy1, float limy2) {
 	//Similar a la función creada para los sprites de los virus
 	nombre = "imagenes/" + nombre + ".png";
 

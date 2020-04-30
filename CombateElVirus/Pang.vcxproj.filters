@@ -16,9 +16,6 @@
     <ClCompile Include="src\Musica.cpp">
       <Filter>Archivos de código fuente\MUNDO\Entorno\Musica</Filter>
     </ClCompile>
-    <ClCompile Include="src\Fondo.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Entorno\Fondo</Filter>
-    </ClCompile>
     <ClCompile Include="src\Musica.h">
       <Filter>Archivos de encabezado\MUNDO\Entorno\Musica</Filter>
     </ClCompile>
@@ -94,6 +91,9 @@
     <ClCompile Include="src\Zapatos.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes\Jugador</Filter>
     </ClCompile>
+    <ClCompile Include="src\Imagen.cpp">
+      <Filter>Archivos de código fuente\MUNDO</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\ETSIDI.h">
@@ -107,9 +107,6 @@
     </ClInclude>
     <ClInclude Include="src\Titulo.h">
       <Filter>Archivos de encabezado\MUNDO\Entorno\Titulo</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Fondo.h">
-      <Filter>Archivos de encabezado\MUNDO\Entorno\Fondo</Filter>
     </ClInclude>
     <ClInclude Include="src\Limites.h">
       <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
@@ -183,6 +180,9 @@
     <ClInclude Include="src\Zapatos.h">
       <Filter>Archivos de encabezado\MUNDO\Personajes\Jugador</Filter>
     </ClInclude>
+    <ClInclude Include="src\Imagen.h">
+      <Filter>Archivos de encabezado\MUNDO</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Archivos de código fuente">
@@ -206,9 +206,6 @@
     <Filter Include="Archivos de código fuente\MUNDO\Entorno\Titulo">
       <UniqueIdentifier>{fc190dfb-89ec-447c-9571-090b2f5a4221}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de código fuente\MUNDO\Entorno\Fondo">
-      <UniqueIdentifier>{805bef87-3cc6-4b3b-8711-6bf2cc1f90e0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Archivos de encabezado\MUNDO">
       <UniqueIdentifier>{da8882ef-f6d7-47aa-bcef-e3cdf740ab72}</UniqueIdentifier>
     </Filter>
@@ -217,9 +214,6 @@
     </Filter>
     <Filter Include="Archivos de encabezado\MUNDO\Entorno\Musica">
       <UniqueIdentifier>{0eac31e8-e51d-43a4-8a98-ee3c47931984}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de encabezado\MUNDO\Entorno\Fondo">
-      <UniqueIdentifier>{de3dfe92-cc1a-4561-8195-74236386dee8}</UniqueIdentifier>
     </Filter>
     <Filter Include="Archivos de encabezado\MUNDO\Entorno\Titulo">
       <UniqueIdentifier>{a56df4a7-db67-4608-824a-000026a5cae5}</UniqueIdentifier>

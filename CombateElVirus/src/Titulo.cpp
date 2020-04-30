@@ -1,4 +1,5 @@
 #include "Titulo.h"
+
 #include "ETSIDI.h"
 #include "glut.h"
 
@@ -42,53 +43,13 @@ void Titulo::Nombre(int nivel) {
 void Titulo::Bandera(int nivel) {
 	switch (nivel) {
 	case 1:
-
-		//BANDERA//
-		glEnable(GL_TEXTURE_2D);
-		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/banderachina.png").id);
-		glDisable(GL_LIGHTING);
-		glBegin(GL_POLYGON);
-
-		glColor3f(1, 1, 1);
-		glTexCoord2d(0, 1);		glVertex3f(-4, 22, -0.1);//ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
-		glTexCoord2d(1, 1);		glVertex3f(4, 22, -0.1);
-		glTexCoord2d(1, 0);		glVertex3f(4, 27, -0.1);
-		glTexCoord2d(0, 0);		glVertex3f(-4, 27, -0.1);
-		glEnd();
-		glEnable(GL_LIGHTING);
-		glDisable(GL_TEXTURE_2D);
+		bandera.Dibuja("banderachina", -4, 4, 22, 27);
 		break;
 	case 2:
-		//BANDERA//
-		glEnable(GL_TEXTURE_2D);
-		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/banderaitaliana.png").id);
-		glDisable(GL_LIGHTING);
-		glBegin(GL_POLYGON);
-
-		glColor3f(1, 1, 1);
-		glTexCoord2d(0, 1);		glVertex3f(-4, 22, -0.1);//ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
-		glTexCoord2d(1, 1);		glVertex3f(4, 22, -0.1);
-		glTexCoord2d(1, 0);		glVertex3f(4, 27, -0.1);
-		glTexCoord2d(0, 0);		glVertex3f(-4, 27, -0.1);
-		glEnd();
-		glEnable(GL_LIGHTING);
-		glDisable(GL_TEXTURE_2D);
+		bandera.Dibuja("banderaitaliana", -4, 4, 22, 27);
 		break;
 	case 3:
-		//BANDERA//
-		glEnable(GL_TEXTURE_2D);
-		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/banderaespañola.png").id);
-		glDisable(GL_LIGHTING);
-		glBegin(GL_POLYGON);
-
-		glColor3f(1, 1, 1);
-		glTexCoord2d(0, 1);		glVertex3f(-4, 22, -0.1);//ancho, alto e identificaciónde de la textura cargada en el Sistema gráfico.
-		glTexCoord2d(1, 1);		glVertex3f(4, 22, -0.1);
-		glTexCoord2d(1, 0);		glVertex3f(4, 27, -0.1);
-		glTexCoord2d(0, 0);		glVertex3f(-4, 27, -0.1);
-		glEnd();
-		glEnable(GL_LIGHTING);
-		glDisable(GL_TEXTURE_2D);
+		bandera.Dibuja("banderaespañola", -4, 4, 22, 27);
 		break;
 	}
 

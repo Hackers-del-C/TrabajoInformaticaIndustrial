@@ -11,7 +11,7 @@ using ETSIDI::getTexture;
 using ETSIDI::playMusica;
 using ETSIDI::play;
 
-class Fondo {
+class Imagen {
 private:
 
 public:
