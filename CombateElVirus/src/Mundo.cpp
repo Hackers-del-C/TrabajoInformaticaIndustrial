@@ -11,6 +11,7 @@
 Mundo::Mundo(){
 	 //ESTABA INICIALIZADO AQUI EL LEVEL. PERO TIENE QUE IR EN MENU.H 
 	//Asi ya trabajamos como debería ser ;)
+
 }
 
 void Mundo::Inicializa()
@@ -50,13 +51,13 @@ void Mundo::Inicializa()
 		aux->Inicializa("trump", 6, 1, 4 + 2 * i, 4, 3, 3, 1, 0);
 		listavirus.agregar(aux);
 	}
-	for (int i = 0; i < 5; i++)
-	{
-		Virus* aux = new Virus();
-		aux->Inicializa("virusseta", 8, 1, -10 + 2.5 * i, 4, 2, 2, 0, 0);
-		listavirus.agregar(aux);
-	}
-	//zapatos.Inicializa(hombre);
+	//for (int i = 0; i < 5; i++)
+	//{
+	//	Virus* aux = new Virus();
+	//	aux->Inicializa("virusseta", 8, 1, -10 + 2.5 * i, 4, 2, 2, 0, 0);
+	//	listavirus.agregar(aux);
+	//}
+	////zapatos.Inicializa(hombre);
 
 }
 void Mundo::Dibuja()
@@ -124,17 +125,17 @@ void Mundo::Mueve()
 
 	vidas.Mueve(x_ojo);
 
-	 //INTERACCIONES
-	
-	//misilizq.Mueve(0.025f);
-	
+	//INTERACCIONES
+
+   //misilizq.Mueve(0.025f);
+
 	Interaccion::reboteinterior(hombre, limites);
 	Interaccion::reboteexterior(hombre, plataforma1);
 	//Interaccion::rebote(esfera, caja);
 	//Interaccion::rebote(esfera, plataforma);
 	//Interaccion::rebote(esfera2, caja);
 	//Interaccion::rebote(esfera2, plataforma);
-	
+
 
 	//Interaccion::colision(misiles, hombre); /// no funciona
 
@@ -145,8 +146,8 @@ void Mundo::Mueve()
 
 	//Necesitamos algo mas elegante
 
-	
-	
+
+
 	Misil* aux = misiles.colision(hombre);
 	if (aux != 0) {
 		hombre.SetVidas(hombre.GetVidas() - 1);
@@ -161,7 +162,8 @@ void Mundo::Mueve()
 
 
 
-	//////interacciones con plataforma
+	//////interacciones con plataforma -BASURA
+
 	Plataformas* aux2 = plataformas.Colision(hombre);
 	//if (aux2 != 0) {
 //		//plataformas.Agregar(new Plataformas(10, 3, 15, 3.5));
@@ -176,32 +178,47 @@ void Mundo::Mueve()
 	Plataformas* aux1 = plataformas.Colision(zapatos);
 
 	if (aux1 != 0) {
-		if (salto == 0){
+		if (salto == 0) {
 			//plataformas.Agregar(new Plataformas(10, 3, 15, 3.5));
 			hombre.SetVel(hombre.GetVel().x, 0.0);
 			hombre.SetAceleracion(0.0, 0.0);
 
 		}
-		
+
 	}
 	else if (aux1 == 0) {
-		
+
 		hombre.SetAceleracion(0.0, -20.0);
-		
+
 	}
-	
+
 	switch (salto) {
 	case 1:
 		if (Interaccion::colision(hombre, limites) == 1 || aux1 != 0) {
 			hombre.SetVel(hombre.GetVel().x, 18.0f);
 			//zapatos.SetPos(zapatos.GetPos().x, zapatos.GetPos().y+0.5);
-			
+
 			salto = 0;
 		}
-		
+
 		break;
 	}
 
+
+	///////colision hombre-virus
+
+	Virus* auxv = listavirus.Colision(hombre);
+	if (auxv != 0) {
+		listavirus.eliminar(auxv);
+		hombre.SetVidas(hombre.GetVidas() - 1);
+	}
+
+	Misil* auxm = misiles.colision(hombre);
+
+	if (auxm != 0) {
+		misiles.Eliminar(auxm);
+		hombre.SetVidas(hombre.GetVidas() - 1);
+	}
 }
 
 

@@ -12,6 +12,9 @@ ListaMisil::~ListaMisil() {
 bool ListaMisil::Agregar(Misil* d) {
 	lista.push_back(d);
 	return true;
+	/*numero = 0;
+	for (int i = 0; i < MAX_VIRUS; i++)
+		lista[i] = 0;*/
 }
 void ListaMisil::DestruirContenido(int ind) {
 	if ((ind < 0) || (ind >= lista.size())) {

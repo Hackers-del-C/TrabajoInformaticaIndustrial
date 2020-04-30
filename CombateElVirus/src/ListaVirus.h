@@ -23,6 +23,7 @@ public:
 	Virus* operator [](int i);
 	int getNumero() { return numero; }
 
+	Virus* Colision(Hombre &h);
 private:
 	Virus* lista[MAX_VIRUS];
 	int numero;

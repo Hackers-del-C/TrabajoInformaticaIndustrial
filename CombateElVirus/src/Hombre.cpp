@@ -14,7 +14,7 @@ Hombre::Hombre() {
     posicion.y = -5;
     posicion.x = 0;
     dir = 0;
-    vidas = 3;
+    vidas =5;
 }
 
 Hombre::~Hombre() {

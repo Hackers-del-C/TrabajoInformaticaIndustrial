@@ -19,6 +19,9 @@ public:
 	void Eliminar(Misil* m);
 	
 	Misil* colision(Hombre& h);
+private:
+	//int numero;
+	//Disparo* lista[NUM_MAX_misiles];
 	std::vector<Misil*>lista;
 	//Disparo* lista[NUM_MAX_DISPAROS];
 	//int numero;

@@ -3,13 +3,14 @@
 #include "Hombre.h"
 #include "Limites.h"
 #include "Pared.h"
-#include "ListaDisparos.h"
-#include "Listalanzamisiles.h"
+//#include "ListaDisparos.h"
 #include "Listalanzamisiles.h"
 #include "Listamisiles.h"
 #include "Misil.h"
 #include "Mundo.h"
 #include "Zapatos.h"
+#include "Virus.h"
+#include "Disparo.h"
 class Interaccion
 {
 public:
@@ -22,7 +23,7 @@ public:
 
     //static bool colision(ListaMisil& misiles, Hombre h);
 
-
+    static bool Colision (Hombre h,  Virus v);
 
 
     static bool colision(Misil misil, Hombre h);

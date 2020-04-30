@@ -83,11 +83,13 @@ void Interaccion::reboteexterior(Hombre& h,Limites c)
  }
 
   bool Interaccion::colision(Misil misil, Hombre h) {
-      float distancia = (misil.posicion - h.posicion).module();
+  /*    float distancia = (misil.posicion - h.posicion).module();
       if (distancia <= 0.0) {
           return true;
       }
-      return false;
+      return false;*/
+
+      return h.gokuizq->collides(*misil.misil);
   }
   bool Interaccion::Colision(Hombre h, Plataformas p) {
       ETSIDI::Vector2D  dir;
@@ -108,3 +110,9 @@ void Interaccion::reboteexterior(Hombre& h,Limites c)
       }
       return false;
   }
+
+ bool Interaccion::Colision(Hombre h, Virus v)  {
+      
+      return (h.gokuder->collides(*v.spriteder));
+      
+ }
