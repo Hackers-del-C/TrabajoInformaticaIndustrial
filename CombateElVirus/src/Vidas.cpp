@@ -45,6 +45,6 @@ void Vidas::Dibuja(int vidas) {
     }
    glTranslatef(-posicion.x, -posicion.y, 0);
 }
-void Vidas::Mueve(float x_ojo) {
-    posicion.x = x_ojo;
+void Vidas::Mueve(float t, Hombre h) {
+    posicion.x = posicion.x + h.velocidad.x * t;
 }
