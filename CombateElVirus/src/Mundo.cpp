@@ -121,16 +121,28 @@ void Mundo::Mueve()
 	//disparo.Mueve(0.025f); 	
 	disparos.Mueve(0.025f);
 	misiles.Mueve(0.025f);
+
+	vidas.Mueve(x_ojo);
+
+	 //INTERACCIONES
+	
 	//misilizq.Mueve(0.025f);
-
-	vidas.Mueve(0.025f,hombre);
-
-	 //INTERACCIONES		
+	
 	Interaccion::reboteinterior(hombre, limites);
 	Interaccion::reboteexterior(hombre, plataforma1);
+	//Interaccion::rebote(esfera, caja);
+	//Interaccion::rebote(esfera, plataforma);
+	//Interaccion::rebote(esfera2, caja);
+	//Interaccion::rebote(esfera2, plataforma);
+	
+
 	//Interaccion::colision(misiles, hombre); /// no funciona
 
-	Setojo(hombre.posicion.x, 10, 53);
+	if (hombre.posicion.x > 0)
+		Setojo(hombre.posicion.x, 10, 53);
+	else
+		Setojo(0, 10, 53);
+
 	//Necesitamos algo mas elegante
 
 	
@@ -143,6 +155,10 @@ void Mundo::Mueve()
 
 	listavirus.mueve(0.025f, hombre);
 	//zapatos.Mueve(0.025f, hombre);
+
+
+
+
 
 
 	//////interacciones con plataforma

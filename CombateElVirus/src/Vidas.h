@@ -9,7 +9,7 @@ class Vidas {
 public:
 	void Dibuja(int vidas);
 	void Inicializa(Hombre h);
-	void Mueve(float t, Hombre h);
+	void Mueve(float x_ojo);
 
 	ETSIDI::Sprite* vida1;
 	ETSIDI::Sprite* vida2;
