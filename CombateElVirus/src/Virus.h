@@ -20,14 +20,15 @@ public:
     void Mueve(float t, Hombre hombre);
     void Inicializa(string nombre, int m, int n, float x, float y, float w, float h, int izqder, int salto);
     void SetVel(float x, float y);
-
+    void Muere();
     ETSIDI::Vector2D posicion, velocidad, aceleracion;
     // ETSIDI::SpriteSequence* virusazul;
     ETSIDI::SpriteSequence* sprite;
     ETSIDI::SpriteSequence* spriteder;
     ETSIDI::SpriteSequence* spriteizq;
+    ETSIDI::SpriteSequence* spritemuere;
     // ETSIDI::SpriteSequence* virusrojo;
 private:
 
-    int salto, izqder;
+    int salto, izqder, muere;
 };

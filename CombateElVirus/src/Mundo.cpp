@@ -28,7 +28,7 @@ void Mundo::Inicializa()
 	plataforma.SetColor(255, 0, 0);
 	plataforma.SetPos(70.0f, 9.0f, 80.0f, 9.0f);
 	hombre.Inicializa();
-	//virus.Inicializa("trump", 6, 1, 4, 4, 3, 3, 1, 0);
+	virus.Inicializa("trump", 6, 1, 4, 4, 3, 3, 1, 0);
 	limites.SetLimites(-20, 500, -5, 30); //Son los bordes del juego que el jugador no puede pasar
 	plataforma1.SetLimites(30, 60, 5, 10);//Los brdes de una plataforma
 	lanzamisiles1.Inicializa();
@@ -43,12 +43,23 @@ void Mundo::Inicializa()
 
 	//misilizq.Inicializa();
 	
+
+
+
 	for (int i = 0; i < 5; i++)
 	{
 		Virus* aux = new Virus("trump", 6, 1, 4 + 2 * i, 4, 3, 3, 1, 0);
 		//aux->Inicializa("trump", 6, 1, 4 + 2 * i, 4, 3, 3, 1, 0);
 		listavirus.agregar(aux);
 	}
+
+	for (int i = 0; i < 5; i++)
+	{
+		Virus* aux = new Virus("virusseta", 8, 1, -15 + 2 * i, 4, 1, 1, 0, 0);
+		//aux->Inicializa("trump", 6, 1, 4 + 2 * i, 4, 3, 3, 1, 0);
+		listavirus.agregar(aux);
+	}
+	
 	//for (int i = 0; i < 5; i++)
 	//{
 	//	Virus* aux = new Virus();
@@ -81,7 +92,7 @@ void Mundo::Dibuja()
 		//misilizq.Dibuja();
 
 		hombre.Dibuja(level);
-		//virus.Dibuja(level);
+		virus.Dibuja(level);
 
 		int naleatorio = lanzaDado(1000);
 		if (naleatorio < 10) {
@@ -114,7 +125,7 @@ void Mundo::Mueve()
 
 	entorno.Mueve(0.025f);
 	personajes.Mueve(0.025f);
-	//virus.Mueve(0.025f, hombre);
+	virus.Mueve(0.025f, hombre);
 	hombre.Mueve(0.025f);
 	bonus.Mueve(0.025f);
 	//disparo.Mueve(0.025f); 	
@@ -205,11 +216,11 @@ void Mundo::Mueve()
 
 	///////colision hombre-virus
 
-	Virus* auxv = listavirus.Colision(hombre);
+	/*Virus* auxv = listavirus.Colision(hombre);
 	if (auxv != 0) {
 		listavirus.eliminar(auxv);
 		hombre.SetVidas(hombre.GetVidas() - 1);
-	}
+	}*/
 
 	Misil* auxm = misiles.colision(hombre);
 
@@ -247,6 +258,10 @@ void Mundo::Tecla(unsigned char key)
 
 		case 'd':
 			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y+2, 22.0f, 0.0f));
+			break;
+
+		case 'j':
+			virus.Muere();
 			break;
 
 

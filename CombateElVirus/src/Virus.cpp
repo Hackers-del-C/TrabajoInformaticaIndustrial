@@ -41,7 +41,8 @@ Virus::Virus(string nombre, int m, int n, float x, float y, float w, float h, in
         spriteizq = new SpriteSequence(c, m, n, 25, true, x, y, w, h);
     }
     if (salto == 1) {
-
+        spritemuere = new SpriteSequence("sangrevirus", m, n, 25, true, x, y, w, h);
+        
     }
  
 }
@@ -67,7 +68,9 @@ void Virus::Dibuja(int nivel)
         sprite->draw();
     }
    
-
+    if (muere == 1) {
+        spritemuere->draw();
+    }
     glTranslatef(-posicion.x, -posicion.y, 0);
 
 }
@@ -100,7 +103,7 @@ void Virus::Inicializa(string nombre, int m, int n, float x, float y, float w, f
     // char* c = strcpy(new char[nombrecompletoizq.str().length() + 1], nombrecompletoizq.str().c_str());
 
     sprite = new SpriteSequence(a, m, n, 25, true, x, y, w, h);
-
+    spritemuere = new SpriteSequence("imagenes/sangrevirus.png", 8, 1, 25, true, x, y, 3, 3);
     if(izqder==1){
     spriteder = new SpriteSequence(b, m, n, 25, true, x, y, w, h);
     spriteizq = new SpriteSequence(c, m, n, 25, true, x, y, w, h);
@@ -109,6 +112,13 @@ void Virus::Inicializa(string nombre, int m, int n, float x, float y, float w, f
        
     }
 
+}
+
+void Virus::Muere()
+{
+    
+    muere = 1;
+    
 }
 
 void Virus::SetVel(float vx, float vy)
@@ -133,6 +143,11 @@ void Virus::Mueve(float t, Hombre h) {
     if (izqder == 1) {
         spriteder->loop();
         spriteizq->loop();
+    }
+
+    if (muere == 1) {
+        spritemuere->loop();
+       
     }
    
     
