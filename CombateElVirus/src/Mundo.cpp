@@ -123,7 +123,7 @@ void Mundo::Mueve()
 	disparos.Mueve(0.025f);
 	misiles.Mueve(0.025f);
 
-	vidas.Mueve(x_ojo);
+	vidas.Mueve(x_ojo, hombre);
 
 	//INTERACCIONES
 
