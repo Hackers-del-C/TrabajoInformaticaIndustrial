@@ -13,7 +13,7 @@ void Entorno::Dibuja(int nivel) {
 	titulo.Bandera(nivel);
 	switch (nivel) {
 	case 0:
-		fondo.Dibuja("menu", -26, 26, 10, 30); //limx1 limx2 limy1 limy2. La textura es cte -0.1
+		fondo.Dibuja("menu", -26, 26, -10, 30); //limx1 limx2 limy1 limy2. La textura es cte -0.1
 		break;
 	case 1:
 		fondo.Dibuja("prenivel", -30, 26, -10, 30);

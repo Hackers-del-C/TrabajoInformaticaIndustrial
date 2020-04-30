@@ -16,7 +16,7 @@ void Titulo::Nombre(int nivel) {
 		glTranslated(3, -3, 0); //Como se mueve respecto al texto anterior
 		print("CHINA", "fuentes/Bitwise.ttf", 40);
 		glTranslatef(21, -22, 0);
-		///////////////////////////////////////////////
+		
 		break;
 
 	case 2:
@@ -37,8 +37,6 @@ void Titulo::Nombre(int nivel) {
 		glTranslatef(21, -22, 0);
 		break;
 	}
-
-
 }
 void Titulo::Bandera(int nivel) {
 	switch (nivel) {
@@ -52,5 +50,4 @@ void Titulo::Bandera(int nivel) {
 		bandera.Dibuja("banderaespañola", -4, 4, 22, 27);
 		break;
 	}
-
 }

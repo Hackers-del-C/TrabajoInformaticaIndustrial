@@ -9,30 +9,28 @@
 #include "glut.h"
 
 Mundo::Mundo(){
-	level = 1;
+	 //ESTABA INICIALIZADO AQUI EL LEVEL. PERO TIENE QUE IR EN MENU.H 
+	//Asi ya trabajamos como debería ser ;)
 }
 
 void Mundo::Inicializa()
 {
+	
 	if (level == 0) {
-		level=menu.GetLevel();
+		level = menu.GetLevel();
 	}
 	entorno.Inicializa(level);
 	personajes.Inicializa(hombre);
-
 	bonus.SetPos(5.0f, 5.0f);
 	//disparo.SetPos(-5.0f, 0.0f);
 	//disparo.SetOri(-5.0f, 0.0f);
 	plataforma.SetColor(255, 0, 0);
 	plataforma.SetPos(70.0f, 9.0f, 80.0f, 9.0f);
-	
 	hombre.Inicializa();
-	virus.Inicializa("trump",6,1,4,4,3,3,1,0);
-
+	virus.Inicializa("trump", 6, 1, 4, 4, 3, 3, 1, 0);
 	limites.SetLimites(-20, 500, -5, 30); //Son los bordes del juego que el jugador no puede pasar
 	plataforma1.SetLimites(30, 60, 5, 10);//Los brdes de una plataforma
 	lanzamisiles1.Inicializa();
-
 	vidas.Inicializa(hombre);
 
 	/*vida1.Inicializa(hombre,15,20);
@@ -45,11 +43,11 @@ void Mundo::Inicializa()
 	//misilizq.Inicializa();
 	Virus* e1 = new Virus();
 	e1->Inicializa("trump", 6, 1, 4, 4, 3, 3, 1, 0);
-	listavirus.agregar(e1); 
+	listavirus.agregar(e1);
 	for (int i = 0; i < 5; i++)
 	{
 		Virus* aux = new Virus();
-		aux->Inicializa("trump", 6, 1, 4+2*i, 4, 3, 3, 1, 0);
+		aux->Inicializa("trump", 6, 1, 4 + 2 * i, 4, 3, 3, 1, 0);
 		listavirus.agregar(aux);
 	}
 	for (int i = 0; i < 5; i++)
@@ -59,6 +57,7 @@ void Mundo::Inicializa()
 		listavirus.agregar(aux);
 	}
 	//zapatos.Inicializa(hombre);
+
 }
 void Mundo::Dibuja()
 {
@@ -69,43 +68,45 @@ void Mundo::Dibuja()
 
 	entorno.Dibuja(level);
 	limites.Dibuja();
-	personajes.Dibuja(level,hombre);
-	
-	//disparo.Dibuja();
-	//plataforma.Dibuja();
-	//bonus.Dibuja();
-	disparos.Dibuja();
+	if (level !=0) {
+		personajes.Dibuja(level, hombre);
 
-	misiles.Dibuja();
-	lanzamisiles1.Dibuja();
+		//disparo.Dibuja();
+		//plataforma.Dibuja();
+		//bonus.Dibuja();
+		disparos.Dibuja();
 
-	//misilizq.Dibuja();
+		misiles.Dibuja();
+		lanzamisiles1.Dibuja();
 
-	hombre.Dibuja(level);
-	virus.Dibuja(level);
-	
-	int naleatorio = lanzaDado(1000);
-	if (naleatorio < 10) {
-		misiles.Agregar(new Misil("imagenes/misilizq.png", 15, -3.0f, -5.0f, 0.0f));
+		//misilizq.Dibuja();
+
+		hombre.Dibuja(level);
+		virus.Dibuja(level);
+
+		int naleatorio = lanzaDado(1000);
+		if (naleatorio < 10) {
+			misiles.Agregar(new Misil("imagenes/misilizq.png", 15, -3.0f, -5.0f, 0.0f));
+		}
+
+		//hombre.SetVidas(4);
+		vidas.Dibuja(hombre.GetVidas());
+		//vidas.Dibuja(mascarillas);
+
+		plataformas.Dibuja();
+		bordessube.Dibuja();
+		//disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y + 2, 0.0f, 22.0f));
+
+		plataformas.Agregar(new Plataformas(10, 1, 20, 1.25));
+		//bordessube.Agregar(new BordesSube(10, 1, 20, 1.5));
+
+		plataformas.Agregar(new Plataformas(25, 3, 35, 3.25));
+		//bordessube.Agregar(new BordesSube(25, 3, 35, 3.5));
+
+		listavirus.dibuja();
+
+		zapatos.Dibuja(hombre);
 	}
-
-	//hombre.SetVidas(4);
-	vidas.Dibuja(hombre.GetVidas());
-	//vidas.Dibuja(mascarillas);
-
-	plataformas.Dibuja();
-	bordessube.Dibuja();
-	//disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y + 2, 0.0f, 22.0f));
-	
-	plataformas.Agregar(new Plataformas(10, 1, 20, 1.25));
-	//bordessube.Agregar(new BordesSube(10, 1, 20, 1.5));
-
-	plataformas.Agregar(new Plataformas(25, 3, 35, 3.25));
-	//bordessube.Agregar(new BordesSube(25, 3, 35, 3.5));
-
-	listavirus.dibuja();
-
-	zapatos.Dibuja(hombre);
 }
 
 
