@@ -121,7 +121,7 @@ void Mundo::Mueve()
 	disparos.Mueve(0.025f);
 	misiles.Mueve(0.025f);
 
-	vidas.Mueve(0.025f,hombre);
+	vidas.Mueve(x_ojo);
 
 	 //INTERACCIONES
 	
@@ -137,8 +137,10 @@ void Mundo::Mueve()
 
 	//Interaccion::colision(misiles, hombre); /// no funciona
 
-	Setojo(hombre.posicion.x, 10, 53);
-
+	if (hombre.posicion.x > 0)
+		Setojo(hombre.posicion.x, 10, 53);
+	else
+		Setojo(0, 10, 53);
 
 	//Necesitamos algo mas elegante
 
