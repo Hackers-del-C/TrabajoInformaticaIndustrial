@@ -28,7 +28,7 @@ void Mundo::Inicializa()
 	plataforma.SetColor(255, 0, 0);
 	plataforma.SetPos(70.0f, 9.0f, 80.0f, 9.0f);
 	hombre.Inicializa();
-	virus.Inicializa("trump", 6, 1, 4, 4, 3, 3, 1, 0);
+	virus.Inicializa("virusseta", 8, 1, 4, 4, 3, 3, 0, 0);
 	limites.SetLimites(-20, 500, -5, 30); //Son los bordes del juego que el jugador no puede pasar
 	plataforma1.SetLimites(30, 60, 5, 10);//Los brdes de una plataforma
 	lanzamisiles1.Inicializa();
@@ -45,7 +45,7 @@ void Mundo::Inicializa()
 	
 
 
-
+	/* AGREGA VIRUS
 	for (int i = 0; i < 5; i++)
 	{
 		Virus* aux = new Virus("trump", 6, 1, 4 + 2 * i, 4, 3, 3, 1, 0);
@@ -59,7 +59,7 @@ void Mundo::Inicializa()
 		//aux->Inicializa("trump", 6, 1, 4 + 2 * i, 4, 3, 3, 1, 0);
 		listavirus.agregar(aux);
 	}
-	
+	*/
 	//for (int i = 0; i < 5; i++)
 	//{
 	//	Virus* aux = new Virus();
@@ -122,6 +122,20 @@ void Mundo::Dibuja()
 
 void Mundo::Mueve()
 {
+	
+	//Colision virus con disp
+	
+	
+
+	
+	if (disparos.Colision(virus)) {//si alguna esfera ha chocado
+		virus.Muere();
+
+	}
+		//disparo.eliminar(aux7);
+
+
+
 
 	entorno.Mueve(0.025f);
 	personajes.Mueve(0.025f);
@@ -139,6 +153,8 @@ void Mundo::Mueve()
    //misilizq.Mueve(0.025f);
 
 	Interaccion::reboteinterior(hombre, limites);
+	
+
 	Interaccion::reboteexterior(hombre, plataforma1);
 	//Interaccion::rebote(esfera, caja);
 	//Interaccion::rebote(esfera, plataforma);

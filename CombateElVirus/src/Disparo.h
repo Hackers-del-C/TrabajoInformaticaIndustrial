@@ -14,13 +14,13 @@ public:
      void Mueve(float r);
      void SetPos(float ix, float iy);
      void SetOri(float ix, float iy);
-    
+     ETSIDI::Vector2D posicion;
 
     float radio;
 
 
 private:
-    ETSIDI::Vector2D posicion;
+   
     ETSIDI::Vector2D velocidad;
     ETSIDI::Vector2D aceleracion;
     ETSIDI::Vector2D origen;

@@ -111,8 +111,36 @@ void Interaccion::reboteexterior(Hombre& h,Limites c)
       return false;
   }
 
- bool Interaccion::Colision(Hombre h, Virus v)  {
+ bool Interaccion::Colision(Disparo d, Virus v)  {
       
-      return (h.gokuder->collides(*v.spriteder));
-      
+     // Disparo centro y radio r
+ // Rectángulo con esquina superior izquierda en (x,y) ancho w y algo h
+ // Punto (en verde) del perímetro del rectángulo más cercano a la circunferencia en (px,py)
+     float px, py, distancia;
+     px = d.posicion.x; // En principio son iguales
+     if (px < v.posicion.x) px = v.posicion.x;
+     if (px > v.posicion.x + v.anchura) px = v.posicion.x + v.anchura;
+     py = d.posicion.y;
+     if (py < d.posicion.y) py = d.posicion.y;
+     if (py > d.posicion.y + v.altura) py = d.posicion.y + v.altura;
+     distancia = sqrt((d.posicion.x - px) * (d.posicion.x - px) + (d.posicion.y - py) * (d.posicion.y - py));
+     if (distancia < d.radio) {
+         // Colisión detectada
+         return true;
+     }
+     return false;
+ }
+
+ bool Interaccion::Colision(Hombre h , Virus v) {
+
+     // Rectángulo 1 con esquina superior izquierda en (x1,y1) ancho w1 y alto h1
+  // Rectángulo 2 con esquina superior izquierda en (x2,y2) ancho w2 y alto h2
+     if (h.posicion.x > v.posicion.x + v.anchura) { return false; }
+      if(h.posicion.x + h.anchura < v.posicion.x) { return false; }
+        if(h.posicion.y > v.altura + v.posicion.y ) { return false;}
+         if(h.posicion.y + h.altura < v.posicion.y) { return false;}
+         else {
+             return true;
+         }
+
  }

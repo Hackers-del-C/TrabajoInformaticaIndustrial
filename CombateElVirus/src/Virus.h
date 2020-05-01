@@ -22,6 +22,7 @@ public:
     void SetVel(float x, float y);
     void Muere();
     ETSIDI::Vector2D posicion, velocidad, aceleracion;
+    float anchura, altura;
     // ETSIDI::SpriteSequence* virusazul;
     ETSIDI::SpriteSequence* sprite;
     ETSIDI::SpriteSequence* spriteder;

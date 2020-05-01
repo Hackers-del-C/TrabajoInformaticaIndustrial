@@ -18,7 +18,7 @@ public:
     void SetVel(float vx, float vy);
     ETSIDI::Vector2D GetVel() { return velocidad; }
 
-    float altura;
+    float altura, anchura;
     void Inicializa();
     void Salta();
     void SetVidas(int v) { vidas = v; }

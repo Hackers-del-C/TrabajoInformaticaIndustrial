@@ -10,7 +10,7 @@ using ETSIDI::getTexture;
 Hombre::Hombre() {
     aceleracion.y = -20.0f;
     //aceleracion.y = 0.0f;
-    altura = 1.5f;
+   
     posicion.y = -5;
     posicion.x = 0;
     dir = 0;
@@ -105,6 +105,8 @@ void Hombre::Inicializa(){
     muñecoder = new SpriteSequence("imagenes/muñecoder.png", 6, 1, 25, true, -2, 2, 5, 5);
     muñecoizq = new SpriteSequence("imagenes/muñecoizq.png", 6, 1, 25, true, -2, 2, 5, 5);
    
+    altura = 5;
+    anchura = 5;
 }
 
 

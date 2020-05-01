@@ -23,9 +23,9 @@ public:
 
     //static bool colision(ListaMisil& misiles, Hombre h);
 
-    static bool Colision (Hombre h,  Virus v);
+    static bool Colision (Disparo d,  Virus v);
 
-
+    static bool Colision(Hombre h, Virus v);
     static bool colision(Misil misil, Hombre h);
 
     static bool Colision(Hombre h, Plataformas p);
