@@ -108,10 +108,8 @@ void Interaccion::reboteexterior(Hombre& h,Limites c)
   }
   bool Interaccion::Colision(Hombre h, Plataformas p) {
       ETSIDI::Vector2D  dir;
-      float dif = p.distancia(h.GetPos(), &dir);
+      float dif = p.distancia(h.GetPos(), &dir)-h.altura; //antes no estaba lo de -h.altura pero no se si arregla algo o lo empeora
       if (dif <=0.0f) {
-
-
           return true;
       }
       return false;

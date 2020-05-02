@@ -45,7 +45,6 @@ private:
 	Personajes personajes;
 	Hombre hombre;
 	Limites limites, plataforma1;
-	Menu menu;
 	Virus virus;
 	Bonus bonus;
 	Pared plataforma;

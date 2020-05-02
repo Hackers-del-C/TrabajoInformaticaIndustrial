@@ -10,6 +10,5 @@ public:
     void Nombre(int nivel);
     void Bandera(int nivel);
 private:
-    Menu menu;
    Imagen bandera;
 };

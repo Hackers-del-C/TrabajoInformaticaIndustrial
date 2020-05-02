@@ -13,9 +13,6 @@
     <ClCompile Include="src\Entorno.cpp">
       <Filter>Archivos de código fuente\MUNDO\Entorno</Filter>
     </ClCompile>
-    <ClCompile Include="src\Menu.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Menu</Filter>
-    </ClCompile>
     <ClCompile Include="src\Mundo.cpp">
       <Filter>Archivos de código fuente\MUNDO</Filter>
     </ClCompile>
@@ -104,9 +101,6 @@
     </ClInclude>
     <ClInclude Include="src\Limites.h">
       <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Menu.h">
-      <Filter>Archivos de encabezado\MUNDO\Menu</Filter>
     </ClInclude>
     <ClInclude Include="src\Mundo.h">
       <Filter>Archivos de encabezado\MUNDO</Filter>
@@ -217,12 +211,6 @@
     </Filter>
     <Filter Include="Archivos de encabezado\MUNDO\Limites">
       <UniqueIdentifier>{0bf669e0-5db9-4c90-a8d3-adba10b9dd03}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de encabezado\MUNDO\Menu">
-      <UniqueIdentifier>{71011100-17fd-4b44-9e34-486a36156a70}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de código fuente\MUNDO\Menu">
-      <UniqueIdentifier>{a49495e1-61f8-4fa3-9eba-35e8168d3401}</UniqueIdentifier>
     </Filter>
     <Filter Include="Archivos de encabezado\MUNDO\Personajes">
       <UniqueIdentifier>{349aad39-c946-4e9f-9923-49c8b29abb5e}</UniqueIdentifier>
