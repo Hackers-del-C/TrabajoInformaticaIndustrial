@@ -2,7 +2,7 @@
 
 #include "ETSIDI.h"
 #include "Hombre.h"
-
+#include "AuxEtsidi.h"
 using namespace ETSIDI;
 using ETSIDI::getTexture;
 class Amigo {
@@ -22,6 +22,6 @@ public:
 	void Mensajes();
 private:
 	int izqder;
-	
+	AuxEtsidi auxetsidi;
 	ETSIDI::Vector2D posicion, velocidad,aceleracion;
 };

@@ -11,11 +11,13 @@ using ETSIDI::getTexture;
 using ETSIDI::playMusica;
 using ETSIDI::play;
 
-class Imagen {
+class AuxEtsidi {
 private:
 
 public:
 
-	void Dibuja(string nombre, float limx1, float limx2, float limy1, float limy2);
-	Sprite* templo;
+	void Imagen(string nombre, float limx1, float limx2, float limy1, float limy2);
+	void Texto(string nombre, float x, float y, float red, float verde, float azul, float tamanio);
+	
+
 };

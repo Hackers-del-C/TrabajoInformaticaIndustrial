@@ -76,18 +76,12 @@ void Amigo::Mueve(float t) {
 void Amigo::Mensajes() {
     
     if (posicion.x <5) {
-        glTranslatef(posicion.x-3, -1, 0);
-        setTextColor(0, 0.1, 0.2); //FUNCIONA IGUAL QUE GLUT PERO EN VEZ DE 0-255 DE 0-1
-        print("Holaaaa!", "fuentes/Bitwise.ttf", 8);
-        glTranslatef(-posicion.x+3,1, 0);
+        auxetsidi.Texto("Holaaaa!", posicion.x - 3, -1, 0, 0.1, 0.2, 8);        
         
    }
     else if (5 <= posicion.x && posicion.x < 26) {
-        glTranslatef(posicion.x - 7, 0, 0);
-        setTextColor(0, 0.1, 0.2); //FUNCIONA IGUAL QUE GLUT PERO EN VEZ DE 0-255 DE 0-1
-        print("Soy Pedro,", "fuentes/Bitwise.ttf", 8);
-        glTranslated(0, -1, 0);
-        print(" tu compañero de aventuras", "fuentes/Bitwise.ttf", 8);
-        glTranslatef(-posicion.x + 7, 1, 0);
+        auxetsidi.Texto("Soy Pedro", posicion.x - 7, 0, 0, 0.1, 0.2, 8);
+        auxetsidi.Texto("tu compañero de aventuras", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
+      
     }   
 }

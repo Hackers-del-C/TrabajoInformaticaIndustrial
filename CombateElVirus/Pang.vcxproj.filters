@@ -79,7 +79,7 @@
     <ClCompile Include="src\Zapatos.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes\Jugador</Filter>
     </ClCompile>
-    <ClCompile Include="src\Imagen.cpp">
+    <ClCompile Include="src\AuxEtsidi.cpp">
       <Filter>Archivos de código fuente\MUNDO</Filter>
     </ClCompile>
   </ItemGroup>
@@ -162,7 +162,7 @@
     <ClInclude Include="src\Zapatos.h">
       <Filter>Archivos de encabezado\MUNDO\Personajes\Jugador</Filter>
     </ClInclude>
-    <ClInclude Include="src\Imagen.h">
+    <ClInclude Include="src\AuxEtsidi.h">
       <Filter>Archivos de encabezado\MUNDO</Filter>
     </ClInclude>
   </ItemGroup>

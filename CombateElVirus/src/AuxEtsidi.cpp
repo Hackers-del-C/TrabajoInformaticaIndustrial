@@ -1,4 +1,4 @@
-﻿#include "Imagen.h"
+﻿#include "AuxEtsidi.h"
 #include "ETSIDI.h"
 #include "glut.h"
 #include <iostream>
@@ -8,7 +8,7 @@
 
 	
 
-void Imagen::Dibuja(string nombre, float limx1, float limx2, float limy1, float limy2) {
+void AuxEtsidi::Imagen(string nombre, float limx1, float limx2, float limy1, float limy2) {
 	//Similar a la función creada para los sprites de los virus
 	nombre = "imagenes/" + nombre + ".png";
 
@@ -29,7 +29,13 @@ void Imagen::Dibuja(string nombre, float limx1, float limx2, float limy1, float 
 	glDisable(GL_TEXTURE_2D);
 
 }
-
+void AuxEtsidi::Texto(string nombre,float x, float y,float red,float verde,float azul,float tamanio) {
+	char* name = strcpy(new char[nombre.length() + 1], nombre.c_str());
+	glTranslatef(x,y,0);
+	setTextColor(red, verde, azul); //FUNCIONA IGUAL QUE GLUT PERO EN VEZ DE 0-255 DE 0-1
+	print(name, "fuentes/Bitwise.ttf", tamanio);
+	glTranslatef(-x,-y,0);
+}
 //// templo chino
 
 		/*templo = new Sprite("imagenes/templo.png", 0, 3, 10, 20);

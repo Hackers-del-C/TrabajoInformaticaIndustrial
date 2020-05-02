@@ -90,7 +90,7 @@
     <ClCompile Include="src\Limites.cpp" />
     <ClCompile Include="src\Disparo.cpp" />
     <ClCompile Include="src\Entorno.cpp" />
-    <ClCompile Include="src\Imagen.cpp" />
+    <ClCompile Include="src\AuxEtsidi.cpp" />
     <ClCompile Include="src\Hombre.cpp" />
     <ClCompile Include="src\Interaccion.cpp" />
     <ClCompile Include="src\ListaBordesSube.cpp" />
@@ -121,7 +121,7 @@
     <ClInclude Include="src\Limites.h" />
     <ClInclude Include="src\Disparo.h" />
     <ClInclude Include="src\Entorno.h" />
-    <ClInclude Include="src\Imagen.h" />
+    <ClInclude Include="src\AuxEtsidi.h" />
     <ClInclude Include="src\Hombre.h" />
     <ClInclude Include="src\Interaccion.h" />
     <ClInclude Include="src\ListaBordesSube.h" />

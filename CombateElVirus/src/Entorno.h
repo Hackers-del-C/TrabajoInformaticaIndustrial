@@ -1,6 +1,6 @@
 #pragma once
 #include "ETSIDI.h"
-#include "Imagen.h"
+#include "AuxEtsidi.h"
 
 
 using namespace ETSIDI;
@@ -17,9 +17,7 @@ public:
 	//friend class Mundo;
 	
 private:
-	Imagen fondo;
-	Imagen bandera; //Podriamos usar fondo, pero así queda más claro el código
-	
+	AuxEtsidi auxetsidi;
 
 	
 };
