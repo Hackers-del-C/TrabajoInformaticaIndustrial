@@ -1,5 +1,4 @@
 #include "Entorno.h"
-
 #include "glut.h"
 #include "ETSIDI.h"
 void Entorno::Inicializa(int nivel) {
@@ -17,8 +16,7 @@ void Entorno::Inicializa(int nivel) {
 	case 3:
 		ETSIDI::play("mis_sonidos/Espania.wav");
 		break;
-	}
-	
+	}	
 }
 
 void Entorno::Dibuja(int nivel) {

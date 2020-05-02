@@ -22,7 +22,7 @@ class Mundo
 {
 
 public: 
-	int level=1;
+	int level;//SE CAMBIA DESDE MENU.H 
 	int mascarillas = 5;
 	//generales
 	Mundo();
@@ -34,10 +34,8 @@ public:
 	//ojo:
 	void RotarOjo();
 	void Setojo(float ox, float oy, float oz);
-	void SetLevel(int nivel) { level = nivel; }
+	void SetLevel(int nivel) { level = nivel; }	
 
-
-	
 private:
 	// constantes para el salto
 	int distancia=0;

@@ -19,7 +19,6 @@ public:
 private:
 	Imagen fondo;
 	Titulo titulo;
-	Menu menu;
 
 	
 };
