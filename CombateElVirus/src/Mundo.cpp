@@ -33,18 +33,16 @@ void Mundo::RotarOjo()
 void Mundo::Inicializa()
 {
 	entorno.Inicializa(level);
-	personajes.Inicializa(hombre);
-	bonus.SetPos(5.0f, 5.0f);
-	
-	plataforma.SetColor(255, 0, 0);
-	plataforma.SetPos(70.0f, 9.0f, 80.0f, 9.0f);
+	personajes.Inicializa(hombre);	
 	hombre.Inicializa();
 	virus.Inicializa("virusseta", 8, 1, 4, 4, 3, 3, 0, 0);
 	limites.SetLimites(-20, 500, -5, 30); //Son los bordes del juego que el jugador no puede pasar
-	plataforma1.SetLimites(30, 60, 5, 10);//Los brdes de una plataforma
 	lanzamisiles1.Inicializa();
 	vidas.Inicializa(hombre);
 
+	//bonus.SetPos(5.0f, 5.0f);
+	//plataforma1.SetLimites(30, 60, 5, 10);//Los brdes de una plataforma
+	//plataforma.SetColor(255, 0, 0);//plataforma.SetPos(70.0f, 9.0f, 80.0f, 9.0f);
 	//disparo.SetPos(-5.0f, 0.0f);
 	//disparo.SetOri(-5.0f, 0.0f);
 	/*vida1.Inicializa(hombre,15,20);
@@ -133,18 +131,19 @@ void Mundo::Mueve()
 	personajes.Mueve(0.025f);
 	virus.Mueve(0.025f, hombre);
 	hombre.Mueve(0.025f);
-	bonus.Mueve(0.025f);	 	
+		 	
 	disparos.Mueve(0.025f);
 	misiles.Mueve(0.025f);
 	vidas.Mueve(x_ojo);
 	listavirus.mueve(0.025f, hombre);
 	//zapatos.Mueve(0.025f, hombre);
 	//disparo.Mueve(0.025f);
+	//bonus.Mueve(0.025f);
 
 	////INTERACCIONES////
 
 	Interaccion::reboteinterior(hombre, limites);
-	Interaccion::reboteexterior(hombre, plataforma1);
+	//IMPORTANTE//Interaccion::reboteexterior(hombre, plataforma1);
 	//Interaccion::colision(misiles, hombre); /// no funciona
 
 

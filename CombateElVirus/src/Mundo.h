@@ -1,23 +1,23 @@
 #pragma once
+#include "ETSIDI.h"
 
 #include "Limites.h"
 #include "Personajes.h"
 #include "Hombre.h"
-#include "Bonus.h"
-#include "Disparo.h" 
-#include "ListaDisparos.h"
-#include "ETSIDI.h"
 #include "Entorno.h"
 #include "Lanzamisiles.h"
 #include "Virus.h"
-#include "Listamisiles.h"
 #include "Vidas.h"
+//LISTAS
 #include "ListaPlatafomas.h"
 #include "Plataformas.h"
 #include "ListaVirus.h"
 #include "ListaBordesSube.h"
+#include "ListaDisparos.h"
+#include "Listamisiles.h"
+
 #include "Zapatos.h"
-//#include "Misil.h"
+
 class Mundo
 {
 
@@ -32,33 +32,34 @@ public:
 	void Dibuja();
 	void teclaEspecial(unsigned char key);
 	//ojo:
-	void RotarOjo();
+
 	void Setojo(float ox, float oy, float oz);
 	void SetLevel(int nivel) { level = nivel; }	
+		//void RotarOjo();
 
 private:
 	// constantes para el salto
 	int distancia=0;
 	int salto =0;
 	//
-	Disparo disparo;
+	//Disparo disparo;
 	Personajes personajes;
 	Hombre hombre;
-	Limites limites, plataforma1;
+	Limites limites;//plataforma1;
 	Virus virus;
-	Bonus bonus;
-	Pared plataforma;
 	Entorno entorno;
+	//LISTAS
 	ListaDisparos disparos;
 	Lanzamisiles lanzamisiles1;
-	ListaMisil misiles;
-	
+	ListaMisil misiles;	
 	Vidas vidas;
 	ListaPlataformas plataformas;
 	ListaBordesSube bordessube;
-	//Misil misilizq;
 	ListaVirus listavirus;
 	Zapatos zapatos;
+	//Bonus bonus;
+	// Misil misilizq;
+	//Pared plataforma;
 	//ojo
 	float x_ojo;
 	float y_ojo;
