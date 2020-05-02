@@ -10,7 +10,6 @@
 #include "Vidas.h"
 //LISTAS
 #include "ListaPlatafomas.h"
-#include "Plataformas.h"
 #include "ListaVirus.h"
 #include "ListaBordesSube.h"
 #include "ListaDisparos.h"

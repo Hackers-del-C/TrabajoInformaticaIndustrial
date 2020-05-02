@@ -165,12 +165,14 @@ void Mundo::Mueve()
 	//////interacciones con plataforma -BASURA
 
 	Plataformas* aux2 = plataformas.Colision(hombre);
-	//if (aux2 != 0) {
-//		//plataformas.Agregar(new Plataformas(10, 3, 15, 3.5));
-//		hombre.SetVel(hombre.GetVel().x, 0.0);
-//	//hombre.SetAceleracion(0.0, -20.0);
-//
-//}
+	if (aux2 != 0) {
+
+
+		/*plataformas.Agregar(new Plataformas(10, 3, 15, 3.5));
+		hombre.SetVel(hombre.GetVel().x, 0.0);
+		hombre.SetAceleracion(0.0, -20.0);*/
+	}
+
 
 
 	////////	TEMPORIZADOR	//////

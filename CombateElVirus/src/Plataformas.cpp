@@ -30,50 +30,6 @@ void Plataformas::Dibuja() {
 
 
 
-    /*glDisable(GL_LIGHTING);
-    glColor3ub(1, 0, 1);
-    glBegin(GL_POLYGON);
-    glVertex3d(limite1.x, 2, 10);
-    glVertex3d(limite1.x, 2, -10);
-    glVertex3d(limite2.x, 2,-10);
-    glVertex3d(limite2.x, 2, 10);
-    glEnd();
-    glEnable(GL_LIGHTING);*/
-
-
-    //glDisable(GL_LIGHTING);
-    //glColor3ub(1, 0, 1);
-    //glBegin(GL_POLYGON);
-    //glVertex3d(limite1.x, 5, limite1.y);
-    //glVertex3d(limite1.x, 5, limite2.y);
-    //glVertex3d(limite2.x, 5, limite2.y);
-    //glVertex3d(limite2.x, 5, limite1.y);
-    //glEnd();
-    //glEnable(GL_LIGHTING);
-
-
-
-    /*
-    glDisable(GL_LIGHTING);
-    glColor3ub(1, 0, 1);
-    glBegin(GL_POLYGON);
-    glVertex3d(limite1.x - 0.5, limite1.y, 0);
-    glVertex3d(limite1.x - 0.5, limite2.y+0.4, 0);
-    glVertex3d(limite1.x, limite2.y+0.4, 0);
-    glVertex3d(limite1.x, limite1.y, 0);
-    glEnd();
-    glEnable(GL_LIGHTING);
-
-    glDisable(GL_LIGHTING);
-    glColor3ub(1, 0, 1);
-    glBegin(GL_POLYGON);
-    glVertex3d(limite2.x, limite1.y, 0);
-    glVertex3d(limite2.x, limite2.y + 0.4, 0);
-    glVertex3d(limite2.x + 0.5, limite2.y + 0.4, 0);
-    glVertex3d(limite2.x + 0.5, limite1.y, 0);
-    glEnd();
-    glEnable(GL_LIGHTING);
-    */
 }
 
 float Plataformas::distancia(ETSIDI::Vector2D punto, ETSIDI::Vector2D* direccion)

@@ -127,10 +127,10 @@ void Interaccion::reboteexterior(Hombre& h,Limites c)
   float ymax = c.techo.limite1.y;
     float ymin = c.suelo.limite2.y;
 
-   /*/
+  
     if (h.posicion.x > xmin && h.posicion.x < xmax && h.posicion.y>ymin && h.posicion.y<ymax)h.posicion.x = xmin;
    if (h.posicion.x > xmin && h.posicion.x < xmax && h.posicion.y > ymin)h.posicion.y = ymin;
-    if (h.posicion.x > xmin && h.posicion.x < xmax && h.posicion.y < ymax)h.posicion.y = ymax;*/
+    if (h.posicion.x > xmin && h.posicion.x < xmax && h.posicion.y < ymax)h.posicion.y = ymax;
   
 }
 

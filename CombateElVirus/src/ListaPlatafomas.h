@@ -21,7 +21,6 @@ public:
 	void Eliminar(int index);
 	void Eliminar(Plataformas* p);
 	Plataformas* Colision(Hombre h);
-	
 	Plataformas* Colision(Zapatos z);
 private:
 	int numero;
