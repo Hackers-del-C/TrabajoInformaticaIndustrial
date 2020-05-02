@@ -298,28 +298,6 @@ void Mundo::teclaEspecial(unsigned char key) {
 		case GLUT_KEY_UP:
 			salto = 1;
 
-
-				///////////////////////////////*
-				/*
-				if (salto >= 1 && salto < 3 && hombre.posicion.y == -5) {
-					salto += 1;
-					hombre.SetVel(hombre.velocidad.x, 15.0f);
-					/*distancia += 1;
-					if (distancia > 2) {
-						salto = 0;
-
-						break;
-					}*/
-					/*
-					}
-					else if (salto == 3 && hombre.posicion.y == -5) {
-
-						hombre.SetVel(hombre.velocidad.x, 20.0f);
-						salto = 1;
-					}
-
-					*/
-					///////////7
 				break;
 			}
 
