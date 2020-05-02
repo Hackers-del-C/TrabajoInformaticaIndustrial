@@ -188,9 +188,6 @@
     <Filter Include="Archivos de encabezado\MUNDO\Entorno">
       <UniqueIdentifier>{d0eed63d-3515-44d4-8bb0-cb6ee8257344}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de encabezado\MUNDO\Entorno\Titulo">
-      <UniqueIdentifier>{a56df4a7-db67-4608-824a-000026a5cae5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Archivos de código fuente\MUNDO\Interacciones">
       <UniqueIdentifier>{ffb6a55d-c459-437b-b195-a59de3df8982}</UniqueIdentifier>
     </Filter>
