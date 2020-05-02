@@ -15,7 +15,7 @@ void Amigo::Inicializa() {
 }
 void Amigo::Dibuja(Hombre h) {
    
-    posicion.y = -5;//si queremos que salte pues habria que poner posy. Realmente sobra
+    posicion.y = -5;
     glTranslatef(posicion.x, posicion.y, 0);
     switch (h.GetDir()) {
     case 0:
@@ -63,7 +63,7 @@ void Amigo::Dibuja(Hombre h) {
 void Amigo::SetVel(float vx)// float vy)
 {
     velocidad.x = vx;
-   // velocidad.y = vy;
+ 
 }
 
 void Amigo::Mueve(float t) {
