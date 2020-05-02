@@ -144,7 +144,8 @@ void Mundo::Mueve()
 	//disparo.Mueve(0.025f); 	
 	disparos.Mueve(0.025f);
 	misiles.Mueve(0.025f);
-	vidas.Mueve(x_ojo, hombre);
+
+	vidas.Mueve(x_ojo);
 	listavirus.mueve(0.025f, hombre);
 	//zapatos.Mueve(0.025f, hombre);
 
@@ -158,9 +159,11 @@ void Mundo::Mueve()
 	//Colision virus con disp	
 	if (disparos.Colision(virus)) {//si alguna esfera ha chocado
 		virus.Muere();
+		
 
 	}		//disparo.eliminar(aux7);	
 
+	///////// misil-hombre
 	Misil* aux = misiles.colision(hombre);
 	if (aux != 0) {
 		hombre.SetVidas(hombre.GetVidas() - 1);
@@ -218,12 +221,12 @@ void Mundo::Mueve()
 		hombre.SetVidas(hombre.GetVidas() - 1);
 	}*/
 
-	Misil* auxm = misiles.colision(hombre);
+	//Misil* auxm = misiles.colision(hombre);
 
-	if (auxm != 0) {
-		misiles.Eliminar(auxm);
-		hombre.SetVidas(hombre.GetVidas() - 1);
-	}
+	//if (auxm != 0) {
+	//	misiles.Eliminar(auxm);
+	//	hombre.SetVidas(hombre.GetVidas() - 1);
+	//}
 }
 
 
@@ -287,8 +290,10 @@ void Mundo::Tecla(unsigned char key)
 			break;
 			///test
 		case ' ':
+			hombre.SetVel(0, hombre.velocidad.y);
+			//hombre.SetDir(0);
 			int i = 0;
-			misiles.DestruirContenido(i);
+			//misiles.DestruirContenido(i);
 			i++;
 			break;
 

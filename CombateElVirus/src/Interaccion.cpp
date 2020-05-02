@@ -89,7 +89,22 @@ void Interaccion::reboteexterior(Hombre& h,Limites c)
       }
       return false;*/
 
-      return h.gokuizq->collides(*misil.misil);
+      //return h.gokuizq->collides(*misil.misil);
+      float px, py, distancia;
+      px = misil.posicion.x; // En principio son iguales
+      if (px < h.posicion.x-22) px = h.posicion.x-22;
+      if (px > h.posicion.x-22 + h.anchura) px = h.posicion.x-22+h.anchura;
+      py = misil.posicion.y;
+      if (py < misil.posicion.y) py = misil.posicion.y;
+      if (py > misil.posicion.y + h.altura) py = misil.posicion.y + h.altura;
+      distancia = sqrt((misil.posicion.x  - px) * (misil.posicion.x - px) + (misil.posicion.y - py) * (misil.posicion.y - py));
+      //distancia = sqrt((misil.posicion.x - h.posicion.x) * (misil.posicion.x - h.posicion.x) + (misil.posicion.y - h.posicion.y) * (misil.posicion.y - h.posicion.y));
+      if (distancia <=h.anchura/2){
+          // Colisión detectada
+          return true;
+      }
+      return false;
+
   }
   bool Interaccion::Colision(Hombre h, Plataformas p) {
       ETSIDI::Vector2D  dir;
