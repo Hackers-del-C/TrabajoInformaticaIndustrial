@@ -10,6 +10,9 @@
 
 void AuxEtsidi::Imagen(string nombre, float limx1, float limx2, float limy1, float limy2) {
 	//Similar a la función creada para los sprites de los virus
+	//string nombre: nombre de la imagen
+	//limites:
+	//son las dimensiones la imagen en x e y
 	nombre = "imagenes/" + nombre + ".png";
 
 	char* name = strcpy(new char[nombre.length() + 1], nombre.c_str());
@@ -30,6 +33,11 @@ void AuxEtsidi::Imagen(string nombre, float limx1, float limx2, float limy1, flo
 
 }
 void AuxEtsidi::Texto(string nombre,float x, float y,float red,float verde,float azul,float tamanio) {
+	//string nombre es lo que se quiere imprimir
+	//x e y son la posicion
+	//red, verde, azul esla combinacion de colores del texto
+	//tamanio es el tamaño de la fuente
+
 	char* name = strcpy(new char[nombre.length() + 1], nombre.c_str());
 	glTranslatef(x,y,0);
 	setTextColor(red, verde, azul); //FUNCIONA IGUAL QUE GLUT PERO EN VEZ DE 0-255 DE 0-1
