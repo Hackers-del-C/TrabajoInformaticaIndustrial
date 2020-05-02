@@ -80,17 +80,13 @@ void Mundo::Dibuja()
 	limites.Dibuja();
 	if (level !=0) {
 		personajes.Dibuja(level, hombre);
-
 		//disparo.Dibuja();
 		//plataforma.Dibuja();
 		//bonus.Dibuja();
 		disparos.Dibuja();
-
 		misiles.Dibuja();
 		lanzamisiles1.Dibuja();
-
 		//misilizq.Dibuja();
-
 		hombre.Dibuja(level);
 		virus.Dibuja(level);
 
@@ -124,18 +120,12 @@ void Mundo::Mueve()
 {
 	
 	//Colision virus con disp
-	
-	
 
 	
 	if (disparos.Colision(virus)) {//si alguna esfera ha chocado
 		virus.Muere();
 
-	}
-		//disparo.eliminar(aux7);
-
-
-
+	}		//disparo.eliminar(aux7);
 
 	entorno.Mueve(0.025f);
 	personajes.Mueve(0.025f);
@@ -153,13 +143,8 @@ void Mundo::Mueve()
    //misilizq.Mueve(0.025f);
 
 	Interaccion::reboteinterior(hombre, limites);
-	
-
 	Interaccion::reboteexterior(hombre, plataforma1);
-	//Interaccion::rebote(esfera, caja);
-	//Interaccion::rebote(esfera, plataforma);
-	//Interaccion::rebote(esfera2, caja);
-	//Interaccion::rebote(esfera2, plataforma);
+	
 
 
 	//Interaccion::colision(misiles, hombre); /// no funciona
@@ -170,8 +155,6 @@ void Mundo::Mueve()
 		Setojo(0, 10, 53);
 
 	//Necesitamos algo mas elegante
-
-
 
 	Misil* aux = misiles.colision(hombre);
 	if (aux != 0) {

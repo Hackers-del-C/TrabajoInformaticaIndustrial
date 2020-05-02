@@ -2,8 +2,6 @@
 #include "ETSIDI.h"
 #include "glut.h"
 
-
-
 void Menu::Texto() {
 	glTranslatef(-23, 16, 0);
 	setTextColor(0, 0, 0); //FUNCIONA IGUAL QUE GLUT PERO EN VEZ DE 0-255 DE 0-1

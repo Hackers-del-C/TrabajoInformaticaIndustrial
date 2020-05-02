@@ -5,7 +5,7 @@ using ETSIDI::getTexture;
 class Menu {
 public:
 
-	int level=0;
+	int level=1;
 	//void Dibuja();
 	void Tecla(unsigned char key);
 	void Texto();
