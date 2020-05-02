@@ -7,9 +7,6 @@
     <ClCompile Include="src\Vector2D.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="src\Titulo.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Entorno\Titulo</Filter>
-    </ClCompile>
     <ClCompile Include="src\Entorno.cpp">
       <Filter>Archivos de código fuente\MUNDO\Entorno</Filter>
     </ClCompile>
@@ -95,9 +92,6 @@
     </ClInclude>
     <ClInclude Include="src\Entorno.h">
       <Filter>Archivos de encabezado\MUNDO\Entorno</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Titulo.h">
-      <Filter>Archivos de encabezado\MUNDO\Entorno\Titulo</Filter>
     </ClInclude>
     <ClInclude Include="src\Limites.h">
       <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
@@ -187,9 +181,6 @@
     </Filter>
     <Filter Include="Archivos de código fuente\MUNDO\Entorno">
       <UniqueIdentifier>{1a8c15a2-016b-4ef2-817f-5ce42ec36f72}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de código fuente\MUNDO\Entorno\Titulo">
-      <UniqueIdentifier>{fc190dfb-89ec-447c-9571-090b2f5a4221}</UniqueIdentifier>
     </Filter>
     <Filter Include="Archivos de encabezado\MUNDO">
       <UniqueIdentifier>{da8882ef-f6d7-47aa-bcef-e3cdf740ab72}</UniqueIdentifier>

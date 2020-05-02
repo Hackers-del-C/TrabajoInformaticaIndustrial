@@ -29,6 +29,7 @@ void Imagen::Dibuja(string nombre, float limx1, float limx2, float limy1, float 
 	glDisable(GL_TEXTURE_2D);
 
 }
+
 //// templo chino
 
 		/*templo = new Sprite("imagenes/templo.png", 0, 3, 10, 20);

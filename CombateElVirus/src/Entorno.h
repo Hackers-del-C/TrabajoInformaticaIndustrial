@@ -1,7 +1,7 @@
 #pragma once
 #include "ETSIDI.h"
 #include "Imagen.h"
-#include "Titulo.h"
+
 
 using namespace ETSIDI;
 using ETSIDI::getTexture;
@@ -18,7 +18,8 @@ public:
 	
 private:
 	Imagen fondo;
-	Titulo titulo;
+	Imagen bandera; //Podriamos usar fondo, pero así queda más claro el código
+	
 
 	
 };
