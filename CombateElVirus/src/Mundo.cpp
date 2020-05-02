@@ -35,8 +35,7 @@ void Mundo::Inicializa()
 	entorno.Inicializa(level);
 	personajes.Inicializa(hombre);
 	bonus.SetPos(5.0f, 5.0f);
-	//disparo.SetPos(-5.0f, 0.0f);
-	//disparo.SetOri(-5.0f, 0.0f);
+	
 	plataforma.SetColor(255, 0, 0);
 	plataforma.SetPos(70.0f, 9.0f, 80.0f, 9.0f);
 	hombre.Inicializa();
@@ -46,17 +45,15 @@ void Mundo::Inicializa()
 	lanzamisiles1.Inicializa();
 	vidas.Inicializa(hombre);
 
+	//disparo.SetPos(-5.0f, 0.0f);
+	//disparo.SetOri(-5.0f, 0.0f);
 	/*vida1.Inicializa(hombre,15,20);
 	vida2.Inicializa(hombre,19, 20);
 	vida3.Inicializa(hombre,23,20);
 	vida4.Inicializa(hombre,27, 20);
 	vida5.Inicializa(hombre,30, 20);*/
 	//misiles.Inicializa();
-
 	//misilizq.Inicializa();
-	
-
-
 	/* AGREGA VIRUS
 	for (int i = 0; i < 5; i++)
 	{
@@ -90,39 +87,35 @@ void Mundo::Dibuja()
 	entorno.Dibuja(level);
 	limites.Dibuja();
 	if (level !=0) {
-		personajes.Dibuja(level, hombre);
-		//disparo.Dibuja();
-		//plataforma.Dibuja();
-		//bonus.Dibuja();
+
+		personajes.Dibuja(level, hombre);		
 		disparos.Dibuja();
 		misiles.Dibuja();
 		lanzamisiles1.Dibuja();
-		//misilizq.Dibuja();
 		hombre.Dibuja(level);
 		virus.Dibuja(level);
+		plataformas.Dibuja();
+		vidas.Dibuja(hombre.GetVidas());		
+		bordessube.Dibuja();
+		listavirus.dibuja();
+		zapatos.Dibuja(hombre);
 
 		int naleatorio = lanzaDado(1000);
 		if (naleatorio < 10) {
 			misiles.Agregar(new Misil("imagenes/misilizq.png", 15, -3.0f, -5.0f, 0.0f));
 		}
-
-		//hombre.SetVidas(4);
-		vidas.Dibuja(hombre.GetVidas());
-		//vidas.Dibuja(mascarillas);
-
-		plataformas.Dibuja();
-		bordessube.Dibuja();
-		//disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y + 2, 0.0f, 22.0f));
-
 		plataformas.Agregar(new Plataformas(10, 1, 20, 1.25));
-		//bordessube.Agregar(new BordesSube(10, 1, 20, 1.5));
-
 		plataformas.Agregar(new Plataformas(25, 3, 35, 3.25));
-		//bordessube.Agregar(new BordesSube(25, 3, 35, 3.5));
 
-		listavirus.dibuja();
-
-		zapatos.Dibuja(hombre);
+		//misilizq.Dibuja();
+		//disparo.Dibuja();
+		//plataforma.Dibuja();
+		//bonus.Dibuja();
+		//hombre.SetVidas(4);		
+		//vidas.Dibuja(mascarillas);
+		//disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y + 2, 0.0f, 22.0f));
+		//bordessube.Agregar(new BordesSube(10, 1, 20, 1.5));
+		//bordessube.Agregar(new BordesSube(25, 3, 35, 3.5));		
 	}
 }
 
@@ -140,14 +133,13 @@ void Mundo::Mueve()
 	personajes.Mueve(0.025f);
 	virus.Mueve(0.025f, hombre);
 	hombre.Mueve(0.025f);
-	bonus.Mueve(0.025f);
-	//disparo.Mueve(0.025f); 	
+	bonus.Mueve(0.025f);	 	
 	disparos.Mueve(0.025f);
 	misiles.Mueve(0.025f);
-
 	vidas.Mueve(x_ojo);
 	listavirus.mueve(0.025f, hombre);
 	//zapatos.Mueve(0.025f, hombre);
+	//disparo.Mueve(0.025f);
 
 	////INTERACCIONES////
 
@@ -326,7 +318,6 @@ void Mundo::teclaEspecial(unsigned char key) {
 			break;
 		case GLUT_KEY_UP:
 			salto = 1;
-
 				break;
 			}
 
