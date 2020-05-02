@@ -102,8 +102,6 @@
     <ClCompile Include="src\Menu.cpp" />
     <ClCompile Include="src\Misil.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
-    <ClCompile Include="src\Musica.cpp" />
-    <ClCompile Include="src\Musica.h" />
     <ClCompile Include="src\CombateElVirus.cpp" />
     <ClCompile Include="src\Pared.cpp" />
     <ClCompile Include="src\Bonus.cpp" />

@@ -13,12 +13,6 @@
     <ClCompile Include="src\Entorno.cpp">
       <Filter>Archivos de código fuente\MUNDO\Entorno</Filter>
     </ClCompile>
-    <ClCompile Include="src\Musica.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Entorno\Musica</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Musica.h">
-      <Filter>Archivos de encabezado\MUNDO\Entorno\Musica</Filter>
-    </ClCompile>
     <ClCompile Include="src\Menu.cpp">
       <Filter>Archivos de código fuente\MUNDO\Menu</Filter>
     </ClCompile>
@@ -200,9 +194,6 @@
     <Filter Include="Archivos de código fuente\MUNDO\Entorno">
       <UniqueIdentifier>{1a8c15a2-016b-4ef2-817f-5ce42ec36f72}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de código fuente\MUNDO\Entorno\Musica">
-      <UniqueIdentifier>{9061f0c9-d8b1-4419-8ce6-20e5ffd1f007}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Archivos de código fuente\MUNDO\Entorno\Titulo">
       <UniqueIdentifier>{fc190dfb-89ec-447c-9571-090b2f5a4221}</UniqueIdentifier>
     </Filter>
@@ -211,9 +202,6 @@
     </Filter>
     <Filter Include="Archivos de encabezado\MUNDO\Entorno">
       <UniqueIdentifier>{d0eed63d-3515-44d4-8bb0-cb6ee8257344}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de encabezado\MUNDO\Entorno\Musica">
-      <UniqueIdentifier>{0eac31e8-e51d-43a4-8a98-ee3c47931984}</UniqueIdentifier>
     </Filter>
     <Filter Include="Archivos de encabezado\MUNDO\Entorno\Titulo">
       <UniqueIdentifier>{a56df4a7-db67-4608-824a-000026a5cae5}</UniqueIdentifier>

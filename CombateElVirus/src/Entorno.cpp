@@ -3,7 +3,21 @@
 #include "glut.h"
 #include "ETSIDI.h"
 void Entorno::Inicializa(int nivel) {
-	musica.SoundOn(nivel);
+	//MUSICA
+	switch (nivel) {
+	case 0:
+		ETSIDI::play("mis_sonidos/Menu.wav");
+		break;
+	case 1:
+		ETSIDI::play("mis_sonidos/China.wav");
+		break;
+	case 2:
+		ETSIDI::play("mis_sonidos/Italia.wav");
+		break;
+	case 3:
+		ETSIDI::play("mis_sonidos/Espania.wav");
+		break;
+	}
 	
 }
 
@@ -29,11 +43,7 @@ void Entorno::Dibuja(int nivel) {
 }
 
 void Entorno::Mueve(float t) {
-/*	explosion->loop();
-	trump->loop();
-	virus->loop();
-	ninja->loop();
-	*/
+
 }
 void Entorno::Tecla(unsigned char key) {
 
