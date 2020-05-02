@@ -32,10 +32,6 @@ void Mundo::RotarOjo()
 
 void Mundo::Inicializa()
 {
-	
-	if (level == 0) {
-		level = menu.GetLevel();
-	}
 	entorno.Inicializa(level);
 	personajes.Inicializa(hombre);
 	bonus.SetPos(5.0f, 5.0f);
@@ -87,11 +83,10 @@ void Mundo::Inicializa()
 }
 void Mundo::Dibuja()
 {
-
 	gluLookAt(x_ojo, y_ojo, z_ojo,
 		x_ojo, y_ojo, 0.0, //NOTESE QUE HEMOS CAMBIADO ESTO
 		0.0, 5.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
-
+	
 	entorno.Dibuja(level);
 	limites.Dibuja();
 	if (level !=0) {
@@ -234,9 +229,19 @@ void Mundo::Mueve()
 
 
 void Mundo::Tecla(unsigned char key)
-{
+{	
 	if (level == 0) {
-		menu.Tecla(key);
+		switch (key) {
+		case '1':
+			level = 1;
+			break;
+		case '2':
+			level = 2;
+			break;
+		case '3':
+			level = 3;
+			break;
+		}
 	}
 	entorno.Tecla(key);
 	if (level != 0) {//para que no dispare mientras estemos en el nivel 0 
