@@ -13,6 +13,22 @@ Mundo::Mundo(){
 	//Asi ya trabajamos como debería ser ;)
 
 }
+void Mundo::Setojo(float ox, float oy, float oz) {
+
+	x_ojo = ox;
+	y_ojo = oy;
+	z_ojo = oz;
+}
+/*
+//OJO
+void Mundo::RotarOjo()
+{
+	float dist=sqrt(x_ojo*x_ojo+z_ojo*z_ojo);
+	float ang=atan2(z_ojo,x_ojo);
+	ang+=0.05f;
+	x_ojo=dist*cos(ang);
+	z_ojo=dist*sin(ang);
+}*/
 
 void Mundo::Inicializa()
 {
@@ -307,21 +323,6 @@ void Mundo::teclaEspecial(unsigned char key) {
 
 }
 
-/*
-//OJO
-void Mundo::RotarOjo()
-{
-	float dist=sqrt(x_ojo*x_ojo+z_ojo*z_ojo);
-	float ang=atan2(z_ojo,x_ojo);
-	ang+=0.05f;
-	x_ojo=dist*cos(ang);
-	z_ojo=dist*sin(ang);
-}*/
 
-void Mundo::Setojo(float ox, float oy, float oz) {
 
-	x_ojo = ox;
-	y_ojo = oy;
-	z_ojo = oz;
-}
 
