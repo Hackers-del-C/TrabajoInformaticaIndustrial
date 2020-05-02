@@ -118,15 +118,13 @@ void Mundo::Dibuja()
 
 void Mundo::Mueve()
 {
-	
-	//Colision virus con disp
+	//OJO//
+	if (hombre.posicion.x > 0) ////Necesitamos algo mas elegante
+		Setojo(hombre.posicion.x, 10, 53);
+	else
+		Setojo(0, 10, 53);
 
-	
-	if (disparos.Colision(virus)) {//si alguna esfera ha chocado
-		virus.Muere();
-
-	}		//disparo.eliminar(aux7);
-
+	//.Mueve//
 	entorno.Mueve(0.025f);
 	personajes.Mueve(0.025f);
 	virus.Mueve(0.025f, hombre);
@@ -135,40 +133,28 @@ void Mundo::Mueve()
 	//disparo.Mueve(0.025f); 	
 	disparos.Mueve(0.025f);
 	misiles.Mueve(0.025f);
-
 	vidas.Mueve(x_ojo, hombre);
+	listavirus.mueve(0.025f, hombre);
+	//zapatos.Mueve(0.025f, hombre);
 
-	//INTERACCIONES
-
-   //misilizq.Mueve(0.025f);
+	////INTERACCIONES////
 
 	Interaccion::reboteinterior(hombre, limites);
 	Interaccion::reboteexterior(hombre, plataforma1);
-	
-
-
 	//Interaccion::colision(misiles, hombre); /// no funciona
 
-	if (hombre.posicion.x > 0)
-		Setojo(hombre.posicion.x, 10, 53);
-	else
-		Setojo(0, 10, 53);
 
-	//Necesitamos algo mas elegante
+	//Colision virus con disp	
+	if (disparos.Colision(virus)) {//si alguna esfera ha chocado
+		virus.Muere();
+
+	}		//disparo.eliminar(aux7);	
 
 	Misil* aux = misiles.colision(hombre);
 	if (aux != 0) {
 		hombre.SetVidas(hombre.GetVidas() - 1);
 		misiles.Eliminar(aux);
 	}
-
-	listavirus.mueve(0.025f, hombre);
-	//zapatos.Mueve(0.025f, hombre);
-
-
-
-
-
 
 	//////interacciones con plataforma -BASURA
 
