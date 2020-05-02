@@ -2,6 +2,7 @@
 
 #include "ETSIDI.h"
 #include "Hombre.h"
+
 using namespace ETSIDI;
 using ETSIDI::getTexture;
 class Amigo {
@@ -9,6 +10,7 @@ public:
 	ETSIDI::SpriteSequence* companionder;
 	ETSIDI::SpriteSequence* companionizq;
 	ETSIDI::SpriteSequence* companion;
+
 	void Dibuja(Hombre h);
 	void Inicializa();
 	void SetVel(float vx); //, float vy
@@ -20,5 +22,6 @@ public:
 	void Mensajes();
 private:
 	int izqder;
+	
 	ETSIDI::Vector2D posicion, velocidad,aceleracion;
 };
