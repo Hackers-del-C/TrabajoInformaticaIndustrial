@@ -11,7 +11,7 @@ Hombre::Hombre() {
     aceleracion.y = -20.0f;
     //aceleracion.y = 0.0f;
    
-    posicion.y = -5;
+    posicion.y = 0;
     posicion.x = 0;
     dir = 0;
     vidas =5;

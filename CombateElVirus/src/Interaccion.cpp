@@ -95,8 +95,8 @@ void Interaccion::reboteexterior(Hombre& h,Limites c)
       if (px < h.posicion.x-22) px = h.posicion.x-22;
       if (px > h.posicion.x-22 + h.anchura) px = h.posicion.x-22+h.anchura;
       py = misil.posicion.y;
-      if (py < misil.posicion.y) py = misil.posicion.y;
-      if (py > misil.posicion.y + h.altura) py = misil.posicion.y + h.altura;
+      if (py < misil.posicion.y+2) py = misil.posicion.y+2;
+      if (py > misil.posicion.y+2 + h.altura) py = h.posicion.y+2 + h.altura;
       distancia = sqrt((misil.posicion.x  - px) * (misil.posicion.x - px) + (misil.posicion.y - py) * (misil.posicion.y - py));
       //distancia = sqrt((misil.posicion.x - h.posicion.x) * (misil.posicion.x - h.posicion.x) + (misil.posicion.y - h.posicion.y) * (misil.posicion.y - h.posicion.y));
       if (distancia <=h.anchura/2){
@@ -131,6 +131,20 @@ void Interaccion::reboteexterior(Hombre& h,Limites c)
      // Disparo centro y radio r
  // Rectángulo con esquina superior izquierda en (x,y) ancho w y algo h
  // Punto (en verde) del perímetro del rectángulo más cercano a la circunferencia en (px,py)
+     //float px, py, distancia;
+     //px = d.posicion.x; // En principio son iguales
+     //if (px < v.posicion.x) px = v.posicion.x;
+     //if (px > v.posicion.x + v.anchura) px = v.posicion.x + v.anchura;
+     //py = d.posicion.y;
+     //if (py < v.posicion.y) py = v.posicion.y;
+     //if (py > v.posicion.y + v.altura) py = v.posicion.y + v.altura;
+     //distancia = sqrt((d.posicion.x - px) * (d.posicion.x - px) + (d.posicion.y - py) * (d.posicion.y - py));
+     //if (distancia < d.radio) {
+     //    // Colisión detectada
+     //    return true;
+     //}
+     //return false;
+
      float px, py, distancia;
      px = d.posicion.x; // En principio son iguales
      if (px < v.posicion.x) px = v.posicion.x;
@@ -140,8 +154,8 @@ void Interaccion::reboteexterior(Hombre& h,Limites c)
      if (py > d.posicion.y + v.altura) py = d.posicion.y + v.altura;
      distancia = sqrt((d.posicion.x - px) * (d.posicion.x - px) + (d.posicion.y - py) * (d.posicion.y - py));
      if (distancia < d.radio) {
-         // Colisión detectada
-         return true;
+        // Colisión detectada
+        return true;
      }
      return false;
  }

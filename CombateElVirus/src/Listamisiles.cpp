@@ -39,6 +39,12 @@ void ListaMisil::Mueve(float t) {
 		
 	}
 }
+//void ListaMisil::Explota() {
+//	for (int i = 0; i < lista.size(); i++) {
+//		lista[i]->Explota();
+//		lista[i]->SetVel(0);
+//	}
+//}
 void ListaMisil::Dibuja() {
 	for (int i = 0; i < lista.size(); i++)
 		lista[i]->Dibuja();

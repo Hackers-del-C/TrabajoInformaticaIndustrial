@@ -4,7 +4,7 @@
 //#include "Vector2D.h"
 using namespace ETSIDI;
 class Misil {
-
+	int explota = 0;
 public:
 	ETSIDI::Vector2D posicion;
 	ETSIDI::Vector2D velocidad;
@@ -21,7 +21,7 @@ public:
 	//void Mueveder(float t);
 	void Mueve(float t);
 	void SetVel(float v);
-
+	//void Explota() { explota = 1; }
 	Sprite* misil;
-
+	ETSIDI::SpriteSequence* misilexplota;
 };

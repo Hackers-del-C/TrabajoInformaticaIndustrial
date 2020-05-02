@@ -168,6 +168,7 @@ void Mundo::Mueve()
 	if (aux != 0) {
 		hombre.SetVidas(hombre.GetVidas() - 1);
 		misiles.Eliminar(aux);
+		//misiles.Explota();
 	}
 
 	//////interacciones con plataforma -BASURA
@@ -205,11 +206,10 @@ void Mundo::Mueve()
 		if (Interaccion::colision(hombre, limites) == 1 || aux1 != 0) {
 			hombre.SetVel(hombre.GetVel().x, 18.0f);
 			//zapatos.SetPos(zapatos.GetPos().x, zapatos.GetPos().y+0.5);
-
+			hombre.SetAceleracion(0.0, 0.0);
 			salto = 0;
 		}
-
-		break;
+		
 	}
 
 
@@ -272,8 +272,11 @@ void Mundo::Tecla(unsigned char key)
 		case 'j':
 			virus.Muere();
 			break;
-
-
+		case 'x':
+			//virus.Muere();
+			
+			misiles.Agregar(new Misil("imagenes/misilizq.png", 15, -3.0f, -5.0f, 0.0f));
+			break;
 			///////// TESTS DE VIDAS
 		case 't':
 			if (hombre.GetVidas()< 5) {

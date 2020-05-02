@@ -15,7 +15,7 @@ public:
 	void Mueve(float t);
 	void Dibuja();
 	void Inicializa();
-
+	/*void Explota();*/
 	void Eliminar(Misil* m);
 	
 	Misil* colision(Hombre& h);
