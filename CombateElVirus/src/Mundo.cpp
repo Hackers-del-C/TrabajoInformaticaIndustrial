@@ -136,7 +136,7 @@ void Mundo::Mueve()
 		Setojo(0, 10, 53);
 
 	//.Mueve//
-	entorno.Mueve(0.025f);
+
 	personajes.Mueve(0.025f);
 	virus.Mueve(0.025f, hombre);
 	hombre.Mueve(0.025f);

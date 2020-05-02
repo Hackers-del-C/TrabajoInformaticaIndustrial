@@ -22,17 +22,6 @@ void Entorno::Inicializa(int nivel) {
 void Entorno::Dibuja(int nivel) {
 
 	switch (nivel) {
-	case 1:
-		
-		break;
-	case 2:
-		
-		break;
-	case 3:
-		
-		break;
-	}
-	switch (nivel) {
 	case 0:	
 		//IMAGENES
 		auxetsidi.Imagen("menu", -26, 26, -10, 30); //limx1 limx2 limy1 limy2. La textura es cte -0.1		
@@ -74,9 +63,6 @@ void Entorno::Dibuja(int nivel) {
 	
 }
 
-void Entorno::Mueve(float t) {
-
-}
 void Entorno::Tecla(unsigned char key) {
 
 	if (key == 'b') {

@@ -12,7 +12,6 @@ public:
 	
 	void Inicializa(int nivel);
 	void Dibuja(int nivel);
-	void Mueve(float t);
 	void Tecla(unsigned char key);
 	//friend class Mundo;
 	
