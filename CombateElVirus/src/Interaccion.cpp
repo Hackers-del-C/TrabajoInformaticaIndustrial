@@ -39,7 +39,7 @@ bool Interaccion::colision(Misil misil, Hombre h) {
         return false;*/
 
         //return h.gokuizq->collides(*misil.misil);
-    float px, py, distancia;
+  /*  float px, py, distancia;
     px = misil.posicion.x; // En principio son iguales
     if (px < h.posicion.x - 22) px = h.posicion.x - 22;
     if (px > h.posicion.x - 22 + h.anchura) px = h.posicion.x - 22 + h.anchura;
@@ -53,7 +53,16 @@ bool Interaccion::colision(Misil misil, Hombre h) {
         return true;
     }
     return false;
-
+*/
+    
+    if (h.posicion.x -20> misil.posicion.x - misil.anchura) { return false; }
+    if (h.posicion.x + h.anchura-20 < misil.posicion.x) { return false; }
+    if (h.posicion.y -40 > misil.altura + misil.posicion.y) { return false; }
+    if (h.posicion.y +2  < misil.posicion.y) { return false; }
+    else {
+        return true;
+    }
+    
 }
 bool Interaccion::Colision(Hombre h, Plataformas p) {
     ETSIDI::Vector2D  dir;
@@ -97,8 +106,8 @@ bool Interaccion::Colision(Disparo d, Virus v) {
     if (px < v.posicion.x) px = v.posicion.x;
     if (px > v.posicion.x + v.anchura) px = v.posicion.x + v.anchura;
     py = d.posicion.y;
-    if (py < d.posicion.y) py = d.posicion.y;
-    if (py > d.posicion.y + v.altura) py = d.posicion.y + v.altura;
+    if (py < v.posicion.y) py = v.posicion.y;
+    if (py > v.posicion.y + v.altura) py = v.posicion.y + v.altura;
     distancia = sqrt((d.posicion.x - px) * (d.posicion.x - px) + (d.posicion.y - py) * (d.posicion.y - py));
     if (distancia < d.radio) {
         // Colisión detectada

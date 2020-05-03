@@ -13,7 +13,7 @@ using ETSIDI::getTexture;
 Virus::Virus(){
 
     posicion.x = 15;
-    posicion.y = -7.5;
+    posicion.y = -3.5;
 
 }
 
@@ -170,10 +170,10 @@ void Virus::Mueve(float t, Hombre h) {
         }
 
         if (posicion.x + 5 < h.posicion.x) {
-            velocidad.x = 3;
+            velocidad.x = 0;
         }
         if (posicion.x + 5 > h.posicion.x) {
-            velocidad.x = -3;
+            velocidad.x = 0;
         }
     }
    

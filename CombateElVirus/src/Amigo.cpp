@@ -8,14 +8,14 @@
 
 void Amigo::Inicializa() {
     //compañero
-    companionder = new SpriteSequence("imagenes/companionder.png", 2, 1, 25, true, -2, 2, 2, 2);
-    companionizq = new SpriteSequence("imagenes/companionizq.png", 2, 1, 25, true, -2, 2, 2, 2);
-    companion = new SpriteSequence("imagenes/companion.png", 2, 1, 25, true, -2, 2, 2, 2);
+    companionder = new SpriteSequence("imagenes/companionder.png", 2, 1, 25, true, 0, 0, 2, 2);
+    companionizq = new SpriteSequence("imagenes/companionizq.png", 2, 1, 25, true, 0, 0, 2, 2);
+    companion = new SpriteSequence("imagenes/companion.png", 2, 1, 25, true, 0, 0, 2, 2);
     izqder = 0;
 }
 void Amigo::Dibuja(Hombre h) {
    
-    posicion.y = -5;
+    posicion.y = -3.5;
     glTranslatef(posicion.x, posicion.y, 0);
     switch (h.GetDir()) {
     case 0:

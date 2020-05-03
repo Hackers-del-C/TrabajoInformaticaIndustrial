@@ -63,10 +63,10 @@ void Hombre::Mueve(float t)
 void Hombre::Inicializa(){  
 
     /////level1
-    mario = new SpriteSequence("imagenes/mario/mariofrente.png", 1, 1, 25, true, -2, 2, 4, 4);
-    marioder = new SpriteSequence("imagenes/mario/marioandader.png", 7, 1, 25, true, -2, 2, 4, 4); 
-    marioizq = new SpriteSequence("imagenes/mario/marioandaizq.png", 7, 1, 25, true, -2, 2, 4, 4);
-    mariomuerte = new SpriteSequence("imagenes/mario/mariomuerte.png",5, 1, 25, true, -2, 2, 4, 4);//no se por que no funciona bien el sprite
+    mario = new SpriteSequence("imagenes/mario/mariofrente.png", 1, 1, 25, true, 0, 0, 4, 4);
+    marioder = new SpriteSequence("imagenes/mario/marioandader.png", 7, 1, 25, true, 0, 0, 4, 4); 
+    marioizq = new SpriteSequence("imagenes/mario/marioandaizq.png", 7, 1, 25, true, 0, 0, 4, 4);
+    mariomuerte = new SpriteSequence("imagenes/mario/mariomuerte.png",5, 1, 25, true, 0, 0, 4, 4);//no se por que no funciona bien el sprite
 
     ////level 2
     /*

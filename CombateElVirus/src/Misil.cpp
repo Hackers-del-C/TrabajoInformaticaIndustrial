@@ -35,7 +35,7 @@ Misil::Misil(char  nombre [20], float x, float y, float vx, float vy)  {
 }*/
 void Misil::Inicializa() {
 	//lanzamisiles1 = new Sprite("imagenes/lanzamisiles.png", 30, -4, 4, 4);
-	misilexplota = new SpriteSequence("imagenes/explosion.png",3,10,50,false,posicion.x,posicion.y,1,1);
+	misilexplota = new SpriteSequence("imagenes/explosion.png",3,10,50,false,0,0,1,1);
 	misil = new Sprite("imagenes/misilizq.png", 29, -3.0, 2, 2);
 }
 /*void Misil::Dibujader() {

@@ -32,12 +32,14 @@ void Mundo::RotarOjo()
 
 void Mundo::Inicializa()
 {
+	lanzamisiles1.Inicializa();
+	hombre.Inicializa();
 	entorno.Inicializa(level);
 	personajes.Inicializa(hombre);	
-	hombre.Inicializa();
-	virus.Inicializa("virusseta", 8, 1, 4, 4, 3, 3, 0, 0);
-	limites.SetLimites(-20, 500, -5, 30); //Son los bordes del juego que el jugador no puede pasar
-	lanzamisiles1.Inicializa();
+	
+	virus.Inicializa("virusseta", 8, 1, 0, 0, 3, 3, 0, 0);
+	limites.SetLimites(-20, 500, -3.5, 30); //Son los bordes del juego que el jugador no puede pasar
+	
 	vidas.Inicializa(hombre);
 	
 	//bonus.SetPos(5.0f, 5.0f);
@@ -166,6 +168,11 @@ void Mundo::Mueve()
 	////INTERACCIONES////
 	if (finde != 1) {
 		Interaccion::reboteinterior(hombre, limites);
+	}
+
+	if (Interaccion::Colision(hombre, virus)) {
+		
+		hombre.SetVidas(hombre.GetVidas() - 1);
 	}
 	//IMPORTANTE//Interaccion::reboteexterior(hombre, plataforma1);
 	//Interaccion::colision(misiles, hombre); /// no funciona

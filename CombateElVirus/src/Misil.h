@@ -8,6 +8,9 @@ class Misil {
 public:
 	ETSIDI::Vector2D posicion;
 	ETSIDI::Vector2D velocidad;
+	float anchura = 2;
+	float altura = 2;
+	
 
 	Misil();
 
