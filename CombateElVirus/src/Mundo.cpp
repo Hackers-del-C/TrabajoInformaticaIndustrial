@@ -164,7 +164,7 @@ void Mundo::Mueve()
 	//bonus.Mueve(0.025f);
 
 	////INTERACCIONES////
-	if (muerte != 1) {
+	if (finde != 1) {
 		Interaccion::reboteinterior(hombre, limites);
 	}
 	//IMPORTANTE//Interaccion::reboteexterior(hombre, plataforma1);
