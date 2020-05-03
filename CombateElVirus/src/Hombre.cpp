@@ -26,43 +26,43 @@ void Hombre::Dibuja(int nivel)
 
     switch (nivel) {
     case 1:
-        if (dir == 0 ) {
+        if (dir == 0) {
             goku->draw();
         }
-        if (dir == 1 ) {
+        if (dir == 1) {
             gokuder->draw();
         }
-        if (dir == 2 ) {
+        if (dir == 2) {
             gokuizq->draw();
         }
-       
+
         break;
     case 2:
-        if (dir == 0 ) {
+        if (dir == 0) {
             trump->draw();
         }
-        if (dir == 1 ) {
+        if (dir == 1) {
             trumpder->draw();
         }
-        if (dir == 2 ) {
+        if (dir == 2) {
             trumpizq->draw();
         }
         break;
     case 3:
-        if (dir == 0 ) {
+        if (dir == 0) {
             muñeco->draw();
         }
-        if (dir == 1 ) {
+        if (dir == 1) {
             muñecoder->draw();
         }
-        if (dir == 2 ) {
+        if (dir == 2) {
             muñecoizq->draw();
         }
-           break;
-   
-    glTranslatef(-posicion.x, -posicion.y, 0);
-    
-  
+        break;
+
+    }
+        glTranslatef(-posicion.x, -posicion.y, 0);
+           
   
 }
 
