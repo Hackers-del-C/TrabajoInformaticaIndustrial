@@ -91,7 +91,7 @@ void Mundo::Dibuja()
 		disparos.Dibuja();
 		misiles.Dibuja();
 		lanzamisiles1.Dibuja();
-		hombre.Dibuja(level);
+		hombre.Dibuja();
 		virus.Dibuja(level);
 		plataformas.Dibuja();
 		vidas.Dibuja(hombre.GetVidas());		

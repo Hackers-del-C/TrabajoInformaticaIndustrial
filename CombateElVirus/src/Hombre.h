@@ -13,7 +13,7 @@ public:
 
     Hombre();
     virtual ~Hombre();
-    void Dibuja(int nivel);
+    void Dibuja();
     void Mueve(float t);
     void SetVel(float vx, float vy);
     ETSIDI::Vector2D GetVel() { return velocidad; }
@@ -41,13 +41,12 @@ public:
    ETSIDI::SpriteSequence* trumpder;
    ETSIDI::SpriteSequence* trumpizq;
 
-   ETSIDI::SpriteSequence* goku;
-   ETSIDI::SpriteSequence* gokuder;
-   ETSIDI::SpriteSequence* gokuizq;
+   ETSIDI::SpriteSequence* mario;
+   ETSIDI::SpriteSequence* marioder;
+   ETSIDI::SpriteSequence* marioizq;
 
-   ETSIDI::SpriteSequence* muñeco;
-   ETSIDI::SpriteSequence* muñecoder;
-   ETSIDI::SpriteSequence* muñecoizq;
+   ETSIDI::SpriteSequence* mariomuerte;
+   
 
   
 

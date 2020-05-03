@@ -20,49 +20,26 @@ Hombre::Hombre() {
 Hombre::~Hombre() {
 
 }
-void Hombre::Dibuja(int nivel)
+void Hombre::Dibuja()
 {
     glTranslatef(posicion.x, posicion.y, 0);
 
-    switch (nivel) {
+    switch (dir) {
+    case 0:
+        mario->draw();
+        break;
+
     case 1:
-        if (dir == 0) {
-            goku->draw();
-        }
-        if (dir == 1) {
-            gokuder->draw();
-        }
-        if (dir == 2) {
-            gokuizq->draw();
-        }
-
+        marioder->draw();
         break;
+
     case 2:
-        if (dir == 0) {
-            trump->draw();
-        }
-        if (dir == 1) {
-            trumpder->draw();
-        }
-        if (dir == 2) {
-            trumpizq->draw();
-        }
-        break;
-    case 3:
-        if (dir == 0) {
-            muñeco->draw();
-        }
-        if (dir == 1) {
-            muñecoder->draw();
-        }
-        if (dir == 2) {
-            muñecoizq->draw();
-        }
-        break;
 
+        marioizq->draw();
+        break;
     }
         glTranslatef(-posicion.x, -posicion.y, 0);
-           
+    
   
 }
 
@@ -73,17 +50,11 @@ void Hombre::Mueve(float t)
     velocidad = velocidad + aceleracion * t;
 
     //ESTO LO PONDRIA CON UN SWICH Y AHORRAMOS MEMORIA
-    trump->loop();  
-    trumpder->loop();
-    trumpizq->loop();
+    
 
-    goku->loop();
-    gokuder->loop();
-    gokuizq->loop();
-
-    muñeco->loop();
-    muñecoder->loop();
-    muñecoizq->loop();
+    mario->loop();
+    marioder->loop();
+    marioizq->loop();
 
   
 
@@ -92,18 +63,18 @@ void Hombre::Mueve(float t)
 void Hombre::Inicializa(){  
 
     /////level1
-    goku = new SpriteSequence("imagenes/goku.png", 1, 3, 25, true, -2, 2, 5, 5);
-    gokuder = new SpriteSequence("imagenes/gokuder.png", 1, 3, 25, true, -2, 2, 5, 5);
-    gokuizq = new SpriteSequence("imagenes/gokuizq.png", 1, 3, 25, true, -2, 2, 5, 5);
+    mario = new SpriteSequence("imagenes/mariofrente.png", 1, 1, 25, true, -2, 2, 3, 3);
+    marioder = new SpriteSequence("imagenes/marioderecha.png", 3, 1, 25, true, -2, 2, 3, 3); 
+    marioizq = new SpriteSequence("imagenes/marioizquierda.png", 3, 1, 25, true, -2, 2, 3, 3);
+    mariomuerte = new SpriteSequence("imagenes/mariomuerte.png",5, 1, 25, true, -2, 2, 3, 3);//no se por que no funciona bien el sprite
+
     ////level 2
+    /*
     trump = new SpriteSequence("imagenes/trump.png", 6, 4, 25, true, -2, 2, 5, 5);
     trumpder = new SpriteSequence("imagenes/trumpder.png", 6, 1, 25, true, -2, 2, 5, 5);
     trumpizq = new SpriteSequence("imagenes/trumpizq.png", 6, 1, 25, true, -2, 2, 5, 5);
-    
-    ////level3
-    muñeco = new SpriteSequence("imagenes/muñeco.png", 6, 1, 25, true, -2, 2, 5, 5);
-    muñecoder = new SpriteSequence("imagenes/muñecoder.png", 6, 1, 25, true, -2, 2, 5, 5);
-    muñecoizq = new SpriteSequence("imagenes/muñecoizq.png", 6, 1, 25, true, -2, 2, 5, 5);
+    */
+   
    
     altura = 5;
     anchura = 5;
