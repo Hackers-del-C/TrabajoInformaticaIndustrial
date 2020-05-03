@@ -39,7 +39,7 @@ void Mundo::Inicializa()
 	limites.SetLimites(-20, 500, -5, 30); //Son los bordes del juego que el jugador no puede pasar
 	lanzamisiles1.Inicializa();
 	vidas.Inicializa(hombre);
-
+	
 	//bonus.SetPos(5.0f, 5.0f);
 	//plataforma1.SetLimites(30, 60, 5, 10);//Los brdes de una plataforma
 	//plataforma.SetColor(255, 0, 0);//plataforma.SetPos(70.0f, 9.0f, 80.0f, 9.0f);
@@ -84,6 +84,7 @@ void Mundo::Dibuja()
 	
 	entorno.Dibuja(level);
 	limites.Dibuja();
+
 	if (level !=0) {
 
 		personajes.Dibuja(level, hombre);		
@@ -105,6 +106,15 @@ void Mundo::Dibuja()
 		plataformas.Agregar(new Plataformas(10, 1, 20, 1.25));
 		plataformas.Agregar(new Plataformas(25, 3, 35, 3.25));
 
+		
+		if (hombre.GetVidas() == 0 ) { //con un || pondría aqui cuando se acaba el nivel 
+			// habría que poner con un contador de esos un tiempo para que se viera que el sprite cambia a muerto y cae al vacio)
+		
+			level = 0;
+			Setojo(0, 10, 53);
+			hombre.FinPartida();
+			
+		}
 		//misilizq.Dibuja();
 		//disparo.Dibuja();
 		//plataforma.Dibuja();
@@ -121,10 +131,12 @@ void Mundo::Dibuja()
 void Mundo::Mueve()
 {
 	//OJO//
-	if (hombre.posicion.x > 0) ////Necesitamos algo mas elegante
+	
+	if (hombre.posicion.x > 0 && level!=0) ////Necesitamos algo mas elegante
 		Setojo(hombre.posicion.x, 10, 53);
 	else
 		Setojo(0, 10, 53);
+	
 
 	//.Mueve//
 

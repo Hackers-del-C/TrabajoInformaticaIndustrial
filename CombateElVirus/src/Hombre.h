@@ -26,14 +26,13 @@ public:
     void SetDir(int d) { dir = d; }
     int GetDir(){return dir;}
     int GetVidas(){ return vidas; }
+    void FinPartida();
     ETSIDI::Vector2D GetPos() { return posicion; }
     void SetAceleracion(float ax, float ay) {
         aceleracion.x = ax;
         aceleracion.y = ay;
     }
     ETSIDI::Vector2D GetAceleracion() { return aceleracion; }
-
-   
 
 
 

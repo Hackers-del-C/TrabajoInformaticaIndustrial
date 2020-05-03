@@ -35,6 +35,7 @@ void Hombre::Dibuja(int nivel)
         if (dir == 2 ) {
             gokuizq->draw();
         }
+       
         break;
     case 2:
         if (dir == 0 ) {
@@ -120,4 +121,11 @@ void Hombre::SetVel(float vx, float vy)
 void Hombre::Salta()
 {
     velocidad.y = 15;
+}
+void Hombre::FinPartida() {
+    velocidad.x = 0;
+    velocidad.y = 0;
+    posicion.x = 0;
+    posicion.y = -5; 
+    vidas = 5;
 }
