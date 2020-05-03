@@ -106,13 +106,18 @@ void Mundo::Dibuja()
 		plataformas.Agregar(new Plataformas(10, 1, 20, 1.25));
 		plataformas.Agregar(new Plataformas(25, 3, 35, 3.25));
 
-		
+		 //FIN DE PARTIDA
 		if (hombre.GetVidas() == 0 ) { //con un || pondría aqui cuando se acaba el nivel 
 			// habría que poner con un contador de esos un tiempo para que se viera que el sprite cambia a muerto y cae al vacio)
-		
+			while (finde==1) { 
+				hombre.SetVel(0, 0);
+				hombre.SetAceleracion(0, -10);					
+			}
+			finde = 0;
+			hombre.FinPartida();
 			level = 0;
 			Setojo(0, 10, 53);
-			hombre.FinPartida();
+			
 			
 		}
 		//misilizq.Dibuja();
@@ -130,6 +135,12 @@ void Mundo::Dibuja()
 
 void Mundo::Mueve()
 {
+	//esto es para cuando acaba la partida que durante 2s se congele la imagen, no se como hacerlo la verdad el getMillis
+	/*if (hombre.GetVidas() == 0) {
+		while (getMillis() <= 2000) {
+			finde= 1;
+		}
+	}*/
 	//OJO//
 	
 	if (hombre.posicion.x > 0 && level!=0) ////Necesitamos algo mas elegante
@@ -153,8 +164,9 @@ void Mundo::Mueve()
 	//bonus.Mueve(0.025f);
 
 	////INTERACCIONES////
-
-	Interaccion::reboteinterior(hombre, limites);
+	if (muerte != 1) {
+		Interaccion::reboteinterior(hombre, limites);
+	}
 	//IMPORTANTE//Interaccion::reboteexterior(hombre, plataforma1);
 	//Interaccion::colision(misiles, hombre); /// no funciona
 
@@ -320,7 +332,6 @@ void Mundo::teclaEspecial(unsigned char key) {
 
 			hombre.SetVel(-6, hombre.velocidad.y);
 			//HAY QUE PONER QUE CUANDO ESTE EN EL AIRE NO VAYA HACIA LA DERECHA
-
 			hombre.SetDir(2);
 
 			break;

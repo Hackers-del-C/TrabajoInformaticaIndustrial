@@ -59,8 +59,7 @@ void Hombre::Dibuja(int nivel)
             muñecoizq->draw();
         }
            break;
-
-    }
+   
     glTranslatef(-posicion.x, -posicion.y, 0);
     
   
@@ -122,10 +121,12 @@ void Hombre::Salta()
 {
     velocidad.y = 15;
 }
-void Hombre::FinPartida() {
+void Hombre::FinPartida() { //va e Mundo.cpp Dibuja
     velocidad.x = 0;
     velocidad.y = 0;
     posicion.x = 0;
     posicion.y = -5; 
     vidas = 5;
+    dir = 0;
+    //personajemuerto->draw();
 }

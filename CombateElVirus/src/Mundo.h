@@ -40,6 +40,7 @@ private:
 	// constantes para el salto
 	int distancia=0;
 	int salto =0;
+	int finde = 0; //aux para fin de partida
 	//
 	//Disparo disparo;
 	Personajes personajes;
