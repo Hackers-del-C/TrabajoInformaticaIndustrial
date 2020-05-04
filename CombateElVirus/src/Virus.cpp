@@ -22,8 +22,6 @@ Virus::Virus(string nombre, int m, int n, float x, float y, float w, float h, in
     anchura = w;
     altura = h;
 
-    posicion.x = 15;
-    posicion.y = -7.5;
     izqder = izqder1; //Si el muñeco puede ir a la izquierda y a la derecha
     salto = salto1;//Si el muñeco puede saltar/atacar
 

@@ -76,8 +76,8 @@ void Hombre::Inicializa(){
     */
    
    
-    altura = 5;
-    anchura = 5;
+    altura = 4;
+    anchura = 4;
 }
 
 

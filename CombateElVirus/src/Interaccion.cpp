@@ -118,12 +118,12 @@ bool Interaccion::Colision(Disparo d, Virus v) {
 
 bool Interaccion::Colision(Hombre h, Virus v) {
 
-    // Rectángulo 1 con esquina superior izquierda en (x1,y1) ancho w1 y alto h1
- // Rectángulo 2 con esquina superior izquierda en (x2,y2) ancho w2 y alto h2
-    if (h.posicion.x > v.posicion.x + v.anchura) { return false; }
-    if (h.posicion.x + h.anchura < v.posicion.x) { return false; }
-    if (h.posicion.y > v.altura + v.posicion.y) { return false; }
-    if (h.posicion.y + h.altura < v.posicion.y) { return false; }
+   //Crea un recatangulo en centro hombre, altura la altura del hombre y anchura la anchura del hombre.
+    //SIRVE PARA DETECTAR COLISIONES ENTRE ELEMENTOS RECTANGULARES
+    if (h.posicion.x-h.anchura/2 > v.posicion.x + v.anchura/2) { return false; }
+    if (h.posicion.x + h.anchura/2 < v.posicion.x+v.anchura) { return false; }
+    if (h.posicion.y -h.altura/2> v.altura/2 + v.posicion.y) { return false; }
+    if (h.posicion.y + h.altura/2 < v.posicion.y-v.altura/2) { return false; }
     else {
         return true;
     }

@@ -89,11 +89,24 @@ void Mundo::Dibuja()
 
 	if (level !=0) {
 
+		hombre.Dibuja();
+
+		glPushMatrix();//guarda la matriz
+	
+		glColor3f(1.0, 1.0, 0.0);
+		glutSolidSphere(0.2,15,15); //dibuja la esfera solida
+		
+		glPopMatrix();//la guarda y la restaura
+
+
 		personajes.Dibuja(level, hombre);		
 		disparos.Dibuja();
 		misiles.Dibuja();
 		lanzamisiles1.Dibuja();
-		hombre.Dibuja();
+	
+
+
+
 		virus.Dibuja(level);
 		plataformas.Dibuja();
 		vidas.Dibuja(hombre.GetVidas());		
