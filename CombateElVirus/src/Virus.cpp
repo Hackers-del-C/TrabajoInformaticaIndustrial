@@ -63,7 +63,7 @@ void Virus::Muere()
 {
     
     muere = 1;
-    
+    ETSIDI::play("mis_sonidos/virusmuere1.wav");
 }
 
 void Virus::SetVel(float vx, float vy)

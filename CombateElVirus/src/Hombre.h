@@ -24,6 +24,7 @@ public:
     void SetVidas(int v) { vidas = v; }
     //direccion del muñeco
     void SetDir(int d) { dir = d; }
+    void SetPos(float x, float y) { posicion.x = x; posicion.y = y; }
     int GetDir(){return dir;}
     int GetVidas(){ return vidas; }
     void FinPartida();

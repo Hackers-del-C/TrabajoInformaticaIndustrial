@@ -69,9 +69,9 @@ void Entorno::Tecla(unsigned char key) {
 		ETSIDI::play("mis_sonidos/imbatman.wav");
 
 	}
-	if (key == 'a' || key == 's' || key == 'w' || key == 'd') {
+	/*if (key == 'a' || key == 's' || key == 'w' || key == 'd') {
 		ETSIDI::play("mis_sonidos/disparo.wav");
-	}
+	}*/
 	if (key == 'v') {
 		ETSIDI::play("mis_sonidos/alicates.wav");
 	}

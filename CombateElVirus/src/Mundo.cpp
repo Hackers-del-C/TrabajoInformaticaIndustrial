@@ -192,17 +192,36 @@ void Mundo::Mueve()
 		}
 	}
 	
-	if (Interaccion::Colision(hombre, plataformaprueba)) {
-
+	if (Interaccion::ColisionSube(hombre, plataformaprueba)) {
+		hombre.SetVel(hombre.GetVel().x, 0.0);
+		//hombre.SetAceleracion(0.0, 0.0);;
+		//hombre.SetAceleracion(0.0, 0.0);
+		/*if (hombre.GetPos().y < plataformaprueba.posicion.y + plataformaprueba.altura / 4) {
+			hombre.SetPos(hombre.GetPos().x, plataformaprueba.posicion.y + plataformaprueba.altura / 2);
+		}*/
 		plataformaprueba.aux = 1;	
-	
+		salto = 0;
 	}
 	else {
+		//hombre.SetVel(hombre.GetVel().x, -10.0);
+		//hombre.SetAceleracion(0.0, -20.0);
 		plataformaprueba.aux = 0;
+	}
+
+	if (Interaccion::ColisionChoca(hombre, plataformaprueba)) {
+		hombre.SetVel(hombre.GetVel().x, -10.0);
+		//plataformaprueba.aux = 1;
+
+	}
+	if (Interaccion::ColisionChocaLado(hombre, plataformaprueba)) {
+		hombre.SetVel(-1.0, -10.0);
+		//plataformaprueba.aux = 1;
+
 	}
 
 	if (salto == 1) {
 		hombre.SetVel(hombre.GetVel().x, +18);
+		//hombre.SetAceleracion(0.0, -20);
 		salto = 0;
 	}
 
@@ -383,7 +402,7 @@ void Mundo::teclaEspecial(unsigned char key) {
 
 			break;
 		case GLUT_KEY_UP:
-			if(Interaccion::colision(hombre, limites)){
+			if(Interaccion::colision(hombre, limites) || Interaccion::ColisionSube(hombre, plataformaprueba)){
 				salto = 1;
 				ETSIDI::play("mis_sonidos/salto.wav");
 				break;
