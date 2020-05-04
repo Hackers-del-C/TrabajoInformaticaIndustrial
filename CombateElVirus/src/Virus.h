@@ -21,6 +21,7 @@ public:
     void Inicializa(string nombre, int m, int n, float x, float y, float w, float h, int izqder, int salto);
     void SetVel(float x, float y);
     void Muere();
+    int GetMuerto() { return muere; }
     ETSIDI::Vector2D posicion, velocidad, aceleracion;
     float anchura, altura;
     // ETSIDI::SpriteSequence* virusazul;

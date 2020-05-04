@@ -187,8 +187,9 @@ void Mundo::Mueve()
 	}
 
 	if (Interaccion::Colision(hombre, virus)) {
-		
-		hombre.SetVidas(hombre.GetVidas() - 1);
+		if (virus.GetMuerto() == 0) {
+			hombre.SetVidas(hombre.GetVidas() - 1);
+		}
 	}
 	
 	if (Interaccion::Colision(hombre, plataformaprueba)) {
@@ -382,8 +383,12 @@ void Mundo::teclaEspecial(unsigned char key) {
 
 			break;
 		case GLUT_KEY_UP:
-			salto = 1;
+			if(Interaccion::colision(hombre, limites)){
+				salto = 1;
+				ETSIDI::play("mis_sonidos/salto.wav");
 				break;
+			}
+			
 			}
 
 		}
