@@ -14,7 +14,7 @@
 #include "ListaBordesSube.h"
 #include "ListaDisparos.h"
 #include "Listamisiles.h"
-
+#include "VirusSeta.h"
 #include "Zapatos.h"
 
 class Mundo
@@ -48,7 +48,8 @@ private:
 	Personajes personajes;
 	Hombre hombre;
 	Limites limites;//plataforma1;
-	Virus virus;
+	//Virus virus;
+	VirusSeta virus1;
 	Entorno entorno;
 	//LISTAS
 	ListaDisparos disparos;

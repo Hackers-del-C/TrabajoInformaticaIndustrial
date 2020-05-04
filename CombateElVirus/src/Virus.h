@@ -30,7 +30,7 @@ public:
     ETSIDI::SpriteSequence* spriteizq;
     ETSIDI::SpriteSequence* spritemuere;
     // ETSIDI::SpriteSequence* virusrojo;
-private:
+protected:
 
     int salto, izqder, muere;
 };

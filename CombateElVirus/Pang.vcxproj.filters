@@ -82,6 +82,9 @@
     <ClCompile Include="src\AuxEtsidi.cpp">
       <Filter>Archivos de código fuente\MUNDO</Filter>
     </ClCompile>
+    <ClCompile Include="src\VirusSeta.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\ETSIDI.h">
@@ -164,6 +167,9 @@
     </ClInclude>
     <ClInclude Include="src\AuxEtsidi.h">
       <Filter>Archivos de encabezado\MUNDO</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VirusSeta.h">
+      <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

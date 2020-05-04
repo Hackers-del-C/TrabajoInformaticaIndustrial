@@ -39,7 +39,7 @@ void Mundo::Inicializa()
 	entorno.Inicializa(level);
 	personajes.Inicializa(hombre);	
 	
-	virus.Inicializa("virusseta", 8, 1, 0, 0, 3, 3, 0, 0);
+	virus1.Inicializa("virusseta", 8, 1, 0, 0, 3, 3, 0, 0);
 	limites.SetLimites(-20, 500, -3.5, 30); //Son los bordes del juego que el jugador no puede pasar
 	
 	vidas.Inicializa(hombre);
@@ -109,7 +109,7 @@ void Mundo::Dibuja()
 		misiles.Dibuja();
 		lanzamisiles1.Dibuja();
 
-		virus.Dibuja(level);
+		virus1.Dibuja(level);
 		//plataformas.Dibuja(); PRUEBA
 		plataformaprueba.Dibuja();
 
@@ -170,7 +170,7 @@ void Mundo::Mueve()
 	//.Mueve//
 
 	personajes.Mueve(0.025f);
-	virus.Mueve(0.025f, hombre);
+	virus1.Mueve(0.025f, hombre);
 	hombre.Mueve(0.025f);
 		 	
 	disparos.Mueve(0.025f);
@@ -186,8 +186,8 @@ void Mundo::Mueve()
 		Interaccion::reboteinterior(hombre, limites);
 	}
 
-	if (Interaccion::Colision(hombre, virus)) {
-		if (virus.GetMuerto() == 0) {
+	if (Interaccion::Colision(hombre, virus1)) {
+		if (virus1.GetMuerto() == 0) {
 			hombre.SetVidas(hombre.GetVidas() - 1);
 		}
 	}
@@ -225,8 +225,8 @@ void Mundo::Mueve()
 
 
 	//Colision virus con disp	
-	if (disparos.Colision(virus)) {//si alguna esfera ha chocado
-		virus.Muere();
+	if (disparos.Colision(virus1)) {//si alguna esfera ha chocado
+		virus1.Muere();
 		
 
 	}		//disparo.eliminar(aux7);	
@@ -342,7 +342,7 @@ void Mundo::Tecla(unsigned char key)
 			break;
 
 		case 'j':
-			virus.Muere();
+			virus1.Muere();
 			break;
 		case 'x':
 			//virus.Muere();
