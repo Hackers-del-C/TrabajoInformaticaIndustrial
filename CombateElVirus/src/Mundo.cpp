@@ -288,22 +288,22 @@ void Mundo::Tecla(unsigned char key)
 		switch (key) {
 
 		case 'w':
-			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y + 2, 0.0f, 22.0f));
+			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, 22.0f));
 			
 
 			break;
 			
 		case 's':
-			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y+2, 0.0f, -22.0f)); /// radio, x , y, vx, vy
+			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, -22.0f)); /// radio, x , y, vx, vy
 		
 			break;
 
 		case 'a':
-			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y+2, -22.0f, 0.0f));
+			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, -22.0f, 0.0f));
 			break;
 
 		case 'd':
-			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y+2, 22.0f, 0.0f));
+			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 22.0f, 0.0f));
 			break;
 
 		case 'j':

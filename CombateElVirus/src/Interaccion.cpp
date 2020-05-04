@@ -103,11 +103,11 @@ bool Interaccion::Colision(Disparo d, Virus v) {
 
     float px, py, distancia;
     px = d.posicion.x; // En principio son iguales
-    if (px < v.posicion.x) px = v.posicion.x;
-    if (px > v.posicion.x + v.anchura) px = v.posicion.x + v.anchura;
+    if (px < v.posicion.x-v.anchura/2) px = v.posicion.x - v.anchura / 2;
+    if (px > v.posicion.x + v.anchura/2) px = v.posicion.x + v.anchura/2;
     py = d.posicion.y;
-    if (py < v.posicion.y) py = v.posicion.y;
-    if (py > v.posicion.y + v.altura) py = v.posicion.y + v.altura;
+    if (py < v.posicion.y-v.altura/2) py = v.posicion.y - v.altura / 2;
+    if (py > v.posicion.y + v.altura/2) py = v.posicion.y + v.altura/2;
     distancia = sqrt((d.posicion.x - px) * (d.posicion.x - px) + (d.posicion.y - py) * (d.posicion.y - py));
     if (distancia < d.radio) {
         // Colisión detectada

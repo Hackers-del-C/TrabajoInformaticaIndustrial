@@ -12,8 +12,8 @@ using ETSIDI::getTexture;
 
 Virus::Virus(){
 
-    posicion.x = 15;
-    posicion.y = -3.5;
+    posicion.x = 10;
+    posicion.y = -1;
 
 }
 
@@ -103,7 +103,10 @@ void Virus::Inicializa(string nombre, int m, int n, float x, float y, float w, f
     */
     izqder = izqder1; //Si el muñeco puede ir a la izquierda y a la derecha
     salto = salto1;//Si el muñeco puede saltar/atacar
-   
+
+    anchura = w;
+    altura = h;
+
     string nombreder = "imagenes/" +nombre + "der.png";
     string nombreizq ="imagenes/"+ nombre + "izq.png";
     nombre = "imagenes/"+ nombre + ".png";
