@@ -12,6 +12,7 @@ ListaDisparos::~ListaDisparos() {
 bool ListaDisparos::Agregar(Disparo* d) {
 	if (lista.size() < NUM_MAX_DISPAROS) {  // solo tiene 20
 		lista.push_back(d);
+		ETSIDI::play("mis_sonidos/disparo.wav");
 		numero++;
 		return true;
 	}

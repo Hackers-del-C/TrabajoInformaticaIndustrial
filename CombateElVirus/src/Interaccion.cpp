@@ -55,13 +55,14 @@ bool Interaccion::colision(Misil misil, Hombre h) {
     return false;
 */
     
-    if (h.posicion.x -20> misil.posicion.x - misil.anchura) { return false; }
-    if (h.posicion.x + h.anchura-20 < misil.posicion.x) { return false; }
-    if (h.posicion.y -40 > misil.altura + misil.posicion.y) { return false; }
-    if (h.posicion.y +2  < misil.posicion.y) { return false; }
+    if (h.posicion.x - h.anchura / 2 > misil.posicion.x + misil.anchura/2) { return false; }
+    if (h.posicion.x + h.anchura/2 < misil.posicion.x - misil.anchura / 2) { return false; }
+    if (h.posicion.y - h.altura / 2 >  misil.posicion.y + misil.altura / 2) { return false; }
+    if (h.posicion.y + h.altura / 2 < misil.posicion.y- misil.altura / 2 ) { return false; }
     else {
         return true;
     }
+
     
 }
 //bool Interaccion::Colision(Hombre h, Plataformas p) {
@@ -130,9 +131,25 @@ bool Interaccion::Colision(Hombre h, Virus v) {
     }
 
 }
-
-
 bool Interaccion::Colision(Hombre h, Plataformas p) {
+
+    //Crea un recatangulo en centro hombre, altura la altura del hombre y anchura la anchura del hombre.
+     //SIRVE PARA DETECTAR COLISIONES ENTRE ELEMENTOS RECTANGULARES
+    if (h.posicion.x - h.anchura / 2 > p.posicion.x + p.anchura / 2) { return false; }
+    if (h.posicion.x + h.anchura / 2 < p.posicion.x - p.anchura / 2) { return false; }
+    if (h.posicion.y - h.altura / 2 > p.altura / 2 + p.posicion.y) { return false; }
+    if (h.posicion.y + h.altura / 2 < p.posicion.y - p.altura / 2) { return false; }
+    else {
+
+        if (h.GetVel().y < 0.0) {
+            return true;
+        }
+        else
+            return false;
+    }
+}
+
+bool Interaccion::ColisionSubir(Hombre h, Plataformas p) {
 
     //Crea un recatangulo en centro hombre, altura la altura del hombre y anchura la anchura del hombre.
      //SIRVE PARA DETECTAR COLISIONES ENTRE ELEMENTOS RECTANGULARES
@@ -141,11 +158,34 @@ bool Interaccion::Colision(Hombre h, Plataformas p) {
     if (h.posicion.y - h.altura / 2 > p.altura / 2 + p.posicion.y) { return false; }
     if (h.posicion.y + h.altura / 2 < p.posicion.y - p.altura / 2) { return false; }
     else {
-        return true;
+
+        if (h.GetVel().y < 0.0) {
+            return true;
+        }
+        else
+            return false;
     }
 
 }
 
+bool Interaccion::ColisionNoSubir(Hombre h, Plataformas p) {
+
+    //Crea un recatangulo en centro hombre, altura la altura del hombre y anchura la anchura del hombre.
+     //SIRVE PARA DETECTAR COLISIONES ENTRE ELEMENTOS RECTANGULARES
+    if (h.posicion.x - h.anchura / 2 > p.posicion.x + p.anchura / 2) { return false; }
+    if (h.posicion.x + h.anchura / 2 < p.posicion.x - p.anchura / 2) { return false; }
+    if (h.posicion.y - h.altura / 2 > p.altura / 2 + p.posicion.y) { return false; }
+    if (h.posicion.y + h.altura / 2 < p.posicion.y - p.altura / 2) { return false; }
+    else {
+
+        if (h.GetVel().y > 0.0) {
+            return true;
+        }
+        else
+            return false;
+    }
+
+}
 
 
 void Interaccion::reboteexterior(Hombre& h,Limites c)
