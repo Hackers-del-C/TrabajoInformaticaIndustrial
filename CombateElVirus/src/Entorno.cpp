@@ -29,7 +29,7 @@ void Entorno::Dibuja(int nivel) {
 		auxetsidi.Texto("COMBATE EL VIRUS", -23, 16, 0, 0, 0, 50);
 		auxetsidi.Texto("Nivel 1. China", -22, 12, 0, 0, 0, 20);
 		auxetsidi.Texto("Nivel 2. Italia", -22, 10, 0, 0, 0, 20);
-		auxetsidi.Texto("Nivel 3. España", -22, 8, 0, 0, 0, 20);
+		auxetsidi.Texto("Nivel 3. Espanita", -22, 8, 0, 0, 0, 20);
 		
 		break;
 	case 1:

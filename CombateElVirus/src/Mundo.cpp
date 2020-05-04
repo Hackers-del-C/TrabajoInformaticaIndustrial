@@ -8,7 +8,7 @@
 #include <math.h>
 #include "glut.h"
 
-int k = 0; //BOORAR
+
 
 Mundo::Mundo(){
 	 //ESTABA INICIALIZADO AQUI EL LEVEL. PERO TIENE QUE IR EN MENU.H 
@@ -94,9 +94,7 @@ void Mundo::Dibuja()
 	limites.Dibuja();
 
 	if (level !=0) {
-
-		hombre.Dibuja();
-
+		
 		glPushMatrix();//guarda la matriz
 	
 		glColor3f(0, 0, 1);
@@ -105,14 +103,11 @@ void Mundo::Dibuja()
 		
 		glPopMatrix();//la guarda y la restaura
 
-		
+		hombre.Dibuja();
 		personajes.Dibuja(level, hombre);		
 		disparos.Dibuja();
 		misiles.Dibuja();
 		lanzamisiles1.Dibuja();
-	
-
-
 
 		virus.Dibuja(level);
 		//plataformas.Dibuja(); PRUEBA
@@ -140,8 +135,7 @@ void Mundo::Dibuja()
 			finde = 0;
 			hombre.FinPartida();
 			level = 0;
-			Setojo(0, 10, 53);
-			
+			Setojo(0, 10, 53);	
 			
 		}
 		//misilizq.Dibuja();
@@ -199,8 +193,7 @@ void Mundo::Mueve()
 	
 	if (Interaccion::Colision(hombre, plataformaprueba)) {
 
-		plataformaprueba.aux = 1;
-		
+		plataformaprueba.aux = 1;	
 	
 	}
 	else {
@@ -372,7 +365,7 @@ void Mundo::Tecla(unsigned char key)
 
 void Mundo::teclaEspecial(unsigned char key) {
 	//distancia = 0;
-
+	 glutSetKeyRepeat(1);
 	if (level != 0) {//para que no se mueva cuando esta en el menu
 		switch (key)
 		{
@@ -398,6 +391,12 @@ void Mundo::teclaEspecial(unsigned char key) {
 
 
 }
+//void Mundo::MyMouse(int button, int state, int x, int y){
+//	switch (button) {
+//	case GLUT_LEFT_BUTTON:
+//		level = 1;
+//	}
+//}
 
 
 

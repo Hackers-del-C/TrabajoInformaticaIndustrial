@@ -11,7 +11,7 @@ void OnDraw(void); //esta funcion sera llamada para dibujar
 void OnTimer(int value); //esta funcion sera llamada cuando transcurra una temporizacion
 void OnKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecla	
 void OnSpecialKeyboardDown(int key, int x, int y);
-
+void OnMouseClick(int button, int state, int x, int y);
 
 int main(int argc,char* argv[])
 {
@@ -69,6 +69,14 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 
 	glutPostRedisplay();
 }
+//void OnMouseClick(int button, int state, int x, int y)
+//{
+//	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
+//	{
+//		//store the x,y value where the click happened
+//		cout << "hola";
+//	}
+//}
 
 void OnTimer(int value)
 {
