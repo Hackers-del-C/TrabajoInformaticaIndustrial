@@ -53,6 +53,7 @@ private:
 	Lanzamisiles lanzamisiles1;
 	ListaMisil misiles;	
 	Vidas vidas;
+	Plataformas plataformaprueba;
 	ListaPlataformas plataformas;
 	ListaBordesSube bordessube;
 	ListaVirus listavirus;

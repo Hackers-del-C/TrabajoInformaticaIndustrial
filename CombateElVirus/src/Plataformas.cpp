@@ -8,24 +8,41 @@ Plataformas::Plataformas() {
 
     limite2.y = 0;
 }
-Plataformas::Plataformas(float x1, float y1, float x2, float y2) {
-    limite1.x = x1;
-    limite1.y = y1;
-
-    limite2.x = x2;
-    limite2.y = y2;
+Plataformas::Plataformas(float x, float y, float w, float h) {
+    posicion.x = x;
+    posicion.y = y;
+    anchura = w;
+    altura = h;
+    limite1.x = x-w/2;
+    limite1.y = y- h/2;
+    limite2.x = x+ w/2;
+    limite2.y = y +h/2;
 }
+
+//ESTO ES AUXILIAR ANTES DE METERLO EN LISTA
+void Plataformas::Inicializa(float x, float y, float w, float h) {
+    posicion.x = x;
+    posicion.y = y;
+    anchura = w;
+    altura = h;
+    limite1.x = x - w / 2;
+    limite1.y = y - h / 2;
+    limite2.x = x + w / 2;
+    limite2.y = y + h / 2;
+}
+
 
 void Plataformas::Dibuja() {
 
     glDisable(GL_LIGHTING);
-    glColor3ub(1, 0, 1);
+    glColor3f(0, 0, aux);
     glBegin(GL_POLYGON);
     glVertex3d(limite1.x, limite1.y, 0);
     glVertex3d(limite1.x, limite2.y, 0);
     glVertex3d(limite2.x, limite2.y, 0);
     glVertex3d(limite2.x, limite1.y, 0);
     glEnd();
+    glColor3f(0, 0, -aux);
     glEnable(GL_LIGHTING);
 
 

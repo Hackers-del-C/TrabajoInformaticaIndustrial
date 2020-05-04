@@ -11,6 +11,9 @@
 #include "Zapatos.h"
 #include "Virus.h"
 #include "Disparo.h"
+#include "Interaccion.h"
+
+
 class Interaccion
 {
 public:

@@ -8,6 +8,8 @@
 #include <math.h>
 #include "glut.h"
 
+int k = 0; //BOORAR
+
 Mundo::Mundo(){
 	 //ESTABA INICIALIZADO AQUI EL LEVEL. PERO TIENE QUE IR EN MENU.H 
 	//Asi ya trabajamos como debería ser ;)
@@ -42,6 +44,10 @@ void Mundo::Inicializa()
 	
 	vidas.Inicializa(hombre);
 	
+	plataformaprueba.Inicializa(0, 1, 8, 3);
+
+
+
 	//bonus.SetPos(5.0f, 5.0f);
 	//plataforma1.SetLimites(30, 60, 5, 10);//Los brdes de una plataforma
 	//plataforma.SetColor(255, 0, 0);//plataforma.SetPos(70.0f, 9.0f, 80.0f, 9.0f);
@@ -93,12 +99,13 @@ void Mundo::Dibuja()
 
 		glPushMatrix();//guarda la matriz
 	
-		glColor3f(1.0, 1.0, 0.0);
+		glColor3f(0, 0, 1);
 		glutSolidSphere(0.2,15,15); //dibuja la esfera solida
+		glColor3f(0, 0, -1);
 		
 		glPopMatrix();//la guarda y la restaura
 
-
+		
 		personajes.Dibuja(level, hombre);		
 		disparos.Dibuja();
 		misiles.Dibuja();
@@ -108,7 +115,9 @@ void Mundo::Dibuja()
 
 
 		virus.Dibuja(level);
-		plataformas.Dibuja();
+		//plataformas.Dibuja(); PRUEBA
+		plataformaprueba.Dibuja();
+
 		vidas.Dibuja(hombre.GetVidas());		
 		bordessube.Dibuja();
 		listavirus.dibuja();
@@ -118,8 +127,8 @@ void Mundo::Dibuja()
 		if (naleatorio < 10) {
 			misiles.Agregar(new Misil("imagenes/misilizq.png", 15, -3.0f, -5.0f, 0.0f));
 		}
-		plataformas.Agregar(new Plataformas(10, 1, 20, 1.25));
-		plataformas.Agregar(new Plataformas(25, 3, 35, 3.25));
+		//plataformas.Agregar(new Plataformas(10, 1, 20, 1.25));
+		//plataformas.Agregar(new Plataformas(25, 3, 35, 3.25));
 
 		 //FIN DE PARTIDA
 		if (hombre.GetVidas() == 0 ) { //con un || pondría aqui cuando se acaba el nivel 
@@ -187,6 +196,23 @@ void Mundo::Mueve()
 		
 		hombre.SetVidas(hombre.GetVidas() - 1);
 	}
+	
+	if (Interaccion::Colision(hombre, plataformaprueba)) {
+
+		plataformaprueba.aux = 1;
+		
+	
+	}
+	else {
+		plataformaprueba.aux = 0;
+	}
+
+	if (salto == 1) {
+		hombre.SetVel(hombre.GetVel().x, +18);
+		salto = 0;
+	}
+
+
 	//IMPORTANTE//Interaccion::reboteexterior(hombre, plataforma1);
 	//Interaccion::colision(misiles, hombre); /// no funciona
 
@@ -208,19 +234,20 @@ void Mundo::Mueve()
 
 	//////interacciones con plataforma -BASURA
 
-	Plataformas* aux2 = plataformas.Colision(hombre);
+	/*  Plataformas* aux2 = plataformas.Colision(hombre);
+
 	if (aux2 != 0) {
 
 
 		/*plataformas.Agregar(new Plataformas(10, 3, 15, 3.5));
 		hombre.SetVel(hombre.GetVel().x, 0.0);
 		hombre.SetAceleracion(0.0, -20.0);*/
-	}
+	//}
 
 
 
 	////////	TEMPORIZADOR	//////
-
+/*
 	Plataformas* aux1 = plataformas.Colision(zapatos);
 
 	if (aux1 != 0) {
@@ -237,8 +264,9 @@ void Mundo::Mueve()
 		hombre.SetAceleracion(0.0, -20.0);
 
 	}
-
-	switch (salto) {
+	*/
+	
+	/*switch (salto) {
 	case 1:
 		if (Interaccion::colision(hombre, limites) == 1 || aux1 != 0) {
 			hombre.SetVel(hombre.GetVel().x, 18.0f);
@@ -249,7 +277,7 @@ void Mundo::Mueve()
 		
 	}
 
-
+*/
 	///////colision hombre-virus
 
 	/*Virus* auxv = listavirus.Colision(hombre);

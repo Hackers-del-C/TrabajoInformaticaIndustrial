@@ -64,14 +64,15 @@ bool Interaccion::colision(Misil misil, Hombre h) {
     }
     
 }
-bool Interaccion::Colision(Hombre h, Plataformas p) {
-    ETSIDI::Vector2D  dir;
-    float dif = p.distancia(h.GetPos(), &dir) - h.altura; //antes no estaba lo de -h.altura pero no se si arregla algo o lo empeora
-    if (dif <= 0.0f) {
-        return true;
-    }
-    return false;
-}
+//bool Interaccion::Colision(Hombre h, Plataformas p) {
+//    ETSIDI::Vector2D  dir;
+//    float dif = p.distancia(h.GetPos(), &dir) - h.altura; //antes no estaba lo de -h.altura pero no se si arregla algo o lo empeora
+//    if (dif <= 0.0f) {
+//        return true;
+//    }
+//    return false;
+//}
+
 bool Interaccion::Colision(Plataformas p, Zapatos z) {
     ETSIDI::Vector2D  dir;
     float dif = p.distancia(z.GetPos(), &dir) - z.GetRadio();
@@ -121,7 +122,7 @@ bool Interaccion::Colision(Hombre h, Virus v) {
    //Crea un recatangulo en centro hombre, altura la altura del hombre y anchura la anchura del hombre.
     //SIRVE PARA DETECTAR COLISIONES ENTRE ELEMENTOS RECTANGULARES
     if (h.posicion.x-h.anchura/2 > v.posicion.x + v.anchura/2) { return false; }
-    if (h.posicion.x + h.anchura/2 < v.posicion.x+v.anchura) { return false; }
+    if (h.posicion.x + h.anchura/2 < v.posicion.x- v.anchura/2) { return false; }
     if (h.posicion.y -h.altura/2> v.altura/2 + v.posicion.y) { return false; }
     if (h.posicion.y + h.altura/2 < v.posicion.y-v.altura/2) { return false; }
     else {
@@ -129,6 +130,24 @@ bool Interaccion::Colision(Hombre h, Virus v) {
     }
 
 }
+
+
+bool Interaccion::Colision(Hombre h, Plataformas p) {
+
+    //Crea un recatangulo en centro hombre, altura la altura del hombre y anchura la anchura del hombre.
+     //SIRVE PARA DETECTAR COLISIONES ENTRE ELEMENTOS RECTANGULARES
+    if (h.posicion.x - h.anchura / 2 > p.posicion.x + p.anchura / 2) { return false; }
+    if (h.posicion.x + h.anchura / 2 < p.posicion.x - p.anchura/2) { return false; }
+    if (h.posicion.y - h.altura / 2 > p.altura / 2 + p.posicion.y) { return false; }
+    if (h.posicion.y + h.altura / 2 < p.posicion.y - p.altura / 2) { return false; }
+    else {
+        return true;
+    }
+
+}
+
+
+
 void Interaccion::reboteexterior(Hombre& h,Limites c)
 {
     float xmax = c.suelo.limite2.x;
