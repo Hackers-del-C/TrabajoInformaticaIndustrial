@@ -191,25 +191,12 @@ void Mundo::Mueve()
 			hombre.SetVidas(hombre.GetVidas() - 1);
 		}
 	}
+	
 	if (Interaccion::Colision(hombre, plataformaprueba)) {
 
-		plataformaprueba.aux = 1;
-		hombre.SetVel(hombre.GetVel().x, 0.0);
-
-	}
-	/*if (Interaccion::ColisionSubir(hombre, plataformaprueba)) {
-
 		plataformaprueba.aux = 1;	
-		hombre.SetVel(hombre.GetVel().x, 0.0);
-		
-	}*/
-	/*if (Interaccion::ColisionNoSubir(hombre, plataformaprueba)) {
-
-		plataformaprueba.aux = 0;
-		hombre.SetVel(hombre.GetVel().x, -12);
-
-	}*/
-
+	
+	}
 	else {
 		plataformaprueba.aux = 0;
 	}
@@ -397,7 +384,6 @@ void Mundo::teclaEspecial(unsigned char key) {
 			break;
 		case GLUT_KEY_UP:
 			if(Interaccion::colision(hombre, limites)){
-				
 				salto = 1;
 				ETSIDI::play("mis_sonidos/salto.wav");
 				break;

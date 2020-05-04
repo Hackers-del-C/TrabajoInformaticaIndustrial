@@ -32,7 +32,5 @@ public:
     static bool colision(Misil misil, Hombre h);
 
     static bool Colision(Hombre h, Plataformas p);
-    static bool ColisionSubir(Hombre h, Plataformas p);
-    static bool ColisionNoSubir(Hombre h, Plataformas p);
     static bool  Colision(Plataformas p, Zapatos z);
 };
