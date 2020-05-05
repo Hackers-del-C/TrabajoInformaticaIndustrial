@@ -19,7 +19,7 @@ Misil::Misil(char  nombre [20], float x, float y, float vx, float vy)  {
 		nombreimagen[i] = cadena[i];
 
 	}*/
-	misil = new Sprite(nombre, x, y, 2, 2);
+	misil = new Sprite(nombre, 0, 0, 2, 2);
 	posicion.x = x;
 	posicion.y = x;
 	velocidad.x = vx;

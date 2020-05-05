@@ -42,7 +42,7 @@ void Mundo::Inicializa()
 	virus1.Inicializa("virusseta", 8, 1, 0, 0, 3, 3, 0, 0);
 	limites.SetLimites(-20, 500, -3.5, 30); //Son los bordes del juego que el jugador no puede pasar
 
-	bonus1.Inicializa("mascarilla", 5, 25,1.5,1.5 );
+	//bonus1.Inicializa("mascarilla", 5, 25,1.5,1.5 );
 	vidas.Inicializa(hombre);
 	
 	plataformaprueba.Inicializa(0, 1, 8, 3);
@@ -83,6 +83,8 @@ void Mundo::Inicializa()
 	//	listavirus.agregar(aux);
 	//}
 	////zapatos.Inicializa(hombre);
+
+	
 	
 }
 void Mundo::Dibuja()
@@ -111,18 +113,21 @@ void Mundo::Dibuja()
 		lanzamisiles1.Dibuja();
 
 		virus1.Dibuja(level);
-		bonus1.Dibuja();
+		//bonus1.Dibuja();
 		//plataformas.Dibuja(); PRUEBA
 		plataformaprueba.Dibuja();
 
 		vidas.Dibuja(hombre.GetVidas());		
 		bordessube.Dibuja();
 		listavirus.dibuja();
+		listabonusmascarilla.dibuja();
+
+
 		zapatos.Dibuja(hombre);
 
 		int naleatorio = lanzaDado(1000);
 		if (naleatorio < 10) {
-			misiles.Agregar(new Misil("imagenes/misilizq.png", 15, -3.0f, -5.0f, 0.0f));
+			misiles.Agregar(new Misil("imagenes/misilizq.png", 15, -3.5, -5.0f, 0.0f));
 		}
 		//plataformas.Agregar(new Plataformas(10, 1, 20, 1.25));
 		//plataformas.Agregar(new Plataformas(25, 3, 35, 3.25));
@@ -173,14 +178,15 @@ void Mundo::Mueve()
 
 	personajes.Mueve(0.025f);
 	virus1.Mueve(0.025f, hombre);
-	bonus1.Mueve(0.025f);
+	//bonus1.Mueve(0.025f);
 	hombre.Mueve(0.025f);
 		 	
 	disparos.Mueve(0.025f);
 	misiles.Mueve(0.025f);
 	vidas.Mueve(x_ojo);
 	listavirus.mueve(0.025f, hombre);
-	bonus1.Mueve(0.025);
+	listabonusmascarilla.mueve(0.025f);
+	//bonus1.Mueve(0.025);
 	//zapatos.Mueve(0.025f, hombre);
 	//disparo.Mueve(0.025f);
 	//bonus.Mueve(0.025f);
@@ -199,6 +205,9 @@ void Mundo::Mueve()
 			hombre.SetVidas(hombre.GetVidas() - 1);
 		}
 	}
+
+	listabonusmascarilla.colision(hombre);
+
 	/*if (Interaccion::colision(hombre, bonus1)) {
 		hombre.SetVidas(hombre.GetVidas() + 1);
 	}*/
@@ -365,7 +374,8 @@ void Mundo::Tecla(unsigned char key)
 			break;
 
 		case 'j':
-			//virus1.Muere();
+			
+			listabonusmascarilla.agregar(new BonusMascarilla("mascarilla", 5, 25, 1.5, 1.5));
 			break;
 		case 'x':
 			//virus.Muere();

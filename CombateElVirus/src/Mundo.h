@@ -14,6 +14,7 @@
 #include "ListaBordesSube.h"
 #include "ListaDisparos.h"
 #include "Listamisiles.h"
+#include "ListaBonusMascarilla.h"
 
 //borrar en un futuro:
 #include "VirusSeta.h"
@@ -52,6 +53,7 @@ private:
 	Hombre hombre;
 	Limites limites;//plataforma1;
 	//Virus virus;
+	
 	VirusSeta virus1;
 	Entorno entorno;
 	//LISTAS
@@ -63,6 +65,7 @@ private:
 	ListaPlataformas plataformas;
 	ListaBordesSube bordessube;
 	ListaVirus listavirus;
+	ListaBonusMascarilla listabonusmascarilla;
 	Zapatos zapatos;
 	BonusMascarilla bonus1;
 	//Bonus bonus;

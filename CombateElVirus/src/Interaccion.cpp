@@ -119,12 +119,15 @@ bool Interaccion::Colision(Hombre h, Virus v) {
 
 }
 
-bool Interaccion::colision(Hombre h, Bonus  b) {
+bool Interaccion::ColisionBonus(Hombre &h, Bonus  b) { //Esto deberia ser bonusmascarillas
+
    if (h.posicion.x - h.anchura / 2 > b.posicion.x + b.anchura / 2) { return false; }
     if (h.posicion.x + h.anchura / 2 < b.posicion.x - b.anchura / 2) { return false; }
    if (h.posicion.y - h.altura / 2 > b.altura / 2 + b.posicion.y) { return false; }
     if (h.posicion.y + h.altura / 2 < b.posicion.y - b.altura / 2) { return false; }
     else {
+        h.SetVidas(h.GetVidas() + 1);
+
         return true;
    }
 }
@@ -239,25 +242,12 @@ void Interaccion::reboteexterior(Hombre& h,Limites c)
 }
 
 void Interaccion::Colision(BonusMascarilla& b, Limites c) {
-   // ETSIDI::Vector2D dir;
-    //float dif = b.posicion.y - l.suelo.GetSuelo();
-    //if (dif <= 0.0f) {
-    // //  b.posicion.y = l.suelo.GetSuelo();
-    //    return true;
-    //}
-    //return false;
 
-    /*float xmax = c.suelo.limite2.x;
-    float xmin = c.suelo.limite1.x;
-    if (b.posicion.x > xmax)b.posicion.x = xmax;
-    if (b.posicion.x < xmin)b.posicion.x = xmin;*/
-
-  //  float ymax = c.techo.limite1.y;
     float ymin = c.suelo.limite1.y;
-   // if (b.posicion.y > ymax)b.posicion.y = ymax;
-   // if (b.posicion.y < ymin)b.posicion.y = ymin;
-    if (b.posicion.y - 25 <-54.5)b.posicion.y = -29.5;
-   //b.posicion.y = ymin-20;
+ 
+    if (b.posicion.y < ymin)b.posicion.y = ymin;
+
+
 }
 
 
