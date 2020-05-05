@@ -143,7 +143,7 @@ bool Interaccion::Colision(Hombre h, Plataformas p) {
     }
 
 }
-bool Interaccion::ColisionSube(Hombre h, Plataformas p) {
+bool Interaccion::ColisionSube(Hombre &h, Plataformas p) {
 
     //Crea un recatangulo en centro hombre, altura la altura del hombre y anchura la anchura del hombre.
      //SIRVE PARA DETECTAR COLISIONES ENTRE ELEMENTOS RECTANGULARES
@@ -153,7 +153,11 @@ bool Interaccion::ColisionSube(Hombre h, Plataformas p) {
     if (h.posicion.y + h.altura / 2 < p.posicion.y - p.altura / 2) { return false; }
     else {
         if (h.GetVel().y < 0.0 && h.posicion.y >= p.posicion.y+ p.anchura /4) {
-            return true;
+            if (h.posicion.y <= p.posicion.y + p.anchura / 2.5) {
+                h.posicion.y = p.posicion.y + p.anchura / 2.5;
+                    return true;
+            }
+            
         }
         else {
             return false;
@@ -161,7 +165,7 @@ bool Interaccion::ColisionSube(Hombre h, Plataformas p) {
     }
 
 }
-bool Interaccion::ColisionChoca(Hombre h, Plataformas p) {
+bool Interaccion::ColisionChoca(Hombre& h, Plataformas p) {
 
     //Crea un recatangulo en centro hombre, altura la altura del hombre y anchura la anchura del hombre.
      //SIRVE PARA DETECTAR COLISIONES ENTRE ELEMENTOS RECTANGULARES
@@ -179,7 +183,7 @@ bool Interaccion::ColisionChoca(Hombre h, Plataformas p) {
         }
     }
 }
-bool Interaccion::ColisionChocaLado(Hombre h, Plataformas p) {
+bool Interaccion::ColisionChocaLado(Hombre &h, Plataformas p) {
 
     //Crea un recatangulo en centro hombre, altura la altura del hombre y anchura la anchura del hombre.
      //SIRVE PARA DETECTAR COLISIONES ENTRE ELEMENTOS RECTANGULARES

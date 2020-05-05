@@ -196,6 +196,11 @@ void Mundo::Mueve()
 	/*if (Interaccion::colision(hombre, bonus1)) {
 		hombre.SetVidas(hombre.GetVidas() + 1);
 	}*/
+
+
+
+
+
 	if (Interaccion::ColisionSube(hombre, plataformaprueba)) {
 		hombre.SetVel(hombre.GetVel().x, 0.0);
 		//hombre.SetAceleracion(0.0, 0.0);;
@@ -213,12 +218,17 @@ void Mundo::Mueve()
 	}
 
 	if (Interaccion::ColisionChoca(hombre, plataformaprueba)) {
-		hombre.SetVel(hombre.GetVel().x, -10.0);
+	//	hombre.SetVel(hombre.GetVel().x, -10.0);
+
+
 		//plataformaprueba.aux = 1;
+
 
 	}
 	if (Interaccion::ColisionChocaLado(hombre, plataformaprueba)) {
-		hombre.SetVel(-1.0, -10.0);
+	//	hombre.SetVel(-1.0, -10.0);
+
+
 		//plataformaprueba.aux = 1;
 
 	}
