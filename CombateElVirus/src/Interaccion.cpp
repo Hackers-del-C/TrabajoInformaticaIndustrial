@@ -83,35 +83,23 @@ bool Interaccion::Colision(Plataformas p, Zapatos z) {
     return false;
 }
 
-bool Interaccion::Colision(Disparo d, Virus v) {
+bool Interaccion::Colision(Disparo d, Virus &v) {
 
-    // Disparo centro y radio r
-// Rectángulo con esquina superior izquierda en (x,y) ancho w y algo h
-// Punto (en verde) del perímetro del rectángulo más cercano a la circunferencia en (px,py)
-    //float px, py, distancia;
-    //px = d.posicion.x; // En principio son iguales
-    //if (px < v.posicion.x) px = v.posicion.x;
-    //if (px > v.posicion.x + v.anchura) px = v.posicion.x + v.anchura;
-    //py = d.posicion.y;
-    //if (py < v.posicion.y) py = v.posicion.y;
-    //if (py > v.posicion.y + v.altura) py = v.posicion.y + v.altura;
-    //distancia = sqrt((d.posicion.x - px) * (d.posicion.x - px) + (d.posicion.y - py) * (d.posicion.y - py));
-    //if (distancia < d.radio) {
-    //    // Colisión detectada
-    //    return true;
-    //}
-    //return false;
-
-    float px, py, distancia;
+    float px, py;
+    ETSIDI::Vector2D  aux;
     px = d.posicion.x; // En principio son iguales
     if (px < v.posicion.x-v.anchura/2) px = v.posicion.x - v.anchura / 2;
     if (px > v.posicion.x + v.anchura/2) px = v.posicion.x + v.anchura/2;
     py = d.posicion.y;
     if (py < v.posicion.y-v.altura/2) py = v.posicion.y - v.altura / 2;
     if (py > v.posicion.y + v.altura/2) py = v.posicion.y + v.altura/2;
-    distancia = sqrt((d.posicion.x - px) * (d.posicion.x - px) + (d.posicion.y - py) * (d.posicion.y - py));
-    if (distancia < d.radio) {
+    aux.x = (d.posicion.x - px) * (d.posicion.x - px);
+    aux.y = (d.posicion.y - py) * (d.posicion.y - py);
+    if (aux.module() < d.radio) {
         // Colisión detectada
+        
+        
+       v.Muere(aux);
         return true;
     }
     return false;

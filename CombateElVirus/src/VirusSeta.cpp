@@ -48,19 +48,7 @@ VirusSeta::VirusSeta(string nombre, int m, int n, float x, float y, float w, flo
 
 void VirusSeta::Inicializa(string nombre, int m, int n, float x, float y, float w, float h, int izqder1, int salto1) {
 
-    //DEBERIAMOS CREAR UN PUNTERO QUE UNA UN FLUJO A LA IMAGEN, QUE SE LE PASE EL NOMBRE DEL VIRUS Y NOS CREE LA IMAGEN DIRECTAMENTE
-    //EL CODIGO QUE HAY ABAJO ES ELEGANTE
-    /*
-    std::ostringstream cadena;
-    //char perro[10];
-    string img;
-
-    cadena << "imagenes/" << img << ".png" << endl;
-
-    char* pString = new char[cadena.str().length() + 1];
-
-    std::copy(cadena.str().c_str(), cadena.str().c_str() + cadena.str().length() + 1, pString);
-    */
+  
     izqder = izqder1; //Si el muñeco puede ir a la izquierda y a la derecha
     salto = salto1;//Si el muñeco puede saltar/atacar
 

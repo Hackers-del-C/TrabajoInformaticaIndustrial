@@ -5,6 +5,7 @@
 #include <sstream>
 #include <string>
 #include "glut.h"
+#include "math.h"
 
 using namespace ETSIDI;
 using namespace std;
@@ -14,9 +15,7 @@ Virus::Virus(){
 
     posicion.x = 10;
     posicion.y = -3.5;
-
 }
-
 
 
 Virus::~Virus() {
@@ -26,6 +25,7 @@ void Virus::Dibuja(int nivel)
 {
     glTranslatef(posicion.x, posicion.y, 0);
    
+    //Aqui se selecciona la imagen que se va a dibujar
    
     if (muere == 0) {
         if (izqder == 1) {
@@ -58,10 +58,10 @@ void Virus::Dibuja(int nivel)
 
 }
 
-
-void Virus::Muere()
+void Virus::Muere(ETSIDI::Vector2D vectormuerte)
 {
-    
+
+    spritemuere->setAngle(vectormuerte.argument()* 180 / 3.14159265); //Hay que mirar si la funcion vector 2d de etsidi tiene argumento (atan(vectormuerte.y/vectormuerte.x)
     muere = 1;
     ETSIDI::play("mis_sonidos/virusmuere1.wav");
 }
@@ -77,8 +77,6 @@ void Virus::Mueve(float t, Hombre h) {
     posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
     velocidad = velocidad + aceleracion * t;
 
-
-
     if (muere == 1) {
         spritemuere->loop();
         sprite->pause();
@@ -87,7 +85,6 @@ void Virus::Mueve(float t, Hombre h) {
             spriteder->pause();
             spriteizq->pause();
         }
-        
         velocidad.x = 0;
 
     }
@@ -107,9 +104,6 @@ void Virus::Mueve(float t, Hombre h) {
             velocidad.x = 0;
         }
     }
-   
-    
-
 }
 
 

@@ -14,6 +14,7 @@
 #include "Interaccion.h"
 #include "Bonus.h"
 
+
 class Interaccion
 {
 public:
@@ -26,7 +27,7 @@ public:
 
     //static bool colision(ListaMisil& misiles, Hombre h);
 
-    static bool Colision (Disparo d,  Virus v);
+    static bool Colision (Disparo d,  Virus &v);
 
     static bool Colision(Hombre h, Virus v);
     static bool colision(Misil misil, Hombre h);
@@ -36,4 +37,6 @@ public:
     static bool ColisionChoca(Hombre h, Plataformas p);
     static bool ColisionChocaLado(Hombre h, Plataformas p);
     static bool  Colision(Plataformas p, Zapatos z);
+    ETSIDI::Vector2D Distancia;
+    
 };

@@ -236,9 +236,8 @@ void Mundo::Mueve()
 
 	//Colision virus con disp	
 	if (disparos.Colision(virus1)) {//si alguna esfera ha chocado
-		virus1.Muere();
+		//virus1.Muere();
 		
-
 	}		//disparo.eliminar(aux7);	
 
 	///////// misil-hombre
@@ -352,7 +351,7 @@ void Mundo::Tecla(unsigned char key)
 			break;
 
 		case 'j':
-			virus1.Muere();
+			//virus1.Muere();
 			break;
 		case 'x':
 			//virus.Muere();

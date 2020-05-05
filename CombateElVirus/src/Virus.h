@@ -14,15 +14,13 @@ class Virus {
 public:
     
     Virus();
-    Virus::Virus(string nombre, int m, int n, float x, float y, float w, float h, int izqder1, int salto1);
     virtual ~Virus();
     void Dibuja(int nivel);
     void Mueve(float t, Hombre hombre);
-    void Inicializa(string nombre, int m, int n, float x, float y, float w, float h, int izqder, int salto);
     void SetVel(float x, float y);
-    void Muere();
+    void Muere(ETSIDI::Vector2D vectormuerte);
     int GetMuerto() { return muere; }
-    ETSIDI::Vector2D posicion, velocidad, aceleracion;
+    ETSIDI::Vector2D posicion, velocidad, aceleracion, vectormuerte;
     float anchura, altura;
     // ETSIDI::SpriteSequence* virusazul;
     ETSIDI::SpriteSequence* sprite;
