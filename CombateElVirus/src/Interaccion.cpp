@@ -238,6 +238,33 @@ void Interaccion::reboteexterior(Hombre& h,Limites c)
   
 }
 
+void Interaccion::Colision(BonusMascarilla& b, Limites c) {
+   // ETSIDI::Vector2D dir;
+    //float dif = b.posicion.y - l.suelo.GetSuelo();
+    //if (dif <= 0.0f) {
+    // //  b.posicion.y = l.suelo.GetSuelo();
+    //    return true;
+    //}
+    //return false;
+
+    /*float xmax = c.suelo.limite2.x;
+    float xmin = c.suelo.limite1.x;
+    if (b.posicion.x > xmax)b.posicion.x = xmax;
+    if (b.posicion.x < xmin)b.posicion.x = xmin;*/
+
+  //  float ymax = c.techo.limite1.y;
+    float ymin = c.suelo.limite1.y;
+   // if (b.posicion.y > ymax)b.posicion.y = ymax;
+   // if (b.posicion.y < ymin)b.posicion.y = ymin;
+    if (b.posicion.y - 25 <-54.5)b.posicion.y = -29.5;
+   //b.posicion.y = ymin-20;
+}
+
+
+
+
+
+
  /*bool Interaccion::colision(ListaMisil& misiles, Hombre h){
      for (int i = 0; i < misiles.lista.size(); i++) {
          if (misiles.lista[i]->posicion.x == h.posicion.x) { //// MODO TEST -- HAY QUE USAR MODULO DIFERENCIA POSICION

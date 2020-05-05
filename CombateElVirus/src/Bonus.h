@@ -17,6 +17,7 @@ public:
 	void Dibuja();
 	void SetPos(float ix, float iy);
 	void Mueve(float t);
+	ETSIDI::Vector2D GetPos() { return posicion; }
 protected:
 
 };

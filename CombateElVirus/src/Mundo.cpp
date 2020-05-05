@@ -41,7 +41,8 @@ void Mundo::Inicializa()
 	
 	virus1.Inicializa("virusseta", 8, 1, 0, 0, 3, 3, 0, 0);
 	limites.SetLimites(-20, 500, -3.5, 30); //Son los bordes del juego que el jugador no puede pasar
-	bonus1.Inicializa("mascarilla", 5, 5,1.5,1.5 );
+
+	bonus1.Inicializa("mascarilla", 5, 25,1.5,1.5 );
 	vidas.Inicializa(hombre);
 	
 	plataformaprueba.Inicializa(0, 1, 8, 3);
@@ -179,11 +180,16 @@ void Mundo::Mueve()
 	misiles.Mueve(0.025f);
 	vidas.Mueve(x_ojo);
 	listavirus.mueve(0.025f, hombre);
+	bonus1.Mueve(0.025);
 	//zapatos.Mueve(0.025f, hombre);
 	//disparo.Mueve(0.025f);
 	//bonus.Mueve(0.025f);
 
 	////INTERACCIONES////
+
+	Interaccion::Colision(bonus1, limites);
+	//	bonus1.posicion.y = limites.suelo.GetSuelo();
+	
 	if (finde != 1) {
 		Interaccion::reboteinterior(hombre, limites);
 	}
@@ -338,14 +344,16 @@ void Mundo::Tecla(unsigned char key)
 		switch (key) {
 
 		case 'w':
+			
 			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, 22.0f));
 			
 
 			break;
 			
 		case 's':
+			
 			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, -22.0f)); /// radio, x , y, vx, vy
-		
+			
 			break;
 
 		case 'a':

@@ -5,7 +5,7 @@ using namespace std;
 using ETSIDI::getTexture;
 
 BonusMascarilla::BonusMascarilla() {
-
+	velocidad.y = -5;
 }
 BonusMascarilla::~BonusMascarilla() {
 
