@@ -41,7 +41,7 @@ void Mundo::Inicializa()
 	
 	virus1.Inicializa("virusseta", 8, 1, 0, 0, 3, 3, 0, 0);
 	limites.SetLimites(-20, 500, -3.5, 30); //Son los bordes del juego que el jugador no puede pasar
-	
+	bonus1.Inicializa("mascarilla", 5, 5,1.5,1.5 );
 	vidas.Inicializa(hombre);
 	
 	plataformaprueba.Inicializa(0, 1, 8, 3);
@@ -110,7 +110,7 @@ void Mundo::Dibuja()
 		lanzamisiles1.Dibuja();
 
 		virus1.Dibuja(level);
-		//bonus1.Dibuja();
+		bonus1.Dibuja();
 		//plataformas.Dibuja(); PRUEBA
 		plataformaprueba.Dibuja();
 
@@ -172,7 +172,7 @@ void Mundo::Mueve()
 
 	personajes.Mueve(0.025f);
 	virus1.Mueve(0.025f, hombre);
-	//bonus1.Mueve(0.025f);
+	bonus1.Mueve(0.025f);
 	hombre.Mueve(0.025f);
 		 	
 	disparos.Mueve(0.025f);
