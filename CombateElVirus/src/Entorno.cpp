@@ -9,6 +9,7 @@ void Entorno::Inicializa(int nivel) {
 		break;
 	case 1:
 		ETSIDI::play("mis_sonidos/China.wav");
+		
 		break;
 	case 2:
 		ETSIDI::play("mis_sonidos/Italia.wav");
@@ -75,6 +76,8 @@ void Entorno::Tecla(unsigned char key) {
 	if (key == 'v') {
 		ETSIDI::play("mis_sonidos/alicates.wav");
 	}
-
-
+	if (key == 'g') {
+		ETSIDI::play("mis_sonidos/nivel1.wav");
+	}
+	
 }
