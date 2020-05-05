@@ -126,8 +126,9 @@ bool Interaccion::ColisionBonus(Hombre &h, Bonus  b) { //Esto deberia ser bonusm
    if (h.posicion.y - h.altura / 2 > b.altura / 2 + b.posicion.y) { return false; }
     if (h.posicion.y + h.altura / 2 < b.posicion.y - b.altura / 2) { return false; }
     else {
-        h.SetVidas(h.GetVidas() + 1);
-
+        if (h.GetVidas() <= 4) {
+            h.SetVidas(h.GetVidas() + 1);
+        }
         return true;
    }
 }

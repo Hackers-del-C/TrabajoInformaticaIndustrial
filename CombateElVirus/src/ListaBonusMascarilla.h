@@ -2,6 +2,7 @@
 #include "BonusMascarilla.h"
 #define BONUS 100
 #include "Hombre.h"
+#include "Limites.h"
 //#include "Interaccion.h"
 //#include "Limites.h"
 
@@ -22,6 +23,7 @@ public:
 	int getNumero() { return numero; }
 
 	void colision(Hombre& h);
+	void Colision(Limites l);
 private:
 	BonusMascarilla* lista[BONUS];
 	int numero;

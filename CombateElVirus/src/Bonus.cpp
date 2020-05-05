@@ -11,10 +11,10 @@ using namespace std;
 using ETSIDI::getTexture;
 
 Bonus::Bonus() {
-
-	}
+	velocidad.y = -5;
+}
 Bonus::~Bonus() {
-	aceleracion.y = -9.8;
+//	aceleracion.y = -9.8;
 	
 
 }

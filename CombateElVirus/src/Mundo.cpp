@@ -186,6 +186,7 @@ void Mundo::Mueve()
 	vidas.Mueve(x_ojo);
 	listavirus.mueve(0.025f, hombre);
 	listabonusmascarilla.mueve(0.025f);
+
 	//bonus1.Mueve(0.025);
 	//zapatos.Mueve(0.025f, hombre);
 	//disparo.Mueve(0.025f);
@@ -193,8 +194,8 @@ void Mundo::Mueve()
 
 	////INTERACCIONES////
 
-	Interaccion::Colision(bonus1, limites);
-	//	bonus1.posicion.y = limites.suelo.GetSuelo();
+	//Interaccion::Colision(bonus1, limites);
+
 	
 	if (finde != 1) {
 		Interaccion::reboteinterior(hombre, limites);

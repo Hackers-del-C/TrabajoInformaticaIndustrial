@@ -90,7 +90,9 @@ void ListaBonusMascarilla::dibuja()
 }
 void ListaBonusMascarilla::mueve(float t)
 {
-	for (int i = 0; i < numero; i++){ lista[i]->Mueve(t); }
+	for (int i = 0; i < numero; i++){
+		lista[i]->Mueve(t); 
+	}
 	
 }
 
@@ -101,4 +103,9 @@ BonusMascarilla* ListaBonusMascarilla::operator [](int i)
 	if (i < 0) //si el indice es negativo, devuelvo la primera
 		i = 0;
 	return lista[i];
+}
+void ListaBonusMascarilla::Colision(Limites l) {
+	for (int i = 0; i < numero; i++) {
+		//Interaccion::Colision(*(lista[i], l));
+	}
 }
