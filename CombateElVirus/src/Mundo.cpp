@@ -186,7 +186,7 @@ void Mundo::Mueve()
 	vidas.Mueve(x_ojo);
 	listavirus.mueve(0.025f, hombre);
 	listabonusmascarilla.mueve(0.025f);
-
+	listabonusmascarilla.Colision(limites);
 	//bonus1.Mueve(0.025);
 	//zapatos.Mueve(0.025f, hombre);
 	//disparo.Mueve(0.025f);

@@ -104,8 +104,8 @@ BonusMascarilla* ListaBonusMascarilla::operator [](int i)
 		i = 0;
 	return lista[i];
 }
-void ListaBonusMascarilla::Colision(Limites l) {
+void ListaBonusMascarilla::Colision(Limites c) {
 	for (int i = 0; i < numero; i++) {
-		//Interaccion::Colision(*(lista[i], l));
+		Interaccion::Colision(*lista[i], c);
 	}
 }
