@@ -197,10 +197,12 @@ void Mundo::Mueve()
 		hombre.SetVidas(hombre.GetVidas() + 1);
 	}*/
 
+	//////HOMBRE-PLATAFORMA
 
-
-
-
+	if (Interaccion::colision(hombre, limites)) {
+		//|| Interaccion::ColisionSube(hombre, plataformaprueba)) {
+		salto = 1;
+	}
 	if (Interaccion::ColisionSube(hombre, plataformaprueba)) {
 		hombre.SetVel(hombre.GetVel().x, 0.0);
 		//hombre.SetAceleracion(0.0, 0.0);;
@@ -209,7 +211,7 @@ void Mundo::Mueve()
 			hombre.SetPos(hombre.GetPos().x, plataformaprueba.posicion.y + plataformaprueba.altura / 2);
 		}*/
 		plataformaprueba.aux = 1;	
-		salto = 0;
+		salto = 1;
 	}
 	else {
 		//hombre.SetVel(hombre.GetVel().x, -10.0);
@@ -218,26 +220,20 @@ void Mundo::Mueve()
 	}
 
 	if (Interaccion::ColisionChoca(hombre, plataformaprueba)) {
-	//	hombre.SetVel(hombre.GetVel().x, -10.0);
+		hombre.SetVel(hombre.GetVel().x, -10.0);
 
 
 		//plataformaprueba.aux = 1;
-
 
 	}
 	if (Interaccion::ColisionChocaLado(hombre, plataformaprueba)) {
-	//	hombre.SetVel(-1.0, -10.0);
-
+		hombre.SetVel(0.0, -10.0);
 
 		//plataformaprueba.aux = 1;
 
 	}
 
-	if (salto == 1) {
-		hombre.SetVel(hombre.GetVel().x, +18);
-		//hombre.SetAceleracion(0.0, -20);
-		salto = 0;
-	}
+	
 
 
 	//IMPORTANTE//Interaccion::reboteexterior(hombre, plataforma1);
@@ -399,32 +395,40 @@ void Mundo::Tecla(unsigned char key)
 void Mundo::teclaEspecial(unsigned char key) {
 	//distancia = 0;
 	 glutSetKeyRepeat(1);
-	if (level != 0) {//para que no se mueva cuando esta en el menu
-		switch (key)
-		{
-		case GLUT_KEY_LEFT:
+	 if (level != 0) {//para que no se mueva cuando esta en el menu
+		 switch (key)
+		 {
+		 case GLUT_KEY_LEFT:
 
-			hombre.SetVel(-6, hombre.velocidad.y);
-			//HAY QUE PONER QUE CUANDO ESTE EN EL AIRE NO VAYA HACIA LA DERECHA
-			hombre.SetDir(2);
+			 hombre.SetVel(-6, hombre.velocidad.y);
+			 //HAY QUE PONER QUE CUANDO ESTE EN EL AIRE NO VAYA HACIA LA DERECHA
+			 hombre.SetDir(2);
 
-			break;
-		case GLUT_KEY_RIGHT:
-			hombre.SetVel(+6, hombre.velocidad.y);
-			hombre.SetDir(1);
+			 break;
+		 case GLUT_KEY_RIGHT:
+			 hombre.SetVel(+6, hombre.velocidad.y);
+			 hombre.SetDir(1);
 
-			break;
-		case GLUT_KEY_UP:
-			if(Interaccion::colision(hombre, limites) || Interaccion::ColisionSube(hombre, plataformaprueba)){
-				salto = 1;
-				ETSIDI::play("mis_sonidos/salto.wav");
-				break;
-			}
-			
-			}
+			 break;
+		 case GLUT_KEY_UP:
 
-		}
+			 if (salto == 1) {
+				 hombre.SetVel(hombre.GetVel().x, +18);
+				 //hombre.SetAceleracion(0.0, -20);
+				 salto = 0;
+				 ETSIDI::play("mis_sonidos/salto.wav");
 
+			 }
+			 /*if(Interaccion::colision(hombre, limites) || Interaccion::ColisionSube(hombre, plataformaprueba)){
+				 salto = 1;
+				 ETSIDI::play("mis_sonidos/salto.wav");
+				 break;
+			 }*/
+			 break;
+
+
+		 }
+	 }
 
 
 }

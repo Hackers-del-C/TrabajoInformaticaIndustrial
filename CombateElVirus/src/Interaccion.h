@@ -36,6 +36,8 @@ public:
     static bool ColisionSube(Hombre &h, Plataformas p);
     static bool ColisionChoca(Hombre &h, Plataformas p);
     static bool ColisionChocaLado(Hombre &h, Plataformas p);
+    static bool ColisionChocaLadoIzq(Hombre& h, Plataformas p);
+    static bool ColisionChocaLadoDer(Hombre& h, Plataformas p);
     static bool  Colision(Plataformas p, Zapatos z);
     ETSIDI::Vector2D Distancia;
     

@@ -169,8 +169,8 @@ bool Interaccion::ColisionChoca(Hombre& h, Plataformas p) {
 
     //Crea un recatangulo en centro hombre, altura la altura del hombre y anchura la anchura del hombre.
      //SIRVE PARA DETECTAR COLISIONES ENTRE ELEMENTOS RECTANGULARES
-    if (h.posicion.x - h.anchura / 2 > p.posicion.x + p.anchura / 2) { return false; }
-    if (h.posicion.x + h.anchura / 2 < p.posicion.x - p.anchura / 2) { return false; }
+    if (h.posicion.x - h.anchura / 2.5 > p.posicion.x + p.anchura / 2.5) { return false; }
+    if (h.posicion.x + h.anchura / 2.5 < p.posicion.x - p.anchura / 2.5) { return false; }
     if (h.posicion.y - h.altura / 2 > p.altura / 2 + p.posicion.y) { return false; }
     if (h.posicion.y + h.altura / 2 < p.posicion.y - p.altura / 2) { return false; }
     else {
@@ -187,13 +187,14 @@ bool Interaccion::ColisionChocaLado(Hombre &h, Plataformas p) {
 
     //Crea un recatangulo en centro hombre, altura la altura del hombre y anchura la anchura del hombre.
      //SIRVE PARA DETECTAR COLISIONES ENTRE ELEMENTOS RECTANGULARES
-    if (h.posicion.x - h.anchura / 2 > p.posicion.x + p.anchura / 2) { return false; }
-    if (h.posicion.x + h.anchura / 2 < p.posicion.x - p.anchura / 2) { return false; }
+    if (h.posicion.x - h.anchura / 2.5> p.posicion.x + p.anchura / 2.2) { return false; }
+    if (h.posicion.x + h.anchura / 2.5 < p.posicion.x - p.anchura / 2.2) { return false; }
     if (h.posicion.y - h.altura / 2 > p.altura / 2 + p.posicion.y) { return false; }
     if (h.posicion.y + h.altura / 2 < p.posicion.y - p.altura / 2) { return false; }
     else {
 
-         if (h.GetVel().y < 0.0 && h.posicion.y < p.posicion.y + p.anchura / 4) {
+         if (h.GetVel().y < 0.0 && h.posicion.y < p.posicion.y + p.altura / 2.5  ) {
+
             return true;
         }
         else {
@@ -201,7 +202,28 @@ bool Interaccion::ColisionChocaLado(Hombre &h, Plataformas p) {
         }
     }
 }
+bool Interaccion::ColisionChocaLadoIzq(Hombre& h, Plataformas p) {
 
+    //Crea un recatangulo en centro hombre, altura la altura del hombre y anchura la anchura del hombre.
+     //SIRVE PARA DETECTAR COLISIONES ENTRE ELEMENTOS RECTANGULARES
+    if (h.posicion.x - h.anchura / 2.2 > p.posicion.x + p.anchura / 2.2) { return false; }
+    if (h.posicion.x + h.anchura / 2.2 < p.posicion.x - p.anchura / 2.2) { return false; }
+    if (h.posicion.y - h.altura / 2 > p.altura / 2 + p.posicion.y) { return false; }
+    if (h.posicion.y + h.altura / 2 < p.posicion.y - p.altura / 2) { return false; }
+    else {
+
+        if (h.GetVel().y < 0.0 && h.posicion.y < p.posicion.y + p.anchura / 2.5) {
+            if (h.posicion.x >= p.posicion.x - p.anchura / 2) {
+                h.posicion.x = p.posicion.x - p.anchura / 2;
+                return true;
+            }
+
+        }
+        else {
+            return false;
+        }
+    }
+}
 void Interaccion::reboteexterior(Hombre& h,Limites c)
 {
     float xmax = c.suelo.limite2.x;

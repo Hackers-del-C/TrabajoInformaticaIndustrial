@@ -6,10 +6,11 @@ void Entorno::Inicializa(int nivel) {
 	switch (nivel) {
 	case 0:
 		//ETSIDI::play("mis_sonidos/Menu.wav");
+		ETSIDI::play("mis_sonidos/nivel1bueno.wav");
 		break;
 	case 1:
 		//ETSIDI::play("mis_sonidos/China.wav");
-		
+		//ETSIDI::play("mis_sonidos/China.wav");
 		break;
 	case 2:
 		ETSIDI::play("mis_sonidos/Italia.wav");
