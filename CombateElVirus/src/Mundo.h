@@ -14,8 +14,11 @@
 #include "ListaBordesSube.h"
 #include "ListaDisparos.h"
 #include "Listamisiles.h"
+
+//borrar en un futuro:
 #include "VirusSeta.h"
 #include "Zapatos.h"
+#include "BonusMascarilla.h"
 
 class Mundo
 {
@@ -61,6 +64,7 @@ private:
 	ListaBordesSube bordessube;
 	ListaVirus listavirus;
 	Zapatos zapatos;
+	BonusMascarilla bonus1;
 	//Bonus bonus;
 	// Misil misilizq;
 	//Pared plataforma;

@@ -110,6 +110,7 @@ void Mundo::Dibuja()
 		lanzamisiles1.Dibuja();
 
 		virus1.Dibuja(level);
+		//bonus1.Dibuja();
 		//plataformas.Dibuja(); PRUEBA
 		plataformaprueba.Dibuja();
 
@@ -171,6 +172,7 @@ void Mundo::Mueve()
 
 	personajes.Mueve(0.025f);
 	virus1.Mueve(0.025f, hombre);
+	//bonus1.Mueve(0.025f);
 	hombre.Mueve(0.025f);
 		 	
 	disparos.Mueve(0.025f);
@@ -191,7 +193,9 @@ void Mundo::Mueve()
 			hombre.SetVidas(hombre.GetVidas() - 1);
 		}
 	}
-	
+	/*if (Interaccion::colision(hombre, bonus1)) {
+		hombre.SetVidas(hombre.GetVidas() + 1);
+	}*/
 	if (Interaccion::ColisionSube(hombre, plataformaprueba)) {
 		hombre.SetVel(hombre.GetVel().x, 0.0);
 		//hombre.SetAceleracion(0.0, 0.0);;

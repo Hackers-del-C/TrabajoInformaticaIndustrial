@@ -25,9 +25,6 @@
     <ClCompile Include="src\Interaccion.cpp">
       <Filter>Archivos de código fuente\MUNDO\Interacciones</Filter>
     </ClCompile>
-    <ClCompile Include="src\Bonus.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Interacciones</Filter>
-    </ClCompile>
     <ClCompile Include="src\Hombre.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes\Jugador</Filter>
     </ClCompile>
@@ -85,6 +82,12 @@
     <ClCompile Include="src\VirusSeta.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
     </ClCompile>
+    <ClCompile Include="src\Bonus.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BonusMascarilla.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\ETSIDI.h">
@@ -103,9 +106,6 @@
       <Filter>Archivos de encabezado\MUNDO</Filter>
     </ClInclude>
     <ClInclude Include="src\Interaccion.h">
-      <Filter>Archivos de encabezado\MUNDO\Interacciones</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Bonus.h">
       <Filter>Archivos de encabezado\MUNDO\Interacciones</Filter>
     </ClInclude>
     <ClInclude Include="src\Disparo.h">
@@ -171,6 +171,12 @@
     <ClInclude Include="src\VirusSeta.h">
       <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
     </ClInclude>
+    <ClInclude Include="src\Bonus.h">
+      <Filter>Archivos de encabezado\MUNDO\Interacciones\BONUS</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BonusMascarilla.h">
+      <Filter>Archivos de encabezado\MUNDO\Interacciones\BONUS</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Archivos de código fuente">
@@ -235,6 +241,12 @@
     </Filter>
     <Filter Include="Archivos de código fuente\MUNDO\Entorno\Vidas">
       <UniqueIdentifier>{e7c5f438-4151-4828-abe3-1a982b548c2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de código fuente\MUNDO\Interacciones\BONUS">
+      <UniqueIdentifier>{7b948786-d0e4-4dda-b96f-810beae6e401}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\MUNDO\Interacciones\BONUS">
+      <UniqueIdentifier>{4222dfd0-e36c-4870-afbf-611187190946}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

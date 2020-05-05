@@ -131,6 +131,16 @@ bool Interaccion::Colision(Hombre h, Virus v) {
 
 }
 
+bool Interaccion::colision(Hombre h, Bonus b) {
+    if (h.posicion.x - h.anchura / 2 > b.posicion.x + b.anchura / 2) { return false; }
+    if (h.posicion.x + h.anchura / 2 < b.posicion.x - b.anchura / 2) { return false; }
+    if (h.posicion.y - h.altura / 2 > b.altura / 2 + b.posicion.y) { return false; }
+    if (h.posicion.y + h.altura / 2 < b.posicion.y - b.altura / 2) { return false; }
+    else {
+        return true;
+    }
+}
+
 
 bool Interaccion::Colision(Hombre h, Plataformas p) {
 
