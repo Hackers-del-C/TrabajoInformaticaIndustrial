@@ -187,6 +187,8 @@ void Mundo::Mueve()
 	listavirus.mueve(0.025f, hombre);
 	listabonusmascarilla.mueve(0.025f);
 	listabonusmascarilla.Colision(limites);
+
+	listabonusmascarilla.Colision(plataformaprueba);
 	//bonus1.Mueve(0.025);
 	//zapatos.Mueve(0.025f, hombre);
 	//disparo.Mueve(0.025f);
@@ -336,6 +338,7 @@ void Mundo::Mueve()
 
 void Mundo::Tecla(unsigned char key)
 {	
+	
 	if (level == 0) {
 		switch (key) {
 		case '1':
@@ -376,7 +379,7 @@ void Mundo::Tecla(unsigned char key)
 
 		case 'j':
 			
-			listabonusmascarilla.agregar(new BonusMascarilla("mascarilla", 5, 25, 1.5, 1.5));
+			listabonusmascarilla.agregar(new BonusMascarilla("mascarilla", hombre.GetPos().x, 25, 1.5, 1.5));
 			break;
 		case 'x':
 			//virus.Muere();

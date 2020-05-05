@@ -41,7 +41,7 @@ public:
     static bool  Colision(Plataformas p, Zapatos z);
 
     static void Colision(BonusMascarilla& b, Limites c);
-
+    static void Colision(BonusMascarilla& b, Plataformas p);
 
 
     ETSIDI::Vector2D Distancia;

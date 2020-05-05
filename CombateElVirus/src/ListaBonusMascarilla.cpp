@@ -109,3 +109,8 @@ void ListaBonusMascarilla::Colision(Limites c) {
 		Interaccion::Colision(*lista[i], c);
 	}
 }
+void ListaBonusMascarilla::Colision(Plataformas p) {
+	for (int i = 0; i < numero; i++) {
+		Interaccion::Colision(*lista[i], p);
+	}
+}

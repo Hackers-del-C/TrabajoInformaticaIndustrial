@@ -16,6 +16,9 @@ public:
 	float distancia(ETSIDI::Vector2D punto, ETSIDI::Vector2D* direccion);
 	ETSIDI::Vector2D posicion;
 	float anchura, altura;
+
+
+	friend class Interaccion;
 private:
 	ETSIDI::Vector2D limite1, limite2;
 };
