@@ -14,7 +14,7 @@ using ETSIDI::getTexture;
 Virus::Virus(){
 
     posicion.x = 10;
-    posicion.y = -3.5;
+    posicion.y = 3;
 }
 
 
@@ -60,7 +60,8 @@ void Virus::Dibuja(int nivel)
 
 void Virus::Muere(ETSIDI::Vector2D vectormuerte)
 {
-
+    //spritemuere->setCenter(10, 3);
+      //  spritemuere->setPos(10,3);
     spritemuere->setAngle(vectormuerte.argument()* 180 / 3.14159265); //Hay que mirar si la funcion vector 2d de etsidi tiene argumento (atan(vectormuerte.y/vectormuerte.x)
     muere = 1;
     ETSIDI::play("mis_sonidos/virusmuere1.wav");

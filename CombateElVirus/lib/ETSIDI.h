@@ -168,8 +168,7 @@ using namespace std;
 
 	//metodos inline SPRITE 
 	inline void Sprite::setAngle(double angle){
-			if(angle+180>360)angle-=360.0*((int)((angle+180)/360));
-			if(angle-180<-360)angle-=360.0*((int)((angle-180)/360));
+		
 			_angle=angle;
 	}
 	inline void Sprite::setSize(float w, float h)
