@@ -14,7 +14,6 @@ public:
 	void DestruirContenido(int ind);
 	void Mueve(float t);
 	void Dibuja();
-	void Inicializa();
 	/*void Explota();*/
 	void Eliminar(Misil* m);
 	

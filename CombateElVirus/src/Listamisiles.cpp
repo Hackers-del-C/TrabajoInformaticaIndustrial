@@ -49,10 +49,7 @@ void ListaMisil::Dibuja() {
 	for (int i = 0; i < lista.size(); i++)
 		lista[i]->Dibuja();
 }
-void ListaMisil::Inicializa() {
-	for (int i = 0; i < lista.size(); i++)
-		lista[i]->Inicializa();
-}
+
 
 Misil* ListaMisil::colision(Hombre& h) {
 	for (int i = 0; i < lista.size(); i++)

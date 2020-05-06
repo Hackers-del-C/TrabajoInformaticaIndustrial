@@ -9,45 +9,22 @@
 }*/
 Misil::Misil(char  nombre [20], float x, float y, float vx, float vy)  {
 
-	/*
-	stringstream sstr;
-	string cadena = "imagenes/";
-	sstr << cadena << nombre << ".png";
-	cadena = sstr.str();
-	char nombreimagen[20];
-	for (int i = 0; i != '\0'; i++) {
-		nombreimagen[i] = cadena[i];
 
-	}*/
 	misil = new Sprite(nombre, 0, 0, 2, 2);
 	posicion.x = x;
-	posicion.y = x;
+	posicion.y = y;
 	velocidad.x = vx;
 	velocidad.y = vy;
 }
 
 
-/*void Misil::Inicializader() {
-	//lanzamisiles1 = new Sprite("imagenes/lanzamisiles.png", 30, -4, 4, 4);
 
-	misilder = new Sprite("imagenes/misilder.png", 31, 0, 2, 2);
-	
-}*/
-void Misil::Inicializa() {
-	//lanzamisiles1 = new Sprite("imagenes/lanzamisiles.png", 30, -4, 4, 4);
-	misilexplota = new SpriteSequence("imagenes/explosion.png",3,10,50,false,0,0,1,1);
-	misil = new Sprite("imagenes/misilizq.png", 29, -3.0, 2, 2);
-}
-/*void Misil::Dibujader() {
-	misilder->draw();
-
-}*/
 void Misil::Dibuja() {
 
-	glTranslatef(posicion.x,0, 0);
+	glTranslatef(posicion.x, posicion.y, 0);
 	misil->draw();
 
-	glTranslatef(-posicion.x, 0, 0);
+	glTranslatef(-posicion.x,-posicion.y, 0);
 	/*if (explota = 1) {
 		glTranslatef(posicion.x, 0, 0);
 		misilexplota->draw();
@@ -56,12 +33,7 @@ void Misil::Dibuja() {
 	}*/
 
 }
-/*void Misil::Mueveder(float t) {
-	posicion = posicion + velocidad * t;
 
-	misilder->loop();
-
-}*/
 void Misil::Mueve(float t) {
 
 	posicion = posicion + velocidad * t;

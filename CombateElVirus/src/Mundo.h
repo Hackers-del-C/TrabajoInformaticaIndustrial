@@ -5,7 +5,7 @@
 #include "Personajes.h"
 #include "Hombre.h"
 #include "Entorno.h"
-#include "Lanzamisiles.h"
+#include "ListaLanzamisiles.h"
 #include "Virus.h"
 #include "Vidas.h"
 //LISTAS
@@ -60,7 +60,7 @@ private:
 	Entorno entorno;
 	//LISTAS
 	ListaDisparos disparos;
-	Lanzamisiles lanzamisiles1;
+	ListaLanzamisiles listalanzamisiles;
 	ListaMisil misiles;	
 	Vidas vidas;
 	Plataformas plataformaprueba;

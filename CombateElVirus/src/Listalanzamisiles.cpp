@@ -3,7 +3,7 @@
 #include "glut.h"
 
 ListaLanzamisiles::ListaLanzamisiles() {
-
+	
 }
 ListaLanzamisiles::~ListaLanzamisiles() {
 
@@ -28,4 +28,13 @@ void ListaLanzamisiles::DestruirContenido(int ind) {
 void ListaLanzamisiles::Dibuja() {
 	for (int i = 0; i < lista.size(); i++)
 		lista[i]->Dibuja();
+}
+void ListaLanzamisiles::Eliminar(Lanzamisiles* m)
+{
+	for (int i = 0; i < lista.size(); i++)
+		if (lista[i] == m)
+		{
+			DestruirContenido(i);
+			return;
+		}
 }

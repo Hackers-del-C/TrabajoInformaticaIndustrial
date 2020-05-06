@@ -32,7 +32,7 @@ void Mundo::RotarOjo()
 
 void Mundo::Inicializa()
 {
-	lanzamisiles1.Inicializa();
+	
 	hombre.Inicializa();
 	entorno.Inicializa(level);
 	entorno.Fin(pantalla);
@@ -89,7 +89,7 @@ void Mundo::Inicializa()
 	//	listavirus.agregar(aux);
 	//}
 	////zapatos.Inicializa(hombre);
-
+	
 	
 	
 }
@@ -121,7 +121,7 @@ void Mundo::Dibuja()
 			personajes.Dibuja(level, hombre);
 			disparos.Dibuja();
 			misiles.Dibuja();
-			lanzamisiles1.Dibuja();
+			listalanzamisiles.Dibuja();
 
 			virus1.Dibuja(level);
 			//bonus1.Dibuja();
@@ -135,10 +135,10 @@ void Mundo::Dibuja()
 			listabonustest.dibuja();
 
 			zapatos.Dibuja(hombre);
-			 
+			listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png",30, -3));
 			float naleatorio = lanzaDado(1000.0);
 			if (naleatorio < 10) {
-				misiles.Agregar(new Misil("imagenes/misilizq.png", 15, -3.5, -5.0f, 0.0f));
+				misiles.Agregar(new Misil("imagenes/misilizq.png", 29, -2, -5.0f, 0.0f));
 			}
 			if (naleatorio < 2) {
 
@@ -296,8 +296,10 @@ void Mundo::Mueve()
 	///////// misil-hombre
 	Misil* aux = misiles.colision(hombre);
 	if (aux != 0) {
-		hombre.SetVidas(hombre.GetVidas() - 1);
-		misiles.Eliminar(aux);
+		if (hombre.GetVidas() >= 1) {
+			hombre.SetVidas(hombre.GetVidas() - 1);
+			misiles.Eliminar(aux);
+		}
 		//misiles.Explota();
 	}
 
@@ -407,7 +409,7 @@ void Mundo::Tecla(unsigned char key)
 		case 'x':
 			//virus.Muere();
 
-			misiles.Agregar(new Misil("imagenes/misilizq.png", 15, -3.0f, -5.0f, 0.0f));
+			misiles.Agregar(new Misil("imagenes/misilizq.png", 29, -2.0f, -5.0f, 0.0f));
 			break;
 			///////// TESTS DE VIDAS
 		case 't':
