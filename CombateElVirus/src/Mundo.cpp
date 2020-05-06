@@ -156,7 +156,7 @@ void Mundo::Dibuja()
 				
 			}
 			 //FIN DE PARTIRA: Ganador
-			if (hombre.posicion.x > 40) {//HABRÁ QUE AMPLIARLO
+			if (hombre.posicion.x > 100) {//HABRÁ QUE AMPLIARLO
 				hombre.SetVel(0, 0);
 				hombre.SetAceleracion(0, -10);
 				pantalla=2;
