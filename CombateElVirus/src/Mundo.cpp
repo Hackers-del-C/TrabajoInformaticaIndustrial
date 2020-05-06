@@ -35,6 +35,7 @@ void Mundo::Inicializa()
 	lanzamisiles1.Inicializa();
 	hombre.Inicializa();
 	entorno.Inicializa(level);
+	entorno.Fin(pantalla);
 	personajes.Inicializa(hombre);	
 	
 	virus1.Inicializa("virusseta", 8, 1, 0, 0, 3, 3, 0, 0);

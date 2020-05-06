@@ -5,20 +5,34 @@ void Entorno::Inicializa(int nivel) {
 	//MUSICA
 	switch (nivel) {
 	case 0:
-		//ETSIDI::play("mis_sonidos/Menu.wav");
+		stopMusica();
 		ETSIDI::play("mis_sonidos/menu.wav");//marco no toques por dios
+		
 		break;
 	case 1:
-		//ETSIDI::play("mis_sonidos/China.wav");
-		//ETSIDI::play("mis_sonidos/China.wav");
+		stopMusica();
+		ETSIDI::play("mis_sonidos/China.wav");
 		break;
 	case 2:
+		stopMusica();
 		ETSIDI::play("mis_sonidos/Italia.wav");
 		break;
 	case 3:
+		stopMusica();
 		ETSIDI::play("mis_sonidos/Espania.wav");
 		break;		
 	}	
+}
+void Entorno::Fin(int pantalla) {
+	switch (pantalla) {
+	case 1:
+		//MUSICA 
+		stopMusica();
+		ETSIDI::play("mis_sonidos/Muerte.wav");
+	case 2:
+		stopMusica();
+		ETSIDI::play("mis_sonidos/Ganador.wav");
+	}
 }
 
 void Entorno::Dibuja(int nivel) {
@@ -73,14 +87,13 @@ void Entorno::Aviso(int pantalla, int x, int y) {
 		//TEXTO
 		auxetsidi.Texto("PULSA 8 PARA REINICIAR EL NIVEL", x-10, y+14, 1, 0, 0, 10); //obv habrá que hacerlo con otras teclas u otra cosa
 		auxetsidi.Texto("PULSA 7 PARA VOLVER AL MENU PRINCIPAL", x-10,y+10, 1, 0, 0, 10);
-		//MUSICA 
-		//ETSIDI::play("mis_sonidos/Muerte.wav");
+		
 		break;
 	case 2: //pantalla si ganas		
 		//TEXTO
 		auxetsidi.Texto("ENHORABUENAaAaAaA", x - 10, y + 14, 1, 0, 0, 10);
 		auxetsidi.Texto("PULSA 9 PARA VOLVER AL MENU PRINCIPAL", x - 10, y + 10, 1, 0, 0, 10);
-		//ETSIDI::play("mis_sonidos/Ganador.wav");
+		
 		break;
 	}
 }
