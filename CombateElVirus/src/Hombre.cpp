@@ -15,6 +15,7 @@ Hombre::Hombre() {
     posicion.x = 0;
     dir = 0;
     vidas =3;
+    monedas = 0;
 }
 
 Hombre::~Hombre() {

@@ -8,6 +8,7 @@ class Hombre
     friend class Interaccion;
     int vidas;
     int dir;
+    int monedas;
 public:
 
 
@@ -22,11 +23,13 @@ public:
     void Inicializa();
     void Salta();
     void SetVidas(int v) { vidas = v; }
+    void SetMonedas(int m) { monedas = m; }
     //direccion del muñeco
     void SetDir(int d) { dir = d; }
     void SetPos(float x, float y) { posicion.x = x; posicion.y = y; }
     int GetDir(){return dir;}
     int GetVidas(){ return vidas; }
+    int GetMonedas() { return monedas; }
     void FinPartida();
     ETSIDI::Vector2D GetPos() { return posicion; }
     int GetPosX() { return posicion.x; }

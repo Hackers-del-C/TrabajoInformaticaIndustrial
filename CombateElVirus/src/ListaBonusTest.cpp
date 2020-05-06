@@ -52,13 +52,15 @@ void ListaBonusTest::eliminar(int index)
 		lista[i] = lista[i + 1];
 }
 
-void ListaBonusTest::colision(Hombre& h)
+BonusTest* ListaBonusTest::colision(Hombre& h)
 {
 	for (int i = 0; i < numero; i++)
 	{
 		if (Interaccion::ColisionBonus(h, *(lista[i])))
-			eliminar(i);
+			//eliminar(i);
+			return lista[i];
 	}
+	return false;
 }
 
 

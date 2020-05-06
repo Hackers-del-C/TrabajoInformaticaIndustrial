@@ -47,6 +47,8 @@ void Mundo::Inicializa()
 	plataformaprueba.Inicializa(0, 1, 8, 3);
 
 
+	//listabonustest.agregar(new BonusTest("test", hombre.posicion.x-25, 25, 3, 3));
+
 	for (int i = 0; i < BONUSTEST; i++) {
 
 		listabonustest.agregar(new BonusTest("test", lanzaDado(180), lanzaDado(6), 3, 3));
@@ -162,6 +164,8 @@ void Mundo::Dibuja()
 
 		//ETSIDI::Vector2D posicion = hombre.GetPos();
 
+		
+
 		if (naleatorio < 2) {
 
 			listabonusmascarilla.agregar(new BonusMascarilla("mascarilla", hombre.GetPosX() + naleatorio*10 , 25, 1.5, 1.5));
@@ -228,7 +232,14 @@ void Mundo::Mueve()
 		}
 	}
 
-	listabonustest.colision(hombre);
+
+	BonusTest* auxBT= listabonustest.colision(hombre);
+	if (auxBT != 0) {
+		if (hombre.GetMonedas() <= 19) {
+			hombre.SetMonedas(hombre.GetMonedas() + 1);
+			listabonustest.eliminar(auxBT);
+		}
+	}
 
 	/*if (Interaccion::colision(hombre, bonus1)) {
 		hombre.SetVidas(hombre.GetVidas() + 1);

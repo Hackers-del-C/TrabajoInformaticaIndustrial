@@ -16,5 +16,5 @@ public:
 	ETSIDI::Sprite* vida3;
 	ETSIDI::Sprite* vida4;
 	ETSIDI::Sprite* vida5;
-	
+	ETSIDI::Sprite* monedas;
 };
