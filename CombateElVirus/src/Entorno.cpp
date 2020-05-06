@@ -72,7 +72,7 @@ void Entorno::Aviso(int pantalla, int x, int y) {
 	switch(pantalla){
 	case 1: //pantalla si mueres		
 		//TEXTO
-		auxetsidi.Texto("PULSA 8 PARA REINICIAR EL NIVEL", x-10, y+14, 1, 0, 0, 10);
+		auxetsidi.Texto("PULSA 8 PARA REINICIAR EL NIVEL", x-10, y+14, 1, 0, 0, 10); //obv habrá que hacerlo con otras teclas u otra cosa
 		auxetsidi.Texto("PULSA 7 PARA VOLVER AL MENU PRINCIPAL", x-10,y+10, 1, 0, 0, 10);
 		break;
 	case 2: //pantalla si ganas		
