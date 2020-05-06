@@ -13,10 +13,10 @@ void Vidas::Inicializa(Hombre h) {
     vida5 = new Sprite("imagenes/mascarilla.png", h.posicion.x + 23, 20, 2, 2);
     monedas= new Sprite("imagenes/moneda.png", h.posicion.x -20, 20, 2, 2);
 }
-void Vidas::Dibuja(int vidas) {
+void Vidas::Dibuja(Hombre& h, int vidas) {
 
     glTranslatef(posicion.x, posicion.y, 0);
-    monedas->draw();
+    this->monedas->draw();
    switch (vidas) {
     case 1:
         vida1->draw();
@@ -44,6 +44,20 @@ void Vidas::Dibuja(int vidas) {
         vida5->draw();
         break; 
     }
+   //posiicon.x - 20, 20,
+   switch (h.GetMonedas()) {
+   case 0:
+      // auxetsidi.Imagen("0", h.GetPos().x - 19, h.GetPos().x - 18, 19, 21);
+       break;
+
+   case 1:
+       //auxetsidi.Imagen("1", h.GetPos().x - 19, h.GetPos().x - 18, 19, 21);
+       break;
+   case 2:
+      // auxetsidi.Imagen("2", h.GetPos().x - 19, h.GetPos().x - 18, 19, 21);
+       break;
+   }
+   
    glTranslatef(-posicion.x, -posicion.y, 0);
 }
 void Vidas::Mueve(float xojo) {

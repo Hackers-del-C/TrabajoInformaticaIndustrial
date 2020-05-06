@@ -1,13 +1,13 @@
 #pragma once
 #include "Hombre.h"
 #include "ETSIDI.h"
-
+#include"AuxEtsidi.h"
  
 using namespace ETSIDI;
 class Vidas {
 	ETSIDI::Vector2D posicion;
 public:
-	void Dibuja(int vidas);
+	void Dibuja(Hombre& h, int vidas);
 	void Inicializa(Hombre h);
 	void Mueve(float xojo);
 
@@ -17,4 +17,5 @@ public:
 	ETSIDI::Sprite* vida4;
 	ETSIDI::Sprite* vida5;
 	ETSIDI::Sprite* monedas;
+	AuxEtsidi auxetsidi;
 };

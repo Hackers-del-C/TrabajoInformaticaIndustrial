@@ -109,7 +109,7 @@ void Mundo::Dibuja()
 	}
 	else if (level>0) {
 		hombre.Dibuja(pantalla);
-		vidas.Dibuja(hombre.GetVidas());
+		vidas.Dibuja(hombre,hombre.GetVidas());
 		if (pantalla!=1 && pantalla!=2) {
 			glPushMatrix();//guarda la matriz
 			glColor3f(0, 0, 1);
