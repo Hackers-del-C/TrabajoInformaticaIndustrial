@@ -67,16 +67,15 @@ void Entorno::Dibuja(int nivel) {
 	}
 }
 void Entorno::Aviso(int pantalla, int x, int y) {
+	//IMAGEN:es un cuadro negro para que salga bien los datos que queramos en medio but no consigo que vaya
 	auxetsidi.Imagen("aviso", x - 10, x + 10, y + 10, y + 20);
 	switch(pantalla){
-	case 1: //pantalla si mueres
-		
+	case 1: //pantalla si mueres		
 		//TEXTO
 		auxetsidi.Texto("PULSA 8 PARA REINICIAR EL NIVEL", x-10, y+14, 1, 0, 0, 10);
 		auxetsidi.Texto("PULSA 7 PARA VOLVER AL MENU PRINCIPAL", x-10,y+10, 1, 0, 0, 10);
 		break;
-	case 2: //pantalla si ganas
-		
+	case 2: //pantalla si ganas		
 		//TEXTO
 		auxetsidi.Texto("ENHORABUENAaAaAaA", x - 10, y + 14, 1, 0, 0, 10);
 		auxetsidi.Texto("PULSA 9 PARA VOLVER AL MENU PRINCIPAL", x - 10, y + 10, 1, 0, 0, 10);

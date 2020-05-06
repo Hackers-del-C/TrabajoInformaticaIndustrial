@@ -101,8 +101,7 @@ void Mundo::Dibuja()
 	entorno.Dibuja(level);
 	entorno.Aviso(pantalla, hombre.posicion.x, hombre.posicion.y);
 	limites.Dibuja();
-	if (level == 0) {
-		
+	if (level == 0) {		
 		hombre.FinPartida();
 		Setojo(0, 10, 53);
 		pantalla = 0;
@@ -153,13 +152,14 @@ void Mundo::Dibuja()
 				hombre.SetVel(0, 0);
 				hombre.SetAceleracion(0, -10);
 				pantalla=1;				
-				
+				//musica de muerte va aqui
 			}
 			 //FIN DE PARTIRA: Ganador
 			if (hombre.posicion.x > 100) {//HABRÁ QUE AMPLIARLO
 				hombre.SetVel(0, 0);
 				hombre.SetAceleracion(0, -10);
 				pantalla=2;
+				//musica de ganador va aqui
 
 			}
 			//misilizq.Dibuja();
@@ -380,7 +380,7 @@ void Mundo::Tecla(unsigned char key)
 		}
 	}
 	switch (pantalla) {
-	case 0:
+	case 0: //SI NO ESTÁ NI MUERTO NI CON EL NIVEL ACABADO
 		switch (key) {
 		case 'w':
 			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, 22.0f));
@@ -432,20 +432,24 @@ void Mundo::Tecla(unsigned char key)
 			break;
 		}
 		break;
-	case 1:
+	case 1: //MUERE
 		switch (key) {
-		case 7:
+		case '7': //VOLVER AL MENU PRINCIPAL
 			level = 0;
-			break;
-		case 8:
-			level = 1;
 			pantalla = 0;
+			//NO SE USA EL hombre.FinPartida()  PORQUE ESTA ARRIBA AL TENER LEVEL==0
+			break;
+		case '8': //REINICIAR EL NIVEL
+			level = 1;
+			hombre.FinPartida();//REINICIA TODO LO DEL HOMBRE
+			Setojo(0, 10, 53);
+			pantalla = 0;			
 			break;
 		}
 		break;
-	case 2:
+	case 2: //GANADOR
 		switch (key) {
-		case 7:
+		case '7':
 			level = 0;
 			pantalla = 0;
 			break;
