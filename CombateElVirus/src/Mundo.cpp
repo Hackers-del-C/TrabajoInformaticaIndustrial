@@ -300,6 +300,8 @@ void Mundo::Mueve()
 			hombre.SetVidas(hombre.GetVidas() - 1);
 			misiles.Eliminar(aux);
 		}
+			//misiles.Eliminar(aux);
+		
 		//misiles.Explota();
 	}
 
@@ -363,6 +365,9 @@ void Mundo::Mueve()
 	//	misiles.Eliminar(auxm);
 	//	hombre.SetVidas(hombre.GetVidas() - 1);
 	//}
+	
+	/*glutTimerFunc(2500,Virus::Muere , 0);
+	glutPostRedisplay();*/
 }
 
 

@@ -10,7 +10,11 @@
 using namespace ETSIDI;
 using namespace std;
 using ETSIDI::getTexture;
+void Virus::OnTimer(int value) {
 
+   /* glutTimerFunc(25, Virus::OnTimer, 0);
+    glutPostRedisplay();*/
+}
 Virus::Virus(){
 
     posicion.x = 10;
@@ -65,6 +69,8 @@ void Virus::Muere(ETSIDI::Vector2D vectormuerte)
     spritemuere->setAngle(vectormuerte.argument()* 180 / 3.14159265); //Hay que mirar si la funcion vector 2d de etsidi tiene argumento (atan(vectormuerte.y/vectormuerte.x)
     muere = 1;
     ETSIDI::play("mis_sonidos/virusmuere1.wav");
+    /*glutPostRedisplay();
+    glutTimerFunc(2500,Muere, 0);*/
 }
 
 void Virus::SetVel(float vx, float vy)

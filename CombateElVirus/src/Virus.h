@@ -12,7 +12,7 @@ using namespace std;
 class Virus {
     friend class Interaccion;
 public:
-    
+    void OnTimer(int value);
     Virus();
     virtual ~Virus();
     void Dibuja(int nivel);
