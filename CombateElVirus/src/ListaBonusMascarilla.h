@@ -23,7 +23,8 @@ public:
 	BonusMascarilla* operator [](int i);
 	int getNumero() { return numero; }
 
-	void colision(Hombre& h);
+	BonusMascarilla* colision(Hombre& h);
+
 	void Colision(Limites l);
 	void Colision(Plataformas p);
 

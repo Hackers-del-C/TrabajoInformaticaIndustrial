@@ -220,7 +220,14 @@ void Mundo::Mueve()
 		}
 	}
 
-	listabonusmascarilla.colision(hombre);
+	BonusMascarilla* auxBM= listabonusmascarilla.colision(hombre);
+	if (auxBM != 0) {
+		if (hombre.GetVidas() <= 4) {
+			hombre.SetVidas(hombre.GetVidas() + 1);
+			listabonusmascarilla.eliminar(auxBM);
+		}
+	}
+
 	listabonustest.colision(hombre);
 
 	/*if (Interaccion::colision(hombre, bonus1)) {

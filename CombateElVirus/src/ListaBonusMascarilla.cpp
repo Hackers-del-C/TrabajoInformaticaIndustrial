@@ -59,13 +59,16 @@ void ListaBonusMascarilla::eliminar(int index)
 		lista[i] = lista[i + 1];
 }
 
-void ListaBonusMascarilla::colision(Hombre& h)
+BonusMascarilla* ListaBonusMascarilla::colision(Hombre& h)
 {
 	for (int i = 0; i < numero; i++)
 	{
 		if (Interaccion::ColisionBonus(h, *(lista[i])))
-			eliminar(i);
+			
+			//eliminar(i);
+			return lista[i];
 	}
+	return false;
 }
 
 
