@@ -6,7 +6,7 @@ void Entorno::Inicializa(int nivel) {
 	switch (nivel) {
 	case 0:
 		//ETSIDI::play("mis_sonidos/Menu.wav");
-		ETSIDI::play("mis_sonidos/nivel1bueno.wav");
+		ETSIDI::play("mis_sonidos/menu.wav");//marco no toques por dios
 		break;
 	case 1:
 		//ETSIDI::play("mis_sonidos/China.wav");
@@ -18,13 +18,14 @@ void Entorno::Inicializa(int nivel) {
 	case 3:
 		ETSIDI::play("mis_sonidos/Espania.wav");
 		break;
+		
 	}	
 }
 
 void Entorno::Dibuja(int nivel) {
 
 	switch (nivel) {
-	case 0:	
+	case 0:
 		//IMAGENES
 		auxetsidi.Imagen("menu", -26, 26, -10, 30); //limx1 limx2 limy1 limy2. La textura es cte -0.1		
 		//TEXTO
@@ -32,7 +33,7 @@ void Entorno::Dibuja(int nivel) {
 		auxetsidi.Texto("Nivel 1. China", -22, 12, 0, 0, 0, 20);
 		auxetsidi.Texto("Nivel 2. Italia", -22, 10, 0, 0, 0, 20);
 		auxetsidi.Texto("Nivel 3. Espanita", -22, 8, 0, 0, 0, 20);
-		
+
 		break;
 	case 1:
 		//IMAGENES
@@ -42,7 +43,7 @@ void Entorno::Dibuja(int nivel) {
 		//TEXTO
 		auxetsidi.Texto("NIVEL 1", -24, 25, 0, 0, 0, 36);
 		auxetsidi.Texto("CHINA", -21, 22, 0, 0, 0, 40);
-		
+
 		break;
 	case 2:
 		//IMAGENES
@@ -51,7 +52,7 @@ void Entorno::Dibuja(int nivel) {
 		//TEXTO
 		auxetsidi.Texto("NIVEL 2", -24, 25, 0, 0, 0, 36);
 		auxetsidi.Texto("ITALIA", -21, 22, 0, 0, 0, 40);
-		
+
 		break;
 	case 3:
 		//IMAGENES
@@ -61,8 +62,26 @@ void Entorno::Dibuja(int nivel) {
 		auxetsidi.Texto("NIVEL 3", -24, 25, 0, 0, 0, 36);
 		auxetsidi.Texto("ESPANIA", -21, 22, 0, 0, 0, 40);
 		break;
+
+
 	}
-	
+}
+void Entorno::Aviso(int pantalla, int x, int y) {
+	auxetsidi.Imagen("aviso", x - 10, x + 10, y + 10, y + 20);
+	switch(pantalla){
+	case 1: //pantalla si mueres
+		
+		//TEXTO
+		auxetsidi.Texto("PULSA 8 PARA REINICIAR EL NIVEL", x-10, y+14, 1, 0, 0, 10);
+		auxetsidi.Texto("PULSA 7 PARA VOLVER AL MENU PRINCIPAL", x-10,y+10, 1, 0, 0, 10);
+		break;
+	case 2: //pantalla si ganas
+		
+		//TEXTO
+		auxetsidi.Texto("ENHORABUENAaAaAaA", x - 10, y + 14, 1, 0, 0, 10);
+		auxetsidi.Texto("PULSA 9 PARA VOLVER AL MENU PRINCIPAL", x - 10, y + 10, 1, 0, 0, 10);
+		break;
+	}
 }
 
 void Entorno::Tecla(unsigned char key) {

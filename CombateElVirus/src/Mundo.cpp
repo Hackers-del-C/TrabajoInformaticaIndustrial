@@ -11,8 +11,6 @@
 
 
 Mundo::Mundo(){
-	 //ESTABA INICIALIZADO AQUI EL LEVEL. PERO TIENE QUE IR EN MENU.H 
-	//Asi ya trabajamos como debería ser ;)
 
 }
 void Mundo::Setojo(float ox, float oy, float oz) {
@@ -101,74 +99,80 @@ void Mundo::Dibuja()
 		0.0, 5.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
 	
 	entorno.Dibuja(level);
+	entorno.Aviso(pantalla, hombre.posicion.x, hombre.posicion.y);
 	limites.Dibuja();
-
-	if (level !=0) {
+	if (level == 0) {
 		
-		glPushMatrix();//guarda la matriz
-	
-		glColor3f(0, 0, 1);
-		glutSolidSphere(0.2,15,15); //dibuja la esfera solida
-		glColor3f(0, 0, -1);
+		hombre.FinPartida();
+		Setojo(0, 10, 53);
+		pantalla = 0;
+	}
+	else if (level>0) {
+		hombre.Dibuja(pantalla);
+		vidas.Dibuja(hombre.GetVidas());
+		if (pantalla!=1 && pantalla!=2) {
+			glPushMatrix();//guarda la matriz
+			glColor3f(0, 0, 1);
+			glutSolidSphere(0.2, 15, 15); //dibuja la esfera solida
+			glColor3f(0, 0, -1);
+			glPopMatrix();//la guarda y la restaura
+
 		
-		glPopMatrix();//la guarda y la restaura
+			personajes.Dibuja(level, hombre);
+			disparos.Dibuja();
+			misiles.Dibuja();
+			lanzamisiles1.Dibuja();
 
-		hombre.Dibuja();
-		personajes.Dibuja(level, hombre);		
-		disparos.Dibuja();
-		misiles.Dibuja();
-		lanzamisiles1.Dibuja();
+			virus1.Dibuja(level);
+			//bonus1.Dibuja();
+			//plataformas.Dibuja(); PRUEBA
+			plataformaprueba.Dibuja();
 
-		virus1.Dibuja(level);
-		//bonus1.Dibuja();
-		//plataformas.Dibuja(); PRUEBA
-		plataformaprueba.Dibuja();
-
-		vidas.Dibuja(hombre.GetVidas());		
-		bordessube.Dibuja();
-		listavirus.dibuja();
-		listabonusmascarilla.dibuja();
-		listabonustest.dibuja();
-
-		zapatos.Dibuja(hombre);
-
-		float naleatorio = lanzaDado(1000.0);
-		if (naleatorio < 10) {
-			misiles.Agregar(new Misil("imagenes/misilizq.png", 15, -3.5, -5.0f, 0.0f));
-		}
-		//plataformas.Agregar(new Plataformas(10, 1, 20, 1.25));
-		//plataformas.Agregar(new Plataformas(25, 3, 35, 3.25));
-
-		 //FIN DE PARTIDA
-		if (hombre.GetVidas() == 0 ) { //con un || pondría aqui cuando se acaba el nivel 
-			// habría que poner con un contador de esos un tiempo para que se viera que el sprite cambia a muerto y cae al vacio)
-			while (finde==1) { 
-				hombre.SetVel(0, 0);
-				hombre.SetAceleracion(0, -10);					
-			}
-			finde = 0;
-			hombre.FinPartida();
-			level = 0;
-			Setojo(0, 10, 53);	
 			
-		}
-		//misilizq.Dibuja();
-		//disparo.Dibuja();
-		//plataforma.Dibuja();
-		//bonus.Dibuja();
-		//hombre.SetVidas(4);		
-		//vidas.Dibuja(mascarillas);
-		//disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y + 2, 0.0f, 22.0f));
-		//bordessube.Agregar(new BordesSube(10, 1, 20, 1.5));
-		//bordessube.Agregar(new BordesSube(25, 3, 35, 3.5));		
+			bordessube.Dibuja();
+			listavirus.dibuja();
+			listabonusmascarilla.dibuja();
+			listabonustest.dibuja();
 
-		//ETSIDI::Vector2D posicion = hombre.GetPos();
+			zapatos.Dibuja(hombre);
+			 
+			float naleatorio = lanzaDado(1000.0);
+			if (naleatorio < 10) {
+				misiles.Agregar(new Misil("imagenes/misilizq.png", 15, -3.5, -5.0f, 0.0f));
+			}
+			if (naleatorio < 2) {
 
-		
+				listabonusmascarilla.agregar(new BonusMascarilla("mascarilla", hombre.GetPosX() + naleatorio * 10, 25, 1.5, 1.5));
+			}
+			//plataformas.Agregar(new Plataformas(10, 1, 20, 1.25));
+			//plataformas.Agregar(new Plataformas(25, 3, 35, 3.25));
 
-		if (naleatorio < 2) {
+			 //FIN DE PARTIDA : Muerte
+			if (hombre.GetVidas() == 0) { 
+				// habría que poner con un contador de esos un tiempo para que se viera que el sprite cambia a muerto y cae al vacio)
+				hombre.SetVel(0, 0);
+				hombre.SetAceleracion(0, -10);
+				pantalla=1;				
+				
+			}
+			 //FIN DE PARTIRA: Ganador
+			if (hombre.posicion.x > 40) {//HABRÁ QUE AMPLIARLO
+				hombre.SetVel(0, 0);
+				hombre.SetAceleracion(0, -10);
+				pantalla=2;
 
-			listabonusmascarilla.agregar(new BonusMascarilla("mascarilla", hombre.GetPosX() + naleatorio*10 , 25, 1.5, 1.5));
+			}
+			//misilizq.Dibuja();
+			//disparo.Dibuja();
+			//plataforma.Dibuja();
+			//bonus.Dibuja();
+			//hombre.SetVidas(4);		
+			//vidas.Dibuja(mascarillas);
+			//disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y + 2, 0.0f, 22.0f));
+			//bordessube.Agregar(new BordesSube(10, 1, 20, 1.5));
+			//bordessube.Agregar(new BordesSube(25, 3, 35, 3.5));		
+
+			//ETSIDI::Vector2D posicion = hombre.GetPos();			
 		}
 	}
 }
@@ -191,8 +195,9 @@ void Mundo::Mueve()
 	
 
 	//.Mueve//
-
-	personajes.Mueve(0.025f);
+	if (pantalla != 1 && pantalla != 2) {
+		personajes.Mueve(0.025f);
+	}
 	virus1.Mueve(0.025f, hombre);
 	//bonus1.Mueve(0.025f);
 	hombre.Mueve(0.025f);
@@ -214,9 +219,9 @@ void Mundo::Mueve()
 	//Interaccion::Colision(bonus1, limites);
 
 	
-	if (finde != 1) {
+
 		Interaccion::reboteinterior(hombre, limites);
-	}
+	
 
 	if (Interaccion::Colision(hombre, virus1)) {
 		if (virus1.GetMuerto() == 0) {
@@ -280,13 +285,6 @@ void Mundo::Mueve()
 		//plataformaprueba.aux = 1;
 
 	}
-
-	
-
-
-	//IMPORTANTE//Interaccion::reboteexterior(hombre, plataforma1);
-	//Interaccion::colision(misiles, hombre); /// no funciona
-
 
 	//Colision virus con disp	
 	if (disparos.Colision(virus1)) {//si alguna esfera ha chocado
@@ -367,8 +365,7 @@ void Mundo::Mueve()
 
 
 void Mundo::Tecla(unsigned char key)
-{	
-	
+{	//NIVELES:	
 	if (level == 0) {
 		switch (key) {
 		case '1':
@@ -382,21 +379,16 @@ void Mundo::Tecla(unsigned char key)
 			break;
 		}
 	}
-	entorno.Tecla(key);
-	if (level != 0) {//para que no dispare mientras estemos en el nivel 0 
+	switch (pantalla) {
+	case 0:
 		switch (key) {
-
 		case 'w':
-			
 			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, 22.0f));
-			
 
 			break;
-			
 		case 's':
-			
-			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, -22.0f)); /// radio, x , y, vx, vy
-			
+
+			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, -22.0f)); /// radio, x , y, vx, vy			
 			break;
 
 		case 'a':
@@ -408,24 +400,24 @@ void Mundo::Tecla(unsigned char key)
 			break;
 
 		case 'j':
-			
+
 			listabonusmascarilla.agregar(new BonusMascarilla("mascarilla", hombre.GetPos().x, 25, 1.5, 1.5));
 			break;
 		case 'x':
 			//virus.Muere();
-			
+
 			misiles.Agregar(new Misil("imagenes/misilizq.png", 15, -3.0f, -5.0f, 0.0f));
 			break;
 			///////// TESTS DE VIDAS
 		case 't':
-			if (hombre.GetVidas()< 5) {
-				 /// radio, x , y, vx, vy
-				hombre.SetVidas(hombre.GetVidas() +1);
+			if (hombre.GetVidas() < 5) {
+				/// radio, x , y, vx, vy
+				hombre.SetVidas(hombre.GetVidas() + 1);
 			}
 
 			break;
 		case 'y':
-			if (hombre.GetVidas()> 0) {
+			if (hombre.GetVidas() > 0) {
 				//hombre.vidas--; /// radio, x , y, vx, vy
 				hombre.SetVidas(hombre.GetVidas() - 1);
 			}
@@ -438,16 +430,37 @@ void Mundo::Tecla(unsigned char key)
 			//misiles.DestruirContenido(i);
 			i++;
 			break;
-
-		
 		}
+		break;
+	case 1:
+		switch (key) {
+		case 7:
+			level = 0;
+			break;
+		case 8:
+			level = 1;
+			pantalla = 0;
+			break;
+		}
+		break;
+	case 2:
+		switch (key) {
+		case 7:
+			level = 0;
+			pantalla = 0;
+			break;
+
+		}
+		break;
 	}
+	entorno.Tecla(key);
+	
 }
 
 void Mundo::teclaEspecial(unsigned char key) {
 	//distancia = 0;
-	 glutSetKeyRepeat(1);
-	 if (level != 0) {//para que no se mueva cuando esta en el menu
+	// glutSetKeyRepeat(1);
+	 if (pantalla!=1 && pantalla!=2) {//para que no se mueva cuando esta en el menu
 		 switch (key)
 		 {
 		 case GLUT_KEY_LEFT:
@@ -481,7 +494,6 @@ void Mundo::teclaEspecial(unsigned char key) {
 
 		 }
 	 }
-
 
 }
 //void Mundo::MyMouse(int button, int state, int x, int y){

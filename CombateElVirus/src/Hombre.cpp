@@ -21,23 +21,32 @@ Hombre::Hombre() {
 Hombre::~Hombre() {
 
 }
-void Hombre::Dibuja()
+void Hombre::Dibuja(int pantalla)
 {
     glTranslatef(posicion.x, posicion.y, 0);
+    if (pantalla==2) {
+        mariovictoria->draw();
+    }
+    else if (pantalla==1) {
+        mariovictoria->draw(); //para pruebas
+        //mariomuerte->draw();
+    }
+    else {
 
-    switch (dir) {
-    case 0:
-        mario->draw();
-        break;
+        switch (dir) {
+        case 0:
+            mario->draw();
+            break;
 
-    case 1:
-        marioder->draw();
-        break;
+        case 1:
+            marioder->draw();
+            break;
 
-    case 2:
+        case 2:
 
-        marioizq->draw();
-        break;
+            marioizq->draw();
+            break;
+        }
     }
         glTranslatef(-posicion.x, -posicion.y, 0);
     
@@ -50,13 +59,13 @@ void Hombre::Mueve(float t)
     posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
     velocidad = velocidad + aceleracion * t;
 
-    //ESTO LO PONDRIA CON UN SWICH Y AHORRAMOS MEMORIA
-    
+    //ESTO LO PONDRIA CON UN SWICH Y AHORRAMOS MEMORIA   
 
     mario->loop();
     marioder->loop();
     marioizq->loop();
-
+    mariomuerte->loop(); 
+    mariovictoria->loop();
   
 
 }
@@ -68,13 +77,8 @@ void Hombre::Inicializa(){
     marioder = new SpriteSequence("imagenes/mario/marioandader.png", 7, 1, 25, true, 0, 0, 4, 4); 
     marioizq = new SpriteSequence("imagenes/mario/marioandaizq.png", 7, 1, 25, true, 0, 0, 4, 4);
     mariomuerte = new SpriteSequence("imagenes/mario/mariomuerte.png",5, 1, 25, true, 0, 0, 4, 4);//no se por que no funciona bien el sprite
-
-    ////level 2
-    /*
-    trump = new SpriteSequence("imagenes/trump.png", 6, 4, 25, true, -2, 2, 5, 5);
-    trumpder = new SpriteSequence("imagenes/trumpder.png", 6, 1, 25, true, -2, 2, 5, 5);
-    trumpizq = new SpriteSequence("imagenes/trumpizq.png", 6, 1, 25, true, -2, 2, 5, 5);
-    */
+    mariovictoria = new SpriteSequence("imagenes/mario/mariovictoria.png", 7, 1, 25, true, 0, 0, 4, 4);
+   
    
    
     altura = 4;

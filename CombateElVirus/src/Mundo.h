@@ -27,6 +27,7 @@ class Mundo
 
 public: 
 	int level;//SE CAMBIA DESDE MENU.H 
+	
 	int mascarillas = 5;
 	//generales
 	Mundo();
@@ -47,7 +48,7 @@ private:
 	// constantes para el salto
 	int distancia=0;
 	int salto =0;
-	int finde = 0; //aux para fin de partida
+	int pantalla=0;//aux
 	//
 	//Disparo disparo;
 	Personajes personajes;

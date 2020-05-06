@@ -14,7 +14,7 @@ public:
 
     Hombre();
     virtual ~Hombre();
-    void Dibuja();
+    void Dibuja(int pantalla);
     void Mueve(float t);
     void SetVel(float vx, float vy);
     ETSIDI::Vector2D GetVel() { return velocidad; }
@@ -39,19 +39,14 @@ public:
     }
     ETSIDI::Vector2D GetAceleracion() { return aceleracion; }
 
-
-
    ETSIDI::Vector2D posicion, velocidad, aceleracion;
-   ETSIDI::SpriteSequence* trump;
-   ETSIDI::SpriteSequence* trumpder;
-   ETSIDI::SpriteSequence* trumpizq;
 
    ETSIDI::SpriteSequence* mario;
    ETSIDI::SpriteSequence* marioder;
    ETSIDI::SpriteSequence* marioizq;
 
    ETSIDI::SpriteSequence* mariomuerte;
-   
+   ETSIDI::SpriteSequence* mariovictoria;
 
   
 
