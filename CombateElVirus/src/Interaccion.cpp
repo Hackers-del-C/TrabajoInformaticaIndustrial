@@ -32,46 +32,17 @@ bool Interaccion::colision(Hombre h, Limites l) {
     return false;
 }
 bool Interaccion::colision(Misil misil, Hombre h) {
-    /*    float distancia = (misil.posicion - h.posicion).module();
-        if (distancia <= 0.0) {
-            return true;
-        }
-        return false;*/
-
-        //return h.gokuizq->collides(*misil.misil);
-  /*  float px, py, distancia;
-    px = misil.posicion.x; // En principio son iguales
-    if (px < h.posicion.x - 22) px = h.posicion.x - 22;
-    if (px > h.posicion.x - 22 + h.anchura) px = h.posicion.x - 22 + h.anchura;
-    py = misil.posicion.y;
-    if (py < misil.posicion.y + 2) py = misil.posicion.y + 2;
-    if (py > misil.posicion.y + 2 + h.altura) py = h.posicion.y + 2 + h.altura;
-    distancia = sqrt((misil.posicion.x - px) * (misil.posicion.x - px) + (misil.posicion.y - py) * (misil.posicion.y - py));
-    //distancia = sqrt((misil.posicion.x - h.posicion.x) * (misil.posicion.x - h.posicion.x) + (misil.posicion.y - h.posicion.y) * (misil.posicion.y - h.posicion.y));
-    if (distancia <= h.anchura / 2) {
-        // Colisión detectada
-        return true;
-    }
-    return false;
-*/
-    
-    if (h.posicion.x -20> misil.posicion.x - misil.anchura) { return false; }
-    if (h.posicion.x + h.anchura-20 < misil.posicion.x) { return false; }
-    if (h.posicion.y -40 > misil.altura + misil.posicion.y) { return false; }
-    if (h.posicion.y +2  < misil.posicion.y) { return false; }
+   
+  
+    if (h.posicion.x - h.anchura / 2 > misil.posicion.x + misil.anchura / 2) { return false; }
+    if (h.posicion.x + h.anchura / 2 < misil.posicion.x - misil.anchura / 2) { return false; }
+    if (h.posicion.y - h.altura / 2 > misil.altura / 2 + misil.posicion.y) { return false; }
+    if (h.posicion.y + h.altura / 2 < misil.posicion.y - misil.altura / 2) { return false; }
     else {
         return true;
     }
-    
 }
-//bool Interaccion::Colision(Hombre h, Plataformas p) {
-//    ETSIDI::Vector2D  dir;
-//    float dif = p.distancia(h.GetPos(), &dir) - h.altura; //antes no estaba lo de -h.altura pero no se si arregla algo o lo empeora
-//    if (dif <= 0.0f) {
-//        return true;
-//    }
-//    return false;
-//}
+
 
 bool Interaccion::Colision(Plataformas p, Zapatos z) {
     ETSIDI::Vector2D  dir;
