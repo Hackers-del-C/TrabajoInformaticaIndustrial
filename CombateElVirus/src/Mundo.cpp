@@ -41,12 +41,17 @@ void Mundo::Inicializa()
 	
 	virus1.Inicializa("virusseta", 8, 1, 0, 0, 3, 3, 0, 0);
 	limites.SetLimites(-20, 500, -3.5, 30); //Son los bordes del juego que el jugador no puede pasar
-
-	//bonus1.Inicializa("mascarilla", 5, 25,1.5,1.5 );
+	
 	vidas.Inicializa(hombre);
 	
 	plataformaprueba.Inicializa(0, 1, 8, 3);
 
+
+	for (int i = 0; i < BONUSTEST; i++) {
+
+		listabonustest.agregar(new BonusTest("test", lanzaDado(180), lanzaDado(6), 3, 3));
+
+	}
 
 
 	//bonus.SetPos(5.0f, 5.0f);
@@ -121,11 +126,11 @@ void Mundo::Dibuja()
 		bordessube.Dibuja();
 		listavirus.dibuja();
 		listabonusmascarilla.dibuja();
-
+		listabonustest.dibuja();
 
 		zapatos.Dibuja(hombre);
 
-		int naleatorio = lanzaDado(1000);
+		float naleatorio = lanzaDado(1000.0);
 		if (naleatorio < 10) {
 			misiles.Agregar(new Misil("imagenes/misilizq.png", 15, -3.5, -5.0f, 0.0f));
 		}
@@ -154,6 +159,13 @@ void Mundo::Dibuja()
 		//disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y + 2, 0.0f, 22.0f));
 		//bordessube.Agregar(new BordesSube(10, 1, 20, 1.5));
 		//bordessube.Agregar(new BordesSube(25, 3, 35, 3.5));		
+
+		//ETSIDI::Vector2D posicion = hombre.GetPos();
+
+		if (naleatorio < 2) {
+
+			listabonusmascarilla.agregar(new BonusMascarilla("mascarilla", hombre.GetPosX() + naleatorio*10 , 25, 1.5, 1.5));
+		}
 	}
 }
 
@@ -187,7 +199,6 @@ void Mundo::Mueve()
 	listavirus.mueve(0.025f, hombre);
 	listabonusmascarilla.mueve(0.025f);
 	listabonusmascarilla.Colision(limites);
-
 	listabonusmascarilla.Colision(plataformaprueba);
 	//bonus1.Mueve(0.025);
 	//zapatos.Mueve(0.025f, hombre);
@@ -210,6 +221,7 @@ void Mundo::Mueve()
 	}
 
 	listabonusmascarilla.colision(hombre);
+	listabonustest.colision(hombre);
 
 	/*if (Interaccion::colision(hombre, bonus1)) {
 		hombre.SetVidas(hombre.GetVidas() + 1);

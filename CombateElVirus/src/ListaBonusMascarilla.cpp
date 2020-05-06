@@ -17,8 +17,6 @@ void ListaBonusMascarilla::destruirContenido()
 }
 
 
-
-
 ListaBonusMascarilla::~ListaBonusMascarilla()
 {
 

@@ -85,6 +85,7 @@
   <ItemGroup>
     <ClCompile Include="src\Amigo.cpp" />
     <ClCompile Include="src\BonusMascarilla.cpp" />
+    <ClCompile Include="src\BonusTest.cpp" />
     <ClCompile Include="src\BordesChoca.cpp" />
     <ClCompile Include="src\BordesSube.cpp" />
     <ClCompile Include="src\Lanzamisiles.cpp" />
@@ -95,6 +96,7 @@
     <ClCompile Include="src\Hombre.cpp" />
     <ClCompile Include="src\Interaccion.cpp" />
     <ClCompile Include="src\ListaBonusMascarilla.cpp" />
+    <ClCompile Include="src\ListaBonusTest.cpp" />
     <ClCompile Include="src\ListaBordesSube.cpp" />
     <ClCompile Include="src\ListaDisparos.cpp" />
     <ClCompile Include="src\Listalanzamisiles.cpp" />
@@ -119,6 +121,7 @@
     <ClInclude Include="src\Amigo.h" />
     <ClInclude Include="src\Bonus.h" />
     <ClInclude Include="src\BonusMascarilla.h" />
+    <ClInclude Include="src\BonusTest.h" />
     <ClInclude Include="src\BordesChoca.h" />
     <ClInclude Include="src\BordesSube.h" />
     <ClInclude Include="src\Lanzamisiles.h" />
@@ -129,6 +132,7 @@
     <ClInclude Include="src\Hombre.h" />
     <ClInclude Include="src\Interaccion.h" />
     <ClInclude Include="src\ListaBonusMascarilla.h" />
+    <ClInclude Include="src\ListaBonusTest.h" />
     <ClInclude Include="src\ListaBordesSube.h" />
     <ClInclude Include="src\ListaDisparos.h" />
     <ClInclude Include="src\Listalanzamisiles.h" />

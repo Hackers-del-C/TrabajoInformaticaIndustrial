@@ -15,6 +15,7 @@
 #include "ListaDisparos.h"
 #include "Listamisiles.h"
 #include "ListaBonusMascarilla.h"
+#include "ListaBonusTest.h"
 
 //borrar en un futuro:
 #include "VirusSeta.h"
@@ -66,6 +67,7 @@ private:
 	ListaBordesSube bordessube;
 	ListaVirus listavirus;
 	ListaBonusMascarilla listabonusmascarilla;
+	ListaBonusTest listabonustest;
 	Zapatos zapatos;
 	//BonusMascarilla bonus1;
 	//Bonus bonus;
