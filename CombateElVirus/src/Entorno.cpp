@@ -52,7 +52,12 @@ void Entorno::Dibuja(int nivel) {
 		//IMAGENES
 		auxetsidi.Imagen("banderachina", -4, 4, 22, 27);
 		auxetsidi.Imagen("prenivel", -30, 26, -10, 30);
-		auxetsidi.Imagen("laboratorio", 26, 156, -18, 45);
+		auxetsidi.Imagen("fondobasico", 26, 82, -10, 30);
+		auxetsidi.Imagen("fondobasico", 82, 138, -10, 30);
+		auxetsidi.Imagen("fondobasico", 138, 194, -10, 30);
+		auxetsidi.Imagen("fondobasico", 194, 250, -10, 30);
+		auxetsidi.Imagen("fondobasico", 250, 306, -10, 30);
+		//auxetsidi.Imagen("laboratorio", 26, 156, -18, 45);
 		//TEXTO
 		auxetsidi.Texto("NIVEL 1", -24, 25, 0, 0, 0, 36);
 		auxetsidi.Texto("CHINA", -21, 22, 0, 0, 0, 40);
@@ -62,6 +67,11 @@ void Entorno::Dibuja(int nivel) {
 		//IMAGENES
 		auxetsidi.Imagen("banderaitaliana", -4, 4, 22, 27);
 		auxetsidi.Imagen("prenivel", -30, 26, -10, 30);
+		auxetsidi.Imagen("fondobasico", 26, 82, -10, 30);
+		auxetsidi.Imagen("fondobasico", 82, 138, -10, 30);
+		auxetsidi.Imagen("fondobasico", 138, 194, -10, 30);
+		auxetsidi.Imagen("fondobasico", 194, 250, -10, 30);
+		auxetsidi.Imagen("fondobasico", 250, 306, -10, 30);
 		//TEXTO
 		auxetsidi.Texto("NIVEL 2", -24, 25, 0, 0, 0, 36);
 		auxetsidi.Texto("ITALIA", -21, 22, 0, 0, 0, 40);
@@ -71,6 +81,11 @@ void Entorno::Dibuja(int nivel) {
 		//IMAGENES
 		auxetsidi.Imagen("banderaespañola", -4, 4, 22, 27);
 		auxetsidi.Imagen("prenivel", -30, 26, -10, 30);
+		auxetsidi.Imagen("fondobasico", 26, 82, -10, 30);
+		auxetsidi.Imagen("fondobasico", 82, 138, -10, 30);
+		auxetsidi.Imagen("fondobasico", 138, 194, -10, 30);
+		auxetsidi.Imagen("fondobasico", 194, 250, -10, 30);
+		auxetsidi.Imagen("fondobasico", 250, 306, -10, 30);
 		//TEXTO
 		auxetsidi.Texto("NIVEL 3", -24, 25, 0, 0, 0, 36);
 		auxetsidi.Texto("ESPANIA", -21, 22, 0, 0, 0, 40);

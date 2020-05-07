@@ -20,16 +20,6 @@ void Mundo::Setojo(float ox, float oy, float oz) {
 	z_ojo = oz;
 
 }
-/*
-//OJO
-void Mundo::RotarOjo()
-{
-	float dist=sqrt(x_ojo*x_ojo+z_ojo*z_ojo);
-	float ang=atan2(z_ojo,x_ojo);
-	ang+=0.05f;
-	x_ojo=dist*cos(ang);
-	z_ojo=dist*sin(ang);
-}*/
 
 void Mundo::fichero() {
 
@@ -39,7 +29,6 @@ void Mundo::fichero() {
 	//fichero << "Has tardado: " << tiempo << " segundos" << endl;
 
 	fichero.close();
-
 }
 
 void Mundo::Inicializa()
@@ -51,13 +40,9 @@ void Mundo::Inicializa()
 	personajes.Inicializa(hombre);	
 	
 	virus1.Inicializa("virusseta", 8, 1, 0, 0, 3, 3, 0, 0);
-	limites.SetLimites(-20, 500, -3.5, 30); //Son los bordes del juego que el jugador no puede pasar
-	
+	limites.SetLimites(-20, 500, -3.5, 30); //Son los bordes del juego que el jugador no puede pasar	
 	vidas.Inicializa(hombre);
 	
-	//plataformaprueba.Inicializa(0, 1, 8, 3);
-
-	//plataformas.Agregar(new Plataformas(0, 1, 4, 1.5));
 	for (int x = 0; x < 10; x++) {
 		if (x < 5) {
 			plataformas.Agregar(new Plataformas(10*x-x/2  , x + 2, 4, 1.5));
@@ -75,18 +60,7 @@ void Mundo::Inicializa()
 	}
 
 
-	//bonus.SetPos(5.0f, 5.0f);
-	//plataforma1.SetLimites(30, 60, 5, 10);//Los brdes de una plataforma
-	//plataforma.SetColor(255, 0, 0);//plataforma.SetPos(70.0f, 9.0f, 80.0f, 9.0f);
-	//disparo.SetPos(-5.0f, 0.0f);
-	//disparo.SetOri(-5.0f, 0.0f);
-	/*vida1.Inicializa(hombre,15,20);
-	vida2.Inicializa(hombre,19, 20);
-	vida3.Inicializa(hombre,23,20);
-	vida4.Inicializa(hombre,27, 20);
-	vida5.Inicializa(hombre,30, 20);*/
-	//misiles.Inicializa();
-	//misilizq.Inicializa();
+	
 	/* AGREGA VIRUS
 	for (int i = 0; i < 5; i++)
 	{
@@ -144,9 +118,6 @@ void Mundo::Dibuja()
 			listalanzamisiles.Dibuja();
 
 			virus1.Dibuja(level);
-			//bonus1.Dibuja();
-			//plataformas.Dibuja(); PRUEBA
-			//plataformaprueba.Dibuja();
 			plataformas.Dibuja();
 			
 			bordessube.Dibuja();
@@ -177,7 +148,7 @@ void Mundo::Dibuja()
 				//musica de muerte va aqui
 			}
 			 //FIN DE PARTIRA: Ganador
-			if (hombre.posicion.x > 100) {//HABRÁ QUE AMPLIARLO
+			if (hombre.posicion.x > 250) {//HABRÁ QUE AMPLIARLO
 				hombre.SetVel(0, 0);
 				hombre.SetAceleracion(0, -10);
 				pantalla=2;
