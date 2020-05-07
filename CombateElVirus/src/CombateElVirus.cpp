@@ -56,7 +56,7 @@ void OnDraw(void)
 	glLoadIdentity();
 	
 	mundo.Dibuja();
-	
+	mundo.Interaccion();
 	//no borrar esta linea ni poner nada despues
 	glutSwapBuffers();
 }
@@ -74,7 +74,7 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 void OnMouseClick(int b, int state, int x, int y)
 {
 	mundo.MyMouse(b, state, x, y);
-
+	
 	glutPostRedisplay();
 }
 

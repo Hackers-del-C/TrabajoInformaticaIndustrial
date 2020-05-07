@@ -208,8 +208,7 @@ void Mundo::Mueve()
 	vidas.Mueve(x_ojo);
 	listavirus.mueve(0.025f, hombre);
 	listabonusmascarilla.mueve(0.025f);
-	listabonusmascarilla.Colision(limites);
-	listabonusmascarilla.Colision(plataformaprueba);
+	
 	
 
 	////INTERACCIONES////
@@ -217,135 +216,6 @@ void Mundo::Mueve()
 	//Interaccion::Colision(bonus1, limites);
 
 	
-
-		Interaccion::reboteinterior(hombre, limites);
-	
-
-	if (Interaccion::Colision(hombre, virus1)) {
-		if (virus1.GetMuerto() == 0) {
-			hombre.SetVidas(hombre.GetVidas() - 1);
-		}
-	}
-
-	BonusMascarilla* auxBM= listabonusmascarilla.colision(hombre);
-	if (auxBM != 0) {
-		if (hombre.GetVidas() <= 4) {
-			hombre.SetVidas(hombre.GetVidas() + 1);
-			listabonusmascarilla.eliminar(auxBM);
-		}
-	}
-
-
-	BonusTest* auxBT= listabonustest.colision(hombre);
-	if (auxBT != 0) {
-		if (hombre.GetMonedas() <= 19) {
-			hombre.SetMonedas(hombre.GetMonedas() + 1);
-			listabonustest.eliminar(auxBT);
-			hombre.SetMonedas(hombre.GetMonedas() + 1);
-		}
-	}
-
-	/*if (Interaccion::colision(hombre, bonus1)) {
-		hombre.SetVidas(hombre.GetVidas() + 1);
-	}*/
-
-	//////HOMBRE-PLATAFORMA
-
-	if (Interaccion::colision(hombre, limites)) {
-		//|| Interaccion::ColisionSube(hombre, plataformaprueba)) {
-		salto = 1;
-	}
-
-	//////plataforma-hombre funciona: ---- NO BORRAR
-	/*
-	if (Interaccion::ColisionSube(hombre, plataformaprueba)) {
-		hombre.SetVel(hombre.GetVel().x, 0.0);
-		plataformaprueba.aux = 1;	
-		salto = 1;
-	}
-	else {
-
-		plataformaprueba.aux = 0;
-	}
-
-	if (Interaccion::ColisionChoca(hombre, plataformaprueba)) {
-		hombre.SetVel(hombre.GetVel().x, -10.0);
-
-
-		//plataformaprueba.aux = 1;
-
-	}
-	if (Interaccion::ColisionChocaLado(hombre, plataformaprueba)) {
-		hombre.SetVel(0.0, -10.0);
-
-		//plataformaprueba.aux = 1;
-
-	}
-	*/
-	//////////
-
-
-	if (plataformas.ColisionSube(hombre) != 0) {
-		hombre.SetVel(hombre.GetVel().x, 0.0);
-		salto = 1;
-	}
-	if (plataformas.ColisionChoca(hombre) != 0) {
-		hombre.SetVel(hombre.GetVel().x, -10.0);
-
-	}
-	if (plataformas.ColisionChocaLado(hombre) != 0) {
-		hombre.SetVel(0.0, -10.0);
-	}
-
-	//Colision virus con disp	
-	if (disparos.Colision(virus1)) {//si alguna esfera ha chocado
-		//virus1.Muere();
-		
-	}		//disparo.eliminar(aux7);	
-
-	///////// misil-hombre
-	Misil* aux = misiles.colision(hombre);
-	if (aux != 0) {
-		if (hombre.GetVidas() >= 1) {
-			hombre.SetVidas(hombre.GetVidas() - 1);
-			misiles.Eliminar(aux);
-		}
-			//misiles.Eliminar(aux);
-		
-		//misiles.Explota();
-	}
-
-	//////interacciones con plataforma -BASURA
-
-	/*  Plataformas* aux2 = plataformas.Colision(hombre);
-
-	if (aux2 != 0) {
-
-
-		/*plataformas.Agregar(new Plataformas(10, 3, 15, 3.5));
-		hombre.SetVel(hombre.GetVel().x, 0.0);
-		hombre.SetAceleracion(0.0, -20.0);*/
-	//}
-
-
-	///////colision hombre-virus
-
-	/*Virus* auxv = listavirus.Colision(hombre);
-	if (auxv != 0) {
-		listavirus.eliminar(auxv);
-		hombre.SetVidas(hombre.GetVidas() - 1);
-	}*/
-
-	//Misil* auxm = misiles.colision(hombre);
-
-	//if (auxm != 0) {
-	//	misiles.Eliminar(auxm);
-	//	hombre.SetVidas(hombre.GetVidas() - 1);
-	//}
-	
-	/*glutTimerFunc(2500,Virus::Muere , 0);
-	glutPostRedisplay();*/
-
 	
 }
 
@@ -506,6 +376,116 @@ void Mundo::MyMouse(int b, int state, int x, int y) {
 			}
 		}
 	}
+
+}
+void Mundo::Interaccion() {
+	listabonusmascarilla.Colision(limites);
+	listabonusmascarilla.Colision(plataformaprueba);
+
+
+	Interaccion::reboteinterior(hombre, limites);
+
+
+	if (Interaccion::Colision(hombre, virus1)) {
+		if (virus1.GetMuerto() == 0) {
+			hombre.SetVidas(hombre.GetVidas() - 1);
+		}
+	}
+
+	BonusMascarilla* auxBM = listabonusmascarilla.colision(hombre);
+	if (auxBM != 0) {
+		if (hombre.GetVidas() <= 4) {
+			hombre.SetVidas(hombre.GetVidas() + 1);
+			listabonusmascarilla.eliminar(auxBM);
+		}
+	}
+
+
+	BonusTest* auxBT = listabonustest.colision(hombre);
+	if (auxBT != 0) {
+		if (hombre.GetMonedas() <= 19) {
+			hombre.SetMonedas(hombre.GetMonedas() + 1);
+			listabonustest.eliminar(auxBT);
+			hombre.SetMonedas(hombre.GetMonedas() + 1);
+		}
+	}
+
+	/*if (Interaccion::colision(hombre, bonus1)) {
+		hombre.SetVidas(hombre.GetVidas() + 1);
+	}*/
+
+	//////HOMBRE-PLATAFORMA
+
+	if (Interaccion::colision(hombre, limites)) {
+
+		salto = 1;
+	}
+
+	//////plataforma-hombre funciona: ---- NO BORRAR
+	/*
+	if (Interaccion::ColisionSube(hombre, plataformaprueba)) {
+		hombre.SetVel(hombre.GetVel().x, 0.0);
+		plataformaprueba.aux = 1;
+		salto = 1;
+	}
+	else {
+
+		plataformaprueba.aux = 0;
+	}
+
+	if (Interaccion::ColisionChoca(hombre, plataformaprueba)) {
+		hombre.SetVel(hombre.GetVel().x, -10.0);
+
+
+		//plataformaprueba.aux = 1;
+
+	}
+	if (Interaccion::ColisionChocaLado(hombre, plataformaprueba)) {
+		hombre.SetVel(0.0, -10.0);
+
+		//plataformaprueba.aux = 1;
+
+	}
+	*/
+	//////////
+
+
+	if (plataformas.ColisionSube(hombre) != 0) {
+		hombre.SetVel(hombre.GetVel().x, 0.0);
+		salto = 1;
+	}
+	if (plataformas.ColisionChoca(hombre) != 0) {
+		hombre.SetVel(hombre.GetVel().x, -10.0);
+
+	}
+	if (plataformas.ColisionChocaLado(hombre) != 0) {
+		hombre.SetVel(0.0, -10.0);
+	}
+
+	//Colision virus con disp	
+	if (disparos.Colision(virus1)) {//si alguna esfera ha chocado
+		//virus1.Muere();
+
+	}		
+
+	///////// misil-hombre
+	Misil* aux = misiles.colision(hombre);
+	if (aux != 0) {
+		if (hombre.GetVidas() >= 1) {
+			hombre.SetVidas(hombre.GetVidas() - 1);
+			misiles.Eliminar(aux);
+		}
+	}
+
+
+		///////colision hombre-virus
+
+		/*Virus* auxv = listavirus.Colision(hombre);
+		if (auxv != 0) {
+			listavirus.eliminar(auxv);
+			hombre.SetVidas(hombre.GetVidas() - 1);
+		}*/
+
 
 }
 

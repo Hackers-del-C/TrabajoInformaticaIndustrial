@@ -37,6 +37,7 @@ public:
 	void fichero();
 	void Mueve();
 	void Dibuja();
+	void Interaccion();
 	void teclaEspecial(unsigned char key);
 	void MyMouse(int b, int state, int x, int y);
 	//ojo:
