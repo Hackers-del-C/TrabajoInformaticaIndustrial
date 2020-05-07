@@ -110,9 +110,9 @@ void Mundo::Dibuja()
 	gluLookAt(x_ojo, y_ojo, z_ojo,
 		x_ojo, y_ojo, 0.0, //NOTESE QUE HEMOS CAMBIADO ESTO
 		0.0, 5.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
-	
-	entorno.Dibuja(level);
 	entorno.Aviso(pantalla, hombre.posicion.x, hombre.posicion.y);
+	entorno.Dibuja(level);
+	
 	limites.Dibuja();
 	if (level == 0) {		
 		hombre.FinPartida();
