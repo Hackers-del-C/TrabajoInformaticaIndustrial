@@ -38,7 +38,7 @@ public:
 	void Mueve();
 	void Dibuja();
 	void teclaEspecial(unsigned char key);
-	void MyMouse(int button, int state, int x, int y,int down);
+	void MyMouse(int b, int state, int x, int y);
 	//ojo:
 
 	void Setojo(float ox, float oy, float oz);

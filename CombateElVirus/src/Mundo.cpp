@@ -353,19 +353,7 @@ void Mundo::Mueve()
 
 void Mundo::Tecla(unsigned char key)
 {	//NIVELES:	
-	if (level == 0) {
-		switch (key) {
-		case '1':
-			level = 1;
-			break;
-		case '2':
-			level = 2;
-			break;
-		case '3':
-			level = 3;
-			break;
-		}
-	}
+	
 	switch (pantalla) {
 	case 0: //SI NO ESTÁ NI MUERTO NI CON EL NIVEL ACABADO
 		switch (key) {
@@ -499,41 +487,26 @@ void Mundo::teclaEspecial(unsigned char key) {
 	 }
 
 }
-void Mundo::MyMouse(int button, int state, int x, int y,int down){
-	GLint viewport[4];
-	GLdouble modelview[16];
-	GLdouble projection[16];
-	GLfloat winX, winY, winZ;
-	GLdouble posX, posY, posZ;
+void Mundo::MyMouse(int b, int state, int x, int y) {
+	bool down = (state == GLUT_DOWN);
+	int button;
+	if (level == 0) {
+		if (b == GLUT_LEFT_BUTTON) {
+			button = MOUSE_LEFT_BUTTON;
+			cout << "MOUSE_LEFT_BUTTON" << endl;
+			cout << "(" << x << "," << y << ")" << endl;
+			if (y > 250 && x <= 270) {
+				level = 1;
+			}
+			else if (x > 280 && x <= 300) {
+				level = 2;
+			}
+			else if (x > 310 && x <= 330) {
+				level = 3;
+			}
+		}
+	}
 
-	glGetDoublev(GL_MODELVIEW_MATRIX, modelview);
-	glGetDoublev(GL_PROJECTION_MATRIX, projection);
-	glGetIntegerv(GL_VIEWPORT, viewport);
-
-	winX = (float)x;
-	winY = (float)viewport[3] - (float)y;
-	glReadPixels(x, int(winY), 1, 1, GL_DEPTH_COMPONENT, GL_FLOAT, &winZ);
-	gluUnProject(winX, winY, winZ, modelview, projection, viewport, &posX, &posY, &posZ);
-
-
-	///////////////////////////	
-	//capture other mouse events
-
-
-	if (button == MOUSE_LEFT_BUTTON)
-		leftButton = down;
-	else if (button == MOUSE_RIGHT_BUTTON)
-		rightButton = down;
-	else if (button == MOUSE_MIDDLE_BUTTON)
-		midButton = down;
-	///////////////////////////
-
-		//***WRITE ACTIONS CONNECTED TO MOUSE STATE HERE
-
-		//print cell coordinates after click
-	if (down)
-		cout << "(" << xmouse << "," << ymouse << ")" << endl;
-	
 }
 
 

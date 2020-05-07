@@ -13,6 +13,7 @@ void OnKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecl
 void OnSpecialKeyboardDown(int key, int x, int y);
 void OnMouseClick(int button, int state, int x, int y);
 
+
 int main(int argc,char* argv[])
 {
 	//Inicializar el gestor de ventanas GLUT
@@ -33,9 +34,10 @@ int main(int argc,char* argv[])
 	//Registrar los callbacks
 	glutDisplayFunc(OnDraw);
 	glutTimerFunc(25,OnTimer,0);//le decimos que dentro de 25ms llame 1 vez a la funcion OnTimer()
+	
 	glutSpecialFunc(OnSpecialKeyboardDown);
 	glutKeyboardFunc(OnKeyboardDown);
-	
+	glutMouseFunc(OnMouseClick);
 	mundo.Inicializa();
 
 	//pasarle el control a GLUT,que llamara a los callbacks
@@ -71,22 +73,8 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 }
 void OnMouseClick(int b, int state, int x, int y)
 {
-	bool down = (state == GLUT_DOWN);
-	int button;
-	if (b == GLUT_LEFT_BUTTON) {
-		button = MOUSE_LEFT_BUTTON;
-	}
-	if (b == GLUT_RIGHT_BUTTON) {
-		button = MOUSE_RIGHT_BUTTON;
-		cout << "MOUSE_RIGHT_BUTTON" << endl;
-	}
+	mundo.MyMouse(b, state, x, y);
 
-	int specialKey = glutGetModifiers();
-	bool ctrlKey = (specialKey & GLUT_ACTIVE_CTRL) ? true : false;
-	bool sKey = specialKey & GLUT_ACTIVE_SHIFT;
-
-
-	mundo.MyMouse(b,state,x,y,down);
 	glutPostRedisplay();
 }
 
