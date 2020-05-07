@@ -19,7 +19,7 @@
 
 //borrar en un futuro:
 #include "VirusSeta.h"
-#include "Zapatos.h"
+
 //#include "BonusMascarilla.h"
 
 class Mundo
@@ -70,11 +70,8 @@ private:
 	ListaVirus listavirus;
 	ListaBonusMascarilla listabonusmascarilla;
 	ListaBonusTest listabonustest;
-	Zapatos zapatos;
-	//BonusMascarilla bonus1;
-	//Bonus bonus;
-	// Misil misilizq;
-	//Pared plataforma;
+	
+	
 	//ojo
 	float x_ojo;
 	float y_ojo;

@@ -114,7 +114,6 @@
     <ClCompile Include="src\Vidas.cpp" />
     <ClCompile Include="src\Virus.cpp" />
     <ClCompile Include="src\VirusSeta.cpp" />
-    <ClCompile Include="src\Zapatos.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\ETSIDI.h" />
@@ -148,7 +147,6 @@
     <ClInclude Include="src\Vidas.h" />
     <ClInclude Include="src\Virus.h" />
     <ClInclude Include="src\VirusSeta.h" />
-    <ClInclude Include="src\Zapatos.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -3,7 +3,7 @@
 //#include "Interaccion.h"
 //#include "Hombre.h"
 #include "ListaBordesSube.h"
-#include "Zapatos.h"
+
 //#include <vector>
 #define NUM_MAX_PLATAFORMAS 100
 
@@ -24,7 +24,7 @@ public:
 	Plataformas* ColisionSube(Hombre &h);
 	Plataformas* ColisionChoca(Hombre &h);
 	Plataformas* ColisionChocaLado(Hombre &h);
-	//Plataformas* Colision(Zapatos z);
+	
 private:
 	int numero;
 	Plataformas* lista[NUM_MAX_PLATAFORMAS];

@@ -82,7 +82,7 @@ void Mundo::Inicializa()
 	//	aux->Inicializa("virusseta", 8, 1, -10 + 2.5 * i, 4, 2, 2, 0, 0);
 	//	listavirus.agregar(aux);
 	//}
-	////zapatos.Inicializa(hombre);
+	
 	
 	
 	
@@ -125,7 +125,7 @@ void Mundo::Dibuja()
 			listabonusmascarilla.dibuja();
 			listabonustest.dibuja();
 
-			zapatos.Dibuja(hombre);
+			
 			listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png",30, -3));
 			float naleatorio = lanzaDado(1000.0);
 			if (naleatorio < 10) {
@@ -202,10 +202,7 @@ void Mundo::Mueve()
 	listabonusmascarilla.mueve(0.025f);
 	listabonusmascarilla.Colision(limites);
 	listabonusmascarilla.Colision(plataformaprueba);
-	//bonus1.Mueve(0.025);
-	//zapatos.Mueve(0.025f, hombre);
-	//disparo.Mueve(0.025f);
-	//bonus.Mueve(0.025f);
+	
 
 	////INTERACCIONES////
 
@@ -323,39 +320,6 @@ void Mundo::Mueve()
 	//}
 
 
-
-	////////	TEMPORIZADOR	//////
-/*
-	Plataformas* aux1 = plataformas.Colision(zapatos);
-
-	if (aux1 != 0) {
-		if (salto == 0) {
-			//plataformas.Agregar(new Plataformas(10, 3, 15, 3.5));
-			hombre.SetVel(hombre.GetVel().x, 0.0);
-			hombre.SetAceleracion(0.0, 0.0);
-
-		}
-
-	}
-	else if (aux1 == 0) {
-
-		hombre.SetAceleracion(0.0, -20.0);
-
-	}
-	*/
-	
-	/*switch (salto) {
-	case 1:
-		if (Interaccion::colision(hombre, limites) == 1 || aux1 != 0) {
-			hombre.SetVel(hombre.GetVel().x, 18.0f);
-			//zapatos.SetPos(zapatos.GetPos().x, zapatos.GetPos().y+0.5);
-			hombre.SetAceleracion(0.0, 0.0);
-			salto = 0;
-		}
-		
-	}
-
-*/
 	///////colision hombre-virus
 
 	/*Virus* auxv = listavirus.Colision(hombre);

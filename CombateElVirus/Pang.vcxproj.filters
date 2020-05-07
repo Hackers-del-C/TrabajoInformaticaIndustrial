@@ -73,9 +73,6 @@
     <ClCompile Include="src\ListaBordesSube.cpp">
       <Filter>Archivos de código fuente\MUNDO\Limites</Filter>
     </ClCompile>
-    <ClCompile Include="src\Zapatos.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Personajes\Jugador</Filter>
-    </ClCompile>
     <ClCompile Include="src\AuxEtsidi.cpp">
       <Filter>Archivos de código fuente\MUNDO</Filter>
     </ClCompile>
@@ -170,9 +167,6 @@
     </ClInclude>
     <ClInclude Include="src\ListaBordesSube.h">
       <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Zapatos.h">
-      <Filter>Archivos de encabezado\MUNDO\Personajes\Jugador</Filter>
     </ClInclude>
     <ClInclude Include="src\AuxEtsidi.h">
       <Filter>Archivos de encabezado\MUNDO</Filter>

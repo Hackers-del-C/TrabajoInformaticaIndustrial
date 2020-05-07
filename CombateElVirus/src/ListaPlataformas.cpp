@@ -74,15 +74,6 @@ void ListaPlataformas::Dibuja() {
 	}
 }
 
-//Plataformas* ListaPlataformas::Colision(Zapatos z) {
-//	for (int i = 0; i < numero; i++) {
-//		if (Interaccion::Colision(*(lista[i]), z)) {
-//
-//			return lista[i];
-//		}
-//	}
-//	return 0;
-//}
 Plataformas* ListaPlataformas::ColisionSube(Hombre& h) {
 	for (int i = 0; i < numero; i++) {
 		if (Interaccion::ColisionSube(h ,*(lista[i]))) {

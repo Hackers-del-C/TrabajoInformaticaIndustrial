@@ -46,15 +46,7 @@ bool Interaccion::colision(Misil misil, Hombre h) {
     }
 }
 
-bool Interaccion::Colision(Plataformas p, Zapatos z) {
-    ETSIDI::Vector2D  dir;
-    float dif = p.distancia(z.GetPos(), &dir) - z.GetRadio();
-    if (dif <= 0.75f) {
 
-        return true;
-    }
-    return false;
-}
 
 bool Interaccion::Colision(Disparo d, Virus &v) {
 

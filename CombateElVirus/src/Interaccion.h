@@ -8,7 +8,6 @@
 #include "Listamisiles.h"
 #include "Misil.h"
 #include "Mundo.h"
-#include "Zapatos.h"
 #include "Virus.h"
 #include "Disparo.h"
 #include "Interaccion.h"
@@ -38,7 +37,7 @@ public:
     static bool ColisionChocaLado(Hombre &h, Plataformas p);
     static bool ColisionChocaLadoIzq(Hombre& h, Plataformas p);
     static bool ColisionChocaLadoDer(Hombre& h, Plataformas p);
-    static bool  Colision(Plataformas p, Zapatos z);
+    
 
     static void Colision(BonusMascarilla& b, Limites c);
     static void Colision(BonusMascarilla& b, Plataformas p);
