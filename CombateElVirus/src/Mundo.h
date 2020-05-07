@@ -17,8 +17,9 @@
 #include "ListaBonusMascarilla.h"
 #include "ListaBonusTest.h"
 
-//borrar en un futuro:
+//borrar en un futuro: WHYYYY???
 #include "VirusSeta.h"
+#include "VirusBaba.h"
 
 enum { MOUSE_LEFT_BUTTON, MOUSE_MIDDLE_BUTTON, MOUSE_RIGHT_BUTTON };
 
@@ -58,6 +59,7 @@ private:
 	//Virus virus;
 	
 	VirusSeta virus1;
+	VirusBaba virus2;
 	Entorno entorno;
 	//LISTAS
 	ListaDisparos disparos;

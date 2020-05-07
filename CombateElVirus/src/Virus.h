@@ -16,9 +16,11 @@ public:
     Virus();
     virtual ~Virus();
     void Dibuja(int nivel);
-    void Mueve(float t, Hombre hombre);
+    void Mueve(float t);
     void SetVel(float x, float y);
     void Muere(ETSIDI::Vector2D vectormuerte);
+    void Ataca();
+    void Anda();
     int GetMuerto() { return muere; }
     ETSIDI::Vector2D posicion, velocidad, aceleracion, vectormuerte;
     float anchura, altura;
@@ -27,8 +29,11 @@ public:
     ETSIDI::SpriteSequence* spriteder;
     ETSIDI::SpriteSequence* spriteizq;
     ETSIDI::SpriteSequence* spritemuere;
+    ETSIDI::SpriteSequence* spriteataca;
     // ETSIDI::SpriteSequence* virusrojo;
 protected:
-
-    int salto, izqder, muere;
+    //Acciones
+    int muere, ataque, lateral, anda;
+    //Permisos
+    int permitirlateral, permitirataque, permitirmuerte;
 };

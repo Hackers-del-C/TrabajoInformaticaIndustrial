@@ -39,7 +39,12 @@ void Mundo::Inicializa()
 	entorno.Fin(pantalla);
 	personajes.Inicializa(hombre);	
 	
-	virus1.Inicializa("virusseta", 8, 1, 0, 0, 3, 3, 0, 0);
+	virus1.Inicializa( 10, -3, 3, 3, 0, 0, 0);
+	virus1.Anda();
+	virus2.Inicializa(-5, 1, 8, 8, 1, 1, 1);
+	virus2.Anda();
+
+
 	limites.SetLimites(-20, 500, -3.5, 30); //Son los bordes del juego que el jugador no puede pasar	
 	vidas.Inicializa(hombre);
 	
@@ -118,6 +123,7 @@ void Mundo::Dibuja()
 			listalanzamisiles.Dibuja();
 
 			virus1.Dibuja(level);
+			virus2.Dibuja(level);
 			plataformas.Dibuja();
 			
 			bordessube.Dibuja();
@@ -191,7 +197,9 @@ void Mundo::Mueve()
 	if (pantalla != 1 && pantalla != 2) {
 		personajes.Mueve(0.025f);
 	}
-	virus1.Mueve(0.025f, hombre);
+	virus2.Mueve(0.025f);
+	virus1.Mueve(0.025f);
+	virus1.Seguir(hombre);
 	//bonus1.Mueve(0.025f);
 	hombre.Mueve(0.025f);
 		 	
@@ -361,6 +369,10 @@ void Mundo::Tecla(unsigned char key)
 	switch (pantalla) {
 	case 0: //SI NO ESTÁ NI MUERTO NI CON EL NIVEL ACABADO
 		switch (key) {
+		case 'm':
+			virus2.Ataca();
+
+			break;
 		case 'w':
 			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, 22.0f));
 
@@ -409,7 +421,9 @@ void Mundo::Tecla(unsigned char key)
 			//misiles.DestruirContenido(i);
 			i++;
 			break;
+		
 		}
+
 		break;
 	case 1: //MUERE
 		switch (key) {

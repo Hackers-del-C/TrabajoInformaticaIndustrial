@@ -113,7 +113,7 @@ void ListaVirus::dibuja()
 void ListaVirus::mueve(float t, Hombre h)
 {
 	for (int i = 0; i < numero; i++)
-		lista[i]->Mueve(t, h);
+		lista[i]->Mueve(t);
 }
 
 Virus* ListaVirus::operator [](int i)

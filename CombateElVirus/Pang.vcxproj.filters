@@ -94,6 +94,9 @@
     <ClCompile Include="src\ListaBonusTest.cpp">
       <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
     </ClCompile>
+    <ClCompile Include="src\VirusBaba.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\ETSIDI.h">
@@ -188,6 +191,9 @@
     </ClInclude>
     <ClInclude Include="src\ListaBonusTest.h">
       <Filter>Archivos de encabezado\MUNDO\Interacciones\BONUS</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VirusBaba.h">
+      <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
