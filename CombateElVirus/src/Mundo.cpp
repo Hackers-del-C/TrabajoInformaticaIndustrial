@@ -477,6 +477,12 @@ void Mundo::Tecla(unsigned char key)
 			level = 0;
 			pantalla = 0;
 			break;
+		case '8':
+			level += 1;		
+			hombre.FinPartida();//REINICIA TODO LO DEL HOMBRE
+			Setojo(0, 10, 53);
+			pantalla = 0;
+			break;
 
 		}
 		break;
