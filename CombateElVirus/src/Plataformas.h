@@ -4,7 +4,7 @@
 class Plataformas {
 public:
 	Plataformas();
-	Plataformas(float x1, float y1, float x2, float y2);
+	Plataformas(float x1, float y1, float w, float h);
 	//~Plataformas();
 	void Dibuja();
 	void SetPos(ETSIDI::Vector2D l1,ETSIDI::Vector2D l2) {

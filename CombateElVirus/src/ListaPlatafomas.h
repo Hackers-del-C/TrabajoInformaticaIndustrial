@@ -20,8 +20,11 @@ public:
 	int GetNumero() { return numero; }
 	void Eliminar(int index);
 	void Eliminar(Plataformas* p);
-	Plataformas* Colision(Hombre h);
-	Plataformas* Colision(Zapatos z);
+
+	Plataformas* ColisionSube(Hombre &h);
+	Plataformas* ColisionChoca(Hombre &h);
+	Plataformas* ColisionChocaLado(Hombre &h);
+	//Plataformas* Colision(Zapatos z);
 private:
 	int numero;
 	Plataformas* lista[NUM_MAX_PLATAFORMAS];

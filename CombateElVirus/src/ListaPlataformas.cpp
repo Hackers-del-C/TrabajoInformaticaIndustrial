@@ -74,24 +74,39 @@ void ListaPlataformas::Dibuja() {
 	}
 }
 
-Plataformas* ListaPlataformas::Colision(Zapatos z) {
+//Plataformas* ListaPlataformas::Colision(Zapatos z) {
+//	for (int i = 0; i < numero; i++) {
+//		if (Interaccion::Colision(*(lista[i]), z)) {
+//
+//			return lista[i];
+//		}
+//	}
+//	return 0;
+//}
+Plataformas* ListaPlataformas::ColisionSube(Hombre& h) {
 	for (int i = 0; i < numero; i++) {
-		if (Interaccion::Colision(*(lista[i]), z)) {
-
+		if (Interaccion::ColisionSube(h ,*(lista[i]))) {
 			return lista[i];
 		}
 	}
 	return 0;
 }
-Plataformas* ListaPlataformas::Colision(Hombre h) {
+Plataformas* ListaPlataformas::ColisionChoca(Hombre &h) {
 	for (int i = 0; i < numero; i++) {
-		if (Interaccion::Colision(h ,*(lista[i]))) {
+		if (Interaccion::ColisionChoca(h, *(lista[i]))) {
 			return lista[i];
 		}
 	}
 	return 0;
 }
-
+Plataformas* ListaPlataformas::ColisionChocaLado(Hombre &h) {
+	for (int i = 0; i < numero; i++) {
+		if (Interaccion::ColisionChocaLado(h, *(lista[i]))) {
+			return lista[i];
+		}
+	}
+	return 0;
+}
 
 
 //bool ListaPlataformas::Colision(Hombre h) {

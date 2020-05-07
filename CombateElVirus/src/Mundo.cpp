@@ -55,9 +55,17 @@ void Mundo::Inicializa()
 	
 	vidas.Inicializa(hombre);
 	
-	plataformaprueba.Inicializa(0, 1, 8, 3);
+	//plataformaprueba.Inicializa(0, 1, 8, 3);
 
-
+	//plataformas.Agregar(new Plataformas(0, 1, 4, 1.5));
+	for (int x = 0; x < 10; x++) {
+		if (x < 5) {
+			plataformas.Agregar(new Plataformas(10*x-x/2  , x + 2, 4, 1.5));
+		}
+		else {
+			plataformas.Agregar(new Plataformas(10*x-x/2 , x - 2, 4, 1.5));
+		}
+	}
 	//listabonustest.agregar(new BonusTest("test", hombre.posicion.x-25, 25, 3, 3));
 
 	for (int i = 0; i < BONUSTEST; i++) {
@@ -138,8 +146,8 @@ void Mundo::Dibuja()
 			virus1.Dibuja(level);
 			//bonus1.Dibuja();
 			//plataformas.Dibuja(); PRUEBA
-			plataformaprueba.Dibuja();
-
+			//plataformaprueba.Dibuja();
+			plataformas.Dibuja();
 			
 			bordessube.Dibuja();
 			listavirus.dibuja();
@@ -271,19 +279,16 @@ void Mundo::Mueve()
 		//|| Interaccion::ColisionSube(hombre, plataformaprueba)) {
 		salto = 1;
 	}
+
+	//////plataforma-hombre funciona: ---- NO BORRAR
+	/*
 	if (Interaccion::ColisionSube(hombre, plataformaprueba)) {
 		hombre.SetVel(hombre.GetVel().x, 0.0);
-		//hombre.SetAceleracion(0.0, 0.0);;
-		//hombre.SetAceleracion(0.0, 0.0);
-		/*if (hombre.GetPos().y < plataformaprueba.posicion.y + plataformaprueba.altura / 4) {
-			hombre.SetPos(hombre.GetPos().x, plataformaprueba.posicion.y + plataformaprueba.altura / 2);
-		}*/
 		plataformaprueba.aux = 1;	
 		salto = 1;
 	}
 	else {
-		//hombre.SetVel(hombre.GetVel().x, -10.0);
-		//hombre.SetAceleracion(0.0, -20.0);
+
 		plataformaprueba.aux = 0;
 	}
 
@@ -299,6 +304,21 @@ void Mundo::Mueve()
 
 		//plataformaprueba.aux = 1;
 
+	}
+	*/
+	//////////
+
+
+	if (plataformas.ColisionSube(hombre) != 0) {
+		hombre.SetVel(hombre.GetVel().x, 0.0);
+		salto = 1;
+	}
+	if (plataformas.ColisionChoca(hombre) != 0) {
+		hombre.SetVel(hombre.GetVel().x, -10.0);
+
+	}
+	if (plataformas.ColisionChocaLado(hombre) != 0) {
+		hombre.SetVel(0.0, -10.0);
 	}
 
 	//Colision virus con disp	
