@@ -5,10 +5,12 @@
 Interaccion::Interaccion() {
 
 }
+
 Interaccion::~Interaccion() {
 
 
 }
+
 void Interaccion::reboteinterior(Hombre& h, Limites c)
 {
     float xmax = c.suelo.limite2.x;
@@ -22,6 +24,7 @@ void Interaccion::reboteinterior(Hombre& h, Limites c)
     if (h.posicion.y < ymin)h.posicion.y = ymin;
    
 }
+
 bool Interaccion::colision(Hombre h, Limites l) {
     ETSIDI::Vector2D dir;
     float dif = h.GetPos().y - l.suelo.GetSuelo();
@@ -42,7 +45,6 @@ bool Interaccion::colision(Misil misil, Hombre h) {
         return true;
     }
 }
-
 
 bool Interaccion::Colision(Plataformas p, Zapatos z) {
     ETSIDI::Vector2D  dir;

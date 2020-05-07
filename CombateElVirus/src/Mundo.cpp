@@ -7,17 +7,18 @@
 #include "ListaDisparos.h"
 #include <math.h>
 #include "glut.h"
-
+#include <fstream>
 
 
 Mundo::Mundo(){
-
+	
 }
 void Mundo::Setojo(float ox, float oy, float oz) {
 
 	x_ojo = ox;
 	y_ojo = oy;
 	z_ojo = oz;
+
 }
 /*
 //OJO
@@ -29,6 +30,17 @@ void Mundo::RotarOjo()
 	x_ojo=dist*cos(ang);
 	z_ojo=dist*sin(ang);
 }*/
+
+void Mundo::fichero() {
+
+	ofstream fichero("resultado_final.txt");
+
+	fichero << "Has cogido: " << hombre.GetMonedas() << " test" << endl;
+	//fichero << "Has tardado: " << tiempo << " segundos" << endl;
+
+	fichero.close();
+
+}
 
 void Mundo::Inicializa()
 {
@@ -152,7 +164,8 @@ void Mundo::Dibuja()
 				// habría que poner con un contador de esos un tiempo para que se viera que el sprite cambia a muerto y cae al vacio)
 				hombre.SetVel(0, 0);
 				hombre.SetAceleracion(0, -10);
-				pantalla=1;				
+				pantalla=1;			
+				fichero();
 				//musica de muerte va aqui
 			}
 			 //FIN DE PARTIRA: Ganador
@@ -244,6 +257,7 @@ void Mundo::Mueve()
 		if (hombre.GetMonedas() <= 19) {
 			hombre.SetMonedas(hombre.GetMonedas() + 1);
 			listabonustest.eliminar(auxBT);
+			hombre.SetMonedas(hombre.GetMonedas() + 1);
 		}
 	}
 
@@ -368,6 +382,8 @@ void Mundo::Mueve()
 	
 	/*glutTimerFunc(2500,Virus::Muere , 0);
 	glutPostRedisplay();*/
+
+	
 }
 
 

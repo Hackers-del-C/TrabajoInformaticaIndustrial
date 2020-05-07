@@ -33,6 +33,7 @@ public:
 	Mundo();
 	void Tecla(unsigned char key);
 	void Inicializa();
+	void fichero();
 	void Mueve();
 	void Dibuja();
 	void teclaEspecial(unsigned char key);
