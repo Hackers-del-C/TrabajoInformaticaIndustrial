@@ -69,13 +69,25 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 
 	glutPostRedisplay();
 }
-void OnMouseClick(int button, int state, int x, int y)
+void OnMouseClick(int b, int state, int x, int y)
 {
-	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
-	{
-	//store the x,y value where the click happened
-		cout << "hola";
+	bool down = (state == GLUT_DOWN);
+	int button;
+	if (b == GLUT_LEFT_BUTTON) {
+		button = MOUSE_LEFT_BUTTON;
 	}
+	if (b == GLUT_RIGHT_BUTTON) {
+		button = MOUSE_RIGHT_BUTTON;
+		cout << "MOUSE_RIGHT_BUTTON" << endl;
+	}
+
+	int specialKey = glutGetModifiers();
+	bool ctrlKey = (specialKey & GLUT_ACTIVE_CTRL) ? true : false;
+	bool sKey = specialKey & GLUT_ACTIVE_SHIFT;
+
+
+	mundo.MyMouse(b,state,x,y,down);
+	glutPostRedisplay();
 }
 
 void OnTimer(int value)

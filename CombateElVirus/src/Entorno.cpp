@@ -51,12 +51,14 @@ void Entorno::Dibuja(int nivel) {
 	case 1:
 		//IMAGENES
 		auxetsidi.Imagen("banderachina", -4, 4, 22, 27);
+		auxetsidi.Imagen("AvionMiguelAvion", 245, 255, 22, 27);
 		auxetsidi.Imagen("prenivel", -30, 26, -10, 30);
 		auxetsidi.Imagen("fondobasico", 26, 82, -10, 30);
 		auxetsidi.Imagen("fondobasico", 82, 138, -10, 30);
 		auxetsidi.Imagen("fondobasico", 138, 194, -10, 30);
 		auxetsidi.Imagen("fondobasico", 194, 250, -10, 30);
 		auxetsidi.Imagen("fondobasico", 250, 306, -10, 30);
+		
 		//auxetsidi.Imagen("laboratorio", 26, 156, -18, 45);
 		//TEXTO
 		auxetsidi.Texto("NIVEL 1", -24, 25, 0, 0, 0, 36);
