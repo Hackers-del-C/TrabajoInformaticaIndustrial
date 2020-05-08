@@ -42,6 +42,8 @@ void Mundo::Inicializa()
 	virus1.Inicializa( 80, -3);
 	
 	virus2.Inicializa(-5, 1);
+
+	virus3.Inicializa(-10, 15);
 	
 
 
@@ -124,6 +126,7 @@ void Mundo::Dibuja()
 
 			virus1.Dibuja(level);
 			virus2.Dibuja(level);
+			virus3.Dibuja(level);
 			plataformas.Dibuja();
 			
 			bordessube.Dibuja();
@@ -198,8 +201,10 @@ void Mundo::Mueve()
 		personajes.Mueve(0.025f);
 	}
 	virus2.Mueve(0.025f);
+	virus3.Mueve(0.025f);
 	virus1.Mueve(0.025f);
 	virus1.Seguir(hombre);
+	virus3.Seguir(hombre);
 	//bonus1.Mueve(0.025f);
 	hombre.Mueve(0.025f);
 		 	

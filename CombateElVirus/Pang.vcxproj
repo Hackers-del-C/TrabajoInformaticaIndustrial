@@ -114,6 +114,7 @@
     <ClCompile Include="src\Vidas.cpp" />
     <ClCompile Include="src\Virus.cpp" />
     <ClCompile Include="src\VirusBaba.cpp" />
+    <ClCompile Include="src\VirusMosca.cpp" />
     <ClCompile Include="src\VirusSeta.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +149,7 @@
     <ClInclude Include="src\Vidas.h" />
     <ClInclude Include="src\Virus.h" />
     <ClInclude Include="src\VirusBaba.h" />
+    <ClInclude Include="src\VirusMosca.h" />
     <ClInclude Include="src\VirusSeta.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

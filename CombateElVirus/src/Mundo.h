@@ -20,6 +20,7 @@
 //borrar en un futuro: WHYYYY???
 #include "VirusSeta.h"
 #include "VirusBaba.h"
+#include "VirusMosca.h"
 
 enum { MOUSE_LEFT_BUTTON, MOUSE_MIDDLE_BUTTON, MOUSE_RIGHT_BUTTON };
 
@@ -62,6 +63,7 @@ private:
 	
 	VirusSeta virus1;
 	VirusBaba virus2;
+	VirusMosca virus3;
 	Entorno entorno;
 	//LISTAS
 	ListaDisparos disparos;
