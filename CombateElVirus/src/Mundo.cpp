@@ -45,19 +45,13 @@ void Mundo::Inicializa()
 
 	virus3.Inicializa(-10, 15);
 
-	if (virus3.posicion.x == 15) {
-		virus3.dispara(listaslime);
-	}
-	if (virus3.posicion.x == 20) {
-		virus3.dispara(listaslime);
-	}
-	if (virus3.posicion.x == 25) {
-		virus3.dispara(listaslime);
-	}
 	
-	listaslime.agregar(new Slime(15, 10));
+	listaslime.agregar(new Slime(0, 10));
+	listaslime.agregar(new Slime(10, 30));
+	listaslime.agregar(new Slime(-10, 40));
 
-	slime.Inicializa(-10, 10);
+	
+	//slime.Inicializa(-10, 10);
 
 
 	limites.SetLimites(-20, 500, -3.5, 30); //Son los bordes del juego que el jugador no puede pasar	
@@ -143,7 +137,7 @@ void Mundo::Dibuja()
 			virus2.Dibuja(level);
 			virus3.Dibuja(level);
 			listaslime.dibuja();
-			slime.Dibuja();
+			//slime.Dibuja();
 			plataformas.Dibuja();
 			
 			bordessube.Dibuja();
@@ -224,7 +218,7 @@ void Mundo::Mueve()
 	virus1.Mueve(0.025f);
 	virus1.Seguir(hombre);
 	virus3.Seguir(hombre);
-	slime.Mueve(0.025f);
+	//slime.Mueve(0.025f);
 	//bonus1.Mueve(0.025f);
 	hombre.Mueve(0.025f);
 		 	
@@ -242,8 +236,11 @@ void Mundo::Mueve()
 
 	//Interaccion::Colision(bonus1, limites);
 
-	Interaccion::Colision(slime, limites);
-	plataformas.Colision(slime);
+	//Interaccion::Colision(slime, limites);
+	//plataformas.Colision(slime);
+
+	listaslime.Colision(limites);
+	listaslime.Colision(plataformas);
 
 	Interaccion::reboteinterior(hombre, limites);
 	
@@ -359,7 +356,7 @@ void Mundo::Tecla(unsigned char key)
 
 			break;
 		case 'n':
-			virus2.Desaparece();
+			virus3.dispara(listaslime);
 
 			break;
 		case 'w':

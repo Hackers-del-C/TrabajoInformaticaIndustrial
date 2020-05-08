@@ -105,9 +105,7 @@ bool Interaccion::Colision(Slime& s, Limites l) {
     float dif = s.posicion.x - l.suelo.GetSuelo(); //Cabrones
     if (s.posicion.y<-3.5) {
         s.Choca();
-        s.SetVel(0, 0);
-        s.aceleracion.y = 0;
-        
+      
         return true;
     }
     else { return false; }

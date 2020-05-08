@@ -58,6 +58,6 @@ void VirusMosca::Seguir(Hombre h) {
 
 void VirusMosca::dispara(ListaSlime &l) {
 
-    l.agregar(new Slime(posicion.x,posicion.y));
+    l.agregar(new Slime(posicion.x, posicion.y));
 
 }

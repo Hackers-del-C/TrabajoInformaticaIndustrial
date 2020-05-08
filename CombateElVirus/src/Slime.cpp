@@ -26,7 +26,7 @@ Slime::Slime(float x, float y) {
     velocidad.x = 0;
     velocidad.y = 0;
     aceleracion.y = -2;
-
+    chocar = 0;
     sprite = new SpriteSequence("imagenes/enemigos/balababa.png", 8, 1, 40, true, 0, 0, 3, 3);
 
 }
@@ -55,6 +55,8 @@ void Slime::Choca() {
 
     if(chocar==0){
     sprite = new SpriteSequence("imagenes/enemigos/balababaexplota.png", 3, 1, 80, false, 0, 0, 3, 3);
+    SetVel(0, 0);
+    aceleracion.y = 0;
     chocar = 1;
     }
 

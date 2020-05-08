@@ -4,6 +4,8 @@
 #define MAX_SLIME 100
 #include "Hombre.h"
 #include "Slime.h"
+#include "ListaPlatafomas.h"
+#include "Limites.h"
 //#include "Interaccion.h"
 //#include "Limites.h"
 
@@ -21,6 +23,8 @@ public:
 	void destruirContenido();
 	void eliminar(int index);
 	void eliminar(Slime* e);
+	void Colision(ListaPlataformas p);
+	void Colision(Limites l);
 	//Virus* colision(Hombre& h);
 	Slime* operator [](int i);
 	int getNumero() { return numero; }

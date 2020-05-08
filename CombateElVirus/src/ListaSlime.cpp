@@ -121,6 +121,18 @@ Slime* ListaSlime::operator [](int i)
 	return lista[i];
 }
 
+void ListaSlime::Colision(ListaPlataformas p) {
+
+	for (int i = 0; i < numero; i++)
+		p.Colision(*lista[i]);
+}
+
+void ListaSlime::Colision(Limites l) {
+
+	for (int i = 0; i < numero; i++)
+		Interaccion::Colision(*lista[i], l);
+}
+
 //Virus* ListaVirus::Colision(Hombre &h) {
 //	for (int i = 0; i < numero; i++) {
 //		if (Interaccion::Colision(h,*lista[i])) {

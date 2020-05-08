@@ -66,7 +66,7 @@ private:
 	VirusSeta virus1;
 	VirusBaba virus2;
 	VirusMosca virus3;
-	Slime slime;
+	//Slime slime;
 	Entorno entorno;
 	//LISTAS
 	ListaDisparos disparos;
