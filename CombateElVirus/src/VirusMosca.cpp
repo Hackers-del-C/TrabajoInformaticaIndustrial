@@ -53,7 +53,11 @@ void VirusMosca::Seguir(Hombre h) {
         sprite->flip(1, 0);
     }
 
-    
 
+}
+
+void VirusMosca::dispara(ListaSlime &l) {
+
+    l.agregar(new Slime(posicion.x,posicion.y));
 
 }

@@ -22,6 +22,7 @@
 #include "VirusBaba.h"
 #include "VirusMosca.h"
 #include "Slime.h"
+#include "ListaSlime.h"
 
 enum { MOUSE_LEFT_BUTTON, MOUSE_MIDDLE_BUTTON, MOUSE_RIGHT_BUTTON };
 
@@ -74,6 +75,7 @@ private:
 	Vidas vidas;
 	Plataformas plataformaprueba;
 	ListaPlataformas plataformas;
+	ListaSlime listaslime;
 	ListaBordesSube bordessube;
 	ListaVirus listavirus;
 	ListaBonusMascarilla listabonusmascarilla;

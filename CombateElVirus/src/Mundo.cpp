@@ -44,7 +44,19 @@ void Mundo::Inicializa()
 	virus2.Inicializa(-5, 1);
 
 	virus3.Inicializa(-10, 15);
+
+	if (virus3.posicion.x == 15) {
+		virus3.dispara(listaslime);
+	}
+	if (virus3.posicion.x == 20) {
+		virus3.dispara(listaslime);
+	}
+	if (virus3.posicion.x == 25) {
+		virus3.dispara(listaslime);
+	}
 	
+	listaslime.agregar(new Slime(15, 10));
+
 	slime.Inicializa(-10, 10);
 
 
@@ -130,6 +142,7 @@ void Mundo::Dibuja()
 			virus1.Dibuja(level);
 			virus2.Dibuja(level);
 			virus3.Dibuja(level);
+			listaslime.dibuja();
 			slime.Dibuja();
 			plataformas.Dibuja();
 			
@@ -137,6 +150,8 @@ void Mundo::Dibuja()
 			listavirus.dibuja();
 			listabonusmascarilla.dibuja();
 			listabonustest.dibuja();
+
+			
 
 			
 			listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png",30, -3));
@@ -217,6 +232,7 @@ void Mundo::Mueve()
 	misiles.Mueve(0.025f);
 	vidas.Mueve(x_ojo);
 	listavirus.mueve(0.025f, hombre);
+	listaslime.mueve(0.025f, hombre);
 	listabonusmascarilla.mueve(0.025f);
 	listabonusmascarilla.Colision(limites);
 	listabonusmascarilla.Colision(plataformaprueba);
