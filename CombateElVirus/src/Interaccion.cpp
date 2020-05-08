@@ -227,7 +227,7 @@ void Interaccion::Colision(BonusMascarilla& b, Plataformas p) {
     float ymin = p.posicion.y + p.altura / 2;
 
     if (b.posicion.x   > p.posicion.x - p.anchura / 2) {
-        if (b.posicion.x < p.posicion.x + p.anchura / 2.5) {
+        if (b.posicion.x < p.posicion.x + p.anchura / 2) {
             if (b.posicion.y < ymin+2)
                 b.posicion.y = ymin+2;
         }
