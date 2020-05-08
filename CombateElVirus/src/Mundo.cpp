@@ -444,8 +444,7 @@ void Mundo::Tecla(unsigned char key)
 		}
 		break;
 	}
-	entorno.Tecla(key);
-	
+	entorno.Tecla(key);	
 }
 
 void Mundo::teclaEspecial(unsigned char key) {
@@ -481,8 +480,6 @@ void Mundo::teclaEspecial(unsigned char key) {
 				 break;
 			 }*/
 			 break;
-
-
 		 }
 	 }
 
@@ -509,7 +506,7 @@ void Mundo::ClickMouse(int b, int state) { //click del raton
 	}
 }
 void Mundo::MyMouse(int x, int y) { //movimiento del raton
-	cout << "(" << xmouse << "," << ymouse << ")" << endl;
+	cout << "(" << xmouse << "," << ymouse << ")" << endl; //borrar futuro
 	xmouse = (x - 400) / 13, 3; //coordinar con la x de nuestra pantalla
 	ymouse = -(y - 455) / 17.5 + 1; //coordinar con la y de niestra pantalla
 	
