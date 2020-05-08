@@ -121,14 +121,16 @@ bool Interaccion::ColisionSube(Hombre &h, Plataformas p) {
     if (h.posicion.y - h.altura / 2 > p.altura / 2 + p.posicion.y) { return false; }
     if (h.posicion.y + h.altura / 2 < p.posicion.y - p.altura / 2) { return false; }
     else {
-        if (h.GetVel().y < 0.0 && h.posicion.y >= p.posicion.y+ p.anchura /4) {
-            if (h.posicion.y <= p.posicion.y + p.altura*1.75) {
-                h.posicion.y = p.posicion.y + p.altura*1.75;
-                
+       
+            if (h.GetVel().y < 0.0 && h.posicion.y >= p.posicion.y + p.anchura / 4) {
+                if (h.posicion.y <= p.posicion.y + p.altura * 1.75) {
+                    h.posicion.y = p.posicion.y + p.altura * 1.75;
+
                     return true;
+                }
+
             }
-            
-        }
+        
         else {
             return false;
         }
@@ -144,9 +146,11 @@ bool Interaccion::ColisionChoca(Hombre& h, Plataformas p) {
     if (h.posicion.y - h.altura / 2 > p.altura / 2 + p.posicion.y) { return false; }
     if (h.posicion.y + h.altura / 2 < p.posicion.y - p.altura / 2) { return false; }
     else {
-        if (h.GetVel().y > 0.0) {
-            return true;
-    
+        if (p.GetTipo() == p.PLATAFORMA_CHOCA) {
+            if (h.GetVel().y > 0.0) {
+                return true;
+
+            }
         }
         else {
             return false;
