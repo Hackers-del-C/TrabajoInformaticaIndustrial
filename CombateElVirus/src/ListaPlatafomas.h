@@ -24,7 +24,7 @@ public:
 	Plataformas* ColisionSube(Hombre &h);
 	Plataformas* ColisionChoca(Hombre &h);
 	Plataformas* ColisionChocaLado(Hombre &h);
-	
+	Plataformas* operator [](int i);
 private:
 	int numero;
 	Plataformas* lista[NUM_MAX_PLATAFORMAS];

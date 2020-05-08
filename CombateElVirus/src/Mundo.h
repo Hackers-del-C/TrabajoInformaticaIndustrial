@@ -46,7 +46,7 @@ public:
 
 	void Setojo(float ox, float oy, float oz);
 	void SetLevel(int nivel) { level = nivel; }	
-
+	//void Interaccion();
 		//void RotarOjo();
 
 private:

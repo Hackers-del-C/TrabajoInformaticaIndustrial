@@ -321,6 +321,9 @@ void Mundo::Mueve()
 		
 		//misiles.Explota();
 	}
+	for (int t = 0; t < plataformas.GetNumero(); t++) {
+		listabonusmascarilla.Colision(*plataformas[t]);
+	}
 }
 
 
@@ -487,7 +490,9 @@ void Mundo::teclaEspecialsuelta(unsigned char key) {
 	
 
 }
-
+//void Mundo::Interaccion() {
+//	virus2.Ataca();
+//}
 
 void Mundo::ClickMouse(int b, int state) { //click del raton
 	bool down = (state == GLUT_DOWN);

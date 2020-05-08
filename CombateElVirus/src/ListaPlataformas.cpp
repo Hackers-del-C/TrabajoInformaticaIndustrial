@@ -98,7 +98,13 @@ Plataformas* ListaPlataformas::ColisionChocaLado(Hombre &h) {
 	}
 	return 0;
 }
-
+Plataformas* ListaPlataformas::operator [](int i) {
+	if (i >= numero)//si me paso, devuelvo la ultima
+		i = numero - 1;
+	if (i < 0) //si el indice es negativo, devuelvo la primera
+		i = 0;
+	return lista[i];
+}
 
 //bool ListaPlataformas::Colision(Hombre h) {
 //	for (int i = 0; i < lista.size(); i++) {

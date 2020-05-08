@@ -9,6 +9,7 @@ Mundo mundo;
 //NO HACE FALTA LLAMARLAS EXPLICITAMENTE
 void OnDraw(void); //esta funcion sera llamada para dibujar
 void OnTimer(int value); //esta funcion sera llamada cuando transcurra una temporizacion
+//void OnTimer2(int value);
 void OnKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecla	
 void OnSpecialKeyboardDown(int key, int x, int y);
 void OnMouseClick(int button, int state, int x, int y);
@@ -34,6 +35,7 @@ int main(int argc,char* argv[])
 	//Registrar los callbacks
 	glutDisplayFunc(OnDraw);
 	glutTimerFunc(25,OnTimer,0);//le decimos que dentro de 25ms llame 1 vez a la funcion OnTimer()
+//	glutTimerFunc(2000, OnTimer2, 1);
 	glutIgnoreKeyRepeat(1);
 	glutSpecialFunc(OnSpecialKeyboardDown);
 	glutKeyboardFunc(OnKeyboardDown);
@@ -98,4 +100,11 @@ void OnTimer(int value)
 	glutTimerFunc(25,OnTimer,0);
 	glutPostRedisplay();
 }
+//void OnTimer2(int value) {
+//
+//
+//	mundo.Interaccion();
+//	glutTimerFunc(2000, OnTimer, 1);
+//	glutPostRedisplay();
+//}
 
