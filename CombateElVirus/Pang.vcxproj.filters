@@ -100,6 +100,12 @@
     <ClCompile Include="src\VirusMosca.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
     </ClCompile>
+    <ClCompile Include="F.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Coordinador.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\ETSIDI.h">
@@ -200,6 +206,9 @@
     </ClInclude>
     <ClInclude Include="src\VirusMosca.h">
       <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Coordinador.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

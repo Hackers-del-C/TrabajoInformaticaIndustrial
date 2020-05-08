@@ -83,11 +83,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="F.cpp" />
     <ClCompile Include="src\Amigo.cpp" />
     <ClCompile Include="src\BonusMascarilla.cpp" />
     <ClCompile Include="src\BonusTest.cpp" />
     <ClCompile Include="src\BordesChoca.cpp" />
     <ClCompile Include="src\BordesSube.cpp" />
+    <ClCompile Include="src\Coordinador.cpp" />
     <ClCompile Include="src\Lanzamisiles.cpp" />
     <ClCompile Include="src\Limites.cpp" />
     <ClCompile Include="src\Disparo.cpp" />
@@ -125,6 +127,7 @@
     <ClInclude Include="src\BonusTest.h" />
     <ClInclude Include="src\BordesChoca.h" />
     <ClInclude Include="src\BordesSube.h" />
+    <ClInclude Include="src\Coordinador.h" />
     <ClInclude Include="src\Lanzamisiles.h" />
     <ClInclude Include="src\Limites.h" />
     <ClInclude Include="src\Disparo.h" />
