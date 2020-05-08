@@ -37,9 +37,9 @@ public:
 	void fichero();
 	void Mueve();
 	void Dibuja();
-	void Interaccion();
 	void teclaEspecial(unsigned char key);
-	void MyMouse(int b, int state, int x, int y);
+	void ClickMouse(int b, int state, int x, int y);
+	void MyMouse(int x, int y);
 	//ojo:
 
 	void Setojo(float ox, float oy, float oz);

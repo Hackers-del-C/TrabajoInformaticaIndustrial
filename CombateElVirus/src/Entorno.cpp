@@ -35,19 +35,39 @@ void Entorno::Fin(int pantalla) {
 	}
 }
 
-void Entorno::Dibuja(int nivel) {
+void Entorno::Dibuja(int nivel,int xraton,int yraton) {
 
 	switch (nivel) {
 	case 0:
 		//IMAGENES
 		auxetsidi.Imagen("menu", -26, 26, -10, 30); //limx1 limx2 limy1 limy2. La textura es cte -0.1		
+		if (yraton > 250 && yraton<270) {
+			gl1 = 1;
+			gl2 = 0;
+			gl3 = 0;
+		}
+		else if (yraton > 280 && yraton <= 300) {
+			gl1 = 0;
+			gl2 = 1;
+			gl3 = 0;
+		}
+		else if (yraton > 310 && yraton <= 330) {
+			gl1 = 0;
+			gl2 = 0;
+			gl3 = 1;
+		}
+		else {
+			gl1 = 0;
+			gl2 = 0;
+			gl3 = 0;
+		}			
 		//TEXTO
 		auxetsidi.Texto("COMBATE EL VIRUS", -23, 16, 0, 0, 0, 50);
-		auxetsidi.Texto("Nivel 1. China", -22, 12, 0, 0, 0, 20);
-		auxetsidi.Texto("Nivel 2. Italia", -22, 10, 0, 0, 0, 20);
-		auxetsidi.Texto("Nivel 3. Espanita", -22, 8, 0, 0, 0, 20);
-
+		auxetsidi.Texto("Nivel 1. China", -22, 12, 0, gl1, 0, 20);
+		auxetsidi.Texto("Nivel 2. Italia", -22, 10, 0, gl2, 0, 20);
+		auxetsidi.Texto("Nivel 3. Espanita", -22, 8, 0, gl3, 0, 20);
 		break;
+
 	case 1:
 		//IMAGENES
 		auxetsidi.Imagen("banderachina", -4, 4, 22, 27);
@@ -96,24 +116,24 @@ void Entorno::Dibuja(int nivel) {
 
 	}
 }
-void Entorno::Aviso(int pantalla, int x, int y) {
+void Entorno::Aviso(int pantalla, int x, int y,int xraton, int yraton) {
 	//IMAGEN:es un cuadro negro para que salga bien los datos que queramos en medio but no consigo que vaya
 	
 	switch(pantalla){
 	case 1: //pantalla si mueres
-		auxetsidi.Imagen("aviso", x - 10, x + 10, y + 10, y + 20);
+		auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, y + 5, y + 20);
 		//TEXTO
-		auxetsidi.Texto("F", x , y + 18, 1, 0, 0, 10);
-		auxetsidi.Texto("PULSA 8 PARA REINICIAR EL NIVEL", x-8, y+16, 1, 1, 1, 8); //obv habrá que hacerlo con otras teclas u otra cosa
-		auxetsidi.Texto("PULSA 7 PARA VOLVER AL MENU PRINCIPAL", x-8,y+13, 1, 1, 1, 8);
+		auxetsidi.Texto("F", x , y + 17, 1, 0, 0, 10);
+		auxetsidi.Texto("REINICIAR EL NIVEL", x-6, y+16, 1, 1, 1, 10); //obv habrá que hacerlo con otras teclas u otra cosa
+		auxetsidi.Texto("MENU PRINCIPAL", x-6,y+15, 1, 1, 1, 10);
 		
 		break;
 	case 2: //pantalla si ganas	
-		auxetsidi.Imagen("aviso", x - 10, x + 10, y + 10, y + 20);
+		auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, y + 5, y + 20);
 		//TEXTO
 		auxetsidi.Texto("CONGRATULATIONS BRO", x-3, y + 18, 1, 0, 0, 10);
-		auxetsidi.Texto("PULSA 8 PARA PASAR AL SIGUIENTE NIVEL", x - 8, y + 16, 1, 1, 1, 8);
-		auxetsidi.Texto("PULSA 7 PARA VOLVER AL MENU PRINCIPAL", x - 8, y + 13, 1, 1, 1, 8);
+		auxetsidi.Texto("SIGUIENTE NIVEL", x - 8, y + 16, 1, 1, 1, 8);
+		auxetsidi.Texto("MENU PRINCIPAL", x - 8, y + 13, 1, 1, 1, 8);
 		
 		break;
 	}

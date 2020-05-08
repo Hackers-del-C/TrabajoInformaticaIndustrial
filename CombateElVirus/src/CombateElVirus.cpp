@@ -12,7 +12,7 @@ void OnTimer(int value); //esta funcion sera llamada cuando transcurra una tempo
 void OnKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecla	
 void OnSpecialKeyboardDown(int key, int x, int y);
 void OnMouseClick(int button, int state, int x, int y);
-
+void OnMouseMotion(int x, int y);
 
 int main(int argc,char* argv[])
 {
@@ -34,10 +34,11 @@ int main(int argc,char* argv[])
 	//Registrar los callbacks
 	glutDisplayFunc(OnDraw);
 	glutTimerFunc(25,OnTimer,0);//le decimos que dentro de 25ms llame 1 vez a la funcion OnTimer()
-	
+	glutIgnoreKeyRepeat(1);
 	glutSpecialFunc(OnSpecialKeyboardDown);
 	glutKeyboardFunc(OnKeyboardDown);
 	glutMouseFunc(OnMouseClick);
+	glutPassiveMotionFunc(OnMouseMotion);
 	mundo.Inicializa();
 
 	//pasarle el control a GLUT,que llamara a los callbacks
@@ -56,7 +57,7 @@ void OnDraw(void)
 	glLoadIdentity();
 	
 	mundo.Dibuja();
-	mundo.Interaccion();
+	
 	//no borrar esta linea ni poner nada despues
 	glutSwapBuffers();
 }
@@ -71,10 +72,14 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 
 	glutPostRedisplay();
 }
-void OnMouseClick(int b, int state, int x, int y)
-{
-	mundo.MyMouse(b, state, x, y);
-	
+void OnMouseClick(int b, int state, int x, int y){ //click del raton
+	mundo.ClickMouse(b, state, x, y);
+
+	glutPostRedisplay();
+}
+void OnMouseMotion(int x, int y) { //movimiento del raton
+	mundo.MyMouse( x, y);
+
 	glutPostRedisplay();
 }
 
