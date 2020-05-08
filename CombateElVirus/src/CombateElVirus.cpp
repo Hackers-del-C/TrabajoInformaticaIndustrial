@@ -73,12 +73,12 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 	glutPostRedisplay();
 }
 void OnMouseClick(int b, int state, int x, int y){ //click del raton
-	mundo.ClickMouse(b, state, x, y);
+	mundo.ClickMouse(b, state);
 
 	glutPostRedisplay();
 }
 void OnMouseMotion(int x, int y) { //movimiento del raton
-	mundo.MyMouse( x, y);
+	mundo.MyMouse(x, y);
 
 	glutPostRedisplay();
 }

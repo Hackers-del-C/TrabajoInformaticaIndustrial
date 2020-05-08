@@ -21,5 +21,6 @@ private:
 	int gl1 = 0; //color letras menu
 	int gl2 = 0;
 	int gl3 = 0;
-
+	int rd1 = 1;// color avisos 
+	int rd2 = 1;
 };

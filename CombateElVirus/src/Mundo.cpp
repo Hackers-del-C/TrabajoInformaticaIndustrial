@@ -487,30 +487,31 @@ void Mundo::teclaEspecial(unsigned char key) {
 	 }
 
 }
-void Mundo::ClickMouse(int b, int state, int x, int y) { //click del raton
+void Mundo::ClickMouse(int b, int state) { //click del raton
 	bool down = (state == GLUT_DOWN);
+	//xmouse = (x - 400) / 13, 3; //coordinar con la x de nuestra pantalla
+	//ymouse = -(y - 455) / 17.5 + 1; //coordinar con la y de niestra pantalla
 	int button;
 	if (level == 0) {
 		if (b == GLUT_LEFT_BUTTON) {
 			button = MOUSE_LEFT_BUTTON;
-			cout << "MOUSE_LEFT_BUTTON" << endl;
-			cout << "(" << x << "," << y << ")" << endl;
-			if (y > 250 && y <= 270) {
+
+			if (ymouse > 11 && ymouse <= 13) {
 				level = 1;
 			}
-			else if (y > 280 && y <= 300) {
+			else if (ymouse > 9 && ymouse <= 11) {
 				level = 2;
 			}
-			else if (y > 310 && y <= 330) {
+			else if (ymouse > 7 && ymouse <= 9) {
 				level = 3;
 			}
 		}
 	}
 }
 void Mundo::MyMouse(int x, int y) { //movimiento del raton
-	cout << "(" << x << "," << y << ")" << endl;
-	xmouse = x;
-	ymouse = y;
+	cout << "(" << xmouse << "," << ymouse << ")" << endl;
+	xmouse = (x - 400) / 13, 3; //coordinar con la x de nuestra pantalla
+	ymouse = -(y - 455) / 17.5 + 1; //coordinar con la y de niestra pantalla
 	
 }
 

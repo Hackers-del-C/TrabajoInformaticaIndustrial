@@ -41,17 +41,17 @@ void Entorno::Dibuja(int nivel,int xraton,int yraton) {
 	case 0:
 		//IMAGENES
 		auxetsidi.Imagen("menu", -26, 26, -10, 30); //limx1 limx2 limy1 limy2. La textura es cte -0.1		
-		if (yraton > 250 && yraton<270) {
+		if (yraton > 11 && yraton<13) {
 			gl1 = 1;
 			gl2 = 0;
 			gl3 = 0;
 		}
-		else if (yraton > 280 && yraton <= 300) {
+		else if (yraton > 9 && yraton <= 11) {
 			gl1 = 0;
 			gl2 = 1;
 			gl3 = 0;
 		}
-		else if (yraton > 310 && yraton <= 330) {
+		else if (yraton > 7 && yraton <= 9) {
 			gl1 = 0;
 			gl2 = 0;
 			gl3 = 1;
@@ -124,16 +124,16 @@ void Entorno::Aviso(int pantalla, int x, int y,int xraton, int yraton) {
 		auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, y + 5, y + 20);
 		//TEXTO
 		auxetsidi.Texto("F", x , y + 17, 1, 0, 0, 10);
-		auxetsidi.Texto("REINICIAR EL NIVEL", x-6, y+16, 1, 1, 1, 10); //obv habrá que hacerlo con otras teclas u otra cosa
-		auxetsidi.Texto("MENU PRINCIPAL", x-6,y+15, 1, 1, 1, 10);
+		auxetsidi.Texto("8 REINICIAR EL NIVEL", x-6, y+16, 1, 1, 1, 11); //obv habrá que hacerlo con otras teclas u otra cosa
+		auxetsidi.Texto("7 MENU PRINCIPAL", x-6,y+15, 1, 1, 1, 11);
 		
 		break;
 	case 2: //pantalla si ganas	
 		auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, y + 5, y + 20);
 		//TEXTO
 		auxetsidi.Texto("CONGRATULATIONS BRO", x-3, y + 18, 1, 0, 0, 10);
-		auxetsidi.Texto("SIGUIENTE NIVEL", x - 8, y + 16, 1, 1, 1, 8);
-		auxetsidi.Texto("MENU PRINCIPAL", x - 8, y + 13, 1, 1, 1, 8);
+		auxetsidi.Texto("8 SIGUIENTE NIVEL", x - 8, y + 16, 1, 1, 1, 8);
+		auxetsidi.Texto("7 MENU PRINCIPAL", x - 8, y + 13, 1, 1, 1, 8);
 		
 		break;
 	}
