@@ -83,7 +83,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="F.cpp" />
     <ClCompile Include="src\Amigo.cpp" />
     <ClCompile Include="src\BonusMascarilla.cpp" />
     <ClCompile Include="src\BonusTest.cpp" />

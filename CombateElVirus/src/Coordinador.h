@@ -3,6 +3,8 @@
 
 class Coordinador {
 public:
+	Coordinador();
+	~Coordinador();
 	void Mueve();
 	void Dibuja();
 	void teclaEspecial(unsigned char key);

@@ -16,9 +16,6 @@ void Coordinador::Dibuja() {
 void Coordinador::teclaEspecial(unsigned char key) {
 
 }
-void Coordinador::teclaEspecial(unsigned char key) {
-
-}
 void Coordinador::teclaEspecialsuelta(unsigned char key) {
 
 }

@@ -124,6 +124,7 @@ bool Interaccion::ColisionSube(Hombre &h, Plataformas p) {
         if (h.GetVel().y < 0.0 && h.posicion.y >= p.posicion.y+ p.anchura /4) {
             if (h.posicion.y <= p.posicion.y + p.altura*1.75) {
                 h.posicion.y = p.posicion.y + p.altura*1.75;
+                
                     return true;
             }
             
