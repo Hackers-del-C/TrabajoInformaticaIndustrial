@@ -34,7 +34,7 @@ void Plataformas::Inicializa(float x, float y, float w, float h) {
 
 void Plataformas::Dibuja() {
 
-    glDisable(GL_LIGHTING);
+   /* glDisable(GL_LIGHTING);
     glColor3f(0, 0, aux);
     glBegin(GL_POLYGON);
     glVertex3d(limite1.x, limite1.y, 0);
@@ -43,8 +43,24 @@ void Plataformas::Dibuja() {
     glVertex3d(limite2.x, limite1.y, 0);
     glEnd();
     glColor3f(0, 0, -aux);
-    glEnable(GL_LIGHTING);
+    glEnable(GL_LIGHTING);*/
 
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/suelo (2).png").id);
+    glDisable(GL_LIGHTING);
+    glBegin(GL_POLYGON);
+    glColor3f(1, 1, 1);
+   /* glTexCoord2d(0, 1); glVertex3f(limite1.x, limite2.y, 0);
+    glTexCoord2d(1, 1); glVertex3f(limite2.x, limite2.y, 0);
+    glTexCoord2d(1, 0); glVertex3f(limite2.x, limite1.y, 0);
+    glTexCoord2d(0, 0); glVertex3f(limite1.x, limite1.y, 0);*/
+    glTexCoord2d(0, 1); glVertex3f(limite2.x, limite1.y, 0);
+    glTexCoord2d(1, 1); glVertex3f(limite1.x, limite1.y, 0);
+    glTexCoord2d(1, 0); glVertex3f(limite1.x, limite2.y, 0);
+    glTexCoord2d(0, 0); glVertex3f(limite2.x, limite2.y, 0);
+    glEnd();
+    glEnable(GL_LIGHTING);
+    glDisable(GL_TEXTURE_2D);
 
 
 }
