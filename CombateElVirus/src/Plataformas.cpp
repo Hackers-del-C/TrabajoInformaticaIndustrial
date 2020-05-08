@@ -18,7 +18,16 @@ Plataformas::Plataformas(float x, float y, float w, float h) {
     limite2.x = x+ w/2;
     limite2.y = y +h/2;
 }
-
+Plataformas::Plataformas(plat_t tipo, float x, float y, float w, float h):tipo(tipo) {
+    posicion.x = x;
+    posicion.y = y;
+    anchura = w;
+    altura = h;
+    limite1.x = x - w / 2;
+    limite1.y = y - h / 2;
+    limite2.x = x + w / 2;
+    limite2.y = y + h / 2;
+}
 //ESTO ES AUXILIAR ANTES DE METERLO EN LISTA
 void Plataformas::Inicializa(float x, float y, float w, float h) {
     posicion.x = x;
@@ -44,25 +53,53 @@ void Plataformas::Dibuja() {
     glEnd();
     glColor3f(0, 0, -aux);
     glEnable(GL_LIGHTING);*/
+    switch (tipo) {
+    case Plataformas::PLATAFORMA_ATRAVIESA:
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/platformas1.png").id);
+        glDisable(GL_LIGHTING);
+        glBegin(GL_POLYGON);
+        glColor3f(1, 1, 1);
+        glTexCoord2d(0, 1); glVertex3f(limite2.x, limite1.y, 0);
+        glTexCoord2d(1, 1); glVertex3f(limite1.x, limite1.y, 0);
+        glTexCoord2d(1, 0); glVertex3f(limite1.x, limite2.y, 0);
+        glTexCoord2d(0, 0); glVertex3f(limite2.x, limite2.y, 0);
+        glEnd();
+        glEnable(GL_LIGHTING);
+        glDisable(GL_TEXTURE_2D);
 
-    glEnable(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/suelo (2).png").id);
-    glDisable(GL_LIGHTING);
-    glBegin(GL_POLYGON);
-    glColor3f(1, 1, 1);
-   /* glTexCoord2d(0, 1); glVertex3f(limite1.x, limite2.y, 0);
-    glTexCoord2d(1, 1); glVertex3f(limite2.x, limite2.y, 0);
-    glTexCoord2d(1, 0); glVertex3f(limite2.x, limite1.y, 0);
-    glTexCoord2d(0, 0); glVertex3f(limite1.x, limite1.y, 0);*/
-    glTexCoord2d(0, 1); glVertex3f(limite2.x, limite1.y, 0);
-    glTexCoord2d(1, 1); glVertex3f(limite1.x, limite1.y, 0);
-    glTexCoord2d(1, 0); glVertex3f(limite1.x, limite2.y, 0);
-    glTexCoord2d(0, 0); glVertex3f(limite2.x, limite2.y, 0);
-    glEnd();
-    glEnable(GL_LIGHTING);
-    glDisable(GL_TEXTURE_2D);
+        break;
+    case Plataformas::PLATAFORMA_CHOCA:
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/plataformachoca.png").id);
+        glDisable(GL_LIGHTING);
+        glBegin(GL_POLYGON);
+        glColor3f(1, 1, 1);
+        glTexCoord2d(0, 1); glVertex3f(limite2.x, limite1.y, 0);
+        glTexCoord2d(1, 1); glVertex3f(limite1.x, limite1.y, 0);
+        glTexCoord2d(1, 0); glVertex3f(limite1.x, limite2.y, 0);
+        glTexCoord2d(0, 0); glVertex3f(limite2.x, limite2.y, 0);
+        glEnd();
+        glEnable(GL_LIGHTING);
+        glDisable(GL_TEXTURE_2D);
 
+        break;
+    case Plataformas::SUELO:
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/suelo.png").id);
+        glDisable(GL_LIGHTING);
+        glBegin(GL_POLYGON);
+        glColor3f(1, 1, 1);
+        glTexCoord2d(0, 1); glVertex3f(limite2.x, limite1.y, 0);
+        glTexCoord2d(1, 1); glVertex3f(limite1.x, limite1.y, 0);
+        glTexCoord2d(1, 0); glVertex3f(limite1.x, limite2.y, 0);
+        glTexCoord2d(0, 0); glVertex3f(limite2.x, limite2.y, 0);
+        glEnd();
+        glEnable(GL_LIGHTING);
+        glDisable(GL_TEXTURE_2D);
 
+        break;
+    }
 }
 
 float Plataformas::distancia(ETSIDI::Vector2D punto, ETSIDI::Vector2D* direccion)

@@ -52,10 +52,10 @@ void Mundo::Inicializa()
 	
 	for (int x = 0; x < 10; x++) {
 		if (x < 5) {
-			plataformas.Agregar(new Plataformas(10*x-x/2  , x + 2, 4, 1.5));
+			plataformas.Agregar(new Plataformas(Plataformas::SUELO,10*x-x/2  , x + 2, 4, 1.5));
 		}
 		else {
-			plataformas.Agregar(new Plataformas(10*x-x/2 , x - 2, 4, 1.5));
+			plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 10*x-x/2 , x - 2, 4, 1.5));
 		}
 	}
 	//listabonustest.agregar(new BonusTest("test", hombre.posicion.x-25, 25, 3, 3));
