@@ -6,7 +6,7 @@ void Entorno::Inicializa(int nivel) {
 	switch (nivel) {
 	case 0:
 		stopMusica();
-		ETSIDI::play("mis_sonidos/menu.wav");//marco no toques por dios
+	//	ETSIDI::play("mis_sonidos/menu.wav");
 		
 		break;
 	case 1:
