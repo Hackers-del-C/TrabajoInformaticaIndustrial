@@ -50,6 +50,8 @@ void Mundo::Inicializa()
 	limites.SetLimites(-20, 500, -3.5, 30); //Son los bordes del juego que el jugador no puede pasar	
 	vidas.Inicializa(hombre);
 	
+	plataformas.Agregar(new Plataformas(Plataformas::SUELO, 0,-5.5, 5, 1.5));
+
 	for (int x = 0; x < 10; x++) {
 		if (x < 5) {
 			plataformas.Agregar(new Plataformas(Plataformas::SUELO,10*x-x/2  , x + 2, 4, 1.5));
