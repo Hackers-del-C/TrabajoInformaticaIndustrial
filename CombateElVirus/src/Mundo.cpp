@@ -39,10 +39,10 @@ void Mundo::Inicializa()
 	entorno.Fin(pantalla);
 	personajes.Inicializa(hombre);	
 	
-	virus1.Inicializa( 10, -3, 3, 3, 0, 0, 0);
-	virus1.Anda();
-	virus2.Inicializa(-5, 1, 8, 8, 1, 1, 1);
-	virus2.Anda();
+	virus1.Inicializa( 10, -3);
+	
+	virus2.Inicializa(-5, 1);
+	
 
 
 	limites.SetLimites(-20, 500, -3.5, 30); //Son los bordes del juego que el jugador no puede pasar	
@@ -359,6 +359,10 @@ void Mundo::Tecla(unsigned char key)
 		switch (key) {
 		case 'm':
 			virus2.Ataca();
+
+			break;
+		case 'n':
+			virus2.Desaparece();
 
 			break;
 		case 'w':

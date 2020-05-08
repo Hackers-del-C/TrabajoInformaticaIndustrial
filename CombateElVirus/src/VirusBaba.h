@@ -6,10 +6,12 @@
 class VirusBaba : public Virus
 {
 public:
-    VirusBaba(float x, float y, float w, float h, int lateral, int ataque, int muere);
+    VirusBaba(float x, float y);
     ~VirusBaba();
-    void Inicializa(float x, float y, float w, float h, int lateral, int ataque, int muere);
+    void Inicializa(float x, float y);
     VirusBaba();
+    void Ataca();
+    void Desaparece();
 
 
 

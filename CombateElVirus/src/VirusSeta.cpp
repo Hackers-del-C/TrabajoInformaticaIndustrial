@@ -11,50 +11,32 @@ VirusSeta::~VirusSeta() {
 
 VirusSeta::VirusSeta() {
 
-
+    anchura = 0.4 * 3;
+    altura = 0.4 * 3;
 }
 
-VirusSeta::VirusSeta(float x, float y, float w, float h, int lateral, int ataque, int muere) {
+VirusSeta::VirusSeta(float x, float y) {
 
-
-    anchura = 0.4 * w;//Redimensionamos ya que el recorte de la imagen no es perfecta
-    altura = 0.4 * h;
 
     posicion.x = x;
     posicion.y = y;
 
-    //Permisos de el tipo de virus
-
-    permitirlateral = lateral;
-    permitirataque = ataque;
-    permitirmuerte = muere;
-
     //Creacion de los objetos sprites
 
-    sprite = new SpriteSequence("imagenes/enemigos/virusseta.png", 8, 1, 40, true, 0, 0, w, h);
+    sprite = new SpriteSequence("imagenes/enemigos/virusseta.png", 8, 1, 40, true, 0, 0, 3, 3);
 
 }
 
 
-void VirusSeta::Inicializa(float x, float y, float w, float h, int lateral, int ataque, int muere) {
+void VirusSeta::Inicializa(float x, float y) {
 
   
-
-    anchura = 0.4 * w;//Redimensionamos ya que el recorte de la imagen no es perfecta
-    altura = 0.4 * h;
-
     posicion.x = x;
     posicion.y = y;
 
-    //Permisos de el tipo de virus
-
-    permitirlateral = lateral;
-    permitirataque = ataque;
-    permitirmuerte = muere;
-
     //Creacion de los objetos sprites
 
-    sprite = new SpriteSequence("imagenes/enemigos/virusseta.png", 8, 1, 25, true, 0, 0, w, h);
+    sprite = new SpriteSequence("imagenes/enemigos/virusseta.png", 8, 1, 40, true, 0, 0, 3, 3);
 
 }
 
