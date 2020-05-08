@@ -22,6 +22,10 @@ public:
     float altura, anchura;
     void Inicializa();
     void Salta();
+   
+    void Stop();
+    void Victoria();
+    void Agacha();
     void SetVidas(int v) { vidas = v; }
     void SetMonedas(int m) { monedas = m; }
     //direccion del muñeco

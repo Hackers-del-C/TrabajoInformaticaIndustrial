@@ -65,6 +65,12 @@ void OnSpecialKeyboardDown(int key, int x, int y)
 {
 	mundo.teclaEspecial(key);
 }
+
+void SpecialKeyboardUp(int key, int x, int y)
+{
+	mundo.teclaEspecialsuelta(key);
+}
+
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
 	//poner aqui el código de teclado

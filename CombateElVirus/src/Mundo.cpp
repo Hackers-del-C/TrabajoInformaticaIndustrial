@@ -39,7 +39,7 @@ void Mundo::Inicializa()
 	entorno.Fin(pantalla);
 	personajes.Inicializa(hombre);	
 	
-	virus1.Inicializa( 10, -3);
+	virus1.Inicializa( 80, -3);
 	
 	virus2.Inicializa(-5, 1);
 	
@@ -459,14 +459,19 @@ void Mundo::teclaEspecial(unsigned char key) {
 		 {
 		 case GLUT_KEY_LEFT:
 
-			 hombre.SetVel(-6, hombre.velocidad.y);
+			 hombre.SetVel(-6, hombre.GetVel().y);
 			 //HAY QUE PONER QUE CUANDO ESTE EN EL AIRE NO VAYA HACIA LA DERECHA
 			 hombre.SetDir(2);
 
 			 break;
 		 case GLUT_KEY_RIGHT:
-			 hombre.SetVel(+6, hombre.velocidad.y);
+			 hombre.SetVel(6,hombre.GetVel().y);
 			 hombre.SetDir(1);
+
+			 break;
+		 case GLUT_KEY_DOWN:
+			 hombre.Agacha();
+			
 
 			 break;
 		 case GLUT_KEY_UP:
@@ -488,6 +493,28 @@ void Mundo::teclaEspecial(unsigned char key) {
 	 }
 
 }
+
+void Mundo::teclaEspecialsuelta(unsigned char key) {
+
+	
+		switch (key)
+		{
+		case GLUT_KEY_LEFT:
+		hombre.Stop();
+			break;
+		case GLUT_KEY_RIGHT:
+		hombre.Stop();
+			break;
+		case GLUT_KEY_UP:
+
+		
+			break;
+		}
+	
+
+}
+
+
 void Mundo::ClickMouse(int b, int state) { //click del raton
 	bool down = (state == GLUT_DOWN);
 	//xmouse = (x - 400) / 13, 3; //coordinar con la x de nuestra pantalla
