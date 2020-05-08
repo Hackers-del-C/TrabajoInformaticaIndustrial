@@ -84,6 +84,37 @@ bool Interaccion::Colision(Hombre h, Virus v) {
 
 }
 
+
+bool Interaccion::Colision(Slime &s, Plataformas p) {
+
+    //Crea un recatangulo en centro hombre, altura la altura del hombre y anchura la anchura del hombre.
+     //SIRVE PARA DETECTAR COLISIONES ENTRE ELEMENTOS RECTANGULARES
+    if (s.posicion.x - s.anchura / 2 > p.posicion.x + p.anchura / 2) { return false; }
+    if (s.posicion.x + s.anchura / 2 < p.posicion.x - p.anchura / 2) { return false; }
+    if (s.posicion.y - s.altura / 2 > p.altura / 2 + p.posicion.y) { return false; }
+    if (s.posicion.y + s.altura / 2 < p.posicion.y - p.altura / 2) { return false; }
+    else {
+        s.Choca();
+        return true;
+    }
+
+}
+bool Interaccion::Colision(Slime& s, Limites l) {
+
+    ETSIDI::Vector2D dir;
+    float dif = s.posicion.x - l.suelo.GetSuelo(); //Cabrones
+    if (s.posicion.y<-3.5) {
+        s.Choca();
+        s.SetVel(0, 0);
+        s.aceleracion.y = 0;
+        
+        return true;
+    }
+    else { return false; }
+}
+
+
+
 bool Interaccion::ColisionBonus(Hombre &h, Bonus  b) { //Esto deberia ser bonusmascarillas
 
    if (h.posicion.x - h.anchura / 2 > b.posicion.x + b.anchura / 2) { return false; }

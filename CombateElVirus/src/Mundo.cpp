@@ -45,6 +45,7 @@ void Mundo::Inicializa()
 
 	virus3.Inicializa(-10, 15);
 	
+	slime.Inicializa(-10, 10);
 
 
 	limites.SetLimites(-20, 500, -3.5, 30); //Son los bordes del juego que el jugador no puede pasar	
@@ -129,6 +130,7 @@ void Mundo::Dibuja()
 			virus1.Dibuja(level);
 			virus2.Dibuja(level);
 			virus3.Dibuja(level);
+			slime.Dibuja();
 			plataformas.Dibuja();
 			
 			bordessube.Dibuja();
@@ -207,6 +209,7 @@ void Mundo::Mueve()
 	virus1.Mueve(0.025f);
 	virus1.Seguir(hombre);
 	virus3.Seguir(hombre);
+	slime.Mueve(0.025f);
 	//bonus1.Mueve(0.025f);
 	hombre.Mueve(0.025f);
 		 	
@@ -223,7 +226,8 @@ void Mundo::Mueve()
 
 	//Interaccion::Colision(bonus1, limites);
 
-	
+	Interaccion::Colision(slime, limites);
+	plataformas.Colision(slime);
 
 	Interaccion::reboteinterior(hombre, limites);
 	

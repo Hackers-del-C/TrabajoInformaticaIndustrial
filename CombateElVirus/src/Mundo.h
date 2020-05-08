@@ -21,6 +21,7 @@
 #include "VirusSeta.h"
 #include "VirusBaba.h"
 #include "VirusMosca.h"
+#include "Slime.h"
 
 enum { MOUSE_LEFT_BUTTON, MOUSE_MIDDLE_BUTTON, MOUSE_RIGHT_BUTTON };
 
@@ -64,6 +65,7 @@ private:
 	VirusSeta virus1;
 	VirusBaba virus2;
 	VirusMosca virus3;
+	Slime slime;
 	Entorno entorno;
 	//LISTAS
 	ListaDisparos disparos;

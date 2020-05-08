@@ -2,6 +2,7 @@
 #include "Plataformas.h"
 //#include "Interaccion.h"
 //#include "Hombre.h"
+#include "Slime.h"
 #include "ListaBordesSube.h"
 
 //#include <vector>
@@ -25,6 +26,7 @@ public:
 	Plataformas* ColisionChoca(Hombre &h);
 	Plataformas* ColisionChocaLado(Hombre &h);
 	Plataformas* operator [](int i);
+	void Colision(Slime& s);
 private:
 	int numero;
 	Plataformas* lista[NUM_MAX_PLATAFORMAS];

@@ -106,6 +106,13 @@ Plataformas* ListaPlataformas::operator [](int i) {
 	return lista[i];
 }
 
+void ListaPlataformas::Colision(Slime &s) {
+	for (int i = 0; i < numero; i++) {
+		if (Interaccion::Colision(s, *(lista[i]))) {
+		}
+	}
+}
+
 //bool ListaPlataformas::Colision(Hombre h) {
 //	for (int i = 0; i < lista.size(); i++) {
 //
