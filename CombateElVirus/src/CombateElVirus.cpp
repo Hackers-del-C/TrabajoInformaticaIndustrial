@@ -42,7 +42,7 @@ int main(int argc,char* argv[])
 	glutMouseFunc(OnMouseClick);
 	glutPassiveMotionFunc(OnMouseMotion);
 	mundo.Inicializa();
-
+	mundo.InicializaFondo();
 	//pasarle el control a GLUT,que llamara a los callbacks
 	glutMainLoop();	
 

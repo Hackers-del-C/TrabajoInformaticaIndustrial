@@ -151,7 +151,7 @@ bool Interaccion::ColisionSube(Hombre &h, Plataformas p) {
     if (h.posicion.y + h.altura / 2 < p.posicion.y - p.altura / 2) { return false; }
     else {
        
-            if (h.GetVel().y < 0.0 && h.posicion.y >= p.posicion.y + p.anchura / 4) {
+            if (h.GetVel().y <= 0.0 && h.posicion.y >= p.posicion.y + p.altura / 4) {
                 if (h.posicion.y <= p.posicion.y + p.altura * 1.75) {
                     h.posicion.y = p.posicion.y + p.altura * 1.75;
 

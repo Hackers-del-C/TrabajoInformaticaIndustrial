@@ -43,16 +43,7 @@ void Plataformas::Inicializa(float x, float y, float w, float h) {
 
 void Plataformas::Dibuja() {
 
-   /* glDisable(GL_LIGHTING);
-    glColor3f(0, 0, aux);
-    glBegin(GL_POLYGON);
-    glVertex3d(limite1.x, limite1.y, 0);
-    glVertex3d(limite1.x, limite2.y, 0);
-    glVertex3d(limite2.x, limite2.y, 0);
-    glVertex3d(limite2.x, limite1.y, 0);
-    glEnd();
-    glColor3f(0, 0, -aux);
-    glEnable(GL_LIGHTING);*/
+  
     switch (tipo) {
     case Plataformas::PLATAFORMA_ATRAVIESA:
         glEnable(GL_TEXTURE_2D);

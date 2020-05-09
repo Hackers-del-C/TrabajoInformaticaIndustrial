@@ -44,7 +44,22 @@ void Mundo::fichero() {
 
 
 }
-
+void Mundo::InicializaFondo() {
+	int j = 30;
+		
+		for (int y = -6; y < 50; y++) {			
+				
+			plataformas.Agregar(new Plataformas(Plataformas::SUELO,j*y, -5.5, 20, 1.5));
+		}
+		for (int x = 0; x < 10; x++) {
+			if (x < 5) {
+				plataformas.Agregar(new Plataformas(Plataformas::SUELO, 10 * x - x / 2, x + 2, 4, 1.5));
+			}
+			else {
+				plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 10 * x - x / 2, x - 2, 4, 1.5));
+			}
+		}
+}
 void Mundo::Inicializa()
 {
 	
@@ -71,16 +86,7 @@ void Mundo::Inicializa()
 	limites.SetLimites(-20, 500, -3.5, 30); //Son los bordes del juego que el jugador no puede pasar	
 	vidas.Inicializa(hombre);
 	
-	plataformas.Agregar(new Plataformas(Plataformas::SUELO, 0,-5.5, 5, 1.5));
-
-	for (int x = 0; x < 10; x++) {
-		if (x < 5) {
-			plataformas.Agregar(new Plataformas(Plataformas::SUELO,10*x-x/2  , x + 2, 4, 1.5));
-		}
-		else {
-			plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 10*x-x/2 , x - 2, 4, 1.5));
-		}
-	}
+	
 	//listabonustest.agregar(new BonusTest("test", hombre.posicion.x-25, 25, 3, 3));
 
 	for (int i = 0; i < BONUSTEST; i++) {

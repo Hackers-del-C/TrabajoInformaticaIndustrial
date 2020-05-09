@@ -6,7 +6,7 @@
 #include "ListaBordesSube.h"
 
 //#include <vector>
-#define NUM_MAX_PLATAFORMAS 100
+#define NUM_MAX_PLATAFORMAS 1000
 
 class ListaPlataformas{
 
