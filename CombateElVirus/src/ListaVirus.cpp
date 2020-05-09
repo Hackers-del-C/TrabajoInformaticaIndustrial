@@ -125,10 +125,18 @@ Virus* ListaVirus::operator [](int i)
 	return lista[i];
 }
 
+void ListaVirus::Sigue(Hombre h)
+{
+	for (int i = 0; i < numero; i++)
+		lista[i]->Seguir(h);
+}
+
 //Virus* ListaVirus::Colision(Hombre &h) {
 //	for (int i = 0; i < numero; i++) {
 //		if (Interaccion::Colision(h,*lista[i])) {
 //			return lista[i];
 //		}
 //	}
-//}
+//}ç
+
+

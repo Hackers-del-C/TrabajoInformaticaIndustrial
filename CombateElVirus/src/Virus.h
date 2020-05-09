@@ -21,6 +21,7 @@ public:
     void Muere(ETSIDI::Vector2D vectormuerte);
     void Ataca();
     void Anda();
+    virtual void Seguir(Hombre h);
     int GetMuerto() { return muere; }
     ETSIDI::Vector2D posicion, velocidad, aceleracion, vectormuerte;
     float anchura, altura;

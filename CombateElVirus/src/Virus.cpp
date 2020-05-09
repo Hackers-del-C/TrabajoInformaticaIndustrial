@@ -65,4 +65,11 @@ void Virus::Mueve(float t) {
     sprite->loop();
 }
 
+void Virus::Seguir(Hombre h) {
+
+}
+
+
+
+
 

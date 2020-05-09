@@ -74,11 +74,13 @@ void Mundo::Inicializa()
 
 	virus3.Inicializa(-10, 15);
 
-	
-	listaslime.agregar(new Slime(0, 10));
-	listaslime.agregar(new Slime(10, 30));
-	listaslime.agregar(new Slime(-10, 40));
+	virus4.Inicializa(10, -3);
 
+	for (int i = 0; i < 5; i++)
+	{
+		
+		listavirus.agregar(new VirusSeta(10+4*i,-3));
+	}
 	
 	//slime.Inicializa(-10, 10);
 
@@ -156,6 +158,7 @@ void Mundo::Dibuja()
 			virus1.Dibuja(level);
 			virus2.Dibuja(level);
 			virus3.Dibuja(level);
+			virus4.Dibuja(level);
 			listaslime.dibuja();
 			//slime.Dibuja();
 			plataformas.Dibuja();
@@ -184,7 +187,7 @@ void Mundo::Dibuja()
 			if (hombre.GetVidas() == 0) { 
 				// habría que poner con un contador de esos un tiempo para que se viera que el sprite cambia a muerto y cae al vacio)
 				hombre.SetVel(0, 0);
-				hombre.SetAceleracion(0, -10);
+				//hombre.SetAceleracion(0, -10);
 				pantalla=1;			
 				fichero();
 				//musica de muerte va aqui
@@ -192,7 +195,7 @@ void Mundo::Dibuja()
 			 //FIN DE PARTIRA: Ganador
 			if (hombre.posicion.x > 250) {//HABRÁ QUE AMPLIARLO
 				hombre.SetVel(0, 0);
-				hombre.SetAceleracion(0, -10);
+				//hombre.SetAceleracion(0, -10);
 				pantalla=2;
 				//musica de ganador va aqui
 
@@ -236,8 +239,10 @@ void Mundo::Mueve()
 	virus2.Mueve(0.025f);
 	virus3.Mueve(0.025f);
 	virus1.Mueve(0.025f);
+	virus4.Mueve(0.025f);
 	virus1.Seguir(hombre);
 	virus3.Seguir(hombre);
+	virus4.Seguir(hombre);
 	//slime.Mueve(0.025f);
 	//bonus1.Mueve(0.025f);
 	hombre.Mueve(0.025f);
@@ -246,7 +251,12 @@ void Mundo::Mueve()
 	misiles.Mueve(0.025f);
 	vidas.Mueve(x_ojo);
 	listavirus.mueve(0.025f, hombre);
+	listavirus.Sigue(hombre);
+
 	listaslime.mueve(0.025f, hombre);
+
+
+
 	listabonusmascarilla.mueve(0.025f);
 	listabonusmascarilla.Colision(limites);
 	listabonusmascarilla.Colision(plataformaprueba);
@@ -492,6 +502,7 @@ void Mundo::teclaEspecial(unsigned char key) {
 
 			 if (salto == 1) {
 				 hombre.SetVel(hombre.GetVel().x, +18);
+				 virus3.dispara(listaslime);
 				 //hombre.SetAceleracion(0.0, -20);
 				 salto = 0;
 				 ETSIDI::play("mis_sonidos/salto.wav");

@@ -19,6 +19,7 @@ public:
 	void destruirContenido();
 	void eliminar(int index);
 	void eliminar(Virus* e);
+	void Sigue(Hombre h);
 	//Virus* colision(Hombre& h);
 	Virus* operator [](int i);
 	int getNumero() { return numero; }

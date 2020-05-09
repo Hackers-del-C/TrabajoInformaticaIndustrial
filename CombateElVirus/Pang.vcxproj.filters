@@ -109,6 +109,9 @@
     <ClCompile Include="src\ListaSlime.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
     </ClCompile>
+    <ClCompile Include="src\VirusGusano.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\ETSIDI.h">
@@ -217,6 +220,9 @@
       <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
     </ClInclude>
     <ClInclude Include="src\ListaSlime.h">
+      <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VirusGusano.h">
       <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
     </ClInclude>
   </ItemGroup>
