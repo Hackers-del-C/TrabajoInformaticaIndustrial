@@ -23,12 +23,26 @@ void Mundo::Setojo(float ox, float oy, float oz) {
 
 void Mundo::fichero() {
 
-	ofstream fichero("resultado_final.txt");
+	ofstream fichero("resultado_final.txt",ofstream::out || ofstream::in ||ios::app);
+	
+	string datos_previos;
 
+	
+
+	/*while (!fichero.eof()) {
+
+		fichero << datos_previos;
+	}*/
+	
+	fichero << datos_previos;
+	//fichero << "Nombre: " << nombre << endl; 
 	fichero << "Has cogido: " << hombre.GetMonedas() << " test" << endl;
-	//fichero << "Has tardado: " << tiempo << " segundos" << endl;
+	fichero << "Has tardado: " << (clock() - tiempo)/1000 << " segundos" << endl; // esta donde el mouse el empizo del temporizador
+	
 
 	fichero.close();
+
+
 }
 
 void Mundo::Inicializa()
@@ -522,6 +536,7 @@ void Mundo::ClickMouse(int b, int state) { //click del raton
 
 			if (ymouse > 11 && ymouse <= 13) {
 				level = 1;
+				tiempo = clock(); //para el tiempo
 			}
 			else if (ymouse > 9 && ymouse <= 11) {
 				level = 2;

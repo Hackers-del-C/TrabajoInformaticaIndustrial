@@ -1,5 +1,6 @@
 #pragma once
 #include "ETSIDI.h"
+#include"time.h"
 
 #include "Limites.h"
 #include "Personajes.h"
@@ -56,7 +57,7 @@ private:
 	int distancia=0;
 	int salto =0;
 	int pantalla=0;//aux
-	//
+	long tiempo;//
 	//Disparo disparo;
 	Personajes personajes;
 	Hombre hombre;
