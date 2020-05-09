@@ -1,8 +1,8 @@
-#include "Mundo.h"
+#include "Coordinador.h"
 #include "glut.h"
 
 
-Mundo mundo;
+Coordinador combate;
 
 //los callback, funciones que seran llamadas automaticamente por la glut
 //cuando sucedan eventos
@@ -41,8 +41,9 @@ int main(int argc,char* argv[])
 	glutKeyboardFunc(OnKeyboardDown);
 	glutMouseFunc(OnMouseClick);
 	glutPassiveMotionFunc(OnMouseMotion);
-	mundo.Inicializa();
-	mundo.InicializaFondo();
+	
+	combate.Inicializa();
+
 	//pasarle el control a GLUT,que llamara a los callbacks
 	glutMainLoop();	
 
@@ -58,35 +59,35 @@ void OnDraw(void)
 	glMatrixMode(GL_MODELVIEW);	
 	glLoadIdentity();
 	
-	mundo.Dibuja();
+	combate.Dibuja();
 	
 	//no borrar esta linea ni poner nada despues
 	glutSwapBuffers();
 }
 void OnSpecialKeyboardDown(int key, int x, int y)
 {
-	mundo.teclaEspecial(key);
+	combate.teclaEspecial(key);
 }
 
 void SpecialKeyboardUp(int key, int x, int y)
 {
-	mundo.teclaEspecialsuelta(key);
+	combate.teclaEspecialsuelta(key);
 }
 
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
 	//poner aqui el código de teclado
-	mundo.Tecla(key);
+	combate.tecla(key);
 
 	glutPostRedisplay();
 }
 void OnMouseClick(int b, int state, int x, int y){ //click del raton
-	mundo.ClickMouse(b, state);
+	combate.ClickMouse(b, state);
 
 	glutPostRedisplay();
 }
 void OnMouseMotion(int x, int y) { //movimiento del raton
-	mundo.MyMouse(x, y);
+	combate.MyMouse(x, y);
 
 	glutPostRedisplay();
 }
@@ -94,7 +95,7 @@ void OnMouseMotion(int x, int y) { //movimiento del raton
 void OnTimer(int value)
 {
 //poner aqui el código de animacion
-	mundo.Mueve();
+	combate.Mueve();
 	
 	//no borrar estas lineas
 	glutTimerFunc(25,OnTimer,0);
