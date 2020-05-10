@@ -74,7 +74,12 @@ bool ListaDisparos::Colision(Virus& v)
 	{
 		if (Interaccion::Colision(*(lista[i]), v)) {
 			
-			//DestruirContenido(i);
+			/*DestruirContenido(i);
+			v.SetVidas(v.GetVidas() - 1);
+			if (v.GetVidas() < 1) {
+				v.Muere();
+			}*/
+			//eliminar(i);esto da errorrrrrrrrrrrrr
 			return 1;
 		}
 	}

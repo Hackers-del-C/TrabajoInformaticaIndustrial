@@ -2,6 +2,7 @@
 #include "Virus.h"
 #define MAX_VIRUS 100
 #include "Hombre.h"
+#include "ListaDisparos.h"
 //#include "Interaccion.h"
 //#include "Limites.h"
 
@@ -19,6 +20,7 @@ public:
 	void destruirContenido();
 	void eliminar(int index);
 	void eliminar(Virus* e);
+	void Colision(ListaDisparos& l);
 	void Sigue(Hombre h);
 	//Virus* colision(Hombre& h);
 	Virus* operator [](int i);

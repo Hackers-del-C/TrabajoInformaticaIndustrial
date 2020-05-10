@@ -1,5 +1,5 @@
-Has cogido: 2 test
-Has tardado: 0 segundos
+Has cogido: 0 test
+Has tardado: 3 segundos
 
 
 

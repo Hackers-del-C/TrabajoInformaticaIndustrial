@@ -63,8 +63,8 @@ bool Interaccion::Colision(Disparo d, Virus &v) {
     if (aux.module() < d.radio) {
         // Colisión detectada
         
-        
-       v.Muere(aux);
+   
+      v.SetVidas(v.GetVidas()-1);
         return true;
     }
     return false;

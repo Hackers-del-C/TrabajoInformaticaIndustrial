@@ -68,7 +68,7 @@ void Mundo::Inicializa()
 	entorno.Fin(pantalla);
 	personajes.Inicializa(hombre);	
 	
-	virus1.Inicializa( 80, -3);
+	
 	
 	virus2.Inicializa(-5, 1);
 
@@ -76,10 +76,15 @@ void Mundo::Inicializa()
 
 	virus4.Inicializa(10, -3);
 
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 1; i++)
 	{
 		
-		listavirus.agregar(new VirusSeta(10+4*i,-3));
+		listavirus.agregar(new VirusSeta(40 + 20 * i, -3));
+	}
+	for (int i = 0; i < 1; i++)
+	{
+
+		listavirus.agregar(new VirusSlime(30+30*i, -3));
 	}
 	
 	//slime.Inicializa(-10, 10);
@@ -155,7 +160,7 @@ void Mundo::Dibuja()
 			misiles.Dibuja();
 			listalanzamisiles.Dibuja();
 
-			virus1.Dibuja(level);
+			
 			virus2.Dibuja(level);
 			virus3.Dibuja(level);
 			virus4.Dibuja(level);
@@ -238,9 +243,9 @@ void Mundo::Mueve()
 	}
 	virus2.Mueve(0.025f);
 	virus3.Mueve(0.025f);
-	virus1.Mueve(0.025f);
+	
 	virus4.Mueve(0.025f);
-	virus1.Seguir(hombre);
+	
 	virus3.Seguir(hombre);
 	virus4.Seguir(hombre);
 	//slime.Mueve(0.025f);
@@ -250,8 +255,10 @@ void Mundo::Mueve()
 	disparos.Mueve(0.025f);
 	misiles.Mueve(0.025f);
 	vidas.Mueve(x_ojo);
+
 	listavirus.mueve(0.025f, hombre);
 	listavirus.Sigue(hombre);
+	listavirus.Colision(disparos);
 
 	listaslime.mueve(0.025f, hombre);
 
@@ -352,10 +359,7 @@ void Mundo::Mueve()
 	}
 
 	//Colision virus con disp	
-	if (disparos.Colision(virus1)) {//si alguna esfera ha chocado
-		//virus1.Muere();
-		
-	}		//disparo.eliminar(aux7);	
+		//disparo.eliminar(aux7);	
 
 	///////// misil-hombre
 	Misil* aux = misiles.colision(hombre);

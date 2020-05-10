@@ -34,21 +34,34 @@ void Virus::Dibuja(int nivel)
 
 }
 
-void Virus::Muere(ETSIDI::Vector2D vectormuerte)
+void Virus::Muere()
 {
-    //spritemuere->setCenter(10, 3);
-      //  spritemuere->setPos(10,3);
+    
 
-  
-        //spritemuere->setAngle(vectormuerte.argument() * 180 / 3.14159265); //Hay que mirar si la funcion vector 2d de etsidi tiene argumento (atan(vectormuerte.y/vectormuerte.x)
-       
 
-        ETSIDI::play("mis_sonidos/virusmuere1.wav");
+    //muerte
+        // sprite = new SpriteSequence("imagenes/enemigos/virusslimeanda.png", 8, 1, 80, false, 0, 0, 4, 4);
+
+
+        //ETSIDI::play("mis_sonidos/virusmuere1.wav");
         /*glutPostRedisplay();
         glutTimerFunc(2500,Muere, 0);*/
  
     
 }
+
+int Virus::GetVidas() {
+    return vidas;
+}
+
+void Virus::SetVidas(int v) {
+    vidas = v;
+    if(vidas<1){
+        Muere();
+    }
+}
+
+
 
 void Virus::SetVel(float vx, float vy)
 {

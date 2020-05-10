@@ -7,6 +7,7 @@
 #include <string>
 #include "Hombre.h"
 
+
 using namespace std;
 
 class Virus {
@@ -18,9 +19,11 @@ public:
     void Dibuja(int nivel);
     void Mueve(float t);
     void SetVel(float x, float y);
-    void Muere(ETSIDI::Vector2D vectormuerte);
+    virtual void Muere();
     void Ataca();
     void Anda();
+    int GetVidas();
+    void SetVidas(int v);
     virtual void Seguir(Hombre h);
     int GetMuerto() { return muere; }
     ETSIDI::Vector2D posicion, velocidad, aceleracion, vectormuerte;
@@ -34,7 +37,6 @@ public:
     // ETSIDI::SpriteSequence* virusrojo;
 protected:
     //Acciones
-    int muere, ataque, lateral, anda;
-    //Permisos
-    int permitirlateral, permitirataque, permitirmuerte;
+    int muere, vidas;
+ 
 };

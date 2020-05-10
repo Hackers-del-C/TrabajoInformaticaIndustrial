@@ -17,9 +17,11 @@ VirusSlime::VirusSlime() {
 
 VirusSlime::VirusSlime(float x, float y) {
 
-
+    vidas = 1;
     posicion.x = x;
     posicion.y = y;
+    anchura = 4;
+    altura = 4;
 
     //Creacion de los objetos sprites
 
