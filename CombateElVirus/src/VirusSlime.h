@@ -3,14 +3,14 @@
 #include "ETSIDI.h"
 
 #pragma once
-class VirusGusano : public Virus
+class VirusSlime : public Virus
 {
 public:
-    VirusGusano(float x, float y);
-    ~VirusGusano();
+    VirusSlime(float x, float y);
+    ~VirusSlime();
     void Inicializa(float x, float y);
     void Seguir(Hombre h);
-    VirusGusano();
+    VirusSlime();
 
 
 

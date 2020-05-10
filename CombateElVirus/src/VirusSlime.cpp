@@ -1,21 +1,21 @@
-#include "VirusGusano.h"
+#include "VirusSlime.h"
 
 
 using namespace ETSIDI;
 using namespace std;
 using ETSIDI::getTexture;
 
-VirusGusano::~VirusGusano() {
+VirusSlime::~VirusSlime() {
 
 }
 
-VirusGusano::VirusGusano() {
+VirusSlime::VirusSlime() {
 
     anchura = 0.4 * 3;
     altura = 0.4 * 3;
 }
 
-VirusGusano::VirusGusano(float x, float y) {
+VirusSlime::VirusSlime(float x, float y) {
 
 
     posicion.x = x;
@@ -23,12 +23,12 @@ VirusGusano::VirusGusano(float x, float y) {
 
     //Creacion de los objetos sprites
 
-    sprite = new SpriteSequence("imagenes/enemigos/virusgusano.png", 8, 1, 40, true, 0, 0, 3, 3);
+    sprite = new SpriteSequence("imagenes/enemigos/virusslimeanda.png", 8, 1, 80, true, 0, 0, 4, 4);
 
 }
 
 
-void VirusGusano::Inicializa(float x, float y) {
+void VirusSlime::Inicializa(float x, float y) {
 
 
     posicion.x = x;
@@ -36,11 +36,11 @@ void VirusGusano::Inicializa(float x, float y) {
 
     //Creacion de los objetos sprites
 
-    sprite = new SpriteSequence("imagenes/enemigos/virusgusano.png", 8, 1, 40, true, 0, 0, 1, 1);
+    sprite = new SpriteSequence("imagenes/enemigos/virusslimeanda.png", 8, 1, 90, true, 0, 0, 4, 4);
 
 }
 
-void VirusGusano::Seguir(Hombre h) {
+void VirusSlime::Seguir(Hombre h) {
 
     if (h.posicion.x + 5 < posicion.x) {
         velocidad.x = -3;

@@ -40,7 +40,7 @@ void Virus::Muere(ETSIDI::Vector2D vectormuerte)
       //  spritemuere->setPos(10,3);
 
   
-        spritemuere->setAngle(vectormuerte.argument() * 180 / 3.14159265); //Hay que mirar si la funcion vector 2d de etsidi tiene argumento (atan(vectormuerte.y/vectormuerte.x)
+        //spritemuere->setAngle(vectormuerte.argument() * 180 / 3.14159265); //Hay que mirar si la funcion vector 2d de etsidi tiene argumento (atan(vectormuerte.y/vectormuerte.x)
        
 
         ETSIDI::play("mis_sonidos/virusmuere1.wav");

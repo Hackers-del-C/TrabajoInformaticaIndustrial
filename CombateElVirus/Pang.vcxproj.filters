@@ -109,7 +109,7 @@
     <ClCompile Include="src\ListaSlime.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
     </ClCompile>
-    <ClCompile Include="src\VirusGusano.cpp">
+    <ClCompile Include="src\VirusSlime.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
     </ClCompile>
   </ItemGroup>
@@ -222,7 +222,7 @@
     <ClInclude Include="src\ListaSlime.h">
       <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
     </ClInclude>
-    <ClInclude Include="src\VirusGusano.h">
+    <ClInclude Include="src\VirusSlime.h">
       <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
     </ClInclude>
   </ItemGroup>
