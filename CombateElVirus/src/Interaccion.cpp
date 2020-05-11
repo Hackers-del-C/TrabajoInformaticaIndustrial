@@ -46,7 +46,7 @@ bool Interaccion::colision(Misil misil, Hombre h) {
     if (h.posicion.y - h.altura / 4 > misil.posicion.y + misil.altura / 2) { return false; }
     if (h.posicion.y + h.altura / 4 < misil.posicion.y - misil.altura / 2) { return false; }
     else {
-        return true;
+        return true; //no frada
     }
 }
 
