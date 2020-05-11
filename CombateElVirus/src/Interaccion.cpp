@@ -42,7 +42,7 @@ bool Interaccion::caida(Hombre &h, Limites l) {
     float ymin = l.suelo.limite1.y;
     //if (h.posicion.y > ymax)h.posicion.y = ymax;
     //if (h.posicion.y < ymin)h.posicion.y = ymin;
-    if (h.posicion.y < ymin-3) {
+    if (h.posicion.y < ymin) {
         return 1;
     }
     else {
