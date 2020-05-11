@@ -375,7 +375,7 @@ void Mundo::Mueve()
 
 
 
-void Mundo::Tecla(unsigned char key)
+int Mundo::Tecla(unsigned char key)
 {	//NIVELES:	
 	
 	switch (pantalla) {
@@ -447,11 +447,14 @@ void Mundo::Tecla(unsigned char key)
 			level = 0;
 			pantalla = 0;
 			//NO SE USA EL hombre.FinPartida()  PORQUE ESTA ARRIBA AL TENER LEVEL==0
+			disparos.DestruirContenido();
+			return 0;
 			break;
 		case '8': //REINICIAR EL NIVEL
 			level = 1;
 			CargarNivel();
-			pantalla = 0;			
+			pantalla = 0;		
+			disparos.DestruirContenido();
 			break;
 		}
 		break;
@@ -460,11 +463,14 @@ void Mundo::Tecla(unsigned char key)
 		case '7':
 			level = 0;
 			pantalla = 0;
+			disparos.DestruirContenido();
+			return 0;
 			break;
 		case '8':
 			level += 1;		
 			CargarNivel();
 			pantalla = 0;
+			disparos.DestruirContenido();
 			break;
 
 		}
@@ -540,7 +546,7 @@ void Mundo::teclaEspecialsuelta(unsigned char key) {
 //	virus2.Ataca();
 //}
 
-void Mundo::ClickMouse(int b, int state,int x, int y ) { //click del raton
+int Mundo::ClickMouse(int b, int state,int x, int y ) { //click del raton
 	bool down = (state == GLUT_DOWN);
 	//xmouse = (x - 400) / 13, 3; //coordinar con la x de nuestra pantalla
 	//ymouse = -(y - 455) / 17.5 + 1; //coordinar con la y de niestra pantalla
@@ -554,16 +560,20 @@ void Mundo::ClickMouse(int b, int state,int x, int y ) { //click del raton
 			
 				level = 1;
 				tiempo = clock(); //para el tiempo
+				return level;
 			}
 			else if (y > 9 && y <= 11) {
 
 				level = 2;
+				return level;
 			}
 			else if (y > 7 && y <= 9) {
 				level = 3;
+				return level;
 			}
 		}
 	}
+	
 }
 
 

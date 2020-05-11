@@ -2,7 +2,7 @@
 
 #include "Coordinador.h"
 Coordinador::Coordinador() {
-	
+	level = 0;
 }
 Coordinador::~Coordinador() {
 
@@ -17,10 +17,11 @@ void Coordinador::Mueve() {
 }
 void Coordinador::Dibuja() {
 	mundo.Dibuja();
-	entorno.DibujaMenu(xmouse,ymouse);
+	if(level==0)
+		entorno.DibujaMenu(xmouse,ymouse);
 }
 void Coordinador::tecla(unsigned char key) {
-	mundo.Tecla(key);
+	level=mundo.Tecla(key);
 }
 void Coordinador::teclaEspecial(unsigned char key) {
 	mundo.teclaEspecial(key);
@@ -29,7 +30,7 @@ void Coordinador::teclaEspecialsuelta(unsigned char key) {
 	mundo.teclaEspecialsuelta(key);
 }
 void Coordinador:: ClickMouse(int b, int state) {
-	mundo.ClickMouse(b, state,xmouse,ymouse);
+	level=mundo.ClickMouse(b, state,xmouse,ymouse);
 }
 void Coordinador::MyMouse(int x, int y) {
 	cout << "(" << xmouse << "," << ymouse << ")" << endl; //borrar futuro

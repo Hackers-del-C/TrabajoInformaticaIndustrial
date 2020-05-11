@@ -37,7 +37,7 @@ public:
 	int mascarillas = 5;
 	//generales
 	Mundo();
-	void Tecla(unsigned char key);
+	int Tecla(unsigned char key);
 	void Inicializa();
 	void InicializaFondo();
 	void fichero();
@@ -45,7 +45,7 @@ public:
 	void Dibuja();
 	void teclaEspecial(unsigned char key);
 	void teclaEspecialsuelta(unsigned char key);
-	void ClickMouse(int b, int state,int x, int y);
+	int ClickMouse(int b, int state,int x, int y);
 	
 	void CargarNivel();
 	//ojo:
