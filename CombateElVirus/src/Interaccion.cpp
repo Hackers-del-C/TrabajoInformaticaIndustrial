@@ -41,11 +41,10 @@ bool Interaccion::caida(Hombre &h, Limites l) {
 }
 bool Interaccion::colision(Misil misil, Hombre h) {
    
-  
-    if (h.posicion.x - h.anchura / 2 > misil.posicion.x + misil.anchura / 2) { return false; }
-    if (h.posicion.x + h.anchura / 2 < misil.posicion.x - misil.anchura / 2) { return false; }
-    if (h.posicion.y - h.altura / 2 > misil.altura / 2 + misil.posicion.y) { return false; }
-    if (h.posicion.y + h.altura / 2 < misil.posicion.y - misil.altura / 2) { return false; }
+    if (h.posicion.x - h.anchura / 4 > misil.posicion.x + misil.anchura / 2) { return false; }
+    if (h.posicion.x + h.anchura / 4 < misil.posicion.x - misil.anchura / 2) { return false; }
+    if (h.posicion.y - h.altura / 4 > misil.posicion.y + misil.altura / 2) { return false; }
+    if (h.posicion.y + h.altura / 4 < misil.posicion.y - misil.altura / 2) { return false; }
     else {
         return true;
     }
@@ -156,14 +155,14 @@ bool Interaccion::ColisionSube(Hombre &h, Plataformas p) {
     if (h.posicion.y + h.altura / 2 < p.posicion.y - p.altura / 2) { return false; }
     else {
        
-            if (h.GetVel().y <= 0.0 && h.posicion.y >= p.posicion.y + p.altura / 4) {
-                if (h.posicion.y <= p.posicion.y + p.altura * 1.75) {
-                    h.posicion.y = p.posicion.y + p.altura * 1.75;
+        if (h.GetVel().y <= 0.0 && h.posicion.y >= p.posicion.y + p.altura / 4) {
+            if (h.posicion.y <= p.posicion.y + p.altura * 1.75) {
+                h.posicion.y = p.posicion.y + p.altura * 1.75;
 
-                    return true;
-                }
-
+                return true;
             }
+
+        }
         
         else {
             return false;

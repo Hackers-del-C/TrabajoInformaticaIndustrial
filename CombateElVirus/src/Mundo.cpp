@@ -46,31 +46,33 @@ void Mundo::fichero() {
 }
 void Mundo::InicializaFondo() {
 	int j = 5;
-		
-		for (int y = -6; y < 50; y++) {			
-			if (y != 2 &&  y!=3) {
-				plataformas.Agregar(new Plataformas(Plataformas::SUELO, j * y, -5.5, 5, 1.5));
-			}
+	///lanzamisiles2
+	plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 70, 8, 4, 1.5));
+
+	for (int y = -6; y < 50; y++) {
+		if (y != 2 && y != 3 && y != 7 && y != 8 && y != 9 && y != 10 && y != 20 && y != 21) {
+			plataformas.Agregar(new Plataformas(Plataformas::SUELO, j * y, -5.5, 5, 1.5));
 		}
-		for (int x = 0; x < 10; x++) {
-			if (x < 5) {
-				plataformas.Agregar(new Plataformas(Plataformas::SUELO, 10 * x - x / 2, x + 2, 4, 1.5));
-			}
-			else {
-				plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 10 * x - x / 2, x - 2, 4, 1.5));
-			}
+	}
+	for (int x = 0; x < 10; x++) {
+		if (x < 5) {
+			plataformas.Agregar(new Plataformas(Plataformas::SUELO, 10 * x - x / 2, x + 2, 4, 1.5));
 		}
+		else {
+			plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 10 * x - x / 2, x - 2, 4, 1.5));
+		}
+	}
 }
 void Mundo::Inicializa()
 {
-	
+
 	hombre.Inicializa();
 	entorno.Inicializa(level);
 	entorno.Fin(pantalla);
-	personajes.Inicializa(hombre);	
-	
-	
-	
+	personajes.Inicializa(hombre);
+
+
+
 	virus2.Inicializa(-5, 1);
 
 	virus3.Inicializa(-10, 15);
@@ -79,22 +81,22 @@ void Mundo::Inicializa()
 
 	for (int i = 0; i < 1; i++)
 	{
-		
+
 		listavirus.agregar(new VirusSeta(40 + 20 * i, -3));
 	}
 	for (int i = 0; i < 1; i++)
 	{
 
-		listavirus.agregar(new VirusSlime(30+30*i, -3));
+		listavirus.agregar(new VirusSlime(30 + 30 * i, -3));
 	}
-	
+
 	//slime.Inicializa(-10, 10);
 
 
 	limites.SetLimites(-20, 500, -10, 30); //Son los bordes del juego que el jugador no puede pasar	
 	vidas.Inicializa(hombre);
-	
-	
+
+
 	//listabonustest.agregar(new BonusTest("test", hombre.posicion.x-25, 25, 3, 3));
 
 	for (int i = 0; i < BONUSTEST; i++) {
@@ -104,7 +106,7 @@ void Mundo::Inicializa()
 	}
 
 
-	
+
 	/* AGREGA VIRUS
 	for (int i = 0; i < 5; i++)
 	{
@@ -126,10 +128,10 @@ void Mundo::Inicializa()
 	//	aux->Inicializa("virusseta", 8, 1, -10 + 2.5 * i, 4, 2, 2, 0, 0);
 	//	listavirus.agregar(aux);
 	//}
-	
-	
-	
-	
+
+
+
+
 }
 void Mundo::Dibuja()
 {
@@ -138,66 +140,70 @@ void Mundo::Dibuja()
 		0.0, 5.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
 	entorno.Aviso(pantalla, hombre.posicion.x, hombre.posicion.y);
 	entorno.DibujaJuego(level);
-	
+
 	limites.Dibuja();
-	if (level == 0) {		
+	if (level == 0) {
 		hombre.FinPartida();
 		Setojo(0, 10, 53);
 		pantalla = 0;
 	}
-	else if (level>0) {
+	else if (level > 0) {
 		hombre.Dibuja(pantalla);
-		vidas.Dibuja(hombre,hombre.GetVidas());
-		if (pantalla!=1 && pantalla!=2) {
+		vidas.Dibuja(hombre, hombre.GetVidas());
+		if (pantalla != 1 && pantalla != 2) {
 			glPushMatrix();//guarda la matriz
 			glColor3f(0, 0, 1);
 			glutSolidSphere(0.2, 15, 15); //dibuja la esfera solida
 			glColor3f(0, 0, -1);
 			glPopMatrix();//la guarda y la restaura
 
-		
+
 			personajes.Dibuja(level, hombre);
 			disparos.Dibuja();
 			misiles.Dibuja();
 			listalanzamisiles.Dibuja();
 
-			
+
 			virus2.Dibuja(level);
 			virus3.Dibuja(level);
 			virus4.Dibuja(level);
 			listaslime.dibuja();
 			//slime.Dibuja();
 			plataformas.Dibuja();
-			
+
 			bordessube.Dibuja();
 			listavirus.dibuja();
 			listabonusmascarilla.dibuja();
 			listabonustest.dibuja();
 
-			
 
-			
-			listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png",30, -3));
+
+
+			listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png", 30, -3)); ///L1
+			listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png", 70, 10.55));  ///L2
 			float naleatorio = lanzaDado(1000.0);
 			if (naleatorio < 10) {
 				misiles.Agregar(new Misil("imagenes/misilizq.png", 29, -2, -5.0f, 0.0f));
+			}
+			if (naleatorio < 5) {
+				misiles.Agregar(new Misil("imagenes/misilizq.png", 69, 9.55, -5.0f, 0.0f));
 			}
 			if (naleatorio < 2) {
 
 				listabonusmascarilla.agregar(new BonusMascarilla("mascarilla", hombre.GetPosX() + naleatorio * 10, 25, 1.5, 1.5));
 			}
-		
-			if (hombre.GetVidas() == 0) { 
-				
+
+			if (hombre.GetVidas() == 0) {
+
 				hombre.SetVel(0, 0);
-				pantalla=1;			
+				pantalla = 1;
 				fichero();
 				//musica de muerte va aqui
 			}
-			 //FIN DE PARTIRA: Ganador
+			//FIN DE PARTIRA: Ganador
 			if (hombre.posicion.x > 250) {//HABRÁ QUE AMPLIARLO
 				hombre.SetVel(0, 0);
-				pantalla=2;
+				pantalla = 2;
 				//musica de ganador va aqui
 
 			}
@@ -226,12 +232,12 @@ void Mundo::Mueve()
 		}
 	}*/
 	//OJO//
-	
-	if (hombre.posicion.x > 0 && level!=0) ////Necesitamos algo mas elegante
+
+	if (hombre.posicion.x > 0 && level != 0) ////Necesitamos algo mas elegante
 		Setojo(hombre.posicion.x, 10, 53);
 	else
 		Setojo(0, 10, 53);
-	
+
 
 	//.Mueve//
 	if (pantalla != 1 && pantalla != 2) {
@@ -239,15 +245,15 @@ void Mundo::Mueve()
 	}
 	virus2.Mueve(0.025f);
 	virus3.Mueve(0.025f);
-	
+
 	virus4.Mueve(0.025f);
-	
+
 	virus3.Seguir(hombre);
 	virus4.Seguir(hombre);
 	//slime.Mueve(0.025f);
 	//bonus1.Mueve(0.025f);
 	hombre.Mueve(0.025f);
-		 	
+
 	disparos.Mueve(0.025f);
 	misiles.Mueve(0.025f);
 	vidas.Mueve(x_ojo);
@@ -263,7 +269,7 @@ void Mundo::Mueve()
 	listabonusmascarilla.mueve(0.025f);
 	listabonusmascarilla.Colision(limites);
 	listabonusmascarilla.Colision(plataformaprueba);
-	
+
 
 	////INTERACCIONES////
 
@@ -285,7 +291,7 @@ void Mundo::Mueve()
 		}
 	}
 
-	BonusMascarilla* auxBM= listabonusmascarilla.colision(hombre);
+	BonusMascarilla* auxBM = listabonusmascarilla.colision(hombre);
 	if (auxBM != 0) {
 		if (hombre.GetVidas() <= 4) {
 			hombre.SetVidas(hombre.GetVidas() + 1);
@@ -294,7 +300,7 @@ void Mundo::Mueve()
 	}
 
 
-	BonusTest* auxBT= listabonustest.colision(hombre);
+	BonusTest* auxBT = listabonustest.colision(hombre);
 	if (auxBT != 0) {
 		if (hombre.GetMonedas() <= 19) {
 			hombre.SetMonedas(hombre.GetMonedas() + 1);
@@ -318,7 +324,7 @@ void Mundo::Mueve()
 	/*
 	if (Interaccion::ColisionSube(hombre, plataformaprueba)) {
 		hombre.SetVel(hombre.GetVel().x, 0.0);
-		plataformaprueba.aux = 1;	
+		plataformaprueba.aux = 1;
 		salto = 1;
 	}
 	else {
@@ -365,16 +371,16 @@ void Mundo::Mueve()
 			hombre.SetVidas(hombre.GetVidas() - 1);
 			misiles.Eliminar(aux);
 		}
-			//misiles.Eliminar(aux);
-		
-		//misiles.Explota();
+		//misiles.Eliminar(aux);
+
+	//misiles.Explota();
 	}
 	for (int t = 0; t < plataformas.GetNumero(); t++) {
 		listabonusmascarilla.Colision(*plataformas[t]);
 	}
 
 	Plataformas* auxPLAT = plataformas.ColisionSube(hombre);
-
+	//ETSIDI::Vector2D poscaida = auxPLAT->GetLim2();
 	//if (Interaccion::caida(hombre, limites) == 1) {
 	//	if (hombre.GetPos().x > auxPLAT->GetLim2().x) {
 	//		hombre.SetPos(auxPLAT->GetLim2().x-2, auxPLAT->GetLim2().y+4);
@@ -382,7 +388,8 @@ void Mundo::Mueve()
 	//}
 	if (Interaccion::caida(hombre, limites) == 1) {
 
-		hombre.SetPos(hombre.GetPos().x-10, hombre.GetPos().y +10);
+		hombre.SetPos(hombre.GetPos().x - 10, hombre.GetPos().y + 10);
+
 		hombre.SetVel(0, 0);
 		hombre.SetVidas(hombre.GetVidas() - 1);
 	}
@@ -392,7 +399,7 @@ void Mundo::Mueve()
 
 int Mundo::Tecla(unsigned char key)
 {	//NIVELES:	
-	
+
 	switch (pantalla) {
 	case 0: //SI NO ESTÁ NI MUERTO NI CON EL NIVEL ACABADO
 		switch (key) {
@@ -452,7 +459,7 @@ int Mundo::Tecla(unsigned char key)
 			//misiles.DestruirContenido(i);
 			i++;
 			break;
-		
+
 		}
 
 		break;
@@ -468,7 +475,7 @@ int Mundo::Tecla(unsigned char key)
 		case '8': //REINICIAR EL NIVEL
 			level = 1;
 			CargarNivel();
-			pantalla = 0;		
+			pantalla = 0;
 			disparos.DestruirContenido();
 			break;
 		}
@@ -482,7 +489,7 @@ int Mundo::Tecla(unsigned char key)
 			return 0;
 			break;
 		case '8':
-			level += 1;		
+			level += 1;
 			CargarNivel();
 			pantalla = 0;
 			disparos.DestruirContenido();
@@ -491,77 +498,77 @@ int Mundo::Tecla(unsigned char key)
 		}
 		break;
 	}
-	entorno.Tecla(key);	
+	entorno.Tecla(key);
 }
 
 void Mundo::teclaEspecial(unsigned char key) {
 	//distancia = 0;
 	// glutSetKeyRepeat(1);
-	 if (pantalla!=1 && pantalla!=2) {//para que no se mueva cuando esta en el menu
-		 switch (key)
-		 {
-		 case GLUT_KEY_LEFT:
+	if (pantalla != 1 && pantalla != 2) {//para que no se mueva cuando esta en el menu
+		switch (key)
+		{
+		case GLUT_KEY_LEFT:
 
-			 hombre.SetVel(-6, hombre.GetVel().y);
-			 //HAY QUE PONER QUE CUANDO ESTE EN EL AIRE NO VAYA HACIA LA DERECHA
-			 hombre.SetDir(2);
+			hombre.SetVel(-6, hombre.GetVel().y);
+			//HAY QUE PONER QUE CUANDO ESTE EN EL AIRE NO VAYA HACIA LA DERECHA
+			hombre.SetDir(2);
 
-			 break;
-		 case GLUT_KEY_RIGHT:
-			 hombre.SetVel(6,hombre.GetVel().y);
-			 hombre.SetDir(1);
+			break;
+		case GLUT_KEY_RIGHT:
+			hombre.SetVel(6, hombre.GetVel().y);
+			hombre.SetDir(1);
 
-			 break;
-		 case GLUT_KEY_DOWN:
-			 hombre.Agacha();
-			
+			break;
+		case GLUT_KEY_DOWN:
+			hombre.Agacha();
 
-			 break;
-		 case GLUT_KEY_UP:
 
-			 if (salto == 1) {
-				 hombre.SetVel(hombre.GetVel().x, +18);
-				 virus3.dispara(listaslime);
-				 //hombre.SetAceleracion(0.0, -20);
-				 salto = 0;
-				 ETSIDI::play("mis_sonidos/salto.wav");
+			break;
+		case GLUT_KEY_UP:
 
-			 }
-			 /*if(Interaccion::colision(hombre, limites) || Interaccion::ColisionSube(hombre, plataformaprueba)){
-				 salto = 1;
-				 ETSIDI::play("mis_sonidos/salto.wav");
-				 break;
-			 }*/
-			 break;
-		 }
-	 }
+			if (salto == 1) {
+				hombre.SetVel(hombre.GetVel().x, +18);
+				virus3.dispara(listaslime);
+				//hombre.SetAceleracion(0.0, -20);
+				salto = 0;
+				ETSIDI::play("mis_sonidos/salto.wav");
+
+			}
+			/*if(Interaccion::colision(hombre, limites) || Interaccion::ColisionSube(hombre, plataformaprueba)){
+				salto = 1;
+				ETSIDI::play("mis_sonidos/salto.wav");
+				break;
+			}*/
+			break;
+		}
+	}
 
 }
 
 void Mundo::teclaEspecialsuelta(unsigned char key) {
 
-	
-		switch (key)
-		{
-		case GLUT_KEY_LEFT:
-		hombre.Stop();
-			break;
-		case GLUT_KEY_RIGHT:
-		hombre.Stop();
-			break;
-		case GLUT_KEY_UP:
 
-		
-			break;
-		}
-	
+	switch (key)
+	{
+	case GLUT_KEY_LEFT:
+		hombre.Stop();
+		break;
+	case GLUT_KEY_RIGHT:
+		hombre.Stop();
+		break;
+	case GLUT_KEY_UP:
+
+
+		break;
+	}
+
 
 }
 //void Mundo::Interaccion() {
 //	virus2.Ataca();
 //}
 
-int Mundo::ClickMouse(int b, int state,int x, int y ) { //click del raton
+int Mundo::ClickMouse(int b, int state, int x, int y) { //click del raton
 	bool down = (state == GLUT_DOWN);
 	//xmouse = (x - 400) / 13, 3; //coordinar con la x de nuestra pantalla
 	//ymouse = -(y - 455) / 17.5 + 1; //coordinar con la y de niestra pantalla
@@ -572,7 +579,7 @@ int Mundo::ClickMouse(int b, int state,int x, int y ) { //click del raton
 			button = MOUSE_LEFT_BUTTON;
 
 			if (y > 11 && y <= 13) {
-			
+
 				level = 1;
 				tiempo = clock(); //para el tiempo
 				return level;
@@ -588,11 +595,11 @@ int Mundo::ClickMouse(int b, int state,int x, int y ) { //click del raton
 			}
 		}
 	}
-	
+
 }
 
 
-void Mundo::CargarNivel(){
+void Mundo::CargarNivel() {
 	hombre.FinPartida();//REINICIA TODO LO DEL HOMBRE
 	Setojo(0, 10, 53);
 }
