@@ -275,8 +275,9 @@ void Mundo::Mueve()
 	listaslime.Colision(limites);
 	listaslime.Colision(plataformas);
 
-	Interaccion::reboteinterior(hombre, limites);
-	
+	//Interaccion::reboteinterior(hombre, limites);
+	if (Interaccion::reboteinterior(hombre, limites) == 1)
+		salto = 0;
 
 	if (Interaccion::Colision(hombre, virus1)) {
 		if (virus1.GetMuerto() == 0) {
@@ -308,10 +309,10 @@ void Mundo::Mueve()
 
 	//////HOMBRE-PLATAFORMA
 
-	if (Interaccion::colision(hombre, limites)) {
-		//|| Interaccion::ColisionSube(hombre, plataformaprueba)) {
-		salto = 1;
-	}
+	//if (Interaccion::colision(hombre, limites)) {
+	//	//|| Interaccion::ColisionSube(hombre, plataformaprueba)) {
+	//	salto = 1;
+	//}
 
 	//////plataforma-hombre funciona: ---- NO BORRAR
 	/*

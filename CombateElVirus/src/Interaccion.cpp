@@ -11,7 +11,7 @@ Interaccion::~Interaccion() {
 
 }
 
-void Interaccion::reboteinterior(Hombre& h, Limites c)
+bool Interaccion::reboteinterior(Hombre& h, Limites c)
 {
     float xmax = c.suelo.limite2.x;
     float xmin = c.suelo.limite1.x;
@@ -20,9 +20,14 @@ void Interaccion::reboteinterior(Hombre& h, Limites c)
 
     float ymax = c.techo.limite1.y;
     float ymin = c.suelo.limite1.y;
-    if (h.posicion.y > ymax)h.posicion.y = ymax;
-    if (h.posicion.y < ymin)h.posicion.y = ymin;
-   
+    //if (h.posicion.y > ymax)h.posicion.y = ymax;
+    //if (h.posicion.y < ymin)h.posicion.y = ymin;
+    if (h.posicion.y < ymin){
+        return 1;
+    }
+    else { 
+        return 0; 
+    }
 }
 
 bool Interaccion::colision(Hombre h, Limites l) {
