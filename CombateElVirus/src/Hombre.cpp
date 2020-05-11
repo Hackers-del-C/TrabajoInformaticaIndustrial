@@ -100,10 +100,12 @@ void Hombre::Agacha()
         mario = new SpriteSequence("imagenes/mario/marioagachader.png", 3, 1, 2, false, 0, -1, 4, 4);
         mario->flip(1, 0);
         altura = 0.1 * altura;
+        
     }
     if (velocidad.x > 0) {
         mario = new SpriteSequence("imagenes/mario/marioagachader.png", 3, 1, 2, false, 0, -1, 4, 4);
         altura = 0.1 * altura;
+       
     }
    
     velocidad.x = 0;

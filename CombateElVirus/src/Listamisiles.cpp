@@ -54,9 +54,11 @@ void ListaMisil::Dibuja() {
 Misil* ListaMisil::colision(Hombre& h) {
 	for (int i = 0; i < lista.size(); i++)
 	{
-		if (Interaccion::colision(*(lista[i]), h)) { 
-			return lista[i];
-		}
+	
+			if (Interaccion::colision(*(lista[i]), h)) {
+				return lista[i];
+			}
+		
 	}
 	return 0;
 }
