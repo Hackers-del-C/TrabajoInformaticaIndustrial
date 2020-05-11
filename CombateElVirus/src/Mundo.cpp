@@ -135,8 +135,8 @@ void Mundo::Dibuja()
 	gluLookAt(x_ojo, y_ojo, z_ojo,
 		x_ojo, y_ojo, 0.0, //NOTESE QUE HEMOS CAMBIADO ESTO
 		0.0, 5.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
-	entorno.Aviso(pantalla, hombre.posicion.x, hombre.posicion.y,xmouse,ymouse);
-	entorno.Dibuja(level,xmouse,ymouse);
+	entorno.Aviso(pantalla, hombre.posicion.x, hombre.posicion.y);
+	entorno.DibujaJuego(level);
 	
 	limites.Dibuja();
 	if (level == 0) {		
@@ -185,14 +185,10 @@ void Mundo::Dibuja()
 
 				listabonusmascarilla.agregar(new BonusMascarilla("mascarilla", hombre.GetPosX() + naleatorio * 10, 25, 1.5, 1.5));
 			}
-			//plataformas.Agregar(new Plataformas(10, 1, 20, 1.25));
-			//plataformas.Agregar(new Plataformas(25, 3, 35, 3.25));
-
-			 //FIN DE PARTIDA : Muerte
+		
 			if (hombre.GetVidas() == 0) { 
-				// habría que poner con un contador de esos un tiempo para que se viera que el sprite cambia a muerto y cae al vacio)
+				
 				hombre.SetVel(0, 0);
-				//hombre.SetAceleracion(0, -10);
 				pantalla=1;			
 				fichero();
 				//musica de muerte va aqui
@@ -200,7 +196,6 @@ void Mundo::Dibuja()
 			 //FIN DE PARTIRA: Ganador
 			if (hombre.posicion.x > 250) {//HABRÁ QUE AMPLIARLO
 				hombre.SetVel(0, 0);
-				//hombre.SetAceleracion(0, -10);
 				pantalla=2;
 				//musica de ganador va aqui
 
@@ -454,8 +449,7 @@ void Mundo::Tecla(unsigned char key)
 			break;
 		case '8': //REINICIAR EL NIVEL
 			level = 1;
-			hombre.FinPartida();//REINICIA TODO LO DEL HOMBRE
-			Setojo(0, 10, 53);
+			CargarNivel();
 			pantalla = 0;			
 			break;
 		}
@@ -468,8 +462,7 @@ void Mundo::Tecla(unsigned char key)
 			break;
 		case '8':
 			level += 1;		
-			hombre.FinPartida();//REINICIA TODO LO DEL HOMBRE
-			Setojo(0, 10, 53);
+			CargarNivel();
 			pantalla = 0;
 			break;
 
@@ -546,7 +539,7 @@ void Mundo::teclaEspecialsuelta(unsigned char key) {
 //	virus2.Ataca();
 //}
 
-void Mundo::ClickMouse(int b, int state) { //click del raton
+void Mundo::ClickMouse(int b, int state,int x, int y ) { //click del raton
 	bool down = (state == GLUT_DOWN);
 	//xmouse = (x - 400) / 13, 3; //coordinar con la x de nuestra pantalla
 	//ymouse = -(y - 455) / 17.5 + 1; //coordinar con la y de niestra pantalla
@@ -555,26 +548,25 @@ void Mundo::ClickMouse(int b, int state) { //click del raton
 		if (b == GLUT_LEFT_BUTTON) {
 			button = MOUSE_LEFT_BUTTON;
 
-			if (ymouse > 11 && ymouse <= 13) {
+			if (y > 11 && y <= 13) {
 				level = 1;
 				tiempo = clock(); //para el tiempo
 			}
-			else if (ymouse > 9 && ymouse <= 11) {
+			else if (y > 9 && y <= 11) {
 				level = 2;
 			}
-			else if (ymouse > 7 && ymouse <= 9) {
+			else if (y > 7 && y <= 9) {
 				level = 3;
 			}
 		}
 	}
 }
-void Mundo::MyMouse(int x, int y) { //movimiento del raton
-	cout << "(" << xmouse << "," << ymouse << ")" << endl; //borrar futuro
-	xmouse = (x - 400) / 13, 3; //coordinar con la x de nuestra pantalla
-	ymouse = -(y - 455) / 17.5 + 1; //coordinar con la y de niestra pantalla
-	
-}
 
+
+void Mundo::CargarNivel(){
+	hombre.FinPartida();//REINICIA TODO LO DEL HOMBRE
+	Setojo(0, 10, 53);
+}
 
 
 

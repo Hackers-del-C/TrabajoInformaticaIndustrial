@@ -34,39 +34,39 @@ void Entorno::Fin(int pantalla) {
 		ETSIDI::play("mis_sonidos/Ganador.wav");
 	}
 }
-
-void Entorno::Dibuja(int nivel,int xraton,int yraton) {
+void Entorno::DibujaMenu(int xraton, int yraton) {
+	//IMAGENES
+	auxetsidi.Imagen("menu", -26, 26, -10, 30); //limx1 limx2 limy1 limy2. La textura es cte -0.1		
+	if (yraton > 11 && yraton < 13) {
+		gl1 = 1;
+		gl2 = 0;
+		gl3 = 0;
+	}
+	else if (yraton > 9 && yraton <= 11) {
+		gl1 = 0;
+		gl2 = 1;
+		gl3 = 0;
+	}
+	else if (yraton > 7 && yraton <= 9) {
+		gl1 = 0;
+		gl2 = 0;
+		gl3 = 1;
+	}
+	else {
+		gl1 = 0;
+		gl2 = 0;
+		gl3 = 0;
+	}
+	//TEXTO
+	auxetsidi.Texto("COMBATE EL VIRUS", -23, 16, 0, 0, 0, 50);
+	auxetsidi.Texto("Nivel 1. China", -22, 12, 0, gl1, 0, 20);
+	auxetsidi.Texto("Nivel 2. Italia", -22, 10, 0, gl2, 0, 20);
+	auxetsidi.Texto("Nivel 3. Espanita", -22, 8, 0, gl3, 0, 20);
+	
+}
+void Entorno::DibujaJuego(int nivel) {
 
 	switch (nivel) {
-	case 0:
-		//IMAGENES
-		auxetsidi.Imagen("menu", -26, 26, -10, 30); //limx1 limx2 limy1 limy2. La textura es cte -0.1		
-		if (yraton > 11 && yraton<13) {
-			gl1 = 1;
-			gl2 = 0;
-			gl3 = 0;
-		}
-		else if (yraton > 9 && yraton <= 11) {
-			gl1 = 0;
-			gl2 = 1;
-			gl3 = 0;
-		}
-		else if (yraton > 7 && yraton <= 9) {
-			gl1 = 0;
-			gl2 = 0;
-			gl3 = 1;
-		}
-		else {
-			gl1 = 0;
-			gl2 = 0;
-			gl3 = 0;
-		}			
-		//TEXTO
-		auxetsidi.Texto("COMBATE EL VIRUS", -23, 16, 0, 0, 0, 50);
-		auxetsidi.Texto("Nivel 1. China", -22, 12, 0, gl1, 0, 20);
-		auxetsidi.Texto("Nivel 2. Italia", -22, 10, 0, gl2, 0, 20);
-		auxetsidi.Texto("Nivel 3. Espanita", -22, 8, 0, gl3, 0, 20);
-		break;
 
 	case 1:
 		//IMAGENES
@@ -116,21 +116,21 @@ void Entorno::Dibuja(int nivel,int xraton,int yraton) {
 
 	}
 }
-void Entorno::Aviso(int pantalla, int x, int y,int xraton, int yraton) {
+void Entorno::Aviso(int pantalla, int x, int y) {
 	//IMAGEN:es un cuadro negro para que salga bien los datos que queramos en medio but no consigo que vaya
 	
 	switch(pantalla){
 	case 1: //pantalla si mueres
 		auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, y + 5, y + 20);
-		//TEXTO
-		if (yraton > (y + 15.5) && yraton > (y + 16.5)) {
-			rd1 = 0;
-			rd2 = 1;
-		}
-		else if (yraton > (y + 14.5) && yraton > (y + 15.5)) {
-			rd1 = 1;
-			rd2 = 0;
-		}
+		////TEXTO
+		//if (yraton > (y + 15.5) && yraton > (y + 16.5)) {
+		//	rd1 = 0;
+		//	rd2 = 1;
+		//}
+		//else if (yraton > (y + 14.5) && yraton > (y + 15.5)) {
+		//	rd1 = 1;
+		//	rd2 = 0;
+		//}
 		auxetsidi.Texto("F", x , y + 17, 1, 0, 0, 10);
 		auxetsidi.Texto("8 REINICIAR EL NIVEL", x-6, y+16, 1, rd1, rd1, 11); //obv habrá que hacerlo con otras teclas u otra cosa
 		auxetsidi.Texto("7 MENU PRINCIPAL", x-6,y+15, 1, rd2, rd2, 11);

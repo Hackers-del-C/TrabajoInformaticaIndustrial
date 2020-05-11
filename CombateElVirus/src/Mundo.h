@@ -45,8 +45,9 @@ public:
 	void Dibuja();
 	void teclaEspecial(unsigned char key);
 	void teclaEspecialsuelta(unsigned char key);
-	void ClickMouse(int b, int state);
-	void MyMouse(int x, int y);
+	void ClickMouse(int b, int state,int x, int y);
+	
+	void CargarNivel();
 	//ojo:
 
 	void Setojo(float ox, float oy, float oz);
@@ -84,20 +85,7 @@ private:
 	ListaVirus listavirus;
 	ListaBonusMascarilla listabonusmascarilla;
 	ListaBonusTest listabonustest;
-	//mouse	
-	int xmouse, ymouse;			//
-	float width = 0.15; //borrar 100% en un futuro
-	//mouse+special-keys combination state events 
-
-	bool leftButton;
-	bool rightButton;
-	bool midButton;
-	 //para el mouse:
-	void world2cell(double x, double y, int& cell_x, int& cell_y) {
-		//world coordinates to cell
-		cell_x = (int)(abs(y / width));
-		cell_y = (int)(x / width);
-	}
+	
 	//ojo
 	float x_ojo;
 	float y_ojo;

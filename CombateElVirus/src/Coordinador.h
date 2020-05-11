@@ -18,4 +18,6 @@ public:
 	void MyMouse(int x, int y);
 private:
 	Mundo mundo;
+	Entorno entorno;
+	float xmouse, ymouse;
 };

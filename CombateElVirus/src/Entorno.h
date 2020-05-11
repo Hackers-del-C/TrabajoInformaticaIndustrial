@@ -10,9 +10,10 @@ class Entorno {
 public:
 	
 	void Inicializa(int nivel);
-	void Dibuja(int nivel,int xraton, int yraton);
+	void DibujaMenu(int xraton, int yraton);
+	void DibujaJuego(int nivel);
 	void Fin(int pantalla);
-	void Aviso(int pantalla, int x, int y,int xraton, int yraton);
+	void Aviso(int pantalla, int x, int y);
 	void Tecla(unsigned char key);
 	//friend class Mundo;
 	
