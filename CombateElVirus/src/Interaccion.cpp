@@ -42,13 +42,15 @@ bool Interaccion::caida(Hombre &h, Limites l) {
 bool Interaccion::colision(Misil misil, Hombre h) {
    
   
-    if (h.posicion.x - h.anchura / 2 > misil.posicion.x + misil.anchura / 2) { return false; }
-    if (h.posicion.x + h.anchura / 2 < misil.posicion.x - misil.anchura / 2) { return false; }
-    if (h.posicion.y - h.altura / 2 > misil.altura / 2 + misil.posicion.y) { return false; }
-    if (h.posicion.y + h.altura / 2 < misil.posicion.y - misil.altura / 2) { return false; }
+    if (h.posicion.x - h.anchura / 4 > misil.posicion.x + misil.anchura / 2) { return false; }
+    if (h.posicion.x + h.anchura / 4 < misil.posicion.x - misil.anchura /2) { return false; }
+    if (h.posicion.y - h.altura / 4 > misil.posicion.y+ misil.altura / 2) { return false; }
+    if (h.posicion.y + h.altura / 4< misil.posicion.y - misil.altura /2) { return false; }
     else {
-        return true;
+       return true;
+   
     }
+   
 }
 
 
@@ -150,12 +152,12 @@ bool Interaccion::ColisionSube(Hombre &h, Plataformas p) {
 
     //Crea un recatangulo en centro hombre, altura la altura del hombre y anchura la anchura del hombre.
      //SIRVE PARA DETECTAR COLISIONES ENTRE ELEMENTOS RECTANGULARES
-    if (h.posicion.x - h.anchura / 2.5 > p.posicion.x + p.anchura / 2.5) { return false; }
-    if (h.posicion.x + h.anchura / 2.5 < p.posicion.x - p.anchura / 2.5) { return false; }
+    if (h.posicion.x - h.anchura / 3 > p.posicion.x + p.anchura / 2) { return false; }
+    if (h.posicion.x + h.anchura / 3 < p.posicion.x - p.anchura / 2) { return false; }
     if (h.posicion.y - h.altura / 2 > p.altura / 2 + p.posicion.y) { return false; }
     if (h.posicion.y + h.altura / 2 < p.posicion.y - p.altura / 2) { return false; }
     else {
-       
+        if (h.altura == 4) {
             if (h.GetVel().y <= 0.0 && h.posicion.y >= p.posicion.y + p.altura / 4) {
                 if (h.posicion.y <= p.posicion.y + p.altura * 1.75) {
                     h.posicion.y = p.posicion.y + p.altura * 1.75;
@@ -164,7 +166,17 @@ bool Interaccion::ColisionSube(Hombre &h, Plataformas p) {
                 }
 
             }
-        
+        }
+        else if (h.altura == 0.4) {
+            if (h.GetVel().y <= 0.0 && h.posicion.y >= p.posicion.y ) {
+                if (h.posicion.y <= p.posicion.y + p.altura *8) {
+                    h.posicion.y = p.posicion.y + p.altura * 8;
+
+                    return true;
+                }
+
+            }
+        }
         else {
             return false;
         }
@@ -210,28 +222,7 @@ bool Interaccion::ColisionChocaLado(Hombre &h, Plataformas p) {
         }
     }
 }
-//bool Interaccion::ColisionChocaLadoIzq(Hombre& h, Plataformas p) {
-//
-//    //Crea un recatangulo en centro hombre, altura la altura del hombre y anchura la anchura del hombre.
-//     //SIRVE PARA DETECTAR COLISIONES ENTRE ELEMENTOS RECTANGULARES
-//    if (h.posicion.x - h.anchura / 2.2 > p.posicion.x + p.anchura / 2.2) { return false; }
-//    if (h.posicion.x + h.anchura / 2.2 < p.posicion.x - p.anchura / 2.2) { return false; }
-//    if (h.posicion.y - h.altura / 2 > p.altura / 2 + p.posicion.y) { return false; }
-//    if (h.posicion.y + h.altura / 2 < p.posicion.y - p.altura / 2) { return false; }
-//    else {
-//
-//        if (h.GetVel().y < 0.0 && h.posicion.y < p.posicion.y + p.anchura / 2.5) {
-//            if (h.posicion.x >= p.posicion.x - p.anchura / 2) {
-//                h.posicion.x = p.posicion.x - p.anchura / 2;
-//                return true;
-//            }
-//
-//        }
-//        else {
-//            return false;
-//        }
-//    }
-//}
+
 void Interaccion::reboteexterior(Hombre& h,Limites c)
 {
     float xmax = c.suelo.limite2.x;
@@ -270,22 +261,5 @@ void Interaccion::Colision(BonusMascarilla& b, Plataformas p) {
 }
 
 
-
-
- /*bool Interaccion::colision(ListaMisil& misiles, Hombre h){
-     for (int i = 0; i < misiles.lista.size(); i++) {
-         if (misiles.lista[i]->posicion.x == h.posicion.x) { //// MODO TEST -- HAY QUE USAR MODULO DIFERENCIA POSICION
-             misiles.DestruirContenido(i);
-             //if (h.vidas >= 1) {
-
-                 h.vidas--;
-                 return TRUE;
-            // }
-             
-         }
-     }
-     return false;
- }*/
- 
 
   

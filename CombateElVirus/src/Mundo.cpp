@@ -46,9 +46,11 @@ void Mundo::fichero() {
 }
 void Mundo::InicializaFondo() {
 	int j = 5;
-		
+		///lanzamisiles2
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 70, 8, 4, 1.5));
+
 		for (int y = -6; y < 50; y++) {			
-			if (y != 2 &&  y!=3) {
+			if (y != 2 &&  y!=3 && y != 7 && y != 8 && y != 9 && y != 10 && y != 20 && y != 21) {
 				plataformas.Agregar(new Plataformas(Plataformas::SUELO, j * y, -5.5, 5, 1.5));
 			}
 		}
@@ -177,10 +179,14 @@ void Mundo::Dibuja()
 			
 
 			
-			listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png",30, -3));
+			listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png",30, -3)); ///L1
+			listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png", 70, 10.55));  ///L2
 			float naleatorio = lanzaDado(1000.0);
 			if (naleatorio < 10) {
 				misiles.Agregar(new Misil("imagenes/misilizq.png", 29, -2, -5.0f, 0.0f));
+			}
+			if (naleatorio < 5) {
+				misiles.Agregar(new Misil("imagenes/misilizq.png", 69, 9.55, -5.0f, 0.0f));
 			}
 			if (naleatorio < 2) {
 
@@ -374,7 +380,7 @@ void Mundo::Mueve()
 	}
 
 	Plataformas* auxPLAT = plataformas.ColisionSube(hombre);
-
+	//ETSIDI::Vector2D poscaida = auxPLAT->GetLim2();
 	//if (Interaccion::caida(hombre, limites) == 1) {
 	//	if (hombre.GetPos().x > auxPLAT->GetLim2().x) {
 	//		hombre.SetPos(auxPLAT->GetLim2().x-2, auxPLAT->GetLim2().y+4);
@@ -383,6 +389,7 @@ void Mundo::Mueve()
 	if (Interaccion::caida(hombre, limites) == 1) {
 
 		hombre.SetPos(hombre.GetPos().x-10, hombre.GetPos().y +10);
+	
 		hombre.SetVel(0, 0);
 		hombre.SetVidas(hombre.GetVidas() - 1);
 	}
