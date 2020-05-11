@@ -20,7 +20,7 @@ class Interaccion
 public:
     Interaccion();
     virtual ~Interaccion();
-    static bool reboteinterior(Hombre & h, Limites c);
+    static void reboteinterior(Hombre & h, Limites c);
     static void reboteexterior(Hombre& h, Limites c);
     static bool caida(Hombre& h, Limites l);
     static bool colision(Hombre h, Plataformas p);
