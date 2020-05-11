@@ -282,7 +282,7 @@ void Mundo::Mueve()
 	listaslime.Colision(plataformas);
 
 	//Interaccion::reboteinterior(hombre, limites);
-	if (Interaccion::reboteinterior(hombre, limites) == 1)
+	if (Interaccion::caida(hombre, limites) == 1)
 		salto = 0;
 
 	if (Interaccion::Colision(hombre, virus1)) {
@@ -509,13 +509,13 @@ void Mundo::teclaEspecial(unsigned char key) {
 		{
 		case GLUT_KEY_LEFT:
 
-			hombre.SetVel(-6, hombre.GetVel().y);
+			hombre.SetVel(-8, hombre.GetVel().y);
 			//HAY QUE PONER QUE CUANDO ESTE EN EL AIRE NO VAYA HACIA LA DERECHA
 			hombre.SetDir(2);
 
 			break;
 		case GLUT_KEY_RIGHT:
-			hombre.SetVel(6, hombre.GetVel().y);
+			hombre.SetVel(8, hombre.GetVel().y);
 			hombre.SetDir(1);
 
 			break;

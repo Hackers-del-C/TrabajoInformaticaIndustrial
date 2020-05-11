@@ -31,13 +31,23 @@ bool Interaccion::reboteinterior(Hombre& h, Limites c)
 }
 
 bool Interaccion::caida(Hombre &h, Limites l) {
-    ETSIDI::Vector2D dir;
-    float dif = h.GetPos().y - l.suelo.GetSuelo();
+ /*   ETSIDI::Vector2D dir;
+    float dif = h.GetPos().y - l.suelo.GetSuelo()-3;
     if (dif <= 0.0f) {
 
         return true;
     }
-    return false;
+    return false;*/
+
+    float ymin = l.suelo.limite1.y;
+    //if (h.posicion.y > ymax)h.posicion.y = ymax;
+    //if (h.posicion.y < ymin)h.posicion.y = ymin;
+    if (h.posicion.y < ymin-3) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
 }
 bool Interaccion::colision(Misil misil, Hombre h) {
    
@@ -209,28 +219,6 @@ bool Interaccion::ColisionChocaLado(Hombre &h, Plataformas p) {
         }
     }
 }
-//bool Interaccion::ColisionChocaLadoIzq(Hombre& h, Plataformas p) {
-//
-//    //Crea un recatangulo en centro hombre, altura la altura del hombre y anchura la anchura del hombre.
-//     //SIRVE PARA DETECTAR COLISIONES ENTRE ELEMENTOS RECTANGULARES
-//    if (h.posicion.x - h.anchura / 2.2 > p.posicion.x + p.anchura / 2.2) { return false; }
-//    if (h.posicion.x + h.anchura / 2.2 < p.posicion.x - p.anchura / 2.2) { return false; }
-//    if (h.posicion.y - h.altura / 2 > p.altura / 2 + p.posicion.y) { return false; }
-//    if (h.posicion.y + h.altura / 2 < p.posicion.y - p.altura / 2) { return false; }
-//    else {
-//
-//        if (h.GetVel().y < 0.0 && h.posicion.y < p.posicion.y + p.anchura / 2.5) {
-//            if (h.posicion.x >= p.posicion.x - p.anchura / 2) {
-//                h.posicion.x = p.posicion.x - p.anchura / 2;
-//                return true;
-//            }
-//
-//        }
-//        else {
-//            return false;
-//        }
-//    }
-//}
 void Interaccion::reboteexterior(Hombre& h,Limites c)
 {
     float xmax = c.suelo.limite2.x;
@@ -270,21 +258,6 @@ void Interaccion::Colision(BonusMascarilla& b, Plataformas p) {
 
 
 
-
- /*bool Interaccion::colision(ListaMisil& misiles, Hombre h){
-     for (int i = 0; i < misiles.lista.size(); i++) {
-         if (misiles.lista[i]->posicion.x == h.posicion.x) { //// MODO TEST -- HAY QUE USAR MODULO DIFERENCIA POSICION
-             misiles.DestruirContenido(i);
-             //if (h.vidas >= 1) {
-
-                 h.vidas--;
-                 return TRUE;
-            // }
-             
-         }
-     }
-     return false;
- }*/
  
 
   
