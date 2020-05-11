@@ -103,7 +103,7 @@ bool ListaDisparos::Colision(Virus& v)
 				v.Muere();
 			}*/
 			//eliminar(i); //esto da errorrrrrrrrrrrrr
-			//eliminar(lista[i]);
+			eliminar(lista[i]);
 			return 1;
 		}
 	}

@@ -136,7 +136,8 @@ void ListaVirus::Colision(ListaDisparos &l) {
 	for (int i = 0; i < numero; i++) {
 
 		if (l.Colision(*lista[i])) {
-
+			//lista[i]->SetVidas(lista[i]->GetVidas -1);
+			
 			if (lista[i]->GetVidas() < 1) {
 				eliminar(i);
 			}
