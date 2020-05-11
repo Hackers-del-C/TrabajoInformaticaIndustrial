@@ -30,7 +30,7 @@ bool Interaccion::reboteinterior(Hombre& h, Limites c)
     }
 }
 
-bool Interaccion::colision(Hombre h, Limites l) {
+bool Interaccion::caida(Hombre &h, Limites l) {
     ETSIDI::Vector2D dir;
     float dif = h.GetPos().y - l.suelo.GetSuelo();
     if (dif <= 0.0f) {

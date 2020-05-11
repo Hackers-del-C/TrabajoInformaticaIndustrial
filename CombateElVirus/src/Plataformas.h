@@ -16,6 +16,8 @@ public:
 		limite1 = l1;
 		limite2 = l2;
 	}
+	ETSIDI::Vector2D GetLim1(){ return limite1;}
+	ETSIDI::Vector2D GetLim2() { return limite2; }
 	void Inicializa(float x, float y, float w, float h);
 	float aux;
 	float distancia(ETSIDI::Vector2D punto, ETSIDI::Vector2D* direccion);

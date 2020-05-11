@@ -91,7 +91,7 @@ void Mundo::Inicializa()
 	//slime.Inicializa(-10, 10);
 
 
-	limites.SetLimites(-20, 500, -3.5, 30); //Son los bordes del juego que el jugador no puede pasar	
+	limites.SetLimites(-20, 500, -10, 30); //Son los bordes del juego que el jugador no puede pasar	
 	vidas.Inicializa(hombre);
 	
 	
@@ -371,6 +371,20 @@ void Mundo::Mueve()
 	}
 	for (int t = 0; t < plataformas.GetNumero(); t++) {
 		listabonusmascarilla.Colision(*plataformas[t]);
+	}
+
+	Plataformas* auxPLAT = plataformas.ColisionSube(hombre);
+
+	//if (Interaccion::caida(hombre, limites) == 1) {
+	//	if (hombre.GetPos().x > auxPLAT->GetLim2().x) {
+	//		hombre.SetPos(auxPLAT->GetLim2().x-2, auxPLAT->GetLim2().y+4);
+	//	}
+	//}
+	if (Interaccion::caida(hombre, limites) == 1) {
+
+		hombre.SetPos(hombre.GetPos().x-10, hombre.GetPos().y +10);
+		hombre.SetVel(0, 0);
+		hombre.SetVidas(hombre.GetVidas() - 1);
 	}
 }
 

@@ -22,9 +22,9 @@ public:
     virtual ~Interaccion();
     static bool reboteinterior(Hombre & h, Limites c);
     static void reboteexterior(Hombre& h, Limites c);
-    static bool colision(Hombre h, Limites l);
+    static bool caida(Hombre& h, Limites l);
     static bool colision(Hombre h, Plataformas p);
-
+    
     //static bool colision(ListaMisil& misiles, Hombre h);
 
     static bool Colision (Disparo d,  Virus &v);
