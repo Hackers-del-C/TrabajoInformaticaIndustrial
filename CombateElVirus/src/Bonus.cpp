@@ -15,8 +15,6 @@ Bonus::Bonus() {
 }
 Bonus::~Bonus() {
 //	aceleracion.y = -9.8;
-	
-
 }
 void Bonus::SetPos(	float ix, float iy) {
 	  posicion.x = ix;

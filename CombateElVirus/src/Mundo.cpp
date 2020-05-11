@@ -97,11 +97,9 @@ void Mundo::Inicializa()
 	vidas.Inicializa(hombre);
 
 
-	//listabonustest.agregar(new BonusTest("test", hombre.posicion.x-25, 25, 3, 3));
-
 	for (int i = 0; i < BONUSTEST; i++) {
 
-		listabonustest.agregar(new BonusTest("test", lanzaDado(180), lanzaDado(6), 3, 3));
+		listabonustest.agregar(new BonusTest( lanzaDado(180), lanzaDado(6), 3, 3));
 
 	}
 
@@ -190,7 +188,7 @@ void Mundo::Dibuja()
 			}
 			if (naleatorio < 2) {
 
-				listabonusmascarilla.agregar(new BonusMascarilla("mascarilla", hombre.GetPosX() + naleatorio * 10, 25, 1.5, 1.5));
+				listabonusmascarilla.agregar(new BonusMascarilla(hombre.GetPosX() + naleatorio * 10, 25, 1.5, 1.5));
 			}
 
 			if (hombre.GetVidas() == 0) {
@@ -430,7 +428,7 @@ int Mundo::Tecla(unsigned char key)
 
 		case 'j':
 
-			listabonusmascarilla.agregar(new BonusMascarilla("mascarilla", hombre.GetPos().x, 25, 1.5, 1.5));
+			listabonusmascarilla.agregar(new BonusMascarilla(hombre.GetPos().x, 25, 1.5, 1.5));
 			break;
 		case 'x':
 			//virus.Muere();

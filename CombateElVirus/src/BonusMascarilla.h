@@ -14,7 +14,7 @@ class BonusMascarilla : public Bonus {
 public:
 	BonusMascarilla();
 	~BonusMascarilla();
-	BonusMascarilla(string nombre, int x, int y, int w, int h);
-	void Inicializa(string nombre, int x, int y, int w, int h);
+	BonusMascarilla( int x, int y, int w, int h);
+	void Inicializa( int x, int y, int w, int h);
 
 };

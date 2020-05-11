@@ -91,9 +91,6 @@
     <ClCompile Include="src\BonusTest.cpp">
       <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
     </ClCompile>
-    <ClCompile Include="src\ListaBonusTest.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
-    </ClCompile>
     <ClCompile Include="src\VirusBaba.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
     </ClCompile>
@@ -111,6 +108,9 @@
     </ClCompile>
     <ClCompile Include="src\VirusSlime.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ListaBonusTest.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

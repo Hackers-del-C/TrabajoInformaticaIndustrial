@@ -13,7 +13,7 @@ class BonusTest : public Bonus {
 public:
 	BonusTest();
 	~BonusTest() {};
-	BonusTest(string nombre, int x, int y, int w, int h);
-	void Inicializa(string nombre, int x, int y, int w, int h);
+	BonusTest(int x, int y, int w, int h);
+	void Inicializa( int x, int y, int w, int h);
 
 };
