@@ -45,11 +45,12 @@ void Mundo::fichero() {
 
 }
 void Mundo::InicializaFondo() {
-	int j = 30;
+	int j = 5;
 		
 		for (int y = -6; y < 50; y++) {			
-				
-			plataformas.Agregar(new Plataformas(Plataformas::SUELO,j*y, -5.5, 20, 1.5));
+			if (y != 2 &&  y!=3) {
+				plataformas.Agregar(new Plataformas(Plataformas::SUELO, j * y, -5.5, 5, 1.5));
+			}
 		}
 		for (int x = 0; x < 10; x++) {
 			if (x < 5) {
@@ -545,14 +546,17 @@ void Mundo::ClickMouse(int b, int state,int x, int y ) { //click del raton
 	//ymouse = -(y - 455) / 17.5 + 1; //coordinar con la y de niestra pantalla
 	int button;
 	if (level == 0) {
+		disparos.DestruirContenido();
 		if (b == GLUT_LEFT_BUTTON) {
 			button = MOUSE_LEFT_BUTTON;
 
 			if (y > 11 && y <= 13) {
+			
 				level = 1;
 				tiempo = clock(); //para el tiempo
 			}
 			else if (y > 9 && y <= 11) {
+
 				level = 2;
 			}
 			else if (y > 7 && y <= 9) {

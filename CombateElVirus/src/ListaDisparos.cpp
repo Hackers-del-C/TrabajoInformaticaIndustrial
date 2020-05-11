@@ -3,18 +3,37 @@
 #include "glut.h"
 
 ListaDisparos::ListaDisparos() {
-
+	numero = 0;
+	for (int i = 0; i < MAX_VIRUS; i++)
+		lista[i] = 0;
 }
 ListaDisparos::~ListaDisparos() {
 
 }
 
 bool ListaDisparos::Agregar(Disparo* d) {
-	if (lista.size() < NUM_MAX_DISPAROS) {  // solo tiene 20
-		lista.push_back(d);
-		numero++;
+	//if (lista.size() < NUM_MAX_DISPAROS) {  // solo tiene 20
+	//	lista.push_back(d);
+	//	numero++;
+	//	ETSIDI::play("mis_sonidos/disparo.wav");
+	//	return true;
+	//}
+	if (numero < NUM_MAX_DISPAROS) {
+
+		for (int i = 0; i < numero; i++) {
+			if (lista[i] == d) {
+				
+				return false;
+
+			}
+
+		}
 		ETSIDI::play("mis_sonidos/disparo.wav");
+		lista[numero++] =d;
 		return true;
+	}
+	else {
+		return false;
 	}
 }
 
@@ -26,6 +45,7 @@ void ListaDisparos::eliminar(int index)
 	numero--;
 	for (int i = index; i < numero; i++)
 		lista[i] = lista[i + 1];
+
 }
 
 void ListaDisparos::eliminar(Disparo* e)
@@ -41,20 +61,23 @@ void ListaDisparos::eliminar(Disparo* e)
 
 
 
-void ListaDisparos::DestruirContenido(int ind) {
-	if ((ind < 0) || (ind >= lista.size())) {
-		return;
-	}
-	delete lista[ind];
-	lista.erase(lista.begin() + ind);
+void ListaDisparos::DestruirContenido() {
+	//if ((ind < 0) || (ind >= lista.size())) {
+	//	return;
+	//}
+	//delete lista[ind];
+	//lista.erase(lista.begin() + ind);
+	for (int i = 0; i < numero; i++)
+		delete lista[i];
+	numero = 0;
 }
 void ListaDisparos::Mueve(float t) {
-	for (int i = 0; i < lista.size(); i++) {
+
+	for (int i = 0; i < numero; i++)
 		lista[i]->Mueve(t);
-	}
 }
 void ListaDisparos::Dibuja() {
-	for (int i = 0; i < lista.size(); i++)
+	for (int i = 0; i < numero; i++)
 		lista[i]->Dibuja();
 }
 
@@ -79,7 +102,8 @@ bool ListaDisparos::Colision(Virus& v)
 			if (v.GetVidas() < 1) {
 				v.Muere();
 			}*/
-			//eliminar(i);esto da errorrrrrrrrrrrrr
+			//eliminar(i); //esto da errorrrrrrrrrrrrr
+			//eliminar(lista[i]);
 			return 1;
 		}
 	}
