@@ -177,12 +177,12 @@ bool Interaccion::ColisionSube(Hombre &h, Plataformas p) {
         if (h.GetVel().y <= 0.0 && h.posicion.y >= p.posicion.y + p.altura / 4) {
             if (h.posicion.y <= p.posicion.y + p.altura * 1.75) {
                 h.posicion.y = p.posicion.y + p.altura * 1.75;
-            /*    if (p.GetTipo() == p.PLATAFORMA_MUEVE) {
-                    
+                if (p.GetTipo() == p.PLATAFORMA_MUEVE) {
+                    if (h.dir == 0) {
                         h.velocidad.x = p.velocidad.x;
                         h.aceleracion.x = p.aceleracion.x;
-                    
-                }*/
+                    }
+                }
              
                 return true;
             }

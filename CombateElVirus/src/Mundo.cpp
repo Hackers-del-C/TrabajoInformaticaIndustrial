@@ -458,10 +458,8 @@ int Mundo::Tecla(unsigned char key)
 			break;*/
 		case ' ':
 			hombre.SetVel(0, hombre.velocidad.y);
-			//hombre.SetDir(0);
-			int i = 0;
-			//misiles.DestruirContenido(i);
-			i++;
+			hombre.SetDir(0);
+
 			break;
 	
 		}
