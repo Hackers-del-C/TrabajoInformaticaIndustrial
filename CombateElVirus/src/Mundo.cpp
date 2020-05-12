@@ -101,8 +101,8 @@ void Mundo::Inicializa()
 	limites.SetLimites(-20, 500, -10, 30); //Son los bordes del juego que el jugador no puede pasar	
 	vidas.Inicializa(hombre);
 
-	exptest.Inicializa(-5, 8);
-	listaexplosiones.agregar(new Explosiones(+5, 8));
+
+	
 
 
 	for (int i = 0; i < BONUSTEST; i++) {
@@ -173,7 +173,7 @@ void Mundo::Dibuja()
 			virus2.Dibuja(level);
 			virus3.Dibuja(level);
 			virus4.Dibuja(level);
-			exptest.Dibuja();
+			
 			listaexplosiones.dibuja();
 			listaslime.dibuja();
 			//slime.Dibuja();
@@ -259,7 +259,7 @@ void Mundo::Mueve()
 
 	virus3.Seguir(hombre);
 	virus4.Seguir(hombre);
-	exptest.Mueve(0.025f);
+	
 	listaexplosiones.mueve(0.025f);
 	//slime.Mueve(0.025f);
 	//bonus1.Mueve(0.025f);
