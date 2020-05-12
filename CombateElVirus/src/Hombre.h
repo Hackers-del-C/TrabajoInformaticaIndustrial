@@ -9,6 +9,7 @@ class Hombre
     int vidas;
     int dir;
     int monedas;
+    bool agachado;
 public:
 
 
@@ -22,6 +23,7 @@ public:
     float altura, anchura;
     void Inicializa();
     void Salta();
+    void Setagachado(unsigned char key);
    
     void Stop();
     void Victoria();

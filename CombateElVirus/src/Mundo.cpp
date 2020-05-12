@@ -34,7 +34,7 @@ void Mundo::fichero() {
 		fichero << datos_previos;
 	}*/
 	
-	fichero << datos_previos;
+	//fichero << datos_previos;
 	//fichero << "Nombre: " << nombre << endl; 
 	fichero << "Has cogido: " << hombre.GetMonedas() << " test" << endl;
 	fichero << "Has tardado: " << (clock() - tiempo)/1000 << " segundos" << endl; // esta donde el mouse el empizo del temporizador
@@ -519,6 +519,7 @@ void Mundo::teclaEspecial(unsigned char key) {
 			break;
 		case GLUT_KEY_DOWN:
 			hombre.Agacha();
+			
 
 
 			break;
@@ -539,6 +540,10 @@ void Mundo::teclaEspecial(unsigned char key) {
 			}*/
 			break;
 		}
+
+		hombre.Setagachado( key);
+
+
 	}
 
 }

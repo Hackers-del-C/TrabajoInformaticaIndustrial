@@ -16,6 +16,7 @@ Hombre::Hombre() {
     dir = 0;
     vidas =5;
     monedas = 0;
+    agachado = 0;
 }
 
 Hombre::~Hombre() {
@@ -109,6 +110,7 @@ void Hombre::Agacha()
     }
    
     velocidad.x = 0;
+    
 }
 void Hombre::FinPartida() { 
 
@@ -121,4 +123,18 @@ void Hombre::FinPartida() {
     vidas = 5;
     dir = 0;
   
+}
+
+void Hombre::Setagachado(unsigned char key) {
+
+    switch (key) {
+    case GLUT_KEY_DOWN:
+        agachado = 1;
+        break;
+
+    default:
+        agachado = 0;
+        break;
+    }
+
 }

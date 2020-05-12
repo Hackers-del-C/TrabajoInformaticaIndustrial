@@ -50,14 +50,33 @@ bool Interaccion::caida(Hombre &h, Limites l) {
     }
 }
 bool Interaccion::colision(Misil misil, Hombre h) {
-   
-    if (h.posicion.x - h.anchura / 4 > misil.posicion.x + misil.anchura / 2) { return false; }
-    if (h.posicion.x + h.anchura / 4 < misil.posicion.x - misil.anchura / 2) { return false; }
-    if (h.posicion.y - h.altura / 4 > misil.posicion.y + misil.altura / 2) { return false; }
-    if (h.posicion.y + h.altura / 4 < misil.posicion.y - misil.altura / 2) { return false; }
-    else {
-        return true; //no frada
+
+    if (h.agachado == false) {
+
+        if (h.posicion.x - h.anchura / 4 > misil.posicion.x + misil.anchura / 2) { return false; }
+        if (h.posicion.x + h.anchura / 4 < misil.posicion.x - misil.anchura / 2) { return false; }
+        if (h.posicion.y - h.altura / 4 > misil.posicion.y + misil.altura / 2) { return false; }
+        if (h.posicion.y + h.altura / 4 < misil.posicion.y - misil.altura / 2) { return false; }
+        else {
+            return true; //no frada
+        }
     }
+
+    if (h.agachado == true) {
+
+        if (h.posicion.x - h.anchura / 2 > misil.posicion.x + misil.anchura /2) { return false; }
+        if (h.posicion.x + h.anchura / 2 < misil.posicion.x - misil.anchura / 2) { return false; }
+        if (h.posicion.y  > misil.posicion.y + misil.altura / 4) { return false; }
+        if (h.posicion.y  < misil.posicion.y - misil.altura / 4) { return false; }
+        else {
+            return true; //no frada
+        }
+
+
+
+        return false;
+    }
+
 }
 
 
