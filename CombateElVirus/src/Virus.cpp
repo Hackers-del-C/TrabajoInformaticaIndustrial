@@ -56,6 +56,8 @@ int Virus::GetVidas() {
 
 void Virus::SetVidas(int v) {
     vidas = v;
+
+
     if(vidas<1){
         Muere();
     }

@@ -114,10 +114,10 @@ bool Interaccion::Colision(Slime &s, Plataformas p) {
      //SIRVE PARA DETECTAR COLISIONES ENTRE ELEMENTOS RECTANGULARES
     if (s.posicion.x - s.anchura / 2 > p.posicion.x + p.anchura / 2) { return false; }
     if (s.posicion.x + s.anchura / 2 < p.posicion.x - p.anchura / 2) { return false; }
-    if (s.posicion.y - s.altura / 2 > p.altura / 2 + p.posicion.y) { return false; }
+    if (s.posicion.y - s.altura / 2 > p.altura / 2 + p.posicion.y+p.altura) { return false; } //
     if (s.posicion.y + s.altura / 2 < p.posicion.y - p.altura / 2) { return false; }
     else {
-        s.Choca();
+       // s.Choca();
         return true;
     }
 
@@ -127,7 +127,7 @@ bool Interaccion::Colision(Slime& s, Limites l) {
     ETSIDI::Vector2D dir;
     float dif = s.posicion.x - l.suelo.GetSuelo(); //Cabrones
     if (s.posicion.y<-3.5) {
-        s.Choca();
+      //  s.Choca();
       
         return true;
     }

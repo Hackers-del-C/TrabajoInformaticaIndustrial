@@ -102,7 +102,7 @@ bool ListaDisparos::Colision(Virus& v)
 			if (v.GetVidas() < 1) {
 				v.Muere();
 			}*/
-			//eliminar(i); //esto da errorrrrrrrrrrrrr
+			
 			eliminar(lista[i]);
 			return 1;
 		}

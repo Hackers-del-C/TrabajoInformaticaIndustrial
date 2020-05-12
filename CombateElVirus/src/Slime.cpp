@@ -15,7 +15,7 @@ Slime::Slime() {
     altura = 6 * 0.4;
     velocidad.x = 0;
     velocidad.y = 0;
-    aceleracion.y = -2;
+    aceleracion.y = -3;
 
 }
 
@@ -23,9 +23,11 @@ Slime::Slime(float x, float y) {
 
     posicion.x = x;
     posicion.y = y;
+    altura = 0.1;
+    anchura = 0.1;
     velocidad.x = 0;
     velocidad.y = 0;
-    aceleracion.y = -2;
+    aceleracion.y = -3;
     chocar = 0;
     sprite = new SpriteSequence("imagenes/enemigos/balababa.png", 8, 1, 40, true, 0, 0, 3, 3);
 

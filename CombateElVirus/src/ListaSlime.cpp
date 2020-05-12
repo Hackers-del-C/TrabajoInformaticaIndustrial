@@ -123,9 +123,11 @@ Slime* ListaSlime::operator [](int i)
 
 void ListaSlime::Colision(ListaPlataformas p) {
 
-	for (int i = 0; i < numero; i++)
+	for (int i = 0; i < numero; i++) {
 		p.Colision(*lista[i]);
+	}
 }
+
 
 void ListaSlime::Colision(Limites l) {
 
