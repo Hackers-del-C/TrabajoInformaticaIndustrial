@@ -95,8 +95,12 @@ void Mundo::Inicializa()
 	//slime.Inicializa(-10, 10);
 
 
+	//listaexplosiones.agregar(new Explosiones(0, 0));
+
 	limites.SetLimites(-20, 500, -10, 30); //Son los bordes del juego que el jugador no puede pasar	
 	vidas.Inicializa(hombre);
+
+	exptest.Inicializa(-5, 8);
 
 
 	for (int i = 0; i < BONUSTEST; i++) {
@@ -167,6 +171,7 @@ void Mundo::Dibuja()
 			virus2.Dibuja(level);
 			virus3.Dibuja(level);
 			virus4.Dibuja(level);
+			exptest.Dibuja();
 			listaslime.dibuja();
 			//slime.Dibuja();
 			plataformas.Dibuja();
@@ -251,6 +256,7 @@ void Mundo::Mueve()
 
 	virus3.Seguir(hombre);
 	virus4.Seguir(hombre);
+	exptest.Mueve(0.025f);
 	//slime.Mueve(0.025f);
 	//bonus1.Mueve(0.025f);
 	hombre.Mueve(0.025f);

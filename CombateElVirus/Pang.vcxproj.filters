@@ -112,6 +112,15 @@
     <ClCompile Include="src\ListaBonusTest.cpp">
       <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
     </ClCompile>
+    <ClCompile Include="src\ListaExplosiones.cpp">
+      <Filter>Archivos de código fuente\MUNDO</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ListaExplosiones.h">
+      <Filter>Archivos de encabezado\MUNDO</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Explosiones.cpp">
+      <Filter>Archivos de código fuente\MUNDO</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\ETSIDI.h">
@@ -224,6 +233,9 @@
     </ClInclude>
     <ClInclude Include="src\VirusSlime.h">
       <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Explosiones.h">
+      <Filter>Archivos de encabezado\MUNDO</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

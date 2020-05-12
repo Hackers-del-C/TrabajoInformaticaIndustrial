@@ -89,6 +89,7 @@
     <ClCompile Include="src\BordesChoca.cpp" />
     <ClCompile Include="src\BordesSube.cpp" />
     <ClCompile Include="src\Coordinador.cpp" />
+    <ClCompile Include="src\Explosiones.cpp" />
     <ClCompile Include="src\Lanzamisiles.cpp" />
     <ClCompile Include="src\Limites.cpp" />
     <ClCompile Include="src\Disparo.cpp" />
@@ -100,6 +101,8 @@
     <ClCompile Include="src\ListaBonusTest.cpp" />
     <ClCompile Include="src\ListaBordesSube.cpp" />
     <ClCompile Include="src\ListaDisparos.cpp" />
+    <ClCompile Include="src\ListaExplosiones.h" />
+    <ClCompile Include="src\ListaExplosiones.cpp" />
     <ClCompile Include="src\Listalanzamisiles.cpp" />
     <ClCompile Include="src\Listamisiles.cpp" />
     <ClCompile Include="src\ListaPlataformas.cpp" />
@@ -130,6 +133,7 @@
     <ClInclude Include="src\BordesChoca.h" />
     <ClInclude Include="src\BordesSube.h" />
     <ClInclude Include="src\Coordinador.h" />
+    <ClInclude Include="src\Explosiones.h" />
     <ClInclude Include="src\Lanzamisiles.h" />
     <ClInclude Include="src\Limites.h" />
     <ClInclude Include="src\Disparo.h" />

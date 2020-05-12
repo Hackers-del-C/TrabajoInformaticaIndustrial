@@ -25,6 +25,8 @@
 #include "Slime.h"
 #include "ListaSlime.h"
 #include "VirusSlime.h"
+#include "ListaExplosiones.h"
+#include "Explosiones.h"
 
 enum { MOUSE_LEFT_BUTTON, MOUSE_MIDDLE_BUTTON, MOUSE_RIGHT_BUTTON };
 
@@ -85,6 +87,8 @@ private:
 	ListaVirus listavirus;
 	ListaBonusMascarilla listabonusmascarilla;
 	ListaBonusTest listabonustest;
+	//ListaExplosiones listaexplosiones;
+	Explosiones exptest;
 	
 	//ojo
 	float x_ojo;

@@ -3,6 +3,7 @@
 #define NUM_MAX_DISPAROS 20
 #include "Disparo.h"
 #include "Virus.h"
+#include "Explosiones.h"
 
 class ListaDisparos {
 

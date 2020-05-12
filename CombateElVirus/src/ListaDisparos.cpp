@@ -102,7 +102,8 @@ bool ListaDisparos::Colision(Virus& v)
 			if (v.GetVidas() < 1) {
 				v.Muere();
 			}*/
-			
+			new Explosiones(lista[i]->posicion.x, lista[i]->posicion.x);
+
 			eliminar(lista[i]);
 			return 1;
 		}
