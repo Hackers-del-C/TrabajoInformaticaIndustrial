@@ -3,7 +3,7 @@
 
 class Coordinador {
 protected:
-	enum Estado { INICIO, JUEGO, PAUSA, MUERTE, GANAR };
+	enum Estado { MENU, JUEGO, PAUSA, MUERTE, GANAR };
 	Estado estado;
 public:
 	Coordinador();

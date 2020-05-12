@@ -453,6 +453,9 @@ int Mundo::Tecla(unsigned char key)
 			}
 			break;
 			///test
+		/*case 'p':
+			return 10;
+			break;*/
 		case ' ':
 			hombre.SetVel(0, hombre.velocidad.y);
 			//hombre.SetDir(0);
@@ -460,7 +463,7 @@ int Mundo::Tecla(unsigned char key)
 			//misiles.DestruirContenido(i);
 			i++;
 			break;
-
+	
 		}
 
 		break;
