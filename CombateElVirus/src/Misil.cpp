@@ -10,7 +10,7 @@
 Misil::Misil(char  nombre [20], float x, float y, float vx, float vy)  {
 
 
-	misil = new Sprite(nombre, 0, 0, 2, 2);
+	misil = new SpriteSequence("imagenes/enemigos/balababa.png", 8, 1, 40, true, 0, 0, 3, 3);
 	posicion.x = x;
 	posicion.y = y;
 	velocidad.x = vx;
