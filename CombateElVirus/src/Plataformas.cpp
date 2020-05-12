@@ -7,6 +7,11 @@ Plataformas::Plataformas() {
     limite1.y = 0;
 
     limite2.y = 0;
+
+    velocidad.x = 0;
+    velocidad.y = 0;
+    aceleracion.y = 0;
+    aceleracion.x = 0;
 }
 Plataformas::Plataformas(float x, float y, float w, float h) {
     posicion.x = x;
@@ -27,6 +32,10 @@ Plataformas::Plataformas(plat_t tipo, float x, float y, float w, float h):tipo(t
     limite1.y = y - h / 2;
     limite2.x = x + w / 2;
     limite2.y = y + h / 2;
+    velocidad.x = 0;
+    velocidad.y = 0;
+    aceleracion.y = 0;
+    aceleracion.x = 0;
 }
 //ESTO ES AUXILIAR ANTES DE METERLO EN LISTA
 void Plataformas::Inicializa(float x, float y, float w, float h) {
@@ -90,6 +99,21 @@ void Plataformas::Dibuja() {
         glDisable(GL_TEXTURE_2D);
 
         break;
+    case Plataformas::PLATAFORMA_MUEVE:
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/plataformachoca.png").id);
+        glDisable(GL_LIGHTING);
+        glBegin(GL_POLYGON);
+        glColor3f(1, 1, 1);
+        glTexCoord2d(0, 1); glVertex3f(limite2.x, limite1.y, 0);
+        glTexCoord2d(1, 1); glVertex3f(limite1.x, limite1.y, 0);
+        glTexCoord2d(1, 0); glVertex3f(limite1.x, limite2.y, 0);
+        glTexCoord2d(0, 0); glVertex3f(limite2.x, limite2.y, 0);
+        glEnd();
+        glEnable(GL_LIGHTING);
+        glDisable(GL_TEXTURE_2D);
+
+        break;
     }
 }
 
@@ -112,3 +136,20 @@ float Plataformas::distancia(ETSIDI::Vector2D punto, ETSIDI::Vector2D* direccion
         *direccion = dir.unit();
     return distancia;
 }
+void Plataformas::Mueve(float t){
+    if (tipo == PLATAFORMA_MUEVE) {
+        if (aceleracion.x == 0) {
+            aceleracion.x = 1;
+        }
+        if (velocidad.x >= 5) {
+            aceleracion.x = -1;
+        }
+        if (velocidad.x <= -5) {
+            aceleracion.x = 1;
+        }
+        posicion=posicion+ velocidad * t + aceleracion * (0.5f * t * t);
+        limite1 = limite1 + velocidad * t + aceleracion * (0.5f * t * t);
+        limite2 = limite2 + velocidad * t + aceleracion * (0.5f * t * t);
+        velocidad = velocidad + aceleracion * t;
+    }
+   }

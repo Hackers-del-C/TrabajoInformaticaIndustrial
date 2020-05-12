@@ -21,7 +21,7 @@ public:
 	int GetNumero() { return numero; }
 	void Eliminar(int index);
 	void Eliminar(Plataformas* p);
-
+	void Mueve(float t);
 	Plataformas* ColisionSube(Hombre &h);
 	Plataformas* ColisionChoca(Hombre &h);
 	Plataformas* ColisionChocaLado(Hombre &h);

@@ -73,7 +73,13 @@ void ListaPlataformas::Dibuja() {
 		lista[i]->Dibuja();
 	}
 }
-
+void ListaPlataformas::Mueve(float t) {
+	/*for (int i = 0; i < lista.size(); i++)
+		lista[i]->Dibuja();*/
+	for (int i = 0; i < numero; i++) {
+		lista[i]->Mueve(t);
+	}
+}
 Plataformas* ListaPlataformas::ColisionSube(Hombre& h) {
 	for (int i = 0; i < numero; i++) {
 		if (Interaccion::ColisionSube(h ,*(lista[i]))) {

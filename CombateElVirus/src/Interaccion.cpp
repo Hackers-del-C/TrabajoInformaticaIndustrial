@@ -177,7 +177,13 @@ bool Interaccion::ColisionSube(Hombre &h, Plataformas p) {
         if (h.GetVel().y <= 0.0 && h.posicion.y >= p.posicion.y + p.altura / 4) {
             if (h.posicion.y <= p.posicion.y + p.altura * 1.75) {
                 h.posicion.y = p.posicion.y + p.altura * 1.75;
-
+            /*    if (p.GetTipo() == p.PLATAFORMA_MUEVE) {
+                    
+                        h.velocidad.x = p.velocidad.x;
+                        h.aceleracion.x = p.aceleracion.x;
+                    
+                }*/
+             
                 return true;
             }
 
@@ -198,7 +204,7 @@ bool Interaccion::ColisionChoca(Hombre& h, Plataformas p) {
     if (h.posicion.y - h.altura / 2 > p.altura / 2 + p.posicion.y) { return false; }
     if (h.posicion.y + h.altura / 2 < p.posicion.y - p.altura / 2) { return false; }
     else {
-        if (p.GetTipo() == p.PLATAFORMA_CHOCA) {
+        if (p.GetTipo() == p.PLATAFORMA_CHOCA || p.GetTipo() == p.PLATAFORMA_MUEVE) {
             if (h.GetVel().y > 0.0) {
                 return true;
 

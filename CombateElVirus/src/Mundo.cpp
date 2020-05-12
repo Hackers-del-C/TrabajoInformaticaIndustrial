@@ -49,6 +49,8 @@ void Mundo::InicializaFondo() {
 	///lanzamisiles2
 	plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 70, 8, 4, 1.5));
 
+	plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 0, 10, 4, 1.5));
+
 	for (int y = -6; y < 50; y++) {
 		if (y != 2 && y != 3 && y != 7 && y != 8 && y != 9 && y != 10 && y != 20 && y != 21) {
 			plataformas.Agregar(new Plataformas(Plataformas::SUELO, j * y, -5.5, 5, 1.5));
@@ -223,6 +225,7 @@ void Mundo::Dibuja()
 
 void Mundo::Mueve()
 {
+	plataformas.Mueve(0.025f);
 	//esto es para cuando acaba la partida que durante 2s se congele la imagen, no se como hacerlo la verdad el getMillis
 	/*if (hombre.GetVidas() == 0) {
 		while (getMillis() <= 2000) {

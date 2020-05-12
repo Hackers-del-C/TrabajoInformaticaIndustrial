@@ -3,7 +3,7 @@
 #include "BordesSube.h"
 class Plataformas {
 public:
-	enum plat_t{SUELO,PLATAFORMA_CHOCA, PLATAFORMA_ATRAVIESA};
+	enum plat_t{SUELO,PLATAFORMA_CHOCA, PLATAFORMA_ATRAVIESA,PLATAFORMA_MUEVE};
 
 	Plataformas();
 	Plataformas(float x1, float y1, float w, float h);
@@ -24,6 +24,8 @@ public:
 	ETSIDI::Vector2D posicion;
 	float anchura, altura;
 
+	ETSIDI::Vector2D velocidad, aceleracion;
+	void Mueve(float t);
 
 	friend class Interaccion;
 
