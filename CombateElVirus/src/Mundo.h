@@ -87,7 +87,7 @@ private:
 	ListaVirus listavirus;
 	ListaBonusMascarilla listabonusmascarilla;
 	ListaBonusTest listabonustest;
-	//ListaExplosiones listaexplosiones;
+	ListaExplosiones listaexplosiones;
 	Explosiones exptest;
 	
 	//ojo

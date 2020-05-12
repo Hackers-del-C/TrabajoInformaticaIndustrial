@@ -131,11 +131,11 @@ void ListaVirus::Sigue(Hombre h)
 		lista[i]->Seguir(h);
 }
 
-void ListaVirus::Colision(ListaDisparos &l) {
+void ListaVirus::Colision(ListaDisparos &l, ListaExplosiones &e) {
 
 	for (int i = 0; i < numero; i++) {
 
-		if (l.Colision(*lista[i])) {
+		if (l.Colision(*lista[i], e)) {
 			//lista[i]->SetVidas(lista[i]->GetVidas() -1);
 			
 			if (lista[i]->GetVidas() < 1) {

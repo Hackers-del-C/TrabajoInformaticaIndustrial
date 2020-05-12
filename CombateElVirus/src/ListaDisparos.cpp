@@ -90,7 +90,7 @@ Disparo* ListaDisparos::operator [](int i)
 	return lista[i];
 }
 
-bool ListaDisparos::Colision(Virus& v)
+bool ListaDisparos::Colision(Virus& v, ListaExplosiones &l)
 {
 	Disparo* aux;
 	for (int i = 0; i < numero; i++)
@@ -102,7 +102,7 @@ bool ListaDisparos::Colision(Virus& v)
 			if (v.GetVidas() < 1) {
 				v.Muere();
 			}*/
-			new Explosiones(lista[i]->posicion.x, lista[i]->posicion.x);
+			l.agregar(new Explosiones(lista[i]->posicion.x, lista[i]->posicion.y));
 
 			eliminar(lista[i]);
 			return 1;

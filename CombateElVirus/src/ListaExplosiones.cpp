@@ -1,5 +1,4 @@
 
-#pragma once
 #include "ListaExplosiones.h"
 
 ListaExplosiones::ListaExplosiones()
@@ -77,8 +76,13 @@ void ListaExplosiones::dibuja()
 }
 void ListaExplosiones::mueve(float t)
 {
-	for (int i = 0; i < numero; i++)
+	for (int i = 0; i < numero; i++) {
 		lista[i]->Mueve(t);
+		//if (lista[i]->sprite->getState() == 8) { //Si la secuencia de la explosión ha terminado la eliminamos
+		//	eliminar(lista[i]);
+		//}
+	}
+
 }
 
 Explosiones* ListaExplosiones::operator [](int i)

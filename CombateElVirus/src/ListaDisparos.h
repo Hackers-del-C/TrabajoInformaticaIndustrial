@@ -4,6 +4,7 @@
 #include "Disparo.h"
 #include "Virus.h"
 #include "Explosiones.h"
+#include "ListaExplosiones.h"
 
 class ListaDisparos {
 
@@ -19,7 +20,7 @@ public:
 	Disparo* operator [](int i);
 	void eliminar(int index);
 	void eliminar(Disparo* e);
-	bool Colision(Virus& h);
+	bool Colision(Virus& h, ListaExplosiones &l);
 	
 private:
 	Disparo* lista[NUM_MAX_DISPAROS];
