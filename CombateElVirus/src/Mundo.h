@@ -28,7 +28,7 @@
 #include "Slime.h"
 #include "ListaSlime.h"
 #include "VirusSlime.h"
-//#include "ListaExplosiones.h"
+#include "ListaExplosiones.h"
 #include "Explosiones.h"
 
 enum { MOUSE_LEFT_BUTTON, MOUSE_MIDDLE_BUTTON, MOUSE_RIGHT_BUTTON };
@@ -66,17 +66,17 @@ private:
 	int salto =0;
 	int pantalla=0;//aux
 	long tiempo;//
-	//Disparo disparo;
+	Disparo disparo;
 	Personajes personajes;
 	Hombre hombre;
 	Limites limites;//plataforma1;
-	//Virus virus;
+	Virus virus;
 	
 	VirusSeta virus1;
 	VirusBaba virus2;
 	VirusMosca virus3;
-	VirusSlime virus4;
-	//Slime slime;
+	//VirusSlime virus4;
+	Slime slime;
 	Entorno entorno;
 	//LISTAS
 	ListaDisparos disparos;
@@ -90,7 +90,7 @@ private:
 	ListaVirus listavirus;
 	ListaBonus listabonus;
 
-//	ListaExplosiones listaexplosiones;
+	ListaExplosiones listaexplosiones;
 	Explosiones exptest;
 	
 	//ojo

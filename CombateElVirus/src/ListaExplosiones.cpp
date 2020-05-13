@@ -1,4 +1,4 @@
-/*#include "ListaExplosiones.h"
+#include "ListaExplosiones.h"
 
 ListaExplosiones::ListaExplosiones()
 {
@@ -6,6 +6,7 @@ ListaExplosiones::ListaExplosiones()
 	for (int i = 0; i < MAX_EXP; i++)
 		lista[i] = 0;
 }
+
 
 void ListaExplosiones::destruirContenido()
 {
@@ -91,4 +92,3 @@ Explosiones* ListaExplosiones::operator [](int i)
 
 
 
-*/

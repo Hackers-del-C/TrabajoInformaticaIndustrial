@@ -100,7 +100,6 @@
     <ClCompile Include="src\ListaBonus.cpp" />
     <ClCompile Include="src\ListaBordesSube.cpp" />
     <ClCompile Include="src\ListaDisparos.cpp" />
-    <ClCompile Include="src\ListaExplosiones.h" />
     <ClCompile Include="src\ListaExplosiones.cpp" />
     <ClCompile Include="src\Listalanzamisiles.cpp" />
     <ClCompile Include="src\Listamisiles.cpp" />
@@ -143,6 +142,7 @@
     <ClInclude Include="src\ListaBonus.h" />
     <ClInclude Include="src\ListaBordesSube.h" />
     <ClInclude Include="src\ListaDisparos.h" />
+    <ClInclude Include="src\ListaExplosiones.h" />
     <ClInclude Include="src\Listalanzamisiles.h" />
     <ClInclude Include="src\Listamisiles.h" />
     <ClInclude Include="src\ListaPlatafomas.h" />

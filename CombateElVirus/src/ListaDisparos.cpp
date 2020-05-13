@@ -90,7 +90,7 @@ Disparo* ListaDisparos::operator [](int i)
 	return lista[i];
 }
 
-/*
+
 bool ListaDisparos::Colision(Virus& v, ListaExplosiones &l)
 {
 	Disparo* aux;
@@ -98,7 +98,7 @@ bool ListaDisparos::Colision(Virus& v, ListaExplosiones &l)
 	{
 		if (Interaccion::Colision(*(lista[i]), v)) {
 			
-			/*DestruirContenido(i);
+			//DestruirContenido(i);
 			v.SetVidas(v.GetVidas() - 1);
 			if (v.GetVidas() < 1) {
 				v.Muere();
@@ -111,4 +111,3 @@ bool ListaDisparos::Colision(Virus& v, ListaExplosiones &l)
 	}
 	return 0; //no hay colisión
 }
-*/

@@ -106,17 +106,14 @@
     <ClCompile Include="src\VirusSlime.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
     </ClCompile>
-    <ClCompile Include="src\ListaExplosiones.cpp">
-      <Filter>Archivos de código fuente\MUNDO</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ListaExplosiones.h">
-      <Filter>Archivos de encabezado\MUNDO</Filter>
-    </ClCompile>
     <ClCompile Include="src\Explosiones.cpp">
       <Filter>Archivos de código fuente\MUNDO</Filter>
     </ClCompile>
     <ClCompile Include="src\ListaBonus.cpp">
       <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ListaExplosiones.cpp">
+      <Filter>Archivos de código fuente\MUNDO</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -230,6 +227,9 @@
     </ClInclude>
     <ClInclude Include="src\ListaBonus.h">
       <Filter>Archivos de encabezado\MUNDO\Interacciones\BONUS</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ListaExplosiones.h">
+      <Filter>Archivos de encabezado\MUNDO</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -3,7 +3,7 @@
 #include "Hombre.h"
 #include "Limites.h"
 #include "Pared.h"
-//#include "ListaDisparos.h"
+#include "ListaDisparos.h"
 #include "Listalanzamisiles.h"
 #include "Listamisiles.h"
 #include "Misil.h"

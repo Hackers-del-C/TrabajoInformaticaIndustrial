@@ -87,7 +87,7 @@ bool Interaccion::Colision(Disparo d, Virus &v) {
         // Colisión detectada
         
    
-      v.SetVidas(v.GetVidas()-1);
+     // v.SetVidas(v.GetVidas()-1);
         return true;
     }
     return false;

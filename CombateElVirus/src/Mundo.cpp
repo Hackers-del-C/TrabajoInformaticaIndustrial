@@ -80,12 +80,12 @@ void Mundo::Inicializa()
 
 	virus3.Inicializa(-10, 15);
 
-	virus4.Inicializa(10, -3);
+
 
 	for (int i = 0; i < 1; i++)
 	{
 
-		listavirus.agregar(new VirusSeta(40 + 20 * i, -3));
+		listavirus.agregar(new VirusSeta(50 + 20 * i, -3));
 	}
 	for (int i = 0; i < 1; i++)
 	{
@@ -166,9 +166,9 @@ void Mundo::Dibuja()
 
 			virus2.Dibuja(level);
 			virus3.Dibuja(level);
-			virus4.Dibuja(level);
 			
-		//	listaexplosiones.dibuja();
+			
+			listaexplosiones.dibuja();
 			listaslime.dibuja();
 			//slime.Dibuja();
 			plataformas.Dibuja();
@@ -254,12 +254,11 @@ void Mundo::Mueve()
 	virus2.Mueve(0.025f);
 	virus3.Mueve(0.025f);
 
-	virus4.Mueve(0.025f);
 
 	virus3.Seguir(hombre);
-	virus4.Seguir(hombre);
+
 	
-	//listaexplosiones.mueve(0.025f);
+	listaexplosiones.mueve(0.025f);
 	//slime.Mueve(0.025f);
 	//bonus1.Mueve(0.025f);
 	hombre.Mueve(0.025f);
@@ -270,7 +269,7 @@ void Mundo::Mueve()
 
 	listavirus.mueve(0.025f, hombre);
 	listavirus.Sigue(hombre);
-//	listavirus.Colision(disparos, listaexplosiones);
+	listavirus.Colision(disparos, listaexplosiones);
 
 	listaslime.mueve(0.025f, hombre);
 
@@ -286,7 +285,7 @@ void Mundo::Mueve()
 	//Interaccion::Colision(bonus1, limites);
 
 	//Interaccion::Colision(slime, limites);
-	//plataformas.Colision(slime);
+	plataformas.Colision(slime);
 
 	listaslime.Colision(limites);
 	listaslime.Colision(plataformas);

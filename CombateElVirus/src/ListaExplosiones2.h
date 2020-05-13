@@ -1,5 +1,4 @@
 #pragma once
-#pragma once
 
 #define MAX_EXP 100
 #include "Explosiones.h"
