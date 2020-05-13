@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 
 #define MAX_EXP 100
 #include "Explosiones.h"
@@ -26,4 +26,4 @@ private:
 	Explosiones* lista[MAX_EXP];
 	int numero;
 
-};
+};*/

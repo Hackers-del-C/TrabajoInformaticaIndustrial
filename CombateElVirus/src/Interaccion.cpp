@@ -136,7 +136,7 @@ bool Interaccion::Colision(Slime& s, Limites l) {
 
 
 
-bool Interaccion::ColisionBonus(Hombre &h, Bonus  b) { //Esto deberia ser bonusmascarillas
+bool Interaccion::ColisionBonus(Hombre &h, Bonus  &b) { //Esto deberia ser bonusmascarillas
 
    if (h.posicion.x - h.anchura / 2 > b.posicion.x + b.anchura / 2) { return false; }
     if (h.posicion.x + h.anchura / 2 < b.posicion.x - b.anchura / 2) { return false; }
@@ -248,7 +248,7 @@ void Interaccion::reboteexterior(Hombre& h,Limites c)
   
 }
 
-void Interaccion::Colision(BonusMascarilla& b, Limites c) {
+void Interaccion::Colision(Bonus& b, Limites c) {
 
     float ymin = c.suelo.limite1.y;
  
@@ -257,7 +257,7 @@ void Interaccion::Colision(BonusMascarilla& b, Limites c) {
 
 }
 
-void Interaccion::Colision(BonusMascarilla& b, Plataformas p) {
+void Interaccion::Colision(Bonus& b, Plataformas p) {
 
 
     float ymin = p.posicion.y + p.altura / 2;

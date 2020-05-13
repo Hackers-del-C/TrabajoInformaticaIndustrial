@@ -20,7 +20,7 @@ public:
 	void destruirContenido();
 	void eliminar(int index);
 	void eliminar(Virus* e);
-	void Colision(ListaDisparos& l, ListaExplosiones& e);
+	//void Colision(ListaDisparos& l, ListaExplosiones& e);
 	void Sigue(Hombre h);
 	//Virus* colision(Hombre& h);
 	Virus* operator [](int i);

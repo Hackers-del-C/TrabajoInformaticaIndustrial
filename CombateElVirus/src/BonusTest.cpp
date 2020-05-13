@@ -23,3 +23,7 @@ void BonusTest::Inicializa( int x, int y, int w, int h) {
 	posicion.y = y;
 	bonus = new Sprite("imagenes/test.png", 0, 0, w, h);
 }
+
+void BonusTest::Mueve(float t) {
+	
+}

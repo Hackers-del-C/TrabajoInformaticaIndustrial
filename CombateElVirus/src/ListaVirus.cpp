@@ -131,7 +131,7 @@ void ListaVirus::Sigue(Hombre h)
 		lista[i]->Seguir(h);
 }
 
-void ListaVirus::Colision(ListaDisparos &l, ListaExplosiones &e) {
+/*void ListaVirus::Colision(ListaDisparos &l, ListaExplosiones &e) {
 
 	for (int i = 0; i < numero; i++) {
 
@@ -145,7 +145,7 @@ void ListaVirus::Colision(ListaDisparos &l, ListaExplosiones &e) {
 		}
 		
 	}
-}
+}*/
 
 //Virus* ListaVirus::Colision(Hombre &h) {
 //	for (int i = 0; i < numero; i++) {

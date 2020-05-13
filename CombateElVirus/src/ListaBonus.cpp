@@ -1,15 +1,14 @@
-#include "ListaBonusMascarilla.h"
-
+#include "ListaBonus.h"
 #include "Interaccion.h"
 
-ListaBonusMascarilla::ListaBonusMascarilla()
+ListaBonus::ListaBonus()
 {
 	numero = 0;
 	for (int i = 0; i < BONUS; i++)
 		lista[i] = 0;
 }
 
-void ListaBonusMascarilla::destruirContenido()
+void ListaBonus::destruirContenido()
 {
 	for (int i = 0; i < numero; i++)
 		delete lista[i];
@@ -17,18 +16,13 @@ void ListaBonusMascarilla::destruirContenido()
 }
 
 
-ListaBonusMascarilla::~ListaBonusMascarilla()
+ListaBonus::~ListaBonus()
 {
 
 }
-//
-//void ListaVirus::rebote(Pared p)
-//{
-//	for (int i = 0; i < numero; i++)
-//		Interaccion::rebote(*(lista[i]), p);
-//}
 
-bool ListaBonusMascarilla::agregar(BonusMascarilla* e)
+
+bool ListaBonus::agregar(Bonus* e)
 {
 
 	if (numero < BONUS) {
@@ -49,7 +43,8 @@ bool ListaBonusMascarilla::agregar(BonusMascarilla* e)
 	}
 }
 
-void ListaBonusMascarilla::eliminar(int index)
+
+void ListaBonus::eliminar(int index)
 {
 	if ((index < 0) || (index >= numero))
 		return;
@@ -59,12 +54,12 @@ void ListaBonusMascarilla::eliminar(int index)
 		lista[i] = lista[i + 1];
 }
 
-BonusMascarilla* ListaBonusMascarilla::colision(Hombre& h)
+Bonus* ListaBonus::colision(Hombre& h)
 {
 	for (int i = 0; i < numero; i++)
 	{
 		if (Interaccion::ColisionBonus(h, *(lista[i])))
-			
+
 			//eliminar(i);
 			return lista[i];
 	}
@@ -73,7 +68,7 @@ BonusMascarilla* ListaBonusMascarilla::colision(Hombre& h)
 
 
 
-void ListaBonusMascarilla::eliminar(BonusMascarilla* e)
+void ListaBonus::eliminar(Bonus* e)
 {
 	for (int i = 0; i < numero; i++)
 		if (lista[i] == e)
@@ -84,20 +79,21 @@ void ListaBonusMascarilla::eliminar(BonusMascarilla* e)
 }
 
 
-void ListaBonusMascarilla::dibuja()
+void ListaBonus::dibuja()
 {
 	for (int i = 0; i < numero; i++)
 		lista[i]->Dibuja();//nivel
 }
-void ListaBonusMascarilla::mueve(float t)
+
+void ListaBonus::mueve(float t)
 {
-	for (int i = 0; i < numero; i++){
-		lista[i]->Mueve(t); 
+	for (int i = 0; i < numero; i++) {
+		lista[i]->Mueve(t);
 	}
-	
+
 }
 
-BonusMascarilla* ListaBonusMascarilla::operator [](int i)
+Bonus* ListaBonus::operator [](int i)
 {
 	if (i >= numero)//si me paso, devuelvo la ultima
 		i = numero - 1;
@@ -105,12 +101,14 @@ BonusMascarilla* ListaBonusMascarilla::operator [](int i)
 		i = 0;
 	return lista[i];
 }
-void ListaBonusMascarilla::Colision(Limites c) {
+
+void ListaBonus::Colision(Limites c) {
 	for (int i = 0; i < numero; i++) {
 		Interaccion::Colision(*lista[i], c);
 	}
 }
-void ListaBonusMascarilla::Colision(Plataformas p) {
+
+void ListaBonus::Colision(Plataformas p) {
 	for (int i = 0; i < numero; i++) {
 		Interaccion::Colision(*lista[i], p);
 	}

@@ -97,8 +97,7 @@
     <ClCompile Include="src\AuxEtsidi.cpp" />
     <ClCompile Include="src\Hombre.cpp" />
     <ClCompile Include="src\Interaccion.cpp" />
-    <ClCompile Include="src\ListaBonusMascarilla.cpp" />
-    <ClCompile Include="src\ListaBonusTest.cpp" />
+    <ClCompile Include="src\ListaBonus.cpp" />
     <ClCompile Include="src\ListaBordesSube.cpp" />
     <ClCompile Include="src\ListaDisparos.cpp" />
     <ClCompile Include="src\ListaExplosiones.h" />
@@ -141,8 +140,7 @@
     <ClInclude Include="src\AuxEtsidi.h" />
     <ClInclude Include="src\Hombre.h" />
     <ClInclude Include="src\Interaccion.h" />
-    <ClInclude Include="src\ListaBonusMascarilla.h" />
-    <ClInclude Include="src\ListaBonusTest.h" />
+    <ClInclude Include="src\ListaBonus.h" />
     <ClInclude Include="src\ListaBordesSube.h" />
     <ClInclude Include="src\ListaDisparos.h" />
     <ClInclude Include="src\Listalanzamisiles.h" />

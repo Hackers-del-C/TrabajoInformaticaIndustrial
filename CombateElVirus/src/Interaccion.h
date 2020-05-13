@@ -31,7 +31,7 @@ public:
 
     static bool Colision(Hombre h, Virus v);
     static bool colision(Misil misil, Hombre h);
-    static bool ColisionBonus(Hombre &h, Bonus b);
+    static bool ColisionBonus(Hombre &h, Bonus &b);
     static bool Colision(Hombre h, Plataformas p);
     static bool ColisionSube(Hombre &h, Plataformas p);
     static bool ColisionChoca(Hombre &h, Plataformas p);
@@ -40,8 +40,8 @@ public:
     static bool Colision(Slime &s, Plataformas p);
     
     static bool Colision(Slime& s, Limites l);
-    static void Colision(BonusMascarilla& b, Limites c);
-    static void Colision(BonusMascarilla& b, Plataformas p);
+    static void Colision(Bonus& b, Limites c);
+    static void Colision(Bonus& b, Plataformas p);
 
 
     ETSIDI::Vector2D Distancia;

@@ -15,5 +15,5 @@ public:
 	~BonusTest() {};
 	BonusTest(int x, int y, int w, int h);
 	void Inicializa( int x, int y, int w, int h);
-
+	void Mueve(float t);
 };

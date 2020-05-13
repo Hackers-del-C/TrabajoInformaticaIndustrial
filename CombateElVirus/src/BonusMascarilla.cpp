@@ -26,3 +26,9 @@ void BonusMascarilla::Inicializa(int x, int y, int w, int h) {
 	bonus = new Sprite("imagenes/mascarilla.png", 0, 0, w, h);
 }
 
+void BonusMascarilla::Mueve(float t) {
+	posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
+	velocidad = velocidad + aceleracion * t;
+}
+
+

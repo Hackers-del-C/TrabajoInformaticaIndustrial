@@ -1,5 +1,5 @@
 #pragma once
-#include "BonusMascarilla.h"
+#include "Bonus.h"
 #define BONUS 100
 #include "Hombre.h"
 #include "Limites.h"
@@ -7,29 +7,33 @@
 //#include "Interaccion.h"
 //#include "Limites.h"
 
-class ListaBonusMascarilla {
+class ListaBonus {
 
 public:
-	ListaBonusMascarilla();
-	virtual ~ListaBonusMascarilla();
-	bool agregar(BonusMascarilla* v);
+	ListaBonus();
+	virtual ~ListaBonus();
+	bool agregar(Bonus* b);
 	void dibuja();
 	void mueve(float t);
 
 	void destruirContenido();
 	void eliminar(int index);
-	void eliminar(BonusMascarilla* e);
+	void eliminar(Bonus* e);
 	//Virus* colision(Hombre& h);
-	BonusMascarilla* operator [](int i);
+	Bonus* operator [](int i);
 	int getNumero() { return numero; }
 
-	BonusMascarilla* colision(Hombre& h);
+	Bonus* colision(Hombre& h);
 
 	void Colision(Limites l);
 	void Colision(Plataformas p);
 
-private:
-	BonusMascarilla* lista[BONUS];
+protected:
+	Bonus* lista[BONUS];
 	int numero;
 
 };
+
+
+
+

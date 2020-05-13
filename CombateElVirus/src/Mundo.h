@@ -9,14 +9,17 @@
 #include "ListaLanzamisiles.h"
 #include "Virus.h"
 #include "Vidas.h"
+#include "Bonus.h"
+#include "BonusTest.h"
+#include "BonusMascarilla.h"
+
 //LISTAS
 #include "ListaPlatafomas.h"
 #include "ListaVirus.h"
 #include "ListaBordesSube.h"
 #include "ListaDisparos.h"
 #include "Listamisiles.h"
-#include "ListaBonusMascarilla.h"
-#include "ListaBonusTest.h"
+#include "ListaBonus.h"
 
 //borrar en un futuro: WHYYYY???
 #include "VirusSeta.h"
@@ -25,7 +28,7 @@
 #include "Slime.h"
 #include "ListaSlime.h"
 #include "VirusSlime.h"
-#include "ListaExplosiones.h"
+//#include "ListaExplosiones.h"
 #include "Explosiones.h"
 
 enum { MOUSE_LEFT_BUTTON, MOUSE_MIDDLE_BUTTON, MOUSE_RIGHT_BUTTON };
@@ -85,9 +88,9 @@ private:
 	ListaSlime listaslime;
 	ListaBordesSube bordessube;
 	ListaVirus listavirus;
-	ListaBonusMascarilla listabonusmascarilla;
-	ListaBonusTest listabonustest;
-	ListaExplosiones listaexplosiones;
+	ListaBonus listabonus;
+
+//	ListaExplosiones listaexplosiones;
 	Explosiones exptest;
 	
 	//ojo

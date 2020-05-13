@@ -16,7 +16,7 @@ public:
 	float anchura, altura;
 	void Dibuja();
 	void SetPos(float ix, float iy);
-	void Mueve(float t);
+	virtual void Mueve(float t)=0; //Funcion vitual pura
 	ETSIDI::Vector2D GetPos() { return posicion; }
 protected:
 

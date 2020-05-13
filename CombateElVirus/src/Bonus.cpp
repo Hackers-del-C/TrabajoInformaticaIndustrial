@@ -25,10 +25,7 @@ void Bonus::Dibuja() {
 	bonus->draw();
 	glTranslatef(-posicion.x, -posicion.y, 0);
 }
-void Bonus::Mueve(float t) {
-	posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
-	velocidad = velocidad + aceleracion * t;
-}
+
 
 
 

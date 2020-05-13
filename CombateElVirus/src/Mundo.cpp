@@ -5,7 +5,7 @@
 #include "Mundo.h"
 #include "Interaccion.h"
 #include "ListaDisparos.h"
-#include "ListaExplosiones.h"
+//#include "ListaExplosiones.h"
 #include <math.h>
 #include "glut.h"
 #include <fstream>
@@ -92,6 +92,10 @@ void Mundo::Inicializa()
 
 		listavirus.agregar(new VirusSlime(30 + 30 * i, -3));
 	}
+	for (int i = 0; i < 20; i++)
+	{
+		listabonus.agregar(new BonusTest(lanzaDado(180), lanzaDado(6), 3, 3));
+	}
 
 	//slime.Inicializa(-10, 10);
 
@@ -100,16 +104,6 @@ void Mundo::Inicializa()
 
 	limites.SetLimites(-20, 500, -10, 30); //Son los bordes del juego que el jugador no puede pasar	
 	vidas.Inicializa(hombre);
-
-
-	
-
-
-	for (int i = 0; i < BONUSTEST; i++) {
-
-		listabonustest.agregar(new BonusTest( lanzaDado(180), lanzaDado(6), 3, 3));
-
-	}
 
 
 
@@ -174,32 +168,37 @@ void Mundo::Dibuja()
 			virus3.Dibuja(level);
 			virus4.Dibuja(level);
 			
-			listaexplosiones.dibuja();
+		//	listaexplosiones.dibuja();
 			listaslime.dibuja();
 			//slime.Dibuja();
 			plataformas.Dibuja();
 
 			bordessube.Dibuja();
 			listavirus.dibuja();
-			listabonusmascarilla.dibuja();
-			listabonustest.dibuja();
+			listabonus.dibuja();
 
 
 
 
 			listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png", 30, -3)); ///L1
 			listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png", 70, 10.55));  ///L2
-			float naleatorio = lanzaDado(1000.0);
+
+
+			float naleatorio = lanzaDado(800.0);
 			if (naleatorio < 10) {
 				misiles.Agregar(new Misil("imagenes/misilizq.png", 29, -2, -5.0f, 0.0f));
 			}
 			if (naleatorio < 5) {
 				misiles.Agregar(new Misil("imagenes/misilizq.png", 69, 9.55, -5.0f, 0.0f));
 			}
-			if (naleatorio < 2) {
+			if (naleatorio < 1) {
 
-				listabonusmascarilla.agregar(new BonusMascarilla(hombre.GetPosX() + naleatorio * 10, 25, 1.5, 1.5));
+				listabonus.agregar(new BonusMascarilla(hombre.GetPosX() + naleatorio * 10, 25, 1.5, 1.5));
 			}
+			
+		
+			
+
 
 			if (hombre.GetVidas() == 0) {
 
@@ -260,7 +259,7 @@ void Mundo::Mueve()
 	virus3.Seguir(hombre);
 	virus4.Seguir(hombre);
 	
-	listaexplosiones.mueve(0.025f);
+	//listaexplosiones.mueve(0.025f);
 	//slime.Mueve(0.025f);
 	//bonus1.Mueve(0.025f);
 	hombre.Mueve(0.025f);
@@ -271,15 +270,15 @@ void Mundo::Mueve()
 
 	listavirus.mueve(0.025f, hombre);
 	listavirus.Sigue(hombre);
-	listavirus.Colision(disparos, listaexplosiones);
+//	listavirus.Colision(disparos, listaexplosiones);
 
 	listaslime.mueve(0.025f, hombre);
 
 
 
-	listabonusmascarilla.mueve(0.025f);
-	listabonusmascarilla.Colision(limites);
-	listabonusmascarilla.Colision(plataformaprueba);
+	listabonus.mueve(0.025f);
+	listabonus.Colision(limites);
+	listabonus.Colision(plataformaprueba);
 
 
 	////INTERACCIONES////
@@ -302,23 +301,14 @@ void Mundo::Mueve()
 		}
 	}
 
-	BonusMascarilla* auxBM = listabonusmascarilla.colision(hombre);
+	Bonus* auxBM = listabonus.colision(hombre);
 	if (auxBM != 0) {
 		if (hombre.GetVidas() <= 4) {
 			hombre.SetVidas(hombre.GetVidas() + 1);
-			listabonusmascarilla.eliminar(auxBM);
+			listabonus.eliminar(auxBM);
 		}
 	}
 
-
-	BonusTest* auxBT = listabonustest.colision(hombre);
-	if (auxBT != 0) {
-		if (hombre.GetMonedas() <= 19) {
-			hombre.SetMonedas(hombre.GetMonedas() + 1);
-			listabonustest.eliminar(auxBT);
-			hombre.SetMonedas(hombre.GetMonedas() + 1);
-		}
-	}
 
 	/*if (Interaccion::colision(hombre, bonus1)) {
 		hombre.SetVidas(hombre.GetVidas() + 1);
@@ -387,7 +377,7 @@ void Mundo::Mueve()
 	//misiles.Explota();
 	}
 	for (int t = 0; t < plataformas.GetNumero(); t++) {
-		listabonusmascarilla.Colision(*plataformas[t]);
+		listabonus.Colision(*plataformas[t]);
 	}
 
 	Plataformas* auxPLAT = plataformas.ColisionSube(hombre);
@@ -441,7 +431,7 @@ int Mundo::Tecla(unsigned char key)
 
 		case 'j':
 
-			listabonusmascarilla.agregar(new BonusMascarilla(hombre.GetPos().x, 25, 1.5, 1.5));
+			listabonus.agregar(new BonusMascarilla(hombre.GetPos().x, 25, 1.5, 1.5));
 			break;
 		case 'x':
 			//virus.Muere();
