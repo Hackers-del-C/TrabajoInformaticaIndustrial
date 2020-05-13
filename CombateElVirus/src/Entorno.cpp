@@ -70,7 +70,7 @@ void Entorno::DibujaJuego(int nivel) {
 
 	case 1:
 		//IMAGENES
-		auxetsidi.Imagen("banderachina", -4, 4, 22, 27);
+		auxetsidi.Imagen("banderachina", -4, 4, 19, 24);
 		auxetsidi.Imagen("AvionMiguelAvion", 245, 255, 22, 27);
 		auxetsidi.Imagen("PrenivelChina", -30, 26, -10, 30);
 		auxetsidi.Imagen("NivelChina", 26, 82, -10, 30);
@@ -81,13 +81,13 @@ void Entorno::DibujaJuego(int nivel) {
 		
 		//auxetsidi.Imagen("laboratorio", 26, 156, -18, 45);
 		//TEXTO
-		auxetsidi.Texto("NIVEL 1", -24, 25, 0, 0, 0, 36);
-		auxetsidi.Texto("CHINA", -21, 22, 0, 0, 0, 40);
+		auxetsidi.Texto("NIVEL 1", -24, 22, 0, 0, 0, 36);
+		auxetsidi.Texto("CHINA", -21, 19, 0, 0, 0, 40);
 
 		break;
 	case 2:
 		//IMAGENES
-		auxetsidi.Imagen("banderaitaliana", -4, 4, 22, 27);
+		auxetsidi.Imagen("banderaitaliana", -4, 4, 19, 24);
 		auxetsidi.Imagen("PrenivelItalia", -30, 26, -10, 30);
 		auxetsidi.Imagen("NivelItalia", 26, 82, -10, 30);
 		auxetsidi.Imagen("NivelItalia", 82, 138, -10, 30);
@@ -95,13 +95,13 @@ void Entorno::DibujaJuego(int nivel) {
 		auxetsidi.Imagen("BatallaFinalItalia", 194, 250, -10, 30);
 		auxetsidi.Imagen("NivelItalia", 250, 306, -10, 30);
 		//TEXTO
-		auxetsidi.Texto("NIVEL 2", -24, 25, 0, 0, 0, 36);
-		auxetsidi.Texto("ITALIA", -21, 22, 0, 0, 0, 40);
+		auxetsidi.Texto("NIVEL 2", -24, 22, 0, 0, 0, 36);
+		auxetsidi.Texto("ITALIA", -21, 19, 0, 0, 0, 40);
 
 		break;
 	case 3:
 		//IMAGENES
-		auxetsidi.Imagen("banderaespañola", -4, 4, 22, 27);
+		auxetsidi.Imagen("banderaespañola", -4, 4, 19, 24);
 		auxetsidi.Imagen("PrenivelEspaña", -30, 26, -10, 30);
 		auxetsidi.Imagen("NivelEspaña", 26, 82, -10, 30);
 		auxetsidi.Imagen("NivelEspaña", 82, 138, -10, 30);
@@ -109,8 +109,8 @@ void Entorno::DibujaJuego(int nivel) {
 		auxetsidi.Imagen("BatallaFinalEspaña", 194, 250, -10, 30);
 		auxetsidi.Imagen("NivelEspaña", 250, 306, -10, 30);
 		//TEXTO
-		auxetsidi.Texto("NIVEL 3", -24, 25, 0, 0, 0, 36);
-		auxetsidi.Texto("ESPANIA", -21, 22, 0, 0, 0, 40);
+		auxetsidi.Texto("NIVEL 3", -24, 22, 0, 0, 0, 36);
+		auxetsidi.Texto("ESPANIA", -21, 19, 0, 0, 0, 40);
 		break;
 
 
