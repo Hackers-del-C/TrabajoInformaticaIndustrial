@@ -1,5 +1,6 @@
 #pragma once
 #include "Mundo.h"
+enum { MOUSE_LEFT_BUTTON, MOUSE_MIDDLE_BUTTON, MOUSE_RIGHT_BUTTON }; //para el raton
 
 class Coordinador {
 protected:
@@ -16,9 +17,11 @@ public:
 	void teclaEspecialsuelta(unsigned char key);
 	void ClickMouse(int b, int state);
 	void MyMouse(int x, int y);
+	void SetLevel(int level) {  nivel=level; }
 private:
+	int nivel;
 	Mundo mundo;
 	Entorno entorno;
 	float xmouse, ymouse;
-	int level;
+	
 };

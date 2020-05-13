@@ -22,7 +22,7 @@ Hombre::Hombre() {
 Hombre::~Hombre() {
 
 }
-void Hombre::Dibuja(int pantalla)
+void Hombre::Dibuja()
 {
     glTranslatef(posicion.x, posicion.y, 0);
    

@@ -31,32 +31,31 @@
 #include "ListaExplosiones.h"
 #include "Explosiones.h"
 
-enum { MOUSE_LEFT_BUTTON, MOUSE_MIDDLE_BUTTON, MOUSE_RIGHT_BUTTON };
-
 class Mundo
 {
 
 public: 
-	int level;//SE CAMBIA DESDE MENU.H 
+	
 	
 	int mascarillas = 5;
 	//generales
 	Mundo();
-	int Tecla(unsigned char key);
-	void Inicializa();
+	void Tecla(unsigned char key);
+	void Inicializa(int level);
 	void InicializaFondo();
 	void fichero();
-	void Mueve();
-	void Dibuja();
+	void Mueve(int level);
+	void Dibuja(int level);
+	void InicioDibuja();
 	void teclaEspecial(unsigned char key);
 	void teclaEspecialsuelta(unsigned char key);
-	int ClickMouse(int b, int state,int x, int y);
-	
-	void CargarNivel();
+	int Muerte();
+	int Ganar();
+	void Aviso(int pantalla);
 	//ojo:
 
 	void Setojo(float ox, float oy, float oz);
-	void SetLevel(int nivel) { level = nivel; }	
+	void RecargarNivel();
 	//void Interaccion();
 		//void RotarOjo();
 
@@ -64,7 +63,6 @@ private:
 	// constantes para el salto
 	int distancia=0;
 	int salto =0;
-	int pantalla=0;//aux
 	long tiempo;//
 	Disparo disparo;
 	Personajes personajes;

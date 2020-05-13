@@ -15,7 +15,7 @@ public:
 
     Hombre();
     virtual ~Hombre();
-    void Dibuja(int pantalla);
+    void Dibuja();
     void Mueve(float t);
     void SetVel(float vx, float vy);
     ETSIDI::Vector2D GetVel() { return velocidad; }
