@@ -15,6 +15,8 @@ public:
 	void Inicializa();
 	/*void Explota();*/
 	void Eliminar(Lanzamisiles* m);
+	
+
 private:
 	std::vector<Lanzamisiles*>lista;
 	//int numero;

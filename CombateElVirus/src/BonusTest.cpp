@@ -14,6 +14,7 @@ BonusTest::BonusTest(int x, int y, int w, int h) {
 	bonus = new Sprite("imagenes/test.png", 0, 0, w, h);
 	posicion.x = x;
 	posicion.y = y;
+	
 }
 
 void BonusTest::Inicializa( int x, int y, int w, int h) {

@@ -17,9 +17,13 @@ bool ListaMisil::Agregar(Misil* d) {
 		lista[i] = 0;*/
 }
 void ListaMisil::DestruirContenido(int ind) {
+
 	if ((ind < 0) || (ind >= lista.size())) {
 		return;
 	}
+
+	
+
 	delete lista[ind];
 	lista.erase(lista.begin() + ind);
 }
@@ -61,4 +65,14 @@ Misil* ListaMisil::colision(Hombre& h) {
 		
 	}
 	return 0;
+}
+
+void ListaMisil::limpiar() {
+
+	for (int i = 0; i < lista.size(); i++) {
+		if (lista[i]->posicion.x < 0) {
+
+			DestruirContenido(i);
+		}
+	}
 }

@@ -16,10 +16,12 @@ public:
 	void Dibuja();
 	/*void Explota();*/
 	void Eliminar(Misil* m);
+	void limpiar();
+	
 	
 	Misil* colision(Hombre& h);
 private:
-	//int numero;
+	int numero;
 	//Disparo* lista[NUM_MAX_misiles];
 	std::vector<Misil*>lista;
 	//Disparo* lista[NUM_MAX_DISPAROS];

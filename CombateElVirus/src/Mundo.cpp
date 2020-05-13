@@ -394,6 +394,9 @@ void Mundo::Mueve()
 		hombre.SetVel(0, 0);
 		hombre.SetVidas(hombre.GetVidas() - 1);
 	}
+
+	misiles.limpiar();
+
 }
 
 

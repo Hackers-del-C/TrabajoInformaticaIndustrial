@@ -5,6 +5,7 @@ using namespace std;
 using ETSIDI::getTexture;
 
 BonusMascarilla::BonusMascarilla() {
+	
 	velocidad.y = -5;
 }
 BonusMascarilla::~BonusMascarilla() {
@@ -13,6 +14,7 @@ BonusMascarilla::~BonusMascarilla() {
 BonusMascarilla::BonusMascarilla(int x, int y, int w, int h) {
 	anchura = 0.4 * w;
 	altura = 0.4 * h;
+	
 
 	bonus = new Sprite("imagenes/mascarilla.png", 0, 0, w, h);
 	posicion.x = x;
