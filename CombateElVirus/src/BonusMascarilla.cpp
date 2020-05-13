@@ -33,4 +33,13 @@ void BonusMascarilla::Mueve(float t) {
 	velocidad = velocidad + aceleracion * t;
 }
 
+bool BonusMascarilla::colision(Hombre& h) {
+	if (h.GetVidas() <= 4) {
+		h.SetVidas(h.GetVidas() + 1);
+		return true;
+	}
+	else
+		return false;
+}
+
 

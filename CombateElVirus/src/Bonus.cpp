@@ -6,6 +6,7 @@
 #include <string>
 #include "glut.h"
 #include "math.h"
+#include "Hombre.h"
 using namespace ETSIDI;
 using namespace std;
 using ETSIDI::getTexture;
@@ -25,6 +26,8 @@ void Bonus::Dibuja() {
 	bonus->draw();
 	glTranslatef(-posicion.x, -posicion.y, 0);
 }
+
+
 
 
 

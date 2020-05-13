@@ -222,6 +222,7 @@ void Mundo::Mueve(int level)
 	listaslime.Colision(plataformas);
 	listabonus.Colision(limites);
 	listabonus.Colision(plataformaprueba);
+	listabonus.colision(hombre);
 
 	//Interaccion::Colision(bonus1, limites);
 	//Interaccion::Colision(slime, limites);
@@ -233,14 +234,6 @@ void Mundo::Mueve(int level)
 	if (Interaccion::Colision(hombre, virus1)) {
 		if (virus1.GetMuerto() == 0) {
 			hombre.SetVidas(hombre.GetVidas() - 1);
-		}
-	}
-
-	Bonus* auxBM = listabonus.colision(hombre);
-	if (auxBM != 0) {
-		if (hombre.GetVidas() <= 4) {
-			hombre.SetVidas(hombre.GetVidas() + 1);
-			listabonus.eliminar(auxBM);
 		}
 	}
 

@@ -23,7 +23,7 @@ public:
 	Bonus* operator [](int i);
 	int getNumero() { return numero; }
 
-	Bonus* colision(Hombre& h);
+	void colision(Hombre& h);
 
 	void Colision(Limites l);
 	void Colision(Plataformas p);

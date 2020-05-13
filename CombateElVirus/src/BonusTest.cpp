@@ -28,3 +28,13 @@ void BonusTest::Inicializa( int x, int y, int w, int h) {
 void BonusTest::Mueve(float t) {
 	
 }
+
+bool BonusTest::colision(Hombre& h) {
+	if (h.GetMonedas() <= 19) {
+		h.SetMonedas(h.GetMonedas() + 1);
+		h.SetMonedas(h.GetMonedas() + 1);
+		return true;
+	}
+	else
+		return false;
+}
