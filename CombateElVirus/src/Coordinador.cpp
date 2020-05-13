@@ -11,24 +11,22 @@ Coordinador::~Coordinador() {
 
 }
 void Coordinador::Inicializa() {
-		mundo.RecargarNivel();
+		mundo.RecargarNivel(); //RESETEA HOMBRE Y DESTRUYE ALGUNAS LISTAS PERO NO SE
 		mundo.Inicializa(nivel);
 		mundo.InicializaFondo();
-		if (estado == MUERTE)
-		{
+		if (estado == MUERTE)		{
 			entorno.Fin(MUERTE);
 		}
 		else if (estado == GANAR) {
 			entorno.Fin(GANAR);
 		}
-	
 }
 void Coordinador::Mueve() {
 	if(estado==JUEGO)
 		mundo.Mueve(nivel);
 }
 void Coordinador::Dibuja() {
-	mundo.InicioDibuja();
+	mundo.InicioDibuja(); //ES EL OJO 
 	
 	if (estado == JUEGO) {
 		mundo.Dibuja(nivel);
@@ -105,8 +103,6 @@ void Coordinador::teclaEspecialsuelta(unsigned char key) {
 }
 void Coordinador::ClickMouse(int b, int state) {
 	bool down = (state == GLUT_DOWN);
-	//xmouse = (x - 400) / 13, 3; //coordinar con la x de nuestra pantalla
-	//ymouse = -(y - 455) / 17.5 + 1; //coordinar con la y de niestra pantalla
 	int button;
 	if (estado == MENU) {
 		if (b == GLUT_LEFT_BUTTON) {

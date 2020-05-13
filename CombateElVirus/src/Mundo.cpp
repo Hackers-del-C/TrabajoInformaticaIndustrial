@@ -20,35 +20,26 @@ void Mundo::Setojo(float ox, float oy, float oz) {
 	z_ojo = oz;
 
 }
-
 void Mundo::fichero() {
-
-	ofstream fichero("resultado_final.txt",ofstream::out || ofstream::in ||ios::app);
-	
-	string datos_previos;
-
-	
+	ofstream fichero("resultado_final.txt",ofstream::out || ofstream::in ||ios::app);	
+	string datos_previos;	
+	fichero << "Has cogido: " << hombre.GetMonedas() << " test" << endl;
+	fichero << "Has tardado: " << (clock() - tiempo)/1000 << " segundos" << endl; // esta donde el mouse el empizo del temporizador
+	fichero.close();
 
 	/*while (!fichero.eof()) {
 
 		fichero << datos_previos;
 	}*/
-	
+
 	//fichero << datos_previos;
 	//fichero << "Nombre: " << nombre << endl; 
-	fichero << "Has cogido: " << hombre.GetMonedas() << " test" << endl;
-	fichero << "Has tardado: " << (clock() - tiempo)/1000 << " segundos" << endl; // esta donde el mouse el empizo del temporizador
-	
-
-	fichero.close();
-
-
 }
+
 void Mundo::InicializaFondo() {
 	int j = 5;
 	///lanzamisiles2
 	plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 70, 8, 4, 1.5));
-
 	plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 0, 10, 4, 1.5));
 
 	for (int y = -6; y < 50; y++) {
@@ -65,46 +56,26 @@ void Mundo::InicializaFondo() {
 		}
 	}
 }
-void Mundo::Inicializa(int level)
-{
-
+void Mundo::Inicializa(int level) {
 	hombre.Inicializa();
 	entorno.Inicializa(level);
 	personajes.Inicializa(hombre);
-
-
-
 	virus2.Inicializa(-5, 1);
-
 	virus3.Inicializa(-10, 15);
-
-
-
-	for (int i = 0; i < 1; i++)
-	{
-
-		listavirus.agregar(new VirusSeta(50 + 20 * i, -3));
-	}
-	for (int i = 0; i < 1; i++)
-	{
-
-		listavirus.agregar(new VirusSlime(30 + 30 * i, -3));
-	}
-	for (int i = 0; i < 20; i++)
-	{
-		listabonus.agregar(new BonusTest(lanzaDado(180), lanzaDado(6), 3, 3));
-	}
-
-	//slime.Inicializa(-10, 10);
-
-
-	//listaexplosiones.agregar(new Explosiones(0, 0));
-
 	limites.SetLimites(-20, 500, -10, 30); //Son los bordes del juego que el jugador no puede pasar	
 	vidas.Inicializa(hombre);
 
-
-
+	for (int i = 0; i < 1; i++) {
+		listavirus.agregar(new VirusSeta(50 + 20 * i, -3));
+	}
+	for (int i = 0; i < 1; i++) {
+		listavirus.agregar(new VirusSlime(30 + 30 * i, -3));
+	}
+	for (int i = 0; i < 20; i++) {
+		listabonus.agregar(new BonusTest(lanzaDado(180), lanzaDado(6), 3, 3));
+	}
+	//slime.Inicializa(-10, 10);
+	//listaexplosiones.agregar(new Explosiones(0, 0));
 	/* AGREGA VIRUS
 	for (int i = 0; i < 5; i++)
 	{
@@ -125,57 +96,35 @@ void Mundo::Inicializa(int level)
 	//	Virus* aux = new Virus();
 	//	aux->Inicializa("virusseta", 8, 1, -10 + 2.5 * i, 4, 2, 2, 0, 0);
 	//	listavirus.agregar(aux);
-	//}
-
-
-
-
+	//}}
 }
 
-void Mundo::Aviso(int pantalla){
+void Mundo::Aviso(int pantalla){ //en principio es para sacar el cuadrado negro que te dice que has perdido, es un mini menu vaya
 	entorno.Aviso(pantalla, hombre.posicion.x, hombre.posicion.y);
 }
-void Mundo::InicioDibuja() {
+void Mundo::InicioDibuja() { //para que funcione bien los dibujas llamados desde el coordinador, tiene que estar primero el ojo
+	/*Se ha decido dejar el ojo en Mundo.cpp porque va conectado con la posicion del hombre en la gran mayoría del tiempo*/
 	gluLookAt(x_ojo, y_ojo, z_ojo,
 		x_ojo, y_ojo, 0.0, //NOTESE QUE HEMOS CAMBIADO ESTO
 		0.0, 5.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
 }
-void Mundo::Dibuja(int level)
-{
-	
-	
+void Mundo::Dibuja(int level)	{
 	entorno.DibujaJuego(level);
-
 	limites.Dibuja();
 	hombre.Dibuja();
-	vidas.Dibuja(hombre, hombre.GetVidas());
-
-	glPushMatrix();//guarda la matriz
-	glColor3f(0, 0, 1);
-	glutSolidSphere(0.2, 15, 15); //dibuja la esfera solida
-	glColor3f(0, 0, -1);
-	glPopMatrix();//la guarda y la restaura
-
-
+	vidas.Dibuja(hombre, hombre.GetVidas()); 
 	personajes.Dibuja(level, hombre);
 	disparos.Dibuja();
 	misiles.Dibuja();
 	listalanzamisiles.Dibuja();
-
-
 	virus2.Dibuja(level);
 	virus3.Dibuja(level);
-
-
 	listaexplosiones.dibuja();
 	listaslime.dibuja();
-	//slime.Dibuja();
 	plataformas.Dibuja();
-
 	bordessube.Dibuja();
 	listavirus.dibuja();
 	listabonus.dibuja();
-
 
 
 
@@ -194,6 +143,12 @@ void Mundo::Dibuja(int level)
 
 		listabonus.agregar(new BonusMascarilla(hombre.GetPosX() + naleatorio * 10, 25, 1.5, 1.5));
 	}
+
+	//glPushMatrix();//guarda la matriz
+//glColor3f(0, 0, 1);
+//glutSolidSphere(0.2, 15, 15); //dibuja la esfera solida
+//glColor3f(0, 0, -1);
+//glPopMatrix();//la guarda y la restaura
 	//misilizq.Dibuja();
 		//disparo.Dibuja();
 		//plataforma.Dibuja();
@@ -209,7 +164,7 @@ void Mundo::Dibuja(int level)
 }
 
 
-int Mundo::Muerte() {
+int Mundo::Muerte() { //devuelve un 1 si se muere(creo) NO FUNCIONA??
 	if (hombre.GetVidas() == 0) {
 		fichero();
 		hombre.SetVel(0, 0);
@@ -219,7 +174,7 @@ int Mundo::Muerte() {
 	else
 		return 0;
 }
-int Mundo::Ganar() {
+int Mundo::Ganar() { //devuelve un 1 si se gana(creo) NO FUNCIONA??
 	//FIN DE PARTIRA: Ganador
 	if (hombre.posicion.x > 250) {//HABRÁ QUE AMPLIARLO
 		hombre.SetVel(0, 0);
@@ -232,13 +187,6 @@ int Mundo::Ganar() {
 		
 void Mundo::Mueve(int level)
 {
-	
-	//esto es para cuando acaba la partida que durante 2s se congele la imagen, no se como hacerlo la verdad el getMillis
-	/*if (hombre.GetVidas() == 0) {
-		while (getMillis() <= 2000) {
-			finde= 1;
-		}
-	}*/
 	//OJO//
 
 	if (hombre.posicion.x > 0 && level != 0) ////Necesitamos algo mas elegante
@@ -422,7 +370,6 @@ void Mundo::Tecla(unsigned char key)
 		break;
 	case 'x':
 		//virus.Muere();
-
 		misiles.Agregar(new Misil("imagenes/misilizq.png", 29, -2.0f, -5.0f, 0.0f));
 		break;
 		///////// TESTS DE VIDAS
@@ -509,7 +456,7 @@ void Mundo::teclaEspecialsuelta(unsigned char key) {
 }
 
 
-void Mundo::RecargarNivel() {
+void Mundo::RecargarNivel() { //REINICIAR 
 	hombre.FinPartida();//REINICIA TODO LO DEL HOMBRE
 	Setojo(0, 10, 53);
 	disparos.DestruirContenido();
