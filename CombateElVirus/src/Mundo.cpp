@@ -132,11 +132,11 @@ void Mundo::InicioDibuja() { //para que funcione bien los dibujas llamados desde
 		x_ojo, y_ojo, 0.0, //NOTESE QUE HEMOS CAMBIADO ESTO
 		0.0, 5.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
 }
-void Mundo::Dibuja(int level)	{
+void Mundo::Dibuja(int level) {
 	entorno.DibujaJuego(level);
 	limites.Dibuja();
 	hombre.Dibuja();
-	vidas.Dibuja(hombre, hombre.GetVidas()); 
+	vidas.Dibuja(hombre, hombre.GetVidas());
 	personajes.Dibuja(level, hombre);
 	disparos.Dibuja();
 	misiles.Dibuja();
@@ -150,22 +150,23 @@ void Mundo::Dibuja(int level)	{
 	listavirus.dibuja();
 	listabonus.dibuja();
 
-	listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png", 30, -3)); ///L1
-	listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png", 70, 10.55));  ///L2
-
-
-	float naleatorio = lanzaDado(800.0);
-	if (naleatorio < 10) {
-		misiles.Agregar(new Misil("imagenes/misilizq.png", 29, -2, -5.0f, 0.0f));
+	if (level == 1) {
+		listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png", 30, -3)); ///L1
+		listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png", 70, 10.55));  ///L2
 	}
-	if (naleatorio < 5) {
-		misiles.Agregar(new Misil("imagenes/misilizq.png", 69, 9.55, -5.0f, 0.0f));
-	}
-	if (naleatorio < 1) {
+	if (level == 1) {
+		float naleatorio = lanzaDado(800.0);
+		if (naleatorio < 10) {
+			misiles.Agregar(new Misil("imagenes/misilizq.png", 29, -2, -5.0f, 0.0f));
+		}
+		if (naleatorio < 5) {
+			misiles.Agregar(new Misil("imagenes/misilizq.png", 69, 9.55, -5.0f, 0.0f));
+		}
+		if (naleatorio < 1) {
 
-		listabonus.agregar(new BonusMascarilla(hombre.GetPosX() + naleatorio * 10, 25, 1.5, 1.5));
+			listabonus.agregar(new BonusMascarilla(hombre.GetPosX() + naleatorio * 10, 25, 1.5, 1.5));
+		}
 	}
-
 	//glPushMatrix();//guarda la matriz
 //glColor3f(0, 0, 1);
 //glutSolidSphere(0.2, 15, 15); //dibuja la esfera solida
@@ -187,10 +188,10 @@ void Mundo::Dibuja(int level)	{
 
 
 int Mundo::Muerte() { //devuelve un 1 si se muere(creo) NO FUNCIONA??
-	if (hombre.GetVidas() == 0) {
+	if (hombre.GetVidas() >= 0) {
 		fichero();
 		hombre.SetVel(0, 0);
-		Aviso(1);
+		//Aviso(1);
 		return 1;
 		//musica de muerte va aqui
 	}
