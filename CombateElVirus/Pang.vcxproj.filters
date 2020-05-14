@@ -64,15 +64,6 @@
     <ClCompile Include="src\ListaVirus.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
     </ClCompile>
-    <ClCompile Include="src\BordesChoca.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Limites</Filter>
-    </ClCompile>
-    <ClCompile Include="src\BordesSube.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Limites</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ListaBordesSube.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Limites</Filter>
-    </ClCompile>
     <ClCompile Include="src\AuxEtsidi.cpp">
       <Filter>Archivos de código fuente\MUNDO</Filter>
     </ClCompile>
@@ -83,9 +74,6 @@
       <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
     </ClCompile>
     <ClCompile Include="src\BonusMascarilla.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
-    </ClCompile>
-    <ClCompile Include="src\BonusTest.cpp">
       <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
     </ClCompile>
     <ClCompile Include="src\VirusBaba.cpp">
@@ -114,6 +102,9 @@
     </ClCompile>
     <ClCompile Include="src\ListaExplosiones.cpp">
       <Filter>Archivos de código fuente\MUNDO</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BonusTest.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -179,15 +170,6 @@
     </ClInclude>
     <ClInclude Include="src\ListaVirus.h">
       <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
-    </ClInclude>
-    <ClInclude Include="src\BordesSube.h">
-      <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
-    </ClInclude>
-    <ClInclude Include="src\BordesChoca.h">
-      <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ListaBordesSube.h">
-      <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
     </ClInclude>
     <ClInclude Include="src\AuxEtsidi.h">
       <Filter>Archivos de encabezado\MUNDO</Filter>

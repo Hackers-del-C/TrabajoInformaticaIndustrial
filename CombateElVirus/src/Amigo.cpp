@@ -12,6 +12,7 @@ void Amigo::Inicializa() {
     companionizq = new SpriteSequence("imagenes/companionizq.png", 2, 1, 25, true, 0, 0, 2, 2);
     companion = new SpriteSequence("imagenes/companion.png", 2, 1, 25, true, 0, 0, 2, 2);
     izqder = 0;
+    posicion.x = -7;
 }
 void Amigo::Dibuja(Hombre h) {
    
@@ -19,7 +20,7 @@ void Amigo::Dibuja(Hombre h) {
     glTranslatef(posicion.x, posicion.y, 0);
     switch (h.GetDir()) {
     case 0:
-        posicion.x =  - 7;
+      
         companion->draw();
         break;
     case 1: //// hombre yendo a la derecha

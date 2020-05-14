@@ -31,17 +31,9 @@ bool Interaccion::reboteinterior(Hombre& h, Limites c)
 }
 
 bool Interaccion::caida(Hombre &h, Limites l) {
- /*   ETSIDI::Vector2D dir;
-    float dif = h.GetPos().y - l.suelo.GetSuelo()-3;
-    if (dif <= 0.0f) {
-
-        return true;
-    }
-    return false;*/
 
     float ymin = l.suelo.limite1.y;
-    //if (h.posicion.y > ymax)h.posicion.y = ymax;
-    //if (h.posicion.y < ymin)h.posicion.y = ymin;
+
     if (h.posicion.y < ymin) {
         return 1;
     }
@@ -61,7 +53,7 @@ bool Interaccion::colision(Misil misil, Hombre h) {
         if (h.posicion.y - h.altura / 4 > misil.posicion.y + misil.altura / 2) { return false; }
         if (h.posicion.y + h.altura / 4 < misil.posicion.y - misil.altura / 2) { return false; }
         else {
-            return true; //no frada
+            return true; 
         }
     
 
@@ -118,7 +110,8 @@ bool Interaccion::Colision(Slime &s, Plataformas p) {
     if (s.posicion.y + s.altura / 2 < p.posicion.y - p.altura / 2) { return false; }
     else {
        // s.Choca();
-        return true;
+        if(p.GetTipo()!=p.PLATAFORMA_MUEVE)
+            return true;
     }
 
 }
@@ -173,7 +166,7 @@ bool Interaccion::ColisionSube(Hombre &h, Plataformas p) {
     if (h.posicion.y - h.altura / 2 > p.altura / 2 + p.posicion.y) { return false; }
     if (h.posicion.y + h.altura / 2 < p.posicion.y - p.altura / 2) { return false; }
     else {
-       
+      
         if (h.GetVel().y <= 0.0 && h.posicion.y >= p.posicion.y + p.altura / 4) {
             if (h.posicion.y <= p.posicion.y + p.altura * 1.75) {
                 h.posicion.y = p.posicion.y + p.altura * 1.75;

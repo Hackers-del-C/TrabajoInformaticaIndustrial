@@ -16,7 +16,6 @@
 //LISTAS
 #include "ListaPlatafomas.h"
 #include "ListaVirus.h"
-#include "ListaBordesSube.h"
 #include "ListaDisparos.h"
 #include "Listamisiles.h"
 #include "ListaBonus.h"
@@ -58,6 +57,7 @@ public:
 	void RecargarNivel();
 	//void Interaccion();
 		//void RotarOjo();
+	ETSIDI::Vector2D GetHombrePos();
 
 private:
 	// constantes para el salto
@@ -84,7 +84,6 @@ private:
 	Plataformas plataformaprueba;
 	ListaPlataformas plataformas;
 	ListaSlime listaslime;
-	ListaBordesSube bordessube;
 	ListaVirus listavirus;
 	ListaBonus listabonus;
 

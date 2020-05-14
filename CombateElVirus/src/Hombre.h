@@ -28,6 +28,7 @@ public:
     void Stop();
     void Victoria();
     void Agacha();
+    int GetAgacha() { return agachado; }
     void SetVidas(int v) { vidas = v; }
     void SetMonedas(int m) { monedas = m; }
     //direccion del muñeco

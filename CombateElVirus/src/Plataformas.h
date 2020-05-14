@@ -1,6 +1,5 @@
 #pragma once
 #include "ETSIDI.h"
-#include "BordesSube.h"
 class Plataformas {
 public:
 	enum plat_t{SUELO,PLATAFORMA_CHOCA, PLATAFORMA_ATRAVIESA,PLATAFORMA_MUEVE};
@@ -18,6 +17,7 @@ public:
 	}
 	ETSIDI::Vector2D GetLim1(){ return limite1;}
 	ETSIDI::Vector2D GetLim2() { return limite2; }
+	ETSIDI::Vector2D GetPos() { return limite2-limite1; }
 	void Inicializa(float x, float y, float w, float h);
 	float aux;
 	float distancia(ETSIDI::Vector2D punto, ETSIDI::Vector2D* direccion);

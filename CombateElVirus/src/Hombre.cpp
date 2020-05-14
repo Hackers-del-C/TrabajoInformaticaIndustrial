@@ -96,7 +96,7 @@ void Hombre::Salta()
 
 void Hombre::Agacha()
 {
-
+    
     if (velocidad.x <= 0) {
         mario = new SpriteSequence("imagenes/mario/marioagachader.png", 3, 1, 2, false, 0, -1, 4, 4);
         mario->flip(1, 0);

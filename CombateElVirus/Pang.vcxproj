@@ -86,8 +86,6 @@
     <ClCompile Include="src\Amigo.cpp" />
     <ClCompile Include="src\BonusMascarilla.cpp" />
     <ClCompile Include="src\BonusTest.cpp" />
-    <ClCompile Include="src\BordesChoca.cpp" />
-    <ClCompile Include="src\BordesSube.cpp" />
     <ClCompile Include="src\Coordinador.cpp" />
     <ClCompile Include="src\Explosiones.cpp" />
     <ClCompile Include="src\Lanzamisiles.cpp" />
@@ -98,7 +96,6 @@
     <ClCompile Include="src\Hombre.cpp" />
     <ClCompile Include="src\Interaccion.cpp" />
     <ClCompile Include="src\ListaBonus.cpp" />
-    <ClCompile Include="src\ListaBordesSube.cpp" />
     <ClCompile Include="src\ListaDisparos.cpp" />
     <ClCompile Include="src\ListaExplosiones.cpp" />
     <ClCompile Include="src\Listalanzamisiles.cpp" />
@@ -128,8 +125,6 @@
     <ClInclude Include="src\Bonus.h" />
     <ClInclude Include="src\BonusMascarilla.h" />
     <ClInclude Include="src\BonusTest.h" />
-    <ClInclude Include="src\BordesChoca.h" />
-    <ClInclude Include="src\BordesSube.h" />
     <ClInclude Include="src\Coordinador.h" />
     <ClInclude Include="src\Explosiones.h" />
     <ClInclude Include="src\Lanzamisiles.h" />
@@ -140,7 +135,6 @@
     <ClInclude Include="src\Hombre.h" />
     <ClInclude Include="src\Interaccion.h" />
     <ClInclude Include="src\ListaBonus.h" />
-    <ClInclude Include="src\ListaBordesSube.h" />
     <ClInclude Include="src\ListaDisparos.h" />
     <ClInclude Include="src\ListaExplosiones.h" />
     <ClInclude Include="src\Listalanzamisiles.h" />

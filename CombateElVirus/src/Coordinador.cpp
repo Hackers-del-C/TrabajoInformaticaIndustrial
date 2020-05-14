@@ -36,19 +36,23 @@ void Coordinador::Dibuja() {
 		entorno.DibujaMenu(xmouse, ymouse);
 
 	else if(estado==MUERTE){
-		mundo.Aviso(1);
+		entorno.Aviso(1, mundo.GetHombrePos().x, mundo.GetHombrePos().x);
+		//mundo.Aviso(1);
 	}
 	else if (estado == GANAR) {
-		mundo.Aviso(2);
+		entorno.Aviso(2, mundo.GetHombrePos().x, mundo.GetHombrePos().x);
+		//mundo.Aviso(2);
 	}
 	else if (estado == JUEGO) {
 		if (mundo.Muerte()) {
 			estado = MUERTE;
-			mundo.Aviso(1);
+			entorno.Aviso(1, mundo.GetHombrePos().x, mundo.GetHombrePos().x);
+			//mundo.Aviso(1);
 		}
 		else if (mundo.Ganar()) {
 			estado = GANAR;
-			mundo.Aviso(2);
+			entorno.Aviso(2, mundo.GetHombrePos().x, mundo.GetHombrePos().x);
+			//mundo.Aviso(2);
 		}
 	}
 }

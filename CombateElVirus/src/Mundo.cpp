@@ -123,8 +123,11 @@ void Mundo::Inicializa(int level) {
 	//}}
 }
 
-void Mundo::Aviso(int pantalla){ //en principio es para sacar el cuadrado negro que te dice que has perdido, es un mini menu vaya
-	entorno.Aviso(pantalla, hombre.posicion.x, hombre.posicion.y);
+ETSIDI::Vector2D Mundo::GetHombrePos(){ //en principio es para sacar el cuadrado negro que te dice que has perdido, es un mini menu vaya
+	ETSIDI::Vector2D pos;
+	pos.x = hombre.GetPos().x;
+	pos.y = hombre.GetPos().y;
+	return pos;
 }
 void Mundo::InicioDibuja() { //para que funcione bien los dibujas llamados desde el coordinador, tiene que estar primero el ojo
 	/*Se ha decido dejar el ojo en Mundo.cpp porque va conectado con la posicion del hombre en la gran mayoría del tiempo*/
@@ -146,7 +149,6 @@ void Mundo::Dibuja(int level) {
 	listaexplosiones.dibuja();
 	listaslime.dibuja();
 	plataformas.Dibuja();
-	bordessube.Dibuja();
 	listavirus.dibuja();
 	listabonus.dibuja();
 
@@ -167,28 +169,13 @@ void Mundo::Dibuja(int level) {
 			listabonus.agregar(new BonusMascarilla(hombre.GetPosX() + naleatorio * 10, 25, 1.5, 1.5));
 		}
 	}
-	//glPushMatrix();//guarda la matriz
-//glColor3f(0, 0, 1);
-//glutSolidSphere(0.2, 15, 15); //dibuja la esfera solida
-//glColor3f(0, 0, -1);
-//glPopMatrix();//la guarda y la restaura
-	//misilizq.Dibuja();
-		//disparo.Dibuja();
-		//plataforma.Dibuja();
-		//bonus.Dibuja();
-		//hombre.SetVidas(4);		
-		//vidas.Dibuja(mascarillas);
-		//disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y + 2, 0.0f, 22.0f));
-		//bordessube.Agregar(new BordesSube(10, 1, 20, 1.5));
-		//bordessube.Agregar(new BordesSube(25, 3, 35, 3.5));		
-
-		//ETSIDI::Vector2D posicion = hombre.GetPos();			
+		
 
 }
 
 
 int Mundo::Muerte() { //devuelve un 1 si se muere(creo) NO FUNCIONA??
-	if (hombre.GetVidas() >= 0) {
+	if (hombre.GetVidas() <= 0) {
 		fichero();
 		hombre.SetVel(0, 0);
 		//Aviso(1);
@@ -342,10 +329,12 @@ void Mundo::Mueve(int level)
 	if (Interaccion::caida(hombre, limites) == 1) {
 
 		hombre.SetPos(hombre.GetPos().x - 10, hombre.GetPos().y + 10);
-	//	hombre.SetPos(auxPLAT->GetLim2().x, auxPLAT->GetLim2().y + 4);
+	//hombre.SetPos(auxPLAT->GetPos().x/2, auxPLAT->GetPos().y + 4);
 		hombre.SetVel(0, 0);
 		hombre.SetVidas(hombre.GetVidas() - 1);
 	}
+
+
 
 	misiles.limpiar();
 
