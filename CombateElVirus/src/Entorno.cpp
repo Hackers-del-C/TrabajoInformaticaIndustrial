@@ -70,8 +70,8 @@ void Entorno::DibujaJuego(int nivel) {
 
 	case 1:
 		//IMAGENES
-		auxetsidi.Imagen("banderachina", -4, 4, 19, 24);
-		auxetsidi.Imagen("AvionMiguelAvion", 245, 255, 22, 27);
+		auxetsidi.Imagen("banderachina", -4, 4, 22, 27);
+		//auxetsidi.Imagen("AvionMiguelAvion", 245, 255, 22, 27);
 		auxetsidi.Imagen("PrenivelChina", -30, 26, -10, 30);
 		auxetsidi.Imagen("NivelChina", 26, 82, -10, 30);
 		auxetsidi.Imagen("NivelChina", 82, 138, -10, 30);
@@ -81,8 +81,8 @@ void Entorno::DibujaJuego(int nivel) {
 		
 		//auxetsidi.Imagen("laboratorio", 26, 156, -18, 45);
 		//TEXTO
-		auxetsidi.Texto("NIVEL 1", -24, 22, 0, 0, 0, 36);
-		auxetsidi.Texto("CHINA", -21, 19, 0, 0, 0, 40);
+		auxetsidi.Texto("NIVEL 1", -24, 25, 0, 0, 0, 36);
+		auxetsidi.Texto("CHINA", -21, 22, 0, 0, 0, 40);
 
 		break;
 	case 2:
