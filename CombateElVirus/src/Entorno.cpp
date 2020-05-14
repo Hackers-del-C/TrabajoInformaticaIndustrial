@@ -71,7 +71,7 @@ void Entorno::DibujaJuego(int nivel) {
 	case 1:
 		//IMAGENES
 		auxetsidi.Imagen("banderachina", -4, 4, 22, 27);
-		//auxetsidi.Imagen("AvionMiguelAvion", 245, 255, 22, 27);
+		//auxetsidi.Imagen("AvionMiguelAvion", 245, 255, 22, 27); -- IDIOTA
 		auxetsidi.Imagen("PrenivelChina", -30, 26, -10, 30);
 		auxetsidi.Imagen("NivelChina", 26, 82, -10, 30);
 		auxetsidi.Imagen("NivelChina", 82, 138, -10, 30);
