@@ -77,9 +77,7 @@ void Hombre::SetVel(float vx, float vy)
     else if (velocidad.x > 0) {
         mario = new SpriteSequence("imagenes/mario/marioandader.png", 7, 1, 25, true, 0, 0, 4, 4);
     }
-    else if (velocidad.x == 0) {
-        mario = new SpriteSequence("imagenes/mario/mariofrente.png", 1, 1, 25, true, 0, 0, 4, 4);
-    }
+   
 }
 
 
