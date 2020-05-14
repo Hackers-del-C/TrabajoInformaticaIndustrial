@@ -43,9 +43,11 @@ void Coordinador::Dibuja() {
 	else if (estado == JUEGO) {
 		if (mundo.Muerte()) {
 			estado = MUERTE;
+			mundo.Aviso(1);
 		}
 		else if (mundo.Ganar()) {
 			estado = GANAR;
+			mundo.Aviso(2);
 		}
 	}
 }

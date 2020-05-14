@@ -7,12 +7,13 @@ void Disparo::Dibuja()
     glColor3ub(0,0, 0);
 
    /* glPushMatrix();*/
-    glTranslatef(posicion.x, posicion.y, 0);
-    glutSolidSphere(radio, 20, 20);
-    glTranslatef(-posicion.x, -posicion.y, 0);
-    glDisable(GL_LIGHTING);
+  glTranslatef(posicion.x, posicion.y, 0);
+  glColor3f(0.1960785, 0.8, 0.6);
+ glutSolidSphere(radio, 20, 20);
+   glTranslatef(-posicion.x, -posicion.y, 0);
+   glDisable(GL_LIGHTING);
 
- 
+   
     
     /*glBegin(GL_POLYGON);
     glVertex3d(posicion.x, posicion.y, 0);
@@ -23,13 +24,9 @@ void Disparo::Dibuja()
 
 }
 
-void Disparo::Mueve(float t)
-{
+void Disparo::Mueve(float t){
     posicion = posicion + velocidad * t;
-    
-
-
-}
+    }
 
 
 Disparo::Disparo(float r, float px, float py, float vx, float vy) {

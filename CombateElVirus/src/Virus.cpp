@@ -34,20 +34,12 @@ void Virus::Dibuja(int nivel)
 
 }
 
-void Virus::Muere()
-{
-    
-
-
-    //muerte
+void Virus::Muere(){
+       //muerte
         // sprite = new SpriteSequence("imagenes/enemigos/virusslimeanda.png", 8, 1, 80, false, 0, 0, 4, 4);
-
-
         //ETSIDI::play("mis_sonidos/virusmuere1.wav");
         /*glutPostRedisplay();
-        glutTimerFunc(2500,Muere, 0);*/
- 
-    
+        glutTimerFunc(2500,Muere, 0);*/    
 }
 
 int Virus::GetVidas() {

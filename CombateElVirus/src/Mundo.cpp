@@ -47,7 +47,7 @@ void Mundo::InicializaFondo() {
 			plataformas.Agregar(new Plataformas(Plataformas::SUELO, j * y, -5.5, 5, 1.5));
 		}
 	}
-	for (int x = 0; x < 10; x++) {
+	for (int x = 0; x < 20; x++) {
 		if (x < 5) {
 			plataformas.Agregar(new Plataformas(Plataformas::SUELO, 10 * x - x / 2, x + 2, 4, 1.5));
 		}
@@ -125,8 +125,6 @@ void Mundo::Dibuja(int level)	{
 	bordessube.Dibuja();
 	listavirus.dibuja();
 	listabonus.dibuja();
-
-
 
 	listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png", 30, -3)); ///L1
 	listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png", 70, 10.55));  ///L2
@@ -316,7 +314,6 @@ void Mundo::Mueve(int level)
 	//	}
 	//}
 	if (Interaccion::caida(hombre, limites) == 1) {
-
 		hombre.SetPos(hombre.GetPos().x - 10, hombre.GetPos().y + 10);
 
 		hombre.SetVel(0, 0);
