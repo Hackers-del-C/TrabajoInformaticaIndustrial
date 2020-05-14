@@ -70,7 +70,7 @@ Misil* ListaMisil::colision(Hombre& h) {
 void ListaMisil::limpiar() {
 
 	for (int i = 0; i < lista.size(); i++) {
-		if (lista[i]->posicion.x < 0) {
+		if (lista[i]->posicion.x <= 0) {
 
 			DestruirContenido(i);
 		}

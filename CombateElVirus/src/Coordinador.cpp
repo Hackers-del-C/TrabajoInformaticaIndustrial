@@ -13,7 +13,7 @@ Coordinador::~Coordinador() {
 void Coordinador::Inicializa() {
 		mundo.RecargarNivel(); //RESETEA HOMBRE Y DESTRUYE ALGUNAS LISTAS PERO NO SE
 		mundo.Inicializa(nivel);
-		mundo.InicializaFondo();
+		
 		if (estado == MUERTE)		{
 			entorno.Fin(MUERTE);
 		}
@@ -30,6 +30,7 @@ void Coordinador::Dibuja() {
 	
 	if (estado == JUEGO) {
 		mundo.Dibuja(nivel);
+		mundo.InicializaFondo(nivel);
 	}
 	else if (estado == MENU)
 		entorno.DibujaMenu(xmouse, ymouse);

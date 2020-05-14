@@ -42,7 +42,7 @@ public:
 	Mundo();
 	void Tecla(unsigned char key);
 	void Inicializa(int level);
-	void InicializaFondo();
+	void InicializaFondo(int nivel);
 	void fichero();
 	void Mueve(int level);
 	void Dibuja(int level);
