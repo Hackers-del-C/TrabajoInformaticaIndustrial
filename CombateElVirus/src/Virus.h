@@ -6,6 +6,7 @@
 #include <sstream>
 #include <string>
 #include "Hombre.h"
+#include "ListaSlime.h"
 
 
 using namespace std;
@@ -20,9 +21,11 @@ public:
     void Mueve(float t);
     void SetVel(float x, float y);
     virtual void Muere();
+    virtual void Dispara(ListaSlime& l); //Para la mosca
     void Ataca();
     void Anda();
     int GetVidas();
+
     void SetVidas(int v);
     virtual void Seguir(Hombre h);
     int GetMuerto() { return muere; }

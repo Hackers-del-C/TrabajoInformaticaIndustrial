@@ -71,9 +71,9 @@ private:
 	Limites limites;//plataforma1;
 	Virus virus;
 	
-	VirusSeta virus1;
+	//VirusSeta virus1;
 	VirusBaba virus2;
-	VirusMosca virus3;
+	//VirusMosca virus3;
 	//VirusSlime virus4;
 	Slime slime;
 	Entorno entorno;

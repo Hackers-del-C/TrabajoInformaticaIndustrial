@@ -75,6 +75,10 @@ void Virus::Mueve(float t) {
 void Virus::Seguir(Hombre h) {
 
 }
+void Virus::Dispara(ListaSlime& l) {
+
+
+}
 
 
 

@@ -147,6 +147,14 @@ void ListaVirus::Colision(ListaDisparos &l, ListaExplosiones &e) {
 	}
 }
 
+void ListaVirus::Dispara(ListaSlime& l) {
+	for (int i = 0; i < numero; i++) {
+
+		lista[i]->Dispara(l);
+	}
+
+}
+
 //Virus* ListaVirus::Colision(Hombre &h) {
 //	for (int i = 0; i < numero; i++) {
 //		if (Interaccion::Colision(h,*lista[i])) {

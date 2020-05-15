@@ -3,6 +3,7 @@
 #define MAX_VIRUS 100
 #include "Hombre.h"
 #include "ListaDisparos.h"
+#include "ListaSlime.h"
 //#include "Interaccion.h"
 //#include "Limites.h"
 
@@ -17,6 +18,7 @@ public:
 	//void rebote(Limites caja);
 	//void rebote(Pared p);
 	//void rebote();
+	void Dispara(ListaSlime& l);
 	void destruirContenido();
 	void eliminar(int index);
 	void eliminar(Virus* e);
