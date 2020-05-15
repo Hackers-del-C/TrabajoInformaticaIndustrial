@@ -30,6 +30,7 @@ public:
     void Agacha();
     int GetAgacha() { return agachado; }
     void SetVidas(int v) { vidas = v; }
+    void Dañar();
     void SetMonedas(int m) { monedas = m; }
     //direccion del muñeco
     void SetDir(int d) { dir = d; }
@@ -49,12 +50,8 @@ public:
    ETSIDI::Vector2D posicion, velocidad, aceleracion;
 
    ETSIDI::SpriteSequence* mario;
-   ETSIDI::SpriteSequence* marioder;
-   ETSIDI::SpriteSequence* marioizq;
-
    ETSIDI::SpriteSequence* mariomuerte;
-   ETSIDI::SpriteSequence* mariovictoria;
+   int mariorojo;
 
-  
 
 };

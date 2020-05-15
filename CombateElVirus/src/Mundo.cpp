@@ -308,7 +308,7 @@ void Mundo::Mueve(int level)
 	Misil* aux = misiles.colision(hombre);
 	if (aux != 0) {
 		if (hombre.GetVidas() >= 1) {
-			hombre.SetVidas(hombre.GetVidas() - 1);
+			hombre.Dañar();
 			misiles.Eliminar(aux);
 		}
 		//misiles.Eliminar(aux);
@@ -383,10 +383,9 @@ void Mundo::Tecla(unsigned char key)
 		break;
 		///////// TESTS DE VIDAS
 	case 't':
-		if (hombre.GetVidas() < 5) {
-			/// radio, x , y, vx, vy
-			hombre.SetVidas(hombre.GetVidas() + 1);
-		}
+	
+			hombre.Dañar();
+		
 
 		break;
 	case 'y':

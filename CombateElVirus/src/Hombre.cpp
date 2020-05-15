@@ -39,7 +39,10 @@ void Hombre::Mueve(float t)
     velocidad = velocidad + aceleracion * t;
 
     mario->loop();
-   
+
+    //if (mariorojo = 1 && mario->getState()>=6) {
+    ////    mariorojo = 0;
+    //}
 
 }
 
@@ -69,12 +72,21 @@ void Hombre::SetVel(float vx, float vy)
 
     altura = 4;
     altura = 4;
-
+    //mariorojo = 1;
     if (velocidad.x < 0) {
-        mario = new SpriteSequence("imagenes/mario/marioandader.png", 7, 1, 25, true, 0, 0, 4, 4);
+      
+        if (mariorojo == 1) {
+           mario = new SpriteSequence("imagenes/mario/mariodano.png", 7, 1, 80, true, 0, 0, 4, 4);
+        }
+        else
+            mario = new SpriteSequence("imagenes/mario/marioandader.png", 7, 1, 25, true, 0, 0, 4, 4);
         mario->flip(1, 0);
     }
     else if (velocidad.x > 0) {
+        if (mariorojo == 1) {
+            mario = new SpriteSequence("imagenes/mario/mariodano.png", 7, 1, 80, true, 0, 0, 4, 4);
+        }
+        else
         mario = new SpriteSequence("imagenes/mario/marioandader.png", 7, 1, 25, true, 0, 0, 4, 4);
     }
    
@@ -151,4 +163,11 @@ void Hombre::Setagachado(unsigned char key) {
         break;
     }
 
+}
+
+
+void Hombre::Dañar() {
+
+    mariorojo = 1;
+    SetVidas(GetVidas() - 1); 
 }
