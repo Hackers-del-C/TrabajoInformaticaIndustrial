@@ -14,7 +14,7 @@ public:
 
 	bool Agregar(Disparo* d);
 	void DestruirContenido();
-	void Mueve(float t);
+	void Mueve(float t, Hombre h);
 	void Dibuja();
 	int getNumero() { return numero; }
 	Disparo* operator [](int i);

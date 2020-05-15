@@ -213,7 +213,7 @@ void Mundo::Mueve(int level)
 	virus3.Mueve(0.025f);
 	virus3.Seguir(hombre);
 	hombre.Mueve(0.025f);
-	disparos.Mueve(0.025f);
+	disparos.Mueve(0.025f,hombre);
 	misiles.Mueve(0.025f);
 	vidas.Mueve(x_ojo);
 
@@ -368,6 +368,9 @@ void Mundo::Tecla(unsigned char key)
 
 	case 'd':
 		disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 22.0f, 0.0f));
+		break;
+	case 'f':
+		disparos.Agregar(new DisparoEspecial(0.5, hombre.posicion.x, hombre.posicion.y, 22.0f, 0.0f));
 		break;
 
 	case 'j':

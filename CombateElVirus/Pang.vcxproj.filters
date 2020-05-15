@@ -19,17 +19,11 @@
     <ClCompile Include="src\Pared.cpp">
       <Filter>Archivos de código fuente\MUNDO\Limites\Pared</Filter>
     </ClCompile>
-    <ClCompile Include="src\ListaDisparos.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Interacciones</Filter>
-    </ClCompile>
     <ClCompile Include="src\Interaccion.cpp">
       <Filter>Archivos de código fuente\MUNDO\Interacciones</Filter>
     </ClCompile>
     <ClCompile Include="src\Hombre.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes\Jugador</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Disparo.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Interacciones</Filter>
     </ClCompile>
     <ClCompile Include="src\Lanzamisiles.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
@@ -106,6 +100,15 @@
     <ClCompile Include="src\BonusTest.cpp">
       <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
     </ClCompile>
+    <ClCompile Include="src\ListaDisparos.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Disparos</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Disparo.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Disparos</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DisparoEspecial.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Disparos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\ETSIDI.h">
@@ -126,17 +129,11 @@
     <ClInclude Include="src\Interaccion.h">
       <Filter>Archivos de encabezado\MUNDO\Interacciones</Filter>
     </ClInclude>
-    <ClInclude Include="src\Disparo.h">
-      <Filter>Archivos de encabezado\MUNDO\Interacciones</Filter>
-    </ClInclude>
     <ClInclude Include="src\Hombre.h">
       <Filter>Archivos de encabezado\MUNDO\Personajes\Jugador</Filter>
     </ClInclude>
     <ClInclude Include="src\Pared.h">
       <Filter>Archivos de encabezado\MUNDO\Limites\Pared</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ListaDisparos.h">
-      <Filter>Archivos de encabezado\MUNDO\Interacciones</Filter>
     </ClInclude>
     <ClInclude Include="src\Listamisiles.h">
       <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
@@ -213,6 +210,15 @@
     <ClInclude Include="src\ListaExplosiones.h">
       <Filter>Archivos de encabezado\MUNDO</Filter>
     </ClInclude>
+    <ClInclude Include="src\ListaDisparos.h">
+      <Filter>Archivos de encabezado\MUNDO\Disparos</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Disparo.h">
+      <Filter>Archivos de encabezado\MUNDO\Disparos</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DisparoEspecial.h">
+      <Filter>Archivos de encabezado\MUNDO\Disparos</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Archivos de código fuente">
@@ -283,6 +289,12 @@
     </Filter>
     <Filter Include="Archivos de encabezado\MUNDO\Interacciones\BONUS">
       <UniqueIdentifier>{4222dfd0-e36c-4870-afbf-611187190946}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de código fuente\MUNDO\Disparos">
+      <UniqueIdentifier>{46171de4-fb5c-414c-a8ab-37a3bfc1b6ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\MUNDO\Disparos">
+      <UniqueIdentifier>{84928c08-25c2-45c8-88b2-3f381806e541}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -29,6 +29,7 @@
 #include "VirusSlime.h"
 #include "ListaExplosiones.h"
 #include "Explosiones.h"
+#include "DisparoEspecial.h"
 
 class Mundo
 {

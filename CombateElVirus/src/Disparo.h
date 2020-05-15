@@ -10,16 +10,17 @@ public:
     Disparo();
     Disparo(float r, float px, float py, float vx, float vy);
      virtual ~Disparo();
-     void Dibuja();
-     void Mueve(float r);
+     virtual void Dibuja();
+     virtual void Mueve(float r);
      void SetPos(float ix, float iy);
      void SetOri(float ix, float iy);
+     virtual int Fin();
      ETSIDI::Vector2D posicion;
-
+     ETSIDI::SpriteSequence* shot;
     float radio;
 
 
-private:
+protected:
    
     ETSIDI::Vector2D velocidad;
     ETSIDI::Vector2D aceleracion;

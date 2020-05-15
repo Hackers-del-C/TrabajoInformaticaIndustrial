@@ -71,10 +71,21 @@ void ListaDisparos::DestruirContenido() {
 		delete lista[i];
 	numero = 0;
 }
-void ListaDisparos::Mueve(float t) {
+void ListaDisparos::Mueve(float t, Hombre h) {
 
-	for (int i = 0; i < numero; i++)
+	for (int i = 0; i < numero; i++) {
 		lista[i]->Mueve(t);
+		if (lista[i]->Fin() >= 7) {
+			eliminar(lista[i]);
+		}
+		if (lista[i]->posicion.x<(h.posicion.x - 20) || lista[i]->posicion.x >(h.posicion.x + 20)) {
+			eliminar(lista[i]);
+		}
+		
+	}
+	
+
+
 }
 void ListaDisparos::Dibuja() {
 	for (int i = 0; i < numero; i++)

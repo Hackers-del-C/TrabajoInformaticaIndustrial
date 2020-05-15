@@ -87,6 +87,7 @@
     <ClCompile Include="src\BonusMascarilla.cpp" />
     <ClCompile Include="src\BonusTest.cpp" />
     <ClCompile Include="src\Coordinador.cpp" />
+    <ClCompile Include="src\DisparoEspecial.cpp" />
     <ClCompile Include="src\Explosiones.cpp" />
     <ClCompile Include="src\Lanzamisiles.cpp" />
     <ClCompile Include="src\Limites.cpp" />
@@ -126,6 +127,7 @@
     <ClInclude Include="src\BonusMascarilla.h" />
     <ClInclude Include="src\BonusTest.h" />
     <ClInclude Include="src\Coordinador.h" />
+    <ClInclude Include="src\DisparoEspecial.h" />
     <ClInclude Include="src\Explosiones.h" />
     <ClInclude Include="src\Lanzamisiles.h" />
     <ClInclude Include="src\Limites.h" />
