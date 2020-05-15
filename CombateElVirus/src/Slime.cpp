@@ -55,7 +55,7 @@ void Slime::Inicializa(float x, float y) {
 
 void Slime::Choca() {
 
-    if(chocar==0){
+    if(chocar==0){ //Para que el sprite scuence solo se active una vez
     sprite = new SpriteSequence("imagenes/enemigos/balababaexplota.png", 3, 1, 80, false, 0, 0, 3, 3);
     SetVel(0, 0);
     aceleracion.y = 0;

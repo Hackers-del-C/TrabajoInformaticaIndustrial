@@ -1,7 +1,7 @@
 #pragma once
 
 
-#define MAX_SLIME 100
+#define MAX_SLIME 7
 #include "Hombre.h"
 #include "Slime.h"
 #include "ListaPlatafomas.h"

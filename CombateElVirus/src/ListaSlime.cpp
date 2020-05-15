@@ -44,8 +44,11 @@ bool ListaSlime::agregar(Slime* e)
 		return true;
 	}
 	else {
+		
+		
 		return false;
 	}
+	return false;
 }
 
 void ListaSlime::destruirContenido()
@@ -108,8 +111,16 @@ void ListaSlime::dibuja()
 }
 void ListaSlime::mueve(float t, Hombre h)
 {
-	for (int i = 0; i < numero; i++)
+	for (int i = 0; i < numero; i++) {	
+		
 		lista[i]->Mueve(t);
+		if (numero == MAX_SLIME - 1) {
+
+			eliminar(0); //Eliminamos el primero cuando hahy muchos
+		}
+		
+	}
+	
 }
 
 Slime* ListaSlime::operator [](int i)
@@ -125,6 +136,9 @@ void ListaSlime::Colision(ListaPlataformas p) {
 
 	for (int i = 0; i < numero; i++) {
 		p.Colision(*lista[i]);
+		/*if (lista[i]->chocar == 1 && lista[i]->sprite->getState() >=2) {
+			eliminar(lista[i]);
+		}*/
 	}
 }
 

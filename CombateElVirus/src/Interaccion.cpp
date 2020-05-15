@@ -122,8 +122,8 @@ bool Interaccion::Colision(Slime& s, Hombre p) {
      //SIRVE PARA DETECTAR COLISIONES ENTRE ELEMENTOS RECTANGULARES
     if (s.posicion.x - s.anchura / 2 > p.posicion.x + p.anchura / 2) { return false; }
     if (s.posicion.x + s.anchura / 2 < p.posicion.x - p.anchura / 2) { return false; }
-    if (s.posicion.y - s.altura / 2 > p.altura / 2 + p.posicion.y) { return false; } //
-    if (s.posicion.y + s.altura / 2 < p.posicion.y - p.altura / 2) { return false; }
+    if (s.posicion.y - s.altura / 6 > p.altura / 2 + p.posicion.y) { return false; } //
+    if (s.posicion.y + s.altura / 6 < p.posicion.y - p.altura / 2) { return false; }
     else {
             return true;
     }

@@ -116,6 +116,7 @@ void ListaPlataformas::Colision(Slime &s) {
 	for (int i = 0; i < numero; i++) {
 		if (Interaccion::Colision(s, *(lista[i]))) {
 			s.Choca();
+
 		}
 	}
 }
