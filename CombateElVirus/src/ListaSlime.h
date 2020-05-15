@@ -20,6 +20,7 @@ public:
 	//void rebote(Limites caja);
 	//void rebote(Pared p);
 	//void rebote();
+	void Colision(Hombre &h);
 	void destruirContenido();
 	void eliminar(int index);
 	void eliminar(Slime* e);
@@ -29,7 +30,7 @@ public:
 	Slime* operator [](int i);
 	int getNumero() { return numero; }
 
-	Slime* Colision(Hombre& h);
+	//Slime* Colision(Hombre& h);
 private:
 	Slime* lista[MAX_SLIME];
 	int numero;

@@ -231,6 +231,7 @@ void Mundo::Mueve(int level)
 	plataformas.Colision(slime);
 	listaslime.Colision(limites);
 	listaslime.Colision(plataformas);
+	listaslime.Colision(hombre);
 	listabonus.Colision(limites);
 	listabonus.Colision(plataformaprueba);
 	listabonus.colision(hombre);

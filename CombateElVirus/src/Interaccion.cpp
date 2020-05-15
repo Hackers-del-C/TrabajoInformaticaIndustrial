@@ -115,6 +115,20 @@ bool Interaccion::Colision(Slime &s, Plataformas p) {
     }
 
 }
+
+bool Interaccion::Colision(Slime& s, Hombre p) {
+
+    //Crea un recatangulo en centro hombre, altura la altura del hombre y anchura la anchura del hombre.
+     //SIRVE PARA DETECTAR COLISIONES ENTRE ELEMENTOS RECTANGULARES
+    if (s.posicion.x - s.anchura / 2 > p.posicion.x + p.anchura / 2) { return false; }
+    if (s.posicion.x + s.anchura / 2 < p.posicion.x - p.anchura / 2) { return false; }
+    if (s.posicion.y - s.altura / 2 > p.altura / 2 + p.posicion.y) { return false; } //
+    if (s.posicion.y + s.altura / 2 < p.posicion.y - p.altura / 2) { return false; }
+    else {
+            return true;
+    }
+}
+
 bool Interaccion::Colision(Slime& s, Limites l) {
 
     ETSIDI::Vector2D dir;

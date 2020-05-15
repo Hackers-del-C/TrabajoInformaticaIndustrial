@@ -36,7 +36,7 @@ public:
     static bool ColisionSube(Hombre &h, Plataformas p);
     static bool ColisionChoca(Hombre &h, Plataformas p);
     static bool ColisionChocaLado(Hombre &h, Plataformas p);
-
+    static bool Colision(Slime& s, Hombre p);
     static bool Colision(Slime &s, Plataformas p);
     
     static bool Colision(Slime& s, Limites l);

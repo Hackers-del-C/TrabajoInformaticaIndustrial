@@ -129,10 +129,20 @@ void ListaSlime::Colision(ListaPlataformas p) {
 }
 
 
-void ListaSlime::Colision(Limites l) {
+void ListaSlime::Colision(Limites l) { //sE PUEDE BORRAR CREO
 
 	for (int i = 0; i < numero; i++)
 		Interaccion::Colision(*lista[i], l);
+}
+
+void ListaSlime::Colision(Hombre &h) {
+
+	for (int i = 0; i < numero; i++) {
+		if (Interaccion::Colision(*lista[i], h)) {
+			h.Dañar();
+			eliminar(lista[i]);
+		}
+	}
 }
 
 //Virus* ListaVirus::Colision(Hombre &h) {
