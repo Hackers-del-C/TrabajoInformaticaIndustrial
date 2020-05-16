@@ -13,14 +13,14 @@
 Mundo::Mundo(){
 	
 }
-void Mundo::Setojo(float ox, float oy, float oz) {
+void Mundo::Setojo(float ox, float oy, float oz) { //Set del deojo
 
 	x_ojo = ox;
 	y_ojo = oy;
 	z_ojo = oz;
 
 }
-void Mundo::fichero() {
+void Mundo::fichero() { //	Fichero para guardar el numero de tests y el tiempo tardado
 	ofstream fichero("resultado_final.txt",ofstream::out || ofstream::in ||ios::app);	
 	string datos_previos;	
 	fichero << "Has cogido: " << hombre.GetMonedas() << " test" << endl;
@@ -36,10 +36,10 @@ void Mundo::fichero() {
 	//fichero << "Nombre: " << nombre << endl; 
 }
 
-void Mundo::InicializaFondo(int nivel) {
+void Mundo::InicializaFondo(int nivel) { //agregar cosas
 	int j = 5;
-	if(nivel==1){
 	
+	if(nivel==1){	
 		///lanzamisiles2
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 70, 8, 4, 1.5));
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 0, 10, 4, 1.5));
@@ -81,15 +81,13 @@ void Mundo::InicializaFondo(int nivel) {
 	
 }
 void Mundo::Inicializa(int level) {
+
 	hombre.Inicializa();
-	entorno.Inicializa(level);
 	personajes.Inicializa(hombre);
 	virus2.Inicializa(-5, 1);
 	//virus3.Inicializa(-10, 15);
 	limites.SetLimites(-20, 500, -10, 30); //Son los bordes del juego que el jugador no puede pasar	
 	vidas.Inicializa(hombre);
-
-
 	listavirus.agregar(new VirusMosca(-10, 15));
 
 	for (int i = 0; i < 1; i++) {
@@ -99,8 +97,10 @@ void Mundo::Inicializa(int level) {
 		listavirus.agregar(new VirusSlime(30 + 30 * i, -3));
 	}
 	for (int i = 0; i < 20; i++) {
-		listabonus.agregar(new BonusTest(lanzaDado(180), lanzaDado(6), 3, 3));
+		listabonus.agregar(new BonusTest(lanzaDado(180), lanzaDado(6), 2, 2));
 	}
+
+	
 	//slime.Inicializa(-10, 10);
 	//listaexplosiones.agregar(new Explosiones(0, 0));
 	/* AGREGA VIRUS
@@ -137,23 +137,25 @@ void Mundo::InicioDibuja() { //para que funcione bien los dibujas llamados desde
 	gluLookAt(x_ojo, y_ojo, z_ojo,
 		x_ojo, y_ojo, 0.0, //NOTESE QUE HEMOS CAMBIADO ESTO
 		0.0, 5.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
+	
+}
+void Mundo::DibujaBasico() {
+	hombre.Dibuja();
+	limites.Dibuja();
+	vidas.Dibuja(hombre, hombre.GetVidas());
+	plataformas.Dibuja();
 }
 void Mundo::Dibuja(int level) {
-	entorno.DibujaJuego(level);
-	limites.Dibuja();
-	hombre.Dibuja();
-	vidas.Dibuja(hombre, hombre.GetVidas());
+	
+	
 	personajes.Dibuja(level, hombre);
 	disparos.Dibuja();
 	misiles.Dibuja();
 	listalanzamisiles.Dibuja();
-	virus2.Dibuja(level);
-	
+	virus2.Dibuja(level);	
 	listaexplosiones.dibuja();
 	listavirus.dibuja();
-	listaslime.dibuja();
-	plataformas.Dibuja();
-	
+	listaslime.dibuja();	
 	listabonus.dibuja();
 	
 
@@ -175,37 +177,37 @@ void Mundo::Dibuja(int level) {
 		}
 	}
 		
-
 }
 
-
-int Mundo::Muerte() { //devuelve un 1 si se muere(creo) NO FUNCIONA??
-	if (hombre.GetVidas() <= 0) {
-		fichero();
-		hombre.SetVel(0, 0);
-		//Aviso(1);
-		return 1;
-		//musica de muerte va aqui
-	}
-	else
+int Mundo::Muerte() { 
+	//fin de partida :muerte
+	if (hombre.GetVidas() > 0) {
 		return 0;
-}
-int Mundo::Ganar() { //devuelve un 1 si se gana(creo) NO FUNCIONA??
-	//FIN DE PARTIRA: Ganador
-	if (hombre.posicion.x > 250) {//HABRÁ QUE AMPLIARLO
-		hombre.SetVel(0, 0);
+	}
+	else {
 		return 1;
+		hombre.SetVel(0, 0);
+	}
+		
+}
+int Mundo::Ganar() {//tiene problemas
+	//FIN DE PARTIRA: Ganador
+	if (hombre.posicion.x < 225) {//HABRÁ QUE AMPLIARLO
+		
+		return 0;
 		//musica de ganador va aqui
 	}
-	else
-		return 0;
+	else {
+		return 1;
+		hombre.SetVel(0, 0);
+	}
 }
 		
 void Mundo::Mueve(int level)
 {
 	//OJO//
 
-	if (hombre.posicion.x > 0 && level != 0) ////Necesitamos algo mas elegante
+	if (hombre.posicion.x > 0 && level != 0) 
 		Setojo(hombre.posicion.x, 10, 53);
 	else
 		Setojo(0, 10, 53);
@@ -214,9 +216,7 @@ void Mundo::Mueve(int level)
 	//.Mueve//
 	
 	personajes.Mueve(0.025f);
-	virus2.Mueve(0.025f);
-	
-	
+	virus2.Mueve(0.025f);	
 	hombre.Mueve(0.025f);
 	disparos.Mueve(0.025f,hombre);
 	misiles.Mueve(0.025f);
@@ -350,6 +350,7 @@ void Mundo::Mueve(int level)
 
 void Mundo::Tecla(unsigned char key)
 {
+	
 	switch (key) {
 	case 'm':
 		virus2.Ataca();
@@ -411,7 +412,7 @@ void Mundo::Tecla(unsigned char key)
 		break;
 
 	}
-	entorno.Tecla(key);
+	
 }
 
 void Mundo::teclaEspecial(unsigned char key) {

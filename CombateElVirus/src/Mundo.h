@@ -5,7 +5,6 @@
 #include "Limites.h"
 #include "Personajes.h"
 #include "Hombre.h"
-#include "Entorno.h"
 #include "ListaLanzamisiles.h"
 #include "Virus.h"
 #include "Vidas.h"
@@ -46,12 +45,13 @@ public:
 	void fichero();
 	void Mueve(int level);
 	void Dibuja(int level);
+	void DibujaBasico();
 	void InicioDibuja();
 	void teclaEspecial(unsigned char key);
 	void teclaEspecialsuelta(unsigned char key);
 	int Muerte();
 	int Ganar();
-	void Aviso(int pantalla);
+	
 	//ojo:
 
 	void Setojo(float ox, float oy, float oz);
@@ -76,7 +76,6 @@ private:
 	//VirusMosca virus3;
 	//VirusSlime virus4;
 	Slime slime;
-	Entorno entorno;
 	//LISTAS
 	ListaDisparos disparos;
 	ListaLanzamisiles listalanzamisiles;

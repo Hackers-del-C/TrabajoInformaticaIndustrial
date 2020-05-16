@@ -11,10 +11,16 @@ Coordinador::~Coordinador() {
 
 }
 void Coordinador::Inicializa() {
-		mundo.RecargarNivel(); //RESETEA HOMBRE Y DESTRUYE ALGUNAS LISTAS PERO NO SE
-		mundo.Inicializa(nivel);
-		
-		if (estado == MUERTE)		{
+	entorno.Inicializa(nivel);
+	mundo.Inicializa(nivel);
+	mundo.Setojo(0, 10, 53);
+
+		if (estado == JUEGO) {
+			
+			/*mundo.Inicializa(nivel);
+			mundo.RecargarNivel();*/ //RESETEA HOMBRE Y DESTRUYE ALGUNAS LISTAS 
+		}
+		else if (estado == MUERTE)		{
 			entorno.Fin(MUERTE);
 		}
 		else if (estado == GANAR) {
@@ -22,41 +28,45 @@ void Coordinador::Inicializa() {
 		}
 }
 void Coordinador::Mueve() {
-	if(estado==JUEGO)
+	if (estado == JUEGO || estado == MUERTE || estado== GANAR) {
 		mundo.Mueve(nivel);
+	}
 }
 void Coordinador::Dibuja() {
 	mundo.InicioDibuja(); //ES EL OJO 
 	
 	if (estado == JUEGO) {
 		mundo.Dibuja(nivel);
+		mundo.DibujaBasico();
 		mundo.InicializaFondo(nivel);
-	}
-	else if (estado == MENU)
-		entorno.DibujaMenu(xmouse, ymouse);
-
-	else if(estado==MUERTE){
-		entorno.Aviso(1, mundo.GetHombrePos().x, mundo.GetHombrePos().x);
-		//mundo.Aviso(1);
-	}
-	else if (estado == GANAR) {
-		entorno.Aviso(2, mundo.GetHombrePos().x, mundo.GetHombrePos().x);
-		//mundo.Aviso(2);
-	}
-	else if (estado == JUEGO) {
+		entorno.DibujaJuego(nivel);
 		if (mundo.Muerte()) {
-			estado = MUERTE;
-			entorno.Aviso(1, mundo.GetHombrePos().x, mundo.GetHombrePos().x);
-			//mundo.Aviso(1);
+			estado = MUERTE;			
 		}
 		else if (mundo.Ganar()) {
-			estado = GANAR;
-			entorno.Aviso(2, mundo.GetHombrePos().x, mundo.GetHombrePos().x);
-			//mundo.Aviso(2);
+			estado = GANAR;			
 		}
 	}
+	else if (estado == MENU) {
+		entorno.DibujaMenu(xmouse, ymouse);
+	
+	}
+	else if(estado==MUERTE){
+		entorno.Aviso(1, mundo.GetHombrePos().x, mundo.GetHombrePos().y); // funciona pero se resetea la posicion del hombre 
+		entorno.DibujaJuego(nivel); //funciona
+		mundo.DibujaBasico();
+		mundo.InicializaFondo(nivel);
+		
+	}
+	else if (estado == GANAR) {
+		entorno.Aviso(2, mundo.GetHombrePos().x, mundo.GetHombrePos().y);
+		entorno.DibujaJuego(nivel);
+		mundo.DibujaBasico();
+	}
+	
 }
 void Coordinador::tecla(unsigned char key) {
+	
 	if (estado == JUEGO) {
 		mundo.Tecla(key);
 		if (key == 'p') {
@@ -69,6 +79,7 @@ void Coordinador::tecla(unsigned char key) {
 		case '7': //VOLVER AL MENU PRINCIPAL
 			estado = MENU;
 			mundo.RecargarNivel();
+			nivel = 0;
 			break;
 		case '8': //REINICIAR EL NIVEL
 			estado = JUEGO;
@@ -81,7 +92,7 @@ void Coordinador::tecla(unsigned char key) {
 		case '7':
 			estado = MENU;
 			mundo.RecargarNivel();
-			break;
+			nivel = 0;
 			break;
 		case '8':
 			estado = JUEGO;
@@ -115,17 +126,17 @@ void Coordinador::ClickMouse(int b, int state) {
 		if (b == GLUT_LEFT_BUTTON) {
 			button = MOUSE_LEFT_BUTTON;
 
-			if (ymouse > 11 && ymouse <= 13) {
+			if (ymouse > 11.5 && ymouse <= 13) {
 				nivel = 1;
 				estado = JUEGO;
 				mundo.RecargarNivel();
 			}
-			else if (ymouse > 9 && ymouse <= 11) {
+			else if (ymouse > 9.5 && ymouse <= 11.5) {
 				nivel = 2;
 				estado = JUEGO;
 				mundo.RecargarNivel();
 			}
-			else if (ymouse > 7 && ymouse <= 9) {
+			else if (ymouse > 8 && ymouse <= 9.5) {
 				nivel = 3;
 				estado = JUEGO;
 				mundo.RecargarNivel();

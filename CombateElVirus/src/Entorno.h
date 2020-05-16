@@ -14,8 +14,7 @@ public:
 	void DibujaJuego(int nivel);
 	void Fin(int pantalla);
 	void Aviso(int pantalla, int x, int y);
-	void Tecla(unsigned char key);
-	//friend class Mundo;
+	
 	
 private:
 	AuxEtsidi auxetsidi;

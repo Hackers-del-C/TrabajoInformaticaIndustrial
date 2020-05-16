@@ -122,20 +122,11 @@ void Entorno::Aviso(int pantalla, int x, int y) {
 	switch(pantalla){
 	case 1: //pantalla si mueres
 		auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, y + 5, y + 20);
-		////TEXTO
-		//if (yraton > (y + 15.5) && yraton > (y + 16.5)) {
-		//	rd1 = 0;
-		//	rd2 = 1;
-		//}
-		//else if (yraton > (y + 14.5) && yraton > (y + 15.5)) {
-		//	rd1 = 1;
-		//	rd2 = 0;
-		//}
 		auxetsidi.Texto("F", x , y + 17, 1, 0, 0, 10);
 		auxetsidi.Texto("8 REINICIAR EL NIVEL", x-6, y+16, 1, rd1, rd1, 11); //obv habrá que hacerlo con otras teclas u otra cosa
-		auxetsidi.Texto("7 MENU PRINCIPAL", x-6,y+15, 1, rd2, rd2, 11);
-		
+		auxetsidi.Texto("7 MENU PRINCIPAL", x-6,y+15, 1, rd2, rd2, 11);		
 		break;
+
 	case 2: //pantalla si ganas	
 		auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, y + 5, y + 20);
 		//TEXTO
@@ -145,22 +136,4 @@ void Entorno::Aviso(int pantalla, int x, int y) {
 		
 		break;
 	}
-}
-
-void Entorno::Tecla(unsigned char key) {
-
-	if (key == 'b') {
-		ETSIDI::play("mis_sonidos/imbatman.wav");
-
-	}
-	/*if (key == 'a' || key == 's' || key == 'w' || key == 'd') {
-		ETSIDI::play("mis_sonidos/disparo.wav");
-	}*/
-	if (key == 'v') {
-		ETSIDI::play("mis_sonidos/alicates.wav");
-	}
-	if (key == 'g') {
-		ETSIDI::play("mis_sonidos/nivel1.wav");
-	}
-	
 }

@@ -1,5 +1,6 @@
 #pragma once
 #include "Mundo.h"
+#include "Entorno.h"
 enum { MOUSE_LEFT_BUTTON, MOUSE_MIDDLE_BUTTON, MOUSE_RIGHT_BUTTON }; //para el raton
 
 class Coordinador {

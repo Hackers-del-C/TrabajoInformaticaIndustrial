@@ -9,8 +9,8 @@ BonusTest::BonusTest() {
 
 
 BonusTest::BonusTest(int x, int y, int w, int h) {
-	anchura = 0.4 * w;
-	altura = 0.4 * h;
+	anchura = 0.5 * w;
+	altura = 0.5 * h;
 	bonus = new Sprite("imagenes/test.png", 0, 0, w, h);
 	posicion.x = x;
 	posicion.y = y;
