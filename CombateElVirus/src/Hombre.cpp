@@ -191,7 +191,7 @@ void Hombre::caida(int caida, int level) {
             else if (posicion.x < 120) {
                 velocidad.x = 0;
                 velocidad.y = 0;
-                posicion.x = 100;
+                posicion.x = 85;
                 posicion.y = 0;
             }
             else if (posicion.x < 150) {
