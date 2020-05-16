@@ -95,28 +95,28 @@
 
 20 david
 1 1 
-34 1 david
-1 5 53
+34 2 david
+1 27 53
 
 21 david
 1 1 
 34 1 david
-1 17 53
+1 5 53
 
 22 david
 1 1 
 34 1 david
-1 24 53
+1 17 53
 
 23 david
 1 1 
-34 0 david
-1 1 53
+34 1 david
+1 24 53
 
 24 david
 1 1 
 34 0 david
-1 2 53
+1 1 53
 
 25 david
 1 1 
@@ -126,9 +126,14 @@
 26 david
 1 1 
 34 0 david
-1 7 53
+1 2 53
 
 27 david
+1 1 
+34 0 david
+1 7 53
+
+28 david
 1 1 
 34 0 david
 1 11 53
