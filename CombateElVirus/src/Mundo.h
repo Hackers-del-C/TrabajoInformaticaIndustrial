@@ -42,7 +42,7 @@ public:
 	void Tecla(unsigned char key);
 	void Inicializa(int level);
 	void InicializaFondo(int nivel);
-	void fichero();
+	void fichero(int level);
 	void Mueve(int level);
 	void MueveHombre();
 	void Dibuja(int level);

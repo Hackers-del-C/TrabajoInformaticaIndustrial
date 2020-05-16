@@ -1,11 +1,11 @@
-Has cogido: 0 test
-Has tardado: 0 segundos
+1 carlos
+Has_llegado_al_nivel: 1 
+Has_cogido: 2 test
+Has_tardado: 10 segundos
 
-
-
-
-
-
-
+2 alvaro
+Has_llegado_al_nivel: 1 
+Has_cogido: 2 test
+Has_tardado: 14 segundos
 
 

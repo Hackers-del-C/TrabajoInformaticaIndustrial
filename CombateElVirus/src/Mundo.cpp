@@ -8,6 +8,7 @@
 #include <math.h>
 #include "glut.h"
 #include <fstream>
+#define NUM_MAX_RANKING 100
 
 
 Mundo::Mundo(){
@@ -20,20 +21,96 @@ void Mundo::Setojo(float ox, float oy, float oz) { //Set del deojo
 	z_ojo = oz;
 
 }
-void Mundo::fichero() { //	Fichero para guardar el numero de tests y el tiempo tardado
-	ofstream fichero("resultado_final.txt",ofstream::out || ofstream::in ||ios::app);	
-	string datos_previos;	
-	fichero << "Has cogido: " << hombre.GetMonedas() << " test" << endl;
-	fichero << "Has tardado: " << (clock() - tiempo)/1000 << " segundos" << endl; // esta donde el mouse el empizo del temporizador
+void Mundo::fichero(int level) { //	Fichero para guardar el numero de tests y el tiempo tardado
+	ifstream fichero("resultado_final.txt");
+	int k = 0;
+		
+	struct jugador {
+
+		string nombre, texto1, texto2, texto3, texto4, texto5;
+		int nivel = 0, test = 0, segundos = 0, posicion = 0;
+
+	};
+
+	jugador lista[NUM_MAX_RANKING];
+
+
+
+	while (!fichero.eof()) {
+		
+		fichero >>lista[k].posicion>> lista[k].nombre;
+		fichero >> lista[k].texto1 >> lista[k].nivel;
+		fichero >> lista[k].texto2 >> lista[k].test >> lista[k].texto3;
+		fichero >> lista[k].texto4 >> lista[k].segundos >> lista[k].texto5;
+		k++;
+	}
+	
+	
+	lista[k].nombre = "david";
+	lista[k].nivel = level;
+	lista[k].test =  hombre.GetMonedas();
+	lista[k++].segundos =  ((clock() - tiempo) / 1000);
+	
+
 	fichero.close();
+	remove("resultado_final.txt");
+	ofstream fichero1("resultado_final.txt");
+	fichero.open("resultado_final.txt");
 
-	/*while (!fichero.eof()) {
+	//ordenar
 
-		fichero << datos_previos;
-	}*/
+	for (int m = 0; m < (k - 1); m++) {
 
-	//fichero << datos_previos;
-	//fichero << "Nombre: " << nombre << endl; 
+		for (int n = 0; n < (k - 1); n++){
+
+			jugador aux;
+			if (lista[n + 1].nivel > lista[n].nivel) {
+				
+				aux = lista[n + 1];
+				lista[n + 1] = lista[n];
+				lista[n] = aux;
+			}
+		}
+	}
+	for (int m = 0; m < (k - 1); m++) {
+
+		for (int n = 0; n < (k - 1); n++) {
+
+			jugador aux;
+			if ((lista[n + 1].nivel == lista[n].nivel)&&(lista[n + 1].test > lista[n].test)) {
+
+				aux = lista[n + 1];
+				lista[n + 1] = lista[n];
+				lista[n] = aux;
+			}
+		}
+	}
+
+	for (int m = 0; m < (k - 1); m++) {
+
+		for (int n = 0; n < (k - 1); n++) {
+
+			jugador aux;
+			if ((lista[n + 1].nivel == lista[n].nivel) && (lista[n + 1].test == lista[n].test) && (lista[n + 1].segundos < lista[n].segundos)) {
+
+				aux = lista[n + 1];
+				lista[n + 1] = lista[n];
+				lista[n] = aux;
+			}
+		}
+	}
+	for (int m = 0; m < (k -1); m++) {
+	
+		fichero1 <<m+1 <<" " << lista[m].nombre << endl;
+		fichero1 << lista[1].texto1 << " " << lista[m].nivel << " " << endl;
+		fichero1 << lista[1].texto2 << " " << lista[m].test << " " << lista[1].texto3 << endl;
+		fichero1 << lista[1].texto4 << " " << lista[m].segundos << " " << lista[1].texto5 << endl << endl;
+	
+	
+	}
+
+
+	 
 }
 
 void Mundo::InicializaFondo(int nivel) { //agregar cosas

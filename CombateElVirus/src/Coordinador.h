@@ -19,6 +19,7 @@ public:
 	void ClickMouse(int b, int state);
 	void MyMouse(int x, int y);
 	void SetLevel(int level) {  nivel=level; }
+	int Getlevel() { return nivel; }
 private:
 	int nivel;
 	Mundo mundo;

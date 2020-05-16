@@ -44,7 +44,8 @@ void Coordinador::Dibuja() {
 		mundo.InicializaFondo(nivel);
 		entorno.DibujaJuego(nivel);
 		if (mundo.Muerte()) {
-			estado = MUERTE;			
+			estado = MUERTE;
+			mundo.fichero(nivel); // se ha acabado la partida
 		}
 		else if (mundo.Ganar()) {
 			estado = GANAR;			
