@@ -44,6 +44,7 @@ public:
 	void InicializaFondo(int nivel);
 	void fichero();
 	void Mueve(int level);
+	void MueveHombre();
 	void Dibuja(int level);
 	void DibujaBasico();
 	void InicioDibuja();

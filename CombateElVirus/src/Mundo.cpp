@@ -186,7 +186,8 @@ int Mundo::Muerte() {
 	}
 	else {
 		return 1;
-		hombre.SetVel(0, 0);
+		
+		
 	}
 		
 }
@@ -199,12 +200,27 @@ int Mundo::Ganar() {//tiene problemas
 	}
 	else {
 		return 1;
-		hombre.SetVel(0, 0);
+	
+	
 	}
 }
-		
+void Mundo::MueveHombre() { //Solo para en caso de muerte o ganar se necesita en el coordinador
+	hombre.SetVel(0, -10);
+	hombre.SetDir(0);
+	hombre.Mueve(0.025f);
+	if (Interaccion::caida(hombre, limites) == 1) {
+
+		hombre.SetPos(hombre.GetPos().x - 10, hombre.GetPos().y + 10);
+		//hombre.SetPos(auxPLAT->GetPos().x/2, auxPLAT->GetPos().y + 4);
+		hombre.SetVel(0, 0);
+	}
+	if (plataformas.ColisionSube(hombre) != 0) {
+		hombre.SetVel(hombre.GetVel().x, 0.0);
+	}
+}
 void Mundo::Mueve(int level)
 {
+
 	//OJO//
 
 	if (hombre.posicion.x > 0 && level != 0) 
@@ -339,9 +355,6 @@ void Mundo::Mueve(int level)
 		hombre.SetVel(0, 0);
 		hombre.SetVidas(hombre.GetVidas() - 1);
 	}
-
-
-
 	misiles.limpiar();
 
 }

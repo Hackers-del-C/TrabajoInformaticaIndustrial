@@ -28,8 +28,11 @@ void Coordinador::Inicializa() {
 		}
 }
 void Coordinador::Mueve() {
-	if (estado == JUEGO || estado == MUERTE || estado== GANAR) {
+	if (estado == JUEGO ) { 
 		mundo.Mueve(nivel);
+	}
+	else if (estado == GANAR || estado == MUERTE) {
+		mundo.MueveHombre();
 	}
 }
 void Coordinador::Dibuja() {
@@ -52,16 +55,24 @@ void Coordinador::Dibuja() {
 	
 	}
 	else if(estado==MUERTE){
+
 		entorno.Aviso(1, mundo.GetHombrePos().x, mundo.GetHombrePos().y); // funciona pero se resetea la posicion del hombre 
 		entorno.DibujaJuego(nivel); //funciona
 		mundo.DibujaBasico();
-		mundo.InicializaFondo(nivel);
+		//mundo.InicializaFondo(nivel); creo que no hace falta
 		
 	}
 	else if (estado == GANAR) {
 		entorno.Aviso(2, mundo.GetHombrePos().x, mundo.GetHombrePos().y);
 		entorno.DibujaJuego(nivel);
 		mundo.DibujaBasico();
+	}
+	else if (estado == PAUSA) {
+		entorno.Aviso(3, mundo.GetHombrePos().x, mundo.GetHombrePos().y);
+		entorno.DibujaJuego(nivel);
+		mundo.Dibuja(nivel);
+		mundo.DibujaBasico();
+		
 	}
 	
 }
