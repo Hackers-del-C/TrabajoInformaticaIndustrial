@@ -10,6 +10,7 @@ class Hombre
     int dir;
     int monedas;
     bool agachado;
+    int control;
 public:
 
 
@@ -24,7 +25,8 @@ public:
     void Inicializa();
     void Salta();
     void Setagachado(unsigned char key);
-   
+    void SetControl(int c) { control = c; }
+    int GetControl() { return control; }
     void Stop();
     void Victoria();
     void Agacha();
@@ -45,6 +47,8 @@ public:
         aceleracion.x = ax;
         aceleracion.y = ay;
     }
+
+    void caida(int caida,int level);
     ETSIDI::Vector2D GetAceleracion() { return aceleracion; }
 
    ETSIDI::Vector2D posicion, velocidad, aceleracion;

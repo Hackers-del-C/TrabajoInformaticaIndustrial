@@ -115,26 +115,86 @@ void Mundo::fichero(int level) { //	Fichero para guardar el numero de tests y el
 
 void Mundo::InicializaFondo(int nivel) { //agregar cosas
 	int j = 5;
-	
+	hombre.caida((Interaccion::caida(hombre, limites)), nivel);
 	if(nivel==1){	
 		///lanzamisiles2
-		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 70, 8, 4, 1.5));
-		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 0, 10, 4, 1.5));
-
-		for (int y = -6; y < 50; y++) {
-			if (y != 2 && y != 3 && y != 7 && y != 8 && y != 9 && y != 10 && y != 20 && y != 21) {
+		//plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 70, 8, 4, 1.5));
+		
+		/// lanzamisiles
+			listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png", 30, -3)); ///L1
+			listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png", 70,5.75));  ///L2
+		
+		////suelo
+		for (int y = -6; y < 29; y++) {
+			if (y != 3 && y != 4 && y != 10 && y !=11 && y != 12 && y != 13 && y != 14&& y != 15 && y != 16 && y != 21 && y != 22 && y != 26 && y != 27 && y != 28 ) {
 				plataformas.Agregar(new Plataformas(Plataformas::SUELO, j * y, -5.5, 5, 1.5));
 			}
 		}
-		for (int x = 0; x < 20; x++) {
+		for (int y = 40; y < 50; y++) {
+				plataformas.Agregar(new Plataformas(Plataformas::SUELO, j * y, -5.5, 5, 1.5));
+		
+		}
+
+		///aereas
+
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 15,  3, 4, 1.5));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 40, 2, 4, 1.5));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 50, 4, 4, 1.5));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 60, 6, 4, 1.5));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 70, 3, 4, 1.5));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 70, 10, 4, 1.5));
+		//plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 80, 6, 4, 1.5));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 90, 2, 4, 1.5));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 100, 4, 4, 1.5));
+		//plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 110, 2, 4, 1.5));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 130, 3, 4, 1.5));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 140, 2, 4, 1.5));
+
+		///moviles
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 140, 10, 3, 1.5, 140, 200));
+
+		////caen
+
+		if (hombre.GetPos().x > 90 && hombre.GetPos().x < 100) {
+			/*if (plataformas.ColisionSube(hombre) != 0) {
+				Plataformas* auxPLAT = plataformas.ColisionSube(hombre);*/
+
+			if (plataformas.ColisionSube(hombre) != 0 && plataformas.ColisionSube(hombre)->GetTipo() != plataformas.ColisionSube(hombre)->PLATAFORMA_CHOCA)
+				plataformas.Eliminar(plataformas.ColisionSube(hombre));
+		}
+
+		/*	float max;
+			for (int i = 0; i < 200; i++) {
+				if (plataformas[i]->GetPos().x <= hombre.GetPos().x) {
+					max = plataformas[i]->GetPos().x;
+				}
+			}*/
+		
+			//if (Interaccion::caida(hombre, limites) == 1) {
+
+			//	//hombre.SetPos(max, hombre.GetPos().y + 10);
+			//	//hombre.SetPos(auxPLAT->GetPos().x/2, auxPLAT->GetPos().y + 4);
+			//	if (hombre.GetControl() == 0) {
+			//		hombre.SetPos(0, 2);
+			//		hombre.SetVidas(hombre.GetVidas() - 1);
+			//		hombre.SetVel(0, 0);
+			//	}
+			//	else {
+			//		hombre.SetPos(70, 12);
+			//		hombre.SetVidas(hombre.GetVidas() - 1);
+			//		hombre.SetVel(0, 0);
+			//	}
+			//}
+	}
+		/*for (int x = 0; x < 20; x++) {
 			if (x < 5) {
 				plataformas.Agregar(new Plataformas(Plataformas::SUELO, 10 * x - x / 2, x + 2, 4, 1.5));
 			}
 			else {
 				plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 10 * x - x / 2, x - 2, 4, 1.5));
 			}
-		}
-	}
+		}*/
+	
 	else if (nivel == 2) {
 
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 5, 10, 4, 1.5));
@@ -236,17 +296,14 @@ void Mundo::Dibuja(int level) {
 	listabonus.dibuja();
 	
 
-	if (level == 1) {
-		listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png", 30, -3)); ///L1
-		listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png", 70, 10.55));  ///L2
-	}
+	
 	if (level == 1) {
 		float naleatorio = lanzaDado(800.0);
 		if (naleatorio < 10) {
 			misiles.Agregar(new Misil("imagenes/misilizq.png", 29, -2, -5.0f, 0.0f));
 		}
 		if (naleatorio < 5) {
-			misiles.Agregar(new Misil("imagenes/misilizq.png", 69, 9.55, -5.0f, 0.0f));
+			misiles.Agregar(new Misil("imagenes/misilizq.png", 69, 6.55, -5.0f, 0.0f));
 		}
 		if (naleatorio < 1) {
 
@@ -285,12 +342,17 @@ void Mundo::MueveHombre() { //Solo para en caso de muerte o ganar se necesita en
 	hombre.SetVel(0, -10);
 	hombre.SetDir(0);
 	hombre.Mueve(0.025f);
-	if (Interaccion::caida(hombre, limites) == 1) {
-
-		hombre.SetPos(hombre.GetPos().x - 10, hombre.GetPos().y + 10);
-		//hombre.SetPos(auxPLAT->GetPos().x/2, auxPLAT->GetPos().y + 4);
-		hombre.SetVel(0, 0);
-	}
+	float max;
+	//if (Interaccion::caida(hombre, limites) == 1) {
+	//	for (int i = 0; i < plataformas.GetNumero(); i++) {
+	//		if (plataformas[i]->GetPos().x < hombre.GetPos().x) {
+	//		max = plataformas[i]->GetPos().x;
+	//		}
+	//	}
+	//	hombre.SetPos(max, hombre.GetPos().y + 10);
+	//	//hombre.SetPos(auxPLAT->GetPos().x/2, auxPLAT->GetPos().y + 4);
+	//	hombre.SetVel(0, 0);
+	//}
 	if (plataformas.ColisionSube(hombre) != 0) {
 		hombre.SetVel(hombre.GetVel().x, 0.0);
 	}
@@ -418,20 +480,32 @@ void Mundo::Mueve(int level)
 		listabonus.Colision(*plataformas[t]);
 	}
 
-	Plataformas* auxPLAT = plataformas.ColisionSube(hombre);
+
 	//ETSIDI::Vector2D poscaida = auxPLAT->GetLim2();
 	//if (Interaccion::caida(hombre, limites) == 1) {
 	//	if (hombre.GetPos().x > auxPLAT->GetLim2().x) {
 	//		hombre.SetPos(auxPLAT->GetLim2().x-2, auxPLAT->GetLim2().y+4);
 	//	}
 	//}
-	if (Interaccion::caida(hombre, limites) == 1) {
+	//Plataformas* auxPLAT = plataformas.ColisionSube(hombre);
+	//plataformas.Eliminar(plataformas.ColisionSube(hombre));
 
-		hombre.SetPos(hombre.GetPos().x - 10, hombre.GetPos().y + 10);
-	//hombre.SetPos(auxPLAT->GetPos().x/2, auxPLAT->GetPos().y + 4);
-		hombre.SetVel(0, 0);
-		hombre.SetVidas(hombre.GetVidas() - 1);
-	}
+	
+	//float pos1= auxPLAT->GetPos().x;
+	//float pos2 = auxPLAT->GetPos().y;
+
+	//plataformas.Eliminar(auxPLAT);
+	//if (plataformas.ColisionSube(hombre) != 0) {
+		//	Plataformas* auxPLAT = plataformas.ColisionSube(hombre);
+		//if (Interaccion::caida(hombre, limites) == 1) {
+
+		//	hombre.SetPos(hombre.GetPos().x - 10, hombre.GetPos().y + 10);
+		//	//hombre.SetPos(auxPLAT->GetPos().x / 2, auxPLAT->GetPos().y + 4);
+		//	hombre.SetVel(0, 0);
+		//	hombre.SetVidas(hombre.GetVidas() - 1);
+		//}
+	//    }
+
 	misiles.limpiar();
 
 }
@@ -490,6 +564,9 @@ void Mundo::Tecla(unsigned char key)
 			//hombre.vidas--; /// radio, x , y, vx, vy
 			hombre.SetVidas(hombre.GetVidas() - 1);
 		}
+		break;
+	case 'v':
+		hombre.SetPos(70, 20);
 		break;
 		///test
 	/*case 'p':
@@ -562,13 +639,12 @@ void Mundo::teclaEspecialsuelta(unsigned char key) {
 }
 
 
-void Mundo::RecargarNivel() { //REINICIAR 
+void Mundo::RecargarNivel(int level) { //REINICIAR 
 	hombre.FinPartida();//REINICIA TODO LO DEL HOMBRE
 	Setojo(0, 10, 53);
 	disparos.DestruirContenido();
 	tiempo = clock(); //para el tiempo
+	plataformas.DestruirContenido(plataformas.GetNumero());
+	InicializaFondo(level);
 }
-
-
-
 

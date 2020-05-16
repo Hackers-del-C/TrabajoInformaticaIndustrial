@@ -7,6 +7,7 @@ public:
 	Plataformas();
 	Plataformas(float x1, float y1, float w, float h);
 	Plataformas(plat_t tipo, float x1, float y1, float w, float h);
+	Plataformas(plat_t tipo, float x1, float y1, float w, float h,float xi,float xf);
 	//~Plataformas();
 
 	plat_t GetTipo() { return tipo; }
@@ -25,6 +26,7 @@ public:
 	float anchura, altura;
 
 	ETSIDI::Vector2D velocidad, aceleracion;
+	float xi, xf;
 	void Mueve(float t);
 
 	friend class Interaccion;

@@ -1,11 +1,135 @@
-1 carlos
-Has_llegado_al_nivel: 1 
-Has_cogido: 2 test
-Has_tardado: 10 segundos
+1 david
+1 6 
+34 8 david
+1 2 53
 
-2 alvaro
-Has_llegado_al_nivel: 1 
-Has_cogido: 2 test
-Has_tardado: 14 segundos
+2 david
+1 6 
+34 6 david
+1 6 53
 
+3 david
+1 6 
+34 4 david
+1 6 53
+
+4 david
+1 6 
+34 2 david
+1 6 53
+
+5 david
+1 3 
+34 17 david
+1 5 53
+
+6 david
+1 2 
+34 12 david
+1 0 53
+
+7 carlos
+1 2 
+34 10 david
+1 2 53
+
+8 david
+1 1 
+34 13 david
+1 49 53
+
+9 david
+1 1 
+34 11 david
+1 27 53
+
+10 david
+1 1 
+34 10 david
+1 55 53
+
+11 david
+1 1 
+34 9 david
+1 19 53
+
+12 david
+1 1 
+34 8 david
+1 21 53
+
+13 david
+1 1 
+34 8 david
+1 23 53
+
+14 david
+1 1 
+34 7 david
+1 20 53
+
+15 david
+1 1 
+34 7 david
+1 32 53
+
+16 david
+1 1 
+34 7 david
+1 34 53
+
+17 david
+1 1 
+34 5 david
+1 19 53
+
+18 david
+1 1 
+34 4 david
+1 29 53
+
+19 david
+1 1 
+34 3 david
+1 25 53
+
+20 david
+1 1 
+34 1 david
+1 5 53
+
+21 david
+1 1 
+34 1 david
+1 17 53
+
+22 david
+1 1 
+34 1 david
+1 24 53
+
+23 david
+1 1 
+34 0 david
+1 1 53
+
+24 david
+1 1 
+34 0 david
+1 2 53
+
+25 david
+1 1 
+34 0 david
+1 2 53
+
+26 david
+1 1 
+34 0 david
+1 7 53
+
+27 david
+1 1 
+34 0 david
+1 11 53
 

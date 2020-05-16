@@ -81,7 +81,8 @@ void ListaPlataformas::Mueve(float t) {
 	}
 }
 Plataformas* ListaPlataformas::ColisionSube(Hombre& h) {
-	for (int i = 0; i < numero; i++) {
+	int i;
+	for (i = 0; i < numero; i++) {
 		if (Interaccion::ColisionSube(h ,*(lista[i]))) {
 			return lista[i];
 		}

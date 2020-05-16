@@ -171,3 +171,50 @@ void Hombre::Dañar() {
     mariorojo = 1;
     SetVidas(GetVidas() - 1); 
 }
+
+void Hombre::caida(int caida, int level) {
+    if (caida) {
+        //   (y != 3 && y != 4 && y != 10 && y != 11 && y != 12 && y != 13 && y != 14 && y != 15 && y != 16 && y != 21 && y != 22 && y != 26 && y != 27 && y != 28)
+        if (level == 1) {
+            if (posicion.x < 20) {
+                velocidad.x = 0;
+                velocidad.y = 0;
+                posicion.x = 10;
+                posicion.y = 0;
+            }
+            else if (posicion.x < 90) {
+                velocidad.x = 0;
+                velocidad.y = 0;
+                posicion.x = 45;
+                posicion.y = 0;
+            }
+            else if (posicion.x < 120) {
+                velocidad.x = 0;
+                velocidad.y = 0;
+                posicion.x = 100;
+                posicion.y = 0;
+            }
+            else if (posicion.x < 150) {
+                velocidad.x = 0;
+                velocidad.y = 0;
+                posicion.x = 120;
+                posicion.y = 0;
+
+            }
+            else if (posicion.x < 180) {
+                velocidad.x = 0;
+                velocidad.y = 0;
+                posicion.x = 120;
+                posicion.y = 0;
+
+            }
+            else if (posicion.x > 180) {
+                velocidad.x = 0;
+                velocidad.y = 0;
+                posicion.x = 210;
+                posicion.y = 0;
+            }
+          
+        }
+    }
+}

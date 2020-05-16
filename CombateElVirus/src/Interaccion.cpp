@@ -109,9 +109,14 @@ bool Interaccion::Colision(Slime &s, Plataformas p) {
     if (s.posicion.y - s.altura / 2 > p.altura / 2 + p.posicion.y+p.altura) { return false; } //
     if (s.posicion.y + s.altura / 2 < p.posicion.y - p.altura / 2) { return false; }
     else {
-       // s.Choca();
-        if(p.GetTipo()!=p.PLATAFORMA_MUEVE)
+        // s.Choca();
+        if (p.GetTipo() == p.PLATAFORMA_MUEVE){
+            s.SetVel(p.velocidad.x, p.velocidad.y);
+        return true;
+        }
+        else {
             return true;
+        }
     }
 
 }

@@ -23,7 +23,7 @@ Plataformas::Plataformas(float x, float y, float w, float h) {
     limite2.x = x+ w/2;
     limite2.y = y +h/2;
 }
-Plataformas::Plataformas(plat_t tipo, float x, float y, float w, float h):tipo(tipo) {
+Plataformas::Plataformas(plat_t tipo, float x, float y, float w, float h) :tipo(tipo) {
     posicion.x = x;
     posicion.y = y;
     anchura = w;
@@ -36,6 +36,23 @@ Plataformas::Plataformas(plat_t tipo, float x, float y, float w, float h):tipo(t
     velocidad.y = 0;
     aceleracion.y = 0;
     aceleracion.x = 0;
+}
+
+Plataformas::Plataformas(plat_t tipo, float x, float y, float w, float h,float xi, float xf):tipo(tipo) {
+    posicion.x = x;
+    posicion.y = y;
+    anchura = w;
+    altura = h;
+    limite1.x = x - w / 2;
+    limite1.y = y - h / 2;
+    limite2.x = x + w / 2;
+    limite2.y = y + h / 2;
+    velocidad.x = 0;
+    velocidad.y = 0;
+    aceleracion.y = 0;
+    aceleracion.x = 0;
+    this->xi = xi;
+    this->xf = xf;
 }
 //ESTO ES AUXILIAR ANTES DE METERLO EN LISTA
 void Plataformas::Inicializa(float x, float y, float w, float h) {
@@ -138,14 +155,11 @@ float Plataformas::distancia(ETSIDI::Vector2D punto, ETSIDI::Vector2D* direccion
 }
 void Plataformas::Mueve(float t){
     if (tipo == PLATAFORMA_MUEVE) {
-        if (aceleracion.x == 0) {
-            aceleracion.x = 1;
+        if (posicion.x <= xi) {
+            velocidad.x = 4;
         }
-        if (velocidad.x >= 5) {
-            aceleracion.x = -1;
-        }
-        if (velocidad.x <= -5) {
-            aceleracion.x = 1;
+        if (posicion.x >= xf) {
+            velocidad.x = -4;
         }
         posicion=posicion+ velocidad * t + aceleracion * (0.5f * t * t);
         limite1 = limite1 + velocidad * t + aceleracion * (0.5f * t * t);

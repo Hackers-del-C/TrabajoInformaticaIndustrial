@@ -56,7 +56,7 @@ public:
 	//ojo:
 
 	void Setojo(float ox, float oy, float oz);
-	void RecargarNivel();
+	void RecargarNivel(int level);
 	//void Interaccion();
 		//void RotarOjo();
 	ETSIDI::Vector2D GetHombrePos();

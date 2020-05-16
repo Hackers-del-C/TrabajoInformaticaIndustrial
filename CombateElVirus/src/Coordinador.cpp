@@ -83,19 +83,19 @@ void Coordinador::tecla(unsigned char key) {
 		mundo.Tecla(key);
 		if (key == 'p') {
 			estado = PAUSA;
-			mundo.Dibuja(nivel);		
+			//mundo.Dibuja(nivel);		
 		}
 	}
 	else if (estado == MUERTE) {
 		switch (key) {
 		case '7': //VOLVER AL MENU PRINCIPAL
 			estado = MENU;
-			mundo.RecargarNivel();
+			mundo.RecargarNivel(nivel);
 			nivel = 0;
 			break;
 		case '8': //REINICIAR EL NIVEL
 			estado = JUEGO;
-			mundo.RecargarNivel();
+			mundo.RecargarNivel(nivel);
 			break;
 		}
 	}
@@ -103,13 +103,13 @@ void Coordinador::tecla(unsigned char key) {
 		switch (key) {
 		case '7':
 			estado = MENU;
-			mundo.RecargarNivel();
+			mundo.RecargarNivel(nivel);
 			nivel = 0;
 			break;
 		case '8':
 			estado = JUEGO;
 			nivel += 1;
-			mundo.RecargarNivel();
+			mundo.RecargarNivel(nivel);
 			break;
 		}				
 	}
@@ -141,17 +141,17 @@ void Coordinador::ClickMouse(int b, int state) {
 			if (ymouse > 11.5 && ymouse <= 13) {
 				nivel = 1;
 				estado = JUEGO;
-				mundo.RecargarNivel();
+				mundo.RecargarNivel(nivel);
 			}
 			else if (ymouse > 9.5 && ymouse <= 11.5) {
 				nivel = 2;
 				estado = JUEGO;
-				mundo.RecargarNivel();
+				mundo.RecargarNivel(nivel);
 			}
 			else if (ymouse > 8 && ymouse <= 9.5) {
 				nivel = 3;
 				estado = JUEGO;
-				mundo.RecargarNivel();
+				mundo.RecargarNivel(nivel);
 			}
 		}
 	}
