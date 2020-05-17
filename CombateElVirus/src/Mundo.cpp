@@ -197,18 +197,23 @@ void Mundo::InicializaFondo(int nivel) { //agregar cosas
 	
 	else if (nivel == 2) {
 
-		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 5, 10, 4, 1.5));
-		for (int y = -6; y < 50; y++) {
-			if (y != 2 && y != 3 && y != 4 && y != 8 && y !=9 && y != 10 && y != 20 && y != 21) {
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 0, 10, 4, 1.5,-15,15));
+		for (int y = -6; y < 6; y++) {
+			
 				plataformas.Agregar(new Plataformas(Plataformas::SUELO, j * y, -5.5, 5, 1.5));
+			
+		}
+
+		for (int x = 0; x < 20; x++) {
+			if (x%2) {
+				plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, -5,2*x , 4, 1.5));
+				plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 5, 2*x , 4, 1.5));
 			}
 		}
-		for (int x = 0; x < 20; x++) {
-			if (x < 5) {
-				plataformas.Agregar(new Plataformas(Plataformas::SUELO, 10 * x/2, x + 2, 4, 1.5));
-			}
-			else {
-				plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 10 * x /2, x - 2, 4, 1.5));
+		for (int y = 0; y < 20; y++) {
+			if (y % 2) {
+				plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 0, 2 * y+2, 4, 1.5));
+				
 			}
 		}
 	}
