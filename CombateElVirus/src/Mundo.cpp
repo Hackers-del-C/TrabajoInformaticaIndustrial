@@ -115,29 +115,29 @@ void Mundo::fichero(int level) { //	Fichero para guardar el numero de tests y el
 
 void Mundo::InicializaFondo(int nivel) { //agregar cosas
 	int j = 5;
-	hombre.caida((Interaccion::caida(hombre, limites)), nivel);
-	if(nivel==1){	
+	
+	if (nivel == 1) {
 		///lanzamisiles2
 		//plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 70, 8, 4, 1.5));
-		
+
 		/// lanzamisiles
-			listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png", 30, -3)); ///L1
-			listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png", 70,5.75));  ///L2
-		
-		////suelo
+		listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png", 30, -3)); ///L1
+		listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png", 70, 5.75));  ///L2
+
+	////suelo
 		for (int y = -6; y < 29; y++) {
-			if (y != 3 && y != 4 && y != 10 && y !=11 && y != 12 && y != 13 && y != 14&& y != 15 && y != 16 && y != 21 && y != 22 && y != 26 && y != 27 && y != 28 ) {
+			if (y != 3 && y != 4 && y != 10 && y != 11 && y != 12 && y != 13 && y != 14 && y != 15 && y != 16 && y != 21 && y != 22 && y != 26 && y != 27 && y != 28) {
 				plataformas.Agregar(new Plataformas(Plataformas::SUELO, j * y, -5.5, 5, 1.5));
 			}
 		}
 		for (int y = 40; y < 50; y++) {
-				plataformas.Agregar(new Plataformas(Plataformas::SUELO, j * y, -5.5, 5, 1.5));
-		
+			plataformas.Agregar(new Plataformas(Plataformas::SUELO, j * y, -5.5, 5, 1.5));
+
 		}
 
 		///aereas
 
-		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 15,  3, 4, 1.5));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 15, 3, 4, 1.5));
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 40, 2, 4, 1.5));
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 50, 4, 4, 1.5));
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 60, 6, 4, 1.5));
@@ -155,54 +155,45 @@ void Mundo::InicializaFondo(int nivel) { //agregar cosas
 
 		////caen
 
-		if (hombre.GetPos().x > 90 && hombre.GetPos().x < 100) {
-			/*if (plataformas.ColisionSube(hombre) != 0) {
-				Plataformas* auxPLAT = plataformas.ColisionSube(hombre);*/
 
-			if (plataformas.ColisionSube(hombre) != 0 && plataformas.ColisionSube(hombre)->GetTipo() != plataformas.ColisionSube(hombre)->PLATAFORMA_CHOCA)
-				plataformas.Eliminar(plataformas.ColisionSube(hombre));
-		}
 
 		//Añadimos Virus
 		//VirusSeta y virus slime
 		listavirus.agregar(new VirusSlime(35, -3, 9));
-		listavirus.agregar(new VirusSeta(94, -3, 7));
+		//listavirus.agregar(new VirusSeta(94, -3, 7));
 		listavirus.agregar(new VirusSeta(122, -3, 5));
 		listavirus.agregar(new VirusSlime(122, -3, 7));
-		
+
 		listavirus.agregar(new VirusMosca(230, 15));
 
-		/*	float max;
-			for (int i = 0; i < 200; i++) {
-				if (plataformas[i]->GetPos().x <= hombre.GetPos().x) {
-					max = plataformas[i]->GetPos().x;
-				}
-			}*/
-		
-			//if (Interaccion::caida(hombre, limites) == 1) {
 
-			//	//hombre.SetPos(max, hombre.GetPos().y + 10);
-			//	//hombre.SetPos(auxPLAT->GetPos().x/2, auxPLAT->GetPos().y + 4);
-			//	if (hombre.GetControl() == 0) {
-			//		hombre.SetPos(0, 2);
-			//		hombre.SetVidas(hombre.GetVidas() - 1);
-			//		hombre.SetVel(0, 0);
-			//	}
-			//	else {
-			//		hombre.SetPos(70, 12);
-			//		hombre.SetVidas(hombre.GetVidas() - 1);
-			//		hombre.SetVel(0, 0);
-			//	}
-			//}
+		listavirus.agregar(new VirusSeta(230, -3, 5));
+		//	listavirus.agregar(new VirusMosca(230, 10));
+
+		/// tests
+		
+			listabonus.agregar(new BonusTest(10, -2, 2, 2));
+			listabonus.agregar(new BonusTest(25, -2, 2, 2));
+			listabonus.agregar(new BonusTest(30, -2, 2, 2));
+			listabonus.agregar(new BonusTest(40, -2, 2, 2));
+			listabonus.agregar(new BonusTest(50, -2, 2, 2));
+			listabonus.agregar(new BonusTest(60, -2, 2, 2));
+			listabonus.agregar(new BonusTest(70, -2, 2, 2));
+			listabonus.agregar(new BonusTest(85, -2, 2, 2));
+			listabonus.agregar(new BonusTest(90, -2, 2, 2));
+			listabonus.agregar(new BonusTest(100, -2, 2, 2));
+			listabonus.agregar(new BonusTest(120, -2, 2, 2));
+			listabonus.agregar(new BonusTest(130, -2, 2, 2));
+			listabonus.agregar(new BonusTest(140, -2, 2, 2));
+			listabonus.agregar(new BonusTest(150, -2, 2, 2));
+			listabonus.agregar(new BonusTest(160, -2, 2, 2));
+			listabonus.agregar(new BonusTest(170, -2, 2, 2));
+			listabonus.agregar(new BonusTest(180, -2, 2, 2));
+			listabonus.agregar(new BonusTest(190, -2, 2, 2));
+			
+
+			listabonus.agregar(new Llave(210, 20, 2, 2));
 	}
-		/*for (int x = 0; x < 20; x++) {
-			if (x < 5) {
-				plataformas.Agregar(new Plataformas(Plataformas::SUELO, 10 * x - x / 2, x + 2, 4, 1.5));
-			}
-			else {
-				plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 10 * x - x / 2, x - 2, 4, 1.5));
-			}
-		}*/
 	
 	else if (nivel == 2) {
 
@@ -227,14 +218,14 @@ void Mundo::InicializaFondo(int nivel) { //agregar cosas
 	
 }
 void Mundo::Inicializa(int level) {
-
+	finaldenivel = 0;
 	hombre.Inicializa();
 	personajes.Inicializa(hombre);
 	virus2.Inicializa(-5, 1);
 	//virus3.Inicializa(-10, 15);
 	limites.SetLimites(-20, 500, -10, 30); //Son los bordes del juego que el jugador no puede pasar	
 	vidas.Inicializa(hombre);
-	
+	avion = new Sprite("imagenes/avion.png", 220, 10, 30, 10);
 
 	/*for (int i = 0; i < 1; i++) {
 		listavirus.agregar(new VirusSeta(0, -3, 5));
@@ -242,9 +233,7 @@ void Mundo::Inicializa(int level) {
 	for (int i = 0; i < 1; i++) {
 		listavirus.agregar(new VirusSlime(30 + 30 * i, -3));
 	}*/
-	for (int i = 0; i < 20; i++) {
-		listabonus.agregar(new BonusTest(lanzaDado(180), lanzaDado(6), 2, 2));
-	}
+	
 
 	
 	//slime.Inicializa(-10, 10);
@@ -303,7 +292,7 @@ void Mundo::Dibuja(int level) {
 	listavirus.dibuja();
 	listaslime.dibuja();	
 	listabonus.dibuja();
-	
+	avion->draw();
 
 	
 	if (level == 1) {
@@ -317,6 +306,13 @@ void Mundo::Dibuja(int level) {
 		if (naleatorio < 1) {
 
 			listabonus.agregar(new BonusMascarilla(hombre.GetPosX() + naleatorio * 10, 25, 1.5, 1.5));
+		}
+		if (hombre.GetPos().x > 90 && hombre.GetPos().x < 100) {
+			/*if (plataformas.ColisionSube(hombre) != 0) {
+				Plataformas* auxPLAT = plataformas.ColisionSube(hombre);*/
+
+			if (plataformas.ColisionSube(hombre) != 0 && plataformas.ColisionSube(hombre)->GetTipo() != plataformas.ColisionSube(hombre)->PLATAFORMA_CHOCA)
+				plataformas.Eliminar(plataformas.ColisionSube(hombre));
 		}
 	}
 		
@@ -336,15 +332,17 @@ int Mundo::Muerte() {
 }
 int Mundo::Ganar() {//tiene problemas
 	//FIN DE PARTIRA: Ganador
-	if (hombre.posicion.x < 225) {//HABRÁ QUE AMPLIARLO
-		
-		return 0;
-		//musica de ganador va aqui
-	}
-	else {
-		return 1;
-	
-	
+	if (hombre.GetFinNivel() == 1) {
+		if (hombre.posicion.x < 225) {//HABRÁ QUE AMPLIARLO
+
+			return 0;
+			//musica de ganador va aqui
+		}
+		else {
+			return 1;
+
+
+		}
 	}
 }
 void Mundo::MueveHombre() { //Solo para en caso de muerte o ganar se necesita en el coordinador
@@ -368,7 +366,7 @@ void Mundo::MueveHombre() { //Solo para en caso de muerte o ganar se necesita en
 }
 void Mundo::Mueve(int level)
 {
-
+	hombre.caida((Interaccion::caida(hombre, limites)), level);
 	//OJO//
 
 	if (hombre.posicion.x > 0 && level != 0) 
@@ -585,7 +583,7 @@ void Mundo::Tecla(unsigned char key)
 		}
 		break;
 	case 'v':
-		hombre.SetPos(70, 20);
+		hombre.SetPos(200, 20);
 		break;
 		///test
 	/*case 'p':

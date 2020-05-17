@@ -18,6 +18,7 @@ Hombre::Hombre() {
     vidas =5;
     monedas = 0;
     agachado = 0;
+    finnivel = 0;
 }
 
 Hombre::~Hombre() {

@@ -12,6 +12,7 @@ class Hombre
     int monedas;
     bool agachado;
     int control;
+    int finnivel;
 public:
 
 
@@ -43,7 +44,8 @@ public:
     int GetMonedas() { return monedas; }
     void FinPartida();
     void SetSprite(int n);
-    
+    void SetFinNivel(int n) { finnivel = n; }
+    int GetFinNivel() { return finnivel; }
     ETSIDI::Vector2D GetPos() { return posicion; }
     int GetPosX() { return posicion.x; }
     void SetAceleracion(float ax, float ay) {

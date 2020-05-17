@@ -11,7 +11,7 @@
 #include "Bonus.h"
 #include "BonusTest.h"
 #include "BonusMascarilla.h"
-
+#include "Llave.h"
 //LISTAS
 #include "ListaPlatafomas.h"
 #include "ListaVirus.h"
@@ -55,7 +55,7 @@ public:
 	void teclaEspecialsuelta(unsigned char key);
 	int Muerte();
 	int Ganar();
-	
+	void SetFinalLevel(int f) { finaldenivel = 1; }
 	
 	//ojo:
 
@@ -67,6 +67,7 @@ public:
 
 private:
 	// constantes para el salto
+	int finaldenivel;
 	int distancia=0;
 	int salto =0;
 	long tiempo;//
@@ -100,5 +101,5 @@ private:
 	float x_ojo;
 	float y_ojo;
 	float z_ojo;
-
+	ETSIDI::Sprite* avion;
 };
