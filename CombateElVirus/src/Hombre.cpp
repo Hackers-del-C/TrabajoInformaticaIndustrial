@@ -301,3 +301,4 @@ void Hombre::caida(int caida, int level) {
         vidas -= 1;
     }
 }
+

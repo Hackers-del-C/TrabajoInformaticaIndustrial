@@ -41,6 +41,7 @@ public:
     int GetVidas(){ return vidas; }
     int GetMonedas() { return monedas; }
     void FinPartida();
+    
     ETSIDI::Vector2D GetPos() { return posicion; }
     int GetPosX() { return posicion.x; }
     void SetAceleracion(float ax, float ay) {

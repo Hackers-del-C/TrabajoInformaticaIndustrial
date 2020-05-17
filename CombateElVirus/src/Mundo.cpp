@@ -101,10 +101,10 @@ void Mundo::fichero(int level) { //	Fichero para guardar el numero de tests y el
 	}
 	for (int m = 0; m < (k -1); m++) {
 	
-		fichero1 <<m+1 <<" " << lista[m].nombre << endl;
-		fichero1 << lista[1].texto1 << " " << lista[m].nivel << " " << endl;
-		fichero1 << lista[1].texto2 << " " << lista[m].test << " " << lista[1].texto3 << endl;
-		fichero1 << lista[1].texto4 << " " << lista[m].segundos << " " << lista[1].texto5 << endl << endl;
+		fichero1 << m+1 <<" " << lista[m].nombre << endl;
+		fichero1 << lista[0].texto1 << " " << lista[m].nivel << " " << endl;
+		fichero1 << lista[0].texto2 << " " << lista[m].test << " " << lista[0].texto3 << endl;
+		fichero1 << lista[0].texto4 << " " << lista[m].segundos << " " << lista[0].texto5 << endl << endl;
 	
 	
 	}
@@ -647,4 +647,6 @@ void Mundo::RecargarNivel(int level) { //REINICIAR
 	plataformas.DestruirContenido(plataformas.GetNumero());
 	InicializaFondo(level);
 }
+
+
 

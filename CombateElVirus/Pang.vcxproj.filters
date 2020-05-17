@@ -109,6 +109,9 @@
     <ClCompile Include="src\DisparoEspecial.cpp">
       <Filter>Archivos de código fuente\MUNDO\Disparos</Filter>
     </ClCompile>
+    <ClCompile Include="src\Billete.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\ETSIDI.h">
@@ -218,6 +221,9 @@
     </ClInclude>
     <ClInclude Include="src\DisparoEspecial.h">
       <Filter>Archivos de encabezado\MUNDO\Disparos</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Billete.h">
+      <Filter>Archivos de encabezado\MUNDO\Interacciones\BONUS</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

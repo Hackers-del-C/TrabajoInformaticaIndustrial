@@ -29,6 +29,9 @@
 #include "ListaExplosiones.h"
 #include "Explosiones.h"
 #include "DisparoEspecial.h"
+#include"Billete.h"
+
+
 
 class Mundo
 {
@@ -52,6 +55,7 @@ public:
 	void teclaEspecialsuelta(unsigned char key);
 	int Muerte();
 	int Ganar();
+	
 	
 	//ojo:
 
@@ -90,6 +94,7 @@ private:
 
 	ListaExplosiones listaexplosiones;
 	Explosiones exptest;
+	
 	
 	//ojo
 	float x_ojo;
