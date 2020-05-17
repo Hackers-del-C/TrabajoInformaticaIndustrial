@@ -397,6 +397,7 @@ void Mundo::Mueve(int level)
 
 	
 	listavirus.Colision(disparos, listaexplosiones);
+	listavirus.Colision(hombre);
 	plataformas.Colision(slime);
 	listaslime.Colision(limites);
 	listaslime.Colision(plataformas);
@@ -611,6 +612,7 @@ void Mundo::teclaEspecial(unsigned char key) {
 			break;
 		case GLUT_KEY_RIGHT:
 			hombre.SetVel(6, hombre.GetVel().y);
+
 			hombre.SetDir(1);
 			break;
 		case GLUT_KEY_DOWN:
@@ -663,6 +665,7 @@ void Mundo::RecargarNivel(int level) { //REINICIAR
 	disparos.DestruirContenido();
 	tiempo = clock(); //para el tiempo
 	plataformas.DestruirContenido(plataformas.GetNumero());
+	listavirus.destruirContenido();
 	InicializaFondo(level);
 }
 

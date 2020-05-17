@@ -1,6 +1,7 @@
 #pragma once
 #include "Vector2D.h"
 #include "ETSIDI.h"
+#include "string.h"
 //#include "ListaPlatafomas.h"
 //#include "Interaccion.h"
 class Hombre
@@ -35,12 +36,13 @@ public:
     void Dañar();
     void SetMonedas(int m) { monedas = m; }
     //direccion del muñeco
-    void SetDir(int d) { dir = d; }
+    void SetDir(int d);
     void SetPos(float x, float y) { posicion.x = x; posicion.y = y; }
     int GetDir(){return dir;}
     int GetVidas(){ return vidas; }
     int GetMonedas() { return monedas; }
     void FinPartida();
+    void SetSprite(int n);
     
     ETSIDI::Vector2D GetPos() { return posicion; }
     int GetPosX() { return posicion.x; }
@@ -56,7 +58,7 @@ public:
 
    ETSIDI::SpriteSequence* mario;
    ETSIDI::SpriteSequence* mariomuerte;
-   int mariorojo;
+   int mariorojo, test;
 
 
 };

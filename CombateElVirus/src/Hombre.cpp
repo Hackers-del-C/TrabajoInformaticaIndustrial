@@ -3,7 +3,8 @@
 #include "glut.h"
 #include <iostream>
 #include "Interaccion.h"
-
+#include "string.h"
+using namespace std;
 using namespace ETSIDI;
 using ETSIDI::getTexture;
 
@@ -40,9 +41,21 @@ void Hombre::Mueve(float t)
 
     mario->loop();
 
-    //if (mariorojo = 1 && mario->getState()>=6) {
-    ////    mariorojo = 0;
-    //}
+    if (test >= 1) { //Sirve como temporizador
+        test++;
+    }
+
+    if (test>50) {
+       mariorojo = 0;
+       if (dir == 2) {
+           mario = new SpriteSequence("imagenes/mario/marioandader.png", 7, 1, 35, true, 0, 0, 4, 4);
+           mario->flip(1, 0);
+       }
+       if (dir == 1) {
+           mario = new SpriteSequence("imagenes/mario/marioandader.png", 7, 1, 35, true, 0, 0, 4, 4);
+       }
+       test = 0;
+    }
 
 }
 
@@ -73,23 +86,28 @@ void Hombre::SetVel(float vx, float vy)
     altura = 4;
     altura = 4;
     //mariorojo = 1;
-    if (velocidad.x < 0) {
-      
-        if (mariorojo == 1) {
-           mario = new SpriteSequence("imagenes/mario/mariodano.png", 7, 1, 80, true, 0, 0, 4, 4);
-        }
-        else
-            mario = new SpriteSequence("imagenes/mario/marioandader.png", 7, 1, 25, true, 0, 0, 4, 4);
-        mario->flip(1, 0);
-    }
-    else if (velocidad.x > 0) {
-        if (mariorojo == 1) {
-            mario = new SpriteSequence("imagenes/mario/mariodano.png", 7, 1, 80, true, 0, 0, 4, 4);
-        }
-        else
-        mario = new SpriteSequence("imagenes/mario/marioandader.png", 7, 1, 25, true, 0, 0, 4, 4);
-    }
    
+   
+}
+
+void Hombre::SetDir(int n) {
+     dir = n; 
+
+    if (n == 1) {
+
+  
+        if (mariorojo == 0) {
+            mario = new SpriteSequence("imagenes/mario/marioandader.png", 7, 1, 35, true, 0, 0, 4, 4);
+        }
+    }
+    if (n == 2) {
+        if (mariorojo == 0) {
+            mario = new SpriteSequence("imagenes/mario/marioandader.png", 7, 1, 35, true, 0, 0, 4, 4);
+        }
+        mario->flip(1, 0);
+
+    }
+
 }
 
 
@@ -168,8 +186,28 @@ void Hombre::Setagachado(unsigned char key) {
 
 void Hombre::Dañar() {
 
-    mariorojo = 1;
-    SetVidas(GetVidas() - 1); 
+    if (mariorojo == 0) {
+        mariorojo = 1;
+        test = 1;
+        SetVidas(GetVidas() - 1);
+
+
+        if (dir == 1) {
+
+
+          
+                mario = new SpriteSequence("imagenes/mario/mariodano.png", 7, 1, 80, true, 0, 0, 4, 4);
+         
+
+        }
+        if (dir == 2) {
+        
+                mario = new SpriteSequence("imagenes/mario/mariodano.png", 7, 1, 80, true, 0, 0, 4, 4);
+         
+            mario->flip(1, 0);
+        }
+
+    }
 }
 
 void Hombre::caida(int caida, int level) {
