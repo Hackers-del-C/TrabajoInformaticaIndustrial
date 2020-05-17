@@ -163,6 +163,15 @@ void Mundo::InicializaFondo(int nivel) { //agregar cosas
 				plataformas.Eliminar(plataformas.ColisionSube(hombre));
 		}
 
+		//Añadimos Virus
+		//VirusSeta y virus slime
+		listavirus.agregar(new VirusSlime(35, -3, 9));
+		listavirus.agregar(new VirusSeta(94, -3, 7));
+		listavirus.agregar(new VirusSeta(122, -3, 5));
+		listavirus.agregar(new VirusSlime(122, -3, 7));
+		
+		listavirus.agregar(new VirusMosca(230, 15));
+
 		/*	float max;
 			for (int i = 0; i < 200; i++) {
 				if (plataformas[i]->GetPos().x <= hombre.GetPos().x) {
@@ -225,14 +234,14 @@ void Mundo::Inicializa(int level) {
 	//virus3.Inicializa(-10, 15);
 	limites.SetLimites(-20, 500, -10, 30); //Son los bordes del juego que el jugador no puede pasar	
 	vidas.Inicializa(hombre);
-	listavirus.agregar(new VirusMosca(-10, 15));
+	
 
-	for (int i = 0; i < 1; i++) {
+	/*for (int i = 0; i < 1; i++) {
 		listavirus.agregar(new VirusSeta(0, -3, 5));
 	}
 	for (int i = 0; i < 1; i++) {
 		listavirus.agregar(new VirusSlime(30 + 30 * i, -3));
-	}
+	}*/
 	for (int i = 0; i < 20; i++) {
 		listabonus.agregar(new BonusTest(lanzaDado(180), lanzaDado(6), 2, 2));
 	}
@@ -395,6 +404,15 @@ void Mundo::Mueve(int level)
 	listabonus.Colision(limites);
 	listabonus.Colision(plataformaprueba);
 	listabonus.colision(hombre);
+
+	//Disparos virus aleatorios
+
+	if (hombre.GetPos().x > 170) { //Podria ponerse mejor
+		if(lanzaDado(60)<2)
+		listavirus.Dispara(listaslime);
+	}
+
+
 
 	//Interaccion::Colision(bonus1, limites);
 	//Interaccion::Colision(slime, limites);
@@ -601,7 +619,7 @@ void Mundo::teclaEspecial(unsigned char key) {
 		case GLUT_KEY_UP:
 			if (salto == 1) {
 				hombre.SetVel(hombre.GetVel().x, +18);
-				listavirus.Dispara(listaslime);
+				
 				//virus3.dispara(listaslime);
 				//hombre.SetAceleracion(0.0, -20);
 				salto = 0;

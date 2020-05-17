@@ -44,17 +44,21 @@ void VirusMosca::Inicializa(float x, float y) {
 
 void VirusMosca::Seguir(Hombre h) {
 
-    if (h.posicion.x < posicion.x-10) {
-        velocidad.x = -3;
-        sprite->flip(0, 0);
+
+    if (h.GetPos().x > 190) {
+
+        if (h.posicion.x < posicion.x - 10) {
+            velocidad.x = -3;
+            sprite->flip(0, 0);
+
+        }
+        else if (h.posicion.x > posicion.x + 10) {
+            velocidad.x = +3;
+
+            sprite->flip(1, 0);
+        }
         
     }
-    else if (h.posicion.x > posicion.x+10) {
-        velocidad.x = +3;
-       
-        sprite->flip(1, 0);
-    }
-
 
 }
 

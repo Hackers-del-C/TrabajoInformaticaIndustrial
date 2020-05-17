@@ -16,7 +16,7 @@ void Coordinador::Inicializa() {
 	mundo.Setojo(0, 10, 53);
 
 		if (estado == JUEGO) {
-			
+			mundo.InicializaFondo(nivel); //Si algo va mal cambiar a dibuja
 			/*mundo.Inicializa(nivel);
 			mundo.RecargarNivel();*/ //RESETEA HOMBRE Y DESTRUYE ALGUNAS LISTAS 
 		}
@@ -41,7 +41,7 @@ void Coordinador::Dibuja() {
 	if (estado == JUEGO) {
 		mundo.Dibuja(nivel);
 		mundo.DibujaBasico();
-		mundo.InicializaFondo(nivel);
+		
 		entorno.DibujaJuego(nivel);
 		if (mundo.Muerte()) {
 			estado = MUERTE;

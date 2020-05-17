@@ -15,14 +15,17 @@ VirusSlime::VirusSlime() {
     altura = 0.4 * 3;
 }
 
-VirusSlime::VirusSlime(float x, float y) {
+VirusSlime::VirusSlime(float x, float y, float r) {
 
     vidas = 1;
     posicion.x = x;
     posicion.y = y;
+    velocidad.x = 2;
     anchura = 4;
     altura = 4;
-
+    posicionini.x = x;
+    posicionini.y = y;
+    recorrido = r;
     //Creacion de los objetos sprites
 
     sprite = new SpriteSequence("imagenes/enemigos/virusslimeanda.png", 8, 1, 80, true, 0, 0, 4, 4);
@@ -44,14 +47,15 @@ void VirusSlime::Inicializa(float x, float y) {
 
 void VirusSlime::Seguir(Hombre h) {
 
-    if (h.posicion.x + 5 < posicion.x) {
-        velocidad.x = -3;
+   
+    if (recorrido + posicionini.x < posicion.x) {
+        velocidad.x = -velocidad.x;
         sprite->flip(0, 0);
     }
-    if (h.posicion.x - 5 > posicion.x) {
-        velocidad.x = +3;
+    if (posicionini.x - recorrido > posicion.x) {
+        velocidad.x = -velocidad.x;
         sprite->flip(1, 0);
     }
-
+    //No sigue al hombre 
 
 }
