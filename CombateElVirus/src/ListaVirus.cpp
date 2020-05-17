@@ -79,19 +79,15 @@ void ListaVirus::eliminar(int index)
 		lista[i] = lista[i + 1];
 }
 
-//Virus* ListaVirus::colision(Hombre& h)
-//{
-//	for (int i = 0; i < numero; i++)
-//	{
-//		if (Interaccion::colision(*(lista[i]), h))
-//			return lista[i];
-//	}
-//	return 0; //no hay colisión
-//}
-
-
-
-
+void ListaVirus::Colision(Hombre& h)
+{
+	for (int i = 0; i < numero; i++)
+	{
+		if (Interaccion::Colision(h, *(lista[i]))) {
+			h.Dañar();
+		}		
+	}
+}
 
 
 void ListaVirus::eliminar(Virus* e)

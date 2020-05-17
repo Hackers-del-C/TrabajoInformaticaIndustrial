@@ -13,16 +13,19 @@ VirusSeta::VirusSeta() {
 
     anchura = 0.4 * 3;
     altura = 0.4 * 3;
+   
 }
 
-VirusSeta::VirusSeta(float x, float y) {
-
+VirusSeta::VirusSeta(float x, float y, float r) {
+    recorrido = r;
     vidas = 2;
     posicion.x = x;
     posicion.y = y;
-    anchura = 4;
-    altura = 4;
-
+    anchura = 3*0.4;
+    altura = 3*0.4;
+    velocidad = 4;
+    posicionini.x = x;
+    posicionini.y = y;
     //Creacion de los objetos sprites
 
     sprite = new SpriteSequence("imagenes/enemigos/virusseta.png", 8, 1, 40, true, 0, 0, 3, 3);
@@ -44,11 +47,13 @@ void VirusSeta::Inicializa(float x, float y) {
 
 void VirusSeta::Seguir(Hombre h) {
 
-    if (h.posicion.x + 5 < posicion.x) {
-        velocidad.x = -3;
+    //No sigue al hombre 
+
+    if (recorrido+posicionini.x < posicion.x) {
+        velocidad.x = -velocidad.x;
     }
-    if (h.posicion.x -5 > posicion.x) {
-        velocidad.x = +3;
+    if ( posicionini.x -recorrido> posicion.x) {
+        velocidad.x = -velocidad.x;
     }
 
 

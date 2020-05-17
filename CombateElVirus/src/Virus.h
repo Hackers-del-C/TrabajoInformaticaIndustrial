@@ -29,7 +29,7 @@ public:
     void SetVidas(int v);
     virtual void Seguir(Hombre h);
     int GetMuerto() { return muere; }
-    ETSIDI::Vector2D posicion, velocidad, aceleracion, vectormuerte;
+    ETSIDI::Vector2D posicion, velocidad, aceleracion, vectormuerte, posicionini;
     float anchura, altura;
     // ETSIDI::SpriteSequence* virusazul;
     ETSIDI::SpriteSequence* sprite;
@@ -40,6 +40,6 @@ public:
     // ETSIDI::SpriteSequence* virusrojo;
 protected:
     //Acciones
-    int muere, vidas;
+    int muere, vidas, recorrido;
  
 };

@@ -228,7 +228,7 @@ void Mundo::Inicializa(int level) {
 	listavirus.agregar(new VirusMosca(-10, 15));
 
 	for (int i = 0; i < 1; i++) {
-		listavirus.agregar(new VirusSeta(50 + 20 * i, -3));
+		listavirus.agregar(new VirusSeta(0, -3, 5));
 	}
 	for (int i = 0; i < 1; i++) {
 		listavirus.agregar(new VirusSlime(30 + 30 * i, -3));

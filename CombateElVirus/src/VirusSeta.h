@@ -5,7 +5,7 @@
 class VirusSeta : public Virus 
 {
     public:
-    VirusSeta(float x, float y);
+    VirusSeta(float x, float y, float recorrido);
     ~VirusSeta();
     void Inicializa(float x, float y);
     void Seguir(Hombre h);
