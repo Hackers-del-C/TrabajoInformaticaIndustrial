@@ -42,6 +42,10 @@ void Virus::Muere(){
         glutTimerFunc(2500,Muere, 0);*/    
 }
 
+bool Virus::Billete(){
+    return false;
+}
+
 int Virus::GetVidas() {
     return vidas;
 }

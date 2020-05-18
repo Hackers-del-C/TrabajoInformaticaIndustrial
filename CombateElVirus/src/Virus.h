@@ -21,6 +21,7 @@ public:
     void Mueve(float t);
     void SetVel(float x, float y);
     virtual void Muere();
+    virtual bool Billete();
     virtual void Dispara(ListaSlime& l); //Para la mosca
     void Ataca();
     void Anda();

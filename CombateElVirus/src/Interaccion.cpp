@@ -54,13 +54,9 @@ bool Interaccion::colision(Misil misil, Hombre h) {
         if (h.posicion.y + h.altura / 4 < misil.posicion.y - misil.altura / 2) { return false; }
         else {
             return true; 
-        }
-    
-
-   
+        } 
 
 }
-
 
 
 bool Interaccion::Colision(Disparo d, Virus &v) {
@@ -148,7 +144,7 @@ bool Interaccion::Colision(Slime& s, Limites l) {
 
 
 
-bool Interaccion::ColisionBonus(Hombre &h, Bonus  &b) { //Esto deberia ser bonusmascarillas
+bool Interaccion::ColisionBonus(Hombre &h, Bonus  &b) { 
 
    if (h.posicion.x - h.anchura / 2 > b.posicion.x + b.anchura / 2) { return false; }
     if (h.posicion.x + h.anchura / 2 < b.posicion.x - b.anchura / 2) { return false; }
@@ -176,6 +172,7 @@ bool Interaccion::Colision(Hombre h, Plataformas p) {
     }
 
 }
+
 bool Interaccion::ColisionSube(Hombre &h, Plataformas p) {
 
     //Crea un recatangulo en centro hombre, altura la altura del hombre y anchura la anchura del hombre.

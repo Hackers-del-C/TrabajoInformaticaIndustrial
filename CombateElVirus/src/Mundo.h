@@ -11,6 +11,7 @@
 #include "Bonus.h"
 #include "BonusTest.h"
 #include "BonusMascarilla.h"
+#include "Billete.h"
 #include "Llave.h"
 //LISTAS
 #include "ListaPlatafomas.h"
@@ -29,7 +30,7 @@
 #include "ListaExplosiones.h"
 #include "Explosiones.h"
 #include "DisparoEspecial.h"
-#include"Billete.h"
+
 
 
 

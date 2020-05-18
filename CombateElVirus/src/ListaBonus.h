@@ -27,6 +27,8 @@ public:
 
 	void Colision(Limites l);
 	void Colision(Plataformas p);
+	
+	friend class VirusMosca;
 
 protected:
 	Bonus* lista[BONUS];

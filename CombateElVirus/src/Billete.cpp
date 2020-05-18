@@ -12,7 +12,8 @@ Billete:: ~Billete() {
 
 
 }
-void Billete::mueve(float t) {
+
+void Billete::Mueve(float t) {
 
 	posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
 	velocidad = velocidad + aceleracion * t;
@@ -33,7 +34,7 @@ bool  Billete::colision(Hombre& h) {
 
 	return (Interaccion::ColisionBonus(h, *(this)));
 
-
-
 }
+
+
 

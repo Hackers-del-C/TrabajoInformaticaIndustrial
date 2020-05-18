@@ -1,6 +1,7 @@
 #pragma once
 #include "Virus.h"
 #include "ListaSlime.h"
+#include "ListaBonus.h"
 #include "ETSIDI.h"
 
 #pragma once
@@ -13,4 +14,8 @@ public:
     void Seguir(Hombre h);
     VirusMosca();
     void Dispara(ListaSlime &l);
+    void Muere();
+    bool Billete();
+private:
+    bool billete;
 };

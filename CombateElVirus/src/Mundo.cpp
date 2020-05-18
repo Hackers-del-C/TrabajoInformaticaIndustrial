@@ -5,6 +5,7 @@
 #include "Interaccion.h"
 #include "ListaDisparos.h"
 #include "ListaExplosiones.h"
+#include "ListaBonus.h"
 #include <math.h>
 #include "glut.h"
 #include <fstream>
@@ -317,6 +318,14 @@ void Mundo::Dibuja(int level) {
 
 			if (plataformas.ColisionSube(hombre) != 0 && plataformas.ColisionSube(hombre)->GetTipo() != plataformas.ColisionSube(hombre)->PLATAFORMA_CHOCA)
 				plataformas.Eliminar(plataformas.ColisionSube(hombre));
+		}
+
+		for (int i = 0; i < listavirus.getNumero(); i++) {
+			if ((listavirus[i]->Billete()) == 1) {
+			//	listabonus.agregar(new Billete(listavirus[i]->posicion.x), 25, 3, 3));
+				listabonus.agregar(new BonusMascarilla(hombre.GetPosX(), 25, 3, 3));
+			
+			}
 		}
 	}
 		

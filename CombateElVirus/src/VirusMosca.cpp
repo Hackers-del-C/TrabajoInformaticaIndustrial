@@ -13,6 +13,7 @@ VirusMosca::VirusMosca() {
 
     anchura = 0.4 * 3;
     altura = 0.4 * 3;
+    billete = 0;
 }
 
 VirusMosca::VirusMosca(float x, float y) {
@@ -22,6 +23,7 @@ VirusMosca::VirusMosca(float x, float y) {
     posicion.y = y;
     anchura = 4;
     altura = 4;
+    billete = 0;
 
     //Creacion de los objetos sprites
 
@@ -66,4 +68,12 @@ void VirusMosca::Dispara(ListaSlime &l) {
 
     l.agregar(new Slime(posicion.x, posicion.y));
 
+}
+
+void VirusMosca::Muere() {
+    billete = 1;
+}
+
+bool VirusMosca::Billete() {
+    return billete;
 }

@@ -14,11 +14,7 @@ public:
 	Billete();
 	virtual ~Billete();
 	Billete(int x, int y, int w, int h);
-	void mueve(float t);
+	void Mueve(float t);
 	bool colision(Hombre& h);
-	
-
-
-
 };
 
