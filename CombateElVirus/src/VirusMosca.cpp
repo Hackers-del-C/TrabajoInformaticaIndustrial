@@ -75,5 +75,6 @@ void VirusMosca::Muere() {
 }
 
 bool VirusMosca::Billete() {
-    return billete;
+
+    return 1;
 }

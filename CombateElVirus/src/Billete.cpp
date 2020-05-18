@@ -21,7 +21,6 @@ void Billete::Mueve(float t) {
 }
 
 Billete::Billete(int x, int y, int w, int h) {
-	velocidad.y = 5;
 	anchura = 0.5 * w;
 	altura = 0.5 * h;
 	bonus = new Sprite("imagenes/billeteavion.png", 0, 0, w, h);
