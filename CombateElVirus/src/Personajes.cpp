@@ -22,7 +22,7 @@ void Personajes::Dibuja(int nivel,Hombre h) {
 	//virus.Dibuja(nivel);
 	
 	amigo.Dibuja(h);
-	amigo.Mensajes();
+	amigo.Mensajes(nivel);
 }
 void Personajes::Mueve(float t ) {
 	//virus.Mueve(t, hombre);

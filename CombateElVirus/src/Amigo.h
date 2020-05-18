@@ -19,7 +19,7 @@ public:
 		aceleracion.x = ax;
 		//aceleracion.y = ay;
 	}
-	void Mensajes();
+	void Mensajes(int level);
 private:
 	int izqder;
 	AuxEtsidi auxetsidi;

@@ -25,7 +25,6 @@ public:
     void Ataca();
     void Anda();
     int GetVidas();
-
     void SetVidas(int v);
     virtual void Seguir(Hombre h);
     int GetMuerto() { return muere; }

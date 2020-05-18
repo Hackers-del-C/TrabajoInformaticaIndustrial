@@ -191,8 +191,7 @@ void Mundo::InicializaFondo(int nivel) { //agregar cosas
 			listabonus.agregar(new BonusTest(180, -2, 2, 2));
 			listabonus.agregar(new BonusTest(190, -2, 2, 2));
 			
-
-			listabonus.agregar(new Llave(210, 20, 2, 2));
+			
 	}
 	
 	else if (nivel == 2) {

@@ -74,15 +74,17 @@ void Amigo::Mueve(float t) {
     companion->loop();
 }
 
-void Amigo::Mensajes() {
-    
-    if (posicion.x <5) {
-        auxetsidi.Texto("Holaaaa!", posicion.x - 3, -1, 0, 0.1, 0.2, 8);        
-        
+void Amigo::Mensajes(int level) {
+
+    switch (level){
+    if (posicion.x < 5) {
+        auxetsidi.Texto("Holaaaa!", posicion.x - 3, -1, 0, 0.1, 0.2, 8);
+
    }
     else if (5 <= posicion.x && posicion.x < 26) {
         auxetsidi.Texto("Soy Pedro", posicion.x - 7, 0, 0, 0.1, 0.2, 8);
         auxetsidi.Texto("tu compañero de aventuras", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
-      
-    }   
+
+    }
+    }
 }

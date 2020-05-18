@@ -133,6 +133,7 @@ void Entorno::Aviso(int pantalla, int x, int y) {
 		auxetsidi.Texto("CONGRATULATIONS BRO", x-3, y + 18, 1, 0, 0, 10);
 		auxetsidi.Texto("8 SIGUIENTE NIVEL", x - 8, y + 16, 1, 1, 1, 8);
 		auxetsidi.Texto("7 MENU PRINCIPAL", x - 8, y + 13, 1, 1, 1, 8);
+		break;
 	case 3:
 			auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, 0, 15);
 			//TEXTO
