@@ -15,7 +15,7 @@ public:
 	void Inicializa();
 	/*void Explota();*/
 	void Eliminar(Lanzamisiles* m);
-	
+	int GetNumero() { return lista.size(); }
 
 private:
 	std::vector<Lanzamisiles*>lista;

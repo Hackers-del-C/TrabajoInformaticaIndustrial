@@ -16,7 +16,7 @@ void Coordinador::Inicializa() {
 	mundo.Setojo(0, 10, 53);
 
 		if (estado == JUEGO) {
-			mundo.InicializaFondo(nivel); //Si algo va mal cambiar a dibuja
+		//	mundo.InicializaFondo(nivel); //Si algo va mal cambiar a dibuja
 			/*mundo.Inicializa(nivel);
 			mundo.RecargarNivel();*/ //RESETEA HOMBRE Y DESTRUYE ALGUNAS LISTAS 
 		}
@@ -53,6 +53,7 @@ void Coordinador::Dibuja() {
 	}
 	else if (estado == MENU) {
 		entorno.DibujaMenu(xmouse, ymouse);
+		mundo.RecargarNivel(nivel);
 	
 	}
 	else if(estado==MUERTE){

@@ -156,7 +156,7 @@ void Mundo::InicializaFondo(int nivel) { //agregar cosas
 
 		////caen
 
-
+		listabonus.agregar(new Llave(210, 20, 2, 2));
 
 		//Añadimos Virus
 		//VirusSeta y virus slime
@@ -198,26 +198,46 @@ void Mundo::InicializaFondo(int nivel) { //agregar cosas
 	else if (nivel == 2) {
 
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 0, 10, 4, 1.5,-15,15));
+
 		for (int y = -6; y < 6; y++) {
-			
-				plataformas.Agregar(new Plataformas(Plataformas::SUELO, j * y, -5.5, 5, 1.5));
-			
+			plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, j * y, -5.5, 5, 1.5));
+
 		}
 
-		for (int x = 0; x < 20; x++) {
+		for (int x = 6; x < 50; x++) {
 			if (x%2) {
-				plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, -5,2*x , 4, 1.5));
-				plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 5, 2*x , 4, 1.5));
+				plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 5 * x, -5.5,5, 1.5));
+				plataformas.Agregar(new Plataformas(Plataformas::SUELO, 5*x+5, -5.5 , 5, 1.5));
 			}
 		}
-		for (int y = 0; y < 20; y++) {
+		/*for (int y = 6; y < 20; y++) {
 			if (y % 2) {
 				plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 0, 2 * y+2, 4, 1.5));
 				
+			}*/
+	}
+	
+	else if (nivel == 3) {
+
+		for (int y = -6; y < 6; y++) {
+			plataformas.Agregar(new Plataformas(Plataformas::SUELO, j * y, -5.5, 5, 1.5));
+			
+		}
+		for (int x = 1; x < 4; x++) {
+			if (x % 2) {
+				plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, -12, 5 * x, 4, 1.5));
+				plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA,12, 5 * x, 4, 1.5));
 			}
 		}
-	}
-	else if (nivel == 3) {
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 0,  3, 4, 1.5));
+		for (int y = 1; y < 4; y++) {
+			if (y % 2) {
+				plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 0, 3 * y + 3, 4, 1.5));
+
+			}
+	
+		}
+
 
 	}
 	
@@ -320,6 +340,8 @@ void Mundo::Dibuja(int level) {
 				plataformas.Eliminar(plataformas.ColisionSube(hombre));
 		}
 
+
+
 		/*for (int i = 0; i < listavirus.getNumero(); i++) {
 			if ((listavirus[i]->Billete()) == 1) {
 				listabonus.agregar(new Billete((listavirus[i]->posicion.x), 25, 3, 3));
@@ -327,12 +349,16 @@ void Mundo::Dibuja(int level) {
 			}
 		}*/
 	}
-		
+	if (level == 2) {
+		if (plataformas.ColisionSube(hombre) != 0 && plataformas.ColisionSube(hombre)->GetTipo() == plataformas.ColisionSube(hombre)->SUELO)
+			plataformas.Eliminar(plataformas.ColisionSube(hombre));
+	}
 }
 
 int Mundo::Muerte() { 
 	//fin de partida :muerte
 	if (hombre.GetVidas() > 0) {
+		
 		return 0;
 	}
 	else {
@@ -538,9 +564,6 @@ void Mundo::Mueve(int level)
 	misiles.limpiar();
 
 }
-
-
-
 void Mundo::Tecla(unsigned char key)
 {
 	
@@ -646,8 +669,6 @@ void Mundo::teclaEspecial(unsigned char key) {
 		}
 	}
 
-
-
 void Mundo::teclaEspecialsuelta(unsigned char key) {
 
 
@@ -677,6 +698,7 @@ void Mundo::RecargarNivel(int level) { //REINICIAR
 	plataformas.DestruirContenido(plataformas.GetNumero());
 	listavirus.destruirContenido();
 	InicializaFondo(level);
+	listalanzamisiles.DestruirContenido(listalanzamisiles.GetNumero());
 }
 
 
