@@ -115,6 +115,9 @@
     <ClCompile Include="src\Llave.cpp">
       <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
     </ClCompile>
+    <ClCompile Include="src\Municion.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\ETSIDI.h">
@@ -229,6 +232,9 @@
       <Filter>Archivos de encabezado\MUNDO\Interacciones\BONUS</Filter>
     </ClInclude>
     <ClInclude Include="src\Llave.h">
+      <Filter>Archivos de encabezado\MUNDO\Interacciones\BONUS</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Municion.h">
       <Filter>Archivos de encabezado\MUNDO\Interacciones\BONUS</Filter>
     </ClInclude>
   </ItemGroup>

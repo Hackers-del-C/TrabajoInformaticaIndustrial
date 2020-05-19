@@ -109,6 +109,7 @@
     <ClCompile Include="src\Misil.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\CombateElVirus.cpp" />
+    <ClCompile Include="src\Municion.cpp" />
     <ClCompile Include="src\Pared.cpp" />
     <ClCompile Include="src\Bonus.cpp" />
     <ClCompile Include="src\Personajes.cpp" />
@@ -150,6 +151,7 @@
     <ClInclude Include="src\Llave.h" />
     <ClInclude Include="src\Misil.h" />
     <ClInclude Include="src\Mundo.h" />
+    <ClInclude Include="src\Municion.h" />
     <ClInclude Include="src\Pared.h" />
     <ClInclude Include="src\Personajes.h" />
     <ClInclude Include="src\Plataformas.h" />

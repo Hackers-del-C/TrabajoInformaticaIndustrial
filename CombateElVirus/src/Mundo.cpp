@@ -156,6 +156,7 @@ void Mundo::InicializaFondo(int nivel) { //agregar cosas
 
 		////caen
 
+
 		listabonus.agregar(new Llave(210, 20, 2, 2));
 
 		//Añadimos Virus
@@ -331,6 +332,10 @@ void Mundo::Dibuja(int level) {
 		if (naleatorio < 1) {
 
 			listabonus.agregar(new BonusMascarilla(hombre.GetPosX() + naleatorio * 10, 25, 1.5, 1.5));
+		}
+		if (naleatorio < 4) {
+			listabonus.agregar(new Municion(hombre.GetPosX() + naleatorio * 8, 25, 2, 2));
+
 		}
 		if (hombre.GetPos().x > 90 && hombre.GetPos().x < 100) {
 			/*if (plataformas.ColisionSube(hombre) != 0) {
@@ -577,23 +582,42 @@ void Mundo::Tecla(unsigned char key)
 
 		break;
 	case 'w':
-		disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, 22.0f));
-
+		if (hombre.Poderdisparar()) {
+			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, 22.0f));
+			
+		}
 		break;
+		
 	case 's':
-
-		disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, -22.0f)); /// radio, x , y, vx, vy			
+		if (hombre.Poderdisparar()) {
+			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 0.0f, -22.0f)); /// radio, x , y, vx, vy				
+			
+		}
 		break;
+		
 
 	case 'a':
-		disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, -22.0f, 0.0f));
+
+		if (hombre.Poderdisparar()) {
+			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, -22.0f, 0.0f));
+			
+		}
 		break;
 
+		
+
 	case 'd':
-		disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 22.0f, 0.0f));
+		if (hombre.Poderdisparar()) {
+			disparos.Agregar(new Disparo(0.5, hombre.posicion.x, hombre.posicion.y, 22.0f, 0.0f));
+
+		}
 		break;
+		
 	case 'f':
-		disparos.Agregar(new DisparoEspecial(0.5, hombre.posicion.x, hombre.posicion.y, 22.0f, 0.0f));
+		if (hombre.Poderdispararespecial()) {
+			disparos.Agregar(new DisparoEspecial(0.5, hombre.posicion.x, hombre.posicion.y, 22.0f, 0.0f));
+			
+		}
 		break;
 
 	case 'j':

@@ -19,6 +19,7 @@ Hombre::Hombre() {
     monedas = 0;
     agachado = 0;
     finnivel = 0;
+    municion = 5;
 }
 
 Hombre::~Hombre() {
@@ -339,5 +340,30 @@ void Hombre::caida(int caida, int level) {
         }
         vidas -= 1;
     }
+}
+
+bool Hombre::Poderdisparar() {
+
+    if (municion > 0) {
+        municion--;
+        return true;
+    }
+    
+        return false;
+
+}
+
+bool Hombre::Poderdispararespecial() {
+
+    if (municion > 2) {
+
+        municion -= 2;
+        return true;
+    }
+    
+
+    return false;
+
+
 }
 

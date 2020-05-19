@@ -13,6 +13,7 @@ class Hombre
     bool agachado;
     int control;
     int finnivel;
+    int municion;
 public:
 
 
@@ -36,12 +37,16 @@ public:
     void SetVidas(int v) { vidas = v; }
     void Dañar();
     void SetMonedas(int m) { monedas = m; }
+    void SetMunicion(int m) { municion = m ; }
+    bool Poderdisparar();
+    bool Poderdispararespecial();
     //direccion del muñeco
     void SetDir(int d);
     void SetPos(float x, float y) { posicion.x = x; posicion.y = y; }
     int GetDir(){return dir;}
     int GetVidas(){ return vidas; }
     int GetMonedas() { return monedas; }
+    int GetMunicion() { return municion; }
     void FinPartida();
     void SetSprite(int n);
     void SetFinNivel(int n) { finnivel = n; }

@@ -25,7 +25,7 @@ void BonusMascarilla::Inicializa(int x, int y, int w, int h) {
 	altura = 0.4 * h;
 	posicion.x = x;
 	posicion.y = y;
-	bonus = new Sprite("imagenes/mascarilla.png", 0, 0, w, h);
+	bonus = new Sprite("imagenes/municion.png", 0, 0, w, h);
 }
 
 void BonusMascarilla::Mueve(float t) {
