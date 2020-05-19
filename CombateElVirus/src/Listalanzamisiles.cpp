@@ -11,22 +11,23 @@ ListaLanzamisiles::~ListaLanzamisiles() {
 
 bool ListaLanzamisiles::Agregar(Lanzamisiles* d) {
 	if (numero < NUM_MAX_lanzamisiles) {
+
 		for (int i = 0; i < numero; i++) {
 			if (lista[i] == d) {
 				return false;
+
 			}
+
 		}
-		lista[numero] = d;
-		//bordessube.Agregar(new BordesSube(listarelleno[numero].limite1.x));
-		numero++; // algo para que no se guarden dos sobre lamisma memoria
+
+		lista[numero++] = d;
 		return true;
 	}
-	else
-
-		//misiles.Agregar(new Misil("imagenes/misilizq.png", 15, -3.0f, -5.0f, 0.0f));
+	else {
 		return false;
+	}
 }
-void ListaLanzamisiles::DestruirContenido(int ind) {
+void ListaLanzamisiles::DestruirContenido() {
 	for (int i = 0; i < numero; i++) {
 		delete lista[i];
 

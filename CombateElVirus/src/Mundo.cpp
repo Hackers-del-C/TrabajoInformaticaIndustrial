@@ -225,7 +225,7 @@ void Mundo::InicializaFondo(int nivel) { //agregar cosas
 	}
 	
 	else if (nivel == 3) {
-
+	listalanzamisiles.DestruirContenido();
 	for (int y = -2; y < 15; y++) {
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 25, y * 1.5, 5, 1.5));
 
@@ -390,7 +390,7 @@ int Mundo::Muerte() {
 		return 0;
 	}
 	else {
-		listalanzamisiles.DestruirContenido(2);
+
 		return 1;
 		
 		
@@ -407,7 +407,6 @@ int Mundo::Ganar() {//tiene problemas
 			//musica de ganador va aqui
 		}
 		else {
-			listalanzamisiles.DestruirContenido(listalanzamisiles.GetNumero());
 			return 1;
 
 
@@ -750,7 +749,7 @@ void Mundo::RecargarNivel(int level) { //REINICIAR
 	listavirus.destruirContenido();
 	InicializaFondo(level);
 	misiles.DestruirContenido(misiles.GetNumero());
-	listalanzamisiles.DestruirContenido(listalanzamisiles.GetNumero());
+	//listalanzamisiles.DestruirContenido(); ---lo mata antes de tiempo
 }
 
 

@@ -9,7 +9,7 @@ public:
 	~ListaLanzamisiles();
 
 	bool Agregar(Lanzamisiles* d);
-	void DestruirContenido(int ind);
+	void DestruirContenido();
 	//void Mueve(float t);
 	void Dibuja();
 	void Inicializa();
