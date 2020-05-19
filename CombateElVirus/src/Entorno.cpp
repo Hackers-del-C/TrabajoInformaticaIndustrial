@@ -5,24 +5,23 @@ void Entorno::Musica(int nivel) {
 	//MUSICA
 	switch (nivel) {
 	case 0:
-		stopMusica();
-		ETSIDI::play("mis_sonidos/menu.wav");
+		ETSIDI::playMusica("mis_sonidos/menu.wav",false);
 		
 		break;
 	case 1:
 		stopMusica();
-		ETSIDI::play("mis_sonidos/China.wav");
-		nivel = 4;
+		ETSIDI::playMusica("mis_sonidos/China.wav",false);
+		
 		break;
 	case 2:
 		stopMusica();
-		ETSIDI::play("mis_sonidos/Italia.wav");
-		nivel = 4;
+		ETSIDI::playMusica("mis_sonidos/Italia.wav",false);
+		
 		break;
 	case 3:
 		stopMusica();
-		ETSIDI::play("mis_sonidos/Espania.wav");
-		nivel = 4;
+		ETSIDI::playMusica("mis_sonidos/Espania.wav",false);
+		
 		break;		
 	}	
 }

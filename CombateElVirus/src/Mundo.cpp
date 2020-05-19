@@ -751,7 +751,6 @@ void Mundo::RecargarNivel(int level) { //REINICIAR
 	misiles.DestruirContenido(misiles.GetNumero());
 	//listalanzamisiles.DestruirContenido(); ---lo mata antes de tiempo
 	
-
 }
 
 

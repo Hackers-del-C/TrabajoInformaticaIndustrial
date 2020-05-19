@@ -21,6 +21,7 @@ public:
 	void SetLevel(int level) {  nivel=level; }
 	int Getlevel() { return nivel; }
 private:
+	int aux;//para resetear la musica
 	int nivel;
 	Mundo mundo;
 	Entorno entorno;

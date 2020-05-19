@@ -26,6 +26,9 @@ void Coordinador::Inicializa() {
 		else if (estado == GANAR) {
 			entorno.Fin(GANAR);
 		}
+		else if (estado == MENU) {
+			aux = 1;
+		}
 }
 void Coordinador::Mueve() {
 	if (estado == JUEGO ) { 
@@ -39,11 +42,14 @@ void Coordinador::Dibuja() {
 	mundo.InicioDibuja(); //ES EL OJO 
 	
 	if (estado == JUEGO) {
+		
 		entorno.DibujaJuego(nivel);
 		mundo.Dibuja(nivel);
 		mundo.DibujaBasico();
-		
-	
+		//MUSICA:
+		if (aux == 1) {
+			entorno.Musica(nivel); aux = 0;
+		}
 		if (mundo.Muerte()) {
 			estado = MUERTE;
 			int a = 0;
@@ -60,6 +66,9 @@ void Coordinador::Dibuja() {
 		entorno.DibujaMenu(xmouse, ymouse);
 		mundo.RecargarNivel(nivel);
 	
+		if (aux == 1) {
+			entorno.Musica(0); aux = 0;
+		}
 	}
 	else if(estado==MUERTE){
 
@@ -97,11 +106,13 @@ void Coordinador::tecla(unsigned char key) {
 		case '7': //VOLVER AL MENU PRINCIPAL
 			estado = MENU;
 			mundo.RecargarNivel(nivel);
+			aux = 1;
 			nivel = 0;
 			break;
 		case '8': //REINICIAR EL NIVEL
 			estado = JUEGO;
 			mundo.RecargarNivel(nivel);
+			aux = 1;
 			break;
 		}
 	}
@@ -110,12 +121,14 @@ void Coordinador::tecla(unsigned char key) {
 		case '7':
 			estado = MENU;
 			mundo.RecargarNivel(nivel);
+			aux = 1;
 			nivel = 0;
 			break;
 		case '8':
 			estado = JUEGO;
 			nivel += 1;
 			mundo.RecargarNivel(nivel);
+			aux = 1;
 			break;
 		}				
 	}
@@ -148,16 +161,20 @@ void Coordinador::ClickMouse(int b, int state) {
 				nivel = 1;
 				estado = JUEGO;
 				mundo.RecargarNivel(nivel);
+				aux= 1;
+				
 			}
 			else if (ymouse > 9.5 && ymouse <= 11.5) {
 				nivel = 2;
 				estado = JUEGO;
 				mundo.RecargarNivel(nivel);
+				aux = 1;
 			}
 			else if (ymouse > 8 && ymouse <= 9.5) {
 				nivel = 3;
 				estado = JUEGO;
 				mundo.RecargarNivel(nivel);
+				aux = 1;
 			}
 		}
 	}
