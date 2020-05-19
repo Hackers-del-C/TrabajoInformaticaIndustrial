@@ -17,5 +17,6 @@ public:
 	ETSIDI::Sprite* vida4;
 	ETSIDI::Sprite* vida5;
 	ETSIDI::Sprite* monedas;
+	ETSIDI::Sprite* municion;
 	AuxEtsidi auxetsidi;
 };

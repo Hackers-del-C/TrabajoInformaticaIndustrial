@@ -12,11 +12,13 @@ void Vidas::Inicializa(Hombre h) {
     vida4 = new Sprite("imagenes/mascarilla.png", h.posicion.x + 20,20, 2, 2);
     vida5 = new Sprite("imagenes/mascarilla.png", h.posicion.x + 23, 20, 2, 2);
     monedas= new Sprite("imagenes/test.png", h.posicion.x -20, 20.5, 2, 2);
+    municion = new Sprite("imagenes/municion.png", h.posicion.x - 20, 17.5, 2, 2);
 }
 void Vidas::Dibuja(Hombre& h, int vidas) {
 
     glTranslatef(posicion.x, posicion.y, 0);
     this->monedas->draw();
+    this->municion->draw();
    switch (vidas) {
     case 1:
         vida1->draw();
