@@ -39,10 +39,11 @@ void Coordinador::Dibuja() {
 	mundo.InicioDibuja(); //ES EL OJO 
 	
 	if (estado == JUEGO) {
+		entorno.DibujaJuego(nivel);
 		mundo.Dibuja(nivel);
 		mundo.DibujaBasico();
 		
-		entorno.DibujaJuego(nivel);
+	
 		if (mundo.Muerte()) {
 			estado = MUERTE;
 			//mundo.fichero(nivel); 
