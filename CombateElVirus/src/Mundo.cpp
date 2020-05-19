@@ -152,7 +152,11 @@ void Mundo::InicializaFondo(int nivel) { //agregar cosas
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 140, 2, 4, 1.5));
 
 		///moviles
-		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 140, 10, 3, 1.5, 140, 200));
+		//plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 140, 10, 3, 1.5, 140, 200));
+
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 140, 10, 3, 1.5, 140, 160));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 180, 6, 3, 1.5, 160, 180));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 180, 12, 3, 1.5, 180, 200));
 
 		////caen
 
@@ -193,6 +197,8 @@ void Mundo::InicializaFondo(int nivel) { //agregar cosas
 			listabonus.agregar(new BonusTest(180, -2, 2, 2));
 			listabonus.agregar(new BonusTest(190, -2, 2, 2));
 			
+
+
 			
 	}
 	
@@ -220,24 +226,41 @@ void Mundo::InicializaFondo(int nivel) { //agregar cosas
 	
 	else if (nivel == 3) {
 
+	for (int y = -2; y < 15; y++) {
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 25, y * 1.5, 5, 1.5));
+
+	}
 		for (int y = -6; y < 6; y++) {
 			plataformas.Agregar(new Plataformas(Plataformas::SUELO, j * y, -5.5, 5, 1.5));
 			
 		}
-		for (int x = 1; x < 4; x++) {
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 30,22.5, 3, 1.5, 30, 40));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 55, 6, 3, 1.5, 45, 55));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 60, 12, 3, 1.5, 60, 70));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 85, 10, 3, 1.5, 75, 85));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 90, 6, 3, 1.5, 90, 100));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 115, 12, 3, 1.5, 105, 115));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 120, 10, 3, 1.5, 120, 130));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 180, 6, 3, 1.5, 160, 180));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 180, 12, 3, 1.5, 180, 200));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 140, 10, 3, 1.5, 140, 160));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 180, 6, 3, 1.5, 160, 180));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 180, 12, 3, 1.5, 180, 200));
+
+		/*for (int x = 1; x < 4; x++) {
 			if (x % 2) {
 				plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, -12, 5 * x, 4, 1.5));
 				plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA,12, 5 * x, 4, 1.5));
 			}
-		}
-		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 0,  3, 4, 1.5));
+		}*/
+		/*plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 0,  3, 4, 1.5));
 		for (int y = 1; y < 4; y++) {
 			if (y % 2) {
 				plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 0, 3 * y + 3, 4, 1.5));
 
 			}
 	
-		}
+		}*/
 
 
 	}
@@ -367,6 +390,7 @@ int Mundo::Muerte() {
 		return 0;
 	}
 	else {
+		listalanzamisiles.DestruirContenido(2);
 		return 1;
 		
 		
@@ -375,13 +399,15 @@ int Mundo::Muerte() {
 }
 int Mundo::Ganar() {//tiene problemas
 	//FIN DE PARTIRA: Ganador
+	
 	if (hombre.GetFinNivel() == 1) {
 		if (hombre.posicion.x < 225) {//HABRÁ QUE AMPLIARLO
-
+			
 			return 0;
 			//musica de ganador va aqui
 		}
 		else {
+			listalanzamisiles.DestruirContenido(listalanzamisiles.GetNumero());
 			return 1;
 
 
@@ -509,15 +535,16 @@ void Mundo::Mueve(int level)
 	*/
 	//////////
 
+	if (plataformas.ColisionChoca(hombre) != 0) {
+		hombre.SetVel(hombre.GetVel().x, -10.0);
+
+	}
 
 	if (plataformas.ColisionSube(hombre) != 0) {
 		hombre.SetVel(hombre.GetVel().x, 0.0);
 		salto = 1;
 	}
-	if (plataformas.ColisionChoca(hombre) != 0) {
-		hombre.SetVel(hombre.GetVel().x, -10.0);
 
-	}
 	if (plataformas.ColisionChocaLado(hombre) != 0) {
 		hombre.SetVel(hombre.GetVel().x, -10.0);
 	}
