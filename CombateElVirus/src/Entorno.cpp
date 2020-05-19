@@ -1,25 +1,28 @@
 #include "Entorno.h"
 #include "glut.h"
 #include "ETSIDI.h"
-void Entorno::Inicializa(int nivel) {
+void Entorno::Musica(int nivel) {
 	//MUSICA
 	switch (nivel) {
 	case 0:
 		stopMusica();
-	//	ETSIDI::play("mis_sonidos/menu.wav");
+		ETSIDI::play("mis_sonidos/menu.wav");
 		
 		break;
 	case 1:
 		stopMusica();
 		ETSIDI::play("mis_sonidos/China.wav");
+		nivel = 4;
 		break;
 	case 2:
 		stopMusica();
 		ETSIDI::play("mis_sonidos/Italia.wav");
+		nivel = 4;
 		break;
 	case 3:
 		stopMusica();
 		ETSIDI::play("mis_sonidos/Espania.wav");
+		nivel = 4;
 		break;		
 	}	
 }
@@ -29,9 +32,11 @@ void Entorno::Fin(int pantalla) {
 		//MUSICA 
 		stopMusica();
 		ETSIDI::play("mis_sonidos/Muerte.wav");
+		break;
 	case 2:
 		stopMusica();
 		ETSIDI::play("mis_sonidos/Ganador.wav");
+		break;
 	}
 }
 void Entorno::DibujaMenu(int xraton, int yraton) {

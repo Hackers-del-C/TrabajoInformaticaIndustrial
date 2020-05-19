@@ -11,7 +11,7 @@ Coordinador::~Coordinador() {
 
 }
 void Coordinador::Inicializa() {
-	entorno.Inicializa(nivel);
+	//entorno.Musica(nivel);
 	mundo.Inicializa(nivel);
 	mundo.Setojo(0, 10, 53);
 
@@ -46,10 +46,14 @@ void Coordinador::Dibuja() {
 	
 		if (mundo.Muerte()) {
 			estado = MUERTE;
+			int a = 0;
+			if (a == 0) { entorno.Fin(1); a = 1; } //para que no entre bucle y se reproduzca una vez
 			//mundo.fichero(nivel); 
 		}
 		else if (mundo.Ganar()) {
-			estado = GANAR;			
+			estado = GANAR;		
+			int b = 0;
+			if (b == 0) { entorno.Fin(2); b = 1; }//para que no entre bucle y se reproduzca una vez
 		}
 	}
 	else if (estado == MENU) {
@@ -164,3 +168,4 @@ void Coordinador::MyMouse(int x, int y) {
 	xmouse = (x - 400) / 13, 3; //coordinar con la x de nuestra pantalla
 	ymouse = -(y - 455) / 17.5 + 1; //coordinar con la y de niestra pantalla
 }
+

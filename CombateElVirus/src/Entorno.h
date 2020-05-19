@@ -9,7 +9,7 @@ using ETSIDI::play;
 class Entorno {
 public:
 	
-	void Inicializa(int nivel);
+	void Musica(int nivel);
 	void DibujaMenu(int xraton, int yraton);
 	void DibujaJuego(int nivel);
 	void Fin(int pantalla);
