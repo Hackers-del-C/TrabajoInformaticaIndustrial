@@ -720,8 +720,6 @@ void Mundo::teclaEspecial(unsigned char key) {
 	}
 
 void Mundo::teclaEspecialsuelta(unsigned char key) {
-
-
 	switch (key)
 	{
 	case GLUT_KEY_LEFT:
@@ -731,12 +729,8 @@ void Mundo::teclaEspecialsuelta(unsigned char key) {
 		hombre.Stop();
 		break;
 	case GLUT_KEY_UP:
-
-
 		break;
 	}
-
-
 }
 
 

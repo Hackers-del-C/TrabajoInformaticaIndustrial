@@ -10,7 +10,7 @@ class Entorno {
 public:
 	
 	void Musica(int nivel);
-	void DibujaMenu(int xraton, int yraton);
+	void DibujaMenu(int xraton, int yraton,int aux);
 	void DibujaJuego(int nivel);
 	void Fin(int pantalla);
 	void Aviso(int pantalla, int x, int y);

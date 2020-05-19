@@ -63,7 +63,7 @@ void Coordinador::Dibuja() {
 		}
 	}
 	else if (estado == MENU) {
-		entorno.DibujaMenu(xmouse, ymouse);
+		entorno.DibujaMenu(xmouse, ymouse,aux2);
 		mundo.RecargarNivel(nivel);
 	
 		if (aux == 1) {
@@ -138,6 +138,33 @@ void Coordinador::tecla(unsigned char key) {
 			estado = JUEGO;
 		}
 	}
+	else if (estado == MENU) {
+		if (key == ' ') {
+			switch (aux2) {
+			case 0:
+				break;
+			case 1:
+				estado = JUEGO;
+				nivel = 1;
+				mundo.RecargarNivel(nivel);
+				aux = 1;
+				break;
+			case 2:
+				estado = JUEGO;
+				nivel = 2;
+				mundo.RecargarNivel(nivel);
+				aux = 1;
+				break;
+			case 3:
+				estado = JUEGO;
+				nivel = 3;
+				mundo.RecargarNivel(nivel);
+				aux = 1;
+				break;
+			}
+		}
+	}
+
 	/*else if (mundo.Tecla(key)==0) {
 		estado = MENU;
 	}*/
@@ -145,6 +172,44 @@ void Coordinador::tecla(unsigned char key) {
 void Coordinador::teclaEspecial(unsigned char key) {
 	if(estado==JUEGO)
 		mundo.teclaEspecial(key);
+	else if (estado == MENU) { //PARA ELEGIR NIVEL. AUX=LEVEL PERO SOLO PARA COLOREARLO
+		switch (key) {
+		case GLUT_KEY_DOWN:
+			
+			switch (aux2) { 
+			case 0:
+				aux2 = 3;
+				break;
+			case 1:
+				aux2 = 2;
+				break;
+			case 2:
+				aux2 = 3;
+				break;
+			case 3:
+				aux2 = 3;
+			}
+			break;
+		
+		case GLUT_KEY_UP:
+
+			switch (aux2) {
+			case 0:
+				aux2 = 1;
+				break;
+			case 1:
+				aux2 = 1;
+				break;
+			case 2:
+				aux2 = 1;
+				break;
+			case 3:
+				aux2 = 2;
+			}
+			break;
+		
+		}
+		}
 }
 void Coordinador::teclaEspecialsuelta(unsigned char key) {
 	if (estado == JUEGO)

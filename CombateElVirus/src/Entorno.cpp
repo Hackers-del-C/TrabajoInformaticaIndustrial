@@ -38,20 +38,20 @@ void Entorno::Fin(int pantalla) {
 		break;
 	}
 }
-void Entorno::DibujaMenu(int xraton, int yraton) {
+void Entorno::DibujaMenu(int xraton, int yraton,int aux) {
 	//IMAGENES
 	auxetsidi.Imagen("menu", -26, 26, -10, 30); //limx1 limx2 limy1 limy2. La textura es cte -0.1		
-	if (yraton > 11 && yraton < 13) {
+	if ((yraton > 11 && yraton < 13)|| aux==1) {
 		gl1 = 1;
 		gl2 = 0;
 		gl3 = 0;
 	}
-	else if (yraton > 9 && yraton <= 11) {
+	else if ((yraton > 9 && yraton <= 11)|| aux == 2) {
 		gl1 = 0;
 		gl2 = 1;
 		gl3 = 0;
 	}
-	else if (yraton > 7 && yraton <= 9) {
+	else if ((yraton > 7 && yraton <= 9)|| aux == 3) {
 		gl1 = 0;
 		gl2 = 0;
 		gl3 = 1;
@@ -125,25 +125,25 @@ void Entorno::Aviso(int pantalla, int x, int y) {
 	
 	switch(pantalla){
 	case 1: //pantalla si mueres
-		auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, y + 5, y + 20);
-		auxetsidi.Texto("F", x , y + 17, 1, 0, 0, 10);
-		auxetsidi.Texto("8 REINICIAR EL NIVEL", x-6, y+16, 1, rd1, rd1, 11); //obv habrá que hacerlo con otras teclas u otra cosa
-		auxetsidi.Texto("7 MENU PRINCIPAL", x-6,y+15, 1, rd2, rd2, 11);		
+		auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, 2, 17);
+		auxetsidi.Texto("F Perdiste...",  x - 5.5, 13, 0.44, 0.87, 0.45, 20);
+		auxetsidi.Texto("Pulsa 8  para REINICIAR EL NIVEL", x - 10, 9, 1, 1, 1, 12); //obv habrá que hacerlo con otras teclas u otra cosa
+		auxetsidi.Texto("Pulsa 7 ir al MENU PRINCIPAL", x - 10, 7, 1, 1, 1, 12);
 		break;
 
 	case 2: //pantalla si ganas	
-		auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, y + 5, y + 20);
+		auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, 2, 17);
 		//TEXTO
-		auxetsidi.Texto("CONGRATULATIONS BRO", x-3, y + 18, 1, 0, 0, 10);
-		auxetsidi.Texto("8 SIGUIENTE NIVEL", x - 8, y + 16, 1, 1, 1, 8);
-		auxetsidi.Texto("7 MENU PRINCIPAL", x - 8, y + 13, 1, 1, 1, 8);
+		auxetsidi.Texto("HAS GANADO", x - 5.5, 13, 0.44, 0.87, 0.45, 20);
+		auxetsidi.Texto("Pulsa 8 para ir al SIGUIENTE NIVEL", x - 10, 9, 1, 1, 1, 12);
+		auxetsidi.Texto("Pulsa 7 para ir al MENU PRINCIPAL", x - 10, 7, 1, 1, 1, 12);
 		break;
 	case 3:
-			auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, 0, 15);
+			auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, 2, 17);
 			//TEXTO
 			
-			auxetsidi.Texto("PAUSA", x - 8, 8, 1, 1, 1, 20);
-			auxetsidi.Texto("C para reiniciar", x - 8, 4, 1, 1, 1, 8);
+			auxetsidi.Texto("PAUSA", x -3, 13, 0.44, 0.87, 0.45, 20);
+			auxetsidi.Texto("Pulsa C para reiniciar", x - 7, 9, 1, 1, 1,15);
 		break;
 	}
 }

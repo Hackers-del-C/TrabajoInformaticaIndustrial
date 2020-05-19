@@ -22,6 +22,7 @@ public:
 	int Getlevel() { return nivel; }
 private:
 	int aux;//para resetear la musica
+	int aux2=0; //para usar flechas en el menu
 	int nivel;
 	Mundo mundo;
 	Entorno entorno;
