@@ -1,5 +1,5 @@
 #pragma once
-#include <vector>
+
 #define NUM_MAX_lanzamisiles 200
 #include "Lanzamisiles.h"
 class ListaLanzamisiles {
@@ -15,10 +15,12 @@ public:
 	void Inicializa();
 	/*void Explota();*/
 	void Eliminar(Lanzamisiles* m);
-	int GetNumero() { return lista.size(); }
+	void Eliminar(int index);
+	int GetNumero() { return numero; }
 
 private:
-	std::vector<Lanzamisiles*>lista;
+	int numero;
+	Lanzamisiles*lista [NUM_MAX_lanzamisiles];
 	//int numero;
 	//Lanzamisiles* lista[NUM_MAX_lanzamisiles];
 	//Disparo* lista[NUM_MAX_DISPAROS];

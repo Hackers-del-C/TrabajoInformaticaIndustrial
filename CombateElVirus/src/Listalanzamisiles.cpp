@@ -10,15 +10,28 @@ ListaLanzamisiles::~ListaLanzamisiles() {
 }
 
 bool ListaLanzamisiles::Agregar(Lanzamisiles* d) {
-	lista.push_back(d);
-	return true;
+	if (numero < NUM_MAX_lanzamisiles) {
+		for (int i = 0; i < numero; i++) {
+			if (lista[i] == d) {
+				return false;
+			}
+		}
+		lista[numero] = d;
+		//bordessube.Agregar(new BordesSube(listarelleno[numero].limite1.x));
+		numero++; // algo para que no se guarden dos sobre lamisma memoria
+		return true;
+	}
+	else
+
+		//misiles.Agregar(new Misil("imagenes/misilizq.png", 15, -3.0f, -5.0f, 0.0f));
+		return false;
 }
 void ListaLanzamisiles::DestruirContenido(int ind) {
-	if ((ind < 0) || (ind >= lista.size())) {
-		return;
+	for (int i = 0; i < numero; i++) {
+		delete lista[i];
+
 	}
-	delete lista[ind];
-	lista.erase(lista.begin() + ind);
+	numero = 0;
 }
 /*void ListaDisparos::Mueve(float t) {
 	for (int i = 0; i < lista.size(); i++) {
@@ -26,15 +39,24 @@ void ListaLanzamisiles::DestruirContenido(int ind) {
 	}*/
 
 void ListaLanzamisiles::Dibuja() {
-	for (int i = 0; i < lista.size(); i++)
+	for (int i = 0; i < numero; i++)
 		lista[i]->Dibuja();
+}
+void ListaLanzamisiles::Eliminar(int index) {
+	if ((index < 0) || (index >= numero)) {
+		return;
+	}
+	delete lista[index];
+	numero--;
+	for (int i = index; i < numero; i++)
+		lista[i] = lista[i + 1];
 }
 void ListaLanzamisiles::Eliminar(Lanzamisiles* m)
 {
-	for (int i = 0; i < lista.size(); i++)
+	for (int i = 0; i < numero; i++)
 		if (lista[i] == m)
 		{
-			DestruirContenido(i);
+			Eliminar(i);
 			return;
 		}
 }

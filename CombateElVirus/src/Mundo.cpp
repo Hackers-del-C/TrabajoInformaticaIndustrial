@@ -749,6 +749,7 @@ void Mundo::RecargarNivel(int level) { //REINICIAR
 	plataformas.DestruirContenido(plataformas.GetNumero());
 	listavirus.destruirContenido();
 	InicializaFondo(level);
+	misiles.DestruirContenido(misiles.GetNumero());
 	listalanzamisiles.DestruirContenido(listalanzamisiles.GetNumero());
 }
 
