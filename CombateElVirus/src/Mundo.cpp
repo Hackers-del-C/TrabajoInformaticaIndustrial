@@ -265,7 +265,10 @@ void Mundo::InicializaFondo(int nivel) { //agregar cosas
 
 
 
-		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 90, 8, 5, 1.5, 80, 90));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 80, 8, 5, 1.5, 80, 90));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 75, 13, 2, 1.5,65, 75));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 80, 18, 2, 1.5, 80, 90));
+
 
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 130, 20, 5, 1.5,135, 155));
 
