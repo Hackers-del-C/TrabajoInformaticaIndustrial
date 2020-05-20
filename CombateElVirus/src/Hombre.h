@@ -8,15 +8,14 @@ class Hombre
 {
     friend class Interaccion;
     int vidas;
-    int dir;
     int monedas;
     bool agachado;
     int control;
     int finnivel;
     int municion;
+    int dir;
+
 public:
-
-
     Hombre();
     virtual ~Hombre();
     void Dibuja();

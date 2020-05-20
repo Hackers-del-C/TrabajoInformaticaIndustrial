@@ -392,24 +392,24 @@ int Mundo::Muerte() {
 	else {
 
 		return 1;
-		
+		hombre.SetDir(0);
 		
 	}
 		
 }
-int Mundo::Ganar() {//tiene problemas
+int Mundo::Ganar() {
 	//FIN DE PARTIRA: Ganador
 	
 	if (hombre.GetFinNivel() == 1) {
 		if (hombre.posicion.x < 225) {//HABRÁ QUE AMPLIARLO
 			
 			return 0;
-			//musica de ganador va aqui
+		
 		}
 		else {
 			return 1;
 
-
+			hombre.SetDir(0);
 		}
 	}
 }

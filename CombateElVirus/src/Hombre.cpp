@@ -93,8 +93,8 @@ void Hombre::SetVel(float vx, float vy)
 }
 
 void Hombre::SetDir(int n) {
-     dir = n; 
-
+    
+    dir = n;
     if (n == 1) {
 
   
@@ -168,6 +168,7 @@ void Hombre::FinPartida() {
     posicion.y = -5; 
     vidas = 5;
     dir = 0;
+    municion = 5;
   
 }
 
