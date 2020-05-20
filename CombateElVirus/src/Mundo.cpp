@@ -228,6 +228,10 @@ void Mundo::InicializaFondo(int nivel) { //agregar cosas
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 25, y * 1.5, 5, 1.5));
 
 	}
+	for (int y = 40; y < 50; y++) {
+		plataformas.Agregar(new Plataformas(Plataformas::SUELO, j * y, -5.5, 5, 1.5));
+
+	}
 		for (int y = -6; y < 6; y++) {
 			plataformas.Agregar(new Plataformas(Plataformas::SUELO, j * y, -5.5, 5, 1.5));
 			
@@ -258,7 +262,13 @@ void Mundo::InicializaFondo(int nivel) { //agregar cosas
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 110, 6, 5, 1.5));
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 130, 18, 5, 1.5));
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 100, 10, 5, 1.5));
+
+
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 125, 18, 5, 1.5));
+		
+
 		for (int i = 0; i < 6; i++) {
+
 			plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 95+5*i, 18, 5, 1.5));
 		}
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 100, 10, 5, 1.5));
@@ -270,11 +280,18 @@ void Mundo::InicializaFondo(int nivel) { //agregar cosas
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 80, 18, 2, 1.5, 80, 90));
 
 
-		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 130, 20, 5, 1.5,135, 155));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 135, 14, 5, 1.5,135, 145));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 160, 10, 5, 1.5, 150, 160));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 165, 6, 5, 1.5, 165, 175));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 190, 6, 5, 1.5, 180, 190));
 
+		for (int i = 0; i < 10; i++) {
 
-
-
+			plataformas.Agregar(new Plataformas(Plataformas::SUELO, 135 + 5 * i, -5.5, 5, 1.5));
+		}
+		for (int i =1; i < 5; i++) {
+			plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 200, i*8, 5, 1.5));
+		}
 		/*for (int x = 1; x < 4; x++) {
 			if (x % 2) {
 				plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, -12, 5 * x, 4, 1.5));
@@ -358,20 +375,20 @@ void Mundo::DibujaBasico() {
 	plataformas.Dibuja();
 }
 void Mundo::Dibuja(int level) {
-	
-	
+
+
 	personajes.Dibuja(level, hombre);
 	disparos.Dibuja();
 	misiles.Dibuja();
 	listalanzamisiles.Dibuja();
-	virus2.Dibuja(level);	
+	virus2.Dibuja(level);
 	listaexplosiones.dibuja();
 	listavirus.dibuja();
-	listaslime.dibuja();	
+	listaslime.dibuja();
 	listabonus.dibuja();
 	avion->draw();
 
-	
+
 	if (level == 1) {
 		float naleatorio = lanzaDado(800.0);
 		if (naleatorio < 10) {
@@ -401,13 +418,20 @@ void Mundo::Dibuja(int level) {
 		/*for (int i = 0; i < listavirus.getNumero(); i++) {
 			if ((listavirus[i]->Billete()) == 1) {
 				listabonus.agregar(new Billete((listavirus[i]->posicion.x), 25, 3, 3));
-		
+
 			}
 		}*/
 	}
-	if (level == 2) {
-		if (plataformas.ColisionSube(hombre) != 0 && plataformas.ColisionSube(hombre)->GetTipo() == plataformas.ColisionSube(hombre)->SUELO)
-			plataformas.Eliminar(plataformas.ColisionSube(hombre));
+	if (level == 3) {
+
+		if (hombre.GetPos().x > 122 && hombre.GetPos().x < 125) {
+			if (plataformas.ColisionSube(hombre) != 0 && plataformas.ColisionSube(hombre)->GetTipo() == plataformas.ColisionSube(hombre)->PLATAFORMA_CHOCA)
+				plataformas.Eliminar(plataformas.ColisionSube(hombre));
+		}
+		if (hombre.GetPos().x > 135 && hombre.GetPos().x < 190) {
+			if (plataformas.ColisionSube(hombre) != 0 && plataformas.ColisionSube(hombre)->GetTipo() == plataformas.ColisionSube(hombre)->SUELO)
+				plataformas.Eliminar(plataformas.ColisionSube(hombre));
+		}
 	}
 }
 
@@ -696,7 +720,7 @@ void Mundo::Tecla(unsigned char key)
 		}
 		break;
 	case 'v':
-		hombre.SetPos(120, 20);
+		hombre.SetPos(200, 20);
 		break;
 		///test
 	/*case 'p':

@@ -73,7 +73,7 @@ void Plataformas::Dibuja() {
     switch (tipo) {
     case Plataformas::PLATAFORMA_ATRAVIESA:
         glEnable(GL_TEXTURE_2D);
-        glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/platformas1.png").id);
+        glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/plataformachoca.png").id);
         glDisable(GL_LIGHTING);
         glBegin(GL_POLYGON);
         glColor3f(1, 1, 1);
