@@ -63,9 +63,10 @@ void Entorno::DibujaMenu(int xraton, int yraton,int aux) {
 	}
 	//TEXTO
 	auxetsidi.Texto("COMBATE EL VIRUS", -23, 16, 0, 0, 0, 50);
-	auxetsidi.Texto("Nivel 1. China", -22, 12, 0, gl1, 0, 20);
-	auxetsidi.Texto("Nivel 2. Italia", -22, 10, 0, gl2, 0, 20);
-	auxetsidi.Texto("Nivel 3. Espanita", -22, 8, 0, gl3, 0, 20);
+	auxetsidi.Texto("-Nivel 1. China", -22, 12, 0, gl1, 0, 20);
+	auxetsidi.Texto("-Nivel 2. Italia", -22, 10, 0, gl2, 0, 20);
+	auxetsidi.Texto("-Nivel 3. Espanita", -22, 8, 0, gl3, 0, 20);
+	auxetsidi.Texto("-Pulsa S para salir", -12, 0,0,0,0, 20);
 	
 }
 void Entorno::DibujaJuego(int nivel) {

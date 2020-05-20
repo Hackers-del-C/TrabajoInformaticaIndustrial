@@ -17,7 +17,7 @@ void Billete::Mueve(float t) {
 
 	posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
 	velocidad = velocidad + aceleracion * t;
-
+	
 }
 
 Billete::Billete(int x, int y, int w, int h) {

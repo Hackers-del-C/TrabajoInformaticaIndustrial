@@ -156,12 +156,10 @@ void Mundo::InicializaFondo(int nivel) { //agregar cosas
 
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 140, 10, 3, 1.5, 140, 160));
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 180, 6, 3, 1.5, 160, 180));
-		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 180, 12, 3, 1.5, 180, 200));
-
-		////caen
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 180, 12, 3, 1.5, 180, 200));	////caen
 
 
-		listabonus.agregar(new Llave(210, 20, 2, 2));
+	
 
 		//Añadimos Virus
 		//VirusSeta y virus slime
@@ -198,8 +196,8 @@ void Mundo::InicializaFondo(int nivel) { //agregar cosas
 			listabonus.agregar(new BonusTest(190, -2, 2, 2));
 			
 
-
-			
+		
+			listabonus.agregar(new Llave(210, 20, 2, 2));
 	}
 	
 	else if (nivel == 2) {

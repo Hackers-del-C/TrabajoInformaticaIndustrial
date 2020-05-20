@@ -11,7 +11,6 @@ Coordinador::~Coordinador() {
 
 }
 void Coordinador::Inicializa() {
-	//entorno.Musica(nivel);
 	mundo.Inicializa(nivel);
 	mundo.Setojo(0, 10, 53);
 
@@ -163,11 +162,10 @@ void Coordinador::tecla(unsigned char key) {
 				break;
 			}
 		}
+		else if (key == 's') {
+			exit(0);
+		}
 	}
-
-	/*else if (mundo.Tecla(key)==0) {
-		estado = MENU;
-	}*/
 }
 void Coordinador::teclaEspecial(unsigned char key) {
 	if(estado==JUEGO)
