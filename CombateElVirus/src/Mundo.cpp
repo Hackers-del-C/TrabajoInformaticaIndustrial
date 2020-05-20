@@ -233,17 +233,33 @@ void Mundo::InicializaFondo(int nivel) { //agregar cosas
 			
 		}
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 30,22.5, 3, 1.5, 30, 40));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 55, 4, 3, 1.5, 45, 55));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 60, 2, 3, 1.5, 60, 70));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 85, -2, 3, 1.5, 75, 85));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 90, 4, 3, 1.5, 90, 95));
+
+		/*plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 30, 22.5, 3, 1.5, 30, 40));
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 55, 6, 3, 1.5, 45, 55));
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 60, 12, 3, 1.5, 60, 70));
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 85, 10, 3, 1.5, 75, 85));
-		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 90, 6, 3, 1.5, 90, 100));
-		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 115, 12, 3, 1.5, 105, 115));
-		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 120, 10, 3, 1.5, 120, 130));
-		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 180, 6, 3, 1.5, 160, 180));
-		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 180, 12, 3, 1.5, 180, 200));
-		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 140, 10, 3, 1.5, 140, 160));
-		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 180, 6, 3, 1.5, 160, 180));
-		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 180, 12, 3, 1.5, 180, 200));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 90, 6, 3, 1.5, 90, 100));*/
+
+
+		plataformas.Agregar(new Plataformas(Plataformas::SUELO, 110, -5.5, 5, 1.5));
+		plataformas.Agregar(new Plataformas(Plataformas::SUELO, 115, -5.5, 5, 1.5));
+		plataformas.Agregar(new Plataformas(Plataformas::SUELO, 120, -5.5, 5, 1.5));
+
+		
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 130, 1, 5, 1.5));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 120, 6, 5, 1.5));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 110, 10, 5, 1.5));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 130, 18, 5, 1.5));
+
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 105, 18, 5, 1.5,95,115));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 130, 20, 5, 1.5,135, 155));
+
+
+
 
 		/*for (int x = 1; x < 4; x++) {
 			if (x % 2) {
@@ -666,7 +682,7 @@ void Mundo::Tecla(unsigned char key)
 		}
 		break;
 	case 'v':
-		hombre.SetPos(200, 20);
+		hombre.SetPos(120, 20);
 		break;
 		///test
 	/*case 'p':
