@@ -14,7 +14,7 @@ public:
 	void DibujaJuego(int nivel);
 	void Fin(int pantalla);
 	void Aviso(int pantalla, int x, int y);
-	
+	void AvisoAvanceNivel();
 	
 private:
 	AuxEtsidi auxetsidi;

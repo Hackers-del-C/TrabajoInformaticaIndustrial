@@ -6,6 +6,7 @@ Coordinador::Coordinador() {
 
 	estado = MENU;
 	nivel = 0;
+	AvanceNivel = 0;
 }
 Coordinador::~Coordinador() {
 
@@ -15,9 +16,7 @@ void Coordinador::Inicializa() {
 	mundo.Setojo(0, 10, 53);
 
 		if (estado == JUEGO) {
-		//	mundo.InicializaFondo(nivel); //Si algo va mal cambiar a dibuja
-			/*mundo.Inicializa(nivel);
-			mundo.RecargarNivel();*/ //RESETEA HOMBRE Y DESTRUYE ALGUNAS LISTAS 
+		
 		}
 		else if (estado == MUERTE)		{
 			entorno.Fin(MUERTE);
@@ -78,9 +77,21 @@ void Coordinador::Dibuja() {
 		
 	}
 	else if (estado == GANAR) {
+		
 		entorno.Aviso(2, mundo.GetHombrePos().x, mundo.GetHombrePos().y);
 		entorno.DibujaJuego(nivel);
 		mundo.DibujaBasico();
+		switch (nivel){
+		case 1:
+			AvanceNivel = 1;
+			break;
+		case 2:
+			AvanceNivel = 2;
+			break;
+		case 3:
+			AvanceNivel = 3;
+			break;
+		}
 	}
 	else if (estado == PAUSA) {
 		entorno.Aviso(3, mundo.GetHombrePos().x, mundo.GetHombrePos().y);
@@ -92,7 +103,11 @@ void Coordinador::Dibuja() {
 	
 }
 void Coordinador::tecla(unsigned char key) {
-	
+	//BORRAR: ES EL HACK PARA PODER HACER TODOS LOS NIVELES 
+	if(key == '0') {
+		AvanceNivel = 3;
+	}
+	/////////////////////////////////////////////////////////////
 	if (estado == JUEGO) {
 		mundo.Tecla(key);
 		if (key == 'p') {
@@ -125,9 +140,13 @@ void Coordinador::tecla(unsigned char key) {
 			break;
 		case '8':
 			estado = JUEGO;
-			nivel += 1;
-			mundo.RecargarNivel(nivel);
-			aux = 1;
+			if (nivel != 3) {
+				nivel += 1;
+				mundo.RecargarNivel(nivel);
+				aux = 1;
+			}
+
+			
 			break;
 		}				
 	}
@@ -135,6 +154,11 @@ void Coordinador::tecla(unsigned char key) {
 		if (key == 'c') {
 			mundo.Dibuja(nivel);
 			estado = JUEGO;
+		}
+		else if (key == 'm') {
+			estado = MENU;
+			mundo.RecargarNivel(nivel);
+			aux = 1;
 		}
 	}
 	else if (estado == MENU) {
@@ -149,16 +173,25 @@ void Coordinador::tecla(unsigned char key) {
 				aux = 1;
 				break;
 			case 2:
-				estado = JUEGO;
-				nivel = 2;
-				mundo.RecargarNivel(nivel);
-				aux = 1;
+				if (AvanceNivel >= 1) {
+					estado = JUEGO;
+					nivel = 2;
+					mundo.RecargarNivel(nivel);
+					aux = 1;
+				}
+				else
+					entorno.AvisoAvanceNivel();
 				break;
 			case 3:
-				estado = JUEGO;
-				nivel = 3;
-				mundo.RecargarNivel(nivel);
-				aux = 1;
+				if (AvanceNivel >= 2) {
+					estado = JUEGO;
+					nivel = 3;
+					mundo.RecargarNivel(nivel);
+					aux = 1;
+				}
+				else {
+					entorno.AvisoAvanceNivel();
+				}
 				break;
 			}
 		}
@@ -168,6 +201,8 @@ void Coordinador::tecla(unsigned char key) {
 	}
 }
 void Coordinador::teclaEspecial(unsigned char key) {
+
+	
 	if(estado==JUEGO)
 		mundo.teclaEspecial(key);
 	else if (estado == MENU) { //PARA ELEGIR NIVEL. AUX=LEVEL PERO SOLO PARA COLOREARLO
@@ -221,23 +256,31 @@ void Coordinador::ClickMouse(int b, int state) {
 			button = MOUSE_LEFT_BUTTON;
 
 			if (ymouse > 11.5 && ymouse <= 13) {
-				nivel = 1;
-				estado = JUEGO;
-				mundo.RecargarNivel(nivel);
-				aux= 1;
+				
+					nivel = 1;
+					estado = JUEGO;
+					mundo.RecargarNivel(nivel);
+					aux = 1;
+				
 				
 			}
 			else if (ymouse > 9.5 && ymouse <= 11.5) {
-				nivel = 2;
-				estado = JUEGO;
-				mundo.RecargarNivel(nivel);
-				aux = 1;
+				if (AvanceNivel >= 1) {
+					nivel = 2;
+					estado = JUEGO;
+					mundo.RecargarNivel(nivel);
+					aux = 1;
+				}
+				else
+					entorno.AvisoAvanceNivel();
 			}
 			else if (ymouse > 8 && ymouse <= 9.5) {
-				nivel = 3;
-				estado = JUEGO;
-				mundo.RecargarNivel(nivel);
-				aux = 1;
+				if (AvanceNivel >= 2) {
+					nivel = 3;
+					estado = JUEGO;
+					mundo.RecargarNivel(nivel);
+					aux = 1;
+				}
 			}
 		}
 	}
@@ -248,4 +291,5 @@ void Coordinador::MyMouse(int x, int y) {
 	xmouse = (x - 400) / 13, 3; //coordinar con la x de nuestra pantalla
 	ymouse = -(y - 455) / 17.5 + 1; //coordinar con la y de niestra pantalla
 }
+
 

@@ -25,6 +25,7 @@ void Entorno::Musica(int nivel) {
 		break;		
 	}	
 }
+
 void Entorno::Fin(int pantalla) {
 	switch (pantalla) {
 	case 1:
@@ -45,11 +46,14 @@ void Entorno::DibujaMenu(int xraton, int yraton,int aux) {
 		gl1 = 1;
 		gl2 = 0;
 		gl3 = 0;
+		
 	}
-	else if ((yraton > 9 && yraton <= 11)|| aux == 2) {
-		gl1 = 0;
-		gl2 = 1;
-		gl3 = 0;
+	else if ((yraton > 9 && yraton <= 11)|| aux == 2) {		
+			gl1 = 0;
+			gl2 = 1;
+			gl3 = 0;	
+		
+		
 	}
 	else if ((yraton > 7 && yraton <= 9)|| aux == 3) {
 		gl1 = 0;
@@ -68,6 +72,11 @@ void Entorno::DibujaMenu(int xraton, int yraton,int aux) {
 	auxetsidi.Texto("-Nivel 3. Espanita", -22, 8, 0, gl3, 0, 20);
 	auxetsidi.Texto("-Pulsa S para salir", -12, 0,0,0,0, 20);
 	
+}
+void Entorno::AvisoAvanceNivel() {
+	
+		auxetsidi.Texto("Tienes que pasarte el nivel anterior",2, 12, 0.44, 0.87, 0.45, 10);
+
 }
 void Entorno::DibujaJuego(int nivel) {
 
@@ -121,6 +130,7 @@ void Entorno::DibujaJuego(int nivel) {
 
 	}
 }
+
 void Entorno::Aviso(int pantalla, int x, int y) {
 	//IMAGEN:es un cuadro negro para que salga bien los datos que queramos en medio but no consigo que vaya
 	
@@ -145,6 +155,7 @@ void Entorno::Aviso(int pantalla, int x, int y) {
 			
 			auxetsidi.Texto("PAUSA", x -3, 13, 0.44, 0.87, 0.45, 20);
 			auxetsidi.Texto("Pulsa C para reiniciar", x - 7, 9, 1, 1, 1,15);
+			auxetsidi.Texto("Pulsa M para ir al menu", x - 7, 7, 1, 1, 1, 15);
 		break;
 	}
 }

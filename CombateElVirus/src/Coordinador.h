@@ -27,5 +27,5 @@ private:
 	Mundo mundo;
 	Entorno entorno;
 	float xmouse, ymouse;
-	
+	int AvanceNivel;
 };
