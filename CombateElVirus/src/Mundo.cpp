@@ -236,7 +236,7 @@ void Mundo::InicializaFondo(int nivel) { //agregar cosas
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 55, 4, 3, 1.5, 45, 55));
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 60, 2, 3, 1.5, 60, 70));
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 85, -2, 3, 1.5, 75, 85));
-		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 90, 4, 3, 1.5, 90, 95));
+
 
 		/*plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 30, 22.5, 3, 1.5, 30, 40));
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 55, 6, 3, 1.5, 45, 55));
@@ -244,18 +244,29 @@ void Mundo::InicializaFondo(int nivel) { //agregar cosas
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 85, 10, 3, 1.5, 75, 85));
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 90, 6, 3, 1.5, 90, 100));*/
 
-
+		plataformas.Agregar(new Plataformas(Plataformas::SUELO, 95, -5.5, 5, 1.5));
+		plataformas.Agregar(new Plataformas(Plataformas::SUELO, 100, -5.5, 5, 1.5));
+		plataformas.Agregar(new Plataformas(Plataformas::SUELO, 105, -5.5, 5, 1.5));
 		plataformas.Agregar(new Plataformas(Plataformas::SUELO, 110, -5.5, 5, 1.5));
 		plataformas.Agregar(new Plataformas(Plataformas::SUELO, 115, -5.5, 5, 1.5));
 		plataformas.Agregar(new Plataformas(Plataformas::SUELO, 120, -5.5, 5, 1.5));
-
+		
 		
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 130, 1, 5, 1.5));
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 120, 6, 5, 1.5));
-		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 110, 10, 5, 1.5));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 115, 6, 5, 1.5));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 110, 6, 5, 1.5));
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 130, 18, 5, 1.5));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 100, 10, 5, 1.5));
+		for (int i = 0; i < 6; i++) {
+			plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 95+5*i, 18, 5, 1.5));
+		}
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 100, 10, 5, 1.5));
 
-		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 105, 18, 5, 1.5,95,115));
+
+
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 90, 8, 5, 1.5, 80, 90));
+
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 130, 20, 5, 1.5,135, 155));
 
 
