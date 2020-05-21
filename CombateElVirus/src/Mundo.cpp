@@ -395,11 +395,13 @@ void Mundo::Dibuja(int level) {
 			misiles.Agregar(new Misil("imagenes/misilizq.png", 29, -2, -5.0f, 0.0f));
 		}
 		if (naleatorio < 5) {
+
 			misiles.Agregar(new Misil("imagenes/misilizq.png", 69, 6.55, -5.0f, 0.0f));
 		}
 		if (naleatorio < 1) {
 
 			listabonus.agregar(new BonusMascarilla(hombre.GetPosX() + naleatorio * 10, 25, 1.5, 1.5));
+
 		}
 		if (naleatorio < 4) {
 			listabonus.agregar(new Municion(hombre.GetPosX() + naleatorio * 8, 25, 2, 2));
