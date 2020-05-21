@@ -12,7 +12,7 @@ public:
     VirusBaba();
     void Ataca();
     void Desaparece();
-
-
+    int Fin();
+    void Mueve(float t);
 
 };

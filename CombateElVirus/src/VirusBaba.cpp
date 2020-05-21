@@ -44,8 +44,29 @@ void VirusBaba::Ataca() {
 
 void VirusBaba::Desaparece() {
 
-    sprite = new SpriteSequence("imagenes/enemigos/virusbabades.png", 1, 9, 90, true, 0, 0, 6, 6);
+    sprite = new SpriteSequence("imagenes/enemigos/virusbabades.png", 1, 9, 90, false, 0, 0, 6, 6);
 
+}
+
+void VirusBaba::Mueve(float t) {
+
+    posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
+    velocidad = velocidad + aceleracion * t;
+
+
+    if (lanzaDado(100) < 2) {
+        Desaparece();
+    }
+
+
+    sprite->loop();
+
+}
+
+int VirusBaba::Fin() {
+
+    
+    return sprite->getState();
 }
 
 
