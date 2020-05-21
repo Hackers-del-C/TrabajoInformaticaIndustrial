@@ -277,7 +277,7 @@ void Mundo::InicializaFondo(int nivel) { //agregar cosas
 
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 80, 8, 5, 1.5, 80, 90));
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 75, 13, 2, 1.5,65, 75));
-		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 80, 18, 2, 1.5, 80, 90));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 75, 18, 2, 1.5, 80, 90));
 
 
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 135, 14, 5, 1.5,135, 145));
@@ -720,7 +720,7 @@ void Mundo::Tecla(unsigned char key)
 		}
 		break;
 	case 'v':
-		hombre.SetPos(200, 20);
+		hombre.SetPos(120, 20);
 		break;
 		///test
 	/*case 'p':
