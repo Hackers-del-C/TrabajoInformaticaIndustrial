@@ -16,15 +16,19 @@ VirusMosca::VirusMosca() {
     billete = 0;
 }
 
-VirusMosca::VirusMosca(float x, float y) {
-
+VirusMosca::VirusMosca(float x, float y, float r) {
+    recorrido = r;
     vidas = 3;
     posicion.x = x;
     posicion.y = y;
     anchura = 4;
     altura = 4;
     billete = 0;
+    velocidad.x = 3;
+    
 
+    posicionini.x = x;
+    posicionini.y = y;
     //Creacion de los objetos sprites
 
     sprite = new SpriteSequence("imagenes/enemigos/virusmosca.png", 1, 4, 40, true, 0, 0, 3, 3);
@@ -46,22 +50,15 @@ void VirusMosca::Inicializa(float x, float y) {
 
 void VirusMosca::Seguir(Hombre h) {
 
-
-    if (h.GetPos().x > 190) {
-
-        if (h.posicion.x < posicion.x - 10) {
-            velocidad.x = -3;
+        if (recorrido + posicionini.x < posicion.x) {
+            velocidad.x = -velocidad.x;
             sprite->flip(0, 0);
-
         }
-        else if (h.posicion.x > posicion.x + 10) {
-            velocidad.x = +3;
-
+        if (posicionini.x - recorrido > posicion.x) {
+            velocidad.x = -velocidad.x;
             sprite->flip(1, 0);
         }
         
-    }
-
 }
 
 void VirusMosca::Dispara(ListaSlime &l) {

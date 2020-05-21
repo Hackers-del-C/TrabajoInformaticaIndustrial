@@ -168,7 +168,7 @@ void Mundo::InicializaFondo(int nivel) { //agregar cosas
 		listavirus.agregar(new VirusSeta(122, -3, 5));
 		listavirus.agregar(new VirusSlime(122, -3, 7));
 
-		listavirus.agregar(new VirusMosca(230, 15));
+		listavirus.agregar(new VirusMosca(230, 15,15));
 
 
 		listavirus.agregar(new VirusSeta(230, -3, 5));
@@ -220,6 +220,25 @@ void Mundo::InicializaFondo(int nivel) { //agregar cosas
 				plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 0, 2 * y+2, 4, 1.5));
 				
 			}*/
+
+		listavirus.agregar(new VirusSlime(50, -3, 9));
+		
+		listavirus.agregar(new VirusSeta(50, -3, 15));
+
+		listavirus.agregar(new VirusSeta(80, -3, 15));
+
+		listavirus.agregar(new VirusSeta(80, -3, 13));
+
+		listavirus.agregar(new VirusSlime(110, -3, 16));
+		listavirus.agregar(new VirusSlime(110, -3, 10));
+		listavirus.agregar(new VirusSlime(110, -3, 8));
+
+
+		listavirus.agregar(new VirusMosca(80, 15, 15));
+
+		listavirus.agregar(new VirusSeta(200, -3, 13));
+		listavirus.agregar(new VirusSlime(200, -3, 10));
+		listavirus.agregar(new VirusSeta(200, -3, 18));
 	}
 	
 	else if (nivel == 3) {
@@ -528,12 +547,9 @@ void Mundo::Mueve(int level)
 
 	//Disparos virus aleatorios
 
-	if (hombre.GetPos().x > 170) { //Podria ponerse mejor
-		if(lanzaDado(60)<2)
+		if(lanzaDado(90)<2)
 		listavirus.Dispara(listaslime);
-	}
-
-
+	
 
 	//Interaccion::Colision(bonus1, limites);
 	//Interaccion::Colision(slime, limites);
@@ -797,6 +813,7 @@ void Mundo::RecargarNivel(int level) { //REINICIAR
 	listavirus.destruirContenido();
 	InicializaFondo(level);
 	misiles.DestruirContenido(misiles.GetNumero());
+	listaslime.destruirContenido();
 	//listalanzamisiles.DestruirContenido(); ---lo mata antes de tiempo
 	
 }

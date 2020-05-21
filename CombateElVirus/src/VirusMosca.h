@@ -8,7 +8,7 @@
 class VirusMosca : public Virus
 {
 public:
-    VirusMosca(float x, float y);
+    VirusMosca(float x, float y, float r);
     ~VirusMosca();
     void Inicializa(float x, float y);
     void Seguir(Hombre h);
