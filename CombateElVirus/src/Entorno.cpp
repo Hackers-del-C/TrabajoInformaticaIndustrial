@@ -133,11 +133,11 @@ void Entorno::DibujaJuego(int nivel) {
 
 void Entorno::Aviso(int pantalla, int x, int y) {
 	//IMAGEN:es un cuadro negro para que salga bien los datos que queramos en medio but no consigo que vaya
-	
-	switch(pantalla){
+
+	switch (pantalla) {
 	case 1: //pantalla si mueres
 		auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, 2, 17);
-		auxetsidi.Texto("F Perdiste...",  x - 5.5, 13, 0.44, 0.87, 0.45, 20);
+		auxetsidi.Texto("F Perdiste...", x - 5.5, 13, 0.44, 0.87, 0.45, 20);
 		auxetsidi.Texto("Pulsa 8  para REINICIAR EL NIVEL", x - 10, 9, 1, 1, 1, 12); //obv habrá que hacerlo con otras teclas u otra cosa
 		auxetsidi.Texto("Pulsa 7 ir al MENU PRINCIPAL", x - 10, 7, 1, 1, 1, 12);
 		break;
@@ -150,12 +150,21 @@ void Entorno::Aviso(int pantalla, int x, int y) {
 		auxetsidi.Texto("Pulsa 7 para ir al MENU PRINCIPAL", x - 10, 7, 1, 1, 1, 12);
 		break;
 	case 3:
-			auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, 2, 17);
-			//TEXTO
-			
-			auxetsidi.Texto("PAUSA", x -3, 13, 0.44, 0.87, 0.45, 20);
-			auxetsidi.Texto("Pulsa C para reiniciar", x - 7, 9, 1, 1, 1,15);
-			auxetsidi.Texto("Pulsa M para ir al menu", x - 7, 7, 1, 1, 1, 15);
+		auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, 2, 17);
+		//TEXTO
+
+		auxetsidi.Texto("PAUSA", x - 3, 13, 0.44, 0.87, 0.45, 20);
+		auxetsidi.Texto("Pulsa C para reiniciar", x - 7, 9, 1, 1, 1, 15);
+		auxetsidi.Texto("Pulsa M para ir al menu", x - 7, 7, 1, 1, 1, 15);
 		break;
+
+	case 4:
+		auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, 2, 17);
+		//TEXTO
+
+		auxetsidi.Texto("HAS GANADO", x - 5, 13, 0.44, 0.87, 0.45, 20);
+		auxetsidi.Texto("CONSEGUISTE LA CURA ", x - 8, 11, 0.44, 0.87, 0.45, 15);
+		auxetsidi.Texto("AL CORONAVIRUS ", x - 8, 9, 0.44, 0.87, 0.45, 15);		
+		auxetsidi.Texto("Pulsa 7 para ir al menu", x - 7, 7, 1, 1, 1, 15);
 	}
 }

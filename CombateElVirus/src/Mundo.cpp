@@ -466,14 +466,11 @@ int Mundo::Ganar() {
 	//FIN DE PARTIRA: Ganador
 	
 	if (hombre.GetFinNivel() == 1) {
-		if (hombre.posicion.x < 225) {//HABRÁ QUE AMPLIARLO
-			
-			return 0;
-		
+		if (hombre.posicion.x < 225) {//HABRÁ QUE AMPLIARLO			
+			return 0;		
 		}
 		else {
 			return 1;
-
 			hombre.SetDir(0);
 		}
 	}

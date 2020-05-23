@@ -78,20 +78,24 @@ void Coordinador::Dibuja() {
 	}
 	else if (estado == GANAR) {
 		
-		entorno.Aviso(2, mundo.GetHombrePos().x, mundo.GetHombrePos().y);
-		entorno.DibujaJuego(nivel);
-		mundo.DibujaBasico();
+	
+		
 		switch (nivel){
 		case 1:
+			entorno.Aviso(2, mundo.GetHombrePos().x, mundo.GetHombrePos().y);
 			AvanceNivel = 1;
 			break;
 		case 2:
+			entorno.Aviso(2, mundo.GetHombrePos().x, mundo.GetHombrePos().y);
 			AvanceNivel = 2;
 			break;
 		case 3:
+			entorno.Aviso(4, mundo.GetHombrePos().x, mundo.GetHombrePos().y);
 			AvanceNivel = 3;
 			break;
 		}
+		entorno.DibujaJuego(nivel);
+		mundo.DibujaBasico();
 	}
 	else if (estado == PAUSA) {
 		entorno.Aviso(3, mundo.GetHombrePos().x, mundo.GetHombrePos().y);
@@ -131,7 +135,7 @@ void Coordinador::tecla(unsigned char key) {
 		}
 	}
 	else if (estado == GANAR) {
-		switch (key) {
+		switch (key) {		
 		case '7':
 			estado = MENU;
 			mundo.RecargarNivel(nivel);
@@ -139,15 +143,14 @@ void Coordinador::tecla(unsigned char key) {
 			nivel = 0;
 			break;
 		case '8':
-			estado = JUEGO;
-			if (nivel != 3) {
-				nivel += 1;
-				mundo.RecargarNivel(nivel);
-				aux = 1;
-			}
-
-			
+			if (AvanceNivel < 3) {
+			estado = JUEGO;			
+			nivel += 1;
+			mundo.RecargarNivel(nivel);
+			aux = 1;
 			break;
+			}
+			
 		}				
 	}
 	else if (estado == PAUSA) {
@@ -242,7 +245,7 @@ void Coordinador::teclaEspecial(unsigned char key) {
 			break;
 		
 		}
-		}
+	}
 }
 void Coordinador::teclaEspecialsuelta(unsigned char key) {
 	if (estado == JUEGO)
