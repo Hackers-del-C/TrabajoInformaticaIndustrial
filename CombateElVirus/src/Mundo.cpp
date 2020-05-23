@@ -434,14 +434,6 @@ void Mundo::Dibuja(int level) {
 				plataformas.Eliminar(plataformas.ColisionSube(hombre));
 		}
 
-
-
-		/*for (int i = 0; i < listavirus.getNumero(); i++) {
-			if ((listavirus[i]->Billete()) == 1) {
-				listabonus.agregar(new Billete((listavirus[i]->posicion.x), 25, 3, 3));
-
-			}
-		}*/
 	}
 	if (level == 3) {
 
@@ -535,7 +527,7 @@ void Mundo::Mueve(int level)
 	////INTERACCIONES////
 
 	
-	listavirus.Colision(disparos, listaexplosiones);
+	listavirus.Colision(disparos, listaexplosiones, listabonus);
 	listavirus.Colision(hombre);
 	plataformas.Colision(slime);
 	listaslime.Colision(limites);

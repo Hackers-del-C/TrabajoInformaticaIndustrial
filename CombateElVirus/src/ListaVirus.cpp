@@ -1,5 +1,4 @@
 #include "ListaVirus.h"
-
 #include "Interaccion.h"
 
 ListaVirus::ListaVirus()
@@ -127,7 +126,7 @@ void ListaVirus::Sigue(Hombre h)
 		lista[i]->Seguir(h);
 }
 
-void ListaVirus::Colision(ListaDisparos &l, ListaExplosiones &e) {
+void ListaVirus::Colision(ListaDisparos &l, ListaExplosiones &e, ListaBonus& b) {
 
 	for (int i = 0; i < numero; i++) {
 
@@ -135,6 +134,7 @@ void ListaVirus::Colision(ListaDisparos &l, ListaExplosiones &e) {
 			//lista[i]->SetVidas(lista[i]->GetVidas() -1);
 			
 			if (lista[i]->GetVidas() < 1) {
+				lista[i]->LanzaBonus(b);
 				eliminar(i);
 			}
 			

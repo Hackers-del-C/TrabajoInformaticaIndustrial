@@ -22,7 +22,7 @@ public:
 	void destruirContenido();
 	void eliminar(int index);
 	void eliminar(Virus* e);
-	void Colision(ListaDisparos& l, ListaExplosiones& e);
+	void Colision(ListaDisparos& l, ListaExplosiones& e, ListaBonus& b);
 	void Sigue(Hombre h);
 	//Virus* colision(Hombre& h);
 	Virus* operator [](int i);

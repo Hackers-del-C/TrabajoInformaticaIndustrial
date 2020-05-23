@@ -1,5 +1,5 @@
 #include "VirusMosca.h"
-
+#include "Billete.h"
 
 using namespace ETSIDI;
 using namespace std;
@@ -13,7 +13,6 @@ VirusMosca::VirusMosca() {
 
     anchura = 0.4 * 3;
     altura = 0.4 * 3;
-    billete = 0;
 }
 
 VirusMosca::VirusMosca(float x, float y, float r) {
@@ -23,7 +22,6 @@ VirusMosca::VirusMosca(float x, float y, float r) {
     posicion.y = y;
     anchura = 4;
     altura = 4;
-    billete = 0;
     velocidad.x = 3;
     
 
@@ -68,10 +66,10 @@ void VirusMosca::Dispara(ListaSlime &l) {
 }
 
 void VirusMosca::Muere() {
-    billete = 1;
+   
 }
 
-bool VirusMosca::Billete() {
-
-    return 1;
+void VirusMosca::LanzaBonus(ListaBonus& l) {
+    l.agregar(new Billete(posicion.x, 25, 4, 4));
 }
+
