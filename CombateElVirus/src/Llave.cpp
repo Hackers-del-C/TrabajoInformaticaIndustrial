@@ -33,6 +33,6 @@ void Llave::Mueve(float t) {
 	velocidad = velocidad + aceleracion * t;
 }
 bool Llave::colision(Hombre& h) {
-	h.SetFinNivel(1) ;
+	//h.SetFinNivel(1) ;
 	return 1;
 }

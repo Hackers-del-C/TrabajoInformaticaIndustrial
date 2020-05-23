@@ -15,7 +15,6 @@ public:
 	bool agregar(Bonus* b);
 	void dibuja();
 	void mueve(float t);
-
 	void destruirContenido();
 	void eliminar(int index);
 	void eliminar(Bonus* e);

@@ -1,6 +1,8 @@
 #include"Billete.h"
+#include"Hombre.h"
 
 using namespace ETSIDI;
+using namespace std;
 
 Billete::Billete() {
 
@@ -29,10 +31,9 @@ Billete::Billete(int x, int y, int w, int h) {
 
 }
 
-bool  Billete::colision(Hombre& h) {
-
-	return (Interaccion::ColisionBonus(h, *(this)));
-
+bool Billete::colision(Hombre& h) {
+	h.SetFinNivel(1);
+	return 1;
 }
 
 
