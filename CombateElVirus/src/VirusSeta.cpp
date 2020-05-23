@@ -1,5 +1,6 @@
 #include "VirusSeta.h"
-
+#include "Municion.h"
+#include "BonusMascarilla.h"
 
 using namespace ETSIDI;
 using namespace std;
@@ -56,5 +57,14 @@ void VirusSeta::Seguir(Hombre h) {
         velocidad.x = -velocidad.x;
     }
 
+}
 
+void VirusSeta::LanzaBonus(ListaBonus& l) {
+    float naleatorio = lanzaDado(100.0);
+    if (naleatorio <60.0) {
+        l.agregar(new Municion(posicion.x, posicion.y, 0, 2, 2));
+    }
+    else if (naleatorio >60.0) {
+        l.agregar(new BonusMascarilla(posicion.x, posicion.y, 0, 2, 2));
+    }
 }

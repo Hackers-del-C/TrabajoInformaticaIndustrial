@@ -11,5 +11,6 @@ public:
     void Inicializa(float x, float y);
     void Seguir(Hombre h);
     VirusSlime();
+    void LanzaBonus(ListaBonus& l);
 
 };

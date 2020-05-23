@@ -20,6 +20,17 @@ BonusMascarilla::BonusMascarilla(int x, int y, int w, int h) {
 	posicion.x = x;
 	posicion.y = y;
 }
+
+BonusMascarilla::BonusMascarilla(int x, int y, int vx, int w, int h) {
+
+	anchura = 0.5 * w;
+	altura = 0.5 * h;
+	bonus = new Sprite("imagenes/mascarilla.png", 0, 0, w, h);
+	posicion.x = x;
+	posicion.y = y;
+	velocidad.x = vx;
+
+}
 void BonusMascarilla::Inicializa(int x, int y, int w, int h) {
 	anchura = 0.4 * w;
 	altura = 0.4 * h;

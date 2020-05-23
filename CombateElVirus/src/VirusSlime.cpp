@@ -1,4 +1,6 @@
 #include "VirusSlime.h"
+#include "Municion.h"
+#include "BonusMascarilla.h"
 
 
 using namespace ETSIDI;
@@ -58,4 +60,14 @@ void VirusSlime::Seguir(Hombre h) {
     }
     //No sigue al hombre 
 
+}
+
+void VirusSlime::LanzaBonus(ListaBonus& l) {
+    float naleatorio = lanzaDado(10.0);
+    if (naleatorio < 60.0) {
+        l.agregar(new Municion(posicion.x, posicion.y, 0, 2, 2));
+    }
+    else if (naleatorio > 60.0) {
+        l.agregar(new BonusMascarilla(posicion.x, posicion.y, 0, 2, 2));
+    }
 }

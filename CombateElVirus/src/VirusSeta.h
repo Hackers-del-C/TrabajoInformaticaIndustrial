@@ -10,7 +10,7 @@ class VirusSeta : public Virus
     void Inicializa(float x, float y);
     void Seguir(Hombre h);
     VirusSeta();
-
+    void LanzaBonus(ListaBonus& l);
 
 
 };
