@@ -70,6 +70,6 @@ void VirusMosca::Muere() {
 }
 
 void VirusMosca::LanzaBonus(ListaBonus& l) {
-    l.agregar(new Billete(posicion.x, 25, 4, 4));
+    l.agregar(new Billete(posicion.x,17, 4, 4));
 }
 

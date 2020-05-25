@@ -68,6 +68,6 @@ void VirusSlime::LanzaBonus(ListaBonus& l) {
         l.agregar(new Municion(posicion.x, posicion.y, 0, 2, 2));
     }
     else if (naleatorio > 60.0) {
-        l.agregar(new BonusMascarilla(posicion.x, posicion.y, 0, 2, 2));
+        l.agregar(new BonusMascarilla(posicion.x, posicion.y, 0, 1.5, 1.5));
     }
 }
