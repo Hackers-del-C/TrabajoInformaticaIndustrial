@@ -21,7 +21,7 @@ void Amigo::Dibuja(Hombre h) {
     switch (h.GetDir()) {
     case 0:
       
-        companion->draw();
+        companionder->draw();
         switch (izqder) {
         case 0:  // muñeco a la izquierda del hombre            
             companionder->draw();
