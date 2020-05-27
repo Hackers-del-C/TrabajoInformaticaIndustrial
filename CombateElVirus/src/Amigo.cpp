@@ -77,13 +77,62 @@ void Amigo::Mueve(float t) {
 void Amigo::Mensajes(int level) {
 
     switch (level){
-    if (posicion.x < 5) {
-        auxetsidi.Texto("Holaaaa!", posicion.x - 3, -1, 0, 0.1, 0.2, 8);
+    case 1:
+    if (posicion.x < 10) {
+        auxetsidi.Texto("Ni hao!", posicion.x , 2, 0, 0.1, 0.2, 8);
+        auxetsidi.Texto("Usa las teclas para moverte", posicion.x -3, 0, 0, 0.1, 0.2, 8);
+        auxetsidi.Texto("Usa s,w,a,d para disparar", posicion.x -3, -1, 0, 0.1, 0.2, 8);
 
    }
-    else if (5 <= posicion.x && posicion.x < 26) {
-        auxetsidi.Texto("Soy Pedro", posicion.x - 7, 0, 0, 0.1, 0.2, 8);
-        auxetsidi.Texto("tu compañero de aventuras", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
+    else if (10 <= posicion.x && posicion.x < 30) {
+        auxetsidi.Texto("Coge los spry para poder disparar", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
     }
+    else if (50 <= posicion.x && posicion.x < 70) {
+        auxetsidi.Texto("Pulsa la barra espaciadora para pararte", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
+    }
+    else if (90 <= posicion.x && posicion.x < 110) {
+        auxetsidi.Texto("A mayor numero de probetas mas puntuacion ", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
+    }
+    else if (115 <= posicion.x && posicion.x < 140) {
+        auxetsidi.Texto("Las mascarillas te dan vidas", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
+    }
+    else if (150 <= posicion.x && posicion.x < 200) {
+        auxetsidi.Texto("Nos acercamos al foco de infeccion...", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
+    }
+    else if (200 <= posicion.x && posicion.x < 250) {
+        auxetsidi.Texto("Mata al virus Mosca y consigue ", posicion.x - 7, 0, 0, 0.1, 0.2, 8);
+        auxetsidi.Texto("un billete para combatir el virus en otros paises ", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
+    }
+    break;
+    case 2:
+        if (posicion.x < 10) {
+            auxetsidi.Texto("Ciao!", posicion.x - 3, 2, 0, 0.1, 0.2, 8);
+           
+        }
+        break;
+
+    case 3:
+        if (posicion.x < 10) {
+            auxetsidi.Texto("Holaaaa!", posicion.x - 3, 0, 0, 0.1, 0.2, 8);
+            auxetsidi.Texto("Vamos a por esos virus", posicion.x - 6, -1, 0, 0.1, 0.2, 8);
+          
+
+        }
+        else if (10 <= posicion.x && posicion.x < 20) {
+            auxetsidi.Texto("Para con el espacio", posicion.x - 4, 0, 0, 0.1, 0.2, 8);
+            auxetsidi.Texto("Y sube la escalera saltando", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
+        }
+        else if (30 <= posicion.x && posicion.x < 70) {
+            auxetsidi.Texto("CUIDADO, SI CAES MORIRAS", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
+        }
+        else if (150 <= posicion.x && posicion.x < 200) {
+            auxetsidi.Texto("Nos acercamos al ULTIMO foco de infeccion...", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
+        }
+        else if (200 <= posicion.x && posicion.x < 250) {
+            auxetsidi.Texto("Mata al virus Mosca y consigue ", posicion.x - 7, 0, 0, 0.1, 0.2, 8);
+            auxetsidi.Texto("LA CURA AL CORONAVIRUS ", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
+        }
+        break;
+
     }
 }

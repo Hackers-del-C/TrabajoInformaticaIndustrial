@@ -338,7 +338,7 @@ void Mundo::Inicializa(int level) {
 	//virus3.Inicializa(-10, 15);
 	limites.SetLimites(-20, 500, -10, 30); //Son los bordes del juego que el jugador no puede pasar	
 	vidas.Inicializa(hombre);
-	avion = new Sprite("imagenes/avion.png", 220, 10, 30, 10);
+
 
 	/*for (int i = 0; i < 1; i++) {
 		listavirus.agregar(new VirusSeta(0, -3, 5));
@@ -405,7 +405,7 @@ void Mundo::Dibuja(int level) {
 	listavirus.dibuja();
 	listaslime.dibuja();
 	listabonus.dibuja();
-	avion->draw();
+	
 
 
 	if (level == 1) {
@@ -804,7 +804,7 @@ void Mundo::RecargarNivel(int level) { //REINICIAR
 	misiles.DestruirContenido(misiles.GetNumero());
 	listaslime.destruirContenido();
 	personajes.Inicializa(hombre);
-	listabonus.destruirContenido();
+ //	listabonus.destruirContenido(); desaparecen los test???
 	//listalanzamisiles.DestruirContenido(); ---lo mata antes de tiempo
 	
 }
