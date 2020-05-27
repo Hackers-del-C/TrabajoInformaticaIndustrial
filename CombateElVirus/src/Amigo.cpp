@@ -139,11 +139,18 @@ void Amigo::Mensajes(int level) {
         else if (30 <= posicion.x && posicion.x < 70) {
             auxetsidi.Texto("CUIDADO, SI CAES MORIRAS", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
         }
+        else if (30 <= posicion.x && posicion.x < 70) {
+            auxetsidi.Texto("CUIDADO, SI CAES MORIRAS", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
+        }
+        else if (100 <= posicion.x && posicion.x < 130) {
+            auxetsidi.Texto("Sabias que en españa se comen", posicion.x - 7, 0, 0, 0.1, 0.2, 8);
+            auxetsidi.Texto("10 toneladas de tortilla de patata al dia?", posicion.x - 8, -1, 0, 0.1, 0.2, 8);
+        } 
         else if (150 <= posicion.x && posicion.x < 200) {
             auxetsidi.Texto("Nos acercamos al ULTIMO foco de infeccion...", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
         }
         else if (200 <= posicion.x && posicion.x < 250) {
-            auxetsidi.Texto("Mata al virus Mosca y consigue ", posicion.x - 7, 0, 0, 0.1, 0.2, 8);
+            auxetsidi.Texto("Mata al virus final y consigue ", posicion.x - 7, 0, 0, 0.1, 0.2, 8);
             auxetsidi.Texto("LA CURA AL CORONAVIRUS ", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
         }
         break;
