@@ -48,14 +48,14 @@ void Entorno::DibujaMenu(int xraton, int yraton,int aux,int avance_nivel) {
 		gl3 = 0;
 		
 	}
-	else if (((yraton > 9 && yraton <= 11)|| aux == 2)&& avance_nivel>1) {		
+	else if (((yraton > 9 && yraton <= 11)|| aux == 2)&& avance_nivel>=1) {		
 			gl1 = 0;
 			gl2 = 1;
 			gl3 = 0;	
 		
 		
 	}
-	else if (((yraton > 7 && yraton <= 9)|| aux == 3) && avance_nivel>2) {
+	else if (((yraton > 7 && yraton <= 9)|| aux == 3) && avance_nivel>=2) {
 		gl1 = 0;
 		gl2 = 0;
 		gl3 = 1;
