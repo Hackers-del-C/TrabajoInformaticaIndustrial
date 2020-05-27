@@ -471,7 +471,7 @@ int Mundo::Ganar() {
 		}
 		else {
 			return 1;
-			hombre.SetDir(0);
+			hombre.Victoria(); //doesnt work :c sadly
 		}
 	}
 }

@@ -10,7 +10,7 @@ void Amigo::Inicializa() {
     //compañero
     companionder = new SpriteSequence("imagenes/companionder.png", 2, 1, 25, true, 0, 0, 2, 2);
     companionizq = new SpriteSequence("imagenes/companionizq.png", 2, 1, 25, true, 0, 0, 2, 2);
-    companion = new SpriteSequence("imagenes/companion.png", 2, 1, 25, true, 0, 0, 2, 2);
+    companion = new SpriteSequence("imagenes/companion.png", 1, 1, 25, true, 0, 0, 2, 2);
     izqder = 0;
     posicion.x = -7;
 }
@@ -22,6 +22,20 @@ void Amigo::Dibuja(Hombre h) {
     case 0:
       
         companion->draw();
+        switch (izqder) {
+        case 0:  // muñeco a la izquierda del hombre            
+            companionder->draw();
+            if (h.GetPos().x - posicion.x >= 7) {
+                posicion.x = h.GetPos().x - 7;
+            }
+            break;
+        case 1:  //muñeco a la derecha
+            companion->draw();
+            if (h.GetPos().x - posicion.x >= 7) {
+                izqder = 0;
+            }
+            break;
+        }
         break;
     case 1: //// hombre yendo a la derecha
         switch (izqder) {
