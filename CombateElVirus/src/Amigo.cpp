@@ -84,7 +84,6 @@ void Amigo::Mensajes(int level) {
     else if (5 <= posicion.x && posicion.x < 26) {
         auxetsidi.Texto("Soy Pedro", posicion.x - 7, 0, 0, 0.1, 0.2, 8);
         auxetsidi.Texto("tu compañero de aventuras", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
-
     }
     }
 }

@@ -12,6 +12,7 @@ public:
 	void Mueve(float t);
 	void Tecla(unsigned char key);
 	void TeclaEspecial(unsigned char key);
+	
 private:
 	Virus virus; 
 	Hombre hombre;

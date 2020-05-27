@@ -803,6 +803,8 @@ void Mundo::RecargarNivel(int level) { //REINICIAR
 	InicializaFondo(level);
 	misiles.DestruirContenido(misiles.GetNumero());
 	listaslime.destruirContenido();
+	personajes.Inicializa(hombre);
+	listabonus.destruirContenido();
 	//listalanzamisiles.DestruirContenido(); ---lo mata antes de tiempo
 	
 }

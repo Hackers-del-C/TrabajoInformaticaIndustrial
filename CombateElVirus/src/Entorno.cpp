@@ -2,7 +2,7 @@
 #include "glut.h"
 #include "ETSIDI.h"
 void Entorno::Musica(int nivel) {
-	//MUSICA
+	//MUSICA del menu y de los 4 niveles
 	switch (nivel) {
 	case 0:
 		ETSIDI::playMusica("mis_sonidos/menu.wav",false);
