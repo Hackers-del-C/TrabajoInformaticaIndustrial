@@ -3,7 +3,6 @@
 #include <glut.h>
 #include "Coordinador.h"
 Coordinador::Coordinador() {
-
 	estado = MENU;
 	nivel = 0;
 	AvanceNivel = 0;
@@ -39,8 +38,7 @@ void Coordinador::Mueve() {
 void Coordinador::Dibuja() {
 	mundo.InicioDibuja(); //ES EL OJO 
 	
-	if (estado == JUEGO) {
-		
+	if (estado == JUEGO) {		
 		entorno.DibujaJuego(nivel);
 		mundo.Dibuja(nivel);
 		mundo.DibujaBasico();
@@ -61,7 +59,7 @@ void Coordinador::Dibuja() {
 		}
 	}
 	else if (estado == MENU) {
-		entorno.DibujaMenu(xmouse, ymouse,aux2);
+		entorno.DibujaMenu(xmouse, ymouse,aux2,AvanceNivel);
 		mundo.RecargarNivel(nivel);
 	
 		if (aux == 1) {
@@ -107,7 +105,7 @@ void Coordinador::Dibuja() {
 	
 }
 void Coordinador::tecla(unsigned char key) {
-	//BORRAR: ES EL HACK PARA PODER HACER TODOS LOS NIVELES 
+	// ES EL HACK PARA PODER HACER TODOS LOS NIVELES 
 	if(key == '0') {
 		AvanceNivel = 3;
 	}

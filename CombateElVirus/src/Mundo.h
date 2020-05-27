@@ -2,7 +2,6 @@
 #include "ETSIDI.h"
 #include"time.h"
 
-
 #include "Limites.h"
 #include "Personajes.h"
 #include "Hombre.h"
@@ -21,7 +20,7 @@
 #include "Listamisiles.h"
 #include "ListaBonus.h"
 
-//borrar en un futuro: WHYYYY???
+
 #include "VirusSeta.h"
 #include "VirusBaba.h"
 #include "VirusMosca.h"

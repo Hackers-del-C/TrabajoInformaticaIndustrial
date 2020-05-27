@@ -39,7 +39,7 @@ void Entorno::Fin(int pantalla) {
 		break;
 	}
 }
-void Entorno::DibujaMenu(int xraton, int yraton,int aux) {
+void Entorno::DibujaMenu(int xraton, int yraton,int aux,int avance_nivel) {
 	//IMAGENES
 	auxetsidi.Imagen("menu", -26, 26, -10, 30); //limx1 limx2 limy1 limy2. La textura es cte -0.1		
 	if ((yraton > 11 && yraton < 13)|| aux==1) {
@@ -48,14 +48,14 @@ void Entorno::DibujaMenu(int xraton, int yraton,int aux) {
 		gl3 = 0;
 		
 	}
-	else if ((yraton > 9 && yraton <= 11)|| aux == 2) {		
+	else if (((yraton > 9 && yraton <= 11)|| aux == 2)&& avance_nivel>1) {		
 			gl1 = 0;
 			gl2 = 1;
 			gl3 = 0;	
 		
 		
 	}
-	else if ((yraton > 7 && yraton <= 9)|| aux == 3) {
+	else if (((yraton > 7 && yraton <= 9)|| aux == 3) && avance_nivel>2) {
 		gl1 = 0;
 		gl2 = 0;
 		gl3 = 1;
