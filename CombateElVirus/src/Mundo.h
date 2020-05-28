@@ -94,6 +94,8 @@ private:
 	Plataformas plataformaprueba;
 	ListaPlataformas plataformas;
 	ListaSlime listaslime;
+	ListaSlime listaslime2;
+	ListaSlime disparobaba;
 	ListaVirus listavirus;
 	ListaBonus listabonus;
 

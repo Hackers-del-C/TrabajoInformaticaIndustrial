@@ -410,6 +410,8 @@ void Mundo::Dibuja(int level) {
 	listaexplosiones.dibuja();
 	listavirus.dibuja();
 	listaslime.dibuja();
+	listaslime2.dibuja();
+	disparobaba.dibuja();
 	listabonus.dibuja();
 	
 
@@ -514,7 +516,7 @@ void Mundo::Mueve(int level)
 	//.Mueve//
 	
 	personajes.Mueve(0.025f);
-	virus2.Mueve(0.025f);	
+	virus2.Mueve(0.025f,disparobaba, hombre);	
 	hombre.Mueve(0.025f);
 	disparos.Mueve(0.025f,hombre);
 	misiles.Mueve(0.025f);
@@ -523,6 +525,7 @@ void Mundo::Mueve(int level)
 	listavirus.mueve(0.025f, hombre);
 	listavirus.Sigue(hombre);	
 	listaslime.mueve(0.025f, hombre);
+	disparobaba.mueve(0.025f, hombre);
 	listabonus.mueve(0.025f);	
 	listaexplosiones.mueve(0.025f);
 	plataformas.Mueve(0.025f);
@@ -536,6 +539,9 @@ void Mundo::Mueve(int level)
 	listaslime.Colision(limites);
 	listaslime.Colision(plataformas);
 	listaslime.Colision(hombre);
+	disparobaba.Colision(limites);
+	disparobaba.Colision(plataformas);
+	disparobaba.Colision(hombre);
 	listabonus.Colision(limites);
 	listabonus.Colision(plataformaprueba);
 	listabonus.colision(hombre);

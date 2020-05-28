@@ -1,18 +1,27 @@
 #pragma once
 #include "Virus.h"
 #include "ETSIDI.h"
-
+#include "ListaSlime.h"
+#include "Slime.h"
 
 class VirusBaba : public Virus
 {
+    enum Estado { normal = 0, ataca, desaparece, aparece};
+    
+    Estado estado;
 public:
+
     VirusBaba(float x, float y);
     ~VirusBaba();
     void Inicializa(float x, float y);
     VirusBaba();
     void Ataca();
     void Desaparece();
-    int Fin();
-    void Mueve(float t);
-
+    void Dispara(ListaSlime& l, Hombre h);
+    void Mueve(float t, ListaSlime& l, Hombre h);
+    void finsequence(Estado e, ListaSlime& l, Hombre h);
+private:
+    int mov;
+    
+    Slime* slime;
 };
