@@ -9,6 +9,9 @@
 #include <math.h>
 #include "glut.h"
 #include <fstream>
+#include<sstream>
+#include<iostream>
+
 #define NUM_MAX_RANKING 100
 
 
@@ -106,7 +109,10 @@ void Mundo::fichero(int level) { //	Fichero para guardar el numero de tests y el
 		fichero1 << lista[0].texto1 << " " << lista[m].nivel << " " << endl;
 		fichero1 << lista[0].texto2 << " " << lista[m].test << " " << lista[0].texto3 << endl;
 		fichero1 << lista[0].texto4 << " " << lista[m].segundos << " " << lista[0].texto5 << endl << endl;
-	
+
+		
+		auxetsidim.Texto("david", 0, 0, 0, 0, 0, 20);
+		
 	
 	}
 

@@ -1,6 +1,9 @@
 #include "Entorno.h"
 #include "glut.h"
 #include "ETSIDI.h"
+#include<fstream>
+#include<sstream>
+#define NUM_MAX_RANKING 100
 void Entorno::Musica(int nivel) {
 	//MUSICA del menu y de los 4 niveles
 	switch (nivel) {
@@ -136,10 +139,14 @@ void Entorno::Aviso(int pantalla, int x, int y) {
 
 	switch (pantalla) {
 	case 1: //pantalla si mueres
-		auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, 2, 17);
-		auxetsidi.Texto("F Perdiste...", x - 5.5, 13, 0.44, 0.87, 0.45, 20);
-		auxetsidi.Texto("Pulsa 8  para REINICIAR EL NIVEL", x - 10, 9, 1, 1, 1, 12); //obv habrá que hacerlo con otras teclas u otra cosa
-		auxetsidi.Texto("Pulsa 7 ir al MENU PRINCIPAL", x - 10, 7, 1, 1, 1, 12);
+		auxetsidi.Imagen("aviso", x - 20, x + 20, 0, 30);
+		auxetsidi.Texto("F Perdiste...", x - 5.5, 24, 0.44, 0.87, 0.45, 20);
+		auxetsidi.Texto("Pulsa 8  para REINICIAR EL NIVEL", x - 10, 21, 1, 1, 1, 12); //obv habrá que hacerlo con otras teclas u otra cosa
+		auxetsidi.Texto("Pulsa 7 ir al MENU PRINCIPAL", x - 10, 18, 1, 1, 1, 12);
+		auxetsidi.Texto("CLASIFICACION ", x - 10, 15, 1, 1, 1, 12);
+		//clasificacion();
+
+
 		break;
 
 	case 2: //pantalla si ganas	
@@ -168,3 +175,46 @@ void Entorno::Aviso(int pantalla, int x, int y) {
 		auxetsidi.Texto("Pulsa 7 para ir al menu", x - 7, 7, 1, 1, 1, 15);
 	}
 }
+
+/*void Entorno::clasificacion() {
+
+	ifstream fichero("resultado_final.txt");
+	int k = 0;
+
+	struct jugador {
+
+		string nombre, texto1, texto2, texto3, texto4, texto5;
+		int nivel = 0, test = 0, segundos = 0, posicion = 0;
+
+	};
+
+	jugador lista[NUM_MAX_RANKING];
+
+
+
+	while (!fichero.eof()) {
+
+		fichero >> lista[k].posicion >> lista[k].nombre;
+		fichero >> lista[k].texto1 >> lista[k].nivel;
+		fichero >> lista[k].texto2 >> lista[k].test >> lista[k].texto3;
+		fichero >> lista[k].texto4 >> lista[k].segundos >> lista[k].texto5;
+		k++;
+	}
+
+	
+	lista[k].nivel = level;
+	lista[k].test = hombre.GetMonedas();
+	lista[k++].segundos = ((clock() - tiempo) / 1000);
+
+	
+	fichero.close();
+	for (int i = 0; i < 2; i++) {
+
+		auxetsidi.Texto(, x - 10, 15, 1, 1, 1, 12);
+
+
+	}
+
+}*/
+
+

@@ -15,6 +15,7 @@ public:
 	void Fin(int pantalla);
 	void Aviso(int pantalla, int x, int y);
 	void AvisoAvanceNivel();
+	//void clasificacion();
 	
 private:
 	AuxEtsidi auxetsidi;

@@ -50,7 +50,7 @@ void Coordinador::Dibuja() {
 			estado = MUERTE;
 			int a = 0;
 			if (a == 0) { entorno.Fin(1); a = 1; } //para que no entre bucle y se reproduzca una vez
-			//mundo.fichero(nivel); 
+			//if (mundo.gettiempo() != -1000) { mundo.fichero(nivel); }
 		}
 		else if (mundo.Ganar()) {
 			estado = GANAR;		

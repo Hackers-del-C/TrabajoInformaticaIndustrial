@@ -1,5 +1,6 @@
 #pragma once
 #include "ETSIDI.h"
+#include"AuxEtsidi.h"
 #include"time.h"
 
 #include "Limites.h"
@@ -58,6 +59,7 @@ public:
 	int Muerte();
 	int Ganar();
 	void SetFinalLevel(int f) { finaldenivel = 1; }
+	long gettiempo() { return tiempo; }
 	
 	//ojo:
 
@@ -72,7 +74,7 @@ private:
 	int finaldenivel;
 	int distancia=0;
 	int salto =0;
-	long tiempo;//
+	long tiempo = -1000;//
 	Disparo disparo;
 	Personajes personajes;
 	Hombre hombre;
@@ -97,7 +99,7 @@ private:
 
 	ListaExplosiones listaexplosiones;
 	Explosiones exptest;
-	
+	AuxEtsidi auxetsidim;
 	
 	//ojo
 	float x_ojo;
