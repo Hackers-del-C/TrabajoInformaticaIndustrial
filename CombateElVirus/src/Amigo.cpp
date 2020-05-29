@@ -8,9 +8,9 @@
 
 void Amigo::Inicializa() {
     //compañero
-    companionder = new SpriteSequence("imagenes/companionder.png", 2, 1, 25, true, 0, 0, 2, 2);
-    companionizq = new SpriteSequence("imagenes/companionizq.png", 2, 1, 25, true, 0, 0, 2, 2);
-    companion = new SpriteSequence("imagenes/companion.png", 1, 1, 25, true, 0, 0, 2, 2);
+    companionder = new SpriteSequence("imagenes/companionder.png", 2, 1, 100, true, 0, 0, 2, 2);
+    companionizq = new SpriteSequence("imagenes/companionizq.png", 2, 1, 100, true, 0, 0, 2, 2);
+    companion = new SpriteSequence("imagenes/companion.png", 1, 1, 100, true, 0, 0, 2, 2);
     izqder = 0;
     posicion.x = -7;
 }
