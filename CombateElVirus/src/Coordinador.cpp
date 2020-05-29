@@ -245,10 +245,7 @@ void Coordinador::teclaEspecial(unsigned char key) {
 		}
 	}
 }
-void Coordinador::teclaEspecialsuelta(unsigned char key) {
-	if (estado == JUEGO)
-		mundo.teclaEspecialsuelta(key);
-}
+
 void Coordinador::ClickMouse(int b, int state) {
 	bool down = (state == GLUT_DOWN);
 	int button;

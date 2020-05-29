@@ -10,7 +10,6 @@ public:
 	~ListaMisil();
 
 	bool Agregar(Misil* d);
-	void DestruirContenido(int ind);
 	void Mueve(float t);
 	void Dibuja();
 	int GetNumero() { return numero; }

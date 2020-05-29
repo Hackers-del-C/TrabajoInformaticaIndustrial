@@ -54,7 +54,6 @@ public:
 	void DibujaBasico();
 	void InicioDibuja();
 	void teclaEspecial(unsigned char key);
-	void teclaEspecialsuelta(unsigned char key);
 	int Muerte();
 	int Ganar();
 	void SetFinalLevel(int f) { finaldenivel = 1; }

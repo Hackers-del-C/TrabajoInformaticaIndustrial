@@ -26,10 +26,13 @@ bool ListaMisil::Agregar(Misil* d) {
 		//misiles.Agregar(new Misil("imagenes/misilizq.png", 15, -3.0f, -5.0f, 0.0f));
 		return false;
 }
-void ListaMisil::DestruirContenido(int ind) {
-	for (int i = 0; i < numero; i++) {
-		delete lista[i];
+void ListaMisil::limpiar() {
 
+	for (int i = 0; i < numero; i++) {
+		if (lista[i]->posicion.x <= 0) {
+			delete lista[i];
+			lista[i] = NULL;
+		}
 	}
 	numero = 0;
 }
@@ -58,12 +61,6 @@ void ListaMisil::Mueve(float t) {
 		
 	}
 }
-//void ListaMisil::Explota() {
-//	for (int i = 0; i < lista.size(); i++) {
-//		lista[i]->Explota();
-//		lista[i]->SetVel(0);
-//	}
-//}
 void ListaMisil::Dibuja() {
 	for (int i = 0; i < numero; i++)
 		lista[i]->Dibuja();
@@ -82,12 +79,3 @@ Misil* ListaMisil::colision(Hombre& h) {
 	return 0;
 }
 
-void ListaMisil::limpiar() {
-
-	for (int i = 0; i < numero; i++) {
-		if (lista[i]->posicion.x <= 0) {
-
-			DestruirContenido(i);
-		}
-	}
-}

@@ -15,7 +15,6 @@ public:
 	void Dibuja();
 	void tecla(unsigned char key);
 	void teclaEspecial(unsigned char key);
-	void teclaEspecialsuelta(unsigned char key);
 	void ClickMouse(int b, int state);
 	void MyMouse(int x, int y);
 	void SetLevel(int level) {  nivel=level; }
