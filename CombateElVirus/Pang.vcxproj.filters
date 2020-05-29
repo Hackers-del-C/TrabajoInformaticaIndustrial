@@ -112,9 +112,6 @@
     <ClCompile Include="src\Billete.cpp">
       <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
     </ClCompile>
-    <ClCompile Include="src\Llave.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
-    </ClCompile>
     <ClCompile Include="src\Municion.cpp">
       <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
     </ClCompile>
@@ -229,9 +226,6 @@
       <Filter>Archivos de encabezado\MUNDO\Disparos</Filter>
     </ClInclude>
     <ClInclude Include="src\Billete.h">
-      <Filter>Archivos de encabezado\MUNDO\Interacciones\BONUS</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Llave.h">
       <Filter>Archivos de encabezado\MUNDO\Interacciones\BONUS</Filter>
     </ClInclude>
     <ClInclude Include="src\Municion.h">

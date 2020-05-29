@@ -13,7 +13,6 @@
 #include "BonusTest.h"
 #include "BonusMascarilla.h"
 #include "Billete.h"
-#include "Llave.h"
 //LISTAS
 #include "ListaPlatafomas.h"
 #include "ListaVirus.h"
