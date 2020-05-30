@@ -6,6 +6,8 @@ Coordinador::Coordinador() {
 	estado = MENU;
 	nivel = 0;
 	AvanceNivel = 0;
+	aux = 0;//para resetear la musica
+	aux2 = 0; //para usar flechas en el menu
 }
 Coordinador::~Coordinador() {
 
@@ -14,6 +16,7 @@ void Coordinador::Inicializa() {
 	mundo.Inicializa(nivel);
 	mundo.Setojo(0, 10, 53);
 
+	//son simplemente musica. 
 		if (estado == JUEGO) {
 		
 		}
@@ -32,11 +35,11 @@ void Coordinador::Mueve() {
 		mundo.Mueve(nivel);
 	}
 	else if (estado == GANAR || estado == MUERTE) {
-		mundo.MueveHombre();
+		mundo.MueveHombre(); // asi cuando se gana o se muere lo demás se para (tampoco se dibuja pero asi nos ahorramos memoria)
 	}
 }
 void Coordinador::Dibuja() {
-	mundo.InicioDibuja(); //ES EL OJO 
+	mundo.InicioDibuja(); //ES EL OJO. Va fuera  para que no de problemas 
 	
 	if (estado == JUEGO) {		
 		entorno.DibujaJuego(nivel);
@@ -60,28 +63,23 @@ void Coordinador::Dibuja() {
 	}
 	else if (estado == MENU) {
 		entorno.DibujaMenu(xmouse, ymouse,aux2,AvanceNivel);
-		mundo.RecargarNivel(nivel);
-	
-		if (aux == 1) {
+		mundo.RecargarNivel(nivel);	
+		if (aux == 1) { //poner la musica del menu
 			entorno.Musica(0); aux = 0;
 		}
 	}
 	else if(estado==MUERTE){
 
-		entorno.Aviso(1, mundo.GetHombrePos().x, mundo.GetHombrePos().y); // funciona pero se resetea la posicion del hombre 
+		entorno.Aviso(1, mundo.GetHombrePos().x, mundo.GetHombrePos().y); 
 		entorno.DibujaJuego(nivel); //funciona
-		mundo.DibujaBasico();
-		//mundo.InicializaFondo(nivel); creo que no hace falta
-		
+		mundo.DibujaBasico();		
 	}
-	else if (estado == GANAR) {
-		
-	
+	else if (estado == GANAR) {	
 		
 		switch (nivel){
 		case 1:
 			entorno.Aviso(2, mundo.GetHombrePos().x, mundo.GetHombrePos().y);
-			AvanceNivel = 1;
+			AvanceNivel = 1; //sirve para conocer que niveles se han pasado y cuales no 
 			break;
 		case 2:
 			entorno.Aviso(2, mundo.GetHombrePos().x, mundo.GetHombrePos().y);
@@ -113,8 +111,7 @@ void Coordinador::tecla(unsigned char key) {
 	if (estado == JUEGO) {
 		mundo.Tecla(key);
 		if (key == 'p') {
-			estado = PAUSA;
-			//mundo.Dibuja(nivel);		
+			estado = PAUSA;	
 		}
 	}
 	else if (estado == MUERTE) {
@@ -134,12 +131,12 @@ void Coordinador::tecla(unsigned char key) {
 	}
 	else if (estado == GANAR) {
 		switch (key) {		
-		case '7':
+		case '7': //VOLVER AL MENU PRINCIPAL
 			estado = MENU;
 			mundo.RecargarNivel(nivel);
 			aux = 1;
 			nivel = 0;
-			break;
+			break; //PASAR AL SIGUIENTE NIVEL
 		case '8':
 			if (AvanceNivel < 3) {
 			estado = JUEGO;			
@@ -152,18 +149,18 @@ void Coordinador::tecla(unsigned char key) {
 		}				
 	}
 	else if (estado == PAUSA) {
-		if (key == 'c') {
+		if (key == 'c') { //CONTINUAR EL JUEGO
 			mundo.Dibuja(nivel);
 			estado = JUEGO;
 		}
-		else if (key == 'm') {
+		else if (key == 'm') { //IR AL MENU PRINCIPAL
 			estado = MENU;
 			mundo.RecargarNivel(nivel);
 			aux = 1;
 		}
 	}
-	else if (estado == MENU) {
-		if (key == ' ') {
+	else if (estado == MENU) { //PARA ELEGIR EL NIVEL EN CASO DE QUE SE HAYA PASADO EL NIVEL ANTERIOR CON TECLAS
+		if (key == ' ') { 
 			switch (aux2) {
 			case 0:
 				break;
@@ -243,21 +240,18 @@ void Coordinador::teclaEspecial(unsigned char key) {
 	}
 }
 
-void Coordinador::ClickMouse(int b, int state) {
+void Coordinador::ClickMouse(int b, int state) { //PARA ELEGIR NIVEL CON EL RATÓN EN CASO DE QUE SE HAYA PASADO EL NIVEL ANTERIOR
 	bool down = (state == GLUT_DOWN);
 	int button;
 	if (estado == MENU) {
 		if (b == GLUT_LEFT_BUTTON) {
 			button = MOUSE_LEFT_BUTTON;
 
-			if (ymouse > 11.5 && ymouse <= 13) {
-				
+			if (ymouse > 11.5 && ymouse <= 13) {				
 					nivel = 1;
 					estado = JUEGO;
 					mundo.RecargarNivel(nivel);
-					aux = 1;
-				
-				
+					aux = 1;				
 			}
 			else if (ymouse > 9.5 && ymouse <= 11.5) {
 				if (AvanceNivel >= 1) {
@@ -281,7 +275,6 @@ void Coordinador::ClickMouse(int b, int state) {
 	
 }
 void Coordinador::MyMouse(int x, int y) {
-	cout << "(" << xmouse << "," << ymouse << ")" << endl; //borrar futuro
 	xmouse = (x - 400) / 13, 3; //coordinar con la x de nuestra pantalla
 	ymouse = -(y - 455) / 17.5 + 1; //coordinar con la y de niestra pantalla
 }
