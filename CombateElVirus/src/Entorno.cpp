@@ -77,11 +77,7 @@ void Entorno::DibujaMenu(int xraton, int yraton,int aux,int avance_nivel) {
 	auxetsidi.Texto("Hackers del C++ 2020", 12,-8.3, 0, 0, 0, 8);
 	
 }
-void Entorno::AvisoAvanceNivel() {
-	
-		auxetsidi.Texto("Tienes que pasarte el nivel anterior",2, 12, 0.44, 0.87, 0.45, 10);
 
-}
 void Entorno::DibujaJuego(int nivel) {
 
 	switch (nivel) {

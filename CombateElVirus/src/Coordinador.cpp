@@ -180,8 +180,7 @@ void Coordinador::tecla(unsigned char key) {
 					mundo.RecargarNivel(nivel);
 					aux = 1;
 				}
-				else
-					entorno.AvisoAvanceNivel();
+			
 				break;
 			case 3:
 				if (AvanceNivel >= 2) {
@@ -190,9 +189,7 @@ void Coordinador::tecla(unsigned char key) {
 					mundo.RecargarNivel(nivel);
 					aux = 1;
 				}
-				else {
-					entorno.AvisoAvanceNivel();
-				}
+				
 				break;
 			}
 		}
@@ -269,8 +266,7 @@ void Coordinador::ClickMouse(int b, int state) {
 					mundo.RecargarNivel(nivel);
 					aux = 1;
 				}
-				else
-					entorno.AvisoAvanceNivel();
+				
 			}
 			else if (ymouse > 8 && ymouse <= 9.5) {
 				if (AvanceNivel >= 2) {
