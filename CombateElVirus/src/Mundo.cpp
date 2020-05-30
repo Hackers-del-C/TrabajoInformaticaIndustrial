@@ -167,7 +167,6 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 	/// tests (son simplemente para la puntuacion)	
 		listabonus.agregar(new BonusTest(10, -2, 2, 2));
 		listabonus.agregar(new BonusTest(25, -2, 2, 2));
-		listabonus.agregar(new BonusTest(30, -2, 2, 2));
 		listabonus.agregar(new BonusTest(40, -2, 2, 2));
 		listabonus.agregar(new BonusTest(60, -2, 2, 2));
 		listabonus.agregar(new BonusTest(70, -2, 2, 2));
@@ -345,7 +344,9 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 void Mundo::Inicializa(int level) { //Inicializa principal
 	finaldenivel = 0;   //para tener en cuenta si se acaba el nivel
 	hombre.Inicializa();
-	personajes.Inicializa(hombre);
+	amigo.Inicializa();
+	amigo.SetAceleracion(hombre.GetAceleracion().x);
+	amigo.SetVel(hombre.GetVel().x);
 	virus2.Inicializa(-5, 1);
 	limites.SetLimites(-20, 500, -10, 30); //Son los bordes del juego que el jugador no puede pasar	
 	vidas.Inicializa(hombre);
@@ -366,7 +367,8 @@ void Mundo::DibujaBasico() {
 }
 void Mundo::Dibuja(int level) {
 	///Dibuja general
-	personajes.Dibuja(level, hombre);
+	amigo.Dibuja(hombre);
+	amigo.Mensajes(level);
 	disparos.Dibuja();
 	misiles.Dibuja();
 	listalanzamisiles.Dibuja();
@@ -464,7 +466,7 @@ void Mundo::Mueve(int level)
 
 	//.Mueve//
 	
-	personajes.Mueve(0.025f);
+	amigo.Mueve(0.025f);
 	virus2.Mueve(0.025f,disparobaba, hombre);	
 	hombre.Mueve(0.025f);
 	disparos.Mueve(0.025f,hombre);
@@ -626,7 +628,9 @@ void Mundo::teclaEspecial(unsigned char key) {
 void Mundo::RecargarNivel(int level) { //REINICIAR 
 	Setojo(0, 10, 53);
 	tiempo = clock(); //para el tiempo
-
+	amigo.Inicializa();
+	amigo.SetAceleracion(hombre.GetAceleracion().x);
+	amigo.SetVel(hombre.GetVel().x);
 	hombre.FinPartida();//REINICIA TODO LO DEL HOMBRE	
 	disparos.DestruirContenido();	
 	plataformas.DestruirContenido(plataformas.GetNumero());
@@ -635,7 +639,7 @@ void Mundo::RecargarNivel(int level) { //REINICIAR
 	misiles.limpiar();
 	listaslime.destruirContenido();
 	disparobaba.destruirContenido();
-	personajes.Inicializa(hombre);
+	
 	
  //	listabonus.destruirContenido(); desaparecen los test???
 	

@@ -40,9 +40,6 @@
     <ClCompile Include="src\Virus.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
     </ClCompile>
-    <ClCompile Include="src\Personajes.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Personajes</Filter>
-    </ClCompile>
     <ClCompile Include="src\Vidas.cpp">
       <Filter>Archivos de código fuente\MUNDO\Entorno\Vidas</Filter>
     </ClCompile>
@@ -155,9 +152,6 @@
     </ClInclude>
     <ClInclude Include="src\Virus.h">
       <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Personajes.h">
-      <Filter>Archivos de encabezado\MUNDO\Personajes</Filter>
     </ClInclude>
     <ClInclude Include="src\Vidas.h">
       <Filter>Archivos de encabezado\MUNDO\Entorno\Vidas</Filter>

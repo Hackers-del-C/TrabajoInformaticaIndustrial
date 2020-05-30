@@ -99,13 +99,13 @@ void Amigo::Mensajes(int level) {
 
    }
     else if (10 <= posicion.x && posicion.x < 30) {
-        auxetsidi.Texto("Coge los spry para poder disparar", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
+        auxetsidi.Texto("Coge los spray para poder disparar", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
     }
     else if (50 <= posicion.x && posicion.x < 70) {
         auxetsidi.Texto("Pulsa la barra espaciadora para pararte", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
     }
     else if (90 <= posicion.x && posicion.x < 110) {
-        auxetsidi.Texto("A mayor numero de probetas mas puntuacion ", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
+        auxetsidi.Texto("A mayor numero de probetas mayor puntuacion ", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
     }
     else if (115 <= posicion.x && posicion.x < 140) {
         auxetsidi.Texto("Las mascarillas te dan vidas", posicion.x - 7, -1, 0, 0.1, 0.2, 8);

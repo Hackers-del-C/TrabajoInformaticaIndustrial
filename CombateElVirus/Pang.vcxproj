@@ -111,7 +111,6 @@
     <ClCompile Include="src\Municion.cpp" />
     <ClCompile Include="src\Pared.cpp" />
     <ClCompile Include="src\Bonus.cpp" />
-    <ClCompile Include="src\Personajes.cpp" />
     <ClCompile Include="src\Plataformas.cpp" />
     <ClCompile Include="src\Slime.cpp" />
     <ClCompile Include="src\Vector2D.cpp" />
@@ -151,7 +150,6 @@
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\Municion.h" />
     <ClInclude Include="src\Pared.h" />
-    <ClInclude Include="src\Personajes.h" />
     <ClInclude Include="src\Plataformas.h" />
     <ClInclude Include="src\Slime.h" />
     <ClInclude Include="src\Vector2D.h" />

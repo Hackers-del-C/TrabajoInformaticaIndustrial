@@ -4,7 +4,7 @@
 #include"time.h"
 
 #include "Limites.h"
-#include "Personajes.h"
+#include "Amigo.h"
 #include "Hombre.h"
 #include "ListaLanzamisiles.h"
 #include "Virus.h"
@@ -74,7 +74,7 @@ private:
 	int salto =0;
 	long tiempo = -1000;//
 	Disparo disparo;
-	Personajes personajes;
+	Amigo amigo;
 	Hombre hombre;
 	Limites limites;//plataforma1;
 	Virus virus;
