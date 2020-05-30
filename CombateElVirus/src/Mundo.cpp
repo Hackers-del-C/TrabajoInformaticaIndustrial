@@ -184,7 +184,7 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 	}
 	////NIVEL 2///
 	else if (nivel == 2) {
-
+		listalanzamisiles.DestruirContenido();
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 0, 10, 4, 1.5,-15,15));
 
 		for (int y = -6; y < 6; y++) {
@@ -203,6 +203,8 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 				plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 0, 2 * y+2, 4, 1.5));
 				
 			}*/
+		
+		
 
 	//Añadimos virus: slime seta y mosca
 		listavirus.agregar(new VirusSlime(50, -3, 9));		
@@ -278,8 +280,13 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 
 			plataformas.Agregar(new Plataformas(Plataformas::SUELO, 135 + 5 * i, -5.5, 5, 1.5));
 		}
-		for (int i = 1; i < 5; i++) {
-			plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 200, i * 8, 5, 1.5));
+		///////plataformas malo final
+		for (int i = 1; i < 4; i++) {
+			plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 200, i * 5 + i, 5, 1.5));
+		}
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 220, 15, 5, 1.5));
+		for (int i = 1; i < 4; i++) {
+			plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 240, i * 5 + i, 5, 1.5));
 		}
 		// tests (son simplemente para la puntuacion)	
 		listabonus.agregar(new BonusTest(10, -2, 2, 2));		
@@ -358,6 +365,12 @@ void Mundo::Dibuja(int level) {
 			if (plataformas.ColisionSube(hombre) != 0 && plataformas.ColisionSube(hombre)->GetTipo() != plataformas.ColisionSube(hombre)->PLATAFORMA_CHOCA)
 				plataformas.Eliminar(plataformas.ColisionSube(hombre));
 		}
+
+	}
+	if (level == 2) {
+		
+		if (plataformas.ColisionSube(hombre) != 0 && plataformas.ColisionSube(hombre)->GetTipo() == plataformas.ColisionSube(hombre)->SUELO)
+				plataformas.Eliminar(plataformas.ColisionSube(hombre));
 
 	}
 	if (level == 3) {
@@ -531,7 +544,10 @@ void Mundo::Tecla(unsigned char key)
 		}
 		break;
 	case 'v': //IMPORTANTE: AVANZAR EN EL NIVEL AUTOMATICAMENTE
-		hombre.SetPos(120, 20);
+		hombre.SetPos(90, 20);
+		break;
+	case 'b': //IMPORTANTE: AVANZAR EN EL NIVEL AUTOMATICAMENTE
+		hombre.SetPos(190, 20);
 		break;
 	}	
 }

@@ -299,45 +299,25 @@ void Hombre::caida(int caida, int level) {
 
         }
         if (level == 3) {
-            if (posicion.x < 30) {
+            if (posicion.x < 115) {
                 velocidad.x = 0;
                 velocidad.y = 0;
-                posicion.x = 10;
+                posicion.x = 20;
                 posicion.y = 0;
             }
-            else if (posicion.x < 90) {
-                velocidad.x = 0;
-                velocidad.y = 0;
-                posicion.x = 45;
-                posicion.y = 0;
-            }
-            else if (posicion.x < 120) {
+            else if (posicion.x < 190) {
                 velocidad.x = 0;
                 velocidad.y = 0;
                 posicion.x = 100;
                 posicion.y = 0;
             }
-            else if (posicion.x < 150) {
+            else if (posicion.x >=190) {
                 velocidad.x = 0;
                 velocidad.y = 0;
-                posicion.x = 120;
-                posicion.y = 0;
-
-            }
-            else if (posicion.x < 180) {
-                velocidad.x = 0;
-                velocidad.y = 0;
-                posicion.x = 120;
-                posicion.y = 0;
-
-            }
-            else if (posicion.x > 180) {
-                velocidad.x = 0;
-                velocidad.y = 0;
-                posicion.x = 210;
+                posicion.x = 200;
                 posicion.y = 0;
             }
-
+           
         }
         vidas -= 1;
     }
