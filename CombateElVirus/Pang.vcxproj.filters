@@ -25,18 +25,6 @@
     <ClCompile Include="src\Hombre.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes\Jugador</Filter>
     </ClCompile>
-    <ClCompile Include="src\Lanzamisiles.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Listalanzamisiles.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Listamisiles.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Misil.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
-    </ClCompile>
     <ClCompile Include="src\Virus.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
     </ClCompile>
@@ -76,23 +64,11 @@
     <ClCompile Include="src\Coordinador.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="src\Slime.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ListaSlime.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
-    </ClCompile>
     <ClCompile Include="src\VirusSlime.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
     </ClCompile>
-    <ClCompile Include="src\Explosiones.cpp">
-      <Filter>Archivos de código fuente\MUNDO</Filter>
-    </ClCompile>
     <ClCompile Include="src\ListaBonus.cpp">
       <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ListaExplosiones.cpp">
-      <Filter>Archivos de código fuente\MUNDO</Filter>
     </ClCompile>
     <ClCompile Include="src\BonusTest.cpp">
       <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
@@ -111,6 +87,30 @@
     </ClCompile>
     <ClCompile Include="src\Municion.cpp">
       <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Misil.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Interacciones\Elemenos Dañinos</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lanzamisiles.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Interacciones\Elemenos Dañinos</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Listalanzamisiles.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Interacciones\Elemenos Dañinos</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Listamisiles.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Interacciones\Elemenos Dañinos</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Explosiones.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Interacciones\Elemenos Dañinos</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ListaExplosiones.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Interacciones\Elemenos Dañinos</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Slime.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Interacciones\Elemenos Dañinos</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ListaSlime.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Interacciones\Elemenos Dañinos</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -301,6 +301,9 @@
     </Filter>
     <Filter Include="Archivos de encabezado\MUNDO\Disparos">
       <UniqueIdentifier>{84928c08-25c2-45c8-88b2-3f381806e541}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de código fuente\MUNDO\Interacciones\Elemenos Dañinos">
+      <UniqueIdentifier>{556afc86-b522-40cd-a674-e189ffcb9fef}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
