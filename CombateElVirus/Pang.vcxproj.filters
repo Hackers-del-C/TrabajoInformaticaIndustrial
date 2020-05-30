@@ -110,7 +110,7 @@
       <Filter>Archivos de código fuente\MUNDO\_Clases de uso general</Filter>
     </ClCompile>
     <ClCompile Include="src\Vidas.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Personajes\Extras de Personajes</Filter>
+      <Filter>Archivos de código fuente\MUNDO\BONUS</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -223,7 +223,7 @@
       <Filter>Archivos de encabezado\MUNDO\_Clases de uso general</Filter>
     </ClInclude>
     <ClInclude Include="src\Vidas.h">
-      <Filter>Archivos de encabezado\MUNDO\Personajes\Extras de personajes</Filter>
+      <Filter>Archivos de encabezado\MUNDO\BONUS</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
