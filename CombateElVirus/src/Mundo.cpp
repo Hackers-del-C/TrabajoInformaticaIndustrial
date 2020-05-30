@@ -621,6 +621,7 @@ void Mundo::RecargarNivel(int level) { //REINICIAR
 	InicializaFondo(level);
 	misiles.limpiar();
 	listaslime.destruirContenido();
+	disparobaba.destruirContenido();
 	personajes.Inicializa(hombre);
 	
  //	listabonus.destruirContenido(); desaparecen los test???
