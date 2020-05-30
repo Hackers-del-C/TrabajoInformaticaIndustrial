@@ -156,19 +156,17 @@ void Entorno::Aviso(int pantalla, int x, int y) {
 		auxetsidi.Texto("Pulsa 8 para ir al SIGUIENTE NIVEL", x - 10, 9, 1, 1, 1, 12);
 		auxetsidi.Texto("Pulsa 7 para ir al MENU PRINCIPAL", x - 10, 7, 1, 1, 1, 12);
 		break;
-	case 3:
+	case 3: //pantalla en pausa
 		auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, 2, 17);
 		//TEXTO
-
 		auxetsidi.Texto("PAUSA", x - 3, 13, 0.44, 0.87, 0.45, 20);
 		auxetsidi.Texto("Pulsa C para reiniciar", x - 7, 9, 1, 1, 1, 15);
 		auxetsidi.Texto("Pulsa M para ir al menu", x - 7, 7, 1, 1, 1, 15);
 		break;
 
-	case 4:
+	case 4://pantalla ganador final
 		auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, 2, 17);
 		//TEXTO
-
 		auxetsidi.Texto("HAS GANADO", x - 5, 13, 0.44, 0.87, 0.45, 20);
 		auxetsidi.Texto("CONSEGUISTE LA CURA ", x - 8, 11, 0.44, 0.87, 0.45, 15);
 		auxetsidi.Texto("AL CORONAVIRUS ", x - 8, 9, 0.44, 0.87, 0.45, 15);		

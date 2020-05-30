@@ -5,7 +5,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-
+//Clase auxiliar para hacer el codigo más corto y entendible en caso de necesitar imagenes o texto. 
 	
 
 void AuxEtsidi::Imagen(string nombre, float limx1, float limx2, float limy1, float limy2) {
