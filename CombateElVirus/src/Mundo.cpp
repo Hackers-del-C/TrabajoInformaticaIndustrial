@@ -245,6 +245,19 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 		listavirus.agregar(new VirusSeta(200, -3, 13));
 		listavirus.agregar(new VirusSlime(200, -3, 10));
 		listavirus.agregar(new VirusSeta(200, -3, 18));
+
+		// tests (son simplemente para la puntuacion)	
+		listabonus.agregar(new BonusTest(10, -2, 2, 2));
+		listabonus.agregar(new BonusTest(30, -2, 2, 2));
+		listabonus.agregar(new BonusTest(40, -2, 2, 2));
+		listabonus.agregar(new BonusTest(60, -2, 2, 2));
+		listabonus.agregar(new BonusTest(90, -2, 2, 2));
+		listabonus.agregar(new BonusTest(100, -2, 2, 2));
+		listabonus.agregar(new BonusTest(130, -2, 2, 2));
+		listabonus.agregar(new BonusTest(140, -2, 2, 2));
+		listabonus.agregar(new BonusTest(150, -2, 2, 2));
+		listabonus.agregar(new BonusTest(170, -2, 2, 2));
+		listabonus.agregar(new BonusTest(190, -2, 2, 2));
 	}
 	
 	else if (nivel == 3) {

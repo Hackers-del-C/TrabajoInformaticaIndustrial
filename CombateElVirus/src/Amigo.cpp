@@ -114,37 +114,51 @@ void Amigo::Mensajes(int level) {
         auxetsidi.Texto("Nos acercamos al foco de infeccion...", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
     }
     else if (200 <= posicion.x && posicion.x < 250) {
-        auxetsidi.Texto("Mata al virus Mosca y consigue ", posicion.x - 7, 0, 0, 0.1, 0.2, 8);
-        auxetsidi.Texto("un billete para combatir el virus en otros paises ", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
+        auxetsidi.Texto("Mata al virus Mosca y consigue  un billete", posicion.x - 7, 0, 0, 0.1, 0.2, 8);
+        auxetsidi.Texto("de avion para combatir en otros paises ", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
     }
     break;
     case 2:
         if (posicion.x < 10) {
-            auxetsidi.Texto("Ciao!", posicion.x - 3, 2, 0, 0.1, 0.2, 8);
+            auxetsidi.Texto("Ciao!", posicion.x - 1, -1, 0, 0.1, 0.2, 8);
+            auxetsidi.Texto("Vamos a por esos virus!", posicion.x - 6, -2, 0, 0.1, 0.2, 8);
            
         }
+      
+        else if (20 <= posicion.x && posicion.x < 50) {
+            auxetsidi.Texto("cuidado con el suelo...", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
+        }
+        
+       
+        else if (100 <= posicion.x && posicion.x < 130) {
+            auxetsidi.Texto("Recuerda: Para una buena pizza tomar", posicion.x - 7, 0, 0, 0.1, 0.2, 8);
+            auxetsidi.Texto("las manos te has de lavar", posicion.x - 8, -1, 0, 0.1, 0.2, 8);
+        }
+        else if (150 <= posicion.x && posicion.x < 200) {
+            auxetsidi.Texto("Nos acercamos al foco de infeccion...", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
+        }
+        else if (200 <= posicion.x && posicion.x < 250) {
+            auxetsidi.Texto("Mata al virus  y consigue  un billete", posicion.x - 7, 0, 0, 0.1, 0.2, 8);
+            auxetsidi.Texto("de avion para combatir en otros paises ", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
+        }
         break;
-
     case 3:
         if (posicion.x < 10) {
             auxetsidi.Texto("Holaaaa!", posicion.x - 3, 0, 0, 0.1, 0.2, 8);
-            auxetsidi.Texto("Vamos a por esos virus", posicion.x - 6, -1, 0, 0.1, 0.2, 8);
+            auxetsidi.Texto("Conseguiremos en Espana la cura?", posicion.x - 6, -1, 0, 0.1, 0.2, 8);
           
 
         }
         else if (10 <= posicion.x && posicion.x < 20) {
             auxetsidi.Texto("Para con el espacio", posicion.x - 4, 0, 0, 0.1, 0.2, 8);
             auxetsidi.Texto("Y sube la escalera saltando", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
-        }
+        }     
         else if (30 <= posicion.x && posicion.x < 70) {
-            auxetsidi.Texto("CUIDADO, SI CAES MORIRAS", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
-        }
-        else if (30 <= posicion.x && posicion.x < 70) {
-            auxetsidi.Texto("CUIDADO, SI CAES MORIRAS", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
+            auxetsidi.Texto("CUIDADO, no te caigas...", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
         }
         else if (100 <= posicion.x && posicion.x < 130) {
-            auxetsidi.Texto("Sabias que en españa se comen", posicion.x - 7, 0, 0, 0.1, 0.2, 8);
-            auxetsidi.Texto("10 toneladas de tortilla de patata al dia?", posicion.x - 8, -1, 0, 0.1, 0.2, 8);
+            auxetsidi.Texto("Recuerda: Lavate con jabon", posicion.x - 7, 0, 0, 0.1, 0.2, 8);
+            auxetsidi.Texto("para comer un buen jamon", posicion.x - 8, -1, 0, 0.1, 0.2, 8);
         } 
         else if (150 <= posicion.x && posicion.x < 200) {
             auxetsidi.Texto("Nos acercamos al ULTIMO foco de infeccion...", posicion.x - 7, -1, 0, 0.1, 0.2, 8);
