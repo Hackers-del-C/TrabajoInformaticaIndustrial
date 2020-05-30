@@ -377,7 +377,7 @@ void Mundo::Dibuja(int level) {
 int Mundo::Muerte() { //FIN PARTID:muerte
 	
 	if (hombre.GetVidas() > 0) {return 0;}
-	else { return 1; hombre.SetDir(0); hombre.SetMonedas(0); }
+	else { return 1; hombre.SetDir(0); }
 		
 }
 int Mundo::Ganar() {//FIN DE PARTIDA: Ganador	
@@ -521,7 +521,7 @@ void Mundo::Tecla(unsigned char key)
 		
 		misiles.Agregar(new Misil("imagenes/misilizq.png", 29, -2.0f, -5.0f, 0.0f));
 		break;
-
+		
 	case 't':	
 		hombre.Dañar();
 		break;
