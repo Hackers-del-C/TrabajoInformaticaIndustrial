@@ -157,7 +157,7 @@ void Entorno::Aviso(int pantalla, int x, int y) {
 		auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, 2, 17);
 		//TEXTO
 		auxetsidi.Texto("PAUSA", x - 3, 13, 0.44, 0.87, 0.45, 20);
-		auxetsidi.Texto("Pulsa C para reiniciar", x - 7, 9, 1, 1, 1, 15);
+		auxetsidi.Texto("Pulsa C para reanudar", x - 7, 9, 1, 1, 1, 15);
 		auxetsidi.Texto("Pulsa M para ir al menu", x - 7, 7, 1, 1, 1, 15);
 		break;
 

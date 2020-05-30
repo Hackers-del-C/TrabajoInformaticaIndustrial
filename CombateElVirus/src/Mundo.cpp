@@ -522,7 +522,7 @@ void Mundo::Mueve(int level)
 	for (int t = 0; t < plataformas.GetNumero(); t++) {
 		listabonus.Colision(*plataformas[t]);
 	}
-	}
+}
 void Mundo::Tecla(unsigned char key)
 {
 	switch (key) {

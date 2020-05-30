@@ -4,11 +4,8 @@
     <ClCompile Include="src\CombateElVirus.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="src\Vector2D.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
     <ClCompile Include="src\Entorno.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Entorno</Filter>
+      <Filter>Archivos de código fuente\ENTORNO</Filter>
     </ClCompile>
     <ClCompile Include="src\Mundo.cpp">
       <Filter>Archivos de código fuente\MUNDO</Filter>
@@ -20,7 +17,7 @@
       <Filter>Archivos de código fuente\MUNDO\Limites\Pared</Filter>
     </ClCompile>
     <ClCompile Include="src\Interaccion.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Interacciones</Filter>
+      <Filter>Archivos de código fuente\MUNDO\_Clases de uso general</Filter>
     </ClCompile>
     <ClCompile Include="src\Hombre.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes\Jugador</Filter>
@@ -28,32 +25,23 @@
     <ClCompile Include="src\Virus.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
     </ClCompile>
-    <ClCompile Include="src\Vidas.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Entorno\Vidas</Filter>
-    </ClCompile>
     <ClCompile Include="src\Plataformas.cpp">
       <Filter>Archivos de código fuente\MUNDO\Limites</Filter>
     </ClCompile>
     <ClCompile Include="src\ListaPlataformas.cpp">
       <Filter>Archivos de código fuente\MUNDO\Limites</Filter>
     </ClCompile>
-    <ClCompile Include="src\Amigo.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Personajes</Filter>
-    </ClCompile>
     <ClCompile Include="src\ListaVirus.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
-    </ClCompile>
-    <ClCompile Include="src\AuxEtsidi.cpp">
-      <Filter>Archivos de código fuente\MUNDO</Filter>
     </ClCompile>
     <ClCompile Include="src\VirusSeta.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
     </ClCompile>
     <ClCompile Include="src\Bonus.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
+      <Filter>Archivos de código fuente\MUNDO\BONUS</Filter>
     </ClCompile>
     <ClCompile Include="src\BonusMascarilla.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
+      <Filter>Archivos de código fuente\MUNDO\BONUS</Filter>
     </ClCompile>
     <ClCompile Include="src\VirusBaba.cpp">
       <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
@@ -68,60 +56,66 @@
       <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
     </ClCompile>
     <ClCompile Include="src\ListaBonus.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
+      <Filter>Archivos de código fuente\MUNDO\BONUS</Filter>
     </ClCompile>
     <ClCompile Include="src\BonusTest.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
+      <Filter>Archivos de código fuente\MUNDO\BONUS</Filter>
     </ClCompile>
     <ClCompile Include="src\ListaDisparos.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Disparos</Filter>
+      <Filter>Archivos de código fuente\MUNDO\Personajes\Extras de Personajes\Disparos</Filter>
     </ClCompile>
     <ClCompile Include="src\Disparo.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Disparos</Filter>
+      <Filter>Archivos de código fuente\MUNDO\Personajes\Extras de Personajes\Disparos</Filter>
     </ClCompile>
     <ClCompile Include="src\DisparoEspecial.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Disparos</Filter>
+      <Filter>Archivos de código fuente\MUNDO\Personajes\Extras de Personajes\Disparos</Filter>
     </ClCompile>
     <ClCompile Include="src\Billete.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
+      <Filter>Archivos de código fuente\MUNDO\BONUS</Filter>
     </ClCompile>
     <ClCompile Include="src\Municion.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Interacciones\BONUS</Filter>
+      <Filter>Archivos de código fuente\MUNDO\BONUS</Filter>
     </ClCompile>
     <ClCompile Include="src\Misil.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Interacciones\Elemenos Dañinos</Filter>
+      <Filter>Archivos de código fuente\MUNDO\Elemenos Dañinos</Filter>
     </ClCompile>
     <ClCompile Include="src\Lanzamisiles.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Interacciones\Elemenos Dañinos</Filter>
+      <Filter>Archivos de código fuente\MUNDO\Elemenos Dañinos</Filter>
     </ClCompile>
     <ClCompile Include="src\Listalanzamisiles.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Interacciones\Elemenos Dañinos</Filter>
+      <Filter>Archivos de código fuente\MUNDO\Elemenos Dañinos</Filter>
     </ClCompile>
     <ClCompile Include="src\Listamisiles.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Interacciones\Elemenos Dañinos</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Explosiones.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Interacciones\Elemenos Dañinos</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ListaExplosiones.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Interacciones\Elemenos Dañinos</Filter>
+      <Filter>Archivos de código fuente\MUNDO\Elemenos Dañinos</Filter>
     </ClCompile>
     <ClCompile Include="src\Slime.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Interacciones\Elemenos Dañinos</Filter>
+      <Filter>Archivos de código fuente\MUNDO\Elemenos Dañinos</Filter>
     </ClCompile>
     <ClCompile Include="src\ListaSlime.cpp">
-      <Filter>Archivos de código fuente\MUNDO\Interacciones\Elemenos Dañinos</Filter>
+      <Filter>Archivos de código fuente\MUNDO\Elemenos Dañinos</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Explosiones.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Personajes\Extras de Personajes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ListaExplosiones.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Personajes\Extras de Personajes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Amigo.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Personajes\Amigo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AuxEtsidi.cpp">
+      <Filter>Archivos de código fuente\MUNDO\_Clases de uso general</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Vector2D.cpp">
+      <Filter>Archivos de código fuente\MUNDO\_Clases de uso general</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Vidas.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Personajes\Extras de Personajes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="lib\ETSIDI.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Vector2D.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="src\Entorno.h">
-      <Filter>Archivos de encabezado\MUNDO\Entorno</Filter>
+      <Filter>Archivos de encabezado\ENTORNO</Filter>
     </ClInclude>
     <ClInclude Include="src\Limites.h">
       <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
@@ -130,7 +124,7 @@
       <Filter>Archivos de encabezado\MUNDO</Filter>
     </ClInclude>
     <ClInclude Include="src\Interaccion.h">
-      <Filter>Archivos de encabezado\MUNDO\Interacciones</Filter>
+      <Filter>Archivos de encabezado\MUNDO\_Clases de uso general</Filter>
     </ClInclude>
     <ClInclude Include="src\Hombre.h">
       <Filter>Archivos de encabezado\MUNDO\Personajes\Jugador</Filter>
@@ -138,23 +132,8 @@
     <ClInclude Include="src\Pared.h">
       <Filter>Archivos de encabezado\MUNDO\Limites\Pared</Filter>
     </ClInclude>
-    <ClInclude Include="src\Listamisiles.h">
-      <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Lanzamisiles.h">
-      <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Listalanzamisiles.h">
-      <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Misil.h">
-      <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
-    </ClInclude>
     <ClInclude Include="src\Virus.h">
       <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Vidas.h">
-      <Filter>Archivos de encabezado\MUNDO\Entorno\Vidas</Filter>
     </ClInclude>
     <ClInclude Include="src\Plataformas.h">
       <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
@@ -162,26 +141,20 @@
     <ClInclude Include="src\ListaPlatafomas.h">
       <Filter>Archivos de encabezado\MUNDO\Limites</Filter>
     </ClInclude>
-    <ClInclude Include="src\Amigo.h">
-      <Filter>Archivos de encabezado\MUNDO\Personajes</Filter>
-    </ClInclude>
     <ClInclude Include="src\ListaVirus.h">
       <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
-    </ClInclude>
-    <ClInclude Include="src\AuxEtsidi.h">
-      <Filter>Archivos de encabezado\MUNDO</Filter>
     </ClInclude>
     <ClInclude Include="src\VirusSeta.h">
       <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
     </ClInclude>
     <ClInclude Include="src\Bonus.h">
-      <Filter>Archivos de encabezado\MUNDO\Interacciones\BONUS</Filter>
+      <Filter>Archivos de encabezado\MUNDO\BONUS</Filter>
     </ClInclude>
     <ClInclude Include="src\BonusMascarilla.h">
-      <Filter>Archivos de encabezado\MUNDO\Interacciones\BONUS</Filter>
+      <Filter>Archivos de encabezado\MUNDO\BONUS</Filter>
     </ClInclude>
     <ClInclude Include="src\BonusTest.h">
-      <Filter>Archivos de encabezado\MUNDO\Interacciones\BONUS</Filter>
+      <Filter>Archivos de encabezado\MUNDO\BONUS</Filter>
     </ClInclude>
     <ClInclude Include="src\VirusBaba.h">
       <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
@@ -192,38 +165,65 @@
     <ClInclude Include="src\Coordinador.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="src\Slime.h">
-      <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ListaSlime.h">
-      <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
-    </ClInclude>
     <ClInclude Include="src\VirusSlime.h">
       <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
     </ClInclude>
-    <ClInclude Include="src\Explosiones.h">
-      <Filter>Archivos de encabezado\MUNDO</Filter>
-    </ClInclude>
     <ClInclude Include="src\ListaBonus.h">
-      <Filter>Archivos de encabezado\MUNDO\Interacciones\BONUS</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ListaExplosiones.h">
-      <Filter>Archivos de encabezado\MUNDO</Filter>
+      <Filter>Archivos de encabezado\MUNDO\BONUS</Filter>
     </ClInclude>
     <ClInclude Include="src\ListaDisparos.h">
-      <Filter>Archivos de encabezado\MUNDO\Disparos</Filter>
+      <Filter>Archivos de encabezado\MUNDO\Personajes\Extras de personajes\Disparos</Filter>
     </ClInclude>
     <ClInclude Include="src\Disparo.h">
-      <Filter>Archivos de encabezado\MUNDO\Disparos</Filter>
+      <Filter>Archivos de encabezado\MUNDO\Personajes\Extras de personajes\Disparos</Filter>
     </ClInclude>
     <ClInclude Include="src\DisparoEspecial.h">
-      <Filter>Archivos de encabezado\MUNDO\Disparos</Filter>
+      <Filter>Archivos de encabezado\MUNDO\Personajes\Extras de personajes\Disparos</Filter>
     </ClInclude>
     <ClInclude Include="src\Billete.h">
-      <Filter>Archivos de encabezado\MUNDO\Interacciones\BONUS</Filter>
+      <Filter>Archivos de encabezado\MUNDO\BONUS</Filter>
     </ClInclude>
     <ClInclude Include="src\Municion.h">
-      <Filter>Archivos de encabezado\MUNDO\Interacciones\BONUS</Filter>
+      <Filter>Archivos de encabezado\MUNDO\BONUS</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lanzamisiles.h">
+      <Filter>Archivos de encabezado\MUNDO\Elementos Dañinos</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Listalanzamisiles.h">
+      <Filter>Archivos de encabezado\MUNDO\Elementos Dañinos</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Listamisiles.h">
+      <Filter>Archivos de encabezado\MUNDO\Elementos Dañinos</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ListaSlime.h">
+      <Filter>Archivos de encabezado\MUNDO\Elementos Dañinos</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Misil.h">
+      <Filter>Archivos de encabezado\MUNDO\Elementos Dañinos</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Slime.h">
+      <Filter>Archivos de encabezado\MUNDO\Elementos Dañinos</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Explosiones.h">
+      <Filter>Archivos de encabezado\MUNDO\Personajes\Extras de personajes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ListaExplosiones.h">
+      <Filter>Archivos de encabezado\MUNDO\Personajes\Extras de personajes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Amigo.h">
+      <Filter>Archivos de encabezado\MUNDO\Personajes\Amigo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AuxEtsidi.h">
+      <Filter>Archivos de encabezado\MUNDO\_Clases de uso general</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\ETSIDI.h">
+      <Filter>Archivos de encabezado\MUNDO\_Clases de uso general</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vector2D.h">
+      <Filter>Archivos de encabezado\MUNDO\_Clases de uso general</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vidas.h">
+      <Filter>Archivos de encabezado\MUNDO\Personajes\Extras de personajes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -239,23 +239,11 @@
     <Filter Include="Archivos de código fuente\MUNDO">
       <UniqueIdentifier>{cbd26dec-9e5f-4c8c-9514-41a81b379e5e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de código fuente\MUNDO\Entorno">
-      <UniqueIdentifier>{1a8c15a2-016b-4ef2-817f-5ce42ec36f72}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Archivos de encabezado\MUNDO">
       <UniqueIdentifier>{da8882ef-f6d7-47aa-bcef-e3cdf740ab72}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de encabezado\MUNDO\Entorno">
-      <UniqueIdentifier>{d0eed63d-3515-44d4-8bb0-cb6ee8257344}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de código fuente\MUNDO\Interacciones">
-      <UniqueIdentifier>{ffb6a55d-c459-437b-b195-a59de3df8982}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Archivos de código fuente\MUNDO\Limites">
       <UniqueIdentifier>{0bc5bbee-4772-46bc-bb6f-53b24a4ed9a8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de encabezado\MUNDO\Interacciones">
-      <UniqueIdentifier>{f2489a53-e3fc-4d90-838d-ae0b9eb9e086}</UniqueIdentifier>
     </Filter>
     <Filter Include="Archivos de encabezado\MUNDO\Limites">
       <UniqueIdentifier>{0bf669e0-5db9-4c90-a8d3-adba10b9dd03}</UniqueIdentifier>
@@ -284,26 +272,47 @@
     <Filter Include="Archivos de encabezado\MUNDO\Personajes\Enemigos">
       <UniqueIdentifier>{c6161637-8d45-4ece-8f2e-9f6cd9522196}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de encabezado\MUNDO\Entorno\Vidas">
-      <UniqueIdentifier>{d33ac490-077d-4c4d-bb2f-5f58ef759637}</UniqueIdentifier>
+    <Filter Include="Archivos de código fuente\MUNDO\Personajes\Extras de Personajes">
+      <UniqueIdentifier>{99580eb4-938b-41a4-b2ef-ce9fa5cab39c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de código fuente\MUNDO\Entorno\Vidas">
-      <UniqueIdentifier>{e7c5f438-4151-4828-abe3-1a982b548c2f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de código fuente\MUNDO\Interacciones\BONUS">
-      <UniqueIdentifier>{7b948786-d0e4-4dda-b96f-810beae6e401}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de encabezado\MUNDO\Interacciones\BONUS">
-      <UniqueIdentifier>{4222dfd0-e36c-4870-afbf-611187190946}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de código fuente\MUNDO\Disparos">
+    <Filter Include="Archivos de código fuente\MUNDO\Personajes\Extras de Personajes\Disparos">
       <UniqueIdentifier>{46171de4-fb5c-414c-a8ab-37a3bfc1b6ba}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de encabezado\MUNDO\Disparos">
+    <Filter Include="Archivos de encabezado\MUNDO\Personajes\Extras de personajes">
+      <UniqueIdentifier>{a72a02bc-d621-4b46-b490-e16551290362}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\MUNDO\Personajes\Extras de personajes\Disparos">
       <UniqueIdentifier>{84928c08-25c2-45c8-88b2-3f381806e541}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de código fuente\MUNDO\Interacciones\Elemenos Dañinos">
+    <Filter Include="Archivos de código fuente\MUNDO\Personajes\Amigo">
+      <UniqueIdentifier>{880b5587-55f3-45b5-8812-842e50891bce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\MUNDO\Personajes\Amigo">
+      <UniqueIdentifier>{9bbd152c-4b60-4f56-99ea-41f4cd1fdc1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de código fuente\MUNDO\BONUS">
+      <UniqueIdentifier>{7b948786-d0e4-4dda-b96f-810beae6e401}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de código fuente\MUNDO\Elemenos Dañinos">
       <UniqueIdentifier>{556afc86-b522-40cd-a674-e189ffcb9fef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de código fuente\MUNDO\_Clases de uso general">
+      <UniqueIdentifier>{ffb6a55d-c459-437b-b195-a59de3df8982}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\MUNDO\BONUS">
+      <UniqueIdentifier>{4222dfd0-e36c-4870-afbf-611187190946}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\MUNDO\Elementos Dañinos">
+      <UniqueIdentifier>{ed931d6f-f1dd-41bd-b58a-cf6a6b4cf58d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\MUNDO\_Clases de uso general">
+      <UniqueIdentifier>{f2489a53-e3fc-4d90-838d-ae0b9eb9e086}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\ENTORNO">
+      <UniqueIdentifier>{d0eed63d-3515-44d4-8bb0-cb6ee8257344}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de código fuente\ENTORNO">
+      <UniqueIdentifier>{1a8c15a2-016b-4ef2-817f-5ce42ec36f72}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
