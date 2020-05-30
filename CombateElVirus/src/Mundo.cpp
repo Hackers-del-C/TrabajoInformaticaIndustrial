@@ -213,17 +213,17 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 110, 5, 5, 1.5));
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 120, 8, 5, 1.5));
 
-		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 130, 10, 1, 1));
-		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 140, 12, 1, 1));
-		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 150, 8, 1, 1));
-		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 160, 12, 1, 1));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE2, 130, 10, 2, 1.5,10,15));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 140, 12,2, 1.5,140,150));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE2, 160, 2, 2, 1.5,2,12));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE, 160, 10, 2, 1.5,160,170));
+		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_MUEVE2, 180, 20, 5, 1.5,10,20));
+		for (int x = 40; x<50; x++) {
 
-		/*for (int x = 10; x> -5; x--) {
-
-			plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 130, x, 1, 1));
+			plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 5*x, -5, 5, 1.5));
 
 
-		}*/
+		}
 
 		/*for (int y = 6; y < 20; y++) {
 			if (y % 2) {
@@ -571,10 +571,10 @@ void Mundo::Tecla(unsigned char key)
 		}
 		break;
 	case 'v': //IMPORTANTE: AVANZAR EN EL NIVEL AUTOMATICAMENTE
-		hombre.SetPos(90, 20);
+		hombre.SetPos(210, 20);
 		break;
 	case 'b': //IMPORTANTE: AVANZAR EN EL NIVEL AUTOMATICAMENTE
-		hombre.SetPos(190, 20);
+		hombre.SetPos(170, 20);
 		break;
 	}	
 }

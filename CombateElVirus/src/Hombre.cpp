@@ -264,38 +264,19 @@ void Hombre::caida(int caida, int level) {
                 posicion.x = 10;
                 posicion.y = 0;
             }
-            else if (posicion.x < 90) {
+            else if (posicion.x < 190) {
                 velocidad.x = 0;
                 velocidad.y = 0;
-                posicion.x = 45;
+                posicion.x = 90;
                 posicion.y = 0;
             }
-            else if (posicion.x < 120) {
+            else if (posicion.x >=190) {
                 velocidad.x = 0;
                 velocidad.y = 0;
-                posicion.x = 100;
+                posicion.x = 200;
                 posicion.y = 0;
             }
-            else if (posicion.x < 150) {
-                velocidad.x = 0;
-                velocidad.y = 0;
-                posicion.x = 120;
-                posicion.y = 0;
-
-            }
-            else if (posicion.x < 180) {
-                velocidad.x = 0;
-                velocidad.y = 0;
-                posicion.x = 120;
-                posicion.y = 0;
-
-            }
-            else if (posicion.x > 180) {
-                velocidad.x = 0;
-                velocidad.y = 0;
-                posicion.x = 210;
-                posicion.y = 0;
-            }
+            
 
         }
         if (level == 3) {

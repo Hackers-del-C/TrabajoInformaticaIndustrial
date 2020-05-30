@@ -2,7 +2,7 @@
 #include "ETSIDI.h"
 class Plataformas {
 public:
-	enum plat_t{SUELO,PLATAFORMA_CHOCA, PLATAFORMA_ATRAVIESA,PLATAFORMA_MUEVE};
+	enum plat_t{SUELO,PLATAFORMA_CHOCA, PLATAFORMA_ATRAVIESA,PLATAFORMA_MUEVE, PLATAFORMA_MUEVE2};
 
 	Plataformas();
 	Plataformas(float x1, float y1, float w, float h);

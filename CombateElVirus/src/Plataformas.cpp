@@ -131,6 +131,22 @@ void Plataformas::Dibuja() {
         glDisable(GL_TEXTURE_2D);
 
         break;
+        break;
+    case Plataformas::PLATAFORMA_MUEVE2:
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/plataformachoca.png").id);
+        glDisable(GL_LIGHTING);
+        glBegin(GL_POLYGON);
+        glColor3f(1, 1, 1);
+        glTexCoord2d(0, 1); glVertex3f(limite2.x, limite1.y, 0);
+        glTexCoord2d(1, 1); glVertex3f(limite1.x, limite1.y, 0);
+        glTexCoord2d(1, 0); glVertex3f(limite1.x, limite2.y, 0);
+        glTexCoord2d(0, 0); glVertex3f(limite2.x, limite2.y, 0);
+        glEnd();
+        glEnable(GL_LIGHTING);
+        glDisable(GL_TEXTURE_2D);
+
+        break;
     }
 }
 
@@ -162,6 +178,18 @@ void Plataformas::Mueve(float t){
             velocidad.x = -4;
         }
         posicion=posicion+ velocidad * t + aceleracion * (0.5f * t * t);
+        limite1 = limite1 + velocidad * t + aceleracion * (0.5f * t * t);
+        limite2 = limite2 + velocidad * t + aceleracion * (0.5f * t * t);
+        velocidad = velocidad + aceleracion * t;
+    }
+    if (tipo == PLATAFORMA_MUEVE2) {
+        if (posicion.y <= xi) {
+            velocidad.y = 4;
+        }
+        if (posicion.y >= xf) {
+            velocidad.y = -4;
+        }
+        posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
         limite1 = limite1 + velocidad * t + aceleracion * (0.5f * t * t);
         limite2 = limite2 + velocidad * t + aceleracion * (0.5f * t * t);
         velocidad = velocidad + aceleracion * t;
