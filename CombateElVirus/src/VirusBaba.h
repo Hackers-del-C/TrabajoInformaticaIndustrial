@@ -3,6 +3,8 @@
 #include "ETSIDI.h"
 #include "ListaSlime.h"
 #include "Slime.h"
+#include "ListaDisparos.h"
+#include "ListaExplosiones.h"
 
 class VirusBaba : public Virus
 {
@@ -10,7 +12,7 @@ class VirusBaba : public Virus
     
     Estado estado;
 public:
-
+    void Colision(ListaDisparos& l, ListaExplosiones& e);
     VirusBaba(float x, float y);
     ~VirusBaba();
     void Inicializa(float x, float y);

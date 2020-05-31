@@ -276,7 +276,9 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 	}
 	
 	else if (nivel == 3) {
+	//Virus
 
+		virus2.Inicializa(240, 15);
 
 		//plataformas suelo
 		for (int y = -2; y < 15; y++) {
@@ -363,7 +365,7 @@ void Mundo::Inicializa(int level) { //Inicializa principal
 	amigo.Inicializa();
 	amigo.SetAceleracion(hombre.GetAceleracion().x);
 	amigo.SetVel(hombre.GetVel().x);
-	virus2.Inicializa(-5, 1);
+	
 	limites.SetLimites(-20, 500, -10, 30); //Son los bordes del juego que el jugador no puede pasar	
 	vidas.Inicializa(hombre);
 }
@@ -510,6 +512,10 @@ void Mundo::Mueve(int level)
 	listabonus.Colision(limites);
 	listabonus.Colision(plataformaprueba);
 	listabonus.colision(hombre);
+
+
+
+
 
 	if(lanzaDado(90)<2)	listavirus.Dispara(listaslime);	
 

@@ -22,6 +22,7 @@ VirusBaba::VirusBaba(float x, float y) {
 
     posicion.x = x;
     posicion.y = y;
+    vidas = 6;
 
     sprite = new SpriteSequence("imagenes/enemigos/virusbabaanda.png", 7, 1, 80, true, 0, 0, 6, 6);
 
@@ -69,22 +70,37 @@ void VirusBaba::finsequence(Estado e, ListaSlime& l, Hombre h){
     case desaparece:
 
         
-        switch (lanzaDado(3, 0))
+        switch (lanzaDado(8, 1))
         {
         case 1:
-            posicion.x = 10;
-            posicion.y = 10;
+            posicion.x = 239;
+            posicion.y = 9.5;
             
             break;
         case 2:
-            posicion.x = -18;
-            posicion.y = 10;
+            posicion.x = 239;
+            posicion.y = 15.5;
             break;
         case 3:
-            posicion.x = 0;
-            posicion.y = 10;
+            posicion.x = 239;
+            posicion.y = 21.5;
             break;
-
+        case 4:
+            posicion.x = 201;
+            posicion.y = 9.5;
+            break;
+        case 5:
+            posicion.x = 201;
+            posicion.y = 15.5;
+            break;
+        case 6:
+            posicion.x = 201;
+            posicion.y = 21.5;
+            break;
+        case 7:
+            posicion.x = 220;
+            posicion.y = 18.5;
+            break;;
         }
         sprite = new SpriteSequence("imagenes/enemigos/virusbabaapar.png", 1, 9, 90, false, 0, 0, 6, 6);
         estado = aparece;
@@ -113,12 +129,12 @@ void VirusBaba::Mueve(float t, ListaSlime& l, Hombre h) {
 
     int aux = lanzaDado(200);
 
-    if (aux< 3 && mov == 0) {
+    if (aux< 7 && mov == 0) {
         Desaparece();
         estado = desaparece;
         mov = 1;
     }
-   else if (aux< 4 && mov == 0) {
+   else if (aux< 15 && mov == 0) {
         Ataca();
         estado = ataca;
         mov = 1;
@@ -135,14 +151,13 @@ void VirusBaba::Dispara(ListaSlime& l, Hombre h) {
  
    // slime->aceleracion.y = 0;
     if (h.GetPos().x < posicion.x) {
-        slime->velocidad.x = -7;
+        slime->velocidad.x = -lanzaDado(10, 5);
   }
     else
-        slime->velocidad.x = +7;
+        slime->velocidad.x = +lanzaDado(10, 5);
 
     l.agregar(slime);
    
 }
-
 
 
