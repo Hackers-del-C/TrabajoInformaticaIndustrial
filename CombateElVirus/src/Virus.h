@@ -19,11 +19,15 @@ public:
     Virus();
     virtual ~Virus();
     void Dibuja(int nivel);
-    void Mueve(float t);
+    virtual void Mueve(float t, ListaSlime& l, Hombre h);
     void SetVel(float x, float y);
     virtual void Muere();
- 
-    virtual void Dispara(ListaSlime& l); //Para la mosca
+ //Virus final funciones especificas que es mas sencillo poner en la lista con polimorfismo
+
+
+
+
+    virtual void Dispara(ListaSlime& l); //Para la mosca y virus final
     void Ataca();
     void Anda();
     int GetVidas();

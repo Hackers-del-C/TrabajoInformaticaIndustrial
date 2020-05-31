@@ -14,7 +14,10 @@ public:
 	virtual ~ListaVirus();
 	bool agregar(Virus* v);
 	void dibuja();
-	void mueve(float t, Hombre h);
+	void mueve(float t, ListaSlime& l, Hombre h);
+	//Funciones virus final que por facilidad se ponen en la lista
+
+
 	//void rebote(Limites caja);
 	//void rebote(Pared p);
 	//void rebote();

@@ -105,10 +105,10 @@ void ListaVirus::dibuja()
 	for (int i = 0; i < numero; i++)
 		lista[i]->Dibuja(0);//nivel
 }
-void ListaVirus::mueve(float t, Hombre h)
+void ListaVirus::mueve(float t, ListaSlime& l, Hombre h)
 {
 	for (int i = 0; i < numero; i++)
-		lista[i]->Mueve(t);
+		lista[i]->Mueve(t,l,h);
 }
 
 Virus* ListaVirus::operator [](int i)

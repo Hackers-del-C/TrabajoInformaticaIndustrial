@@ -23,7 +23,9 @@ VirusBaba::VirusBaba(float x, float y) {
     posicion.x = x;
     posicion.y = y;
     vidas = 6;
-
+    anchura = 6 * 0.4;
+    altura = 6 * 0.4;
+    mov = 0;
     sprite = new SpriteSequence("imagenes/enemigos/virusbabaanda.png", 7, 1, 80, true, 0, 0, 6, 6);
 
 }
@@ -63,7 +65,7 @@ void VirusBaba::finsequence(Estado e, ListaSlime& l, Hombre h){
     case ataca:
         //lanzar slime
       
-        Dispara(l, h);
+        Disparafinal(l, h);
         sprite = new SpriteSequence("imagenes/enemigos/virusbabaanda.png", 7, 1, 80, true, 0, 0, 6, 6);
         mov = 0;
         break;
@@ -145,7 +147,7 @@ void VirusBaba::Mueve(float t, ListaSlime& l, Hombre h) {
 
 }
 
-void VirusBaba::Dispara(ListaSlime& l, Hombre h) {
+void VirusBaba::Disparafinal(ListaSlime& l, Hombre h) {
 
     slime = new Slime(posicion.x, posicion.y);
  

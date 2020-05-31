@@ -64,7 +64,7 @@ void Virus::SetVel(float vx, float vy)
 }
 
 
-void Virus::Mueve(float t) {
+void Virus::Mueve(float t, ListaSlime& l, Hombre h) {
 
     posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
     velocidad = velocidad + aceleracion * t;
@@ -76,7 +76,7 @@ void Virus::Seguir(Hombre h) {
 
 }
 void Virus::Dispara(ListaSlime& l) {
-
+    //Polimorfismo
 
 }
 

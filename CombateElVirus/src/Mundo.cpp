@@ -278,7 +278,7 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 	else if (nivel == 3) {
 	//Virus
 
-		virus2.Inicializa(240, 15);
+		listavirus.agregar(new VirusBaba(240, 15));
 
 		//plataformas suelo
 		for (int y = -2; y < 15; y++) {
@@ -390,7 +390,7 @@ void Mundo::Dibuja(int level) {
 	disparos.Dibuja();
 	misiles.Dibuja();
 	listalanzamisiles.Dibuja();
-	virus2.Dibuja(level);
+	
 	listaexplosiones.dibuja();
 	listavirus.dibuja();
 	listaslime.dibuja();
@@ -485,16 +485,16 @@ void Mundo::Mueve(int level)
 	//.Mueve//
 	
 	amigo.Mueve(0.025f);
-	virus2.Mueve(0.025f,disparobaba, hombre);	
+	
 	hombre.Mueve(0.025f);
 	disparos.Mueve(0.025f,hombre);
 	misiles.Mueve(0.025f);
 	vidas.Mueve(x_ojo);
 
-	listavirus.mueve(0.025f, hombre);
+	listavirus.mueve(0.025f, listaslime, hombre);
 	listavirus.Sigue(hombre);	
 	listaslime.mueve(0.025f, hombre);
-	disparobaba.mueve(0.025f, hombre);
+
 	listabonus.mueve(0.025f);	
 	listaexplosiones.mueve(0.025f);
 	plataformas.Mueve(0.025f);
@@ -506,9 +506,7 @@ void Mundo::Mueve(int level)
 	listaslime.Colision(limites);
 	listaslime.Colision(plataformas);
 	listaslime.Colision(hombre);
-	disparobaba.Colision(limites);
-	disparobaba.Colision(plataformas);
-	disparobaba.Colision(hombre);
+	
 	listabonus.Colision(limites);
 	listabonus.Colision(plataformaprueba);
 	listabonus.colision(hombre);

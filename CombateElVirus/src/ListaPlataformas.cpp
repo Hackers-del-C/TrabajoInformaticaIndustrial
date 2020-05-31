@@ -115,9 +115,20 @@ Plataformas* ListaPlataformas::operator [](int i) {
 
 void ListaPlataformas::Colision(Slime &s) {
 	for (int i = 0; i < numero; i++) {
-		if (Interaccion::Colision(s, *(lista[i]))) {
-			s.Choca();
 
+
+		if (lista[i]->posicion.x < 200) {
+			if (Interaccion::Colision(s, *(lista[i])) ) { //no colisiona con el final
+				s.Choca();
+
+			}
+		}
+		else {
+			if (Interaccion::Colision(s, *(lista[i])) && lista[i]->GetTipo() != 1) { //no colisiona con el final
+				s.Choca();
+
+			}
+			
 		}
 	}
 }

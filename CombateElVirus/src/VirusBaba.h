@@ -12,14 +12,14 @@ class VirusBaba : public Virus
     
     Estado estado;
 public:
-    void Colision(ListaDisparos& l, ListaExplosiones& e);
+    
     VirusBaba(float x, float y);
     ~VirusBaba();
     void Inicializa(float x, float y);
     VirusBaba();
     void Ataca();
     void Desaparece();
-    void Dispara(ListaSlime& l, Hombre h);
+    void Disparafinal(ListaSlime& l, Hombre h);
     void Mueve(float t, ListaSlime& l, Hombre h);
     void finsequence(Estado e, ListaSlime& l, Hombre h);
 private:
