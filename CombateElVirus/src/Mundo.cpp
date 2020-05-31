@@ -33,85 +33,101 @@ void Mundo::InicioDibuja() { //para que funcione bien los dibujas llamados desde
 
 }
 void Mundo::fichero(int level) { //	Fichero para guardar el numero de tests y el tiempo tardado
-	ifstream fichero("resultado_final.txt");
-	int k = 0;
+	
+		ifstream fichero("resultado_final.txt");
+		int k = 0;
 
-	struct jugador {
-		string nombre, texto1, texto2, texto3, texto4, texto5;
-		int nivel = 0, test = 0, segundos = 0, posicion = 0;
-	};
-	jugador lista[NUM_MAX_RANKING];
-	while (!fichero.eof()) {
+		struct jugador {
+			string nombre, texto1, texto2, texto3, texto4, texto5;
+			int nivel = 0, test = 0, segundos = 0, posicion = 0;
+			bool jugadoractual = false;
+		};
+		jugador lista[NUM_MAX_RANKING];
+		while (!fichero.eof()) {
 
-		fichero >> lista[k].posicion >> lista[k].nombre;
-		fichero >> lista[k].texto1 >> lista[k].nivel;
-		fichero >> lista[k].texto2 >> lista[k].test >> lista[k].texto3;
-		fichero >> lista[k].texto4 >> lista[k].segundos >> lista[k].texto5;
-		k++;
-	}
+			fichero >> lista[k].posicion >> lista[k].nombre;
+			fichero >> lista[k].texto1 >> lista[k].nivel;
+			fichero >> lista[k].texto2 >> lista[k].test >> lista[k].texto3;
+			fichero >> lista[k].texto4 >> lista[k].segundos >> lista[k].texto5;
+			k++;
+		}
 
-	lista[k].nombre = "david";
-	lista[k].nivel = level;
-	lista[k].test = hombre.GetMonedas();
-	lista[k++].segundos = ((clock() - tiempo) / 1000);
+		lista[k].nombre = "david";
+		lista[k].nivel = level;
+		lista[k].test = hombre.GetMonedas();
+		lista[k].jugadoractual = true;
+		lista[k++].segundos = ((clock() - tiempo) / 1000);
 
-	fichero.close();
-	remove("resultado_final.txt");
-	ofstream fichero1("resultado_final.txt");
-	fichero.open("resultado_final.txt");
+		fichero.close();
+		//remove("resultado_final.txt");
+		//ofstream fichero1("resultado_final.txt");
+		//fichero.open("resultado_final.txt");
 
-	//ordenar por puntuacion
+		//ordenar por puntuacion
 
-	for (int m = 0; m < (k - 1); m++) {
+		for (int m = 0; m < (k - 1); m++) {
 
-		for (int n = 0; n < (k - 1); n++) {
+			for (int n = 0; n < (k - 1); n++) {
 
-			jugador aux;
-			if (lista[n + 1].nivel > lista[n].nivel) {
+				jugador aux;
+				if (lista[n + 1].nivel > lista[n].nivel) {
 
-				aux = lista[n + 1];
-				lista[n + 1] = lista[n];
-				lista[n] = aux;
+					aux = lista[n + 1];
+					lista[n + 1] = lista[n];
+					lista[n] = aux;
+				}
 			}
 		}
-	}
-	for (int m = 0; m < (k - 1); m++) {
+		for (int m = 0; m < (k - 1); m++) {
 
-		for (int n = 0; n < (k - 1); n++) {
+			for (int n = 0; n < (k - 1); n++) {
 
-			jugador aux;
-			if ((lista[n + 1].nivel == lista[n].nivel) && (lista[n + 1].test > lista[n].test)) {
+				jugador aux;
+				if ((lista[n + 1].nivel == lista[n].nivel) && (lista[n + 1].test > lista[n].test)) {
 
-				aux = lista[n + 1];
-				lista[n + 1] = lista[n];
-				lista[n] = aux;
+					aux = lista[n + 1];
+					lista[n + 1] = lista[n];
+					lista[n] = aux;
+				}
 			}
 		}
-	}
 
-	for (int m = 0; m < (k - 1); m++) {
+		for (int m = 0; m < (k - 1); m++) {
 
-		for (int n = 0; n < (k - 1); n++) {
+			for (int n = 0; n < (k - 1); n++) {
 
-			jugador aux;
-			if ((lista[n + 1].nivel == lista[n].nivel) && (lista[n + 1].test == lista[n].test) && (lista[n + 1].segundos < lista[n].segundos)) {
+				jugador aux;
+				if ((lista[n + 1].nivel == lista[n].nivel) && (lista[n + 1].test == lista[n].test) && (lista[n + 1].segundos < lista[n].segundos)) {
 
-				aux = lista[n + 1];
-				lista[n + 1] = lista[n];
-				lista[n] = aux;
+					aux = lista[n + 1];
+					lista[n + 1] = lista[n];
+					lista[n] = aux;
+				}
 			}
+
+			/*for (int m = 0; m < (k - 1); m++) {
+
+				fichero1 << m + 1 << " " << lista[m].nombre << endl;
+				fichero1 << lista[0].texto1 << " " << lista[m].nivel << " " << endl;
+				fichero1 << lista[0].texto2 << " " << lista[m].test << " " << lista[0].texto3 << endl;
+				fichero1 << lista[0].texto4 << " " << lista[m].segundos << " " << lista[0].texto5 << endl << endl;
+			}*/
 		}
-	}
-	for (int m = 0; m < (k - 1); m++) {
+		for (int i = 1; i < 2; i++) {
 
-		fichero1 << m + 1 << " " << lista[m].nombre << endl;
-		fichero1 << lista[0].texto1 << " " << lista[m].nivel << " " << endl;
-		fichero1 << lista[0].texto2 << " " << lista[m].test << " " << lista[0].texto3 << endl;
-		fichero1 << lista[0].texto4 << " " << lista[m].segundos << " " << lista[0].texto5 << endl << endl;
+			int color = 255;
+			if (lista[i - 1].jugadoractual != true) {
+				color = 1;
+			}
 
+			auxetsidim.Texto(lista[i - 1].nombre, hombre.GetPos().x, 12 - i * 2, 0, color, 0, 12);
+			stringstream sstr;
+			sstr << "Has tardado : " << lista[i - 1].segundos << " segundos";
+			auxetsidim.Texto(sstr.str(), hombre.GetPos().x, 12 - (i) * 4, 0, color, 0, 12);
 
-		auxetsidim.Texto("david", 0, 0, 0, 0, 0, 20);
-	}
+		}
+
+	//auxetsidim.Texto("david", hombre.GetPos().x , 12, 250, 250, 250, 12);
 }
 
 void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas y virus

@@ -1,65 +1,26 @@
 1 alvaro
-Has_llegado_al_nivel: 3 
+Has_llegado_al_nivel: 0 
 Has_cogido: 4 test
 Has_tardado: 20 segundos
 
 2 david
-Has_llegado_al_nivel: 2 
+Has_llegado_al_nivel: 0 
 Has_cogido: 17 test
 Has_tardado: 14 segundos
 
 3 carlos
-Has_llegado_al_nivel: 2 
+Has_llegado_al_nivel: 0 
 Has_cogido: 2 test
 Has_tardado: 18 segundos
 
 4 david
-Has_llegado_al_nivel: 1 
-Has_cogido: 10 test
-Has_tardado: 36 segundos
+Has_llegado_al_nivel: 0 
+Has_cogido: 2 test
+Has_tardado: 14 segundos
 
 5 david
-Has_llegado_al_nivel: 1 
-Has_cogido: 9 test
-Has_tardado: 29 segundos
-
-6 david
-Has_llegado_al_nivel: 1 
-Has_cogido: 5 test
-Has_tardado: 12 segundos
-
-7 david
-Has_llegado_al_nivel: 1 
-Has_cogido: 3 test
-Has_tardado: 11 segundos
-
-8 david
-Has_llegado_al_nivel: 1 
-Has_cogido: 3 test
+Has_llegado_al_nivel: 0
+Has_cogido: 2 test
 Has_tardado: 14 segundos
 
-9 david
-Has_llegado_al_nivel: 1 
-Has_cogido: 1 test
-Has_tardado: 14 segundos
-
-10 david
-Has_llegado_al_nivel: 1 
-Has_cogido: 1 test
-Has_tardado: 14 segundos
-
-11 david
-Has_llegado_al_nivel: 1 
-Has_cogido: 1 test
-Has_tardado: 17 segundos
-
-12 david
-Has_llegado_al_nivel: 1 
-Has_cogido: 1 test
-Has_tardado: 19 segundos
-
-13 david
-Has_llegado_al_nivel: 1 
-Has_cogido: 1 test
-Has_tardado: 20 segundos
 

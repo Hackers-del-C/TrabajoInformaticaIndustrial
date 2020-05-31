@@ -141,7 +141,8 @@ void Entorno::Aviso(int pantalla, int x, int y) {
 		auxetsidi.Texto("Pulsa 8  para REINICIAR EL NIVEL", x - 10, 21, 1, 1, 1, 12); //obv habrá que hacerlo con otras teclas u otra cosa
 		auxetsidi.Texto("Pulsa 7 ir al MENU PRINCIPAL", x - 10, 18, 1, 1, 1, 12);
 		auxetsidi.Texto("CLASIFICACION ", x - 10, 15, 1, 1, 1, 12);
-		//clasificacion();
+		
+		
 
 
 		break;
@@ -195,7 +196,6 @@ void Entorno::Aviso(int pantalla, int x, int y) {
 		fichero >> lista[k].texto4 >> lista[k].segundos >> lista[k].texto5;
 		k++;
 	}
-
 	
 	lista[k].nivel = level;
 	lista[k].test = hombre.GetMonedas();
@@ -210,6 +210,6 @@ void Entorno::Aviso(int pantalla, int x, int y) {
 
 	}
 
-}*/
-
+}
+*/
 

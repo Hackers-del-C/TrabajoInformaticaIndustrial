@@ -70,6 +70,7 @@ public:
 private:
 	// constantes para el salto
 	int finaldenivel;
+	int antirrepeticion = 0;
 	int distancia=0;
 	int salto =0;
 	long tiempo = -1000;//
