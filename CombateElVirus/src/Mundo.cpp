@@ -174,7 +174,8 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 
 	//Añadimos Virus: slime, seta y mosca 
 
-		listavirus.agregar(new VirusSlime(35, -3, 9));		
+		listavirus.agregar(new VirusSlime(35, -3, 9));	
+		listavirus.agregar(new VirusGusano(-10, -3.5));
 		listavirus.agregar(new VirusSeta(122, -3, 5));
 		listavirus.agregar(new VirusSlime(122, -3, 7));
 		listavirus.agregar(new VirusMosca(230, 15,15)); //MALO FINAL DEL NIVEL 1

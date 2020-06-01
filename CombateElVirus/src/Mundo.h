@@ -20,7 +20,7 @@
 #include "Listamisiles.h"
 #include "ListaBonus.h"
 
-
+#include "VirusGusano.h"
 #include "VirusSeta.h"
 #include "VirusBaba.h"
 #include "VirusMosca.h"

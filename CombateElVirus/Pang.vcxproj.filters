@@ -112,6 +112,9 @@
     <ClCompile Include="src\Vidas.cpp">
       <Filter>Archivos de código fuente\MUNDO\BONUS</Filter>
     </ClCompile>
+    <ClCompile Include="src\VirusGusano.cpp">
+      <Filter>Archivos de código fuente\MUNDO\Personajes\Enemigos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Entorno.h">
@@ -224,6 +227,9 @@
     </ClInclude>
     <ClInclude Include="src\Vidas.h">
       <Filter>Archivos de encabezado\MUNDO\BONUS</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VirusGusano.h">
+      <Filter>Archivos de encabezado\MUNDO\Personajes\Enemigos</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
