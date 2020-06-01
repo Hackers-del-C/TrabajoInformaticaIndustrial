@@ -84,6 +84,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Amigo.cpp" />
+    <ClCompile Include="src\Avion.cpp" />
     <ClCompile Include="src\Billete.cpp" />
     <ClCompile Include="src\BonusMascarilla.cpp" />
     <ClCompile Include="src\BonusTest.cpp" />
@@ -125,6 +126,7 @@
   <ItemGroup>
     <ClInclude Include="lib\ETSIDI.h" />
     <ClInclude Include="src\Amigo.h" />
+    <ClInclude Include="src\Avion.h" />
     <ClInclude Include="src\Billete.h" />
     <ClInclude Include="src\Bonus.h" />
     <ClInclude Include="src\BonusMascarilla.h" />

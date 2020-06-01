@@ -1,6 +1,7 @@
 #pragma once
 #include "Mundo.h"
 #include "Entorno.h"
+#include "Avion.h"
 enum { MOUSE_LEFT_BUTTON, MOUSE_MIDDLE_BUTTON, MOUSE_RIGHT_BUTTON }; //para el raton
 
 class Coordinador {
@@ -27,4 +28,5 @@ private:
 	Entorno entorno;
 	float xmouse, ymouse;
 	int AvanceNivel;
+	Avion avion;
 };

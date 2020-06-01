@@ -15,16 +15,20 @@ Coordinador::~Coordinador() {
 void Coordinador::Inicializa() {
 	mundo.Inicializa(nivel);
 	mundo.Setojo(0, 10, 53);
-
+	avion = *new Avion(260, -4);
+	
 	//son simplemente musica. 
 		if (estado == JUEGO) {
-		
+			
 		}
 		else if (estado == MUERTE)		{
 			entorno.Fin(MUERTE);
 		}
 		else if (estado == GANAR) {
+			
 			entorno.Fin(GANAR);
+			
+			
 		}
 		else if (estado == MENU) {
 			aux = 1;
@@ -36,6 +40,7 @@ void Coordinador::Mueve() {
 	}
 	else if (estado == GANAR || estado == MUERTE) {
 		mundo.MueveHombre(); // asi cuando se gana o se muere lo demás se para (tampoco se dibuja pero asi nos ahorramos memoria)
+		avion.Mueve(0.025f);
 	}
 }
 void Coordinador::Dibuja() {
@@ -57,6 +62,8 @@ void Coordinador::Dibuja() {
 
 		}
 		else if (mundo.Ganar()) {
+			avion.posicion.x = 260;
+			avion.posicion.y = -4;
 			estado = GANAR;		
 			int b = 0;
 			if (b == 0) { entorno.Fin(2); b = 1; }//para que no entre bucle y se reproduzca una vez
@@ -70,14 +77,14 @@ void Coordinador::Dibuja() {
 		}
 	}
 	else if(estado==MUERTE){
-
+	
 		entorno.Aviso(1, mundo.GetHombrePos().x, mundo.GetHombrePos().y); 
 		entorno.DibujaJuego(nivel); //funciona
 		mundo.DibujaBasico();	
 		//if (mundo.gettiempo() != -1000) { mundo.fichero(nivel); }
 	}
 	else if (estado == GANAR) {	
-		
+		avion.Dibuja();
 		switch (nivel){
 		case 1:
 			entorno.Aviso(2, mundo.GetHombrePos().x, mundo.GetHombrePos().y);
@@ -120,12 +127,15 @@ void Coordinador::tecla(unsigned char key) {
 		switch (key) {
 		case '7': //VOLVER AL MENU PRINCIPAL
 			estado = MENU;
+		
 			mundo.RecargarNivel(nivel);
 			aux = 1;
 			nivel = 0;
+			
 			break;
 		case '8': //REINICIAR EL NIVEL
 			estado = JUEGO;
+			
 			mundo.RecargarNivel(nivel);
 			aux = 1;
 			break;
@@ -135,13 +145,15 @@ void Coordinador::tecla(unsigned char key) {
 		switch (key) {		
 		case '7': //VOLVER AL MENU PRINCIPAL
 			estado = MENU;
+		
 			mundo.RecargarNivel(nivel);
 			aux = 1;
 			nivel = 0;
 			break; //PASAR AL SIGUIENTE NIVEL
 		case '8':
 			if (AvanceNivel < 3) {
-			estado = JUEGO;			
+			estado = JUEGO;	
+			
 			nivel += 1;
 			mundo.RecargarNivel(nivel);
 			aux = 1;
