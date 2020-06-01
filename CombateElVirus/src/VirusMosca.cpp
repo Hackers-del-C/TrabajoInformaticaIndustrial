@@ -1,6 +1,6 @@
 #include "VirusMosca.h"
 #include "Billete.h"
-
+#include <Time.h>
 using namespace ETSIDI;
 using namespace std;
 using ETSIDI::getTexture;
@@ -56,6 +56,7 @@ void VirusMosca::Seguir(Hombre h) {
             velocidad.x = -velocidad.x;
             sprite->flip(1, 0);
         }
+        posicion.y = posicionini.y+ sin(2 * 3.14 * clock()); //ES SOLO ESTO LO QUE HE TOCADO +LIBRERÍA DE TIME ARRIBA
         
 }
 
