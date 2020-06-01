@@ -254,14 +254,13 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 		listavirus.agregar(new VirusSeta(50, -3, 15));
 		listavirus.agregar(new VirusSeta(80, -3, 15));
 		listavirus.agregar(new VirusSeta(80, -3, 13));
-		listavirus.agregar(new VirusSlime(110, -3, 16));
-		listavirus.agregar(new VirusSlime(110, -3, 10));
-		listavirus.agregar(new VirusSlime(110, -3, 8));
+		listavirus.agregar(new VirusSlime(110, 7.5, 2.5));
+		
 		listavirus.agregar(new VirusMosca(80, 10, 15));
-		listavirus.agregar(new VirusSeta(200, -3, 13));
+		listavirus.agregar(new VirusSeta(220, -3, 13));
 		//listavirus.agregar(new VirusSlime(200, -3, 10));
 		//listavirus.agregar(new VirusSeta(200, -3, 18));
-		listavirus.agregar(new VirusGusano(200, -3.5));
+		listavirus.agregar(new VirusGusano(225, -3.5,20));
 
 		// tests (son simplemente para la puntuacion)	
 		listabonus.agregar(new BonusTest(10, -2, 2, 2));
@@ -281,6 +280,7 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 	//Virus
 
 		listavirus.agregar(new VirusBaba(240, 15));
+		listavirus.agregar(new VirusGusano(110, -3.5, 10));
 
 		//plataformas suelo
 		for (int y = -2; y < 15; y++) {

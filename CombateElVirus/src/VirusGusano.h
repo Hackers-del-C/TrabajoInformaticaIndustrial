@@ -10,7 +10,7 @@ class VirusGusano : public Virus
     Estado estado;
 public:
 
-    VirusGusano(float x, float y);
+    VirusGusano(float x, float y, float r);
     ~VirusGusano();
     void Inicializa(float x, float y);
     VirusGusano();

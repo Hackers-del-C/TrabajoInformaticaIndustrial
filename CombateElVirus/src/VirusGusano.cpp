@@ -18,9 +18,10 @@ VirusGusano::VirusGusano() {
 
 }
 
-VirusGusano::VirusGusano(float x, float y) {
-
+VirusGusano::VirusGusano(float x, float y, float r) {
+    recorrido = r;
     posicion.x = x;
+    posicionini.x = x;
     posicion.y = -10;
     vidas = 8;
     anchura = 3;
@@ -89,7 +90,7 @@ void VirusGusano::Mueve(float t, ListaSlime& l, Hombre h) {
 
 
     if (aux <40 && mov == 0) {
-        posicion.x = lanzaDado(245, 205); //posicion lv2 aleatorio
+        posicion.x = lanzaDado(posicionini.x+recorrido, posicionini.x - recorrido); //posicion lv2 aleatorio
         Aparece();
         estado = aparece;
        
