@@ -476,7 +476,6 @@ void Mundo::MueveHombre() { //Solo para en caso de muerte o ganar se necesita en
 void Mundo::Mueve(int level)
 {
 	hombre.caida((Interaccion::caida(hombre, limites)), level);
-	
 	//OJO//
 
 	if (hombre.posicion.x > 0 && level != 0) Setojo(hombre.posicion.x, 10, 53);		

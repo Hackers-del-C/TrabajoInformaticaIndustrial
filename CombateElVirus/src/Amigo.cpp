@@ -8,15 +8,15 @@
 
 void Amigo::Inicializa() {
     //compañero
-    companionder = new SpriteSequence("imagenes/companionder.png", 2, 1, 100, true, 0, 0, 2, 2);
-    companionizq = new SpriteSequence("imagenes/companionizq.png", 2, 1, 100, true, 0, 0, 2, 2);
-    companion = new SpriteSequence("imagenes/companion.png", 1, 1, 100, true, 0, 0, 2, 2);
+    companionder = new SpriteSequence("imagenes/companionder.png", 1, 1, 100, true, 0, 0, 2, 2);
+    companionizq = new SpriteSequence("imagenes/companionizq.png", 1, 1, 100, true, 0, 0, 2, 2);
     izqder = 0;
     posicion.x = -7;
+  
 }
 void Amigo::Dibuja(Hombre h) {
    
-    posicion.y = -3.5;
+   
     glTranslatef(posicion.x, posicion.y, 0);
     switch (h.GetDir()) {
     case 0:
@@ -25,13 +25,13 @@ void Amigo::Dibuja(Hombre h) {
         switch (izqder) {
         case 0:  // muñeco a la izquierda del hombre            
             companionder->draw();
-            if (h.GetPos().x - posicion.x >= 7) {
+            if (h.GetPos().x - posicion.x >= 7 || h.GetPos().x - posicion.x <= -7) {
                 posicion.x = h.GetPos().x - 7;
             }
             break;
         case 1:  //muñeco a la derecha
-            companion->draw();
-            if (h.GetPos().x - posicion.x >= 7) {
+            companionizq->draw();
+            if (h.GetPos().x - posicion.x >= 7 || h.GetPos().x - posicion.x <= -7) {
                 izqder = 0;
             }
             break;
@@ -41,13 +41,13 @@ void Amigo::Dibuja(Hombre h) {
         switch (izqder) {
         case 0:  // muñeco a la izquierda del hombre            
             companionder->draw();
-            if (h.GetPos().x - posicion.x >= 7) {
+            if (h.GetPos().x - posicion.x >= 7 || h.GetPos().x - posicion.x <= -7) {
                 posicion.x = h.GetPos().x - 7;
             }          
                 break;
         case 1:  //muñeco a la derecha
-            companion->draw();
-            if (h.GetPos().x - posicion.x >= 7) {
+            companionder->draw();
+            if (h.GetPos().x - posicion.x >= 7 || h.GetPos().x - posicion.x <= -7) {
                 izqder = 0;
             }
             break;
@@ -58,7 +58,7 @@ void Amigo::Dibuja(Hombre h) {
        
         switch (izqder) {
         case 0:  // muñeco a la izquierda del hombre
-            companion->draw();
+            companionder->draw();
             if (posicion.x-h.GetPos().x >= 7) {
                 izqder = 1;
             }
@@ -83,9 +83,10 @@ void Amigo::SetVel(float vx)// float vy)
 
 void Amigo::Mueve(float t) {
   
+    posicion.y = -3 +sin(2*3.14*(t/0.25f));
     companionder->loop();
     companionizq->loop();
-    companion->loop();
+ 
 }
 
 void Amigo::Mensajes(int level) {
@@ -93,7 +94,7 @@ void Amigo::Mensajes(int level) {
     switch (level){
     case 1:
     if (posicion.x < 10) {
-        auxetsidi.Texto("Ni hao!", posicion.x , 2, 0, 0.1, 0.2, 8);
+        auxetsidi.Texto("Ni hao!", posicion.x , 1, 0, 0.1, 0.2, 8);
         auxetsidi.Texto("Usa las teclas para moverte", posicion.x -3, 0, 0, 0.1, 0.2, 8);
         auxetsidi.Texto("Usa s,w,a,d para disparar", posicion.x -3, -1, 0, 0.1, 0.2, 8);
 

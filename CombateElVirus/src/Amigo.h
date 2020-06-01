@@ -9,8 +9,6 @@ class Amigo {
 public:
 	ETSIDI::SpriteSequence* companionder;
 	ETSIDI::SpriteSequence* companionizq;
-	ETSIDI::SpriteSequence* companion;
-
 	void Dibuja(Hombre h);
 	void Inicializa();
 	void SetVel(float vx); //, float vy
