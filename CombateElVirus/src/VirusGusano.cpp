@@ -83,15 +83,17 @@ void VirusGusano::Mueve(float t, ListaSlime& l, Hombre h) {
         sprite->flip(1, 0);
     }
 
-    int aux = lanzaDado(200);
+    int aux = lanzaDado(200); // aleatorio que aparezca
+ 
 
 
 
-    if (aux <3 && mov == 0) {
+    if (aux <40 && mov == 0) {
+        posicion.x = lanzaDado(245, 205); //posicion lv2 aleatorio
         Aparece();
         estado = aparece;
        
-        posicion.y = -3.5;
+        posicion.y = -3.1;
         mov = 1;
     }
    

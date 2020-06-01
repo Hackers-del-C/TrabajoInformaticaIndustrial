@@ -175,7 +175,7 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 	//Añadimos Virus: slime, seta y mosca 
 
 		listavirus.agregar(new VirusSlime(35, -3, 9));	
-		listavirus.agregar(new VirusGusano(-10, -3.5));
+		
 		listavirus.agregar(new VirusSeta(122, -3, 5));
 		listavirus.agregar(new VirusSlime(122, -3, 7));
 		listavirus.agregar(new VirusMosca(230, 15,15)); //MALO FINAL DEL NIVEL 1
@@ -259,8 +259,9 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 		listavirus.agregar(new VirusSlime(110, -3, 8));
 		listavirus.agregar(new VirusMosca(80, 10, 15));
 		listavirus.agregar(new VirusSeta(200, -3, 13));
-		listavirus.agregar(new VirusSlime(200, -3, 10));
-		listavirus.agregar(new VirusSeta(200, -3, 18));
+		//listavirus.agregar(new VirusSlime(200, -3, 10));
+		//listavirus.agregar(new VirusSeta(200, -3, 18));
+		listavirus.agregar(new VirusGusano(200, -3.5));
 
 		// tests (son simplemente para la puntuacion)	
 		listabonus.agregar(new BonusTest(10, -2, 2, 2));
