@@ -2,7 +2,7 @@
 #include "glut.h"
 #include <iostream>
 #include "Vector2D.h"
-
+#include <Time.h>
 #include "Amigo.h"
 
 
@@ -83,7 +83,7 @@ void Amigo::SetVel(float vx)// float vy)
 
 void Amigo::Mueve(float t) {
   
-    posicion.y = -3 +sin(2*3.14*(t/0.25f));
+    posicion.y = -2.8 +sin(2*3.14* clock());
     companionder->loop();
     companionizq->loop();
  
