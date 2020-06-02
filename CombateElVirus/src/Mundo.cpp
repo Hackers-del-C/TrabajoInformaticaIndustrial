@@ -430,8 +430,10 @@ void Mundo::Dibuja(int level) {
 			if (plataformas.ColisionSube(hombre) != 0 && plataformas.ColisionSube(hombre)->GetTipo() != plataformas.ColisionSube(hombre)->PLATAFORMA_CHOCA)
 				plataformas.Eliminar(plataformas.ColisionSube(hombre));
 		}
-		if (lanzaDado(3000) < 10) {
-			listabonus.agregar(new Municion(200 + lanzaDado(50), 10, 2, 2));
+		if (hombre.GetPos().x >= 195) {
+			if (lanzaDado(3000) < 10) {
+				listabonus.agregar(new Municion(200 + lanzaDado(50), 10, 2, 2));
+			}
 		}
 
 	}
@@ -440,8 +442,10 @@ void Mundo::Dibuja(int level) {
 			if (plataformas.ColisionSube(hombre) != 0 && plataformas.ColisionSube(hombre)->GetTipo() == plataformas.ColisionSube(hombre)->SUELO)
 				plataformas.Eliminar(plataformas.ColisionSube(hombre));
 		}
-		if (lanzaDado(3000) < 30) {
-			listabonus.agregar(new Municion(200 + lanzaDado(50), 25, 2, 2));
+		if (hombre.GetPos().x >= 195) {
+			if (lanzaDado(3000) < 30) {
+				listabonus.agregar(new Municion(200 + lanzaDado(50), 25, 2, 2));
+			}
 		}
 	}
 	if (level == 3) {
@@ -454,8 +458,10 @@ void Mundo::Dibuja(int level) {
 			if (plataformas.ColisionSube(hombre) != 0 && plataformas.ColisionSube(hombre)->GetTipo() == plataformas.ColisionSube(hombre)->SUELO)
 				plataformas.Eliminar(plataformas.ColisionSube(hombre));
 		}
-		if (lanzaDado(3000) < 60) {
-			listabonus.agregar(new Municion(200 + lanzaDado(50), 25, 2, 2));
+		if (hombre.GetPos().x >= 195) {
+			if (lanzaDado(3000) < 60) {
+				listabonus.agregar(new Municion(200 + lanzaDado(50), 25, 2, 2));
+			}
 		}
 	}
 
