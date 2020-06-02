@@ -59,7 +59,7 @@ void VirusSeta::Seguir(Hombre h) {
 
 }
 
-void VirusSeta::LanzaBonus(ListaBonus& l) {
+void VirusSeta::LanzaBonus(ListaBonus& l, int nivel) {
     float naleatorio = lanzaDado(100.0);
     if (naleatorio <60.0) {
         l.agregar(new Municion(posicion.x, posicion.y, 0, 2, 2));

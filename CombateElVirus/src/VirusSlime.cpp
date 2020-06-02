@@ -62,7 +62,7 @@ void VirusSlime::Seguir(Hombre h) {
 
 }
 
-void VirusSlime::LanzaBonus(ListaBonus& l) {
+void VirusSlime::LanzaBonus(ListaBonus& l, int nivel) {
     float naleatorio = lanzaDado(100.0);
     if (naleatorio < 60.0) {
         l.agregar(new Municion(posicion.x, posicion.y, 0, 2, 2));

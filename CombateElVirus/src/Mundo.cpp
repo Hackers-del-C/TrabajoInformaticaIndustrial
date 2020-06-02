@@ -453,7 +453,7 @@ void Mundo::Dibuja(int level) {
 
 			misiles.Agregar(new Misil("imagenes/misilizq.png", 69, 6.55, -5.0f, 0.0f));
 		}
-		 if (naleatorio < 2) {
+		 if (naleatorio < 1) {
 
 			listabonus.agregar(new BonusMascarilla(hombre.GetPosX() + naleatorio * 10, 25, 1.5, 1.5));
 
@@ -477,6 +477,15 @@ void Mundo::Dibuja(int level) {
 
 	}
 	if (level == 2) {
+
+		float naleatorio = lanzaDado(800.0);
+
+		if (naleatorio < 1) {
+
+			listabonus.agregar(new BonusMascarilla(hombre.GetPosX() + naleatorio * 10, 25, 1.5, 1.5));
+
+		}
+
 		if (hombre.GetPos().x > 35){
 			if (plataformas.ColisionSube(hombre) != 0 && plataformas.ColisionSube(hombre)->GetTipo() == plataformas.ColisionSube(hombre)->SUELO)
 				plataformas.Eliminar(plataformas.ColisionSube(hombre));
