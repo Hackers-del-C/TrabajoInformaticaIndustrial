@@ -414,7 +414,7 @@ void Mundo::Dibuja(int level) {
 
 			misiles.Agregar(new Misil("imagenes/misilizq.png", 69, 6.55, -5.0f, 0.0f));
 		}
-		 if (naleatorio < 1) {
+		 if (naleatorio < 2) {
 
 			listabonus.agregar(new BonusMascarilla(hombre.GetPosX() + naleatorio * 10, 25, 1.5, 1.5));
 
@@ -430,8 +430,8 @@ void Mundo::Dibuja(int level) {
 			if (plataformas.ColisionSube(hombre) != 0 && plataformas.ColisionSube(hombre)->GetTipo() != plataformas.ColisionSube(hombre)->PLATAFORMA_CHOCA)
 				plataformas.Eliminar(plataformas.ColisionSube(hombre));
 		}
-		if (lanzaDado(3000) < 20) {
-			listabonus.agregar(new Municion(200 + lanzaDado(50), 25, 2, 2));
+		if (lanzaDado(3000) < 10) {
+			listabonus.agregar(new Municion(200 + lanzaDado(50), 10, 2, 2));
 		}
 
 	}
@@ -440,7 +440,7 @@ void Mundo::Dibuja(int level) {
 			if (plataformas.ColisionSube(hombre) != 0 && plataformas.ColisionSube(hombre)->GetTipo() == plataformas.ColisionSube(hombre)->SUELO)
 				plataformas.Eliminar(plataformas.ColisionSube(hombre));
 		}
-		if (lanzaDado(3000) < 20) {
+		if (lanzaDado(3000) < 30) {
 			listabonus.agregar(new Municion(200 + lanzaDado(50), 25, 2, 2));
 		}
 	}
@@ -454,7 +454,7 @@ void Mundo::Dibuja(int level) {
 			if (plataformas.ColisionSube(hombre) != 0 && plataformas.ColisionSube(hombre)->GetTipo() == plataformas.ColisionSube(hombre)->SUELO)
 				plataformas.Eliminar(plataformas.ColisionSube(hombre));
 		}
-		if (lanzaDado(3000) < 20) {
+		if (lanzaDado(3000) < 60) {
 			listabonus.agregar(new Municion(200 + lanzaDado(50), 25, 2, 2));
 		}
 	}
