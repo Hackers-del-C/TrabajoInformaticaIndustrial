@@ -136,7 +136,7 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 
 	/////NIVEL 1////
 	if (nivel == 1) {
-
+		hombre.SetMonedas(0);
 	/// lanzamisiles
 		listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png", 30, -3)); ///L1
 		listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png", 70, 5.75));  ///L2
@@ -200,6 +200,7 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 	}
 	////NIVEL 2///
 	else if (nivel == 2) {
+		hombre.SetMonedas(0);
 		listalanzamisiles.DestruirContenido();
 		hombre.SetFinNivel(0);
 
@@ -277,6 +278,7 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 	}
 	
 	else if (nivel == 3) {
+	hombre.SetMonedas(0);
 	hombre.SetFinNivel(0);
 	//Virus
 
