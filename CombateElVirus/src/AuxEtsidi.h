@@ -16,7 +16,7 @@ private:
 
 public:
 
-	void Imagen(string nombre, float limx1, float limx2, float limy1, float limy2);
+	void Imagen(string nombre, float limx1, float limx2, float limy1, float limy2,float z=-0.1);
 	void Texto(string nombre, float x, float y, float red, float verde, float azul, float tamanio);
 	
 

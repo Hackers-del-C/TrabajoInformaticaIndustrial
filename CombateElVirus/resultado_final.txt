@@ -4,16 +4,21 @@ Has_cogido: 12 test
 has_tardado 12 segundos
 
 2 david
-Has_llegado_al_nivel: 1 
-Has_cogido: 1 test
-has_tardado 11 segundos
+Has_llegado_al_nivel: 2 
+Has_cogido: 10 test
+has_tardado 45 segundos
 
 3 david
 Has_llegado_al_nivel: 1 
 Has_cogido: 1 test
+has_tardado 11 segundos
+
+4 david
+Has_llegado_al_nivel: 1 
+Has_cogido: 1 test
 has_tardado 21 segundos
 
-4 carlos
+5 carlos
 Has_llegado_al_nivel: 1 
 Has_cogido: 0 test
 has_tardado 3 segundos
