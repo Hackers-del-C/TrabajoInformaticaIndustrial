@@ -1,5 +1,5 @@
 #include "VirusBaba.h"
-
+#include "Billete.h"
 
 using namespace ETSIDI;
 using namespace std;
@@ -161,5 +161,9 @@ void VirusBaba::Disparafinal(ListaSlime& l, Hombre h) {
     l.agregar(slime);
    
 }
-
+void VirusBaba::LanzaBonus(ListaBonus& l, int nivel) {
+    if (nivel == 3) {
+        l.agregar(new Billete(225, 10, 4, 4));
+    }
+}
 
