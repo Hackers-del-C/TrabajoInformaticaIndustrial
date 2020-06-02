@@ -33,7 +33,7 @@ public:
     int GetVidas();
     void SetVidas(int v);
     virtual void Seguir(Hombre h);
-    virtual void LanzaBonus(ListaBonus& l); //Para el billete de la mosca
+    virtual void LanzaBonus(ListaBonus& l,int nivel); //Para el billete de la mosca
     int GetMuerto() { return muere; }
     ETSIDI::Vector2D posicion, velocidad, aceleracion, vectormuerte, posicionini;
     float anchura, altura;

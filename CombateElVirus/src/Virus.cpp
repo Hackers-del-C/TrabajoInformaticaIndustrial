@@ -80,7 +80,7 @@ void Virus::Dispara(ListaSlime& l) {
 
 }
 
-void Virus::LanzaBonus(ListaBonus& l) {
+void Virus::LanzaBonus(ListaBonus& l, int nivel) {
 
 }
 

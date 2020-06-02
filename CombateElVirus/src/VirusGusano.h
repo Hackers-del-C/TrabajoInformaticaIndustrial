@@ -19,6 +19,7 @@ public:
    
     void Mueve(float t, ListaSlime& l, Hombre h);
     void finsequence(Estado e);
+    void LanzaBonus(ListaBonus& l, int nivel);
 private:
     int mov;
 };

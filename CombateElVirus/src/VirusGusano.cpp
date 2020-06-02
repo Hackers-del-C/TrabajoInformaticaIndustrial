@@ -1,5 +1,5 @@
 #include "VirusGusano.h"
-
+#include "Billete.h"
 
 using namespace ETSIDI;
 using namespace std;
@@ -103,6 +103,11 @@ void VirusGusano::Mueve(float t, ListaSlime& l, Hombre h) {
     
     sprite->loop();
 
+}
+void VirusGusano::LanzaBonus(ListaBonus& l, int nivel) {
+    if (nivel == 2) {
+        l.agregar(new Billete(posicion.x, posicion.y, 4, 4));
+    }
 }
 
 

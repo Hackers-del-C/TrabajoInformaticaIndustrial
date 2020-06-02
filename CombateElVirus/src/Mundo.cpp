@@ -201,7 +201,7 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 	////NIVEL 2///
 	else if (nivel == 2) {
 		listalanzamisiles.DestruirContenido();
-		
+		hombre.SetFinNivel(0);
 
 		for (int y = -6; y < 3; y++) {
 			plataformas.Agregar(new Plataformas(Plataformas::SUELO, j * y, -5.5, 5, 1.5));
@@ -277,6 +277,7 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 	}
 	
 	else if (nivel == 3) {
+	hombre.SetFinNivel(0);
 	//Virus
 
 		listavirus.agregar(new VirusBaba(240, 15));
@@ -427,12 +428,18 @@ void Mundo::Dibuja(int level) {
 			if (plataformas.ColisionSube(hombre) != 0 && plataformas.ColisionSube(hombre)->GetTipo() != plataformas.ColisionSube(hombre)->PLATAFORMA_CHOCA)
 				plataformas.Eliminar(plataformas.ColisionSube(hombre));
 		}
+		if (lanzaDado(3000) < 20) {
+			listabonus.agregar(new Municion(200 + lanzaDado(50), 25, 2, 2));
+		}
 
 	}
 	if (level == 2) {
 		if (hombre.GetPos().x > 35){
 			if (plataformas.ColisionSube(hombre) != 0 && plataformas.ColisionSube(hombre)->GetTipo() == plataformas.ColisionSube(hombre)->SUELO)
 				plataformas.Eliminar(plataformas.ColisionSube(hombre));
+		}
+		if (lanzaDado(3000) < 20) {
+			listabonus.agregar(new Municion(200 + lanzaDado(50), 25, 2, 2));
 		}
 	}
 	if (level == 3) {
@@ -445,7 +452,11 @@ void Mundo::Dibuja(int level) {
 			if (plataformas.ColisionSube(hombre) != 0 && plataformas.ColisionSube(hombre)->GetTipo() == plataformas.ColisionSube(hombre)->SUELO)
 				plataformas.Eliminar(plataformas.ColisionSube(hombre));
 		}
+		if (lanzaDado(3000) < 20) {
+			listabonus.agregar(new Municion(200 + lanzaDado(50), 25, 2, 2));
+		}
 	}
+
 }
 
 //Fin partida para avisar al coordinador
@@ -501,7 +512,7 @@ void Mundo::Mueve(int level)
 	plataformas.Mueve(0.025f);
 
 	////INTERACCIONES////	
-	listavirus.Colision(disparos, listaexplosiones, listabonus);
+	listavirus.Colision(disparos, listaexplosiones, listabonus,level);
 	listavirus.Colision(hombre);
 	plataformas.Colision(slime);
 	listaslime.Colision(limites);
@@ -602,9 +613,7 @@ void Mundo::Tecla(unsigned char key)
 		hombre.Dañar();
 		break;
 	case 'y':
-		if (hombre.GetVidas() > 0) {			
-			hombre.SetVidas(hombre.GetVidas() - 1);
-		}
+		listabonus.agregar(new Municion(hombre.GetPos().x, hombre.GetPos().y, 2, 2));
 		break;
 	case 'v': //IMPORTANTE: AVANZAR EN EL NIVEL AUTOMATICAMENTE
 		hombre.SetPos(210, 20);

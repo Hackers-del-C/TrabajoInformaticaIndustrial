@@ -15,5 +15,5 @@ public:
     VirusMosca();
     void Dispara(ListaSlime &l);
     void Muere();
-    void LanzaBonus(ListaBonus& l);
+    void LanzaBonus(ListaBonus& l,int nivel);
 };

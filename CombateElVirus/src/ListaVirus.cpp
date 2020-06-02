@@ -126,7 +126,7 @@ void ListaVirus::Sigue(Hombre h)
 		lista[i]->Seguir(h);
 }
 
-void ListaVirus::Colision(ListaDisparos &l, ListaExplosiones &e, ListaBonus& b) {
+void ListaVirus::Colision(ListaDisparos &l, ListaExplosiones &e, ListaBonus& b,int nivel) {
 
 	for (int i = 0; i < numero; i++) {
 
@@ -134,7 +134,7 @@ void ListaVirus::Colision(ListaDisparos &l, ListaExplosiones &e, ListaBonus& b) 
 			//lista[i]->SetVidas(lista[i]->GetVidas() -1);
 			
 			if (lista[i]->GetVidas() < 1) {
-				lista[i]->LanzaBonus(b);
+				lista[i]->LanzaBonus(b,nivel);
 				eliminar(i);
 			}
 			
