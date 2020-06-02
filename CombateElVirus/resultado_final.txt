@@ -1,26 +1,20 @@
 1 alvaro
-Has_llegado_al_nivel: 0 
-Has_cogido: 4 test
-Has_tardado: 20 segundos
+Has_llegado_al_nivel: 3 
+Has_cogido: 12 test
+has_tardado 12 segundos
 
 2 david
-Has_llegado_al_nivel: 0 
-Has_cogido: 17 test
-Has_tardado: 14 segundos
+Has_llegado_al_nivel: 1 
+Has_cogido: 1 test
+has_tardado 11 segundos
 
-3 carlos
-Has_llegado_al_nivel: 0 
-Has_cogido: 2 test
-Has_tardado: 18 segundos
+3 david
+Has_llegado_al_nivel: 1 
+Has_cogido: 1 test
+has_tardado 21 segundos
 
-4 david
-Has_llegado_al_nivel: 0 
-Has_cogido: 2 test
-Has_tardado: 14 segundos
-
-5 david
-Has_llegado_al_nivel: 0
-Has_cogido: 2 test
-Has_tardado: 14 segundos
-
+4 carlos
+Has_llegado_al_nivel: 1 
+Has_cogido: 0 test
+has_tardado 3 segundos
 

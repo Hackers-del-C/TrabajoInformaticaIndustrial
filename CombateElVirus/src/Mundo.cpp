@@ -40,7 +40,7 @@ void Mundo::fichero(int level) { //	Fichero para guardar el numero de tests y el
 		struct jugador {
 			string nombre, texto1, texto2, texto3, texto4, texto5;
 			int nivel = 0, test = 0, segundos = 0, posicion = 0;
-			bool jugadoractual = false;
+		
 		};
 		jugador lista[NUM_MAX_RANKING];
 		while (!fichero.eof()) {
@@ -55,13 +55,12 @@ void Mundo::fichero(int level) { //	Fichero para guardar el numero de tests y el
 		lista[k].nombre = "david";
 		lista[k].nivel = level;
 		lista[k].test = hombre.GetMonedas();
-		lista[k].jugadoractual = true;
 		lista[k++].segundos = ((clock() - tiempo) / 1000);
 
 		fichero.close();
-		//remove("resultado_final.txt");
-		//ofstream fichero1("resultado_final.txt");
-		//fichero.open("resultado_final.txt");
+		remove("resultado_final.txt");
+		ofstream fichero1("resultado_final.txt");
+		fichero.open("resultado_final.txt");
 
 		//ordenar por puntuacion
 
@@ -105,15 +104,18 @@ void Mundo::fichero(int level) { //	Fichero para guardar el numero de tests y el
 				}
 			}
 
-			/*for (int m = 0; m < (k - 1); m++) {
-
-				fichero1 << m + 1 << " " << lista[m].nombre << endl;
-				fichero1 << lista[0].texto1 << " " << lista[m].nivel << " " << endl;
-				fichero1 << lista[0].texto2 << " " << lista[m].test << " " << lista[0].texto3 << endl;
-				fichero1 << lista[0].texto4 << " " << lista[m].segundos << " " << lista[0].texto5 << endl << endl;
-			}*/
+			
 		}
-		for (int i = 1; i < 2; i++) {
+
+		for (int m = 0; m < (k - 1); m++) {
+
+			fichero1 << m + 1 << " " << lista[m].nombre << endl;
+			fichero1 << lista[0].texto1 << " " << lista[m].nivel << " " << endl;
+			fichero1 << lista[0].texto2 << " " << lista[m].test << " " << lista[0].texto3 << endl;
+			fichero1 << lista[0].texto4 << " " << lista[m].segundos << " " << lista[0].texto5 << endl << endl;
+		}
+		fichero1.close();
+		/*for (int i = 1; i < 2; i++) {
 
 			int color = 255;
 			if (lista[i - 1].jugadoractual != true) {
@@ -125,11 +127,48 @@ void Mundo::fichero(int level) { //	Fichero para guardar el numero de tests y el
 			sstr << "Has tardado : " << lista[i - 1].segundos << " segundos";
 			auxetsidim.Texto(sstr.str(), hombre.GetPos().x, 12 - (i) * 4, 0, color, 0, 12);
 
-		}
+		}*/
 
-	//auxetsidim.Texto("david", hombre.GetPos().x , 12, 250, 250, 250, 12);
+	
 }
 
+void Mundo::imprimirclasificacion() {
+	
+	ifstream fichero("resultado_final.txt");
+	int k = 0;
+
+	struct jugadori {
+		string nombre, texto1, texto2, texto3, texto4, texto5;
+		int nivel = 0, test = 0, segundos = 0, posicion = 0;
+
+	};
+	jugadori lista[2];
+	while (k < 2) {
+
+		fichero >> lista[k].posicion >> lista[k].nombre;
+		fichero >> lista[k].texto1 >> lista[k].nivel;
+		fichero >> lista[k].texto2 >> lista[k].test >> lista[k].texto3;
+		fichero >> lista[k].texto4 >> lista[k].segundos >> lista[k].texto5;
+		k++;
+	}
+	fichero.close();
+	
+	float m = 0.0;
+	for (int i = 0; i < 2; i++) {
+
+
+		auxetsidim.Texto(lista[i].nombre, hombre.GetPos().x -10, 12 - m , 1, 1, 1, 12);
+		m += 2;
+		stringstream sstr;
+		sstr << "Ha tardado : " << lista[i].segundos << " segundos";
+		auxetsidim.Texto(sstr.str(), hombre.GetPos().x - 10, 12 - m , 1, 1, 1, 12);
+		m += 2;
+
+	}
+
+
+
+}
 void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas y virus
 	int j = 5; //auxiliar para crear  respecto una frecuencia las pltaformas
 	 // Se separa en 3 partes dependiendo del nivel

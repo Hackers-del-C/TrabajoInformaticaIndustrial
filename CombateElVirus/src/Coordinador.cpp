@@ -58,7 +58,7 @@ void Coordinador::Dibuja() {
 			estado = MUERTE;
 			int a = 0;
 			if (a == 0) { entorno.Fin(1); a = 1; } //para que no entre bucle y se reproduzca una vez
-			//if (mundo.gettiempo() != -1000) { mundo.fichero(nivel); }
+			mundo.fichero(nivel); 
 
 		}
 		else if (mundo.Ganar()) {
@@ -81,7 +81,7 @@ void Coordinador::Dibuja() {
 		entorno.Aviso(1, mundo.GetHombrePos().x, mundo.GetHombrePos().y); 
 		entorno.DibujaJuego(nivel); //funciona
 		mundo.DibujaBasico();	
-		//if (mundo.gettiempo() != -1000) { mundo.fichero(nivel); }
+		mundo.imprimirclasificacion();
 	}
 	else if (estado == GANAR) {	
 		avion.Dibuja();
@@ -259,7 +259,7 @@ void Coordinador::ClickMouse(int b, int state) { //PARA ELEGIR NIVEL CON EL RATÓ
 	int button;
 	if (estado == MENU) {
 		if (b == GLUT_LEFT_BUTTON) {
-			button = MOUSE_LEFT_BUTTON;
+			//button = MOUSE_LEFT_BUTTON;
 
 			if (ymouse > 11.5 && ymouse <= 13) {				
 					nivel = 1;
