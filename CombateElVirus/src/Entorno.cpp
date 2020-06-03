@@ -135,11 +135,12 @@ void Entorno::Aviso(int pantalla, int x, int y) {
 
 	switch (pantalla) {
 	case 1: //pantalla si mueres
-		auxetsidi.Imagen("aviso", x - 20, x + 20, 0, 30,0);
-		auxetsidi.Texto("F Perdiste...", x - 5.5, 24, 0.44, 0.87, 0.45, 20);
-		auxetsidi.Texto("Pulsa 8  para REINICIAR EL NIVEL", x - 10, 21, 1, 1, 1, 12); //obv habrá que hacerlo con otras teclas u otra cosa
-		auxetsidi.Texto("Pulsa 7 ir al MENU PRINCIPAL", x - 10, 18, 1, 1, 1, 12);
-		auxetsidi.Texto("CLASIFICACION ", x - 10, 15, 1, 1, 1, 12);
+		//auxetsidi.Imagen("aviso", x - 20, x + 20, 0, 30,0);
+		auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, 2, 17, 0);
+		auxetsidi.Texto("F Perdiste...", x - 5.5, 14, 0.44, 0.87, 0.45, 20);
+		auxetsidi.Texto("Pulsa 8  para REINICIAR EL NIVEL", x - 10, 11, 1, 1, 1, 12); //obv habrá que hacerlo con otras teclas u otra cosa
+		auxetsidi.Texto("Pulsa 7 ir al MENU PRINCIPAL", x - 10, 8, 1, 1, 1, 12);
+		//auxetsidi.Texto("CLASIFICACION ", x - 10, 15, 1, 1, 1, 12);
 		
 		
 

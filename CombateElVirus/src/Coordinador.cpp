@@ -81,7 +81,7 @@ void Coordinador::Dibuja() {
 		entorno.Aviso(1, mundo.GetHombrePos().x, mundo.GetHombrePos().y); 
 		entorno.DibujaJuego(nivel); //funciona
 		mundo.DibujaBasico();	
-		mundo.imprimirclasificacion(nivel);
+		//mundo.imprimirclasificacion(nivel);
 	}
 	else if (estado == GANAR) {	
 		avion.Dibuja();
