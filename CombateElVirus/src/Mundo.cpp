@@ -70,9 +70,9 @@ void Mundo::fichero(int level) { //	Fichero para guardar el numero de tests y el
 
 		//ordenar por puntuacion
 
-		for (int m = 0; m < (k - 1); m++) {
+		for (int m = 0; m < (k-2); m++) {
 
-			for (int n = 0; n < (k - 1); n++) {
+			for (int n = 0; n < (k-2); n++) {
 
 				jugador aux;
 				if (lista[n + 1].test > lista[n].test) {
@@ -84,10 +84,10 @@ void Mundo::fichero(int level) { //	Fichero para guardar el numero de tests y el
 			}
 		}
 	
+/*
+		for (int m = 0; m < (k-2); m++) {
 
-		for (int m = 0; m < (k - 1); m++) {
-
-			for (int n = 0; n < (k - 1); n++) {
+			for (int n = 0; n < (k-2); n++) {
 
 				jugador aux;
 				if ((lista[n + 1].test == lista[n].test)  && (lista[n + 1].segundos < lista[n].segundos)) {
@@ -99,9 +99,9 @@ void Mundo::fichero(int level) { //	Fichero para guardar el numero de tests y el
 			}
 
 			
-		}
-
-		for (int m = 0; m < (k - 1); m++) {
+		}*/
+	
+		for (int m = 0; m < (k-1); m++) {
 
 			fichero1 << m + 1 << " " << lista[m].nombre << endl;
 			fichero1 << lista[0].texto1 << " " << lista[m].nivel << " " << endl;
@@ -163,6 +163,7 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 	/////NIVEL 1////
 	if (nivel == 1) {
 		hombre.SetMonedas(0);
+		listabonus.destruirContenido();
 	/// lanzamisiles
 		listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png", 30, -3)); ///L1
 		listalanzamisiles.Agregar(new Lanzamisiles("imagenes/lanzamisiles.png", 70, 5.75));  ///L2
@@ -228,6 +229,7 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 	else if (nivel == 2) {
 		hombre.SetMonedas(0);
 		listalanzamisiles.DestruirContenido();
+		listabonus.destruirContenido();
 		hombre.SetFinNivel(0);
 
 		for (int y = -6; y < 3; y++) {
@@ -306,6 +308,7 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 	else if (nivel == 3) {
 	hombre.SetMonedas(0);
 	hombre.SetFinNivel(0);
+	listabonus.destruirContenido();
 	//Virus
 
 		listavirus.agregar(new VirusBaba(240, 15));
@@ -441,12 +444,14 @@ void Mundo::Dibuja(int level) {
 			misiles.Agregar(new Misil("imagenes/misilizq.png", 69, 6.55, -5.0f, 0.0f));
 		}
 		 if (naleatorio < 1) {
-
+			 if (hombre.GetPos().x < 170) 
 			listabonus.agregar(new BonusMascarilla(hombre.GetPosX() + naleatorio * 10, 25, 1.5, 1.5));
 
 		}
 		 else if (naleatorio < 4) {
+			 if(hombre.GetPos().x<170){
 			listabonus.agregar(new Municion(hombre.GetPosX() + naleatorio * 8, 25, 2, 2));
+			 }
 
 		}
 		if (hombre.GetPos().x > 90 && hombre.GetPos().x < 100) {
@@ -468,7 +473,7 @@ void Mundo::Dibuja(int level) {
 		float naleatorio = lanzaDado(800.0);
 
 		if (naleatorio < 1) {
-
+			 if(hombre.GetPos().x<170)
 			listabonus.agregar(new BonusMascarilla(hombre.GetPosX() + naleatorio * 10, 25, 1.5, 1.5));
 
 		}
