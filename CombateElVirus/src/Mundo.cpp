@@ -75,7 +75,7 @@ void Mundo::fichero(int level) { //	Fichero para guardar el numero de tests y el
 			for (int n = 0; n < (k - 1); n++) {
 
 				jugador aux;
-				if (lista[n + 1].nivel > lista[n].nivel) {
+				if (lista[n + 1].test > lista[n].test) {
 
 					aux = lista[n + 1];
 					lista[n + 1] = lista[n];
@@ -90,7 +90,7 @@ void Mundo::fichero(int level) { //	Fichero para guardar el numero de tests y el
 			for (int n = 0; n < (k - 1); n++) {
 
 				jugador aux;
-				if ((lista[n + 1].nivel == lista[n].nivel)  && (lista[n + 1].segundos < lista[n].segundos)) {
+				if ((lista[n + 1].test == lista[n].test)  && (lista[n + 1].segundos < lista[n].segundos)) {
 
 					aux = lista[n + 1];
 					lista[n + 1] = lista[n];
@@ -109,19 +109,7 @@ void Mundo::fichero(int level) { //	Fichero para guardar el numero de tests y el
 			fichero1 << lista[0].texto4 << " " << lista[m].segundos << " " << lista[0].texto5 << endl << endl;
 		}
 		fichero1.close();
-		/*for (int i = 1; i < 2; i++) {
-
-			int color = 255;
-			if (lista[i - 1].jugadoractual != true) {
-				color = 1;
-			}
-
-			auxetsidim.Texto(lista[i - 1].nombre, hombre.GetPos().x, 12 - i * 2, 0, color, 0, 12);
-			stringstream sstr;
-			sstr << "Has tardado : " << lista[i - 1].segundos << " segundos";
-			auxetsidim.Texto(sstr.str(), hombre.GetPos().x, 12 - (i) * 4, 0, color, 0, 12);
-
-		}*/
+		
 
 	
 }

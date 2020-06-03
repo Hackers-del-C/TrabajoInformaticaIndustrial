@@ -1,50 +1,30 @@
-1 alvaro
+1 david
 Has_llegado_al_nivel: 1 
-Has_cogido: 12 test
-has_tardado 12 segundos
+Has_cogido: 15 test
+has_tardado 45 segundos
 
 2 david
-Has_llegado_al_nivel: 1 
-Has_cogido: 0 test
-has_tardado 15 segundos
-
-3 Jugador
-Has_llegado_al_nivel: 1 
-Has_cogido: 1 test
-has_tardado 21 segundos
-
-4 Jugador
-Has_llegado_al_nivel: 1 
-Has_cogido: 1 test
-has_tardado 22 segundos
-
-5 david
-Has_llegado_al_nivel: 1 
-Has_cogido: 7 test
-has_tardado 27 segundos
-
-6 david
 Has_llegado_al_nivel: 1 
 Has_cogido: 14 test
 has_tardado 32 segundos
 
-7 david
+3 david
 Has_llegado_al_nivel: 1 
 Has_cogido: 13 test
 has_tardado 33 segundos
 
-8 david
+4 alvaro
 Has_llegado_al_nivel: 1 
-Has_cogido: 10 test
-has_tardado 45 segundos
+Has_cogido: 12 test
+has_tardado 12 segundos
 
-9 david
+5 Jugador
 Has_llegado_al_nivel: 1 
-Has_cogido: 7 test
-has_tardado 51 segundos
+Has_cogido: 1 test
+has_tardado 13 segundos
 
-10 david
-Has_llegado_al_nivel: 1 
-Has_cogido: 9 test
-has_tardado 77 segundos
+6 
+Has_llegado_al_nivel: 0 
+Has_cogido: 0 test
+has_tardado 0 segundos
 
