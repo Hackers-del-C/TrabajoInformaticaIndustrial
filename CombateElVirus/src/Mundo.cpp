@@ -33,89 +33,130 @@ void Mundo::InicioDibuja() { //para que funcione bien los dibujas llamados desde
 
 }
 void Mundo::fichero(int level) { //	Fichero para guardar el numero de tests y el tiempo tardado
-	
-		stringstream name;
-		name << "resultado_final_level_" << level << ".txt";
 
-		ifstream fichero(name.str());
-		int k = 0;
+	stringstream name;
+	name << "resultado_final_level_" << level << ".txt";
 
-		
-		jugador lista[NUM_MAX_RANKING];
-		while (!fichero.eof()) {
+	ifstream fichero(name.str());
+	int k = 0;
 
-			fichero >> lista[k].posicion >> lista[k].nombre;
-			fichero >> lista[k].texto1 >> lista[k].nivel;
-			fichero >> lista[k].texto2 >> lista[k].test >> lista[k].texto3;
-			fichero >> lista[k].texto4 >> lista[k].segundos >> lista[k].texto5;
-			k++;
-		}
 
-		lista[k].nombre = "Jugador";
-		lista[k].nivel = level;
-		lista[k].test = hombre.GetMonedas();
-		lista[k].segundos = ((clock() - tiempo) / 1000);
+	jugador lista[NUM_MAX_RANKING];
+	while (!fichero.eof()) {
 
-		actual = lista[k];
+		fichero >> lista[k].posicion >> lista[k].nombre;
+		fichero >> lista[k].texto1 >> lista[k].nivel;
+		fichero >> lista[k].texto2 >> lista[k].test >> lista[k].texto3;
+		fichero >> lista[k].texto4 >> lista[k].segundos >> lista[k].texto5;
 		k++;
+	}
 
-		fichero.close();
-		string nombre;
-		
-		const char* cstr1 = name.str().c_str(); //cadena de char en c
-		remove(cstr1);
+	lista[k].nombre = "Jugador";
+	lista[k].nivel = level;
+	lista[k].test = hombre.GetMonedas();
+	lista[k].segundos = ((clock() - tiempo) / 1000);
 
-		ofstream fichero1(name.str());
-		fichero.open(cstr1);
 
-		//ordenar por puntuacion
+	//lista[k].texto1 = lista[0].texto1;
+	//lista[k].texto2 = lista[0].texto2;
+	//lista[k].texto3 = lista[0].texto3;
+	//lista[k].texto4 = lista[0].texto4;
+	//lista[k].texto5 = lista[0].texto5;
 
-		for (int m = 0; m < (k-2); m++) {
 
-			for (int n = 0; n < (k-2); n++) {
+	actual = lista[k];
+	k++;
 
-				jugador aux;
-				if (lista[n + 1].test > lista[n].test) {
 
-					aux = lista[n + 1];
-					lista[n + 1] = lista[n];
-					lista[n] = aux;
-				}
+	fichero.close();
+	string nombre;
+
+	const char* cstr1 = name.str().c_str(); //cadena de char en c
+	remove(cstr1);
+
+	ofstream fichero1(name.str());
+	fichero.open(cstr1);
+
+	//ordenar por puntuacion
+
+	for (int m = 0; m < (k - 1); m++) {
+
+		for (int n = 0; n < (k - 1); n++) {
+
+			jugador aux;
+			if (lista[n + 1].nivel > lista[n].nivel) {
+
+				aux = lista[n + 1];
+				lista[n + 1] = lista[n];
+				lista[n] = aux;
 			}
 		}
-	
-/*
-		for (int m = 0; m < (k-2); m++) {
+	}
 
-			for (int n = 0; n < (k-2); n++) {
+	for (int m = 0; m < (k - 1); m++) {
 
-				jugador aux;
-				if ((lista[n + 1].test == lista[n].test)  && (lista[n + 1].segundos < lista[n].segundos)) {
+		for (int n = 0; n < (k - 1); n++) {
 
-					aux = lista[n + 1];
-					lista[n + 1] = lista[n];
-					lista[n] = aux;
-				}
+			jugador aux;
+			if ((lista[n + 1].nivel == lista[n].nivel) && (lista[n + 1].test > lista[n].test)) {
+
+				aux = lista[n + 1];
+				lista[n + 1] = lista[n];
+				lista[n] = aux;
 			}
-
-			
-		}*/
-	
-		for (int m = 0; m < (k-1); m++) {
-
-			fichero1 << m + 1 << " " << lista[m].nombre << endl;
-			fichero1 << lista[0].texto1 << " " << lista[m].nivel << " " << endl;
-			fichero1 << lista[0].texto2 << " " << lista[m].test << " " << lista[0].texto3 << endl;
-			fichero1 << lista[0].texto4 << " " << lista[m].segundos << " " << lista[0].texto5 << endl << endl;
 		}
-		fichero1.close();
-		
 
-	
+
+	}
+
+
+	for (int m = 0; m < (k - 1); m++) {
+
+		for (int n = 0; n < (k - 1); n++) {
+
+			jugador aux;
+			if ((lista[n + 1].nivel == lista[n].nivel) && (lista[n + 1].test == lista[n].test)&& (lista[n + 1].segundos < lista[n].segundos)) {
+
+				aux = lista[n + 1];
+				lista[n + 1] = lista[n];
+				lista[n] = aux;
+			}
+		}
+
+
+	}
+
+
+
+
+	for (int m = 0; m < (k - 1); m++) {
+
+		fichero1 << m + 1 << " " << lista[m].nombre << endl;
+		fichero1 << lista[0].texto1 << " " << lista[m].nivel << " " << endl;
+		fichero1 << lista[0].texto2 << " " << lista[m].test << " " << lista[0].texto3 << endl;
+		fichero1 << lista[0].texto4 << " " << lista[m].segundos << " " << lista[0].texto5 << endl << endl;
+
+	}
+	fichero1.close();
+	/*for (int i = 1; i < 2; i++) {
+
+		int color = 255;
+		if (lista[i - 1].jugadoractual != true) {
+			color = 1;
+		}
+
+		auxetsidim.Texto(lista[i - 1].nombre, hombre.GetPos().x, 12 - i * 2, 0, color, 0, 12);
+		stringstream sstr;
+		sstr << "Has tardado : " << lista[i - 1].segundos << " segundos";
+		auxetsidim.Texto(sstr.str(), hombre.GetPos().x, 12 - (i) * 4, 0, color, 0, 12);
+
+	}*/
+
+
 }
 
 void Mundo::imprimirclasificacion(int level) {
-	
+
 	stringstream name;
 	name << "resultado_final_level_" << level << ".txt";
 
@@ -148,7 +189,7 @@ void Mundo::imprimirclasificacion(int level) {
 			auxetsidim.Texto(sstr.str(), hombre.GetPos().x - 15, 12 - m, 0, 1, 0, 12);
 		}
 		else
-		auxetsidim.Texto(sstr.str(), hombre.GetPos().x - 15, 12 - m, 1, 1, 1, 12);
+			auxetsidim.Texto(sstr.str(), hombre.GetPos().x - 15, 12 - m, 1, 1, 1, 12);
 		m += 2;
 
 	}
