@@ -34,7 +34,10 @@ void Mundo::InicioDibuja() { //para que funcione bien los dibujas llamados desde
 }
 void Mundo::fichero(int level) { //	Fichero para guardar el numero de tests y el tiempo tardado
 	
-		ifstream fichero("resultado_final.txt");
+		stringstream name;
+		name << "resultado_final_level_" << level << ".txt";
+
+		ifstream fichero(name.str());
 		int k = 0;
 
 		
@@ -57,9 +60,13 @@ void Mundo::fichero(int level) { //	Fichero para guardar el numero de tests y el
 		k++;
 
 		fichero.close();
-		remove("resultado_final.txt");
-		ofstream fichero1("resultado_final.txt");
-		fichero.open("resultado_final.txt");
+		string nombre;
+		
+		const char* cstr1 = name.str().c_str(); //cadena de char en c
+		remove(cstr1);
+
+		ofstream fichero1(name.str());
+		fichero.open(cstr1);
 
 		//ordenar por puntuacion
 
@@ -119,9 +126,13 @@ void Mundo::fichero(int level) { //	Fichero para guardar el numero de tests y el
 	
 }
 
-void Mundo::imprimirclasificacion() {
+void Mundo::imprimirclasificacion(int level) {
 	
-	ifstream fichero("resultado_final.txt");
+	stringstream name;
+	name << "resultado_final_level_" << level << ".txt";
+
+
+	ifstream fichero(name.str());
 	int k = 0;
 
 

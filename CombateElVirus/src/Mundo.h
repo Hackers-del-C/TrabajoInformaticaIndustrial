@@ -58,7 +58,7 @@ public:
 	int Ganar();
 	void SetFinalLevel(int f) { finaldenivel = 1; }
 	long gettiempo() { return tiempo; }
-	void imprimirclasificacion();
+	void imprimirclasificacion(int level);
 	
 	//ojo:
 
