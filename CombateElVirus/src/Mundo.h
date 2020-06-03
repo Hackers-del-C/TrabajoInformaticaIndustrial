@@ -69,6 +69,14 @@ public:
 	ETSIDI::Vector2D GetHombrePos();
 
 private:
+	//Clasificacion del jugador
+	struct jugador {
+		string nombre, texto1, texto2, texto3, texto4, texto5;
+		int nivel = 0, test = 0, segundos = 0, posicion = 0;
+
+	};
+
+	jugador actual;
 	// constantes para el salto
 	int finaldenivel;
 	

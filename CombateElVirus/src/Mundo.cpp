@@ -37,11 +37,7 @@ void Mundo::fichero(int level) { //	Fichero para guardar el numero de tests y el
 		ifstream fichero("resultado_final.txt");
 		int k = 0;
 
-		struct jugador {
-			string nombre, texto1, texto2, texto3, texto4, texto5;
-			int nivel = 0, test = 0, segundos = 0, posicion = 0;
 		
-		};
 		jugador lista[NUM_MAX_RANKING];
 		while (!fichero.eof()) {
 
@@ -52,10 +48,13 @@ void Mundo::fichero(int level) { //	Fichero para guardar el numero de tests y el
 			k++;
 		}
 
-		lista[k].nombre = "david";
+		lista[k].nombre = "Jugador";
 		lista[k].nivel = level;
 		lista[k].test = hombre.GetMonedas();
-		lista[k++].segundos = ((clock() - tiempo) / 1000);
+		lista[k].segundos = ((clock() - tiempo) / 1000);
+
+		actual = lista[k];
+		k++;
 
 		fichero.close();
 		remove("resultado_final.txt");
@@ -77,26 +76,14 @@ void Mundo::fichero(int level) { //	Fichero para guardar el numero de tests y el
 				}
 			}
 		}
-		for (int m = 0; m < (k - 1); m++) {
-
-			for (int n = 0; n < (k - 1); n++) {
-
-				jugador aux;
-				if ((lista[n + 1].nivel == lista[n].nivel) && (lista[n + 1].test > lista[n].test)) {
-
-					aux = lista[n + 1];
-					lista[n + 1] = lista[n];
-					lista[n] = aux;
-				}
-			}
-		}
+	
 
 		for (int m = 0; m < (k - 1); m++) {
 
 			for (int n = 0; n < (k - 1); n++) {
 
 				jugador aux;
-				if ((lista[n + 1].nivel == lista[n].nivel) && (lista[n + 1].test == lista[n].test) && (lista[n + 1].segundos < lista[n].segundos)) {
+				if ((lista[n + 1].nivel == lista[n].nivel)  && (lista[n + 1].segundos < lista[n].segundos)) {
 
 					aux = lista[n + 1];
 					lista[n + 1] = lista[n];
@@ -137,12 +124,8 @@ void Mundo::imprimirclasificacion() {
 	ifstream fichero("resultado_final.txt");
 	int k = 0;
 
-	struct jugadori {
-		string nombre, texto1, texto2, texto3, texto4, texto5;
-		int nivel = 0, test = 0, segundos = 0, posicion = 0;
 
-	};
-	jugadori lista[5];
+	jugador lista[5];
 	while (k < 5) {
 
 		fichero >> lista[k].posicion >> lista[k].nombre;
@@ -162,6 +145,10 @@ void Mundo::imprimirclasificacion() {
 			//m += 2;
 		stringstream sstr;
 		sstr << i + 1 << ".-  " << "Tiempo: " << lista[i].segundos << "  Segundos" << "  Test: " << lista[i].test<< " Nivel: "<<lista[i].nivel;
+		if (lista[i].test == actual.test && lista[i].segundos == actual.segundos) {
+			auxetsidim.Texto(sstr.str(), hombre.GetPos().x - 15, 12 - m, 0, 1, 0, 12);
+		}
+		else
 		auxetsidim.Texto(sstr.str(), hombre.GetPos().x - 15, 12 - m, 1, 1, 1, 12);
 		m += 2;
 
