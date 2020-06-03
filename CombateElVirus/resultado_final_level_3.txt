@@ -38,3 +38,8 @@ Has_llegado_al_nivel: 3
 Has_cogido: 1 test
 has_tardado 22 segundos
 
+9 
+Has_llegado_al_nivel: 0 
+Has_cogido: 0 test
+has_tardado 0 segundos
+

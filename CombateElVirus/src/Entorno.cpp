@@ -135,12 +135,12 @@ void Entorno::Aviso(int pantalla, int x, int y) {
 
 	switch (pantalla) {
 	case 1: //pantalla si mueres
-		//auxetsidi.Imagen("aviso", x - 20, x + 20, 0, 30,0);
+		
 		auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, 2, 17, 0);
 		auxetsidi.Texto("F Perdiste...", x - 5.5, 14, 0.44, 0.87, 0.45, 20);
 		auxetsidi.Texto("Pulsa 8  para REINICIAR EL NIVEL", x - 10, 11, 1, 1, 1, 12); //obv habrá que hacerlo con otras teclas u otra cosa
 		auxetsidi.Texto("Pulsa 7 ir al MENU PRINCIPAL", x - 10, 8, 1, 1, 1, 12);
-		//auxetsidi.Texto("CLASIFICACION ", x - 10, 15, 1, 1, 1, 12);
+		
 		
 		
 
@@ -148,7 +148,7 @@ void Entorno::Aviso(int pantalla, int x, int y) {
 		break;
 
 	case 2: //pantalla si ganas	
-		//auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, 2, 17, 0);
+		
 		auxetsidi.Imagen("aviso", x - 20, x + 20, 0, 30, 0);
 		//TEXTO
 		auxetsidi.Texto("HAS GANADO", x - 5.5, 24, 0.44, 0.87, 0.45, 20);
@@ -165,53 +165,16 @@ void Entorno::Aviso(int pantalla, int x, int y) {
 		break;
 
 	case 4://pantalla ganador final
-		auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, 2, 17, 0);
+		//auxetsidi.Imagen("aviso", x - 12.5, x + 12.5, 2, 17, 0);
+		auxetsidi.Imagen("aviso", x - 20, x + 20, 0, 33, 0);
 		//TEXTO
-		auxetsidi.Texto("HAS GANADO", x - 5, 13, 0.44, 0.87, 0.45, 20);
-		auxetsidi.Texto("CONSEGUISTE LA CURA ", x - 8, 11, 0.44, 0.87, 0.45, 15);
-		auxetsidi.Texto("AL CORONAVIRUS ", x - 8, 9, 0.44, 0.87, 0.45, 15);		
-		auxetsidi.Texto("Pulsa 7 para ir al menu", x - 7, 7, 1, 1, 1, 15);
+		auxetsidi.Texto("HAS GANADO", x - 5, 27, 0.44, 0.87, 0.45, 20);
+		auxetsidi.Texto("CONSEGUISTE LA CURA ", x - 8, 24, 0.44, 0.87, 0.45, 15);
+		auxetsidi.Texto("AL CORONAVIRUS ", x - 8, 21, 0.44, 0.87, 0.45, 15);		
+		auxetsidi.Texto("Pulsa 7 para ir al menu", x - 7, 18, 1, 1, 1, 15);
+		auxetsidi.Texto("CLASIFICACION ", x - 10, 15, 1, 1, 1, 12);
+		break;
 	}
 }
 
-/*void Entorno::clasificacion() {
-
-	ifstream fichero("resultado_final.txt");
-	int k = 0;
-
-	struct jugador {
-
-		string nombre, texto1, texto2, texto3, texto4, texto5;
-		int nivel = 0, test = 0, segundos = 0, posicion = 0;
-
-	};
-
-	jugador lista[NUM_MAX_RANKING];
-
-
-
-	while (!fichero.eof()) {
-
-		fichero >> lista[k].posicion >> lista[k].nombre;
-		fichero >> lista[k].texto1 >> lista[k].nivel;
-		fichero >> lista[k].texto2 >> lista[k].test >> lista[k].texto3;
-		fichero >> lista[k].texto4 >> lista[k].segundos >> lista[k].texto5;
-		k++;
-	}
-	
-	lista[k].nivel = level;
-	lista[k].test = hombre.GetMonedas();
-	lista[k++].segundos = ((clock() - tiempo) / 1000);
-
-	
-	fichero.close();
-	for (int i = 0; i < 2; i++) {
-
-		auxetsidi.Texto(, x - 10, 15, 1, 1, 1, 12);
-
-
-	}
-
-}
-*/
 

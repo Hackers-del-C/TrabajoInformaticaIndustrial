@@ -143,7 +143,7 @@ void Mundo::imprimirclasificacion(int level) {
 			//auxetsidim.Texto(lista[i].nombre, hombre.GetPos().x - 10, 12 - m, 1, 1, 1, 12);
 			//m += 2;
 		stringstream sstr;
-		sstr << i + 1 << ".-  " << "Tiempo: " << lista[i].segundos << "  Segundos" << "  Test: " << lista[i].test<< " Nivel: "<<lista[i].nivel;
+		sstr << i + 1 << ".-  " << "Tiempo: " << lista[i].segundos << "  Segundos" << "  Test: " << lista[i].test;
 		if (lista[i].test == actual.test && lista[i].segundos == actual.segundos) {
 			auxetsidim.Texto(sstr.str(), hombre.GetPos().x - 15, 12 - m, 0, 1, 0, 12);
 		}
