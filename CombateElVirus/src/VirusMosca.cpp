@@ -72,7 +72,7 @@ void VirusMosca::Muere() {
 
 void VirusMosca::LanzaBonus(ListaBonus& l,int nivel) {
     if (nivel == 1) {
-        l.agregar(new Billete(posicion.x, 17, 4, 4));
+        l.agregar(new Billete(posicion.x, 17, 4, 4,'b'));
     }
 }
 

@@ -31,5 +31,10 @@ has_tardado 45 segundos
 7 Jugador
 Has_llegado_al_nivel: 2 
 Has_cogido: 0 test
+has_tardado 9 segundos
+
+8 Jugador
+Has_llegado_al_nivel: 2 
+Has_cogido: 0 test
 has_tardado 18 segundos
 

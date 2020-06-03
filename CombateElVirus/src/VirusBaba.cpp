@@ -163,7 +163,7 @@ void VirusBaba::Disparafinal(ListaSlime& l, Hombre h) {
 }
 void VirusBaba::LanzaBonus(ListaBonus& l, int nivel) {
     if (nivel == 3) {
-        l.agregar(new Billete(225, 10, 4, 4));
+        l.agregar(new Billete(225, 10, 4, 4,'p'));
     }
 }
 

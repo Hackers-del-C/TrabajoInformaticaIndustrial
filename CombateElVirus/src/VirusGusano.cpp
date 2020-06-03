@@ -106,7 +106,7 @@ void VirusGusano::Mueve(float t, ListaSlime& l, Hombre h) {
 }
 void VirusGusano::LanzaBonus(ListaBonus& l, int nivel) {
     if (nivel == 2) {
-        l.agregar(new Billete(posicion.x, posicion.y, 4, 4));
+        l.agregar(new Billete(posicion.x, posicion.y, 4, 4,'b'));
     }
 }
 
