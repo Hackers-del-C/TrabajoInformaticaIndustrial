@@ -149,7 +149,7 @@ void Entorno::Aviso(int pantalla, int x, int y) {
 
 	case 2: //pantalla si ganas	
 		
-		auxetsidi.Imagen("aviso", x - 20, x + 20, 0, 30, 0);
+		auxetsidi.Imagen("aviso", x - 18, x + 18, 1.5, 28, 0);
 		//TEXTO
 		auxetsidi.Texto("HAS GANADO", x - 5.5, 24, 0.44, 0.87, 0.45, 20);
 		auxetsidi.Texto("Pulsa 8 para ir al SIGUIENTE NIVEL", x - 10, 21, 1, 1, 1, 12);

@@ -1,5 +1,5 @@
 1 david
-Has_llegado_al_nivel: 1
+Has_llegado_al_nivel: 1 
 Has_cogido: 21 test
 has_tardado 15 segundos
 
@@ -22,4 +22,19 @@ has_tardado 12 segundos
 Has_llegado_al_nivel: 1 
 Has_cogido: 7 test
 has_tardado 36 segundos
+
+6 Jugador
+Has_llegado_al_nivel: 1 
+Has_cogido: 0 test
+has_tardado 10 segundos
+
+7 Jugador
+Has_llegado_al_nivel: 1 
+Has_cogido: 0 test
+has_tardado 13 segundos
+
+8 Jugador
+Has_llegado_al_nivel: 1 
+Has_cogido: 0 test
+has_tardado 15 segundos
 
