@@ -551,10 +551,10 @@ void Mundo::Dibuja(int level) {
 		}
 		if (hombre.GetPos().x > 190) {
 			if (lanzaDado(800) < 2) {
-				listavirus.agregar(new VirusSeta(235, -3.5, 10));
+				listavirus.agregar(new VirusSlime(235, -3.5, 10));
 			}
 			if (lanzaDado(800) < 2) {
-				listavirus.agregar(new VirusSeta(215, -3.5, 10));
+				listavirus.agregar(new VirusSlime(215, -3.5, 10));
 			}
 		}
 	}
