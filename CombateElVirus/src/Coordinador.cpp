@@ -85,19 +85,23 @@ void Coordinador::Dibuja() {
 		//mundo.imprimirclasificacion(nivel);
 	}
 	else if (estado == GANAR) {	
+		//mundo.imprimirclasificacion(nivel);
 		avion.Dibuja();
 		switch (nivel){
 		case 1:
 			entorno.Aviso(2, mundo.GetHombrePos().x, mundo.GetHombrePos().y);
 			AvanceNivel = 1; //sirve para conocer que niveles se han pasado y cuales no 
+			mundo.imprimirclasificacion(nivel);
 			break;
 		case 2:
 			entorno.Aviso(2, mundo.GetHombrePos().x, mundo.GetHombrePos().y);
 			AvanceNivel = 2;
+			mundo.imprimirclasificacion(nivel);
 			break;
 		case 3:
 			entorno.Aviso(4, mundo.GetHombrePos().x, mundo.GetHombrePos().y);
 			AvanceNivel = 3;
+			mundo.imprimirclasificacion(nivel);
 			break;
 		}
 		entorno.DibujaJuego(nivel);
