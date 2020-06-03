@@ -58,7 +58,7 @@ void Coordinador::Dibuja() {
 			estado = MUERTE;
 			int a = 0;
 			if (a == 0) { entorno.Fin(1); a = 1; } //para que no entre bucle y se reproduzca una vez
-			mundo.fichero(nivel); 
+			 
 
 		}
 		else if (mundo.Ganar()) {
@@ -67,6 +67,7 @@ void Coordinador::Dibuja() {
 			estado = GANAR;		
 			int b = 0;
 			if (b == 0) { entorno.Fin(2); b = 1; }//para que no entre bucle y se reproduzca una vez
+			mundo.fichero(nivel);
 		}
 	}
 	else if (estado == MENU) {
