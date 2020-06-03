@@ -142,8 +142,8 @@ void Mundo::imprimirclasificacion() {
 		int nivel = 0, test = 0, segundos = 0, posicion = 0;
 
 	};
-	jugadori lista[2];
-	while (k < 2) {
+	jugadori lista[5];
+	while (k < 5) {
 
 		fichero >> lista[k].posicion >> lista[k].nombre;
 		fichero >> lista[k].texto1 >> lista[k].nivel;
@@ -152,16 +152,17 @@ void Mundo::imprimirclasificacion() {
 		k++;
 	}
 	fichero.close();
-	
+
 	float m = 0.0;
-	for (int i = 0; i < 2; i++) {
+	for (int i = 0; i < 5; i++) {
 
 
-		auxetsidim.Texto(lista[i].nombre, hombre.GetPos().x -10, 12 - m , 1, 1, 1, 12);
-		m += 2;
+		//	auxetsidim.Texto("1.- ", hombre.GetPos().x -10, 12 - m , 1, 1, 1, 12);
+			//auxetsidim.Texto(lista[i].nombre, hombre.GetPos().x - 10, 12 - m, 1, 1, 1, 12);
+			//m += 2;
 		stringstream sstr;
-		sstr << "Ha tardado : " << lista[i].segundos << " segundos";
-		auxetsidim.Texto(sstr.str(), hombre.GetPos().x - 10, 12 - m , 1, 1, 1, 12);
+		sstr << i + 1 << ".-  " << "Tiempo: " << lista[i].segundos << "  Segundos" << "  Test: " << lista[i].test<< " Nivel: "<<lista[i].nivel;
+		auxetsidim.Texto(sstr.str(), hombre.GetPos().x - 15, 12 - m, 1, 1, 1, 12);
 		m += 2;
 
 	}

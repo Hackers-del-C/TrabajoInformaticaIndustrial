@@ -56,14 +56,24 @@ has_tardado 39 segundos
 12 david
 Has_llegado_al_nivel: 1 
 Has_cogido: 1 test
-has_tardado 11 segundos
+has_tardado 10 segundos
 
 13 david
 Has_llegado_al_nivel: 1 
 Has_cogido: 1 test
+has_tardado 11 segundos
+
+14 david
+Has_llegado_al_nivel: 1 
+Has_cogido: 1 test
+has_tardado 18 segundos
+
+15 david
+Has_llegado_al_nivel: 1 
+Has_cogido: 1 test
 has_tardado 21 segundos
 
-14 carlos
+16 carlos
 Has_llegado_al_nivel: 1 
 Has_cogido: 0 test
 has_tardado 3 segundos
