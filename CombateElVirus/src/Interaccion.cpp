@@ -128,7 +128,7 @@ bool Interaccion::Colision(Slime &s, Plataformas p) {
         if (p.GetTipo() == p.PLATAFORMA_MUEVE){
             s.SetVel(p.velocidad.x, p.velocidad.y);
             s.posicion.x = p.posicion.x;
-            s.posicion.y = p.posicion.y + 1.5;
+            s.posicion.y = p.posicion.y + 2;
         return true;
         }
         else {
