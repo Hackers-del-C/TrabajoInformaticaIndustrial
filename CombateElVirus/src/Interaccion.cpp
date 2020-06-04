@@ -80,7 +80,26 @@ bool Interaccion::Colision(Disparo d, Virus &v) {
     }
     return false;
 }
+ bool Interaccion::Colision(DisparoEspecial d, Virus& v) {
+    float px, py;
+    ETSIDI::Vector2D  aux;
+    px = d.posicion.x; // En principio son iguales
+    if (px < v.posicion.x - v.anchura / 2) px = v.posicion.x - v.anchura / 2;
+    if (px > v.posicion.x + v.anchura / 2) px = v.posicion.x + v.anchura / 2;
+    py = d.posicion.y;
+    if (py < v.posicion.y - v.altura / 2) py = v.posicion.y - v.altura / 2;
+    if (py > v.posicion.y + v.altura / 2) py = v.posicion.y + v.altura / 2;
+    aux.x = (d.posicion.x - px) * (d.posicion.x - px);
+    aux.y = (d.posicion.y - py) * (d.posicion.y - py);
+    if (aux.module() < d.radio) {
+        // Colisión detectada
 
+
+         v.SetVidas(v.GetVidas()-1);
+        return true;
+    }
+    return false;
+}
 bool Interaccion::Colision(Hombre h, Virus v) {
 
    //Crea un recatangulo en centro hombre, altura la altura del hombre y anchura la anchura del hombre.
@@ -108,6 +127,8 @@ bool Interaccion::Colision(Slime &s, Plataformas p) {
         // s.Choca();
         if (p.GetTipo() == p.PLATAFORMA_MUEVE){
             s.SetVel(p.velocidad.x, p.velocidad.y);
+            s.posicion.x = p.posicion.x;
+            s.posicion.y = p.posicion.y + 2;
         return true;
         }
         else {
@@ -133,7 +154,7 @@ bool Interaccion::Colision(Slime& s, Hombre p) {
 bool Interaccion::Colision(Slime& s, Limites l) {
 
     ETSIDI::Vector2D dir;
-    float dif = s.posicion.x - l.suelo.GetSuelo(); //Cabrones
+    float dif = s.posicion.x - l.suelo.GetSuelo(); 
     if (s.posicion.y<-3.5) {
       //  s.Choca();
       

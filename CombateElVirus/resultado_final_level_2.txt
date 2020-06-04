@@ -8,32 +8,37 @@ Has_llegado_al_nivel: 2
 Has_cogido: 8 test
 has_tardado 45 segundos
 
-3 david
+3 Jugador
+Has_llegado_al_nivel: 2 
+Has_cogido: 5 test
+has_tardado 57 segundos
+
+4 david
 Has_llegado_al_nivel: 2 
 Has_cogido: 5 test
 has_tardado 77 segundos
 
-4 alvaro
+5 alvaro
 Has_llegado_al_nivel: 2 
 Has_cogido: 4 test
 has_tardado 12 segundos
 
-5 david
+6 david
 Has_llegado_al_nivel: 2 
 Has_cogido: 3 test
 has_tardado 33 segundos
 
-6 david
+7 david
 Has_llegado_al_nivel: 2 
 Has_cogido: 1 test
 has_tardado 45 segundos
 
-7 Jugador
+8 Jugador
 Has_llegado_al_nivel: 2 
 Has_cogido: 0 test
 has_tardado 9 segundos
 
-8 Jugador
+9 Jugador
 Has_llegado_al_nivel: 2 
 Has_cogido: 0 test
 has_tardado 18 segundos
