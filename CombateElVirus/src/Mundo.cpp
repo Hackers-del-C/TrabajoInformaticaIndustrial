@@ -356,8 +356,8 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 		listavirus.agregar(new VirusBaba(240, 15));
 		listavirus.agregar(new VirusGusano(110, -3.5, 10));
 
-		listavirus.agregar(new VirusGusano(225, -3.5, 15));
-		listavirus.agregar(new VirusSeta(220, -3, 10));
+		//listavirus.agregar(new VirusGusano(225, -3.5, 15));
+		//listavirus.agregar(new VirusSeta(220, -3, 10));
 
 		//plataformas suelo
 		for (int y = -2; y < 15; y++) {
