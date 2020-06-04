@@ -355,6 +355,9 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 		listavirus.agregar(new VirusBaba(240, 15));
 		listavirus.agregar(new VirusGusano(110, -3.5, 10));
 
+		listavirus.agregar(new VirusGusano(225, -3.5, 15));
+		listavirus.agregar(new VirusSeta(220, -3, 10));
+
 		//plataformas suelo
 		for (int y = -2; y < 15; y++) {
 			plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 25, y * 1.5, 5, 1.5));
@@ -379,9 +382,9 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 		plataformas.Agregar(new Plataformas(Plataformas::SUELO, 95, -5.5, 5, 1.5));
 		plataformas.Agregar(new Plataformas(Plataformas::SUELO, 100, -5.5, 5, 1.5));
 		plataformas.Agregar(new Plataformas(Plataformas::SUELO, 105, -5.5, 5, 1.5));
-		plataformas.Agregar(new Plataformas(Plataformas::SUELO, 110, -5.5, 5, 1.5));
-		plataformas.Agregar(new Plataformas(Plataformas::SUELO, 115, -5.5, 5, 1.5));
-		plataformas.Agregar(new Plataformas(Plataformas::SUELO, 120, -5.5, 5, 1.5));
+		//dplataformas.Agregar(new Plataformas(Plataformas::SUELO, 110, -5.5, 5, 1.5));
+		//plataformas.Agregar(new Plataformas(Plataformas::SUELO, 115, -5.5, 5, 1.5));
+		
 
 		//plataformas aereas		
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 130, 1, 5, 1.5));
@@ -432,6 +435,11 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 		listabonus.agregar(new BonusTest(150, -2, 2, 2));
 		listabonus.agregar(new BonusTest(170, -2, 2, 2));
 		listabonus.agregar(new BonusTest(190, -2, 2, 2));
+
+		
+		listavirus.agregar(new VirusGusano(225, -3.5, 15));
+		listavirus.agregar(new VirusSeta(220, -3, 10));
+		
 	}
 }
 void Mundo::Inicializa(int level) { //Inicializa principal
@@ -544,8 +552,12 @@ void Mundo::Dibuja(int level) {
 				listabonus.agregar(new Municion(200 + lanzaDado(50), 25, 2, 2));
 			}
 		}
+		if (hombre.GetPos().x > 190) {
+			if (lanzaDado(800) < 2) {
+				listavirus.agregar(new VirusSlime(235, -3.5, 10));
+			}
+		}
 	}
-
 }
 
 //Fin partida para avisar al coordinador
