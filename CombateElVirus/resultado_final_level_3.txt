@@ -13,37 +13,42 @@ Has_llegado_al_nivel: 3
 Has_cogido: 4 test
 has_tardado 12 segundos
 
-4 david
+4 Jugador
+Has_llegado_al_nivel: 3 
+Has_cogido: 4 test
+has_tardado 45 segundos
+
+5 david
 Has_llegado_al_nivel: 3 
 Has_cogido: 3 test
 has_tardado 33 segundos
 
-5 Jugador
+6 Jugador
 Has_llegado_al_nivel: 3 
 Has_cogido: 2 test
 has_tardado 48 segundos
 
-6 david
+7 david
 Has_llegado_al_nivel: 3 
 Has_cogido: 1 test
 has_tardado 45 segundos
 
-7 Jugador
+8 Jugador
 Has_llegado_al_nivel: 3 
 Has_cogido: 0 test
 has_tardado 36 segundos
 
-8 Jugador
+9 Jugador
 Has_llegado_al_nivel: 3 
 Has_cogido: 0 test
 has_tardado 51 segundos
 
-9 Jugador
+10 Jugador
 Has_llegado_al_nivel: 3 
 Has_cogido: 0 test
 has_tardado 69 segundos
 
-10 Jugador
+11 Jugador
 Has_llegado_al_nivel: 3 
 Has_cogido: 0 test
 has_tardado 106 segundos

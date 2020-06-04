@@ -349,6 +349,7 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 	else if (nivel == 3) {
 	hombre.SetMonedas(0);
 	hombre.SetFinNivel(0);
+	listalanzamisiles.DestruirContenido();
 	listabonus.destruirContenido();
 	//Virus
 
