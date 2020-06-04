@@ -433,10 +433,10 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 		listabonus.agregar(new BonusTest(170, -2, 2, 2));
 		listabonus.agregar(new BonusTest(190, -2, 2, 2));
 
-		listavirus.agregar(new VirusMosca(225, 15, 15));
+		
 		listavirus.agregar(new VirusGusano(225, -3.5, 15));
 		listavirus.agregar(new VirusSeta(220, -3, 10));
-		listavirus.agregar(new VirusSlime(230, -3, 10));
+		
 	}
 }
 void Mundo::Inicializa(int level) { //Inicializa principal
@@ -552,9 +552,6 @@ void Mundo::Dibuja(int level) {
 		if (hombre.GetPos().x > 190) {
 			if (lanzaDado(800) < 2) {
 				listavirus.agregar(new VirusSlime(235, -3.5, 10));
-			}
-			if (lanzaDado(800) < 2) {
-				listavirus.agregar(new VirusSlime(215, -3.5, 10));
 			}
 		}
 	}
