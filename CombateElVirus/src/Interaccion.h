@@ -11,6 +11,7 @@
 #include "Virus.h"
 #include "Slime.h"
 #include "Disparo.h"
+#include "DisparoEspecial.h"
 #include "Interaccion.h"
 //#include "Bonus.h"
 #include"BonusMascarilla.h"
@@ -28,6 +29,7 @@ public:
     //static bool colision(ListaMisil& misiles, Hombre h);
 
     static bool Colision (Disparo d,  Virus &v);
+    static bool Colision(DisparoEspecial d, Virus& v);
 
     static bool Colision(Hombre h, Virus v);
     static bool colision(Misil misil, Hombre h);

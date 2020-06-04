@@ -380,8 +380,8 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 		plataformas.Agregar(new Plataformas(Plataformas::SUELO, 100, -5.5, 5, 1.5));
 		plataformas.Agregar(new Plataformas(Plataformas::SUELO, 105, -5.5, 5, 1.5));
 		plataformas.Agregar(new Plataformas(Plataformas::SUELO, 110, -5.5, 5, 1.5));
-		plataformas.Agregar(new Plataformas(Plataformas::SUELO, 115, -5.5, 5, 1.5));
-		plataformas.Agregar(new Plataformas(Plataformas::SUELO, 120, -5.5, 5, 1.5));
+		//plataformas.Agregar(new Plataformas(Plataformas::SUELO, 115, -5.5, 5, 1.5));
+		
 
 		//plataformas aereas		
 		plataformas.Agregar(new Plataformas(Plataformas::PLATAFORMA_CHOCA, 130, 1, 5, 1.5));
