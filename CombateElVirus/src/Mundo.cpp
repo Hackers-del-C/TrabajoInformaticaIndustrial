@@ -550,7 +550,7 @@ void Mundo::Dibuja(int level) {
 			}
 		}
 		if (hombre.GetPos().x > 190) {
-			if (lanzaDado(800) < 2) {
+			if (lanzaDado(800) < 1) {
 				listavirus.agregar(new VirusSlime(235, -3.5, 10));
 			}
 		}
