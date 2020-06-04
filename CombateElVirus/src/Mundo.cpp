@@ -436,10 +436,6 @@ void Mundo::InicializaFondo(int nivel) { //Inicializa con todas las plataformas 
 		listabonus.agregar(new BonusTest(170, -2, 2, 2));
 		listabonus.agregar(new BonusTest(190, -2, 2, 2));
 
-		
-		listavirus.agregar(new VirusGusano(225, -3.5, 15));
-		listavirus.agregar(new VirusSeta(220, -3, 10));
-		
 	}
 }
 void Mundo::Inicializa(int level) { //Inicializa principal
